@@ -1,4 +1,5 @@
 import pkg from './package'
+import webpack from 'webpack'
 
 export default {
   mode: 'universal',
@@ -21,13 +22,52 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
+
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
+
       }
     ],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
+      },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        size: '180x180',
+        href: '/apple-touch-icon.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        size: '32x32',
+        href: '/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        size: '16x16',
+        href: '/favicon-16x16.png'
+      },
+      {
+        rel: 'manifest',
+        href: '/site.webmanifest'
+      },
+      {
+        rel: 'mask-icon',
+        href: 'https://virus.te.ua/assets/icons/safari-pinned-tab.svg',
+        color: "#e32124"
       },
       {
         rel: "stylesheet",
@@ -75,7 +115,11 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-62479125-9'
+    }]
+  ],
 
   script: [{
       src: "https://code.jquery.com/jquery-3.2.1.min.js",
@@ -106,6 +150,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    plugins: [
+      new webpack.ProvidePlugin({
+        '$': 'jquery',
+      })
+    ],
+
     extend(config, ctx) {}
   }
 }
