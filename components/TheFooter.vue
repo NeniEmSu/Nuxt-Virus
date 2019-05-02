@@ -2,9 +2,9 @@
   <footer>
     <div class="bottom-contact container">
       <div class="logo">
-        <a class="navbar-brand logo" href="index">
+        <nuxt-link class="/navbar-brand logo" to="/">
           <img src="img/virus-logo.svg" alt="virus logo">
-        </a>
+        </nuxt-link>
       </div>
       <ul>
         <li>
@@ -30,10 +30,10 @@
           </a>
         </li>
         <li>
-          <a class="instagram" href="https://www.instagram.com/virusdetailing/" target="_blank">
+          <a href="https://www.instagram.com/virusdetailing/" target="_blank" class="instagram">
             <img src="img/icons8-instagram-filled-100.png" alt="icons instagram filled">
           </a>
-          <a class="facebook" href="https://www.facebook.com/virus.te.ua/" target="_blank">
+          <a href="https://www.facebook.com/virus.te.ua/" target="_blank" class="facebook">
             <img src="img/icons8-facebook-filled-100.png" alt="icons facebook filled">
           </a>
         </li>

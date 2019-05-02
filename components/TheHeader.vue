@@ -4,7 +4,7 @@
       <div class="container p-0">
         <ul>
           <li>
-            <a href="контакти#map-top mt-n5">
+            <a href="/контакти#map-top mt-n5">
               <span class="hide">Україна, м. Тернопіль, вул. Приміська 15А</span>
 
               <i class="fa fa-map-marker-alt bounce mx-1"></i>
@@ -45,34 +45,40 @@
         </div>
 
         <div class="logo">
-          <router-link class="navbar-brand logo" to="index">
+          <nuxt-link class="navbar-brand logo" to="index">
             <img src="~/assets/img/virus-logo.svg" alt="virus logo">
-          </router-link>
+          </nuxt-link>
         </div>
 
         <div class="menu">
           <ul>
-            <li>
-              <router-link to="index">Головна</router-link>
-            </li>
-            <li>
-              <router-link to="Послуги">Послуги і ціни</router-link>
-            </li>
-            <li>
-              <router-link to="акції">Акції</router-link>
-            </li>
-            <li>
-              <router-link to="магазин">Магазин</router-link>
-            </li>
-            <li>
-              <router-link to="блог">Блог</router-link>
-            </li>
-            <li>
-              <router-link to="пронас">Про нас</router-link>
-            </li>
-            <li>
-              <router-link to="контакти">Контакти</router-link>
-            </li>
+            <nuxt-link to="/" tag="li">
+              <a>Головна</a>
+            </nuxt-link>
+
+            <nuxt-link to="/Послуги" tag="li">
+              <a>Послуги і ціни</a>
+            </nuxt-link>
+
+            <nuxt-link to="/акції" tag="li">
+              <a>Акції</a>
+            </nuxt-link>
+
+            <nuxt-link to="/магазин" tag="li">
+              <a>Магазин</a>
+            </nuxt-link>
+
+            <nuxt-link to="/блог" tag="li">
+              <a>Блог</a>
+            </nuxt-link>
+
+            <nuxt-link to="/пронас" tag="li">
+              <a>Про нас</a>
+            </nuxt-link>
+
+            <nuxt-link to="/контакти" tag="li">
+              <a>Контакти</a>
+            </nuxt-link>
           </ul>
         </div>
       </nav>
@@ -84,5 +90,10 @@
 export default {};
 </script>
 
-<style>
+<style scope="scoped">
+.nuxt-link-exact-active a {
+  border: 1px solid #d41f26;
+  box-sizing: border-box;
+  border-radius: 50px;
+}
 </style>

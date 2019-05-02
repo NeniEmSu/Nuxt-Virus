@@ -1,19 +1,9 @@
 <template>
-  <section class="wrapper">
-    <AppHeader/>
-    <main></main>
-    <AppFooter/>
-  </section>
+  <div></div>
 </template>
 
 <script>
-import AppHeader from "~/components/appHeader.vue";
-import AppFooter from "~/components/appFooter.vue";
 export default {
-  components: {
-    AppHeader,
-    AppFooter
-  },
   head() {
     return {
       title:
