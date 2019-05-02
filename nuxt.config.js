@@ -98,6 +98,14 @@
        },
        {
          rel: "stylesheet",
+         href: "/css/topText.css"
+       },
+       {
+         rel: "stylesheet",
+         href: "/css/infoPages.css"
+       },
+       {
+         rel: "stylesheet",
          href: "https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900"
        }
      ]
