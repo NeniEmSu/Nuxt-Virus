@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-Virus",
+  "version": "1.0.0",
+  "description": "Virus project using Nuxt js",
+  "author": "Emmanuel Neni",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^2.2.0",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.4.0",
+    "vuex": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
