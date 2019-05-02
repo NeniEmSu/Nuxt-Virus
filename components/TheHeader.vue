@@ -45,7 +45,7 @@
         </div>
 
         <div class="logo">
-          <nuxt-link class="navbar-brand logo" to="index">
+          <nuxt-link class="navbar-brand logo" to="/">
             <img src="~/assets/img/virus-logo.svg" alt="virus logo">
           </nuxt-link>
         </div>

@@ -173,6 +173,7 @@
      /*
       ** You can extend webpack config here
       */
+     transpile: [/^vue2-google-maps($|\/)/],
      plugins: [
        new webpack.ProvidePlugin({
          '$': 'jquery',
