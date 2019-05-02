@@ -163,6 +163,10 @@
      {
        src: "/js/main.js",
        type: "text/javascript"
+     },
+     {
+       src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDKJciVrAvST8C9SJzwkjmHFnoPM8FwooY&callback=initMap",
+       type: "text/javascript"
      }
    ],
 

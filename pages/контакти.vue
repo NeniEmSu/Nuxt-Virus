@@ -161,6 +161,7 @@
 </template>
 
 <script>
+import "~/assets/js/map.js";
 export default {};
 </script>
 
