@@ -7,14 +7,13 @@
  } : {}
 
  export default {
+   routerBase,
    mode: 'universal',
    server: {
      port: 8383,
      host: '0.0.0.0',
    },
-   router: {
-     base: routerBase
-   },
+
    head: {
      title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
      htmlAttrs: {
