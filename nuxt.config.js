@@ -12,7 +12,7 @@
      port: 8383,
      host: '0.0.0.0',
    },
-   ...routerBase,
+   routerBase,
    head: {
      title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
      htmlAttrs: {
