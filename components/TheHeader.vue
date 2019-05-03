@@ -4,7 +4,7 @@
       <div class="container p-0">
         <ul>
           <li>
-            <a href="/контакти#map-top mt-n5">
+            <a href="/контакти#map-top">
               <span class="hide">Україна, м. Тернопіль, вул. Приміська 15А</span>
 
               <i class="fa fa-map-marker-alt bounce mx-1"></i>

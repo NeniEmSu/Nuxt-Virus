@@ -105,4 +105,7 @@ export default {
 </script>
 
 <style>
+.contact-page-socials {
+  padding-bottom: 40px;
+}
 </style>

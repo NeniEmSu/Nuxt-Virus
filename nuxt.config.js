@@ -1,11 +1,18 @@
  import webpack from 'webpack'
 
+ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+   router: {
+     base: '/<nuxt-virus>/'
+   }
+ } : {}
+
  export default {
    mode: 'universal',
    server: {
      port: 8383, // default: 3000
      host: '0.0.0.0', // default: localhost
    },
+   routerBase,
    /*
     ** Headers of the page
     */
@@ -95,10 +102,6 @@
        {
          rel: "stylesheet",
          href: "/css/style.css"
-       },
-       {
-         rel: "stylesheet",
-         href: "/css/topText.css"
        },
        {
          rel: "stylesheet",

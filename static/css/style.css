@@ -22,7 +22,7 @@ body {
   height: 100%;
   padding: 0;
   overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Roboto Condensed", sans-serif;
 }
 
 button {
