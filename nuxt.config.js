@@ -2,7 +2,7 @@
 
  const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
    router: {
-     base: '/<nuxt-virus>/'
+     base: '/<Nuxt-Virus>/'
    }
  } : {}
 
@@ -12,7 +12,7 @@
      port: 8383,
      host: '0.0.0.0',
    },
-   routerBase,
+   ...routerBase,
    head: {
      title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
      htmlAttrs: {
@@ -96,14 +96,6 @@
          rel: "stylesheet",
          href: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
        },
-       //  {
-       //    rel: "stylesheet",
-       //    href: "/css/style.css"
-       //  },
-       //  {
-       //    rel: "stylesheet",
-       //    href: "/css/infoPages.css"
-       //  },
        {
          rel: "stylesheet",
          href: "https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900"
