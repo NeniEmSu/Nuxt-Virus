@@ -48,121 +48,60 @@
       </div>
     </div>
 
-    <div class="jumbotron">
-      <div class="container mx-auto contact">
-        <div class="card p-5">
-          <form class="text-right" method="POST" action="includes/contactForm.inc.php">
-            <h3 class="text-left px-0">
-              <span class="red">
-                ДІЗНАТИСЯ ВАРТІСТЬ
-                ДЕТЕЙЛІНГА
-              </span>
-              <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
-            </h3>
+    <ContactForm/>
 
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label hidden for="carModel">Введіть модель авто</label>
-                  <input
-                    type="text"
-                    id="carModel"
-                    name="carModel"
-                    class="form-control mx-auto"
-                    aria-describedby="carModel"
-                    placeholder="Введіть модель авто"
-                  >
-                </div>
-                <div class="form-group">
-                  <label hidden for="typeOfWork">Оберіть тип робіт</label>
-                  <select
-                    id="typeOfWork"
-                    aria-describedby="typeOfWork"
-                    class="form-control mx-auto"
-                  >
-                    <option>Оберіть тип робіт</option>
-                    <option>Оберіть тип робіт</option>
-                    <option>Оберіть тип робіт</option>
-                    <option>Оберіть тип робіт</option>
-                  </select>
-                </div>
-              </div>
+    <progressSection/>
+    <!-- google map Api call -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKJciVrAvST8C9SJzwkjmHFnoPM8FwooY&callback=initMap"
+    ></script>
 
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label hidden for="name">Ім’я</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-control mx-auto"
-                    aria-describedby="name"
-                    placeholder="Ім’я*"
-                  >
-                </div>
-                <div class="form-group">
-                  <label hidden for="phone">Телефон</label>
-                  <input
-                    type="number"
-                    id="phone"
-                    aria-describedby="phone"
-                    name="phone"
-                    class="form-control mx-auto"
-                    placeholder="Телефон*"
-                  >
-                </div>
-
-                <button type="submit" name="submit" class="contact-btn">ВІДПРАВИТИ</button>
-              </div>
-            </div>
-            <p class="text-left col-12 w-md-50 px-0">
-              Відправте запит, і наш
-              менеджер
-              зв’яжеться з вами
-              найближчим
-              часом
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="jumbotron">
-      <div class="container text-center process">
-        <div class="row">
-          <div class="col-md-3">
-            <img src="img/icons8-paint-palette-96.png" alt="icons paint palette">
-            <div>
-              <h6>Великий спектр послуг</h6>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img src="img/icons8-service-filled-100.png" alt="icons service filled">
-            <div>
-              <h6>Персонал та сервіс</h6>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img src="img/icons8-discount-filled-100.png" alt="icons discount filled">
-            <div>
-              <h6>Лояльність</h6>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <img src="img/icons8-gift-filled-100(1).png" alt="icons gift filled">
-            <div>
-              <h6>Ексклюзивні пропозиції</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- displaying map -->
+    <script>
+  function initMap() {
+    let location = {
+      lat: 49.558033,
+      lng: 25.56692
+    };
+    let map = new google.maps.Map(document.querySelector("#map"), {
+      zoom: 16,
+      center: location
+    });
+    let marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+    </script>
   </div>
 </template>
 
 <script>
-import "~/assets/js/map.js";
-export default {};
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
+export default {
+  components: {
+    ContactForm,
+    progressSection
+  },
+
+  head() {
+    return {
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: "контакти - %s!",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <style>

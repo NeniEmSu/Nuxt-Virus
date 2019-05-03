@@ -163,10 +163,6 @@
      {
        src: "/js/main.js",
        type: "text/javascript"
-     },
-     {
-       src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDKJciVrAvST8C9SJzwkjmHFnoPM8FwooY&callback=initMap",
-       type: "text/javascript"
      }
    ],
 
@@ -177,7 +173,6 @@
      /*
       ** You can extend webpack config here
       */
-     transpile: [/^vue2-google-maps($|\/)/],
      plugins: [
        new webpack.ProvidePlugin({
          '$': 'jquery',
