@@ -9,13 +9,10 @@
  export default {
    mode: 'universal',
    server: {
-     port: 8383, // default: 3000
-     host: '0.0.0.0', // default: localhost
+     port: 8383,
+     host: '0.0.0.0',
    },
    routerBase,
-   /*
-    ** Headers of the page
-    */
    head: {
      title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
      htmlAttrs: {
@@ -99,14 +96,14 @@
          rel: "stylesheet",
          href: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
        },
-       {
-         rel: "stylesheet",
-         href: "/css/style.css"
-       },
-       {
-         rel: "stylesheet",
-         href: "/css/infoPages.css"
-       },
+       //  {
+       //    rel: "stylesheet",
+       //    href: "/css/style.css"
+       //  },
+       //  {
+       //    rel: "stylesheet",
+       //    href: "/css/infoPages.css"
+       //  },
        {
          rel: "stylesheet",
          href: "https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900"
@@ -124,7 +121,10 @@
    /*
     ** Global CSS
     */
-   css: [],
+   css: [
+     './static/css/style.css',
+     "./static/css/infoPages.css"
+   ],
 
    /*
     ** Plugins to load before mounting the App
