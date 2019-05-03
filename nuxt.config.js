@@ -7,7 +7,6 @@
  } : {}
 
  export default {
-   routerBase,
    mode: 'universal',
    server: {
      port: 8383,
