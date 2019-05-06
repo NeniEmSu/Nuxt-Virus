@@ -103,9 +103,54 @@ export default {
   }
 };
 </script>
-
-<style>
+<style lang="scss">
 .contact-page-socials {
   padding-bottom: 40px;
+}
+</style>
+
+<style lang="scss" scoped>
+.contact-heading-image {
+  margin-top: -10.5px;
+  background: #000000;
+  background-image: url("~assets/img/contactPageHeadImg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 280px;
+}
+
+.map-separator {
+  margin: 40px 0;
+  opacity: 0.6;
+  border: 1px solid #000000;
+}
+
+#map {
+  margin: 40px auto;
+  height: 685px;
+  width: 100%;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+  transition: ease-in-out 300ms;
+  -webkit-transition: ease-in-out 300ms;
+  -moz-transition: ease-in-out 300ms;
+  -ms-transition: ease-in-out 300ms;
+  -o-transition: ease-in-out 300ms;
+}
+
+#map:hover {
+  transform: scale(1.005);
+  -webkit-transform: scale(1.005);
+  -moz-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  -o-transform: scale(1.005);
+}
+
+.offset:before {
+  height: -8rem;
+  margin-top: -8rem;
+  content: "";
+  display: block;
 }
 </style>

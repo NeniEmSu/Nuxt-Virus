@@ -2,7 +2,7 @@
 
 <div >
 
-           <div class="container text-center p-0 pt-4" id="services-page">
+           <div class="container text-center p-0 pt-4">
 
                 <img class="col-12  m-auto img-fluid" :src="image" :alt="description" />
 
@@ -552,5 +552,551 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+
+    .choose-brand {
+        .choose-brand-desc {
+            font-family: $mainFont;
+        }
+    }
+
+
+    .btn {
+        padding: 7px 23px;
+        background-color: $lightColor;
+        border-radius: 50px;
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: normal;
+
+        color: #000000;
+        line-height: normal;
+        text-align: center;
+        border: 1px solid $redColor;
+        box-sizing: border-box;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: ease-in-out 300ms;
+        -webkit-transition: ease-in-out 300ms;
+        -moz-transition: ease-in-out 300ms;
+        -ms-transition: ease-in-out 300ms;
+        -o-transition: ease-in-out 300ms;
+    }
+
+    .btn:hover {
+        color: $lightColor;
+        background-color: $redColor;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+
+    .activeBtn {
+        color: $lightColor;
+        background-color: $redColor;
+        box-shadow: none;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+
+    .hideMe {
+        display: none;
+    }
+
+    .car-toggle {
+        margin-top: 48px;
+    }
+
+    .red {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: normal;
+        text-align: center;
+
+        color: $redColor;
+
+    }
+
+    .choose-brand button.btn {
+        padding: 12px 37px;
+        background-color: $redColor;
+        border-radius: 50px;
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+
+        text-align: center;
+        color: $lightColor;
+        text-decoration: none;
+        transition: ease-in-out 300ms;
+        -webkit-transition: ease-in-out 300ms;
+        -moz-transition: ease-in-out 300ms;
+        -ms-transition: ease-in-out 300ms;
+        -o-transition: ease-in-out 300ms;
+    }
+
+    .choose-brand button.btn:hover {
+        color: $redColor;
+        background-color: $lightColor;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+
+    .choose-brand button.btn:hover:after {
+        color: $redColor;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+
+    .choose-brand button.btn:after {
+        color: $lightColor;
+        float: right;
+        font-size: 20px;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f054";
+        margin-left: 20px;
+        margin-right: -20px;
+        transition: ease-in-out 300ms;
+        -webkit-transition: ease-in-out 300ms;
+        -moz-transition: ease-in-out 300ms;
+        -ms-transition: ease-in-out 300ms;
+        -o-transition: ease-in-out 300ms;
+    }
+
+
+    select.brand,
+    select.model {
+        -webkit-appearance: none;
+        -o-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+
+        background-image: url(~assets/img/servicesSelect.png);
+        background-position: 95% center;
+        background-repeat: no-repeat;
+
+        cursor: pointer;
+
+        height: 48px;
+        margin-top: 20px;
+        border: 2px solid #E5E5E5;
+        box-sizing: border-box;
+        border-radius: 50px;
+
+        &.active,
+        &:focus {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+        }
+    }
+
+    form.choose-brand {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    form.choose-brand p {
+        font-family: '$mainFont';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: normal;
+        text-align: center;
+
+        color: $darkColor;
+    }
+
+    .card-heading,
+    .fab-header {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: normal;
+
+        color: $darkColor;
+
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .fab-header:before,
+    .fab-header:after {
+        content: '';
+        border: 1px solid $darkColor;
+        margin: 0 20px 0 0;
+        flex: 1 0 40px;
+    }
+
+    .fab-header:after {
+        margin: 0 0 0 20px;
+    }
+
+    .jumbotron.services {
+        margin: 0;
+        padding: 0;
+
+        .services-container {
+            padding: 10px 0 0 0;
+        }
+
+        h2 {
+            padding-top: 25px;
+            margin: 30px auto;
+        }
+
+        .card-deck,
+        .cards-grouppings-3,
+        .testing {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            .card {
+                background-color: $darkColor;
+                box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+
+
+                margin: 10px auto;
+
+                &.four-cards {
+                    height: 277px;
+                    width: 100%;
+                    min-width: 277px;
+                    max-width: 277px;
+
+                }
+
+                &.two-cards {
+                    height: 277px;
+                    width: 100%;
+
+                    max-width: 555px;
+
+                    hr {
+                        width: 100%;
+                        border: 0.75px solid $lightColor;
+                        margin: 0;
+                    }
+
+                    .subtext {
+                        font-family: $mainFont;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: normal;
+
+                        color: $lightColor;
+
+                        padding: 0;
+                    }
+                }
+
+                &.two-cards-seprate-titles {
+                    height: 277px;
+                    width: 100%;
+
+                    max-width: 555px;
+
+                    hr {
+                        width: 100%;
+                        border: 0.75px solid $lightColor;
+                        margin: 0;
+                    }
+
+                    .subtext {
+                        font-family: $mainFont;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: normal;
+
+                        color: $lightColor;
+
+                        padding: 0;
+                    }
+                }
+
+                &.three-cards {
+                    height: 277px;
+                    width: 100%;
+                    min-width: 260px;
+                    max-width: 368px;
+
+                }
+
+                &.service-one {
+                    background-image: url('~assets/img/services1.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-two {
+                    background-image: url('~assets/img/services2.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-three {
+                    background-image: url('~assets/img/services3.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-four {
+                    background-image: url('~assets/img/services4.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+
+                &.service-five {
+                    background-image: url('~assets/img/services5.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-six {
+                    background-image: url('~assets/img/services6.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-seven {
+                    background-image: url('~assets/img/services7.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-eight {
+                    background-image: url('~assets/img/services8.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-nine {
+                    background-image: url('~assets/img/services9.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-ten {
+                    background-image: url('~assets/img/services10.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-eleven {
+                    background-image: url('~assets/img/services11.png');
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                    background-size: scale-down;
+                }
+
+                &.service-twelve {
+                    background-image: url('~assets/img/services12.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-13 {
+                    background-image: url('~assets/img/services13.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-14 {
+                    background-image: url('~assets/img/services14.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-15 {
+                    background-image: url('~assets/img/services15.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-16 {
+                    background-image: url('~assets/img/services16.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-17 {
+                    background-image: url('~assets/img/services17.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-18 {
+                    background-image: url('~assets/img/services18.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-19 {
+                    background-image: url('~assets/img/services19.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-20 {
+                    background-image: url('~assets/img/services20.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-21 {
+                    background-image: url('~assets/img/services21.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-22 {
+                    background-image: url('~assets/img/services22.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-23 {
+                    background-image: url('~assets/img/services23.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                &.service-24 {
+                    background-image: url('~assets/img/services24.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: scale-down;
+                }
+
+                .card-body {
+                    height: 212px;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .card-end {
+                    background-color: rgba(0, 0, 0, 0.64);
+                    backdrop-filter: blur(5px);
+                    border-radius: 0px 0px 20px 20px;
+                    box-sizing: border-box;
+                    padding: 0 10px;
+
+                    h5 {
+                        font-family: $mainFont;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        line-height: normal;
+
+                        color: $lightColor;
+
+                        box-sizing: border-box;
+                        padding-top: 5px;
+                    }
+
+                    p {
+                        padding: 7px 0;
+                        font-family: $mainFont;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: normal;
+                        margin-bottom: 18px;
+
+                        color: $redColor;
+
+                        &.subtext {
+                            margin-bottom: 5px;
+                        }
+
+                        small {
+                            font-size: 14px;
+                            font-family: $mainFont;
+                            font-style: normal;
+                            font-weight: bold;
+                            line-height: normal;
+                        }
+                    }
+
+                    .btn {
+                        font-family: $secondaryFont;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: normal;
+                        background-color: transparent;
+                        border: $redColor 1px solid;
+
+                        color: $lightColor;
+                        padding: 8px 10px;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
 </style>

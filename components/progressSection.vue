@@ -35,5 +35,33 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+.process {
+  margin-top: 40px;
+  padding-bottom: 40px;
+
+  h6 {
+    margin-top: 30px;
+  }
+
+  img {
+    text-decoration: none;
+    transition: ease-in-out 350ms;
+    -webkit-transition: ease-in-out 350ms;
+    -moz-transition: ease-in-out 350ms;
+    -ms-transition: ease-in-out 350ms;
+    -o-transition: ease-in-out 350ms;
+
+    &:hover {
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+    }
+  }
+}
 </style>
+

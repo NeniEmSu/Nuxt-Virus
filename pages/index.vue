@@ -548,7 +548,7 @@
     <ContactForm/>
 
     <progressSection/>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
@@ -608,8 +608,6 @@ export default {
 </script>
 
  <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
-
 .top-grid h2 {
   position: absolute;
   z-index: 1;
@@ -1004,6 +1002,598 @@ export default {
     margin-top: 40px;
     margin-left: 20px;
     padding: 10px;
+  }
+}
+</style>
+
+
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+main {
+  .top-grid {
+    h2 a {
+      color: $lightColor;
+    }
+
+    a[rel="bookmark"]:hover + .meta * {
+      color: $redColor;
+    }
+
+    a h2 {
+      transition: all ease-in-out 300ms;
+      -webkit-transition: all ease-in-out 300ms;
+      -moz-transition: all ease-in-out 300ms;
+      -ms-transition: all ease-in-out 300ms;
+      -o-transition: all ease-in-out 300ms;
+
+      &:hover {
+        text-decoration: none;
+        color: $redColor;
+        transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        -moz-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+        -o-transform: scale(1.02);
+        color: $redColor;
+      }
+    }
+
+    a img {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+      opacity: 1;
+      transition: all ease-in-out 300ms;
+      -webkit-transition: all ease-in-out 300ms;
+      -moz-transition: all ease-in-out 300ms;
+      -ms-transition: all ease-in-out 300ms;
+      -o-transition: all ease-in-out 300ms;
+
+      &:hover {
+        opacity: 0.99;
+        text-decoration: none;
+        color: $redColor;
+        transform: scale(1.01);
+        -webkit-transform: scale(1.01);
+        -moz-transform: scale(1.01);
+        -ms-transform: scale(1.01);
+        -o-transform: scale(1.01);
+        color: $redColor;
+      }
+
+      &.one {
+        width: 373.96px;
+        height: 410px;
+        border-radius: 20px 0 0 0;
+        -webkit-border-radius: 20px 0 0 0;
+        -moz-border-radius: 20px 0 0 0;
+        -ms-border-radius: 20px 0 0 0;
+        -o-border-radius: 20px 0 0 0;
+      }
+
+      &.two {
+        width: 780.1px;
+        height: 340px;
+        border-radius: 0 20px 0 0;
+        -webkit-border-radius: 0 20px 0 0;
+        -moz-border-radius: 0 20px 0 0;
+        -ms-border-radius: 0 20px 0 0;
+        -o-border-radius: 0 20px 0 0;
+      }
+
+      &.three {
+        width: 373.96px;
+        height: 532px;
+      }
+
+      &.four {
+        width: 448.32px;
+        height: 274px;
+      }
+
+      &.five {
+        border: 0.15px grey solid;
+        width: 325.85px;
+        height: 274px;
+      }
+
+      &.six {
+        width: 778.1px;
+        height: 318px;
+      }
+
+      &.seven {
+        width: 1156px;
+        height: 364px;
+        border-radius: 0 0 20px 20px;
+        -webkit-border-radius: 0 0 20px 20px;
+        -moz-border-radius: 0 0 20px 20px;
+        -ms-border-radius: 0 0 20px 20px;
+        -o-border-radius: 0 0 20px 20px;
+      }
+    }
+
+    .col-md {
+      margin: 0;
+      padding: 0;
+      margin-top: -3rem;
+      margin-left: -0.5rem;
+    }
+  }
+
+  h1 {
+    color: $headingsFontColor;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 47px;
+    letter-spacing: -0.05em;
+    margin-bottom: 20px;
+  }
+
+  .row {
+    img {
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.jumbotron.recomendations {
+  background: #f2f2f2;
+  padding: 40px 0;
+  margin: 0;
+  margin-top: 40px;
+
+  a .btn {
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+
+    &:hover {
+      color: $redColor;
+      background: $lightColor;
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+
+  h2 {
+    color: $headingsFontColor;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 47px;
+    letter-spacing: -0.05em;
+    margin-bottom: 40px;
+  }
+
+  .card-deck {
+    // Currently disabled but this is used for there styling
+    .owl-carousel .owl-nav button.owl-next,
+    .owl-carousel .owl-nav button.owl-prev {
+      background: 0 0;
+      color: $redColor;
+      border: none;
+      padding: 0 !important;
+      font: inherit;
+      font-size: 42px;
+      cursor: pointer !important;
+      margin-top: -40px;
+    }
+
+    .owl-theme .owl-nav.disabled + .owl-dots {
+      margin-top: -5px;
+      z-index: 3;
+      outline: none;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 343px;
+      min-width: 285px;
+      height: 343px;
+      background: $lightColor;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
+
+      img {
+        align-self: center;
+
+        &.small-img {
+          width: 100%;
+          height: auto;
+          max-width: 343px;
+          min-height: 200px;
+          object-fit: scale-down;
+        }
+      }
+
+      &.one,
+      &.four,
+      &.seven {
+        img {
+          width: 209px;
+          height: auto;
+        }
+      }
+
+      &.two,
+      &.five,
+      &.eight {
+        img {
+          margin: 8.5px 0;
+          width: 182px;
+          height: auto;
+        }
+      }
+
+      &.three,
+      &.six,
+      &.nine {
+        img {
+        }
+      }
+
+      hr {
+        width: 270px;
+        align-self: center;
+        margin: 0;
+        border: 1px solid #c4c4c4;
+      }
+
+      .card-title {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: normal;
+        color: $darkColor;
+      }
+
+      small {
+        s {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: normal;
+          text-align: center;
+          text-decoration-line: line-through;
+          color: $redColor;
+        }
+      }
+
+      .card-text {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 28px;
+        letter-spacing: -0.05em;
+        color: $headingsFontColor;
+
+        span {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 10px;
+          text-align: center;
+        }
+      }
+
+      .discount {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: normal;
+        color: #239a0f;
+        margin-right: 22px;
+      }
+
+      a .btn {
+        padding: 10px 30px;
+        background: $redColor;
+        border-radius: 50px;
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+        text-align: center;
+        color: $lightColor;
+        text-decoration: none;
+        transition: ease-in-out 300ms;
+        -webkit-transition: ease-in-out 300ms;
+        -moz-transition: ease-in-out 300ms;
+        -ms-transition: ease-in-out 300ms;
+        -o-transition: ease-in-out 300ms;
+
+        &:hover {
+          color: $redColor;
+          background: $lightColor;
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+        }
+      }
+    }
+
+    .card__hover {
+      transition: transform 500ms;
+      -webkit-transition: transform 500ms;
+      -moz-transition: transform 500ms;
+      -ms-transition: transform 500ms;
+      -o-transition: transform 500ms;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.15);
+        content: "";
+        opacity: 0;
+        z-index: -1;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale3d(1.01, 1.01, 1);
+        -webkit-transform: scale3d(1.01, 1.01, 1);
+        -moz-transform: scale3d(1.01, 1.01, 1);
+        -ms-transform: scale3d(1.01, 1.01, 1);
+        -o-transform: scale3d(1.01, 1.01, 1);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .btn {
+    padding: 10px 32px;
+    background: $redColor;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 50px;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+    color: $lightColor;
+    border: none;
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+
+    &:hover {
+      color: $redColor;
+      background: $lightColor;
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+
+    &.see-more {
+      margin-top: 40px;
+    }
+  }
+}
+
+.cars-card {
+  margin-bottom: 40px;
+
+  h2 {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 39px;
+    letter-spacing: -0.05em;
+    color: $headingsFontColor;
+    margin: 40px 0;
+  }
+
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0 !important;
+    margin-left: -1px !important;
+  }
+
+  .card {
+    background: #000000;
+    width: 100%;
+    max-width: 580px;
+    min-width: 540px;
+    height: 168px;
+    margin: 5px 0;
+    justify-content: center;
+    justify-items: center;
+    align-self: center;
+    padding: 0 !important;
+    cursor: pointer;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+
+    .work-one {
+      box-sizing: border-box;
+      background-image: url("~assets/img/car1.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: border-box;
+      height: 100%;
+      max-height: 168px;
+    }
+
+    .work-two {
+      background-image: url("~assets/img/car2.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: border-box;
+      height: 100%;
+    }
+
+    .work-three {
+      background-image: url("~assets/img/car3.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: padding-box;
+      height: 100%;
+    }
+
+    .work-four {
+      background-image: url("~assets/img/car4.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: padding-box;
+      height: 100%;
+    }
+
+    .work-five {
+      background-image: url("~assets/img/car5.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: padding-box;
+      height: 100%;
+    }
+
+    .work-six {
+      background-image: url("~assets/img/car6.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: padding-box;
+      height: 100%;
+    }
+
+    .work-seven {
+      background-image: url("~assets/img/car7.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: padding-box;
+      height: 100%;
+    }
+
+    .work-eight {
+      background-image: url("~assets/img/car8.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: padding-box;
+      height: 100%;
+    }
+
+    h4 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: normal;
+      text-align: right;
+      letter-spacing: 0.05em;
+      color: $lightColor;
+      margin-right: 5px;
+
+      span {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: normal;
+        text-align: right;
+        letter-spacing: 0.05em;
+        color: $lightColor;
+      }
+    }
+
+    img {
+      height: 168px;
+      margin-left: -1px;
+    }
+  }
+
+  .card__hover_two {
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scale3d(0, 0, 1);
+      transition: transform 0.3s ease-out 0s;
+      background: rgba(255, 255, 255, 0.1);
+      content: "";
+      pointer-events: none;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+    }
+
+    &::before {
+      transform-origin: left top;
+    }
+
+    &::after {
+      transform-origin: right bottom;
+    }
+
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        transform: scale3d(1, 1, 1);
+      }
+    }
   }
 }
 </style>

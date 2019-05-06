@@ -62,5 +62,99 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none !important;
+  font-family: $mainFont;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $backgroudColor;
+  color: set-text-color($backgroudColor);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow-x: hidden;
+
+  font-family: $mainFont;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  background-color: $backgroudColor;
+}
+
+::-webkit-scrollbar {
+  border-radius: 50px;
+  width: 10px;
+  background-color: $backgroudColor;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(149, 150, 150);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+
+  background-image: url("~assets/img/select.png");
+  background-position: 95% center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  &.active,
+  &:focus {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+  }
+}
+
+select option {
+  background-color: $lightColor;
+  color: $darkColor;
+  text-align: center;
+  white-space: pre-line;
+  font-weight: 400;
+}
+.jumbotron {
+  margin: 0 !important;
+  padding: 20px 0 0px 0;
+}
+
+main {
+  position: relative;
+  margin-top: 140px;
+  min-height: 80vh;
+  height: 100%;
+}
+@import "~assets/scss/mobileResponsive.scss";
 </style>

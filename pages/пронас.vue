@@ -78,5 +78,32 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+.aboutUs-heading-image {
+  margin-top: -10.5px;
+  background: $lightColor;
+  background-image: url(~assets/img/aboutUsHead.png) !important;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  width: 100%;
+  height: 30vh;
+}
+
+video {
+  width: 100%;
+  max-width: 585px;
+  height: 100%;
+  max-height: 300px;
+
+  background: #000000;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+}
+
+.about-content {
+  padding-bottom: 40px;
+}
 </style>
+

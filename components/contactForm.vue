@@ -79,5 +79,118 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+.contact {
+  .card {
+    background: $lightColor;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    padding: 3rem !important;
+
+    form {
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+  }
+
+  h3 {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    color: $darkColor;
+
+    span.red {
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: normal;
+      color: $redColor;
+    }
+  }
+
+  input,
+  select {
+    height: 48px;
+    margin-top: 20px;
+    border: 2px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: normal;
+    color: $headingsFontColor;
+    outline: none;
+
+    &:focus {
+      border: 2px solid $redColor;
+      // box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      box-shadow: none;
+    }
+  }
+
+  select {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    color: $darkColor;
+  }
+
+  p {
+    margin-top: -44px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    color: $darkColor;
+  }
+
+  .contact-btn {
+    padding: 12px 45px;
+    background: $redColor;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 50px;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+    color: $lightColor;
+    border: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+
+    &:hover {
+      color: $redColor;
+      background: $lightColor;
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+}
 </style>
+

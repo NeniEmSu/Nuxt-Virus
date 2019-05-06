@@ -45,6 +45,95 @@
 <script>
 export default {};
 </script>
+ <style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+footer {
+  width: 100vw;
+  background: $darkColor;
+  color: $lightColor;
 
-<style>
+  i {
+    font-size: 20px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    line-height: 20px;
+  }
+
+  a,
+  img {
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+
+    &:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+
+  .logo {
+    position: relative;
+    line-height: 140px;
+  }
+
+  .bottom-contact {
+    padding: 30px 0;
+    position: relative;
+
+    ul {
+      text-align: right;
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      display: block;
+      padding: 5px 0;
+      margin: 0;
+    }
+
+    ul li a {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      color: $lightColor;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: normal;
+      text-align: center;
+      transition: all ease-in-out 300ms;
+      -webkit-transition: all ease-in-out 300ms;
+      -moz-transition: all ease-in-out 300ms;
+      -ms-transition: all ease-in-out 300ms;
+      -o-transition: all ease-in-out 300ms;
+
+      &:hover {
+        text-decoration: none;
+        color: $redColor;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+      }
+
+      &.instagram,
+      &.facebook {
+        margin-left: 20px;
+      }
+    }
+  }
+}
 </style>
+
