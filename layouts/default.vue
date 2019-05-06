@@ -2,7 +2,9 @@
   <div>
     <TheHeader/>
     <main>
-      <nuxt/>
+      <transition name="fade" mode="out-in">
+        <nuxt/>
+      </transition>
     </main>
 
     <TheFooter/>
@@ -77,6 +79,18 @@ export default {
 <style lang="scss">
 @import "~assets/scss/config.scss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 1500ms;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
 
 * {
   margin: 0;
