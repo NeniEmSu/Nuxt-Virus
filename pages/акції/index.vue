@@ -221,6 +221,5 @@ h2 {
     -o-transform: scale(1.1);
   }
 }
-
 @import "~assets/scss/mobileResponsive.scss";
 </style>
