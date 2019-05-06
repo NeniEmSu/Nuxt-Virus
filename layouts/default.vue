@@ -58,6 +58,18 @@ export default {
   components: {
     TheHeader,
     TheFooter
+  },
+
+  head() {
+    return {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico"
+        }
+      ]
+    };
   }
 };
 </script>
