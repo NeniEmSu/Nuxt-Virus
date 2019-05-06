@@ -105,5 +105,6 @@ video {
 .about-content {
   padding-bottom: 40px;
 }
+@import "~assets/scss/mobileResponsive.scss";
 </style>
 

@@ -110,6 +110,8 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 .contact-heading-image {
   margin-top: -10.5px;
   background: #000000;
@@ -153,4 +155,5 @@ export default {
   content: "";
   display: block;
 }
+@import "~assets/scss/mobileResponsive.scss";
 </style>

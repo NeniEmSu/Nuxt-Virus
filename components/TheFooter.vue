@@ -135,5 +135,6 @@ footer {
     }
   }
 }
+@import "~assets/scss/mobileResponsive.scss";
 </style>
 

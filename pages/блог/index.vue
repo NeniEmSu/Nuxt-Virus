@@ -202,5 +202,6 @@ h2 {
   opacity: 0.6;
   border: 1px solid $darkColor;
 }
+@import "~assets/scss/mobileResponsive.scss";
 </style>
 

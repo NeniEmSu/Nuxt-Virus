@@ -1596,4 +1596,5 @@ main {
     }
   }
 }
+@import "~assets/scss/mobileResponsive.scss";
 </style>

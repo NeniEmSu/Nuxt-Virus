@@ -609,4 +609,6 @@ nav ul li a {
   box-sizing: border-box;
   border-radius: 50px;
 }
+
+@import "~assets/scss/mobileResponsive.scss";
 </style>
