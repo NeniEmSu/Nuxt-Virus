@@ -417,7 +417,7 @@ export default {
       ]
     };
   },
-  data() {
+  asyncData() {
     return {
       image: "./img/services-car-goup-all.png",
       description:
@@ -453,7 +453,7 @@ export default {
           polishingCost: "5999",
           polishingCostVar1: "6999",
           polishingCostVar2: "8499",
-          polishingLink: "Полірування",
+          polishingLink: "Послуги/_id",
           polishingClass: "service-one"
         },
         {

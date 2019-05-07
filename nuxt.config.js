@@ -13,9 +13,9 @@
      host: '0.0.0.0',
    },
 
-   //  router: {
-   //    base: '/Nuxt-Virus/'
-   //  },
+   router: {
+     base: '/Nuxt-Virus/'
+   },
 
    head: {
      title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
@@ -117,9 +117,7 @@
    /*
     ** Global CSS
     */
-   css: [
-     "./static/css/infoPages.css"
-   ],
+   css: [],
 
    /*
     ** Plugins to load before mounting the App
@@ -178,6 +176,8 @@
        })
      ],
 
-     extend(config, ctx) {}
+     extend(config, ctx) {
+
+     }
    }
  }

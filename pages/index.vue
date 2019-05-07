@@ -6,7 +6,7 @@
         <br>пропонуємо
       </h1>
       <div class="row p-0">
-        <a href="Полірування">
+        <a href="/Послуги/_id">
           <h2 class="top1">ПОЛІРУВАННЯ</h2>
           <img
             class="img-fluid one mr-1 mb-1"
