@@ -4,18 +4,13 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <video controls autoplay="true" muted>
-              <source src="~assets/video/vid(9).mp4" type="video/mp4">
-            </video>
+            <img src="~assets/img/Колісніарки.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading}}</h1>
-            <p class>
-              {{ question }}
-              <br>
-              {{ firstParagraph }}
-            </p>
+            <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
+            <p class>{{ thirdParagraph }}</p>
 
             <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
             <ul class="ml-3">
@@ -38,7 +33,7 @@
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">600 грн</p>
+              <p class="pricing">800 грн</p>
               <p class="mt-2 mb-0">
                 середній
                 бізнес
@@ -47,7 +42,7 @@
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">700 грн</p>
+              <p class="pricing">0 грн</p>
               <p class="mt-2 mb-0">
                 середній кросовер
                 позашляховик
@@ -55,7 +50,7 @@
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">800 грн</p>
+              <p class="pricing">0 грн</p>
               <p class="mt-2 mb-0">
                 повнорозмірний кросовер
                 позашляховик
@@ -98,35 +93,28 @@ export default {
   },
   data() {
     return {
-      heading: "ПОЛІРУВАННЯ Фар",
-      question: "Навіщо полірувати фари?",
+      heading: "ПОЛІРУВАННЯ центральних стійок",
+      question: "Для чого полірувати стійки?",
       firstParagraph:
-        "Згодом скло і пластик затираються, мутніють. Відполіровані фари пропускають більше світла (в середньому на 30%!), Що покращує видимість на дорозі і забезпечує Вашу безпеку.",
-      secondParagraph:
-        "Крім того, це красиво. Коли весь автомобіль блискучий, забруднені фари виглядають несолідно. Втім, навпаки теж не дуже)) Тому полірування фар важливо робити в комплексі з поліруванням автомобіля.",
+        "Своєчасна і професійна хімчистка колісних арок і підвіски автомобіля з подальшою консервацією вузлів допоможе сповільнити налипання бруду і розвиток корозії, а також збереже деталі максимально чистими і візуально новими.",
+      secondParagraph: "Після весняної сльоти така послуга - просто must have.",
+      thirdParagraph:
+        'Погодьтеся, шикарний позашляховик з блискучим кузовом і бездоганно чистим салоном на брудних дисках і шарами бруду на підвісці виглядає вже не "вау"!',
       inclusiveInService: [
         {
-          services: "Мийка кузова"
+          services: "Бережна мийка кузова"
         },
         {
-          services:
-            "Підготовка до полірування: очищення автоскрабом / глиною, захист пластикових і гумових елементів"
+          services: "Хімчистка колісних арок і підвіски"
         },
         {
-          services:
-            "Глибоке очищення фар абразивної глиною і підготовка до полірування"
+          services: "Обробка вузлів підвіски консервантом"
         },
         {
-          services: "Абразивне поліровання фар"
-        },
-        {
-          services: "Фінішне полірування фар"
-        },
-        {
-          services: "Очищення фар від слідів пасти після полірування"
+          services: "Хімчистка автомобільних дисків"
         }
       ],
-      timeTaken: "Час виконання послуги 3 години"
+      timeTaken: "Час виконання послуги 1 день"
     };
   }
 };
@@ -263,7 +251,7 @@ main li {
 }
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter3.png");
+  background-image: url("~assets/img/beforeAfter6.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $darkColor;

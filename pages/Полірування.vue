@@ -4,9 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <video controls autoplay="true" muted>
-              <source src="~assets/video/vid(23).mp4" type="video/mp4">
-            </video>
+            <img src="~assets/img/передніхсидінь.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading}}</h1>
@@ -26,6 +24,12 @@
             <p class="before col-sm-6 text-md-right text-center my-auto p-5">До</p>
             <p class="after col-sm-6 text-md-left text-center my-auto p-5">Після</p>
           </div>
+        </div>
+
+        <div class="videoContainer col-md-6 offset-md-3 mt-4">
+          <video class="mx-auto" controls autoplay="true" muted>
+            <source src="~assets/video/vid(23).mp4" type="video/mp4">
+          </video>
         </div>
 
         <div class="col-md-7 m-auto">
@@ -281,7 +285,8 @@ main li {
   padding-bottom: 0;
 }
 
-video {
+video,
+img {
   margin-bottom: 40px;
   width: 100%;
   max-width: 540px;
