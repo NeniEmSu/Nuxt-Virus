@@ -77,17 +77,17 @@
     display: block;
   }
 
-  .jumbotron h2 {
-    text-align: center !important;
-    color: $headingsFontColor;
-    font-family: "Roboto Condensed", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 62px !important;
-    line-height: 47px;
-    letter-spacing: -0.05em;
-    margin-bottom: 40px;
-  }
+  // .jumbotron h2 {
+  //   text-align: center !important;
+  //   color: $headingsFontColor;
+  //   font-family: "Roboto Condensed", sans-serif;
+  //   font-style: normal;
+  //   font-weight: bold;
+  //   font-size: 62px !important;
+  //   line-height: 47px;
+  //   letter-spacing: -0.05em;
+  //   margin-bottom: 40px;
+  // }
 
   .cars-card {
 
@@ -121,24 +121,24 @@
     background-color: $darkColor !important;
     margin-top: 40px;
     margin-bottom: 40px;
+
+
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
+
   }
-
-  .display p {
-    text-align: center;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px !important;
-    line-height: normal;
-    letter-spacing: 0;
-
-    color: $lightColor !important;
-  }
-
-
 
 
 
@@ -152,23 +152,23 @@
     background-color: $darkColor !important;
     margin-top: 40px;
     margin-bottom: 40px;
+
+
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
   }
-
-  .display p {
-    text-align: center;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px !important;
-    line-height: normal;
-    letter-spacing: 0;
-
-    color: $lightColor !important;
-  }
-
 
 
 }
@@ -959,21 +959,22 @@
     background-color: $darkColor !important;
     margin-top: 40px;
     margin-bottom: 40px;
-  }
 
-  .display p {
-    text-align: center;
-  }
 
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px !important;
-    line-height: normal;
-    letter-spacing: 0;
+    p {
+      text-align: center;
+    }
 
-    color: $lightColor !important;
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
   }
 
   .display-inner {
@@ -997,51 +998,51 @@
     margin-bottom: 40px;
   }
 
-  .display p {
+  p {
     text-align: center;
+
+
+    .block-one {
+
+      background-image: url("~assets/img/Блог1-small.png");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(5px);
+    }
+
+    .block-two {
+
+      background-image: url("~assets/img/Блог2-small.png");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(5px);
+    }
+
+    .block-three {
+
+      background-image: url("~assets/img/Блог1-small.png");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
+
+    .display-inner {
+      background-color: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(5px);
+    }
+
   }
-
-  .block-one {
-
-    background-image: url("~assets/img/Блог1-small.png");
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.64);
-    backdrop-filter: blur(5px);
-  }
-
-  .block-two {
-
-    background-image: url("~assets/img/Блог2-small.png");
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.64);
-    backdrop-filter: blur(5px);
-  }
-
-  .block-three {
-
-    background-image: url("~assets/img/Блог1-small.png");
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.64);
-    backdrop-filter: blur(5px);
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px !important;
-    line-height: normal;
-    letter-spacing: 0;
-
-    color: $lightColor !important;
-  }
-
-  .display-inner {
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(5px);
-  }
-
-
 
 
 

@@ -3,9 +3,9 @@
     <div class="container text-center p-0 pt-4">
       <img class="col-12 m-auto img-fluid" :src="image" :alt="description">
 
-      <div class="row p-1">
-        <div class="col-md-7 row m-auto car-toggle">
-          <div class="col-md-4 m-auto" v-for=" variant in variants" :key="variant.variantId">
+      <div class="col-md-7 m-auto car-toggle">
+        <div class="row text-center">
+          <div class="col-md-4 mx-auto" v-for=" variant in variants" :key="variant.variantId">
             <a
               href="#"
               class="btn"
@@ -453,7 +453,7 @@ export default {
           polishingCost: "5999",
           polishingCostVar1: "6999",
           polishingCostVar2: "8499",
-          polishingLink: "Послуги/_id",
+          polishingLink: "Полірування",
           polishingClass: "service-one"
         },
         {
