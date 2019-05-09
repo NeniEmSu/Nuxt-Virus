@@ -79,7 +79,7 @@
                   </div>
 
                   <div class="col-6 m-0 p-0">
-                    <a :href="polish.polishingLink" class="btn">Читати більше</a>
+                    <nuxt-link :to="polish.polishingLink" class="btn">Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                   </div>
 
                   <div class="col-6 m-0 p-0">
-                    <a :href="cleaner.cleanersLink" class="btn">Читати більше</a>
+                    <nuxt-link :to="cleaner.cleanersLink" class="btn">Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <a :href="WaxCover.WaxCoversLink" class="btn">Читати більше</a>
+                        <nuxt-link :to="WaxCover.WaxCoversLink" class="btn">Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -223,7 +223,7 @@
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <a :href="ceramicCoat.ceramicCoatingLink" class="btn">Читати більше</a>
+                        <nuxt-link :to="ceramicCoat.ceramicCoatingLink" class="btn">Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -284,7 +284,10 @@
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <a :href="PreSalePrep.PreSalePreparationsLink" class="btn">Читати більше</a>
+                        <nuxt-link
+                          :to="PreSalePrep.PreSalePreparationsLink"
+                          class="btn"
+                        >Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -377,7 +380,7 @@
                     </div>
 
                     <div class="col-6 text-right pl-0">
-                      <a :href="addition.additionalLink" class="btn">Читати більше</a>
+                      <nuxt-link :to="addition.additionalLink" class="btn">Читати більше</nuxt-link>
                     </div>
                   </div>
                 </div>

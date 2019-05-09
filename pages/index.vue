@@ -27,7 +27,7 @@
                             </h2>
                         </div>
         </a>-->
-        <a href="/Покриттявоском">
+        <nuxt-link to="/Покриттявоском">
           <h2 class="top2">
             ВОСКОВЕ
             <br>ПОКРИТТЯ
@@ -37,7 +37,7 @@
             src="img/top2.png"
             alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
           >
-        </a>
+        </nuxt-link>
         <!-- <a href="Покриттявоском" rel="bookmark">
                         <img class=" two img-fluid " style="position: relative" src="img/top2.png"
                             alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over.">
@@ -50,7 +50,7 @@
                             </h2>
                         </div>
         </a>-->
-        <a href="/Мийкамотору">
+        <nuxt-link to="/Мийкамотору">
           <h2 class="top3">
             МИЙКА
             <br>МОТОРУ
@@ -60,7 +60,7 @@
             src="img/top3.png"
             alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
           >
-        </a>
+        </nuxt-link>
         <!-- <a href="Мийкамотору" rel="bookmark">
                         <img class=" three img-fluid " style="position: relative" src="img/top3.png"
                             alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over.">
@@ -73,7 +73,7 @@
                         </div>
         </a>-->
         <div class="col-md">
-          <a href="/Хімчистка">
+          <nuxt-link to="/Хімчистка">
             <h2 class="top4">ХІМЧИСТКА</h2>
             <img
               class="four img-fluid mt-n3"
@@ -81,9 +81,9 @@
               src="img/top4.png"
               alt="image from the angle of a cars stearing wheel with the text ХІМЧИСТКА over."
             >
-          </a>
+          </nuxt-link>
 
-          <a href="/Реставраціяподряпин">
+          <nuxt-link to="/Реставраціяподряпин">
             <h2 class="top5">
               РЕСТАВРАЦІЯ
               <br>СКОЛІВ
@@ -95,17 +95,17 @@
               alt="Image of a blue car from the back at low angle showing it's left tyre with the text РЕСТАВРАЦІЯ
                             СКОЛІВ over."
             >
-          </a>
-          <a href="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
+          </nuxt-link>
+          <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
             <h2 class="top6">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
             <img
               class="six img-fluid mt-2"
               src="img/top6.png"
               alt="a black saloon car from it's right side with the text КЕРАМІЧНЕ ПОКРИТТЯ over."
             >
-          </a>
+          </nuxt-link>
         </div>
-        <a href="/Передпродажнапідготовка">
+        <nuxt-link to="/Передпродажнапідготовка">
           <h2 class="top7">
             ПЕРЕДПРОДАЖНА
             <br>ПІДГОТОВКА
@@ -116,7 +116,7 @@
             alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
                         ПІДГОТОВКА over."
           >
-        </a>
+        </nuxt-link>
         <!-- <a href="Передпродажнапідготовка" rel="bookmark">
                         <img class=" seven img-fluid mt-2" style="position: relative" src="img/top7.png"
                         alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
