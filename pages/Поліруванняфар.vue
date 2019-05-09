@@ -304,7 +304,6 @@ img {
   max-width: 540px;
   height: 100%;
   max-height: 300px;
-  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
   object-fit: cover;
   object-position: center;
 }
