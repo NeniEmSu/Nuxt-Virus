@@ -4,9 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <video controls autoplay="true" muted>
-              <source src="~assets/video/vid(9).mp4" type="video/mp4">
-            </video>
+            <img src="~assets/img/Поліруванняфар.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading}}</h1>
@@ -32,6 +30,11 @@
             <!-- <hr class="col-1 my-auto d-none d-sm-block"> -->
             <p class="after col-sm-6 text-md-left text-center my-auto p-5">Після</p>
           </div>
+        </div>
+        <div class="videoContainer col-md-6 offset-md-3 mt-4">
+          <video class="mx-auto" controls autoplay="true" muted>
+            <source src="~assets/video/vid(9).mp4" type="video/mp4">
+          </video>
         </div>
 
         <div class="col-md-7 m-auto">
@@ -76,7 +79,7 @@
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
 export default {
-  layout: "Services",
+  layout: "default",
   components: {
     ContactForm,
     progressSection
@@ -289,11 +292,21 @@ main li {
 }
 
 video {
+  width: 100%;
+  max-width: 540px;
+  height: 100%;
+  max-height: 300px;
+}
+
+img {
   margin-bottom: 40px;
   width: 100%;
   max-width: 540px;
   height: 100%;
   max-height: 300px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+  object-fit: cover;
+  object-position: center;
 }
 
 .contact p {

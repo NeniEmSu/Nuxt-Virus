@@ -74,7 +74,7 @@
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
 export default {
-  layout: "services",
+  layout: "default",
   components: {
     ContactForm,
     progressSection
@@ -285,13 +285,22 @@ main li {
   padding-bottom: 0;
 }
 
-video,
+video {
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 540px;
+  height: 100%;
+  max-height: 300px;
+}
 img {
   margin-bottom: 40px;
   width: 100%;
   max-width: 540px;
   height: 100%;
   max-height: 300px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+  object-fit: cover;
+  object-position: center;
 }
 
 .contact p {

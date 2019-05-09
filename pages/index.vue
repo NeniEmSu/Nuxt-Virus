@@ -6,7 +6,7 @@
         <br>пропонуємо
       </h1>
       <div class="row p-0">
-        <a href="/Послуги/_id">
+        <nuxt-link to="/Полірування">
           <h2 class="top1">ПОЛІРУВАННЯ</h2>
           <img
             class="img-fluid one mr-1 mb-1"
@@ -14,7 +14,7 @@
             src="img/top1.png"
             alt="black car from its back with word ПОЛІРУВАННЯ over."
           >
-        </a>
+        </nuxt-link>
         <!-- <a href="Полірування" rel="bookmark">
                         <img class=" img-fluid one mr-1 mb-1" style="position: relative" src="img/top1.png"
                             alt="black car from its back with word ПОЛІРУВАННЯ over.">
@@ -27,7 +27,7 @@
                             </h2>
                         </div>
         </a>-->
-        <a href="Покриттявоском">
+        <a href="/Покриттявоском">
           <h2 class="top2">
             ВОСКОВЕ
             <br>ПОКРИТТЯ
@@ -50,7 +50,7 @@
                             </h2>
                         </div>
         </a>-->
-        <a href="Мийкамотору">
+        <a href="/Мийкамотору">
           <h2 class="top3">
             МИЙКА
             <br>МОТОРУ
@@ -73,7 +73,7 @@
                         </div>
         </a>-->
         <div class="col-md">
-          <a href="Хімчистка">
+          <a href="/Хімчистка">
             <h2 class="top4">ХІМЧИСТКА</h2>
             <img
               class="four img-fluid mt-n3"
@@ -83,7 +83,7 @@
             >
           </a>
 
-          <a href="Реставраціяподряпин">
+          <a href="/Реставраціяподряпин">
             <h2 class="top5">
               РЕСТАВРАЦІЯ
               <br>СКОЛІВ
@@ -96,7 +96,7 @@
                             СКОЛІВ over."
             >
           </a>
-          <a href="КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
+          <a href="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
             <h2 class="top6">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
             <img
               class="six img-fluid mt-2"
@@ -105,7 +105,7 @@
             >
           </a>
         </div>
-        <a href="Передпродажнапідготовка">
+        <a href="/Передпродажнапідготовка">
           <h2 class="top7">
             ПЕРЕДПРОДАЖНА
             <br>ПІДГОТОВКА
