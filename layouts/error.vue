@@ -13,9 +13,9 @@
         ></path>
       </svg>
       <h1>404</h1>
-      <div class="title">This page could not be found</div>
+      <div class="title">Ой, щось пішло не так!</div>
       <p class="description">
-        <a href="/" class="error-link nuxt-link-active">&#8592; Back to the home page</a>
+        <a href="/" class="error-link nuxt-link-active">&#8592; Повернутися назад</a>
       </p>
     </div>
   </div>
