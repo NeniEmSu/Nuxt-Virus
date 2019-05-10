@@ -1,7 +1,7 @@
 <template>
   <div class="__nuxt-error-page">
     <div class="error">
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="90"
         height="90"
@@ -11,11 +11,11 @@
         <path
           d="M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
         ></path>
-      </svg>
-      <h1>404</h1>
+      </svg>-->
+      <img src="~assets/img/404.png" alt="404 imgage in a house" class="img-fluid">
       <div class="title">Ой, щось пішло не так!</div>
       <p class="description">
-        <a href="/" class="error-link nuxt-link-active">&#8592; Повернутися назад</a>
+        <nuxt-link to="/" class="error-link nuxt-link-active">Повернутися назад</nuxt-link>
       </p>
     </div>
   </div>
@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .__nuxt-error-page {
   padding: 1rem;
   background: #f7f8fb;
@@ -78,23 +78,41 @@ export default {
   max-width: 450px;
 }
 .__nuxt-error-page .title {
-  font-size: 1.5rem;
-  margin-top: 15px;
-  color: #47494e;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  text-align: center;
+
+  color: #8b8b8b;
+  margin-top: 20px;
   margin-bottom: 8px;
 }
 .__nuxt-error-page .description {
   color: #7f828b;
   line-height: 21px;
   margin-bottom: 10px;
+  margin-top: 40px;
 }
 .__nuxt-error-page a {
-  color: #7f828b !important;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+
+  align-items: center;
+  text-align: center;
+
+  padding: 10px 18px;
+
+  color: #ffffff;
   text-decoration: none;
-}
-.__nuxt-error-page .logo {
-  position: fixed;
-  left: 12px;
-  bottom: 12px;
+
+  background: #d41f26;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 50px;
 }
 </style>
