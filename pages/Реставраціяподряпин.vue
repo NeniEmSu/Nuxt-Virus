@@ -122,6 +122,11 @@ export default {
       ],
       timeTaken: "Час виконання послуги від 2 до 5 годин"
     };
+  },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#__nuxt", 0, { force: true });
+    }
   }
 };
 </script>

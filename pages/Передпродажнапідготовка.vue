@@ -129,6 +129,11 @@ export default {
       ],
       timeTaken: "Час виконання послуги 1 день"
     };
+  },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#__nuxt", 0, { force: true });
+    }
   }
 };
 </script>

@@ -21,7 +21,7 @@
 
         <h2 class="red">{{timeTaken}}</h2>
 
-        <div class="videoContainer col-md-8 offset-md-2 mt-4">
+        <div class="videoContainer mt-4 text-center">
           <video class="mx-auto" controls autoplay="true" muted>
             <source src="~assets/video/vid(23).mp4" type="video/mp4">
           </video>

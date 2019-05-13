@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div class="videoContainer col-md-6 offset-md-3 mt-4">
+        <div class="videoContainer mt-4 text-center">
           <video controls autoplay="true" muted>
             <source src="~assets/video/vid(6).mp4" type="video/mp4">
           </video>
@@ -148,6 +148,11 @@ export default {
       ],
       timeTaken: "Час виконання послуги до 12 годин"
     };
+  },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#__nuxt", 0, { force: true });
+    }
   }
 };
 </script>

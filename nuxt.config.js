@@ -205,6 +205,7 @@
     ** Nuxt.js modules
     */
    modules: [
+     'vue-scrollto/nuxt',
      ['@nuxtjs/google-analytics', {
        id: 'UA-62479125-9'
      }]
