@@ -552,11 +552,6 @@ nav {
   margin-left: 0;
   position: relative;
   line-height: 90px;
-  // transition: all ease-in-out 1000ms;
-  // -webkit-transition: all ease-in-out 1000ms;
-  // -moz-transition: all ease-in-out 1000ms;
-  // -ms-transition: all ease-in-out 1000ms;
-  // -o-transition: all ease-in-out 1000ms;
 }
 
 nav ul {
@@ -566,20 +561,10 @@ nav ul {
   padding: 0;
   text-align: right;
   margin: 0;
-  // transition: all ease-in-out 1000ms;
-  // -webkit-transition: all ease-in-out 1000ms;
-  // -moz-transition: all ease-in-out 1000ms;
-  // -ms-transition: all ease-in-out 1000ms;
-  // -o-transition: all ease-in-out 1000ms;
 }
 
 nav ul li {
   display: inline-block;
-  // transition: all ease-in-out 1000ms;
-  // -webkit-transition: all ease-in-out 1000ms;
-  // -moz-transition: all ease-in-out 1000ms;
-  // -ms-transition: all ease-in-out 1000ms;
-  // -o-transition: all ease-in-out 1000ms;
 }
 
 nav ul li a {
