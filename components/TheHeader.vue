@@ -40,7 +40,7 @@
     </div>
     <div class="container">
       <nav>
-        <div class="menu-icon">
+        <div class="menu-icon" @click.prevent="show()">
           <i class="fa fa-bars fa-2x"></i>
         </div>
 
@@ -51,7 +51,7 @@
         </div>
 
         <div class="menu">
-          <ul>
+          <ul :class="{showing: isActive}">
             <nuxt-link to="/" tag="li">
               <a>Головна</a>
             </nuxt-link>
@@ -83,19 +83,22 @@
         </div>
       </nav>
     </div>
-
-    <script type="text/javascript">
-  $(document).ready(function() {
-    $(".menu-icon").on("click", function() {
-      $("nav ul").toggleClass("showing");
-    });
-  });
-    </script>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    show: function() {
+      this.isActive = !this.isActive;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scope="scoped">
