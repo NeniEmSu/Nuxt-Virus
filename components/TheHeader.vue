@@ -83,6 +83,14 @@
         </div>
       </nav>
     </div>
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $(".menu-icon").on("click", function() {
+      $("nav ul").toggleClass("showing");
+    });
+  });
+    </script>
   </header>
 </template>
 
