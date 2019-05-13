@@ -40,7 +40,7 @@
     </div>
     <div class="container">
       <nav>
-        <div class="menu-icon" @click.prevent="show()">
+        <div class="menu-icon" @click="show()">
           <i class="fa fa-bars fa-2x"></i>
         </div>
 
