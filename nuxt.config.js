@@ -1,17 +1,14 @@
  import webpack from 'webpack'
 
- const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-   router: {
-     base: '/Nuxt-Virus/'
-   }
- } : {}
-
  export default {
    mode: 'universal',
    server: {
      port: 8383,
      host: '0.0.0.0',
    },
+   //  router: {
+   //    middleware: 'languageDetection'
+   //  },
 
    head: {
      title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
