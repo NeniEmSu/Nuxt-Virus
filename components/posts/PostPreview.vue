@@ -1,108 +1,36 @@
 <template>
   <div>
-    <div class="container text-center heading p-0 pt-4">
-      <h1>Блог</h1>
-    </div>
-    <hr class="top-separator">
-
-    <div class="jumbotron displays">
-      <div class="container mx-auto contact">
-        <div class="card display block-one p-5">
-          <div class="row m-auto display-inner">
-            <div class="col-md-9 m-auto">
-              <h2>Як самостійно доглядати за салоном автомобіля?</h2>
-            </div>
-            <div class="col-lg-3 m-auto text-center">
-              <a href="#" class="btn mx-auto mb-3">ЧИТАТИ</a>
-            </div>
-          </div>
+    <div class="card display block p-5" :style="{backgroundImage: 'url(' + thumbnail + ') '}">
+      <div class="row m-auto display-inner">
+        <div class="col-md-9 m-auto">
+          <h2>{{title}}</h2>
         </div>
-
-        <hr class="separator">
-
-        <div class="card display block-two p-5">
-          <div class="row m-auto display-inner">
-            <div class="col-lg-3 m-auto text-center">
-              <a href="#" class="btn mx-auto mb-3">ЧИТАТИ</a>
-            </div>
-            <div class="col-md-9 m-auto text-right">
-              <h2>Скільки разів можна полірувати автомобіль?</h2>
-            </div>
-          </div>
-        </div>
-
-        <hr class="separator">
-
-        <div class="card display block-three p-5">
-          <div class="row m-auto">
-            <div class="col-md-9 m-auto display-inner">
-              <h2>Чому не варто полірувати автомобіль в домашніх умовах?</h2>
-            </div>
-            <div class="col-lg-3 mx-auto text-center">
-              <a href="#" class="btn mx-auto mb-3">ЧИТАТИ</a>
-            </div>
-          </div>
+        <div class="col-lg-3 m-auto text-center">
+          <nuxt-link class="btn mx-auto mb-3" :to="id">ЧИТАТИ</nuxt-link>
         </div>
       </div>
     </div>
-    <div class="jumbotron displays">
-      <div class="container mx-auto contact">
-        <PostPreview
-          v-for=" post in posts"
-          :key="post.id"
-          :title="post.title"
-          :thumbnail="post.thumbnail"
-          :id="post.id"
-        />
-      </div>
-    </div>
+
+    <hr class="separator">
   </div>
 </template>
 
-<<script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import PostPreview from "@/components/posts/PostPreview";
+<script>
 export default {
-  components: {
-    ContactForm,
-    progressSection,
-    PostPreview
-  },
-
-  head() {
-    return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "блог - %s!",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
-        }
-      ]
-    };
-  },
-  data(){
-    return {
-      posts: [
-        {
-          title: "Як самостійно доглядати за салоном автомобіля?",
-          thumbnail:
-            "/_nuxt/assets/img/Блог1.png",
-          id: "blog001"
-        },
-        {
-          title: "Скільки разів можна полірувати автомобіль?",
-          thumbnail:
-            "/_nuxt/assets/img/Блог2.png",
-          id: "blog002"
-        }
-      ]
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    thumbnail: {
+      type: String,
+      required: true
+    },
+    id: {
+      type: String,
+      required: true
     }
   }
-
 };
 </script>
 
@@ -150,6 +78,12 @@ h1:after {
 .displays {
   margin-top: 0;
   padding-bottom: 40px;
+}
+
+.block {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: scale-down;
 }
 
 .block-one {
