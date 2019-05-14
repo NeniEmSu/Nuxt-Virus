@@ -40,7 +40,7 @@
     </div>
     <div class="container">
       <nav>
-        <div class="menu-icon">
+        <div class="menu-icon" @click="show()">
           <i class="fa fa-bars fa-2x"></i>
         </div>
 
@@ -51,33 +51,9 @@
         </div>
 
         <div class="menu">
-          <ul>
-            <nuxt-link to="/" tag="li">
-              <a>Головна</a>
-            </nuxt-link>
-
-            <nuxt-link to="/Послуги" tag="li">
-              <a>Послуги і ціни</a>
-            </nuxt-link>
-
-            <nuxt-link to="/акції" tag="li">
-              <a>Акції</a>
-            </nuxt-link>
-
-            <nuxt-link to="/магазин" tag="li">
-              <a>Магазин</a>
-            </nuxt-link>
-
-            <nuxt-link to="/блог" tag="li">
-              <a>Блог</a>
-            </nuxt-link>
-
-            <nuxt-link to="/пронас" tag="li">
-              <a>Про нас</a>
-            </nuxt-link>
-
-            <nuxt-link to="/контакти" tag="li">
-              <a>Контакти</a>
+          <ul :class="{showing: isActive}">
+            <nuxt-link v-for="(item, i) in items" :key="i" :to="item.to" tag="li">
+              <a>{{item.title}}</a>
             </nuxt-link>
           </ul>
         </div>
@@ -87,7 +63,48 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isActive: false,
+      items: [
+        {
+          title: "Головна",
+          to: "/"
+        },
+        {
+          title: "Послуги і ціни",
+          to: "/Послуги"
+        },
+        {
+          title: "Акції",
+          to: "/акції"
+        },
+        {
+          title: "Магазин",
+          to: "/магазин"
+        },
+        {
+          title: "Блог",
+          to: "/блог"
+        },
+        {
+          title: "Про нас",
+          to: "/пронас"
+        },
+        {
+          title: "Контакти",
+          to: "/контакти"
+        }
+      ]
+    };
+  },
+  methods: {
+    show: function() {
+      this.isActive = !this.isActive;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scope="scoped">
@@ -535,11 +552,6 @@ nav {
   margin-left: 0;
   position: relative;
   line-height: 90px;
-  // transition: all ease-in-out 1000ms;
-  // -webkit-transition: all ease-in-out 1000ms;
-  // -moz-transition: all ease-in-out 1000ms;
-  // -ms-transition: all ease-in-out 1000ms;
-  // -o-transition: all ease-in-out 1000ms;
 }
 
 nav ul {
@@ -549,20 +561,10 @@ nav ul {
   padding: 0;
   text-align: right;
   margin: 0;
-  // transition: all ease-in-out 1000ms;
-  // -webkit-transition: all ease-in-out 1000ms;
-  // -moz-transition: all ease-in-out 1000ms;
-  // -ms-transition: all ease-in-out 1000ms;
-  // -o-transition: all ease-in-out 1000ms;
 }
 
 nav ul li {
   display: inline-block;
-  // transition: all ease-in-out 1000ms;
-  // -webkit-transition: all ease-in-out 1000ms;
-  // -moz-transition: all ease-in-out 1000ms;
-  // -ms-transition: all ease-in-out 1000ms;
-  // -o-transition: all ease-in-out 1000ms;
 }
 
 nav ul li a {

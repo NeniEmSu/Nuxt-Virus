@@ -15,18 +15,6 @@
             alt="black car from its back with word ПОЛІРУВАННЯ over."
           >
         </nuxt-link>
-        <!-- <a href="Полірування" rel="bookmark">
-                        <img class=" img-fluid one mr-1 mb-1" style="position: relative" src="img/top1.png"
-                            alt="black car from its back with word ПОЛІРУВАННЯ over.">
-                        <div class="meta">
-
-                            <h2 class="top1">
-                                <a href="Полірування" rel="bookmark">
-                                    ПОЛІРУВАННЯ
-                                </a>
-                            </h2>
-                        </div>
-        </a>-->
         <nuxt-link to="/Покриттявоском">
           <h2 class="top2">
             ВОСКОВЕ
@@ -38,18 +26,6 @@
             alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
           >
         </nuxt-link>
-        <!-- <a href="Покриттявоском" rel="bookmark">
-                        <img class=" two img-fluid " style="position: relative" src="img/top2.png"
-                            alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over.">
-                        <div class="meta">
-
-                            <h2 class="top2">
-                                <a href="Покриттявоском" rel="bookmark">
-                                    ВОСКОВЕ <br />ПОКРИТТЯ
-                                </a>
-                            </h2>
-                        </div>
-        </a>-->
         <nuxt-link to="/Мийкамотору">
           <h2 class="top3">
             МИЙКА
@@ -61,17 +37,6 @@
             alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
           >
         </nuxt-link>
-        <!-- <a href="Мийкамотору" rel="bookmark">
-                        <img class=" three img-fluid " style="position: relative" src="img/top3.png"
-                            alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over.">
-                        <div class="meta">
-                            <h2 class="top3">
-                                <a href="Мийкамотору" rel="bookmark">
-                                    МИЙКА <br />МОТОРУ
-                                </a>
-                            </h2>
-                        </div>
-        </a>-->
         <div class="col-md">
           <nuxt-link to="/Хімчистка">
             <h2 class="top4">ХІМЧИСТКА</h2>
@@ -117,18 +82,6 @@
                         ПІДГОТОВКА over."
           >
         </nuxt-link>
-        <!-- <a href="Передпродажнапідготовка" rel="bookmark">
-                        <img class=" seven img-fluid mt-2" style="position: relative" src="img/top7.png"
-                        alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
-                        ПІДГОТОВКА over.">
-                        <div class="meta">
-                            <h2 class="top7">
-                                <a href="Передпродажнапідготовка" rel="bookmark">
-                                    ПЕРЕДПРОДАЖНА <br />ПІДГОТОВКА
-                                </a>
-                            </h2>
-                        </div>
-        </a>-->
       </div>
     </div>
 

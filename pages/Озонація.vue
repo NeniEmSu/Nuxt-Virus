@@ -16,7 +16,7 @@
 
         <h2 class="red">{{timeTaken}}</h2>
 
-        <div class="videoContainer col-md-6 offset-md-3 mt-4">
+        <div class="videoContainer mt-4 text-center">
           <video class="mx-auto" controls autoplay="true" muted>
             <source src="~assets/video/vid(10).mp4" type="video/mp4">
           </video>
@@ -95,6 +95,11 @@ export default {
         "Люди, що знаходяться в салоні автомобіля, постійно вдихають продукти життєдіяльності організмів, що живуть в оббивці авто, вентиляції, важкодоступних щілинах. Вплив озонатора протягом 30 хвилин усуне всі шкідливі організми, очистить і продезинфікує повітря, усуне неприємні запахи в салоні вашого автомобіля. Після процедури ваш автомобіль буде практично стерильним, що зробить перебування в ньому більш комфортним і приємним, без ризику для вашого здоров'я!",
       timeTaken: "Час виконання послуги до 1 години"
     };
+  },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#__nuxt", 0, { force: true });
+    }
   }
 };
 </script>

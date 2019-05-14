@@ -11,14 +11,6 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <script>
-  $(document).ready(function() {
-    $(".menu-icon").on("click", function() {
-      $("nav ul").toggleClass("showing");
-    });
-  });
-    </script>
-
     <!-- Online chat support -->
     <script type="74bf624512b1c6414329bcb4-text/javascript">
   (function () {
@@ -57,7 +49,6 @@
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 export default {
-  scrollToTop: true,
   components: {
     TheHeader,
     TheFooter

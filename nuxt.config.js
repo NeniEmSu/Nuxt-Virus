@@ -42,9 +42,82 @@
 
        },
        {
-         hid: 'keywords',
-         name: 'keywords',
-         content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
+         hid: 'apple-mobile-web-app-title',
+         name: "apple-mobile-web-app-title",
+         content: "Virus detailing"
+
+       },
+       {
+         hid: 'application-name',
+         name: "application-name",
+         content: "Virus detailing"
+
+       },
+       {
+         hid: 'msapplication-TileColor',
+         name: "msapplication-TileColor",
+         content: "#da532c"
+
+       },
+       {
+         hid: 'msapplication-config',
+         name: "msapplication-config",
+         content: "img/icons/browserconfig.xml"
+
+       },
+       {
+         hid: 'theme-color',
+         name: "theme-color",
+         content: "#E32124"
+
+       },
+       {
+         hid: 'og:title',
+         name: "og:title",
+         property: "og:title",
+         content: "Virus детейлінг"
+
+       },
+       {
+         hid: 'og:site_name',
+         name: "og:site_name",
+         property: "og:site_name",
+         content: "Virus детейлінг"
+
+       },
+       {
+         hid: 'og:url',
+         name: "og:url",
+         property: "og:url",
+         content: "https://virus.te.ua/"
+
+       },
+       {
+         hid: 'og:type',
+         name: "og:type",
+         property: "og:type",
+         content: "website"
+
+       },
+       {
+         hid: 'og:locale',
+         name: "og:locale",
+         property: "og:locale",
+         content: "uk_UA"
+
+       },
+       {
+         hid: 'og:description',
+         name: "og:description",
+         property: "og:description",
+         content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
+
+       },
+       {
+         hid: 'og:image',
+         name: "og:image",
+         property: "og:image",
+         content: "https://virus.te.uaimg/virus_og.jpg"
 
        }
      ],
@@ -79,6 +152,10 @@
          rel: 'mask-icon',
          href: 'https://virus.te.ua/assets/icons/safari-pinned-tab.svg',
          color: "#e32124"
+       },
+       {
+         rel: "shortcut icon",
+         href: "/favicon.ico"
        },
        {
          rel: "stylesheet",
@@ -119,9 +196,6 @@
     */
    css: [],
 
-   /*
-    ** Plugins to load before mounting the App
-    */
    plugins: [{
      src: '~plugins/ga.js',
      ssr: false
@@ -131,6 +205,7 @@
     ** Nuxt.js modules
     */
    modules: [
+     'vue-scrollto/nuxt',
      ['@nuxtjs/google-analytics', {
        id: 'UA-62479125-9'
      }]
@@ -155,10 +230,6 @@
      },
      {
        src: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",
-       type: "text/javascript"
-     },
-     {
-       src: "/js/main.js",
        type: "text/javascript"
      }
    ],

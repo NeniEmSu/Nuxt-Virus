@@ -4,7 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/ЧИСТКАДИСКІВ.png" :alt="heading">
+            <img src="~assets/img/Очисткакондиціонера.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading}}</h1>
@@ -129,6 +129,11 @@ export default {
       ],
       timeTaken: "Час виконання послуги до 1 години"
     };
+  },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#__nuxt", 0, { force: true });
+    }
   }
 };
 </script>

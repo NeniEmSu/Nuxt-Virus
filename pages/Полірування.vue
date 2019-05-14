@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div class="videoContainer col-md-6 offset-md-3 mt-4">
+        <div class="videoContainer mt-4 text-center">
           <video class="mx-auto" controls autoplay="true" muted>
             <source src="~assets/video/vid(23).mp4" type="video/mp4">
           </video>

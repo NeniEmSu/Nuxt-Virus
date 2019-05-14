@@ -16,7 +16,12 @@
     "@nuxtjs/google-analytics": "^2.2.0",
     "jquery": "^3.4.1",
     "nuxt": "^2.4.0",
+<<<<<<< HEAD
     "vuex": "^3.1.1"
+=======
+    "vue-scrollto": "^2.15.0",
+    "vuex": "^3.1.0"
+>>>>>>> a187e878adce1478a15391cc062c3e8d56dd7be4
   },
   "devDependencies": {
     "cross-env": "^5.2.0",

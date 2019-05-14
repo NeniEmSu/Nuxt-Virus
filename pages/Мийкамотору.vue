@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div class="videoContainer col-md-6 offset-md-3 mt-4">
+        <div class="videoContainer mt-4 text-center">
           <video class="mx-auto" controls autoplay="true" muted>
             <source src="~assets/video/vid(3).mp4" type="video/mp4">
           </video>
@@ -75,6 +75,7 @@
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
 export default {
+  scrollToTop: true,
   layout: "default",
   components: {
     ContactForm,
@@ -125,6 +126,11 @@ export default {
       ],
       timeTaken: "Час виконання послуги від 2 до 5 годин"
     };
+  },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#__nuxt", 0, { force: true });
+    }
   }
 };
 </script>
