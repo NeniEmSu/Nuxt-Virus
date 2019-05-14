@@ -63,6 +63,5 @@ export default {};
     }
   }
 }
-@import "~assets/scss/mobileResponsive.scss";
 </style>
 

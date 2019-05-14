@@ -2,8 +2,8 @@
   <div>
     <div class="shop-heading-image">
       <div class="container text-center">
-        <h1>
-          <span>-50%</span> на Антидощ до кінця місяця
+        <h1 class="my-auto">
+          <span class="my-auto">-50%</span> на Антидощ до кінця місяця
         </h1>
       </div>
     </div>
@@ -633,6 +633,7 @@ export default {
     margin: 17px auto 0;
 
     justify-content: center;
+    margin: auto;
 
     span {
       font-family: $mainFont;
@@ -658,24 +659,31 @@ export default {
   background-size: cover;
   width: 100vw;
   height: 150px;
+  justify-content: center;
+  justify-items: center;
+  text-justify: center;
 
   h1 {
     font-family: $mainFont;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
-    line-height: 150px;
 
     color: $lightColor;
+    margin: auto;
+    line-height: normal;
+    justify-self: center !important;
+    align-self: center;
 
     span {
       font-family: $mainFont;
       font-style: normal;
       font-weight: bold;
       font-size: 80px;
-      line-height: 150px;
 
       color: $redColor;
+      margin: auto;
+      justify-self: center !important;
     }
   }
 }
@@ -1210,6 +1218,71 @@ export default {
   }
 }
 
-@import "~assets/scss/mobileResponsive.scss";
+@include mediaMd {
+  .shop-heading-image {
+    h1 {
+      font-size: 25px;
+
+      color: $lightColor;
+
+      span {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+
+        color: $redColor;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  .shop-heading-image {
+    h1 {
+      font-size: 20px;
+
+      color: $lightColor;
+
+      span {
+        font-size: 60px;
+
+        color: $redColor;
+      }
+    }
+  }
+}
+
+@include mediaXSm {
+  .shop-heading-image {
+    h1 {
+      font-size: 20px;
+
+      color: $lightColor;
+
+      span {
+        font-size: 40px;
+
+        color: $redColor;
+      }
+    }
+  }
+}
+
+@include mediaXXSm {
+  .shop-heading-image {
+    h1 {
+      font-size: 18px;
+
+      color: $lightColor;
+
+      span {
+        font-size: 30px;
+
+        color: $redColor;
+      }
+    }
+  }
+}
 </style>
 

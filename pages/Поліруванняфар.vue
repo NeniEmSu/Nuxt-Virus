@@ -149,6 +149,4 @@ export default {
 .service-time-image {
   background-image: url("~assets/img/beforeAfter3.png");
 }
-
-@import "~assets/scss/mobileResponsive.scss";
 </style>

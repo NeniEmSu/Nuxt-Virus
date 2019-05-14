@@ -105,6 +105,4 @@ video {
   height: 100%;
   max-height: 427px;
 }
-
-@import "~assets/scss/mobileResponsive.scss";
 </style>

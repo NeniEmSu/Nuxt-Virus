@@ -174,5 +174,4 @@ main {
   min-height: 80vh;
   height: 100%;
 }
-@import "~assets/scss/mobileResponsive.scss";
 </style>

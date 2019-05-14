@@ -1218,6 +1218,4 @@ form.choose-brand p {
     }
   }
 }
-
-@import "~assets/scss/mobileResponsive.scss";
 </style>

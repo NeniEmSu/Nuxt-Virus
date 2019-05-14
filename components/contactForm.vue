@@ -192,6 +192,372 @@ export default {};
     }
   }
 }
-@import "~assets/scss/mobileResponsive.scss";
+
+@include mediaLg2 {
+  .contact {
+    .card {
+      background: $lightColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      height: 350px;
+    }
+
+    h3 {
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: normal;
+      color: $darkColor;
+
+      span.red {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+        color: $redColor;
+      }
+    }
+
+    input,
+    select {
+      height: 40px;
+      margin-top: 10px;
+      border: 2px solid $borderColor;
+      box-sizing: border-box;
+      border-radius: 50px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: normal;
+      color: $headingsFontColor;
+
+      &:focus {
+        border: 2px solid $redColor;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    select {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    p {
+      margin-top: -80px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    .contact-btn {
+      padding: 10px 35px;
+      background: $redColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 50px;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: normal;
+      text-align: center;
+      color: $lightColor;
+      border: none;
+      margin-top: 40px;
+    }
+  }
+}
+
+@include mediaLg {
+  .contact {
+    .card {
+      background: $lightColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      height: 350px;
+
+      form {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    h3 {
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: normal;
+      color: $darkColor;
+
+      span.red {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+        color: $redColor;
+      }
+    }
+
+    input,
+    select {
+      height: 40px;
+      margin-top: 10px;
+      border: 2px solid $borderColor;
+      box-sizing: border-box;
+      border-radius: 50px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: normal;
+      color: $headingsFontColor;
+
+      &:focus {
+        border: 2px solid $redColor;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    select {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    p {
+      margin-top: -80px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    .contact-btn {
+      padding: 10px 35px;
+      background: $redColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 50px;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: normal;
+      text-align: center;
+      color: $lightColor;
+      border: none;
+      margin-top: 40px;
+    }
+  }
+}
+
+@include mediaMd {
+  .contact {
+    .card {
+      background: $lightColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      height: 100%;
+      min-height: 330px;
+      padding-bottom: 5rem !important;
+
+      form {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    h3 {
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: normal;
+      color: $darkColor;
+
+      span.red {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+        color: $redColor;
+      }
+    }
+
+    input,
+    select {
+      height: 40px;
+      margin-top: 10px;
+      border: 2px solid $borderColor;
+      box-sizing: border-box;
+      border-radius: 50px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: normal;
+      color: $headingsFontColor;
+
+      &:focus {
+        border: 2px solid $redColor;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    select {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    p {
+      margin-top: -95px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    .contact-btn {
+      padding: 10px 35px;
+      background: $redColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 50px;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: normal;
+      text-align: center;
+      color: $lightColor;
+      border: none;
+      margin-top: 40px;
+    }
+  }
+}
+
+@include mediaSm {
+  .contact {
+    .card {
+      background: $lightColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      padding: 10px !important;
+      height: 480px;
+
+      form {
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    h3 {
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: normal;
+      color: $darkColor;
+
+      span.red {
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: normal;
+        color: $redColor;
+      }
+    }
+
+    input,
+    select {
+      height: 40px;
+      margin-top: 10px;
+      border: 2px solid $borderColor;
+      box-sizing: border-box;
+      border-radius: 50px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: normal;
+      color: $headingsFontColor;
+
+      &:focus {
+        border: 2px solid $redColor;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    select {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    p {
+      margin-top: -80px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: normal;
+      color: $darkColor;
+    }
+
+    .contact-btn {
+      padding: 8px 30px;
+      background: $redColor;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+      border-radius: 50px;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: normal;
+      text-align: center;
+      color: $lightColor;
+      border: none;
+      margin-top: 40px;
+    }
+  }
+}
+
+@include mediaXXSm {
+  .contact {
+    .card {
+      form {
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
 </style>
 

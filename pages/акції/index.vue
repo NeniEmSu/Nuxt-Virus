@@ -221,5 +221,197 @@ h2 {
     -o-transform: scale(1.1);
   }
 }
-@import "~assets/scss/mobileResponsive.scss";
+
+@include mediaMenu {
+  .display {
+    height: 100%;
+    min-height: 300px;
+    max-height: 400px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0 !important;
+    background-color: $darkColor !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
+  }
+
+  .display {
+    height: 100%;
+    min-height: 300px;
+    max-height: 400px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0 !important;
+    background-color: $darkColor !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
+  }
+}
+
+@include mediaMd {
+  .display {
+    height: 100%;
+    min-height: 300px;
+    max-height: 400px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0 !important;
+    background-color: $darkColor !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
+  }
+
+  .display-inner {
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+  }
+
+  .display {
+    height: 100%;
+    min-height: 300px;
+    max-height: 400px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0 !important;
+    background-color: $darkColor !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    text-align: center;
+
+    .block-one {
+      background-image: url("~assets/img/Блог1-small.png");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(5px);
+    }
+
+    .block-two {
+      background-image: url("~assets/img/Блог2-small.png");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(5px);
+    }
+
+    .block-three {
+      background-image: url("~assets/img/Блог1-small.png");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.64);
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px !important;
+      line-height: normal;
+      letter-spacing: 0;
+
+      color: $lightColor !important;
+    }
+
+    .display-inner {
+      background-color: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(5px);
+    }
+  }
+}
+
+@include mediaXSm {
+  .display {
+    height: 100%;
+    min-height: 300px;
+    max-height: 420px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0 !important;
+    background-color: $darkColor !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .display p {
+    text-align: center;
+  }
+
+  h2 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px !important;
+    line-height: normal;
+    letter-spacing: 0;
+
+    color: $lightColor !important;
+  }
+
+  .display {
+    height: 100%;
+    min-height: 300px;
+    max-height: 420px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0 !important;
+    background-color: $darkColor !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .display p {
+    text-align: center;
+  }
+
+  h2 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px !important;
+    line-height: normal;
+    letter-spacing: 0;
+
+    color: $lightColor !important;
+  }
+}
 </style>

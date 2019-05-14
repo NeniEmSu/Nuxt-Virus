@@ -612,5 +612,114 @@ nav ul li a {
   border-radius: 50px;
 }
 
-@import "~assets/scss/mobileResponsive.scss";
+@include mediaMenu {
+  .top-contacts {
+    background: $darkColor;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+
+    ul {
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+      text-align: center;
+      margin: 0;
+      line-height: 40px !important;
+    }
+
+    ul li {
+      display: inline-block;
+      padding: 0 10px !important;
+      margin: 0;
+
+      &.instagram,
+      &.facebook {
+        float: none !important;
+      }
+    }
+
+    ul li a {
+      i {
+        line-height: 40px;
+      }
+    }
+  }
+
+  nav {
+    position: relative;
+    line-height: 0px;
+  }
+
+  .logo {
+    position: absolute;
+    margin-top: -35px;
+  }
+
+  nav ul {
+    max-height: 0px;
+    transition: linear 250ms;
+    -webkit-transition: linear 250ms;
+    -moz-transition: linear 250ms;
+    -ms-transition: linear 250ms;
+    -o-transition: linear 250ms;
+  }
+
+  .showing {
+    position: relative;
+    z-index: 99;
+    max-height: 34em;
+    background: $darkColor;
+    transition: all ease-in-out 1000ms;
+    -webkit-transition: all ease-in-out 1000ms;
+    -moz-transition: all ease-in-out 1000ms;
+    -ms-transition: all ease-in-out 1000ms;
+    -o-transition: all ease-in-out 1000ms;
+  }
+
+  nav ul li {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@include mediaLg2 {
+  .hide {
+    display: none;
+  }
+}
+
+@include mediaLg {
+  .hide {
+    display: none;
+  }
+}
+
+@include mediaMd {
+  .hide,
+  .hide-md {
+    display: none;
+  }
+}
+
+@include mediaSm {
+  .hide,
+  .hide-md,
+  .hide-sm {
+    display: none;
+  }
+
+  .top-contacts ul li {
+    display: inline-block;
+    margin: 0;
+    line-height: 40px;
+  }
+}
 </style>

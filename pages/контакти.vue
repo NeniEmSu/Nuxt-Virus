@@ -155,5 +155,4 @@ export default {
   content: "";
   display: block;
 }
-@import "~assets/scss/mobileResponsive.scss";
 </style>

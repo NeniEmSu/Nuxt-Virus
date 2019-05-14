@@ -135,6 +135,4 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 
 @import "~assets/scss/servicesPages.scss";
-
-@import "~assets/scss/mobileResponsive.scss";
 </style>
