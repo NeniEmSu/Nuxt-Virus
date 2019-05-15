@@ -596,6 +596,50 @@
         </div>
       </div>
     </div>
+    <script>
+  let acc = document.getElementsByClassName("accordion");
+  let i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("open");
+      let panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+    </script>
+    <script>
+  (function() {
+    const filterBtn = document.querySelectorAll(".filter-btn");
+
+    filterBtn.forEach(function(btn) {
+      btn.addEventListener("click", function(event) {
+        event.preventDefault();
+        this.classList.add("active");
+
+        const value = event.target.dataset.filter;
+
+        const items = document.querySelectorAll(".store-item");
+
+        items.forEach(function(items) {
+          if (value === "all") {
+            items.style.display = "block";
+          } else {
+            if (items.classList.contains(value)) {
+              items.style.display = "block";
+            } else {
+              items.style.display = "none";
+            }
+          }
+        });
+      });
+    });
+  })();
+    </script>
   </div>
 </template>
 
