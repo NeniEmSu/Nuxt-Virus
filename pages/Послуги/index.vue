@@ -681,7 +681,7 @@ export default {
   },
   methods: {
     changeCars(variantImage) {
-      setTimeout(() => (this.image = variantImage), 500);
+      this.image = variantImage;
     }
   }
 };
