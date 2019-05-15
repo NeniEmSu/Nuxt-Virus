@@ -712,6 +712,7 @@ export default {
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
+    padding: 20px 0;
 
     color: $lightColor;
     margin: auto;
@@ -1261,6 +1262,24 @@ export default {
     }
   }
 }
+@include mediaMenu {
+  .shop-heading-image {
+    h1 {
+      color: $lightColor;
+
+      padding: 15px 0;
+
+      span {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+
+        color: $redColor;
+      }
+    }
+  }
+}
 
 @include mediaMd {
   .shop-heading-image {
@@ -1268,6 +1287,8 @@ export default {
       font-size: 25px;
 
       color: $lightColor;
+
+      padding: 10px 0;
 
       span {
         font-family: $mainFont;
@@ -1288,6 +1309,8 @@ export default {
 
       color: $lightColor;
 
+      padding: 20px 0;
+
       span {
         font-size: 60px;
 
@@ -1304,6 +1327,8 @@ export default {
 
       color: $lightColor;
 
+      padding: 40px 0;
+
       span {
         font-size: 40px;
 
@@ -1319,6 +1344,8 @@ export default {
       font-size: 18px;
 
       color: $lightColor;
+
+      padding: 50px 0;
 
       span {
         font-size: 30px;
