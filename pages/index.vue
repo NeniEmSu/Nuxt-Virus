@@ -90,7 +90,18 @@
         <h2 class="text-left">Рекомендуємо</h2>
 
         <div class="card-deck">
-          <div class="owl-carousel owl-theme">
+          <div
+            class="owl-carousel owl-theme"
+            :loop="true"
+            :nav="false"
+            :responsiveClass="true"
+            :margin="20"
+            :autoplay="true"
+            :autoplayHoverPause="true"
+            :touchDrag="true"
+            :pullDrag="true"
+            :responsive="{0:{items:1,nav:false},768:{items:2,nav:true,margin:10},1200:{items:3,nav:true,margin:10,loop:true}}"
+          >
             <div class="item">
               <div class="card one card__hover">
                 <img src="img/86.png" class="card-img-top img-fluid" alt="Koch Chemie Fresh UP">
@@ -114,6 +125,7 @@
                 </div>
               </div>
             </div>
+
             <div class="item">
               <div class="card two card__hover">
                 <img
@@ -193,6 +205,7 @@
                 </div>
               </div>
             </div>
+
             <div class="item">
               <div class="card five card__hover">
                 <img
@@ -220,6 +233,7 @@
                 </div>
               </div>
             </div>
+
             <div class="item">
               <div class="card six card__hover">
                 <img
@@ -271,6 +285,7 @@
                 </div>
               </div>
             </div>
+
             <div class="item">
               <div class="card eight card__hover">
                 <img
@@ -298,6 +313,7 @@
                 </div>
               </div>
             </div>
+
             <div class="item">
               <div class="card nine card__hover">
                 <img
@@ -536,6 +552,7 @@
 <script>
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
+
 export default {
   components: {
     ContactForm,
