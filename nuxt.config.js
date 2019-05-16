@@ -187,10 +187,20 @@
    /*
     ** Global CSS
     */
-   css: [],
+   css: [
+     "~/assets/scss/config.scss"
+   ],
 
    plugins: [{
        src: '~plugins/ga.js',
+       ssr: false
+     },
+     {
+       src: '~/plugins/vue-fancybox.js',
+       ssr: false
+     },
+     {
+       src: '~/plugins/vue-gallery.js',
        ssr: false
      }
      //  {
@@ -203,6 +213,7 @@
     ** Nuxt.js modules
     */
    modules: [
+     'bootstrap-vue/nuxt',
      'vue-scrollto/nuxt',
      ['@nuxtjs/google-analytics', {
        id: 'UA-62479125-9'

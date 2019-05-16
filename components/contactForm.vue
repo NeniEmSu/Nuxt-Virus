@@ -1,5 +1,5 @@
 <template>
-  <div class="jumbotron">
+  <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card p-5">
         <form class="text-right" method="POST" action="includes/contactForm.inc.php">
