@@ -271,7 +271,7 @@
 
     <script>
   // owlCarousel
-  var owl = $(".owl-carousel");
+  var owl = $('.owl-carousel')
   owl.owlCarousel({
     loop: true,
     nav: false,
@@ -293,15 +293,15 @@
     margin: 20,
     autoplay: true,
     autoplayHoverPause: true
-  });
+  })
     </script>
   </div>
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import productCards from "@/components/shop/productCards";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
+import productCards from '@/components/shop/productCards'
 
 export default {
   components: {
@@ -313,26 +313,26 @@ export default {
   head() {
     return {
       title:
-        "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
-      titleTemplate: "Virus - %s!",
+        'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
+      titleTemplate: 'Virus - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>
 .top-grid h2 {
   position: absolute;
   z-index: 1;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -422,7 +422,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 20px;
@@ -471,7 +471,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 30px;
@@ -533,7 +533,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 26px;
@@ -583,7 +583,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 22px;
@@ -633,7 +633,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 22px;
@@ -678,7 +678,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 20px !important;
@@ -729,15 +729,15 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 main {
   .top-grid {
     h2 a {
       color: $lightColor;
     }
 
-    a[rel="bookmark"]:hover + .meta * {
+    a[rel='bookmark']:hover + .meta * {
       color: $redColor;
     }
 
@@ -1075,7 +1075,7 @@ main {
         transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.15);
-        content: "";
+        content: '';
         opacity: 0;
         z-index: -1;
         border-radius: 20px;
@@ -1179,7 +1179,7 @@ main {
 
     .work-one {
       box-sizing: border-box;
-      background-image: url("~assets/img/car1.png");
+      background-image: url('~assets/img/car1.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1189,7 +1189,7 @@ main {
     }
 
     .work-two {
-      background-image: url("~assets/img/car2.png");
+      background-image: url('~assets/img/car2.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1198,7 +1198,7 @@ main {
     }
 
     .work-three {
-      background-image: url("~assets/img/car3.png");
+      background-image: url('~assets/img/car3.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1207,7 +1207,7 @@ main {
     }
 
     .work-four {
-      background-image: url("~assets/img/car4.png");
+      background-image: url('~assets/img/car4.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1216,7 +1216,7 @@ main {
     }
 
     .work-five {
-      background-image: url("~assets/img/car5.png");
+      background-image: url('~assets/img/car5.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1225,7 +1225,7 @@ main {
     }
 
     .work-six {
-      background-image: url("~assets/img/car6.png");
+      background-image: url('~assets/img/car6.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1234,7 +1234,7 @@ main {
     }
 
     .work-seven {
-      background-image: url("~assets/img/car7.png");
+      background-image: url('~assets/img/car7.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1243,7 +1243,7 @@ main {
     }
 
     .work-eight {
-      background-image: url("~assets/img/car8.png");
+      background-image: url('~assets/img/car8.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1291,7 +1291,7 @@ main {
       transform: scale3d(0, 0, 1);
       transition: transform 0.3s ease-out 0s;
       background: rgba(255, 255, 255, 0.1);
-      content: "";
+      content: '';
       pointer-events: none;
       border-radius: 20px;
       -webkit-border-radius: 20px;
@@ -1326,7 +1326,7 @@ main {
     }
 
     h2 {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 62px;
@@ -1762,7 +1762,7 @@ main {
     .card {
       .work-one {
         box-sizing: border-box;
-        background-image: url("~assets/img/1.png");
+        background-image: url('~assets/img/1.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1772,7 +1772,7 @@ main {
       }
 
       .work-two {
-        background-image: url("~assets/img/1(1).png");
+        background-image: url('~assets/img/1(1).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1781,7 +1781,7 @@ main {
       }
 
       .work-three {
-        background-image: url("~assets/img/1(2).png");
+        background-image: url('~assets/img/1(2).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1790,7 +1790,7 @@ main {
       }
 
       .work-four {
-        background-image: url("~assets/img/1(3).png");
+        background-image: url('~assets/img/1(3).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1800,7 +1800,7 @@ main {
 
       .work-five {
         box-sizing: border-box;
-        background-image: url("~assets/img/1(4).png");
+        background-image: url('~assets/img/1(4).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1809,7 +1809,7 @@ main {
       }
 
       .work-six {
-        background-image: url("~assets/img/1(5).png");
+        background-image: url('~assets/img/1(5).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1818,7 +1818,7 @@ main {
       }
 
       .work-seven {
-        background-image: url("~assets/img/1(6).png");
+        background-image: url('~assets/img/1(6).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1827,7 +1827,7 @@ main {
       }
 
       .work-eight {
-        background-image: url("~assets/img/1(7).png");
+        background-image: url('~assets/img/1(7).png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1844,7 +1844,7 @@ main {
 
     h2 {
       color: $headingsFontColor;
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 50px !important;
@@ -1871,7 +1871,7 @@ main {
     text-align: center;
 
     h2 {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 50px;
@@ -1888,7 +1888,7 @@ main {
     text-align: center;
 
     h2 {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 48px;
@@ -1906,7 +1906,7 @@ main {
 
     h2 {
       color: $headingsFontColor;
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 42px !important;

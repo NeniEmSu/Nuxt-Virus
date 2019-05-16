@@ -6,14 +6,10 @@
      port: 8383,
      host: '0.0.0.0',
    },
-   //  router: {
-   //    middleware: 'languageDetection'
-   //  },
-
    head: {
-     title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
+     title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
      htmlAttrs: {
-       lang: "uk",
+       lang: 'uk',
        amp: true
      },
      meta: [{
@@ -26,91 +22,91 @@
        {
          hid: 'description',
          name: 'description',
-         content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+         content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
        },
        {
          hid: 'keywords',
          name: 'keywords',
-         content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
+         content: 'детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди'
 
        },
        {
          hid: 'apple-mobile-web-app-title',
-         name: "apple-mobile-web-app-title",
-         content: "Virus detailing"
+         name: 'apple-mobile-web-app-title',
+         content: 'Virus detailing'
 
        },
        {
          hid: 'application-name',
-         name: "application-name",
-         content: "Virus detailing"
+         name: 'application-name',
+         content: 'Virus detailing'
 
        },
        {
          hid: 'msapplication-TileColor',
-         name: "msapplication-TileColor",
-         content: "#da532c"
+         name: 'msapplication-TileColor',
+         content: '#da532c'
 
        },
        {
          hid: 'msapplication-config',
-         name: "msapplication-config",
-         content: "img/icons/browserconfig.xml"
+         name: 'msapplication-config',
+         content: 'img/icons/browserconfig.xml'
 
        },
        {
          hid: 'theme-color',
-         name: "theme-color",
-         content: "#E32124"
+         name: 'theme-color',
+         content: '#E32124'
 
        },
        {
          hid: 'og:title',
-         name: "og:title",
-         property: "og:title",
-         content: "Virus детейлінг"
+         name: 'og:title',
+         property: 'og:title',
+         content: 'Virus детейлінг'
 
        },
        {
          hid: 'og:site_name',
-         name: "og:site_name",
-         property: "og:site_name",
-         content: "Virus детейлінг"
+         name: 'og:site_name',
+         property: 'og:site_name',
+         content: 'Virus детейлінг'
 
        },
        {
          hid: 'og:url',
-         name: "og:url",
-         property: "og:url",
-         content: "https://virus.te.ua/"
+         name: 'og:url',
+         property: 'og:url',
+         content: 'https://virus.te.ua/'
 
        },
        {
          hid: 'og:type',
-         name: "og:type",
-         property: "og:type",
-         content: "website"
+         name: 'og:type',
+         property: 'og:type',
+         content: 'website'
 
        },
        {
          hid: 'og:locale',
-         name: "og:locale",
-         property: "og:locale",
-         content: "uk_UA"
+         name: 'og:locale',
+         property: 'og:locale',
+         content: 'uk_UA'
 
        },
        {
          hid: 'og:description',
-         name: "og:description",
-         property: "og:description",
-         content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
+         name: 'og:description',
+         property: 'og:description',
+         content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри'
 
        },
        {
          hid: 'og:image',
-         name: "og:image",
-         property: "og:image",
-         content: "https://virus.te.uaimg/virus_og.jpg"
+         name: 'og:image',
+         property: 'og:image',
+         content: 'https://virus.te.uaimg/virus_og.jpg'
 
        }
      ],
@@ -144,35 +140,35 @@
        {
          rel: 'mask-icon',
          href: 'https://virus.te.ua/assets/icons/safari-pinned-tab.svg',
-         color: "#e32124"
+         color: '#e32124'
        },
        {
-         rel: "shortcut icon",
-         href: "/favicon.ico"
+         rel: 'shortcut icon',
+         href: '/favicon.ico'
        },
        {
-         rel: "stylesheet",
-         href: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+         rel: 'stylesheet',
+         href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'
        },
        {
-         rel: "stylesheet",
-         href: "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+         rel: 'stylesheet',
+         href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
        },
        {
-         rel: "stylesheet",
-         href: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+         rel: 'stylesheet',
+         href: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'
        },
        {
-         rel: "stylesheet",
-         href: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+         rel: 'stylesheet',
+         href: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'
        },
        {
-         rel: "stylesheet",
-         href: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+         rel: 'stylesheet',
+         href: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css'
        },
        {
-         rel: "stylesheet",
-         href: "https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900"
+         rel: 'stylesheet',
+         href: 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900'
        }
      ]
    },
@@ -188,7 +184,7 @@
     ** Global CSS
     */
    css: [
-     "~/assets/scss/config.scss"
+     '~/assets/scss/config.scss'
    ],
 
    plugins: [{
@@ -213,6 +209,8 @@
     ** Nuxt.js modules
     */
    modules: [
+     '@nuxtjs/axios',
+     '@nuxtjs/pwa',
      'bootstrap-vue/nuxt',
      'vue-scrollto/nuxt',
      ['@nuxtjs/google-analytics', {
@@ -222,24 +220,24 @@
 
 
    script: [{
-       src: "https://code.jquery.com/jquery-3.2.1.min.js",
-       type: "text/javascript"
+       src: 'https://code.jquery.com/jquery-3.2.1.min.js',
+       type: 'text/javascript'
      },
      {
-       src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
-       type: "text/javascript"
+       src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
+       type: 'text/javascript'
      },
      {
-       src: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
-       type: "text/javascript"
+       src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
+       type: 'text/javascript'
      },
      {
-       src: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
-       type: "text/javascript"
+       src: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
+       type: 'text/javascript'
      },
      {
-       src: "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",
-       type: "text/javascript"
+       src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js',
+       type: 'text/javascript'
      }
    ],
 
