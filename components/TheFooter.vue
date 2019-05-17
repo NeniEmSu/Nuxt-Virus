@@ -80,7 +80,16 @@ footer {
 
   .logo {
     position: relative;
+    z-index: 100;
+    float: left;
+    margin-right: 36px;
+    padding: 0;
+    margin: 0;
     line-height: 140px;
+
+    img {
+      height: 2.4rem;
+    }
   }
 
   .bottom-contact {
@@ -222,6 +231,8 @@ footer {
   footer {
     .logo {
       img {
+        text-align: center;
+        margin-top: -110px;
         margin-left: calc(100vw - 65vw);
       }
     }
@@ -233,6 +244,7 @@ footer {
     .logo {
       img {
         margin-left: calc(100vw - 70vw);
+        margin-top: -110px;
       }
     }
   }

@@ -1,6 +1,9 @@
 <template>
   <div>
     <TheHeader/>
+
+    <TheSideNav/>
+
     <main>
       <transition name="fade" mode="out-in">
         <nuxt/>
@@ -48,9 +51,11 @@
 <script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import TheSideNav from "@/components/TheSideNav";
 export default {
   components: {
     TheHeader,
+    TheSideNav,
     TheFooter
   },
 

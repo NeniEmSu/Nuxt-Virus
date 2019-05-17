@@ -40,7 +40,7 @@
     </div>
     <div class="container">
       <nav>
-        <div class="menu-icon" @click="show()">
+        <div class="drawer-toggle" role="button" @click="$store.dispatch('nav/toggleSidebar')">
           <i class="fa fa-bars fa-2x"></i>
         </div>
 
@@ -50,12 +50,8 @@
           </nuxt-link>
         </div>
 
-        <div class="menu">
-          <ul :class="{showing: isActive}">
-            <nuxt-link v-for="(item, i) in items" :key="i" :to="item.to" tag="li">
-              <a>{{item.title}}</a>
-            </nuxt-link>
-          </ul>
+        <div class="app-links">
+          <app-links></app-links>
         </div>
       </nav>
     </div>
@@ -63,51 +59,13 @@
 </template>
 
 <script>
+import AppLinks from "~/components/appLinks";
 export default {
-  data() {
-    return {
-      isActive: false,
-      items: [
-        {
-          title: "Головна",
-          to: "/"
-        },
-        {
-          title: "Послуги і ціни",
-          to: "/Послуги"
-        },
-        {
-          title: "Акції",
-          to: "/акції"
-        },
-        {
-          title: "Магазин",
-          to: "/магазин"
-        },
-        {
-          title: "Блог",
-          to: "/блог"
-        },
-        {
-          title: "Про нас",
-          to: "/пронас"
-        },
-        {
-          title: "Контакти",
-          to: "/контакти"
-        }
-      ]
-    };
-  },
-  methods: {
-    show: function() {
-      this.isActive = !this.isActive;
-    }
-  }
+  components: { AppLinks }
 };
 </script>
 
-<style lang="scss" scope="scoped">
+<style lang="scss" scoped>
 @import "~assets/scss/config.scss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 header {
@@ -542,59 +500,14 @@ header {
   margin-right: 36px;
   padding: 0;
   margin: 0;
+  line-height: 80px;
 
   img {
     height: 2.4rem;
   }
 }
 
-nav {
-  margin-left: 0;
-  position: relative;
-  line-height: 90px;
-}
-
-nav ul {
-  list-style: none;
-  background: transparent;
-  overflow: hidden;
-  padding: 0;
-  text-align: right;
-  margin: 0;
-}
-
-nav ul li {
-  display: inline-block;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: $lightColor;
-  font-size: 16px;
-  padding: 9px 32px;
-  font-family: $secondaryFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: normal;
-  text-align: center;
-
-  &.active {
-    border: 1px solid #d41f26;
-    box-sizing: border-box;
-    border-radius: 50px;
-  }
-
-  &:hover {
-    border: 1px solid #d41f26;
-    box-sizing: border-box;
-    border-radius: 50px;
-    text-decoration: none;
-    color: $redColor;
-  }
-}
-
-.menu-icon {
+.drawer-toggle {
   position: relative;
   z-index: 99;
   line-height: 60px;
@@ -647,45 +560,12 @@ nav ul li a {
     }
   }
 
-  nav {
-    position: relative;
-    line-height: 0px;
-  }
-
   .logo {
     position: absolute;
-    margin-top: -35px;
+    margin-top: -45px;
   }
 
-  nav ul {
-    max-height: 0px;
-    transition: linear 250ms;
-    -webkit-transition: linear 250ms;
-    -moz-transition: linear 250ms;
-    -ms-transition: linear 250ms;
-    -o-transition: linear 250ms;
-  }
-
-  .showing {
-    position: relative;
-    z-index: 99;
-    max-height: 34em;
-    background: $darkColor;
-    transition: all ease-in-out 1000ms;
-    -webkit-transition: all ease-in-out 1000ms;
-    -moz-transition: all ease-in-out 1000ms;
-    -ms-transition: all ease-in-out 1000ms;
-    -o-transition: all ease-in-out 1000ms;
-  }
-
-  nav ul li {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .menu-icon {
+  .drawer-toggle {
     display: block;
   }
 }
