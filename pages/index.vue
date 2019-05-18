@@ -92,6 +92,7 @@
         <div class="sales-cards col-md text-center mx-auto p-0">
           <productCards/>
         </div>
+        <bootstrapVueCarousel/>
 
         <a href="магазин" class="btn">Показати більше</a>
       </div>
@@ -263,6 +264,8 @@
       </div>
     </div>
 
+    
+
     <ContactForm/>
 
     <progressSection/>
@@ -302,12 +305,14 @@
 import ContactForm from '@/components/contactForm.vue'
 import progressSection from '@/components/progressSection.vue'
 import productCards from '@/components/shop/productCards'
+import bootstrapVueCarousel from '@/components/bootstrapVueCarousel'
 
 export default {
   components: {
     ContactForm,
     progressSection,
-    productCards
+    productCards,
+    bootstrapVueCarousel
   },
 
   head() {

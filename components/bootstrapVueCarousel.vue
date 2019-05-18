@@ -56,7 +56,7 @@
                   <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</mdb-card-text>
                   <mdb-btn color="primary">Button</mdb-btn>
                 </mdb-card-body>
-              </mdb-card>
+              </mdb-card>wo
             </mdb-col>
             <mdb-col md="4" class="clearfix d-none d-md-block">
               <mdb-card class="mb-2">
@@ -202,9 +202,9 @@
 </template>
 
 <script>
-  import { mdbMultiCarousel, mdbCarouselItem, mdbContainer, mdbRow, mdbCol, mdbCard, mdbCardImage, mdbCardBody, mdbCardTitle, mdbCardText, mdbBtn } from 'mdbvue';
+  import { mdbMultiCarousel, mdbCarouselItem, mdbContainer, mdbRow, mdbCol, mdbCard, mdbCardImage, mdbCardBody, mdbCardTitle, mdbCardText, mdbBtn } from 'bootstrap-vue/nuxt';
   export default {
-    name: 'CarouselPage',
+    name: 'bootstrapVueCarousel',
     components: {
       mdbMultiCarousel,
       mdbCarouselItem,
