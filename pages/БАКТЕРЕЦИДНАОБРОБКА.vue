@@ -4,15 +4,15 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/БАКТЕРЕЦИДНАОБРОБКА.png" :alt="heading">
+            <img src="~assets/img/БАКТЕРЕЦИДНАОБРОБКА.png" :alt="heading" />
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading}}</h1>
+            <h1 class="info-pages">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
           </div>
         </div>
 
-        <h2 class="red">{{timeTaken}}</h2>
+        <h2 class="red">{{ timeTaken }}</h2>
 
         <div class="col-md-7 m-auto">
           <div class="row text-center">
@@ -20,25 +20,21 @@
               <a href="#" class="btn category-selector">Ⅰ категорія</a>
               <p class="pricing">500 грн</p>
               <p class="mt-2 mb-0">
-                середній
-                бізнес
-                спорт купе
+                середній бізнес спорт купе
               </p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
               <p class="pricing">0 грн</p>
               <p class="mt-2 mb-0">
-                середній кросовер
-                позашляховик
+                середній кросовер позашляховик
               </p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
               <p class="pricing">0 грн</p>
               <p class="mt-2 mb-0">
-                повнорозмірний кросовер
-                позашляховик
+                повнорозмірний кросовер позашляховик
               </p>
             </div>
           </div>
@@ -46,9 +42,9 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm />
 
-    <progressSection/>
+    <progressSection />
   </div>
 </template>
 

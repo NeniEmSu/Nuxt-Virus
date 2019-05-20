@@ -1,6 +1,10 @@
 <template>
   <div class="sidenav-container">
-    <div v-if="toggleSidebar" class="backdrop" @click="$store.dispatch('nav/toggleSidebar')"></div>
+    <div
+      v-if="toggleSidebar"
+      class="backdrop"
+      @click="$store.dispatch('nav/toggleSidebar')"
+    ></div>
 
     <transition name="slide-side">
       <div v-if="toggleSidebar" class="sidenav">
@@ -21,7 +25,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scope="scoped">
 @import "~assets/scss/config.scss";

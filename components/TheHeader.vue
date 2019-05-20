@@ -6,21 +6,22 @@
           <li>
             <nuxt-link to="/контакти#map-top">
               <span class="hide">Україна, м. Тернопіль, вул. Приміська 15А</span>
-
-              <i class="fa fa-map-marker-alt bounce mx-1"></i>
+              <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="bounce mx-1 fa-lg"/>
             </nuxt-link>
           </li>
           <li>
             <a href="tel:+380673334040">
               <span class="hide-sm">+38 (067) 333-40-40</span>
-              <i class="fas fa-phone faa-ring animated mx-1"></i>
+              <font-awesome-icon :icon="['fas', 'phone']" class="faa-ring animated mx-1 fa-lg"/>
             </a>
           </li>
           <li>
             <a href="mailto:deteylingvirus@gmail.com">
               <span class="hide-md">deteylingvirus@gmail.com</span>
-
-              <i class="fa fa-envelope faa-horizontal animated mx-1"></i>
+              <font-awesome-icon
+                :icon="['fa', 'envelope']"
+                class="faa-horizontal animated mx-1 fa-lg"
+              />
             </a>
           </li>
 

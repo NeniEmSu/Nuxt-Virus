@@ -10,23 +10,20 @@
         <li>
           <a href="mailto:deteylingvirus@gmail.com">
             deteylingvirus@gmail.com
-            <i class="fa fa-envelope pl-2"></i>
+            <font-awesome-icon :icon="['fa', 'envelope']" class="ml-2 fa-lg"/>
           </a>
         </li>
         <li>
           <a href="tel:+380673334040">
             +38 (067) 333-40-40
-            <i class="fa fa-phone pl-2"></i>
+            <font-awesome-icon :icon="['fas', 'phone']" class="ml-2 fa-lg"/>
           </a>
         </li>
 
         <li>
           <a href="контакти#map-top">
-            Україна,
-            м. Тернопіль, вул. Приміська 15А
-            <i
-              class="fa fa-map-marker-alt pl-2"
-            ></i>
+            Україна, м. Тернопіль, вул. Приміська 15А
+            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="ml-2 fa-lg"/>
           </a>
         </li>
         <li>
@@ -45,7 +42,7 @@
 <script>
 export default {};
 </script>
- <style lang="scss"  scoped>
+<style lang="scss" scoped>
 @import "~assets/scss/config.scss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 footer {
@@ -260,4 +257,3 @@ footer {
   }
 }
 </style>
-

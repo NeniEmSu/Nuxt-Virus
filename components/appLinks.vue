@@ -9,7 +9,7 @@
         class="nav-item"
         @click="$store.dispatch('nav/toggleSidebar')"
       >
-        <a>{{item.title}}</a>
+        <a>{{ item.title }}</a>
       </nuxt-link>
     </ul>
   </div>

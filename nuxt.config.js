@@ -145,30 +145,6 @@
        {
          rel: 'shortcut icon',
          href: '/favicon.ico'
-       },
-       {
-         rel: 'stylesheet',
-         href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'
-       },
-       {
-         rel: 'stylesheet',
-         href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
-       },
-       {
-         rel: 'stylesheet',
-         href: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'
-       },
-       {
-         rel: 'stylesheet',
-         href: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'
-       },
-       {
-         rel: 'stylesheet',
-         href: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css'
-       },
-       {
-         rel: 'stylesheet',
-         href: 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900'
        }
      ]
    },
@@ -215,7 +191,20 @@
      'vue-scrollto/nuxt',
      ['@nuxtjs/google-analytics', {
        id: 'UA-62479125-9'
-     }]
+     }],
+     [
+       'nuxt-fontawesome', {
+         imports: [{
+             set: '@fortawesome/free-solid-svg-icons',
+             icons: ['fas']
+           },
+           {
+             set: '@fortawesome/free-brands-svg-icons',
+             icons: ['fab']
+           }
+         ]
+       }
+     ]
    ],
 
 
