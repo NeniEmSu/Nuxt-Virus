@@ -3,104 +3,104 @@
     <div class="container text-center top-grid p-0 pt-4 pb-5">
       <h1 class="text-left">
         Ми
-        <br />пропонуємо
+        <br>пропонуємо
       </h1>
       <div class="row p-0">
         <nuxt-link to="/Полірування">
           <h2 class="top1">ПОЛІРУВАННЯ</h2>
           <picture>
-            <source srcset="~/assets/imgWebP/top1.webp" type="image/webp" />
+            <source srcset="~/assets/imgWebP/top1.webp" type="image/webp">
             <img
               class="img-fluid one mr-1 mb-1"
               style="position: relative"
               src="~/assets/img/top1.png"
               alt="black car from its back with word ПОЛІРУВАННЯ over."
-            />
+            >
           </picture>
         </nuxt-link>
         <nuxt-link to="/Покриттявоском">
           <h2 class="top2">
             ВОСКОВЕ
-            <br />ПОКРИТТЯ
+            <br>ПОКРИТТЯ
           </h2>
           <picture>
-            <source srcset="~/assets/imgWebP/top2.webp" type="image/webp" />
+            <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
             <img
               class="two img-fluid"
               src="~/assets/img/top2.png"
               alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
-            />
+            >
           </picture>
         </nuxt-link>
         <nuxt-link to="/Мийкамотору">
           <h2 class="top3">
             МИЙКА
-            <br />МОТОРУ
+            <br>МОТОРУ
           </h2>
           <picture>
-            <source srcset="~/assets/imgWebP/top3.webp" type="image/webp" />
+            <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
             <img
               class="three img-fluid mt-1"
               src="~/assets/img/top3.png"
               alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
-            />
+            >
           </picture>
         </nuxt-link>
         <div class="col-md">
           <nuxt-link to="/Хімчистка">
             <h2 class="top4">ХІМЧИСТКА</h2>
             <picture>
-              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp" />
+              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp">
               <img
                 class="four img-fluid mt-n3"
                 style="margin-top: -16px;"
                 src="~/assets/img/top4.png"
                 alt="image from the angle of a cars stearing wheel with the text ХІМЧИСТКА over."
-              />
+              >
             </picture>
           </nuxt-link>
 
           <nuxt-link to="/Реставраціяподряпин">
             <h2 class="top5">
               РЕСТАВРАЦІЯ
-              <br />СКОЛІВ
+              <br>СКОЛІВ
             </h2>
             <picture>
-              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp" />
+              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp">
               <img
                 class="five img-fluid mt-n3"
                 style="margin-top: -16px;"
                 src="~/assets/img/top5.png"
                 alt="Image of a blue car from the back at low angle showing it's left tyre with the text РЕСТАВРАЦІЯ
                             СКОЛІВ over."
-              />
+              >
             </picture>
           </nuxt-link>
           <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
             <h2 class="top6">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
             <picture>
-              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp" />
+              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
               <img
                 class="six img-fluid mt-2"
                 src="~/assets/img/top6.png"
                 alt="a black saloon car from it's right side with the text КЕРАМІЧНЕ ПОКРИТТЯ over."
-              />
+              >
             </picture>
           </nuxt-link>
         </div>
         <nuxt-link to="/Передпродажнапідготовка">
           <h2 class="top7">
             ПЕРЕДПРОДАЖНА
-            <br />ПІДГОТОВКА
+            <br>ПІДГОТОВКА
           </h2>
           <picture>
-            <source srcset="~/assets/imgWebP/top7.webp" type="image/webp" />
+            <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
             <img
               class="seven img-fluid mt-2"
               src="~/assets/img/top7.png"
               alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
                         ПІДГОТОВКА over."
-            />
+            >
           </picture>
         </nuxt-link>
       </div>
@@ -111,7 +111,7 @@
         <h2 class="text-left">Рекомендуємо</h2>
 
         <div class="sales-cards col-md text-center mx-auto p-0">
-          <productCards />
+          <productCards/>
         </div>
 
         <a href="магазин" class="btn">Показати більше</a>
@@ -284,37 +284,37 @@
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
-      // owlCarousel
-      var owl = $(".owl-carousel");
-      owl.owlCarousel({
-        loop: true,
-        nav: false,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 1
-          },
-          768: {
-            items: 2,
-            margin: 0
-          },
-          1200: {
-            items: 3,
-            margin: 10,
-            loop: true
-          }
-        },
-        margin: 20,
-        autoplay: true,
-        autoplayHoverPause: true
-      });
+  // owlCarousel
+  var owl = $(".owl-carousel");
+  owl.owlCarousel({
+    loop: true,
+    nav: false,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2,
+        margin: 0
+      },
+      1200: {
+        items: 3,
+        margin: 10,
+        loop: true
+      }
+    },
+    margin: 20,
+    autoplay: true,
+    autoplayHoverPause: true
+  });
     </script>
   </div>
 </template>
@@ -1200,7 +1200,7 @@ main {
 
     .work-one {
       box-sizing: border-box;
-      background-image: url("~assets/img/car1.png");
+      background-image: url("~assets/imgWebP/car1.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1210,7 +1210,7 @@ main {
     }
 
     .work-two {
-      background-image: url("~assets/img/car2.png");
+      background-image: url("~assets/imgWebp/car2.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1219,7 +1219,7 @@ main {
     }
 
     .work-three {
-      background-image: url("~assets/img/car3.png");
+      background-image: url("~assets/imgWebp/car3.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1228,7 +1228,7 @@ main {
     }
 
     .work-four {
-      background-image: url("~assets/img/car4.png");
+      background-image: url("~assets/imgWebp/car4.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1237,7 +1237,7 @@ main {
     }
 
     .work-five {
-      background-image: url("~assets/img/car5.png");
+      background-image: url("~assets/imgWebp/car5.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1246,7 +1246,7 @@ main {
     }
 
     .work-six {
-      background-image: url("~assets/img/car6.png");
+      background-image: url("~assets/imgWebp/car6.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1255,7 +1255,7 @@ main {
     }
 
     .work-seven {
-      background-image: url("~assets/img/car7.png");
+      background-image: url("~assets/imgWebp/car7.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1264,7 +1264,7 @@ main {
     }
 
     .work-eight {
-      background-image: url("~assets/img/car8.png");
+      background-image: url("~assets/imgWebp/car8.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1783,7 +1783,7 @@ main {
     .card {
       .work-one {
         box-sizing: border-box;
-        background-image: url("~assets/img/1.png");
+        background-image: url("~assets/imgWebp/1.webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1793,7 +1793,7 @@ main {
       }
 
       .work-two {
-        background-image: url("~assets/img/1(1).png");
+        background-image: url("~assets/imgWebp/1(1).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1802,7 +1802,7 @@ main {
       }
 
       .work-three {
-        background-image: url("~assets/img/1(2).png");
+        background-image: url("~assets/imgWebp/1(2).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1811,7 +1811,7 @@ main {
       }
 
       .work-four {
-        background-image: url("~assets/img/1(3).png");
+        background-image: url("~assets/imgWebp/1(3).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1821,7 +1821,7 @@ main {
 
       .work-five {
         box-sizing: border-box;
-        background-image: url("~assets/img/1(4).png");
+        background-image: url("~assets/imgWebp/1(4).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1830,7 +1830,7 @@ main {
       }
 
       .work-six {
-        background-image: url("~assets/img/1(5).png");
+        background-image: url("~assets/imgWebp/1(5).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1839,7 +1839,7 @@ main {
       }
 
       .work-seven {
-        background-image: url("~assets/img/1(6).png");
+        background-image: url("~assets/imgWebp/1(6).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1848,7 +1848,7 @@ main {
       }
 
       .work-eight {
-        background-image: url("~assets/img/1(7).png");
+        background-image: url("~assets/imgWebp/1(7).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;

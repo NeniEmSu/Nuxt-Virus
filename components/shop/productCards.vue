@@ -2,12 +2,16 @@
   <div class="row" id="store-items">
     <div class="col-10 col-sm-6 col-md-6 col-lg-4 mx-auto store-item Фібри" data-item="Фібри">
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/86.png"
-          class="card-img-top img-fluid store-img"
-          alt="Koch Chemie Fresh UP"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/86.png"
+            class="card-img-top img-fluid store-img"
+            alt="Koch Chemie Fresh UP"
+          >
+        </picture>
+
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Koch Chemie Fresh UP</h5>
@@ -38,12 +42,16 @@
 
     <div class="col-10 col-sm-6 col-md-6 col-lg-4 mx-auto store-item Фібри" data-item="Фібри">
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/9BFZEPHIR-1.png"
-          class="card-img-top img-fluid store-img"
-          alt="Rupes Coarse Zephir Gloss"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/9BFZEPHIR-1.png"
+            class="card-img-top img-fluid store-img"
+            alt="Rupes Coarse Zephir Gloss"
+          >
+        </picture>
+
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">
@@ -77,12 +85,16 @@
 
     <div class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99" data-item="ВіскSoft99">
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/MaskGroup(3).png"
-          class="card-img-top img-fluid store-img small-img"
-          alt="Soft 99"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/MaskGroup(3).png"
+            class="card-img-top img-fluid store-img small-img"
+            alt="Soft 99"
+          >
+        </picture>
+
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Soft 99</h5>
@@ -116,12 +128,15 @@
       data-item="item-description"
     >
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/86.png"
-          class="card-img-top img-fluid store-img"
-          alt="Koch Chemie Fresh UP"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/86.png"
+            class="card-img-top img-fluid store-img"
+            alt="Koch Chemie Fresh UP"
+          >
+        </picture>
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Koch Chemie Fresh UP</h5>
@@ -155,12 +170,15 @@
       data-item="item-description"
     >
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/9BFZEPHIR-1.png"
-          class="card-img-top img-fluid store-img"
-          alt="Rupes Coarse Zephir Gloss"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/9BFZEPHIR-1.png"
+            class="card-img-top img-fluid store-img"
+            alt="Rupes Coarse Zephir Gloss"
+          >
+        </picture>
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">
@@ -194,12 +212,15 @@
 
     <div class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99" data-item="ВіскSoft99">
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/MaskGroup(3).png"
-          class="card-img-top img-fluid store-img small-img"
-          alt="Soft 99"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/MaskGroup(3).png"
+            class="card-img-top img-fluid store-img small-img"
+            alt="Soft 99"
+          >
+        </picture>
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Soft 99</h5>
@@ -233,12 +254,15 @@
       data-item="item-description"
     >
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/86.png"
-          class="card-img-top img-fluid store-img"
-          alt="Koch Chemie Fresh UP"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/86.png"
+            class="card-img-top img-fluid store-img"
+            alt="Koch Chemie Fresh UP"
+          >
+        </picture>
         <hr>
         <div class="card-body">
           <h5 class="card-title text-left">Koch Chemie Fresh UP</h5>
@@ -272,12 +296,15 @@
       data-item="item-description"
     >
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/9BFZEPHIR-1.png"
-          class="card-img-top img-fluid store-img"
-          alt="Rupes Coarse Zephir Gloss"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/9BFZEPHIR-1.png"
+            class="card-img-top img-fluid store-img"
+            alt="Rupes Coarse Zephir Gloss"
+          >
+        </picture>
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">
@@ -311,12 +338,15 @@
 
     <div class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99" data-item="ВіскSoft99">
       <div class="card card__hover">
-        <img
-          id="item-img"
-          src="~/assets/img/MaskGroup(3).png"
-          class="card-img-top img-fluid store-img small-img"
-          alt="Soft 99"
-        >
+        <picture>
+          <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
+          <img
+            id="item-img"
+            src="~/assets/img/MaskGroup(3).png"
+            class="card-img-top img-fluid store-img small-img"
+            alt="Soft 99"
+          >
+        </picture>
         <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Soft 99</h5>
@@ -400,7 +430,7 @@ export default {};
       img {
         align-self: center;
         width: 100%;
-        height: auto;
+        height: 185px;
         min-height: 150px;
         object-fit: scale-down;
 
