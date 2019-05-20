@@ -70,8 +70,9 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("~assets/img/Хедер.png");
+    url("~assets/imgWebP/Хедер.webp");
   background-size: cover;
+  background-color: $darkColor;
   width: 100%;
   position: absolute;
   height: 140px;

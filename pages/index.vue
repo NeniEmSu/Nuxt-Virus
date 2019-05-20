@@ -349,11 +349,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+
 .top-grid h2 {
   position: absolute;
   z-index: 1;
-  font-family: "Roboto";
+  font-family: $mainFont;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -443,7 +445,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 20px;
@@ -492,7 +494,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 30px;
@@ -554,7 +556,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 26px;
@@ -604,7 +606,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 22px;
@@ -654,7 +656,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 22px;
@@ -699,7 +701,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: "Roboto";
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 20px !important;
@@ -751,7 +753,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 main {
   .top-grid {
     h2 a {

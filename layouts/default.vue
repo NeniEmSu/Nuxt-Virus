@@ -75,7 +75,12 @@ export default {
 
 <style lang="scss">
 @import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+
+@font-face {
+  font-family: "Roboto", "Roboto Condensed", sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+  font-display: swap;
+}
 
 .fade-enter-active,
 .fade-leave-active {
