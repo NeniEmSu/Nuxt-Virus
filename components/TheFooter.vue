@@ -28,10 +28,16 @@
         </li>
         <li>
           <a href="https://www.instagram.com/virusdetailing/" target="_blank" class="instagram">
-            <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">
+            <picture>
+              <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp">
+              <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">
+            </picture>
           </a>
           <a href="https://www.facebook.com/virus.te.ua/" target="_blank" class="facebook">
-            <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
+            <picture>
+              <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
+              <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
+            </picture>
           </a>
         </li>
       </ul>
