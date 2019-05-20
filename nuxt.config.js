@@ -173,9 +173,6 @@
      }
    ],
 
-   /*
-    ** Nuxt.js modules
-    */
    modules: [
      '@nuxtjs/axios',
      '@nuxtjs/pwa',
@@ -199,10 +196,6 @@
      ]
    ],
 
-
-   script: [
-
-   ],
    build: {
 
      plugins: [
