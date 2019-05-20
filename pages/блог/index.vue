@@ -90,13 +90,13 @@ export default {
         {
           title: "Як самостійно доглядати за салоном автомобіля?",
           thumbnail:
-            "/_nuxt/assets/img/Блог1.png",
+            "~/assets/img/Блог1.png",
           id: "blog001"
         },
         {
           title: "Скільки разів можна полірувати автомобіль?",
           thumbnail:
-            "/_nuxt/assets/img/Блог2.png",
+            "~/assets/img/Блог2.png",
           id: "blog002"
         }
       ]

@@ -3,7 +3,7 @@
     <div class="bottom-contact container">
       <div class="logo">
         <nuxt-link class="/navbar-brand logo" to="/">
-          <img src="img/virus-logo.svg" alt="virus logo">
+          <img src="~/assets/img/virus-logo.svg" alt="virus logo">
         </nuxt-link>
       </div>
       <ul>
@@ -31,10 +31,10 @@
         </li>
         <li>
           <a href="https://www.instagram.com/virusdetailing/" target="_blank" class="instagram">
-            <img src="img/icons8-instagram-filled-100.png" alt="icons instagram filled">
+            <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">
           </a>
           <a href="https://www.facebook.com/virus.te.ua/" target="_blank" class="facebook">
-            <img src="img/icons8-facebook-filled-100.png" alt="icons facebook filled">
+            <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
           </a>
         </li>
       </ul>
