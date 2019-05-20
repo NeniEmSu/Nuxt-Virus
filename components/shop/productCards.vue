@@ -4,7 +4,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/86.png"
+          src="~/assets/img/86.png"
           class="card-img-top img-fluid store-img"
           alt="Koch Chemie Fresh UP"
         >
@@ -40,7 +40,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/9BFZEPHIR-1.png"
+          src="~/assets/img/9BFZEPHIR-1.png"
           class="card-img-top img-fluid store-img"
           alt="Rupes Coarse Zephir Gloss"
         >
@@ -79,7 +79,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/MaskGroup(3).png"
+          src="~/assets/img/MaskGroup(3).png"
           class="card-img-top img-fluid store-img small-img"
           alt="Soft 99"
         >
@@ -118,7 +118,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/86.png"
+          src="~/assets/img/86.png"
           class="card-img-top img-fluid store-img"
           alt="Koch Chemie Fresh UP"
         >
@@ -157,7 +157,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/9BFZEPHIR-1.png"
+          src="~/assets/img/9BFZEPHIR-1.png"
           class="card-img-top img-fluid store-img"
           alt="Rupes Coarse Zephir Gloss"
         >
@@ -196,7 +196,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/MaskGroup(3).png"
+          src="~/assets/img/MaskGroup(3).png"
           class="card-img-top img-fluid store-img small-img"
           alt="Soft 99"
         >
@@ -235,7 +235,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/86.png"
+          src="~/assets/img/86.png"
           class="card-img-top img-fluid store-img"
           alt="Koch Chemie Fresh UP"
         >
@@ -274,7 +274,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/9BFZEPHIR-1.png"
+          src="~/assets/img/9BFZEPHIR-1.png"
           class="card-img-top img-fluid store-img"
           alt="Rupes Coarse Zephir Gloss"
         >
@@ -313,7 +313,7 @@
       <div class="card card__hover">
         <img
           id="item-img"
-          src="img/MaskGroup(3).png"
+          src="~/assets/img/MaskGroup(3).png"
           class="card-img-top img-fluid store-img small-img"
           alt="Soft 99"
         >
