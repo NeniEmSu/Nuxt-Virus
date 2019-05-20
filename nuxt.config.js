@@ -106,7 +106,7 @@
          hid: 'og:image',
          name: 'og:image',
          property: 'og:image',
-         content: 'https://virus.te.uaimg/virus_og.jpg'
+         content: '/virus_og.jpg'
 
        }
      ],
@@ -168,17 +168,9 @@
        ssr: false
      },
      {
-       src: '~/plugins/vue-fancybox.js',
-       ssr: false
-     },
-     {
        src: '~/plugins/vue-gallery.js',
        ssr: false
      }
-     //  {
-     //    src: '~plugins/vue-carousel',
-     //    ssr: false
-     //  }
    ],
 
    /*
@@ -208,39 +200,13 @@
    ],
 
 
-   script: [{
-       src: 'https://code.jquery.com/jquery-3.2.1.min.js',
-       type: 'text/javascript'
-     },
-     {
-       src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
-       type: 'text/javascript'
-     },
-     {
-       src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
-       type: 'text/javascript'
-     },
-     {
-       src: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
-       type: 'text/javascript'
-     },
-     {
-       src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js',
-       type: 'text/javascript'
-     }
-   ],
+   script: [
 
-   /*
-    ** Build configuration
-    */
+   ],
    build: {
-     /*
-      ** You can extend webpack config here
-      */
+
      plugins: [
-       new webpack.ProvidePlugin({
-         '$': 'jquery',
-       })
+
      ],
 
      extend(config, ctx) {
