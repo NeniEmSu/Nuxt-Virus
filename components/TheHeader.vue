@@ -42,7 +42,7 @@
     <div class="container">
       <nav>
         <div class="drawer-toggle" role="button" @click="$store.dispatch('nav/toggleSidebar')">
-          <i class="fa fa-bars fa-2x"></i>
+          <font-awesome-icon :icon="['fas', 'bars']" class="mx-1 fa-2x"/>
         </div>
 
         <div class="logo">

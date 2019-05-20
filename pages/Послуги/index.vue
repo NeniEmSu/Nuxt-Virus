@@ -801,12 +801,10 @@ export default {
 }
 
 .choose-brand button.btn:after {
-  color: $lightColor;
+  height: 20px;
   float: right;
-  font-size: 20px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f054";
+  content: url("~assets/img/chevron-right.webp");
+  line-height: 32px;
   margin-left: 20px;
   margin-right: -20px;
   transition: ease-in-out 300ms;

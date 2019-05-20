@@ -1,10 +1,6 @@
 <template>
   <div class="sidenav-container">
-    <div
-      v-if="toggleSidebar"
-      class="backdrop"
-      @click="$store.dispatch('nav/toggleSidebar')"
-    ></div>
+    <div v-if="toggleSidebar" class="backdrop" @click="$store.dispatch('nav/toggleSidebar')"></div>
 
     <transition name="slide-side">
       <div v-if="toggleSidebar" class="sidenav">
@@ -82,7 +78,8 @@ export default {
   width: 100%;
 }
 .sidenav {
-  height: 100%;
+  margin-top: 140px;
+  height: auto;
   width: 300px;
   background-color: black;
   z-index: 10000;
