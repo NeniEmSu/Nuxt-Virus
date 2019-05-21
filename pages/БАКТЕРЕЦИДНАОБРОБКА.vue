@@ -49,10 +49,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "default",
+  layout: 'default',
   scrollToTop: true,
   components: {
     ContactForm,
@@ -61,39 +61,39 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "БАКТЕРЕЦИДНА ОБРОБКА",
+      heading: 'БАКТЕРЕЦИДНА ОБРОБКА',
       firstParagraph:
-        "Процедура відбувається за рахунок спеціальних речовин, які наносяться на всі деталі салону (підлога, сидіння, стеля, панель), і які очищають їх від мікробів, бактерій та бруду.",
-      timeTaken: "Час виконання послуги до 1 дня"
-    };
+        'Процедура відбувається за рахунок спеціальних речовин, які наносяться на всі деталі салону (підлога, сидіння, стеля, панель), і які очищають їх від мікробів, бактерій та бруду.',
+      timeTaken: 'Час виконання послуги до 1 дня'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 video {
   width: 100%;

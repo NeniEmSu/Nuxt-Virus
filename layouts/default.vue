@@ -49,9 +49,9 @@
   </div>
 </template>
 <script>
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@/components/TheFooter.vue";
-import TheSideNav from "@/components/TheSideNav";
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
+import TheSideNav from '@/components/TheSideNav'
 export default {
   components: {
     TheHeader,
@@ -63,22 +63,22 @@ export default {
     return {
       link: [
         {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "/favicon.ico"
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
-@import "~assets/scss/config.scss";
+@import '~assets/scss/config.scss';
 
 @font-face {
-  font-family: "Roboto", "Roboto Condensed", sans-serif;
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+  font-family: 'Roboto', 'Roboto Condensed', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
   font-display: swap;
 }
 
@@ -141,8 +141,8 @@ button {
   background-color: rgb(149, 150, 150);
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -154,7 +154,7 @@ select {
   -ms-appearance: none;
   appearance: none;
 
-  background-image: url("~assets/img/select.png");
+  background-image: url('~assets/img/select.png');
   background-position: 95% center;
   background-repeat: no-repeat;
 

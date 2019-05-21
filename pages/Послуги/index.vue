@@ -1,29 +1,42 @@
 <template>
   <div>
     <div class="container text-center p-0 pt-4">
-      <img class="col-12 m-auto img-fluid" :src="image" :alt="description">
+      <img class="col-12 m-auto img-fluid" :src="image" :alt="description" />
 
       <div class="col-md-7 m-auto car-toggle">
         <div class="row text-center">
-          <div class="col-md-4 mx-auto" v-for=" variant in variants" :key="variant.variantId">
+          <div
+            v-for="variant in variants"
+            :key="variant.variantId"
+            class="col-md-4 mx-auto"
+          >
             <a
               href="#"
               class="btn"
-              @click.prevent="changeCars(variant.variantImage), selected  = variant.variantId "
-              :class="{activeBtn:selected  == variant.variantId}"
-            >{{ variant.variantTitle }}</a>
+              :class="{ activeBtn: selected == variant.variantId }"
+              @click.prevent="
+                changeCars(variant.variantImage), (selected = variant.variantId)
+              "
+              >{{ variant.variantTitle }}</a
+            >
             <p class="mt-2 mb-0">{{ variant.variantDescription }}</p>
           </div>
         </div>
       </div>
 
-      <form class="choose-brand" :class="{hideMe:selected  !== undefined}">
+      <form class="choose-brand" :class="{ hideMe: selected !== undefined }">
         <h3 class="col-12 red">Оберіть категорію автомобіля</h3>
-        <p class="col-12 choose-brand-desc">Введіть можель свого авто для визначення категорії</p>
+        <p class="col-12 choose-brand-desc">
+          Введіть можель свого авто для визначення категорії
+        </p>
 
         <div class="form-group w-25 mx-auto">
           <label hidden for="brand">Марка</label>
-          <select id="brand" aria-describedby="brand" class="form-control brand">
+          <select
+            id="brand"
+            aria-describedby="brand"
+            class="form-control brand"
+          >
             <option>Марка</option>
             <option>Марка</option>
             <option>Марка</option>
@@ -33,7 +46,11 @@
 
         <div class="form-group w-25 mx-auto">
           <label hidden for="model">Модель</label>
-          <select id="model" aria-describedby="model" class="form-control model">
+          <select
+            id="model"
+            aria-describedby="model"
+            class="form-control model"
+          >
             <option>Модель</option>
             <option>Модель</option>
             <option>Модель</option>
@@ -44,16 +61,16 @@
         <button type="submit" class="btn">Вибрати</button>
       </form>
     </div>
-    <div class="mt-3" :class="{hideMe:selected  == undefined}">
+    <div class="mt-3" :class="{ hideMe: selected == undefined }">
       <div class="jumbotron services">
         <div class="container services-container">
           <!-- Полірування -->
           <h2 class="text-center fab-header">Полірування</h2>
           <div class="card-deck m-0 p-0">
             <div
-              class="card four-cards"
-              v-for=" polish in polishing"
+              v-for="polish in polishing"
               :key="polish.polishingId"
+              class="card four-cards"
               :class="polish.polishingClass"
             >
               <div class="card-body"></div>
@@ -61,17 +78,17 @@
                 <h5>{{ polish.polishingTitle }}</h5>
                 <div class="row">
                   <div class="col-6 pr-0">
-                    <p class v-show="selected == 1">
+                    <p v-show="selected == 1" class>
                       <small>від</small>
                       {{ polish.polishingCost }}
                       <small>грн</small>
                     </p>
-                    <p class v-show="selected == 2">
+                    <p v-show="selected == 2" class>
                       <small>від</small>
                       {{ polish.polishingCostVar1 }}
                       <small>грн</small>
                     </p>
-                    <p class v-show="selected == 3">
+                    <p v-show="selected == 3" class>
                       <small>від</small>
                       {{ polish.polishingCostVar2 }}
                       <small>грн</small>
@@ -79,7 +96,9 @@
                   </div>
 
                   <div class="col-6 m-0 p-0">
-                    <nuxt-link :to="polish.polishingLink" class="btn">Читати більше</nuxt-link>
+                    <nuxt-link :to="polish.polishingLink" class="btn"
+                      >Читати більше</nuxt-link
+                    >
                   </div>
                 </div>
               </div>
@@ -90,9 +109,9 @@
           <h2 class="text-center fab-header">Хімчистка</h2>
           <div class="card-deck">
             <div
-              class="card four-cards"
-              v-for=" cleaner in  cleaners"
+              v-for="cleaner in cleaners"
               :key="cleaner.cleanersId"
+              class="card four-cards"
               :class="cleaner.cleanersClass"
             >
               <div class="card-body"></div>
@@ -100,17 +119,17 @@
                 <h5>{{ cleaner.cleanersTitle }}</h5>
                 <div class="row">
                   <div class="col-6 pr-0">
-                    <p class v-show="selected == 1">
+                    <p v-show="selected == 1" class>
                       <small>від</small>
                       {{ cleaner.cleanersCost }}
                       <small>грн</small>
                     </p>
-                    <p class v-show="selected == 2">
+                    <p v-show="selected == 2" class>
                       <small>від</small>
                       {{ cleaner.cleanersCostVar1 }}
                       <small>грн</small>
                     </p>
-                    <p class v-show="selected == 3">
+                    <p v-show="selected == 3" class>
                       <small>від</small>
                       {{ cleaner.cleanersCostVar2 }}
                       <small>грн</small>
@@ -118,7 +137,9 @@
                   </div>
 
                   <div class="col-6 m-0 p-0">
-                    <nuxt-link :to="cleaner.cleanersLink" class="btn">Читати більше</nuxt-link>
+                    <nuxt-link :to="cleaner.cleanersLink" class="btn"
+                      >Читати більше</nuxt-link
+                    >
                   </div>
                 </div>
               </div>
@@ -130,9 +151,9 @@
           <div class="testing">
             <div class="row">
               <div
-                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto store-item p-0 p-lg-2"
-                v-for=" WaxCover in  WaxCovers"
+                v-for="WaxCover in WaxCovers"
                 :key="WaxCover.WaxCoversId"
+                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto store-item p-0 p-lg-2"
               >
                 <div class="card two-cards" :class="WaxCover.WaxCoversClass">
                   <div class="card-body"></div>
@@ -140,24 +161,26 @@
                     <h5>{{ WaxCover.WaxCoversTitle }}</h5>
                     <div class="row">
                       <div class="col-6 pr-0">
-                        <p class v-show="selected == 1">
+                        <p v-show="selected == 1" class>
                           <small>від</small>
                           {{ WaxCover.WaxCoversCost }}
                           <small>грн</small>
                         </p>
-                        <p class v-show="selected == 2">
+                        <p v-show="selected == 2" class>
                           <small>від</small>
                           {{ WaxCover.WaxCoversCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p class v-show="selected == 3">
+                        <p v-show="selected == 3" class>
                           <small>від</small>
                           {{ WaxCover.WaxCoversCostVar2 }}
                           <small>грн</small>
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <nuxt-link :to="WaxCover.WaxCoversLink" class="btn">Читати більше</nuxt-link>
+                        <nuxt-link :to="WaxCover.WaxCoversLink" class="btn"
+                          >Читати більше</nuxt-link
+                        >
                       </div>
                     </div>
                   </div>
@@ -169,9 +192,9 @@
           <div class="testing">
             <div class="row">
               <div
-                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto p-0 p-lg-2"
-                v-for=" ceramicCoat in  ceramicCoating"
+                v-for="ceramicCoat in ceramicCoating"
                 :key="ceramicCoat.ceramicCoatingId"
+                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto p-0 p-lg-2"
               >
                 <h2 class="text-center card-heading">Керамічне покриття</h2>
                 <div class="card two-cards-seprate-titles service-eleven">
@@ -179,51 +202,52 @@
 
                   <div class="card-end">
                     <h5 class="col-12 px-0">Керамічне покриття кузова</h5>
-                    <hr>
+                    <hr />
                     <div class="row">
                       <div class="col-md-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">Двухфазна мийка</p>
                       </div>
                       <div class="col-md-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">
-                          Очищення кузова
-                          від бітуму
+                          Очищення кузова від бітуму
                         </p>
                       </div>
                       <div class="col-md-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">
-                          Легке вілновлююче
-                          полірування
+                          Легке вілновлююче полірування
                         </p>
                       </div>
                       <div class="col-md-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">
-                          Керамічне покриття
-                          окремих деталей
+                          Керамічне покриття окремих деталей
                         </p>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-6 col-md-8 text-lg-right pr-0">
-                        <p class v-show="selected == 1">
+                        <p v-show="selected == 1" class>
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCost }}
                           <small>грн</small>
                         </p>
-                        <p class v-show="selected == 2">
+                        <p v-show="selected == 2" class>
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p class v-show="selected == 3">
+                        <p v-show="selected == 3" class>
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCostVar2 }}
                           <small>грн</small>
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <nuxt-link :to="ceramicCoat.ceramicCoatingLink" class="btn">Читати більше</nuxt-link>
+                        <nuxt-link
+                          :to="ceramicCoat.ceramicCoatingLink"
+                          class="btn"
+                          >Читати більше</nuxt-link
+                        >
                       </div>
                     </div>
                   </div>
@@ -232,52 +256,51 @@
 
               <!-- Передпродажна підготовка -->
               <div
-                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto p-0 p-lg-2"
-                v-for=" PreSalePrep in  PreSalePreparations"
+                v-for="PreSalePrep in PreSalePreparations"
                 :key="PreSalePrep.PreSalePreparationsId"
+                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto p-0 p-lg-2"
               >
-                <h2 class="text-center card-heading">Передпродажна підготовка</h2>
+                <h2 class="text-center card-heading">
+                  Передпродажна підготовка
+                </h2>
                 <div class="card two-cards-seprate-titles service-twelve">
                   <div class="card-body"></div>
 
                   <div class="card-end">
                     <h5 class="col-12 px-0">Комплекс</h5>
-                    <hr style="width: 100%;">
+                    <hr style="width: 100%;" />
                     <div class="row">
                       <div class="col-md-4 mt-2 text-left mx-md-auto">
                         <p class="subtext">
-                          Трьохфазна мийка авто
-                          + Чистка ковроліну підлоги
+                          Трьохфазна мийка авто + Чистка ковроліну підлоги
                         </p>
                       </div>
                       <div class="col-md-4 mt-2 text-left mx-md-auto">
                         <p class="subtext">
-                          Чистка дверних карт
-                          + Чистка панелі
+                          Чистка дверних карт + Чистка панелі
                         </p>
                       </div>
                       <div class="col-md-4 mt-2 text-left mx-md-auto">
                         <p class="subtext">
-                          Чистка воздуховодів
-                          + Чистка сидінь і стелі
-                          + Ароматизація салону
+                          Чистка воздуховодів + Чистка сидінь і стелі +
+                          Ароматизація салону
                         </p>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-6 col-md-8 text-lg-right pr-0">
-                        <p class v-show="selected == 1">
+                        <p v-show="selected == 1" class>
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCost }}
                           <small>грн</small>
                         </p>
-                        <p class v-show="selected == 2">
+                        <p v-show="selected == 2" class>
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p class v-show="selected == 3">
+                        <p v-show="selected == 3" class>
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCostVar2 }}
                           <small>грн</small>
@@ -287,7 +310,8 @@
                         <nuxt-link
                           :to="PreSalePrep.PreSalePreparationsLink"
                           class="btn"
-                        >Читати більше</nuxt-link>
+                          >Читати більше</nuxt-link
+                        >
                       </div>
                     </div>
                   </div>
@@ -300,22 +324,20 @@
 
           <div class="row cards-grouppings-3">
             <div
-              class="col-10 col-sm-12 col-md-5 col-lg-4 mx-auto p-0 p-lg-2"
-              v-for=" addition in  additional"
+              v-for="addition in additional"
               :key="addition.additionalId"
+              class="col-10 col-sm-12 col-md-5 col-lg-4 mx-auto p-0 p-lg-2"
             >
               <div class="card three-cards" :class="addition.additionalClass">
                 <div class="card-body"></div>
                 <div class="card-end">
                   <h5>{{ addition.additionalTitle }}</h5>
                   <div class="row">
-                    <div class="col-6" v-show="selected == 1">
+                    <div v-show="selected == 1" class="col-6">
                       <p v-show="!addition.fixedRange">
                         <small v-show="!addition.perItem">від</small>
                         {{ addition.additionalCost }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
+                        <small v-if="addition.dollar">$</small>
                         <small v-else-if="addition.perItem">грн / шт</small>
                         <small v-else>грн</small>
                       </p>
@@ -324,21 +346,17 @@
                         {{ addition.additionalCost }}
                         <small>До</small>
                         {{ addition.additionalCostHigh }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
+                        <small v-if="addition.dollar">$</small>
 
                         <small v-else-if="addition.perItem">грн / шт</small>
                         <small v-else>грн</small>
                       </p>
                     </div>
-                    <div class="col-6" v-show="selected == 2">
+                    <div v-show="selected == 2" class="col-6">
                       <p v-show="!addition.fixedRange">
                         <small v-show="!addition.perItem">від</small>
                         {{ addition.additionalCostVar1 }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
+                        <small v-if="addition.dollar">$</small>
                         <small v-else-if="addition.perItem">грн / шт</small>
                         <small v-else>грн</small>
                       </p>
@@ -347,21 +365,17 @@
                         {{ addition.additionalCost }}
                         <small>До</small>
                         {{ addition.additionalCostHigh }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
+                        <small v-if="addition.dollar">$</small>
 
                         <small v-else-if="addition.perItem">грн / шт</small>
                         <small v-else>грн</small>
                       </p>
                     </div>
-                    <div class="col-6" v-show="selected == 3">
+                    <div v-show="selected == 3" class="col-6">
                       <p v-show="!addition.fixedRange">
                         <small v-show="!addition.perItem">від</small>
                         {{ addition.additionalCostVar2 }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
+                        <small v-if="addition.dollar">$</small>
                         <small v-else-if="addition.perItem">грн / шт</small>
                         <small v-else>грн</small>
                       </p>
@@ -370,9 +384,7 @@
                         {{ addition.additionalCost }}
                         <small>До</small>
                         {{ addition.additionalCostHigh }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
+                        <small v-if="addition.dollar">$</small>
 
                         <small v-else-if="addition.perItem">грн / шт</small>
                         <small v-else>грн</small>
@@ -380,7 +392,9 @@
                     </div>
 
                     <div class="col-6 text-right pl-0">
-                      <nuxt-link :to="addition.additionalLink" class="btn">Читати більше</nuxt-link>
+                      <nuxt-link :to="addition.additionalLink" class="btn"
+                        >Читати більше</nuxt-link
+                      >
                     </div>
                   </div>
                 </div>
@@ -390,16 +404,16 @@
         </div>
       </div>
 
-      <ContactForm/>
+      <ContactForm />
 
-      <progressSection/>
+      <progressSection />
     </div>
   </div>
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
   components: {
     ContactForm,
@@ -408,288 +422,288 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "контакти - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'контакти - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   asyncData() {
     return {
-      image: "./imgWebP/services-car-goup-all.webp",
+      image: './imgWebP/services-car-goup-all.webp',
       description:
-        " white mercedes , jeep grand cherokee srt white & Black Range Rover Piano",
+        ' white mercedes , jeep grand cherokee srt white & Black Range Rover Piano',
       isActive: false,
       selectedVariant: 0,
-      polishingClass: "service-one",
+      polishingClass: 'service-one',
       selected: undefined,
       variants: [
         {
           variantId: 1,
-          variantTitle: "Ⅰ категорія",
-          variantDescription: "середній бізнес спорт купе",
-          variantImage: "./imgWebP/services-car-goup-var-1.webp"
+          variantTitle: 'Ⅰ категорія',
+          variantDescription: 'середній бізнес спорт купе',
+          variantImage: './imgWebP/services-car-goup-var-1.webp'
         },
         {
           variantId: 2,
-          variantTitle: "ⅠⅠ категорія",
-          variantDescription: "середній кросовер позашляховик",
-          variantImage: "./imgWebP/services-car-goup-var-2.webp"
+          variantTitle: 'ⅠⅠ категорія',
+          variantDescription: 'середній кросовер позашляховик',
+          variantImage: './imgWebP/services-car-goup-var-2.webp'
         },
         {
           variantId: 3,
-          variantTitle: "ⅠⅠⅠ категорія",
-          variantDescription: "повнорозмірний кросовер позашляховик",
-          variantImage: "./imgWebP/services-car-goup-var-3.webp"
+          variantTitle: 'ⅠⅠⅠ категорія',
+          variantDescription: 'повнорозмірний кросовер позашляховик',
+          variantImage: './imgWebP/services-car-goup-var-3.webp'
         }
       ],
       polishing: [
         {
-          polishingId: "01",
-          polishingTitle: "Полірування автомобіля",
-          polishingCost: "5999",
-          polishingCostVar1: "6999",
-          polishingCostVar2: "8499",
-          polishingLink: "Полірування",
-          polishingClass: "service-one"
+          polishingId: '01',
+          polishingTitle: 'Полірування автомобіля',
+          polishingCost: '5999',
+          polishingCostVar1: '6999',
+          polishingCostVar2: '8499',
+          polishingLink: 'Полірування',
+          polishingClass: 'service-one'
         },
         {
-          polishingId: "02",
-          polishingTitle: "Полірування фар",
-          polishingCost: "600",
-          polishingCostVar1: "700",
-          polishingCostVar2: "800",
-          polishingLink: "Поліруванняфар",
-          polishingClass: "service-two"
+          polishingId: '02',
+          polishingTitle: 'Полірування фар',
+          polishingCost: '600',
+          polishingCostVar1: '700',
+          polishingCostVar2: '800',
+          polishingLink: 'Поліруванняфар',
+          polishingClass: 'service-two'
         },
         {
-          polishingId: "03",
-          polishingTitle: "Полірування вставок салону",
-          polishingCost: "500",
-          polishingCostVar1: "600",
-          polishingCostVar2: "700",
-          polishingLink: "Вставкисалону",
-          polishingClass: "service-three"
+          polishingId: '03',
+          polishingTitle: 'Полірування вставок салону',
+          polishingCost: '500',
+          polishingCostVar1: '600',
+          polishingCostVar2: '700',
+          polishingLink: 'Вставкисалону',
+          polishingClass: 'service-three'
         },
         {
-          polishingId: "04",
-          polishingTitle: "Полірування центральних стійок",
-          polishingCost: "800",
-          polishingCostVar1: "900",
-          polishingCostVar2: "1000",
-          polishingLink: "Центральністійки",
-          polishingClass: "service-four"
+          polishingId: '04',
+          polishingTitle: 'Полірування центральних стійок',
+          polishingCost: '800',
+          polishingCostVar1: '900',
+          polishingCostVar2: '1000',
+          polishingLink: 'Центральністійки',
+          polishingClass: 'service-four'
         }
       ],
       cleaners: [
         {
-          cleanersId: "05",
-          cleanersTitle: "Хімчистка",
-          cleanersCost: "1999",
-          cleanersCostVar1: "2499",
-          cleanersCostVar2: "3199",
-          cleanersLink: "Хімчистка",
-          cleanersClass: "service-five"
+          cleanersId: '05',
+          cleanersTitle: 'Хімчистка',
+          cleanersCost: '1999',
+          cleanersCostVar1: '2499',
+          cleanersCostVar2: '3199',
+          cleanersLink: 'Хімчистка',
+          cleanersClass: 'service-five'
         },
         {
-          cleanersId: "06",
-          cleanersTitle: "Хімчистка колесних арок, підвіски, дисків",
-          cleanersCost: "800",
-          cleanersCostVar1: "0",
-          cleanersCostVar2: "0",
-          cleanersLink: "Колісніарки",
-          cleanersClass: "service-six"
+          cleanersId: '06',
+          cleanersTitle: 'Хімчистка колесних арок, підвіски, дисків',
+          cleanersCost: '800',
+          cleanersCostVar1: '0',
+          cleanersCostVar2: '0',
+          cleanersLink: 'Колісніарки',
+          cleanersClass: 'service-six'
         },
         {
-          cleanersId: "07",
-          cleanersTitle: "Хімчистка передніх сидінь",
-          cleanersCost: "275",
-          cleanersCostVar1: "330",
-          cleanersCostVar2: "385",
-          cleanersLink: "передніхсидінь",
-          cleanersClass: "service-seven"
+          cleanersId: '07',
+          cleanersTitle: 'Хімчистка передніх сидінь',
+          cleanersCost: '275',
+          cleanersCostVar1: '330',
+          cleanersCostVar2: '385',
+          cleanersLink: 'передніхсидінь',
+          cleanersClass: 'service-seven'
         },
         {
-          cleanersId: "08",
-          cleanersTitle: "Хімчистка задніх сидінь",
-          cleanersCost: "495",
-          cleanersCostVar1: "605",
-          cleanersCostVar2: "660",
-          cleanersLink: "задніхсидінь",
-          cleanersClass: "service-eight"
+          cleanersId: '08',
+          cleanersTitle: 'Хімчистка задніх сидінь',
+          cleanersCost: '495',
+          cleanersCostVar1: '605',
+          cleanersCostVar2: '660',
+          cleanersLink: 'задніхсидінь',
+          cleanersClass: 'service-eight'
         }
       ],
       WaxCovers: [
         {
-          WaxCoversId: "09",
-          WaxCoversTitle: "Покриття твердим універсальним воском Soft 99",
-          WaxCoversCost: "1200",
-          WaxCoversCostVar1: "1300",
-          WaxCoversCostVar2: "1400",
-          WaxCoversLink: "Покриттявоском",
-          WaxCoversClass: "service-nine"
+          WaxCoversId: '09',
+          WaxCoversTitle: 'Покриття твердим універсальним воском Soft 99',
+          WaxCoversCost: '1200',
+          WaxCoversCostVar1: '1300',
+          WaxCoversCostVar2: '1400',
+          WaxCoversLink: 'Покриттявоском',
+          WaxCoversClass: 'service-nine'
         },
         {
-          WaxCoversId: "10",
-          WaxCoversTitle: "Рідке скло",
-          WaxCoversCost: "3000",
-          WaxCoversCostVar1: "0",
-          WaxCoversCostVar2: "0",
-          WaxCoversLink: "Рідкескло",
-          WaxCoversClass: "service-ten"
+          WaxCoversId: '10',
+          WaxCoversTitle: 'Рідке скло',
+          WaxCoversCost: '3000',
+          WaxCoversCostVar1: '0',
+          WaxCoversCostVar2: '0',
+          WaxCoversLink: 'Рідкескло',
+          WaxCoversClass: 'service-ten'
         }
       ],
       ceramicCoating: [
         {
-          ceramicCoatingId: "11",
-          ceramicCoatingCost: "12999",
-          ceramicCoatingCostVar1: "14499",
-          ceramicCoatingCostVar2: "15999",
-          ceramicCoatingLink: "Керамічнепокриття"
+          ceramicCoatingId: '11',
+          ceramicCoatingCost: '12999',
+          ceramicCoatingCostVar1: '14499',
+          ceramicCoatingCostVar2: '15999',
+          ceramicCoatingLink: 'Керамічнепокриття'
         }
       ],
       PreSalePreparations: [
         {
-          PreSalePreparationsId: "12",
-          PreSalePreparationsCost: "1100",
-          PreSalePreparationsCostVar1: "1200",
-          PreSalePreparationsCostVar2: "1300",
-          PreSalePreparationsLink: "Передпродажнапідготовка"
+          PreSalePreparationsId: '12',
+          PreSalePreparationsCost: '1100',
+          PreSalePreparationsCostVar1: '1200',
+          PreSalePreparationsCostVar2: '1300',
+          PreSalePreparationsLink: 'Передпродажнапідготовка'
         }
       ],
 
       additional: [
         {
-          additionalId: "13",
-          additionalTitle: "Реставнація подряпин на кузові",
-          additionalCost: "130",
-          additionalCostHigh: "250",
+          additionalId: '13',
+          additionalTitle: 'Реставнація подряпин на кузові',
+          additionalCost: '130',
+          additionalCostHigh: '250',
           fixedRange: true,
-          additionalLink: "Реставраціяподряпин",
-          additionalClass: "service-13"
+          additionalLink: 'Реставраціяподряпин',
+          additionalClass: 'service-13'
         },
         {
-          additionalId: "14",
-          additionalTitle: "Перешиття шкіряних деталей салону",
-          additionalCost: "500",
-          additionalCostHigh: "3000",
+          additionalId: '14',
+          additionalTitle: 'Перешиття шкіряних деталей салону',
+          additionalCost: '500',
+          additionalCostHigh: '3000',
           fixedRange: true,
-          additionalLink: "Перешиття ",
-          additionalClass: "service-14"
+          additionalLink: 'Перешиття ',
+          additionalClass: 'service-14'
         },
         {
-          additionalId: "15",
-          additionalTitle: "Антидощ",
-          additionalCost: "600",
-          additionalCostHigh: "1200",
+          additionalId: '15',
+          additionalTitle: 'Антидощ',
+          additionalCost: '600',
+          additionalCostHigh: '1200',
           fixedRange: true,
-          additionalLink: "Антидощ",
-          additionalClass: "service-15"
+          additionalLink: 'Антидощ',
+          additionalClass: 'service-15'
         },
         {
-          additionalId: "16",
-          additionalTitle: "Мийка мотору парою",
-          additionalCost: "500",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "Мийкамотору",
-          additionalClass: "service-16"
+          additionalId: '16',
+          additionalTitle: 'Мийка мотору парою',
+          additionalCost: '500',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: 'Мийкамотору',
+          additionalClass: 'service-16'
         },
         {
-          additionalId: "17",
-          additionalTitle: "Шумоізоляція",
-          additionalCost: "330",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '17',
+          additionalTitle: 'Шумоізоляція',
+          additionalCost: '330',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           dollar: true,
-          additionalLink: "ШУМОІЗОЛЯЦІЯ",
-          additionalClass: "service-17"
+          additionalLink: 'ШУМОІЗОЛЯЦІЯ',
+          additionalClass: 'service-17'
         },
         {
-          additionalId: "18",
-          additionalTitle: "Видалення запахів Бактерецидна обробка",
-          additionalCost: "500",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "БАКТЕРЕЦИДНАОБРОБКА",
-          additionalClass: "service-18"
+          additionalId: '18',
+          additionalTitle: 'Видалення запахів Бактерецидна обробка',
+          additionalCost: '500',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: 'БАКТЕРЕЦИДНАОБРОБКА',
+          additionalClass: 'service-18'
         },
         {
-          additionalId: "19",
-          additionalTitle: "Видалення вмятин без покраски PDR",
-          additionalCost: "0",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "Видаленнявмятин",
-          additionalClass: "service-19"
+          additionalId: '19',
+          additionalTitle: 'Видалення вмятин без покраски PDR',
+          additionalCost: '0',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: 'Видаленнявмятин',
+          additionalClass: 'service-19'
         },
         {
-          additionalId: "20",
-          additionalTitle: "Поклейка антигравійної плівки",
-          additionalCost: "1000",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "антигравійноїплівки",
-          additionalClass: "service-20"
+          additionalId: '20',
+          additionalTitle: 'Поклейка антигравійної плівки',
+          additionalCost: '1000',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: 'антигравійноїплівки',
+          additionalClass: 'service-20'
         },
         {
-          additionalId: "21",
-          additionalTitle: "Очистка кондиціонера",
-          additionalCost: "1200",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "Очисткакондиціонера",
-          additionalClass: "service-21"
+          additionalId: '21',
+          additionalTitle: 'Очистка кондиціонера',
+          additionalCost: '1200',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: 'Очисткакондиціонера',
+          additionalClass: 'service-21'
         },
         {
-          additionalId: "22",
-          additionalTitle: "Чистка дисків",
-          additionalCost: "250",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '22',
+          additionalTitle: 'Чистка дисків',
+          additionalCost: '250',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           perItem: true,
-          additionalLink: "ЧИСТКАДИСКІВ",
-          additionalClass: "service-22"
+          additionalLink: 'ЧИСТКАДИСКІВ',
+          additionalClass: 'service-22'
         },
         {
-          additionalId: "23",
-          additionalTitle: "Керамічне покриття сидінь",
-          additionalCost: "500",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '23',
+          additionalTitle: 'Керамічне покриття сидінь',
+          additionalCost: '500',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           perItem: true,
-          additionalLink: "КЕРАМІЧНЕПОКРИТТЯСИДІНЬ",
-          additionalClass: "service-23"
+          additionalLink: 'КЕРАМІЧНЕПОКРИТТЯСИДІНЬ',
+          additionalClass: 'service-23'
         },
         {
-          additionalId: "24",
-          additionalTitle: "Озонація",
-          additionalCost: "1000",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "Озонація",
-          additionalClass: "service-24"
+          additionalId: '24',
+          additionalTitle: 'Озонація',
+          additionalCost: '1000',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: 'Озонація',
+          additionalClass: 'service-24'
         }
       ]
-    };
+    }
   },
   methods: {
     changeCars(variantImage) {
-      this.image = variantImage;
+      this.image = variantImage
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
 .choose-brand {
   .choose-brand-desc {
@@ -803,7 +817,7 @@ export default {
 .choose-brand button.btn:after {
   height: 20px;
   float: right;
-  content: url("~assets/img/chevron-right.webp");
+  content: url('~assets/img/chevron-right.webp');
   line-height: 32px;
   margin-left: 20px;
   margin-right: -20px;
@@ -846,7 +860,7 @@ form.choose-brand {
 }
 
 form.choose-brand p {
-  font-family: "$mainFont";
+  font-family: '$mainFont';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -875,7 +889,7 @@ form.choose-brand p {
 
 .fab-header:before,
 .fab-header:after {
-  content: "";
+  content: '';
   border: 1px solid $darkColor;
   margin: 0 20px 0 0;
   flex: 1 0 40px;
@@ -982,168 +996,168 @@ form.choose-brand p {
       }
 
       &.service-one {
-        background-image: url("~assets/img/services1.png");
+        background-image: url('~assets/img/services1.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-two {
-        background-image: url("~assets/img/services2.png");
+        background-image: url('~assets/img/services2.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-three {
-        background-image: url("~assets/img/services3.png");
+        background-image: url('~assets/img/services3.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-four {
-        background-image: url("~assets/img/services4.png");
+        background-image: url('~assets/img/services4.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-five {
-        background-image: url("~assets/img/services5.png");
+        background-image: url('~assets/img/services5.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-six {
-        background-image: url("~assets/img/services6.png");
+        background-image: url('~assets/img/services6.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-seven {
-        background-image: url("~assets/img/services7.png");
+        background-image: url('~assets/img/services7.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-eight {
-        background-image: url("~assets/img/services8.png");
+        background-image: url('~assets/img/services8.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-nine {
-        background-image: url("~assets/img/services9.png");
+        background-image: url('~assets/img/services9.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-ten {
-        background-image: url("~assets/img/services10.png");
+        background-image: url('~assets/img/services10.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-eleven {
-        background-image: url("~assets/img/services11.png");
+        background-image: url('~assets/img/services11.png');
         background-repeat: no-repeat;
         background-position: top center;
         background-size: scale-down;
       }
 
       &.service-twelve {
-        background-image: url("~assets/img/services12.png");
+        background-image: url('~assets/img/services12.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-13 {
-        background-image: url("~assets/img/services13.png");
+        background-image: url('~assets/img/services13.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-14 {
-        background-image: url("~assets/img/services14.png");
+        background-image: url('~assets/img/services14.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-15 {
-        background-image: url("~assets/img/services15.png");
+        background-image: url('~assets/img/services15.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-16 {
-        background-image: url("~assets/img/services16.png");
+        background-image: url('~assets/img/services16.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-17 {
-        background-image: url("~assets/img/services17.png");
+        background-image: url('~assets/img/services17.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-18 {
-        background-image: url("~assets/img/services18.png");
+        background-image: url('~assets/img/services18.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-19 {
-        background-image: url("~assets/img/services19.png");
+        background-image: url('~assets/img/services19.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-20 {
-        background-image: url("~assets/img/services20.png");
+        background-image: url('~assets/img/services20.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-21 {
-        background-image: url("~assets/img/services21.png");
+        background-image: url('~assets/img/services21.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-22 {
-        background-image: url("~assets/img/services22.png");
+        background-image: url('~assets/img/services22.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-23 {
-        background-image: url("~assets/img/services23.png");
+        background-image: url('~assets/img/services23.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-24 {
-        background-image: url("~assets/img/services24.png");
+        background-image: url('~assets/img/services24.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;

@@ -71,10 +71,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "Services",
+  layout: 'Services',
   components: {
     ContactForm,
     progressSection
@@ -82,59 +82,59 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "ПОЛІРУВАННЯ центральних стійок",
-      question: "Для чого полірувати стійки?",
+      heading: 'ПОЛІРУВАННЯ центральних стійок',
+      question: 'Для чого полірувати стійки?',
       firstParagraph:
-        "Своєчасна і професійна хімчистка колісних арок і підвіски автомобіля з подальшою консервацією вузлів допоможе сповільнити налипання бруду і розвиток корозії, а також збереже деталі максимально чистими і візуально новими.",
-      secondParagraph: "Після весняної сльоти така послуга - просто must have.",
+        'Своєчасна і професійна хімчистка колісних арок і підвіски автомобіля з подальшою консервацією вузлів допоможе сповільнити налипання бруду і розвиток корозії, а також збереже деталі максимально чистими і візуально новими.',
+      secondParagraph: 'Після весняної сльоти така послуга - просто must have.',
       thirdParagraph:
         'Погодьтеся, шикарний позашляховик з блискучим кузовом і бездоганно чистим салоном на брудних дисках і шарами бруду на підвісці виглядає вже не "вау"!',
       inclusiveInService: [
         {
-          services: "Бережна мийка кузова"
+          services: 'Бережна мийка кузова'
         },
         {
-          services: "Хімчистка колісних арок і підвіски"
+          services: 'Хімчистка колісних арок і підвіски'
         },
         {
-          services: "Обробка вузлів підвіски консервантом"
+          services: 'Обробка вузлів підвіски консервантом'
         },
         {
-          services: "Хімчистка автомобільних дисків"
+          services: 'Хімчистка автомобільних дисків'
         }
       ],
-      timeTaken: "Час виконання послуги 1 день"
-    };
+      timeTaken: 'Час виконання послуги 1 день'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter6.png");
+  background-image: url('~assets/img/beforeAfter6.png');
 }
 </style>

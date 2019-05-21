@@ -72,11 +72,11 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
   scrollToTop: true,
-  layout: "default",
+  layout: 'default',
   components: {
     ContactForm,
     progressSection
@@ -84,64 +84,64 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "МИЙКА МОТОРУ ПАРОЮ",
+      heading: 'МИЙКА МОТОРУ ПАРОЮ',
       firstParagraph:
-        "Детейлінг моторного відсіку - важливий штрих в догляді за автомобілем.",
+        'Детейлінг моторного відсіку - важливий штрих в догляді за автомобілем.',
       question: 'Важливо: це не "мийка двигуна"! В чому різниця? ',
       secondParagraph:
-        "Ми не ллємо в двигун воду керхером. Замість цього ми дбайливо очищаємо двигун і підкапотний простір паром і пензликами + використовуємо склади-діелектрики, які витісняють вологу і, тим самим, знижують ризик пошкодження електроніки в ході даної процедури.",
-      thirdParagraph: "В результаті автомобіль ніби щойно з салону!",
+        'Ми не ллємо в двигун воду керхером. Замість цього ми дбайливо очищаємо двигун і підкапотний простір паром і пензликами + використовуємо склади-діелектрики, які витісняють вологу і, тим самим, знижують ризик пошкодження електроніки в ході даної процедури.',
+      thirdParagraph: 'В результаті автомобіль ніби щойно з салону!',
       inclusiveInService: [
         {
-          services: "Бережна мийка кузова"
+          services: 'Бережна мийка кузова'
         },
         {
-          services: "Очищення підкапотного простору"
-        },
-        {
-          services:
-            "Полірування кузова: абразивне, коригуюче, протиголограмне, Поліровка дрібних деталей (простір під ручками, пластикові молдинги і ін.)"
+          services: 'Очищення підкапотного простору'
         },
         {
           services:
-            "Нанесення консерванту, що захищає двигун від шкідливих впливів навколишнього середовища"
+            'Полірування кузова: абразивне, коригуюче, протиголограмне, Поліровка дрібних деталей (простір під ручками, пластикові молдинги і ін.)'
         },
         {
-          services: "Ретельна сушка"
+          services:
+            'Нанесення консерванту, що захищає двигун від шкідливих впливів навколишнього середовища'
+        },
+        {
+          services: 'Ретельна сушка'
         }
       ],
-      timeTaken: "Час виконання послуги від 2 до 5 годин"
-    };
+      timeTaken: 'Час виконання послуги від 2 до 5 годин'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter10.png");
+  background-image: url('~assets/img/beforeAfter10.png');
 }
 </style>

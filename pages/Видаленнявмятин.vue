@@ -58,10 +58,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "default",
+  layout: 'default',
   components: {
     ContactForm,
     progressSection
@@ -69,27 +69,27 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "ВИДАЛЕННЯ ВМЯТИН БЕЗ ФАРБУВАННЯ ",
+      heading: 'ВИДАЛЕННЯ ВМЯТИН БЕЗ ФАРБУВАННЯ ',
       firstParagraph:
         "Навіть самий акуратний водій не застрахований від появи вм'ятин. Найчастіше в такому випадку автовласники звертаються до малярів і отримують шар шпаклівки + зниження ринкової вартості авто.",
       secondParagraph:
         "Однак в разі, якщо вм'ятина неглибока (до 5 мм), без заломів металу і пошкодження ЛКП, можна обійтися і без фарбування. Paintless Dent Repair (PDR) - це система видалення вм'ятин без фарбування. Вм'ятини на машині виправляються за допомогою спеціальних гачків. Шляхом натискання на місця пошкодження метал випрямляється і набуває первісну форму. Такий спосіб значно економить час і не знижує ринкову вартість авто - словом, одні плюси!",
       thirdParagraph:
-        "ТОЧНА ОЦІНКА ВАРТОСТІ РОБІТ МОЖЛИВА ТІЛЬКИ ПО ФОТО АБО НЕПОСТРЕДСТВЕННО ПРИ ОГЛЯДІ АВТОМОБІЛЯ В СТУДІЇ.",
+        'ТОЧНА ОЦІНКА ВАРТОСТІ РОБІТ МОЖЛИВА ТІЛЬКИ ПО ФОТО АБО НЕПОСТРЕДСТВЕННО ПРИ ОГЛЯДІ АВТОМОБІЛЯ В СТУДІЇ.',
       inclusiveInService: [
         {
           services:
@@ -99,27 +99,27 @@ export default {
           services: "видалення вм'ятини"
         },
         {
-          services: "Полірування деталі, на якій проводилися ремонтні роботи"
+          services: 'Полірування деталі, на якій проводилися ремонтні роботи'
         }
       ],
-      timeTaken: "Час виконання послуги до 1 дня"
-    };
+      timeTaken: 'Час виконання послуги до 1 дня'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter11.png");
+  background-image: url('~assets/img/beforeAfter11.png');
 }
 </style>

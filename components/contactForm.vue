@@ -19,8 +19,8 @@
               <div class="form-group">
                 <label hidden for="carModel">Введіть модель авто</label>
                 <input
-                  type="text"
                   id="carModel"
+                  type="text"
                   name="carModel"
                   class="form-control mx-auto"
                   aria-describedby="carModel"
@@ -46,8 +46,8 @@
               <div class="form-group">
                 <label hidden for="name">Ім’я</label>
                 <input
-                  type="text"
                   id="name"
+                  type="text"
                   name="name"
                   class="form-control mx-auto"
                   aria-describedby="name"
@@ -57,8 +57,8 @@
               <div class="form-group">
                 <label hidden for="phone">Телефон</label>
                 <input
-                  type="number"
                   id="phone"
+                  type="number"
                   aria-describedby="phone"
                   name="phone"
                   class="form-control mx-auto"
@@ -81,12 +81,12 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 .contact {
   .card {
     background: $lightColor;

@@ -1,9 +1,12 @@
 <template>
   <div>
-    <div class="card display block p-5" :style="{backgroundImage: 'url(' + thumbnail + ') '}">
+    <div
+      class="card display block p-5"
+      :style="{ backgroundImage: 'url(' + thumbnail + ') ' }"
+    >
       <div class="row m-auto display-inner">
         <div class="col-md-9 m-auto">
-          <h2>{{title}}</h2>
+          <h2>{{ title }}</h2>
         </div>
         <div class="col-lg-3 m-auto text-center">
           <nuxt-link class="btn mx-auto mb-3" :to="id">ЧИТАТИ</nuxt-link>
@@ -11,7 +14,7 @@
       </div>
     </div>
 
-    <hr class="separator">
+    <hr class="separator" />
   </div>
 </template>
 
@@ -31,12 +34,12 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 h1 {
   font-family: $mainFont;
   font-style: normal;
@@ -56,7 +59,7 @@ h1 {
 
 h1:before,
 h1:after {
-  content: "";
+  content: '';
   border: 1px solid $darkColor;
   margin: 0 20px 0 0;
   flex: 1 0 20px;
@@ -87,21 +90,21 @@ h1:after {
 }
 
 .block-one {
-  background-image: url("~assets/img/Блог1.png");
+  background-image: url('~assets/img/Блог1.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-two {
-  background-image: url("~assets/img/Блог2.png");
+  background-image: url('~assets/img/Блог2.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-three {
-  background-image: url("~assets/img/Блог1.png");
+  background-image: url('~assets/img/Блог1.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
@@ -270,21 +273,21 @@ h2 {
     text-align: center;
 
     .block-one {
-      background-image: url("~assets/img/Блог1-small.png");
+      background-image: url('~assets/img/Блог1-small.png');
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-two {
-      background-image: url("~assets/img/Блог2-small.png");
+      background-image: url('~assets/img/Блог2-small.png');
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-three {
-      background-image: url("~assets/img/Блог1-small.png");
+      background-image: url('~assets/img/Блог1-small.png');
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
@@ -362,4 +365,3 @@ h2 {
   }
 }
 </style>
-

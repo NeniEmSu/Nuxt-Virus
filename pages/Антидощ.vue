@@ -62,10 +62,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "Services",
+  layout: 'Services',
   components: {
     ContactForm,
     progressSection
@@ -73,49 +73,49 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "Антидощ",
+      heading: 'Антидощ',
       firstParagraph:
-        "Гідрофобний ефект поліпшить видимість на дорозі і позбавить Вас від необхідності слухати монотонний шум працюючих двірників. Тепер лобове скло не буде затирається, а вода буде скочуватися з нього практично безслідно. Термін служби покриття до 4 місяців",
+        'Гідрофобний ефект поліпшить видимість на дорозі і позбавить Вас від необхідності слухати монотонний шум працюючих двірників. Тепер лобове скло не буде затирається, а вода буде скочуватися з нього практично безслідно. Термін служби покриття до 4 місяців',
       inclusiveInService: [
         {
-          services: "Глибоке очищення і усунення нерівностей на склі"
+          services: 'Глибоке очищення і усунення нерівностей на склі'
         },
         {
-          services: "Нанесення захисного покриття"
+          services: 'Нанесення захисного покриття'
         }
       ],
-      timeTaken: "Час виконання послуги 1 година"
-    };
+      timeTaken: 'Час виконання послуги 1 година'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter5.png");
+  background-image: url('~assets/img/beforeAfter5.png');
 }
 </style>

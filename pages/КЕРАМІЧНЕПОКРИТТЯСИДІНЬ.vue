@@ -68,10 +68,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "Services",
+  layout: 'Services',
   components: {
     ContactForm,
     progressSection
@@ -79,58 +79,58 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ",
+      heading: 'КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ',
       firstParagraph:
-        "Як зберегти салон нового автомобіля чистим надовго? Як продовжити ефект від детейлінг-хімчистки салону? Як уникнути появи плям на текстилі і шкірі?",
+        'Як зберегти салон нового автомобіля чистим надовго? Як продовжити ефект від детейлінг-хімчистки салону? Як уникнути появи плям на текстилі і шкірі?',
       secondParagraph:
         'Спеціально для цих цілей існує послуга "керамічне покриття салону". Захисне покриття створює гідрофобний ефект, і бруд при попаданні в салон не вбирається в матеріал, а залишається на його поверхні - і її легко видалити за допомогою вологої фібри. Варіанти захисту можуть бути різні:',
       thirdParagraph:
-        "Можна захистити тільки водійське сидіння, або тільки всі шкіряні лементи салону, або тільки текстиль, або ж весь салон цілком.",
+        'Можна захистити тільки водійське сидіння, або тільки всі шкіряні лементи салону, або тільки текстиль, або ж весь салон цілком.',
       fourthParagraph:
-        "Якщо захист нанесено правильно, то шкіра і пластик в салоні залишаться матовими, вони не повинні блистіти.",
+        'Якщо захист нанесено правильно, то шкіра і пластик в салоні залишаться матовими, вони не повинні блистіти.',
       fifthParagraph:
-        "Термін служби такого покриття близько 4 місяців (залежить від умов експлуатації) - саме те проїздити від хімчистки до хімчистки!",
+        'Термін служби такого покриття близько 4 місяців (залежить від умов експлуатації) - саме те проїздити від хімчистки до хімчистки!',
       inclusiveInService: [
         {
           services:
-            "Підготовка поверхні до нанесення захисного покриття (знежирення)"
+            'Підготовка поверхні до нанесення захисного покриття (знежирення)'
         },
         {
-          services: "Нанесення захисного покриття"
+          services: 'Нанесення захисного покриття'
         }
       ],
-      timeTaken: "Час виконання послуги 1 день"
-    };
+      timeTaken: 'Час виконання послуги 1 день'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter12.png");
+  background-image: url('~assets/img/beforeAfter12.png');
 }
 </style>

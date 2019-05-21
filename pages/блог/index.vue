@@ -3,7 +3,7 @@
     <div class="container text-center heading p-0 pt-4">
       <h1>Блог</h1>
     </div>
-    <hr class="top-separator">
+    <hr class="top-separator" />
 
     <div class="jumbotron displays">
       <div class="container mx-auto contact">
@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <hr class="separator">
+        <hr class="separator" />
 
         <div class="card display block-two p-5">
           <div class="row m-auto display-inner">
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <hr class="separator">
+        <hr class="separator" />
 
         <div class="card display block-three p-5">
           <div class="row m-auto">
@@ -48,11 +48,11 @@
     <div class="jumbotron displays">
       <div class="container mx-auto contact">
         <PostPreview
-          v-for=" post in posts"
+          v-for="post in posts"
+          :id="post.id"
           :key="post.id"
           :title="post.title"
           :thumbnail="post.thumbnail"
-          :id="post.id"
         />
       </div>
     </div>
@@ -60,9 +60,9 @@
 </template>
 
 <<script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import PostPreview from "@/components/posts/PostPreview";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
+import PostPreview from '@/components/posts/PostPreview'
 export default {
   components: {
     ContactForm,
@@ -72,43 +72,40 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "блог - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'блог - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
-  data(){
+  data() {
     return {
       posts: [
         {
-          title: "Як самостійно доглядати за салоном автомобіля?",
-          thumbnail:
-            "~/assets/img/Блог1.png",
-          id: "blog001"
+          title: 'Як самостійно доглядати за салоном автомобіля?',
+          thumbnail: '~/assets/img/Блог1.png',
+          id: 'blog001'
         },
         {
-          title: "Скільки разів можна полірувати автомобіль?",
-          thumbnail:
-            "~/assets/img/Блог2.png",
-          id: "blog002"
+          title: 'Скільки разів можна полірувати автомобіль?',
+          thumbnail: '~/assets/img/Блог2.png',
+          id: 'blog002'
         }
       ]
     }
   }
-
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 h1 {
   font-family: $mainFont;
   font-style: normal;
@@ -128,7 +125,7 @@ h1 {
 
 h1:before,
 h1:after {
-  content: "";
+  content: '';
   border: 1px solid $darkColor;
   margin: 0 20px 0 0;
   flex: 1 0 20px;
@@ -153,21 +150,21 @@ h1:after {
 }
 
 .block-one {
-  background-image: url("~assets/img/Блог1.png");
+  background-image: url('~assets/img/Блог1.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-two {
-  background-image: url("~assets/img/Блог2.png");
+  background-image: url('~assets/img/Блог2.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-three {
-  background-image: url("~assets/img/Блог1.png");
+  background-image: url('~assets/img/Блог1.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
@@ -336,21 +333,21 @@ h2 {
     text-align: center;
 
     .block-one {
-      background-image: url("~assets/img/Блог1-small.png");
+      background-image: url('~assets/img/Блог1-small.png');
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-two {
-      background-image: url("~assets/img/Блог2-small.png");
+      background-image: url('~assets/img/Блог2-small.png');
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-three {
-      background-image: url("~assets/img/Блог1-small.png");
+      background-image: url('~assets/img/Блог1-small.png');
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
@@ -428,4 +425,3 @@ h2 {
   }
 }
 </style>
-

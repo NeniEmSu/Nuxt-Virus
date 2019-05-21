@@ -70,10 +70,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "Services",
+  layout: 'Services',
   components: {
     ContactForm,
     progressSection
@@ -81,62 +81,62 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "ПОЛІРУВАННЯ ВСТАВОК САЛОНУ",
+      heading: 'ПОЛІРУВАННЯ ВСТАВОК САЛОНУ',
       firstParagraph:
-        "Коли ти щиро любиш свій автомобіль, хочеться, щоб кожна його деталь була бездоганна. Чистий салон - це тільки половина справи. Важливо також повернути первісний блиск лакованим вставкам салону.",
+        'Коли ти щиро любиш свій автомобіль, хочеться, щоб кожна його деталь була бездоганна. Чистий салон - це тільки половина справи. Важливо також повернути первісний блиск лакованим вставкам салону.',
       secondParagraph:
-        "Детейлінг-полірування максимально дбайливо видалить дрібні подряпини і потертості, і вставки будуть як нові!",
+        'Детейлінг-полірування максимально дбайливо видалить дрібні подряпини і потертості, і вставки будуть як нові!',
       inclusiveInService: [
         {
           services:
-            "Підготовка до полірування, обклеювання пластикових деталей для захисту під час полірування"
+            'Підготовка до полірування, обклеювання пластикових деталей для захисту під час полірування'
         },
         {
-          services: "Абразивна поліровка для видалення подряпин"
+          services: 'Абразивна поліровка для видалення подряпин'
         },
         {
           services:
-            "Глибоке очищення фар абразивної глиною і підготовка до полірування"
+            'Глибоке очищення фар абразивної глиною і підготовка до полірування'
         },
         {
-          services: "Фінішна полірування для додання блиску"
+          services: 'Фінішна полірування для додання блиску'
         },
         {
-          services: "Очищення вставок від слідів пасти"
+          services: 'Очищення вставок від слідів пасти'
         }
       ],
-      timeTaken: "Час виконання послуги до 1 дня"
-    };
+      timeTaken: 'Час виконання послуги до 1 дня'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter2.png");
+  background-image: url('~assets/img/beforeAfter2.png');
 }
 </style>

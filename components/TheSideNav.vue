@@ -1,6 +1,10 @@
 <template>
   <div class="sidenav-container">
-    <div v-if="toggleSidebar" class="backdrop" @click="$store.dispatch('nav/toggleSidebar')"></div>
+    <div
+      v-if="toggleSidebar"
+      class="backdrop"
+      @click="$store.dispatch('nav/toggleSidebar')"
+    ></div>
 
     <transition name="slide-side">
       <div v-if="toggleSidebar" class="sidenav">
@@ -11,20 +15,20 @@
 </template>
 
 <script>
-import AppLinks from "~/components/appLinks";
+import AppLinks from '~/components/appLinks'
 export default {
   components: { AppLinks },
   computed: {
     toggleSidebar() {
-      return this.$store.getters["nav/toggleSidebar"];
+      return this.$store.getters['nav/toggleSidebar']
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scope="scoped">
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
 @include mediaMenu {
   .menu ul li {

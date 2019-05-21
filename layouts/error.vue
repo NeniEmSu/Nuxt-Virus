@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: "NuxtError",
+  name: 'NuxtError',
   props: {
     error: {
       type: Object,
@@ -34,22 +34,22 @@ export default {
       title: this.message,
       meta: [
         {
-          name: "viewport",
+          name: 'viewport',
           content:
-            "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+            'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
         }
       ]
-    };
+    }
   },
   computed: {
     statusCode() {
-      return (this.error && this.error.statusCode) || 500;
+      return (this.error && this.error.statusCode) || 500
     },
     message() {
-      return this.error.message || `<%= messages.client_error %>`;
+      return this.error.message || `<%= messages.client_error %>`
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -77,7 +77,7 @@ export default {
   max-width: 450px;
 }
 .__nuxt-error-page .title {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -96,7 +96,7 @@ export default {
   margin-top: 40px;
 }
 .__nuxt-error-page a {
-  font-family: "Roboto Condensed";
+  font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: bold;
   font-size: 20px;

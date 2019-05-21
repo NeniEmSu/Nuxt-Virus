@@ -68,10 +68,10 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+import ContactForm from '@/components/contactForm.vue'
+import progressSection from '@/components/progressSection.vue'
 export default {
-  layout: "default",
+  layout: 'default',
   components: {
     ContactForm,
     progressSection
@@ -79,53 +79,53 @@ export default {
 
   head() {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: this.heading + ' - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    };
+    }
   },
   data() {
     return {
-      heading: "Перешиття шкіряних деталей салону",
+      heading: 'Перешиття шкіряних деталей салону',
       firstParagraph:
-        "Якщо шкіряні сидіння протерлися, потріскалися або просто виглядають вже не як нові, - ми допоможемо повернути авто первозданний вигляд.",
+        'Якщо шкіряні сидіння протерлися, потріскалися або просто виглядають вже не як нові, - ми допоможемо повернути авто первозданний вигляд.',
       secondParagraph:
-        "Ювелірно відновлюємо структуру шкіри, фарбуємо і, при необхідності, перешиваємо окремі елементи. Фарбу підбирає спеціально навчений колорист, за рахунок чого пофарбована деталь за кольором ніяк не відрізняється від решти салону.",
+        'Ювелірно відновлюємо структуру шкіри, фарбуємо і, при необхідності, перешиваємо окремі елементи. Фарбу підбирає спеціально навчений колорист, за рахунок чого пофарбована деталь за кольором ніяк не відрізняється від решти салону.',
       thirdParagraph:
-        "ТОЧНА ОЦІНКА ВАРТОСТІ ДАНИХ РОБІТ МОЖЛИВА ЗА ФОТО АБО ПРИ БЕЗПОСЕРЕДНЬОМУ ОГЛЯДІ АВТОМОБІЛЯ В СТУДІЇ.",
+        'ТОЧНА ОЦІНКА ВАРТОСТІ ДАНИХ РОБІТ МОЖЛИВА ЗА ФОТО АБО ПРИ БЕЗПОСЕРЕДНЬОМУ ОГЛЯДІ АВТОМОБІЛЯ В СТУДІЇ.',
       inclusiveInService: [
         {
-          services: "Очищення і підготовка елемента до фарбування / ремонту"
+          services: 'Очищення і підготовка елемента до фарбування / ремонту'
         },
         {
-          services: "Очищення і підготовка елемента до фарбування / ремонту"
+          services: 'Очищення і підготовка елемента до фарбування / ремонту'
         }
       ],
-      timeTaken: "ЧАС ВИКОНАННЯ ПОСЛУГИ ВІД 1 ДО 2 ДНІВ"
-    };
+      timeTaken: 'ЧАС ВИКОНАННЯ ПОСЛУГИ ВІД 1 ДО 2 ДНІВ'
+    }
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo('#__nuxt', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
+@import '~assets/scss/config.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
 
-@import "~assets/scss/servicesPages.scss";
+@import '~assets/scss/servicesPages.scss';
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter9.png");
+  background-image: url('~assets/img/beforeAfter9.png');
 }
 </style>

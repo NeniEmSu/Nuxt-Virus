@@ -57,7 +57,7 @@
                 <div class="col-md-6 text-center mt-lg-n3">
                   <small class="detail-discount">В наявності</small>
                   <br>
-                  <a href="#" class="btn add-to-cart" v-on:click.prevent="addToCart">
+                  <a href="#" class="btn add-to-cart" @click.prevent="addToCart">
                     Додати
                     до корзини +
                   </a>
@@ -70,9 +70,9 @@
           <div class="cart-icon text-center mx-auto">
             <a href="#корзина">
               <img
+                id="cart"
                 src="~assets/img/cart.png"
                 alt="Cart icon"
-                id="cart"
                 class="cart.icon text-center m-auto"
                 data-toggle="modal"
                 data-target="#myModal"
@@ -85,8 +85,8 @@
         </div>
 
         <div
-          class="modal fade"
           id="myModal"
+          class="modal fade"
           role="dialog"
           aria-labelledby="myLargeModalLabel"
           aria-hidden="true"
@@ -98,7 +98,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body basket text-center">
-                <h3 class="offset" id="корзина">Корзина</h3>
+                <h3 id="корзина" class="offset">Корзина</h3>
                 <div class="basket-content col-12">
                   <div class="cart-item row col-12 m-auto p-0">
                     <img
@@ -167,8 +167,8 @@
                     <div class="form-group col-lg-6">
                       <label hidden for="name">Ім’я</label>
                       <input
-                        type="text"
                         id="name"
+                        type="text"
                         name="name"
                         class="form-control"
                         aria-describedby="name"
@@ -178,8 +178,8 @@
                     <div class="form-group col-lg-6">
                       <label hidden for="phone">Телефон</label>
                       <input
-                        type="number"
                         id="phone"
+                        type="number"
                         aria-describedby="phone"
                         name="phone"
                         class="form-control"
@@ -189,7 +189,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 mx-auto mt-2 text-md-left">
-                      <a href="#" id="clear-cart" class="btn go-back">Повернутися</a>
+                      <a id="clear-cart" href="#" class="btn go-back">Повернутися</a>
                     </div>
                     <div class="col-md-6 mx-auto mt-2 text-md-right">
                       <button type="submit" class="btn order">Замовити</button>
