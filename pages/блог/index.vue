@@ -3,7 +3,7 @@
     <div class="container text-center heading p-0 pt-4">
       <h1>Блог</h1>
     </div>
-    <hr class="top-separator" />
+    <hr class="top-separator">
 
     <div class="jumbotron displays">
       <div class="container mx-auto contact">
@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <hr class="separator" />
+        <hr class="separator">
 
         <div class="card display block-two p-5">
           <div class="row m-auto display-inner">
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <hr class="separator" />
+        <hr class="separator">
 
         <div class="card display block-three p-5">
           <div class="row m-auto">
@@ -104,8 +104,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
+
 h1 {
   font-family: $mainFont;
   font-style: normal;
@@ -125,7 +125,7 @@ h1 {
 
 h1:before,
 h1:after {
-  content: '';
+  content: "";
   border: 1px solid $darkColor;
   margin: 0 20px 0 0;
   flex: 1 0 20px;
@@ -150,21 +150,21 @@ h1:after {
 }
 
 .block-one {
-  background-image: url('~assets/img/Блог1.png');
+  background-image: url("~assets/img/Блог1.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-two {
-  background-image: url('~assets/img/Блог2.png');
+  background-image: url("~assets/img/Блог2.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-three {
-  background-image: url('~assets/img/Блог1.png');
+  background-image: url("~assets/img/Блог1.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
@@ -333,21 +333,21 @@ h2 {
     text-align: center;
 
     .block-one {
-      background-image: url('~assets/img/Блог1-small.png');
+      background-image: url("~assets/img/Блог1-small.png");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-two {
-      background-image: url('~assets/img/Блог2-small.png');
+      background-image: url("~assets/img/Блог2-small.png");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-three {
-      background-image: url('~assets/img/Блог1-small.png');
+      background-image: url("~assets/img/Блог1-small.png");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);

@@ -66,10 +66,10 @@
 </template>
 
 <script>
-import ContactForm from '@/components/contactForm.vue'
-import progressSection from '@/components/progressSection.vue'
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
 export default {
-  layout: 'default',
+  layout: "default",
   components: {
     ContactForm,
     progressSection
@@ -77,66 +77,65 @@ export default {
 
   head() {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: this.heading + ' - %s!',
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: this.heading + " - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   },
   data() {
     return {
-      heading: 'ПОЛІРУВАННЯ Фар',
-      question: 'Навіщо полірувати фари?',
+      heading: "ПОЛІРУВАННЯ Фар",
+      question: "Навіщо полірувати фари?",
       firstParagraph:
-        'Згодом скло і пластик затираються, мутніють. Відполіровані фари пропускають більше світла (в середньому на 30%!), Що покращує видимість на дорозі і забезпечує Вашу безпеку.',
+        "Згодом скло і пластик затираються, мутніють. Відполіровані фари пропускають більше світла (в середньому на 30%!), Що покращує видимість на дорозі і забезпечує Вашу безпеку.",
       secondParagraph:
-        'Крім того, це красиво. Коли весь автомобіль блискучий, забруднені фари виглядають несолідно. Втім, навпаки теж не дуже)) Тому полірування фар важливо робити в комплексі з поліруванням автомобіля.',
+        "Крім того, це красиво. Коли весь автомобіль блискучий, забруднені фари виглядають несолідно. Втім, навпаки теж не дуже)) Тому полірування фар важливо робити в комплексі з поліруванням автомобіля.",
       inclusiveInService: [
         {
-          services: 'Мийка кузова'
+          services: "Мийка кузова"
         },
         {
           services:
-            'Підготовка до полірування: очищення автоскрабом / глиною, захист пластикових і гумових елементів'
+            "Підготовка до полірування: очищення автоскрабом / глиною, захист пластикових і гумових елементів"
         },
         {
           services:
-            'Глибоке очищення фар абразивної глиною і підготовка до полірування'
+            "Глибоке очищення фар абразивної глиною і підготовка до полірування"
         },
         {
-          services: 'Абразивне поліровання фар'
+          services: "Абразивне поліровання фар"
         },
         {
-          services: 'Фінішне полірування фар'
+          services: "Фінішне полірування фар"
         },
         {
-          services: 'Очищення фар від слідів пасти після полірування'
+          services: "Очищення фар від слідів пасти після полірування"
         }
       ],
-      timeTaken: 'Час виконання послуги 3 години'
-    }
+      timeTaken: "Час виконання послуги 3 години"
+    };
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo('#__nuxt', 0, { force: true })
+      this.$scrollTo("#__nuxt", 0, { force: true });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 
-@import '~assets/scss/servicesPages.scss';
+@import "~assets/scss/servicesPages.scss";
 
 .service-time-image {
-  background-image: url('~assets/img/beforeAfter3.png');
+  background-image: url("~assets/img/beforeAfter3.png");
 }
 </style>

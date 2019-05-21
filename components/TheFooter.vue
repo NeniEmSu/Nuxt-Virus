@@ -3,63 +3,40 @@
     <div class="bottom-contact container">
       <div class="logo">
         <nuxt-link class="/navbar-brand logo" to="/">
-          <img src="~/assets/img/virus-logo.svg" alt="virus logo" />
+          <img src="~/assets/img/virus-logo.svg" alt="virus logo">
         </nuxt-link>
       </div>
       <ul>
         <li>
           <a href="mailto:deteylingvirus@gmail.com">
             deteylingvirus@gmail.com
-            <font-awesome-icon :icon="['fa', 'envelope']" class="ml-2 fa-lg" />
+            <font-awesome-icon :icon="['fa', 'envelope']" class="ml-2 fa-lg"/>
           </a>
         </li>
         <li>
           <a href="tel:+380673334040">
             +38 (067) 333-40-40
-            <font-awesome-icon :icon="['fas', 'phone']" class="ml-2 fa-lg" />
+            <font-awesome-icon :icon="['fas', 'phone']" class="ml-2 fa-lg"/>
           </a>
         </li>
 
         <li>
           <a href="контакти#map-top">
             Україна, м. Тернопіль, вул. Приміська 15А
-            <font-awesome-icon
-              :icon="['fas', 'map-marker-alt']"
-              class="ml-2 fa-lg"
-            />
+            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="ml-2 fa-lg"/>
           </a>
         </li>
         <li>
-          <a
-            href="https://www.instagram.com/virusdetailing/"
-            target="_blank"
-            class="instagram"
-          >
+          <a href="https://www.instagram.com/virusdetailing/" target="_blank" class="instagram">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
-                type="image/webp"
-              />
-              <img
-                src="~/assets/img/icons8-instagram-filled-100.png"
-                alt="icons instagram filled"
-              />
+              <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp">
+              <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">
             </picture>
           </a>
-          <a
-            href="https://www.facebook.com/virus.te.ua/"
-            target="_blank"
-            class="facebook"
-          >
+          <a href="https://www.facebook.com/virus.te.ua/" target="_blank" class="facebook">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
-                type="image/webp"
-              />
-              <img
-                src="~/assets/img/icons8-facebook-filled-100.png"
-                alt="icons facebook filled"
-              />
+              <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
+              <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
             </picture>
           </a>
         </li>
@@ -69,11 +46,10 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 footer {
   width: 100vw;
   background: $darkColor;
@@ -81,7 +57,7 @@ footer {
 
   i {
     font-size: 20px;
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     line-height: 20px;
   }

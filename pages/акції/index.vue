@@ -3,19 +3,15 @@
     <div class="container text-center heading p-0 pt-4">
       <h1>Акції</h1>
     </div>
-    <hr class="top-separator" />
+    <hr class="top-separator">
 
     <div class="jumbotron displays">
       <div class="container mx-auto contact">
         <div class="card display block-one p-5">
           <div class="row m-auto display-inner">
             <div class="col-lg-9 mx-auto">
-              <h2>
-                Скидка -50% на Антидощ при замовленні Полірування автомобіля
-              </h2>
-              <p class="col-md-12 m-auto p-0">
-                Акція діє з 01.04.19 до 01.05.19
-              </p>
+              <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
+              <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
             </div>
             <div class="col-lg-3 m-auto text-center">
               <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
@@ -23,7 +19,7 @@
           </div>
         </div>
 
-        <hr class="separator" />
+        <hr class="separator">
 
         <div class="card display block-two p-5">
           <div class="row m-auto display-inner">
@@ -31,27 +27,19 @@
               <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
             </div>
             <div class="col-md-9 m-auto text-right">
-              <h2>
-                Скидка -50% на Антидощ при замовленні Полірування автомобіля
-              </h2>
-              <p class="col-md-12 m-auto p-0">
-                Акція діє з 01.04.19 до 01.05.19
-              </p>
+              <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
+              <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
             </div>
           </div>
         </div>
 
-        <hr class="separator" />
+        <hr class="separator">
 
         <div class="card display block-three p-5">
           <div class="row m-auto display-inner">
             <div class="col-md-9 m-auto">
-              <h2>
-                Скидка -50% на Антидощ при замовленні Полірування автомобіля
-              </h2>
-              <p class="col-md-12 m-auto p-0">
-                Акція діє з 01.04.19 до 01.05.19
-              </p>
+              <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
+              <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
             </div>
             <div class="col-lg-3 m-auto text-center">
               <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
@@ -61,15 +49,15 @@
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/contactForm.vue'
-import progressSection from '@/components/progressSection.vue'
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
 export default {
   components: {
     ContactForm,
@@ -78,24 +66,23 @@ export default {
 
   head() {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: 'Акції - %s!',
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: "Акції - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 
 h1 {
   font-family: $mainFont;
@@ -116,7 +103,7 @@ h1 {
 
 h1:before,
 h1:after {
-  content: '';
+  content: "";
   border: 1px solid $darkColor;
   margin: 0 20px 0 0;
   flex: 1 0 20px;
@@ -152,15 +139,15 @@ h1:after {
 }
 
 .block-one {
-  background-image: url('~assets/img/Блог1.png');
+  background-image: url("~assets/img/Блог1.png");
 }
 
 .block-two {
-  background-image: url('~assets/img/Блог1.png');
+  background-image: url("~assets/img/Блог1.png");
 }
 
 .block-three {
-  background-image: url('~assets/img/Блог1.png');
+  background-image: url("~assets/img/Блог1.png");
 }
 
 .display {
@@ -326,21 +313,21 @@ h2 {
     text-align: center;
 
     .block-one {
-      background-image: url('~assets/img/Блог1-small.png');
+      background-image: url("~assets/img/Блог1-small.png");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-two {
-      background-image: url('~assets/img/Блог2-small.png');
+      background-image: url("~assets/img/Блог2-small.png");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-three {
-      background-image: url('~assets/img/Блог1-small.png');
+      background-image: url("~assets/img/Блог1-small.png");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);

@@ -2,16 +2,10 @@
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card p-5">
-        <form
-          class="text-right"
-          method="POST"
-          action="includes/contactForm.inc.php"
-        >
+        <form class="text-right" method="POST" action="includes/contactForm.inc.php">
           <h3 class="text-left px-0">
-            <span class="red">
-              ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА
-            </span>
-            <br />ДЛЯ ВАШОГО АВТОМОБІЛЯ
+            <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
+            <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
           </h3>
 
           <div class="row">
@@ -25,15 +19,11 @@
                   class="form-control mx-auto"
                   aria-describedby="carModel"
                   placeholder="Введіть модель авто"
-                />
+                >
               </div>
               <div class="form-group">
                 <label hidden for="typeOfWork">Оберіть тип робіт</label>
-                <select
-                  id="typeOfWork"
-                  aria-describedby="typeOfWork"
-                  class="form-control mx-auto"
-                >
+                <select id="typeOfWork" aria-describedby="typeOfWork" class="form-control mx-auto">
                   <option>Оберіть тип робіт</option>
                   <option>Оберіть тип робіт</option>
                   <option>Оберіть тип робіт</option>
@@ -52,7 +42,7 @@
                   class="form-control mx-auto"
                   aria-describedby="name"
                   placeholder="Ім’я*"
-                />
+                >
               </div>
               <div class="form-group">
                 <label hidden for="phone">Телефон</label>
@@ -63,17 +53,15 @@
                   name="phone"
                   class="form-control mx-auto"
                   placeholder="Телефон*"
-                />
+                >
               </div>
 
-              <button type="submit" name="submit" class="contact-btn">
-                ВІДПРАВИТИ
-              </button>
+              <button type="submit" name="submit" class="contact-btn">ВІДПРАВИТИ</button>
             </div>
           </div>
-          <p class="text-left col-12 w-md-50 px-0">
-            Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом
-          </p>
+          <p
+            class="text-left col-12 w-md-50 px-0"
+          >Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом</p>
         </form>
       </div>
     </div>
@@ -81,12 +69,11 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 .contact {
   .card {
     background: $lightColor;

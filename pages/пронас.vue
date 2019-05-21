@@ -12,15 +12,15 @@
           хімічних реагентів, сколів і подряпин, збільшити блиск і глибину
           кольору покриття, захистити оптику від старіння, здійснити глибоку та
           делікатну хімчистку салону, відновити шкіру та багато іншого.
-          <br />
-          <br />В роботі ми використовуємо виключно професійні засоби від
+          <br>
+          <br>В роботі ми використовуємо виключно професійні засоби від
           провідних світових виробників. Кожен з них гарантує незмінно високу
           якість і чудову ефективність своєї продукції.
         </p>
         <div class="video-text row">
           <div class="col-xl-7">
             <video>
-              <source />
+              <source>
             </video>
           </div>
           <div class="col-xl-5">
@@ -50,15 +50,15 @@
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/contactForm.vue'
-import progressSection from '@/components/progressSection.vue'
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
 export default {
   components: {
     ContactForm,
@@ -67,24 +67,24 @@ export default {
 
   head() {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: 'пронас - %s!',
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: "пронас - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
+
 .aboutUs-heading-image {
   margin-top: -10.5px;
   background: $lightColor;

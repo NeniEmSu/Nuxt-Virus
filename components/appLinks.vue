@@ -22,76 +22,46 @@ export default {
       isActive: false,
       items: [
         {
-          title: 'Головна',
-          to: '/'
+          title: "Головна",
+          to: "/"
         },
         {
-          title: 'Послуги і ціни',
-          to: '/Послуги'
+          title: "Послуги і ціни",
+          to: "/Послуги"
         },
         {
-          title: 'Акції',
-          to: '/акції'
+          title: "Акції",
+          to: "/акції"
         },
         {
-          title: 'Магазин',
-          to: '/магазин'
+          title: "Магазин",
+          to: "/магазин"
         },
         {
-          title: 'Блог',
-          to: '/блог'
+          title: "Блог",
+          to: "/блог"
         },
         {
-          title: 'Про нас',
-          to: '/пронас'
+          title: "Про нас",
+          to: "/пронас"
         },
         {
-          title: 'Контакти',
-          to: '/контакти'
+          title: "Контакти",
+          to: "/контакти"
         }
       ]
-    }
+    };
   },
   computed: {
     toggleSidebar() {
-      return this.$store.getters['nav/toggleSidebar']
+      return this.$store.getters["nav/toggleSidebar"];
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scope="scoped">
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url('~assets/img/Хедер.png');
-  background-size: cover;
-  width: 100%;
-  position: absolute;
-  height: 140px;
-  left: 0px;
-  top: 0px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-
-  a {
-    text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
-
-    &:hover {
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-    }
-  }
-}
-
+@import "~assets/scss/config.scss";
 .menu {
   margin-left: 0;
   position: relative;

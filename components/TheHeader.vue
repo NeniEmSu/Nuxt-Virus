@@ -5,22 +5,14 @@
         <ul>
           <li>
             <nuxt-link to="/контакти#map-top">
-              <span class="hide"
-                >Україна, м. Тернопіль, вул. Приміська 15А</span
-              >
-              <font-awesome-icon
-                :icon="['fas', 'map-marker-alt']"
-                class="bounce mx-1 fa-lg"
-              />
+              <span class="hide">Україна, м. Тернопіль, вул. Приміська 15А</span>
+              <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="bounce mx-1 fa-lg"/>
             </nuxt-link>
           </li>
           <li>
             <a href="tel:+380673334040">
               <span class="hide-sm">+38 (067) 333-40-40</span>
-              <font-awesome-icon
-                :icon="['fas', 'phone']"
-                class="faa-ring animated mx-1 fa-lg"
-              />
+              <font-awesome-icon :icon="['fas', 'phone']" class="faa-ring animated mx-1 fa-lg"/>
             </a>
           </li>
           <li>
@@ -36,14 +28,8 @@
           <li class="facebook">
             <a href="https://www.facebook.com/virus.te.ua/" target="_blank">
               <picture>
-                <source
-                  srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="~/assets/img/icons8-facebook-filled-100.png"
-                  alt="icons facebook filled"
-                />
+                <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
+                <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
               </picture>
             </a>
           </li>
@@ -54,11 +40,11 @@
                 <source
                   srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
                   type="image/webp"
-                />
+                >
                 <img
                   src="~/assets/img/icons8-instagram-filled-100.png"
                   alt="icons instagram filled"
-                />
+                >
               </picture>
             </a>
           </li>
@@ -67,17 +53,13 @@
     </div>
     <div class="container">
       <nav>
-        <div
-          class="drawer-toggle"
-          role="button"
-          @click="$store.dispatch('nav/toggleSidebar')"
-        >
-          <font-awesome-icon :icon="['fas', 'bars']" class="mx-1 fa-2x" />
+        <div class="drawer-toggle" role="button" @click="$store.dispatch('nav/toggleSidebar')">
+          <font-awesome-icon :icon="['fas', 'bars']" class="mx-1 fa-2x"/>
         </div>
 
         <div class="logo">
           <nuxt-link class="navbar-brand logo" to="/">
-            <img src="~/assets/img/virus-logo.svg" alt="virus logo" />
+            <img src="~/assets/img/virus-logo.svg" alt="virus logo">
           </nuxt-link>
         </div>
 
@@ -90,18 +72,18 @@
 </template>
 
 <script>
-import AppLinks from '~/components/appLinks'
+import AppLinks from "~/components/appLinks";
 export default {
   components: { AppLinks }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url('~assets/imgWebP/Хедер.webp');
+    url("~assets/imgWebP/Хедер.webp");
   background-size: cover;
   background-color: $darkColor;
   width: 100%;
@@ -137,7 +119,7 @@ header {
 
     i {
       font-size: 20px;
-      font-family: 'Font Awesome 5 Free';
+      font-family: "Font Awesome 5 Free";
       font-weight: 900;
       line-height: 20px;
     }

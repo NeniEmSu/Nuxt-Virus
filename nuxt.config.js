@@ -5,14 +5,12 @@ export default {
     host: '0.0.0.0'
   },
   head: {
-    title:
-      'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
+    title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
     htmlAttrs: {
       lang: 'uk',
       amp: true
     },
-    meta: [
-      {
+    meta: [{
         charset: 'utf-8'
       },
       {
@@ -22,14 +20,12 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+        content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content:
-          'детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди'
+        content: 'детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди'
       },
       {
         hid: 'apple-mobile-web-app-title',
@@ -90,8 +86,7 @@ export default {
         hid: 'og:description',
         name: 'og:description',
         property: 'og:description',
-        content:
-          'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри'
+        content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри'
       },
       {
         hid: 'og:image',
@@ -100,8 +95,7 @@ export default {
         content: '/virus_og.jpg'
       }
     ],
-    link: [
-      {
+    link: [{
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
@@ -146,8 +140,7 @@ export default {
 
   css: ['~/assets/scss/config.scss'],
 
-  plugins: [
-    {
+  plugins: [{
       src: '~plugins/ga.js',
       ssr: false
     },
@@ -171,15 +164,14 @@ export default {
     [
       'nuxt-fontawesome',
       {
-        imports: [
-          {
+        imports: [{
             set: '@fortawesome/free-solid-svg-icons',
             icons: ['fas']
-          },
-          {
-            set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab']
           }
+          // {
+          //   set: '@fortawesome/free-brands-svg-icons',
+          //   icons: ['fab']
+          // }
         ]
       }
     ]
@@ -193,7 +185,7 @@ export default {
 
     extend(config, ctx) {
       // Run ESLint on save
-      
+
     }
   }
 }

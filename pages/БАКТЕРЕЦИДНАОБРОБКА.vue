@@ -4,7 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/БАКТЕРЕЦИДНАОБРОБКА.png" :alt="heading" />
+            <img src="~assets/img/БАКТЕРЕЦИДНАОБРОБКА.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading }}</h1>
@@ -19,40 +19,34 @@
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">Ⅰ категорія</a>
               <p class="pricing">500 грн</p>
-              <p class="mt-2 mb-0">
-                середній бізнес спорт купе
-              </p>
+              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
               <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">
-                середній кросовер позашляховик
-              </p>
+              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
               <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">
-                повнорозмірний кросовер позашляховик
-              </p>
+              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/contactForm.vue'
-import progressSection from '@/components/progressSection.vue'
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
 export default {
-  layout: 'default',
+  layout: "default",
   scrollToTop: true,
   components: {
     ContactForm,
@@ -61,39 +55,38 @@ export default {
 
   head() {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: this.heading + ' - %s!',
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: this.heading + " - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   },
   data() {
     return {
-      heading: 'БАКТЕРЕЦИДНА ОБРОБКА',
+      heading: "БАКТЕРЕЦИДНА ОБРОБКА",
       firstParagraph:
-        'Процедура відбувається за рахунок спеціальних речовин, які наносяться на всі деталі салону (підлога, сидіння, стеля, панель), і які очищають їх від мікробів, бактерій та бруду.',
-      timeTaken: 'Час виконання послуги до 1 дня'
-    }
+        "Процедура відбувається за рахунок спеціальних речовин, які наносяться на всі деталі салону (підлога, сидіння, стеля, панель), і які очищають їх від мікробів, бактерій та бруду.",
+      timeTaken: "Час виконання послуги до 1 дня"
+    };
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo('#__nuxt', 0, { force: true })
+      this.$scrollTo("#__nuxt", 0, { force: true });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 
-@import '~assets/scss/servicesPages.scss';
+@import "~assets/scss/servicesPages.scss";
 
 video {
   width: 100%;

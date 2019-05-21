@@ -1,28 +1,21 @@
 <template>
   <div id="store-items" class="row">
-    <div
-      class="col-10 col-sm-6 col-md-6 col-lg-4 mx-auto store-item Фібри"
-      data-item="Фібри"
-    >
+    <div class="col-10 col-sm-6 col-md-6 col-lg-4 mx-auto store-item Фібри" data-item="Фібри">
       <div class="card card__hover">
         <picture>
-          <source srcset="~/assets/imgWebP/86.webp" type="image/webp" />
+          <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/86.png"
             class="card-img-top img-fluid store-img"
             alt="Koch Chemie Fresh UP"
-          />
+          >
         </picture>
 
-        <hr />
+        <hr>
         <div class="card-body">
-          <h5 id="store-item-name" class="card-title text-left">
-            Koch Chemie Fresh UP
-          </h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <h5 id="store-item-name" class="card-title text-left">Koch Chemie Fresh UP</h5>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -35,7 +28,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -44,32 +37,22 @@
       <!-- end of card-->
     </div>
 
-    <div
-      class="col-10 col-sm-6 col-md-6 col-lg-4 mx-auto store-item Фібри"
-      data-item="Фібри"
-    >
+    <div class="col-10 col-sm-6 col-md-6 col-lg-4 mx-auto store-item Фібри" data-item="Фібри">
       <div class="card card__hover">
         <picture>
-          <source
-            srcset="~/assets/imgWebP/9BFZEPHIR-1.webp"
-            type="image/webp"
-          />
+          <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/9BFZEPHIR-1.png"
             class="card-img-top img-fluid store-img"
             alt="Rupes Coarse Zephir Gloss"
-          />
+          >
         </picture>
 
-        <hr />
+        <hr>
         <div class="card-body">
-          <h5 id="store-item-name" class="card-title text-left">
-            Rupes Coarse Zephir Gloss
-          </h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <h5 id="store-item-name" class="card-title text-left">Rupes Coarse Zephir Gloss</h5>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -82,7 +65,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -91,30 +74,22 @@
       <!-- end of card-->
     </div>
 
-    <div
-      class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99"
-      data-item="ВіскSoft99"
-    >
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99" data-item="ВіскSoft99">
       <div class="card card__hover">
         <picture>
-          <source
-            srcset="~/assets/imgWebP/MaskGroup(3).webp"
-            type="image/webp"
-          />
+          <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/MaskGroup(3).png"
             class="card-img-top img-fluid store-img small-img"
             alt="Soft 99"
-          />
+          >
         </picture>
 
-        <hr />
+        <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Soft 99</h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -127,7 +102,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -142,22 +117,18 @@
     >
       <div class="card card__hover">
         <picture>
-          <source srcset="~/assets/imgWebP/86.webp" type="image/webp" />
+          <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/86.png"
             class="card-img-top img-fluid store-img"
             alt="Koch Chemie Fresh UP"
-          />
+          >
         </picture>
-        <hr />
+        <hr>
         <div class="card-body">
-          <h5 id="store-item-name" class="card-title text-left">
-            Koch Chemie Fresh UP
-          </h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <h5 id="store-item-name" class="card-title text-left">Koch Chemie Fresh UP</h5>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -170,7 +141,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -185,25 +156,18 @@
     >
       <div class="card card__hover">
         <picture>
-          <source
-            srcset="~/assets/imgWebP/9BFZEPHIR-1.webp"
-            type="image/webp"
-          />
+          <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/9BFZEPHIR-1.png"
             class="card-img-top img-fluid store-img"
             alt="Rupes Coarse Zephir Gloss"
-          />
+          >
         </picture>
-        <hr />
+        <hr>
         <div class="card-body">
-          <h5 id="store-item-name" class="card-title text-left">
-            Rupes Coarse Zephir Gloss
-          </h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <h5 id="store-item-name" class="card-title text-left">Rupes Coarse Zephir Gloss</h5>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -216,7 +180,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -225,29 +189,21 @@
       <!-- end of card-->
     </div>
 
-    <div
-      class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99"
-      data-item="ВіскSoft99"
-    >
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99" data-item="ВіскSoft99">
       <div class="card card__hover">
         <picture>
-          <source
-            srcset="~/assets/imgWebP/MaskGroup(3).webp"
-            type="image/webp"
-          />
+          <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/MaskGroup(3).png"
             class="card-img-top img-fluid store-img small-img"
             alt="Soft 99"
-          />
+          >
         </picture>
-        <hr />
+        <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Soft 99</h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -260,7 +216,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -275,20 +231,18 @@
     >
       <div class="card card__hover">
         <picture>
-          <source srcset="~/assets/imgWebP/86.webp" type="image/webp" />
+          <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/86.png"
             class="card-img-top img-fluid store-img"
             alt="Koch Chemie Fresh UP"
-          />
+          >
         </picture>
-        <hr />
+        <hr>
         <div class="card-body">
           <h5 class="card-title text-left">Koch Chemie Fresh UP</h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -301,7 +255,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -316,25 +270,18 @@
     >
       <div class="card card__hover">
         <picture>
-          <source
-            srcset="~/assets/imgWebP/9BFZEPHIR-1.webp"
-            type="image/webp"
-          />
+          <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/9BFZEPHIR-1.png"
             class="card-img-top img-fluid store-img"
             alt="Rupes Coarse Zephir Gloss"
-          />
+          >
         </picture>
-        <hr />
+        <hr>
         <div class="card-body">
-          <h5 id="store-item-name" class="card-title text-left">
-            Rupes Coarse Zephir Gloss
-          </h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <h5 id="store-item-name" class="card-title text-left">Rupes Coarse Zephir Gloss</h5>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -347,7 +294,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -356,29 +303,21 @@
       <!-- end of card-->
     </div>
 
-    <div
-      class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99"
-      data-item="ВіскSoft99"
-    >
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto store-item ВіскSoft99" data-item="ВіскSoft99">
       <div class="card card__hover">
         <picture>
-          <source
-            srcset="~/assets/imgWebP/MaskGroup(3).webp"
-            type="image/webp"
-          />
+          <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
           <img
             id="item-img"
             src="~/assets/img/MaskGroup(3).png"
             class="card-img-top img-fluid store-img small-img"
             alt="Soft 99"
-          />
+          >
         </picture>
-        <hr />
+        <hr>
         <div class="card-body">
           <h5 id="store-item-name" class="card-title text-left">Soft 99</h5>
-          <p class="p-0 m-0 text-left">
-            Розпилюючий засіб для видалення небажаних запахів
-          </p>
+          <p class="p-0 m-0 text-left">Розпилюючий засіб для видалення небажаних запахів</p>
           <div class="row">
             <div class="text-left col-6 my-auto pr-0">
               <small>
@@ -391,7 +330,7 @@
             </div>
             <div class="col-6 pl-0 mx-auto text-center">
               <small class="discount">В наявності</small>
-              <br />
+              <br>
               <a href="Магазинdetail" class="btn">Купити</a>
             </div>
           </div>
@@ -403,12 +342,12 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
+
 .sales-cards {
   .btn {
     text-decoration: none;
@@ -570,7 +509,7 @@ export default {}
         transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.15);
-        content: '';
+        content: "";
         opacity: 0;
         z-index: -1;
         border-radius: 20px;

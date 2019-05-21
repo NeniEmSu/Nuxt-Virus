@@ -7,29 +7,20 @@
         <div class="row">
           <div class="col-md-4">
             <h4>Графік роботи</h4>
-            <img
-              src="~/assets/img/contactPageClock.png"
-              alt="image of a clock"
-            />
+            <img src="~/assets/img/contactPageClock.png" alt="image of a clock">
             <p>пн-пт 9:00 до 19:00 сб-нд Вихідний</p>
           </div>
           <div class="col-md-4">
             <h4>Телефон</h4>
             <a href="tel:+380673334040">
-              <img
-                src="~/assets/img/contactPagePhone.png"
-                alt=" image of a phone icon"
-              />
+              <img src="~/assets/img/contactPagePhone.png" alt=" image of a phone icon">
             </a>
             <p>+38 (067) 333-40-40</p>
           </div>
           <div class="col-md-4">
             <h4>Пошта</h4>
             <a href="mailto:deteylingvirus@gmail.com">
-              <img
-                src="~/assets/img/contactPageMail.png"
-                alt="image of a mail icon"
-              />
+              <img src="~/assets/img/contactPageMail.png" alt="image of a mail icon">
             </a>
             <p>deteylingvirus@gmail.com</p>
           </div>
@@ -37,29 +28,26 @@
       </div>
 
       <div class="container text-center">
-        <hr id="map-top" class="map-separator offset" />
+        <hr id="map-top" class="map-separator offset">
 
-        <img
-          src="~/assets/img/icons8-marker-100.png"
-          alt="Location marker icon"
-        />
+        <img src="~/assets/img/icons8-marker-100.png" alt="Location marker icon">
 
         <div id="map"></div>
         <div class="contact-page-socials">
           <h4>Більше інформації тут:</h4>
           <a target="_blank" href="https://www.instagram.com/virusdetailing/">
-            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon" />
+            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon">
           </a>
           <a target="_blank" href="https://www.facebook.com/virus.te.ua/">
-            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon" />
+            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon">
           </a>
         </div>
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
     <!-- google map Api call -->
     <script
       async
@@ -69,27 +57,27 @@
 
     <!-- displaying map -->
     <script>
-      function initMap() {
-        let location = {
-          lat: 49.558033,
-          lng: 25.56692
-        }
-        let map = new google.maps.Map(document.querySelector('#map'), {
-          zoom: 16,
-          center: location
-        })
-        let marker = new google.maps.Marker({
-          position: location,
-          map: map
-        })
-      }
+  function initMap() {
+    let location = {
+      lat: 49.558033,
+      lng: 25.56692
+    };
+    let map = new google.maps.Map(document.querySelector("#map"), {
+      zoom: 16,
+      center: location
+    });
+    let marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
     </script>
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/contactForm.vue'
-import progressSection from '@/components/progressSection.vue'
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
 export default {
   components: {
     ContactForm,
@@ -98,19 +86,19 @@ export default {
 
   head() {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: 'контакти - %s!',
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: "контакти - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 <style lang="scss">
 .contact-page-socials {
@@ -119,12 +107,12 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
+
 .contact-heading-image {
   margin-top: -10.5px;
   background: #000000;
-  background-image: url('~assets/img/contactPageHeadImg.png');
+  background-image: url("~assets/img/contactPageHeadImg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -161,7 +149,7 @@ export default {
 .offset:before {
   height: -8rem;
   margin-top: -8rem;
-  content: '';
+  content: "";
   display: block;
 }
 </style>

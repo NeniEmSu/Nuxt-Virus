@@ -4,14 +4,8 @@
       <div class="row">
         <div class="col-md-3">
           <picture>
-            <source
-              srcset="~/assets/imgWebP/icons8-paint-palette-96.webp"
-              type="image/webp"
-            />
-            <img
-              src="~/assets/img/icons8-paint-palette-96.png"
-              alt="icons paint palette"
-            />
+            <source srcset="~/assets/imgWebP/icons8-paint-palette-96.webp" type="image/webp">
+            <img src="~/assets/img/icons8-paint-palette-96.png" alt="icons paint palette">
           </picture>
 
           <div>
@@ -20,14 +14,8 @@
         </div>
         <div class="col-md-3">
           <picture>
-            <source
-              srcset="~/assets/imgWebP/icons8-service-filled-100.webp"
-              type="image/webp"
-            />
-            <img
-              src="~/assets/img/icons8-service-filled-100.png"
-              alt="icons service filled"
-            />
+            <source srcset="~/assets/imgWebP/icons8-service-filled-100.webp" type="image/webp">
+            <img src="~/assets/img/icons8-service-filled-100.png" alt="icons service filled">
           </picture>
 
           <div>
@@ -36,14 +24,8 @@
         </div>
         <div class="col-md-3">
           <picture>
-            <source
-              srcset="~/assets/imgWebP/icons8-discount-filled-100.webp"
-              type="image/webp"
-            />
-            <img
-              src="~/assets/img/icons8-discount-filled-100.png"
-              alt="icons discount filled"
-            />
+            <source srcset="~/assets/imgWebP/icons8-discount-filled-100.webp" type="image/webp">
+            <img src="~/assets/img/icons8-discount-filled-100.png" alt="icons discount filled">
           </picture>
 
           <div>
@@ -52,14 +34,8 @@
         </div>
         <div class="col-md-3">
           <picture>
-            <source
-              srcset="~/assets/imgWebP/icons8-gift-filled-100(1).webp"
-              type="image/webp"
-            />
-            <img
-              src="~/assets/img/icons8-gift-filled-100(1).png"
-              alt="icons gift filled"
-            />
+            <source srcset="~/assets/imgWebP/icons8-gift-filled-100(1).webp" type="image/webp">
+            <img src="~/assets/img/icons8-gift-filled-100(1).png" alt="icons gift filled">
           </picture>
 
           <div>
@@ -72,12 +48,12 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
+
 .process {
   margin-top: 40px;
   padding-bottom: 40px;

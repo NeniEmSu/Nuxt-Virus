@@ -4,7 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/антигравійноїплівки.png" :alt="heading" />
+            <img src="~assets/img/антигравійноїплівки.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading }}</h1>
@@ -28,40 +28,34 @@
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">Ⅰ категорія</a>
               <p class="pricing">1000 грн</p>
-              <p class="mt-2 mb-0">
-                середній бізнес спорт купе
-              </p>
+              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
               <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">
-                середній кросовер позашляховик
-              </p>
+              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
               <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">
-                повнорозмірний кросовер позашляховик
-              </p>
+              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/contactForm.vue'
-import progressSection from '@/components/progressSection.vue'
+import ContactForm from "@/components/contactForm.vue";
+import progressSection from "@/components/progressSection.vue";
 export default {
-  layout: 'default',
+  layout: "default",
   components: {
     ContactForm,
     progressSection
@@ -69,25 +63,25 @@ export default {
 
   head() {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: this.heading + ' - %s!',
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: this.heading + " - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   },
   data() {
     return {
-      heading: 'Покриття твердим воском',
+      heading: "Покриття твердим воском",
       firstParagraph:
-        'Антигравійна плівка - це, мабуть, саме прогресивне на поточний момент захисне покриття.',
+        "Антигравійна плівка - це, мабуть, саме прогресивне на поточний момент захисне покриття.",
       secondParagraph:
-        'Вона захищає автомобіль від відколів і механічних пошкоджень, не жовтіє і зберігає свої захисні властивості до 5 років.',
+        "Вона захищає автомобіль від відколів і механічних пошкоджень, не жовтіє і зберігає свої захисні властивості до 5 років.",
       thirdParagraph:
         'Можливt обклеювання окремих деталей (фари, дзеркала), "зони ризику" (капот, бампер, передні крила та ін.) Або кузова цілком.',
       fourthParagraph:
@@ -95,30 +89,29 @@ export default {
       inclusiveInService: [
         {
           services:
-            'Мийка кузова, при необхідності очищення від слідів бітуму і дорожньої розмітки'
+            "Мийка кузова, при необхідності очищення від слідів бітуму і дорожньої розмітки"
         },
         {
           services:
-            'Підготовка поверхні до обклеювання плівкою: очищення абразивною глиною або автоскрабом'
+            "Підготовка поверхні до обклеювання плівкою: очищення абразивною глиною або автоскрабом"
         },
         {
-          services: 'Обклеювання кузова плівкою'
+          services: "Обклеювання кузова плівкою"
         }
       ],
-      timeTaken: 'Час виконання послуги до 3 днів'
-    }
+      timeTaken: "Час виконання послуги до 3 днів"
+    };
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo('#__nuxt', 0, { force: true })
+      this.$scrollTo("#__nuxt", 0, { force: true });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 
-@import '~assets/scss/servicesPages.scss';
+@import "~assets/scss/servicesPages.scss";
 </style>
