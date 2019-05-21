@@ -1,6 +1,4 @@
- import webpack from 'webpack'
-
- export default {
+export default {
    mode: 'universal',
    server: {
      port: 8383,
@@ -206,4 +204,4 @@
 
      }
    }
- }
+}

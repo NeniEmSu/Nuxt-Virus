@@ -326,14 +326,12 @@
 import ContactForm from '@/components/contactForm.vue'
 import progressSection from '@/components/progressSection.vue'
 import productCards from '@/components/shop/productCards'
-import bootstrapVueCarousel from '@/components/bootstrapVueCarousel'
 
 export default {
   components: {
     ContactForm,
     progressSection,
-    productCards,
-    bootstrapVueCarousel
+    productCards
   },
 
   head() {
