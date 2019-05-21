@@ -7,23 +7,20 @@
         <div class="row">
           <div class="col-md-4">
             <h4>Графік роботи</h4>
-            <img src="img/contactPageClock.png" alt="image of a clock">
-            <p>
-              пн-пт 9:00 до 19:00
-              сб-нд Вихідний
-            </p>
+            <img src="~/assets/img/contactPageClock.png" alt="image of a clock">
+            <p>пн-пт 9:00 до 19:00 сб-нд Вихідний</p>
           </div>
           <div class="col-md-4">
             <h4>Телефон</h4>
             <a href="tel:+380673334040">
-              <img src="img/contactPagePhone.png" alt=" image of a phone icon">
+              <img src="~/assets/img/contactPagePhone.png" alt=" image of a phone icon">
             </a>
             <p>+38 (067) 333-40-40</p>
           </div>
           <div class="col-md-4">
             <h4>Пошта</h4>
             <a href="mailto:deteylingvirus@gmail.com">
-              <img src="img/contactPageMail.png" alt="image of a mail icon">
+              <img src="~/assets/img/contactPageMail.png" alt="image of a mail icon">
             </a>
             <p>deteylingvirus@gmail.com</p>
           </div>
@@ -33,16 +30,16 @@
       <div class="container text-center">
         <hr class="map-separator offset" id="map-top">
 
-        <img src="img/icons8-marker-100.png" alt="Location marker icon">
+        <img src="~/assets/img/icons8-marker-100.png" alt="Location marker icon">
 
         <div id="map"></div>
         <div class="contact-page-socials">
           <h4>Більше інформації тут:</h4>
           <a target="_blank" href="https://www.instagram.com/virusdetailing/">
-            <img src="img/contacPageIg.png" alt="Instagram icon">
+            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon">
           </a>
           <a target="_blank" href="https://www.facebook.com/virus.te.ua/">
-            <img src="img/contactPageFb.png" alt="Facebook icon">
+            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon">
           </a>
         </div>
       </div>

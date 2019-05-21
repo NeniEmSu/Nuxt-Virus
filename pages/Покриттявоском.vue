@@ -4,10 +4,10 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/Покриттявоском.png" :alt="heading">
+            <img src="~assets/img/Покриттявоском.png" :alt="heading" />
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading}}</h1>
+            <h1 class="info-pages">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
             <p class>{{ thirdParagraph }}</p>
@@ -15,15 +15,16 @@
         </div>
         <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
         <ul class="ml-3">
-          В наші студії твердий віск наноситься в чистому закритому приміщенні в такій послідовності:
+          В наші студії твердий віск наноситься в чистому закритому приміщенні в
+          такій послідовності:
           <li v-for="items in inclusiveInService">{{ items.services }}</li>
         </ul>
 
-        <h2 class="red">{{timeTaken}}</h2>
+        <h2 class="red">{{ timeTaken }}</h2>
 
         <div class="videoContainer mt-4 text-center">
           <video class="mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(23).mp4" type="video/mp4">
+            <source src="~assets/video/vid(23).mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -33,25 +34,21 @@
               <a href="#" class="btn category-selector">Ⅰ категорія</a>
               <p class="pricing">1200 грн</p>
               <p class="mt-2 mb-0">
-                середній
-                бізнес
-                спорт купе
+                середній бізнес спорт купе
               </p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
               <p class="pricing">1300 грн</p>
               <p class="mt-2 mb-0">
-                середній кросовер
-                позашляховик
+                середній кросовер позашляховик
               </p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
               <p class="pricing">1400 грн</p>
               <p class="mt-2 mb-0">
-                повнорозмірний кросовер
-                позашляховик
+                повнорозмірний кросовер позашляховик
               </p>
             </div>
           </div>
@@ -59,9 +56,9 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm />
 
-    <progressSection/>
+    <progressSection />
   </div>
 </template>
 

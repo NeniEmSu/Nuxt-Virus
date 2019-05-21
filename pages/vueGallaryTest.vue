@@ -7,7 +7,11 @@
       v-for="(image, imageIndex) in images"
       :key="imageIndex"
       @click="index = imageIndex"
-      :style="{ backgroundImage: 'url(' + image + ')', width: '300px', height: '200px' }"
+      :style="{
+        backgroundImage: 'url(' + image + ')',
+        width: '300px',
+        height: '200px'
+      }"
     ></div>
   </div>
 </template>
@@ -26,7 +30,7 @@ export default {
     };
   }
 };
-</script> 
+</script>
 
 <style scoped>
 .image {

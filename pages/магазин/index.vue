@@ -94,7 +94,7 @@
             <div class="position-fixed col-0">
               <a href="#корзина">
                 <img
-                  src="img/cart.png"
+                  src="~/assets/img/cart.png"
                   alt="Cart icon"
                   id="cart"
                   class="cart.icon text-center m-auto ml-n5"

@@ -422,7 +422,7 @@ export default {
   },
   asyncData() {
     return {
-      image: "./img/services-car-goup-all.png",
+      image: "./imgWebP/services-car-goup-all.webp",
       description:
         " white mercedes , jeep grand cherokee srt white & Black Range Rover Piano",
       isActive: false,
@@ -434,19 +434,19 @@ export default {
           variantId: 1,
           variantTitle: "Ⅰ категорія",
           variantDescription: "середній бізнес спорт купе",
-          variantImage: "./img/services-car-goup-var-1.png"
+          variantImage: "./imgWebP/services-car-goup-var-1.webp"
         },
         {
           variantId: 2,
           variantTitle: "ⅠⅠ категорія",
           variantDescription: "середній кросовер позашляховик",
-          variantImage: "./img/services-car-goup-var-2.png"
+          variantImage: "./imgWebP/services-car-goup-var-2.webp"
         },
         {
           variantId: 3,
           variantTitle: "ⅠⅠⅠ категорія",
           variantDescription: "повнорозмірний кросовер позашляховик",
-          variantImage: "./img/services-car-goup-var-3.png"
+          variantImage: "./imgWebP/services-car-goup-var-3.webp"
         }
       ],
       polishing: [
@@ -801,12 +801,10 @@ export default {
 }
 
 .choose-brand button.btn:after {
-  color: $lightColor;
+  height: 20px;
   float: right;
-  font-size: 20px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f054";
+  content: url("~assets/img/chevron-right.webp");
+  line-height: 32px;
   margin-left: 20px;
   margin-right: -20px;
   transition: ease-in-out 300ms;

@@ -6,33 +6,46 @@
           <li>
             <nuxt-link to="/контакти#map-top">
               <span class="hide">Україна, м. Тернопіль, вул. Приміська 15А</span>
-
-              <i class="fa fa-map-marker-alt bounce mx-1"></i>
+              <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="bounce mx-1 fa-lg"/>
             </nuxt-link>
           </li>
           <li>
             <a href="tel:+380673334040">
               <span class="hide-sm">+38 (067) 333-40-40</span>
-              <i class="fas fa-phone faa-ring animated mx-1"></i>
+              <font-awesome-icon :icon="['fas', 'phone']" class="faa-ring animated mx-1 fa-lg"/>
             </a>
           </li>
           <li>
             <a href="mailto:deteylingvirus@gmail.com">
               <span class="hide-md">deteylingvirus@gmail.com</span>
-
-              <i class="fa fa-envelope faa-horizontal animated mx-1"></i>
+              <font-awesome-icon
+                :icon="['fa', 'envelope']"
+                class="faa-horizontal animated mx-1 fa-lg"
+              />
             </a>
           </li>
 
           <li class="facebook">
             <a href="https://www.facebook.com/virus.te.ua/" target="_blank">
-              <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
+              <picture>
+                <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
+                <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
+              </picture>
             </a>
           </li>
 
           <li class="instagram">
             <a href="https://www.instagram.com/virusdetailing/" target="_blank">
-              <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
+                  type="image/webp"
+                >
+                <img
+                  src="~/assets/img/icons8-instagram-filled-100.png"
+                  alt="icons instagram filled"
+                >
+              </picture>
             </a>
           </li>
         </ul>
@@ -41,7 +54,7 @@
     <div class="container">
       <nav>
         <div class="drawer-toggle" role="button" @click="$store.dispatch('nav/toggleSidebar')">
-          <i class="fa fa-bars fa-2x"></i>
+          <font-awesome-icon :icon="['fas', 'bars']" class="mx-1 fa-2x"/>
         </div>
 
         <div class="logo">
@@ -70,8 +83,9 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("~assets/img/Хедер.png");
+    url("~assets/imgWebP/Хедер.webp");
   background-size: cover;
+  background-color: $darkColor;
   width: 100%;
   position: absolute;
   height: 140px;

@@ -8,44 +8,56 @@
       <div class="row p-0">
         <nuxt-link to="/Полірування">
           <h2 class="top1">ПОЛІРУВАННЯ</h2>
-          <img
-            class="img-fluid one mr-1 mb-1"
-            style="position: relative"
-            src="img/top1.png"
-            alt="black car from its back with word ПОЛІРУВАННЯ over."
-          >
+          <picture>
+            <source srcset="~/assets/imgWebP/top1.webp" type="image/webp">
+            <img
+              class="img-fluid one mr-1 mb-1"
+              style="position: relative"
+              src="~/assets/img/top1.png"
+              alt="black car from its back with word ПОЛІРУВАННЯ over."
+            >
+          </picture>
         </nuxt-link>
         <nuxt-link to="/Покриттявоском">
           <h2 class="top2">
             ВОСКОВЕ
             <br>ПОКРИТТЯ
           </h2>
-          <img
-            class="two img-fluid"
-            src="img/top2.png"
-            alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
-          >
+          <picture>
+            <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
+            <img
+              class="two img-fluid"
+              src="~/assets/img/top2.png"
+              alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
+            >
+          </picture>
         </nuxt-link>
         <nuxt-link to="/Мийкамотору">
           <h2 class="top3">
             МИЙКА
             <br>МОТОРУ
           </h2>
-          <img
-            class="three img-fluid mt-1"
-            src="img/top3.png"
-            alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
-          >
+          <picture>
+            <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
+            <img
+              class="three img-fluid mt-1"
+              src="~/assets/img/top3.png"
+              alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
+            >
+          </picture>
         </nuxt-link>
         <div class="col-md">
           <nuxt-link to="/Хімчистка">
             <h2 class="top4">ХІМЧИСТКА</h2>
-            <img
-              class="four img-fluid mt-n3"
-              style="margin-top: -16px;"
-              src="img/top4.png"
-              alt="image from the angle of a cars stearing wheel with the text ХІМЧИСТКА over."
-            >
+            <picture>
+              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp">
+              <img
+                class="four img-fluid mt-n3"
+                style="margin-top: -16px;"
+                src="~/assets/img/top4.png"
+                alt="image from the angle of a cars stearing wheel with the text ХІМЧИСТКА over."
+              >
+            </picture>
           </nuxt-link>
 
           <nuxt-link to="/Реставраціяподряпин">
@@ -53,21 +65,27 @@
               РЕСТАВРАЦІЯ
               <br>СКОЛІВ
             </h2>
-            <img
-              class="five img-fluid mt-n3"
-              style="margin-top: -16px;"
-              src="img/top5.png"
-              alt="Image of a blue car from the back at low angle showing it's left tyre with the text РЕСТАВРАЦІЯ
+            <picture>
+              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp">
+              <img
+                class="five img-fluid mt-n3"
+                style="margin-top: -16px;"
+                src="~/assets/img/top5.png"
+                alt="Image of a blue car from the back at low angle showing it's left tyre with the text РЕСТАВРАЦІЯ
                             СКОЛІВ over."
-            >
+              >
+            </picture>
           </nuxt-link>
           <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
             <h2 class="top6">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
-            <img
-              class="six img-fluid mt-2"
-              src="img/top6.png"
-              alt="a black saloon car from it's right side with the text КЕРАМІЧНЕ ПОКРИТТЯ over."
-            >
+            <picture>
+              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
+              <img
+                class="six img-fluid mt-2"
+                src="~/assets/img/top6.png"
+                alt="a black saloon car from it's right side with the text КЕРАМІЧНЕ ПОКРИТТЯ over."
+              >
+            </picture>
           </nuxt-link>
         </div>
         <nuxt-link to="/Передпродажнапідготовка">
@@ -75,12 +93,15 @@
             ПЕРЕДПРОДАЖНА
             <br>ПІДГОТОВКА
           </h2>
-          <img
-            class="seven img-fluid mt-2"
-            src="img/top7.png"
-            alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
+          <picture>
+            <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
+            <img
+              class="seven img-fluid mt-2"
+              src="~/assets/img/top7.png"
+              alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
                         ПІДГОТОВКА over."
-          >
+            >
+          </picture>
         </nuxt-link>
       </div>
     </div>
@@ -274,7 +295,7 @@
 
     <script>
   // owlCarousel
-  var owl = $('.owl-carousel')
+  var owl = $(".owl-carousel");
   owl.owlCarousel({
     loop: true,
     nav: false,
@@ -296,7 +317,7 @@
     margin: 20,
     autoplay: true,
     autoplayHoverPause: true
-  })
+  });
     </script>
   </div>
 </template>
@@ -318,26 +339,28 @@ export default {
   head() {
     return {
       title:
-        'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
-      titleTemplate: 'Virus - %s!',
+        "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
+      titleTemplate: "Virus - %s!",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content:
-            'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~assets/scss/config.scss";
+
 .top-grid h2 {
   position: absolute;
   z-index: 1;
-  font-family: 'Roboto';
+  font-family: $mainFont;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -427,7 +450,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 20px;
@@ -476,7 +499,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 30px;
@@ -538,7 +561,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 26px;
@@ -588,7 +611,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 22px;
@@ -638,7 +661,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 22px;
@@ -683,7 +706,7 @@ export default {
   .top-grid h2 {
     position: absolute;
     z-index: 1;
-    font-family: 'Roboto';
+    font-family: $mainFont;
     font-style: normal;
     font-weight: 900;
     font-size: 20px !important;
@@ -732,17 +755,15 @@ export default {
 }
 </style>
 
-
 <style lang="scss" scoped>
-@import '~assets/scss/config.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+@import "~assets/scss/config.scss";
 main {
   .top-grid {
     h2 a {
       color: $lightColor;
     }
 
-    a[rel='bookmark']:hover + .meta * {
+    a[rel="bookmark"]:hover + .meta * {
       color: $redColor;
     }
 
@@ -1080,7 +1101,7 @@ main {
         transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.15);
-        content: '';
+        content: "";
         opacity: 0;
         z-index: -1;
         border-radius: 20px;
@@ -1184,7 +1205,7 @@ main {
 
     .work-one {
       box-sizing: border-box;
-      background-image: url('~assets/img/car1.png');
+      background-image: url("~assets/imgWebP/car1.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1194,7 +1215,7 @@ main {
     }
 
     .work-two {
-      background-image: url('~assets/img/car2.png');
+      background-image: url("~assets/imgWebp/car2.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1203,7 +1224,7 @@ main {
     }
 
     .work-three {
-      background-image: url('~assets/img/car3.png');
+      background-image: url("~assets/imgWebp/car3.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1212,7 +1233,7 @@ main {
     }
 
     .work-four {
-      background-image: url('~assets/img/car4.png');
+      background-image: url("~assets/imgWebp/car4.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1221,7 +1242,7 @@ main {
     }
 
     .work-five {
-      background-image: url('~assets/img/car5.png');
+      background-image: url("~assets/imgWebp/car5.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1230,7 +1251,7 @@ main {
     }
 
     .work-six {
-      background-image: url('~assets/img/car6.png');
+      background-image: url("~assets/imgWebp/car6.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1239,7 +1260,7 @@ main {
     }
 
     .work-seven {
-      background-image: url('~assets/img/car7.png');
+      background-image: url("~assets/imgWebp/car7.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1248,7 +1269,7 @@ main {
     }
 
     .work-eight {
-      background-image: url('~assets/img/car8.png');
+      background-image: url("~assets/imgWebp/car8.webp");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left;
@@ -1296,7 +1317,7 @@ main {
       transform: scale3d(0, 0, 1);
       transition: transform 0.3s ease-out 0s;
       background: rgba(255, 255, 255, 0.1);
-      content: '';
+      content: "";
       pointer-events: none;
       border-radius: 20px;
       -webkit-border-radius: 20px;
@@ -1331,7 +1352,7 @@ main {
     }
 
     h2 {
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 62px;
@@ -1767,7 +1788,7 @@ main {
     .card {
       .work-one {
         box-sizing: border-box;
-        background-image: url('~assets/img/1.png');
+        background-image: url("~assets/imgWebp/1.webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1777,7 +1798,7 @@ main {
       }
 
       .work-two {
-        background-image: url('~assets/img/1(1).png');
+        background-image: url("~assets/imgWebp/1(1).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1786,7 +1807,7 @@ main {
       }
 
       .work-three {
-        background-image: url('~assets/img/1(2).png');
+        background-image: url("~assets/imgWebp/1(2).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1795,7 +1816,7 @@ main {
       }
 
       .work-four {
-        background-image: url('~assets/img/1(3).png');
+        background-image: url("~assets/imgWebp/1(3).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1805,7 +1826,7 @@ main {
 
       .work-five {
         box-sizing: border-box;
-        background-image: url('~assets/img/1(4).png');
+        background-image: url("~assets/imgWebp/1(4).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1814,7 +1835,7 @@ main {
       }
 
       .work-six {
-        background-image: url('~assets/img/1(5).png');
+        background-image: url("~assets/imgWebp/1(5).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1823,7 +1844,7 @@ main {
       }
 
       .work-seven {
-        background-image: url('~assets/img/1(6).png');
+        background-image: url("~assets/imgWebp/1(6).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1832,7 +1853,7 @@ main {
       }
 
       .work-eight {
-        background-image: url('~assets/img/1(7).png');
+        background-image: url("~assets/imgWebp/1(7).webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left;
@@ -1849,7 +1870,7 @@ main {
 
     h2 {
       color: $headingsFontColor;
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 50px !important;
@@ -1876,7 +1897,7 @@ main {
     text-align: center;
 
     h2 {
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 50px;
@@ -1893,7 +1914,7 @@ main {
     text-align: center;
 
     h2 {
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 48px;
@@ -1911,7 +1932,7 @@ main {
 
     h2 {
       color: $headingsFontColor;
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 42px !important;
