@@ -185,9 +185,15 @@ export default {
     ]
   ],
 
-  build: {
-    plugins: [],
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
 
-    extend(config, ctx) {}
+  build: {
+
+    extend(config, ctx) {
+      // Run ESLint on save
+      
+    }
   }
 }

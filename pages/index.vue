@@ -288,35 +288,6 @@
     <ContactForm />
 
     <progressSection />
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <script>
-      // owlCarousel
-      var owl = $('.owl-carousel')
-      owl.owlCarousel({
-        loop: true,
-        nav: false,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 1
-          },
-          768: {
-            items: 2,
-            margin: 0
-          },
-          1200: {
-            items: 3,
-            margin: 10,
-            loop: true
-          }
-        },
-        margin: 20,
-        autoplay: true,
-        autoplayHoverPause: true
-      })
-    </script>
   </div>
 </template>
 
