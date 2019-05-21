@@ -4,15 +4,16 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/Керамічнепокриття.png" :alt="heading" />
+            <img src="~assets/img/Керамічнепокриття.png" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading }}</h1>
             <p>{{ firstParagraph }}</p>
             <p>
               {{ secondParagraph }}
-              <br />• твердістю (яка в деяких випадках поступається лише алмазу)
-              <br />• хімічною стійкістю <br />• гідрофобністю
+              <br>• твердістю (яка в деяких випадках поступається лише алмазу)
+              <br>• хімічною стійкістю
+              <br>• гідрофобністю
             </p>
             <p>{{ thirdParagraph }}</p>
             <p>{{ fourthParagraph }}</p>
@@ -29,46 +30,40 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="row mt-3">
+        <!-- <div class="row mt-3">
           <video class="col-md-6 mt-3 mx-auto" controls autoplay="true" muted>
             <source src="~assets/video/vid(12).mp4" type="video/mp4" />
           </video>
           <video class="col-md-6 mt-3 mx-auto" controls autoplay="true" muted>
             <source src="~assets/video/vid(15).mp4" type="video/mp4" />
           </video>
-        </div>
+        </div>-->
 
         <div class="col-md-7 m-auto">
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">Ⅰ категорія</a>
               <p class="pricing">1200 грн</p>
-              <p class="mt-2 mb-0">
-                середній бізнес спорт купе
-              </p>
+              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
               <p class="pricing">1300 грн</p>
-              <p class="mt-2 mb-0">
-                середній кросовер позашляховик
-              </p>
+              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
             </div>
             <div class="col-md-4 mx-auto">
               <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
               <p class="pricing">1400 грн</p>
-              <p class="mt-2 mb-0">
-                повнорозмірний кросовер позашляховик
-              </p>
+              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <ContactForm />
+    <ContactForm/>
 
-    <progressSection />
+    <progressSection/>
   </div>
 </template>
 
