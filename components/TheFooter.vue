@@ -169,11 +169,6 @@ footer {
       }
     }
 
-    .logo {
-      position: absolute;
-      line-height: 140px;
-    }
-
     .bottom-contact {
       padding: 40px 0;
       background: $darkColor;
@@ -233,9 +228,7 @@ footer {
   footer {
     .logo {
       img {
-        text-align: center;
-        margin-top: -110px;
-        margin-left: calc(100vw - 65vw);
+        display: none;
       }
     }
   }
@@ -245,8 +238,7 @@ footer {
   footer {
     .logo {
       img {
-        margin-left: calc(100vw - 70vw);
-        margin-top: -110px;
+        display: none;
       }
     }
   }
@@ -256,7 +248,7 @@ footer {
   footer {
     .logo {
       img {
-        margin-left: calc(100vw - 75vw);
+        display: none;
       }
     }
   }

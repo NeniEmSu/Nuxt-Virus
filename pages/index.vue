@@ -113,7 +113,6 @@
         <div class="sales-cards col-md text-center mx-auto p-0">
           <productCards/>
         </div>
-        <bootstrapVueCarousel/>
 
         <a href="магазин" class="btn">Показати більше</a>
       </div>

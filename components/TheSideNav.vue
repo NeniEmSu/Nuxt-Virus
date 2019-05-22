@@ -77,7 +77,7 @@ export default {
   width: 100%;
 }
 .sidenav {
-  margin-top: 140px;
+  margin-top: 51px;
   height: auto;
   width: 300px;
   background-color: black;

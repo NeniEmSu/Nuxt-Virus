@@ -5,19 +5,19 @@
         <ul>
           <li>
             <nuxt-link to="/контакти#map-top">
-              <span class="hide">Україна, м. Тернопіль, вул. Приміська 15А</span>
+              <span>Україна, м. Тернопіль, вул. Приміська 15А</span>
               <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="bounce mx-1 fa-lg"/>
             </nuxt-link>
           </li>
           <li>
             <a href="tel:+380673334040">
-              <span class="hide-sm">+38 (067) 333-40-40</span>
+              <span>+38 (067) 333-40-40</span>
               <font-awesome-icon :icon="['fas', 'phone']" class="faa-ring animated mx-1 fa-lg"/>
             </a>
           </li>
           <li>
             <a href="mailto:deteylingvirus@gmail.com">
-              <span class="hide-md">deteylingvirus@gmail.com</span>
+              <span>deteylingvirus@gmail.com</span>
               <font-awesome-icon
                 :icon="['fa', 'envelope']"
                 class="faa-horizontal animated mx-1 fa-lg"
@@ -54,7 +54,7 @@
     <div class="container">
       <nav>
         <div class="drawer-toggle" role="button" @click="$store.dispatch('nav/toggleSidebar')">
-          <font-awesome-icon :icon="['fas', 'bars']" class="mx-1 fa-2x"/>
+          <img src="~/assets/img/menu.svg" alt="menu Icon">
         </div>
 
         <div class="logo">
@@ -524,12 +524,12 @@ header {
 .drawer-toggle {
   position: relative;
   z-index: 99;
-  line-height: 60px;
+  line-height: 50px;
   text-align: right;
   box-sizing: border-box;
   padding: 15px 24px;
   cursor: pointer;
-  color: $redColor;
+  color: $lightColor;
   display: none;
 }
 
@@ -541,79 +541,38 @@ header {
 
 @include mediaMenu {
   .top-contacts {
-    background: $darkColor;
-    width: 100%;
-    height: 40px;
-    margin: 0;
-    padding: 0;
+    display: none;
+  }
 
-    ul {
-      list-style: none;
-      overflow: hidden;
-      padding: 0;
-      text-align: center;
-      margin: 0;
-      line-height: 40px !important;
-    }
-
-    ul li {
-      display: inline-block;
-      padding: 0 10px !important;
-      margin: 0;
-
-      &.instagram,
-      &.facebook {
-        float: none !important;
-      }
-    }
-
-    ul li a {
-      i {
-        line-height: 40px;
-      }
-    }
+  header {
+    height: 50px;
   }
 
   .logo {
     position: absolute;
-    margin-top: -45px;
+    margin-top: -40px;
+    img {
+      height: 1.8rem;
+    }
   }
 
   .drawer-toggle {
+    margin-top: -20px;
     display: block;
-  }
-}
-
-@include mediaLg2 {
-  .hide {
-    display: none;
-  }
-}
-
-@include mediaLg {
-  .hide {
-    display: none;
-  }
-}
-
-@include mediaMd {
-  .hide,
-  .hide-md {
-    display: none;
+    font-size: 18px;
   }
 }
 
 @include mediaSm {
-  .hide,
-  .hide-md,
-  .hide-sm {
-    display: none;
+  .logo {
+    margin-top: -40px;
+    img {
+      height: 1.8rem;
+    }
   }
+}
 
-  .top-contacts ul li {
-    display: inline-block;
-    margin: 0;
-    line-height: 40px;
-  }
+.drawer-toggle {
+  padding-right: 0;
 }
 </style>

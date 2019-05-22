@@ -394,16 +394,10 @@ export default {};
       img {
         align-self: center;
         width: 100%;
-        height: 185px;
-        min-height: 150px;
+        height: 100%;
+        min-height: 170px;
+        max-height: 170px;
         object-fit: scale-down;
-
-        &.small-img {
-          width: 100%;
-          height: auto;
-          min-height: 150px;
-          object-fit: scale-down;
-        }
       }
 
       hr {

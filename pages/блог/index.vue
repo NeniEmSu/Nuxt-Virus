@@ -45,29 +45,17 @@
         </div>
       </div>
     </div>
-    <div class="jumbotron displays">
-      <div class="container mx-auto contact">
-        <PostPreview
-          v-for="post in posts"
-          :id="post.id"
-          :key="post.id"
-          :title="post.title"
-          :thumbnail="post.thumbnail"
-        />
-      </div>
-    </div>
   </div>
 </template>
 
 <<script>
 import ContactForm from '@/components/contactForm.vue'
 import progressSection from '@/components/progressSection.vue'
-import PostPreview from '@/components/posts/PostPreview'
 export default {
   components: {
     ContactForm,
-    progressSection,
-    PostPreview
+    progressSection
+    
   },
 
   head() {
@@ -83,23 +71,8 @@ export default {
         }
       ]
     }
-  },
-  data() {
-    return {
-      posts: [
-        {
-          title: 'Як самостійно доглядати за салоном автомобіля?',
-          thumbnail: '~/assets/img/Блог1.jpg',
-          id: 'blog001'
-        },
-        {
-          title: 'Скільки разів можна полірувати автомобіль?',
-          thumbnail: '~/assets/img/Блог2.jpg',
-          id: 'blog002'
-        }
-      ]
-    }
   }
+  
 }
 </script>
 

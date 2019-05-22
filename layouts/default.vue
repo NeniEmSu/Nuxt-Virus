@@ -1,57 +1,22 @@
 <template>
   <div>
-    <TheHeader />
+    <TheHeader/>
 
-    <TheSideNav />
+    <TheSideNav/>
 
     <main>
       <transition name="fade" mode="out-in">
-        <nuxt />
+        <nuxt/>
       </transition>
     </main>
 
-    <TheFooter />
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-    <!-- Online chat support -->
-    <script type="74bf624512b1c6414329bcb4-text/javascript">
-      (function () {
-          var widget_id = 'j9oYCawnP2';
-          var d = document;
-          var w = window;
-
-          function l() {
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = '//code.jivosite.com/script/widget/' + widget_id;
-              var ss = document.getElementsByTagName('script')[0];
-              ss.parentNode.insertBefore(s, ss);
-          }
-          if (d.readyState == 'complete') {
-              l();
-          } else {
-              if (w.attachEvent) {
-                  w.attachEvent('onload', l);
-              } else {
-                  w.addEventListener('load', l, false);
-              }
-          }
-      })();
-    </script>
-
-    <script
-      src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js"
-      data-cf-settings="74bf624512b1c6414329bcb4-|49"
-      defer
-    ></script>
+    <TheFooter/>
   </div>
 </template>
 <script>
-import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
-import TheSideNav from '@/components/TheSideNav'
+import TheHeader from "@/components/TheHeader.vue";
+import TheFooter from "@/components/TheFooter.vue";
+import TheSideNav from "@/components/TheSideNav";
 export default {
   components: {
     TheHeader,
@@ -63,22 +28,22 @@ export default {
     return {
       link: [
         {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/favicon.ico'
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico"
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import '~assets/scss/config.scss';
+@import "~assets/scss/config.scss";
 
 @font-face {
-  font-family: 'Roboto', 'Roboto Condensed', sans-serif;
-  src: url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900');
+  font-family: "Roboto", "Roboto Condensed", sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
   font-display: swap;
 }
 
@@ -141,8 +106,8 @@ button {
   background-color: rgb(149, 150, 150);
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -154,7 +119,7 @@ select {
   -ms-appearance: none;
   appearance: none;
 
-  background-image: url('~assets/img/select.png');
+  background-image: url("~assets/img/select.png");
   background-position: 95% center;
   background-repeat: no-repeat;
 
@@ -183,5 +148,9 @@ main {
   margin-top: 140px;
   min-height: 80vh;
   height: 100%;
+}
+
+.container {
+  padding: 0 20px;
 }
 </style>
