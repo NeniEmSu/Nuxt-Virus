@@ -119,10 +119,6 @@ export default {
         href: '/favicon-16x16.png'
       },
       {
-        rel: 'manifest',
-        href: '/site.webmanifest'
-      },
-      {
         rel: 'mask-icon',
         href: 'https://virus.te.ua/assets/icons/safari-pinned-tab.svg',
         color: '#e32124'

@@ -4,7 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/ШУМОІЗОЛЯЦІЯ.png" :alt="heading">
+            <img src="~assets/img/ШУМОІЗОЛЯЦІЯ.jpg" :alt="heading">
 
             <!-- <video controls autoplay="true" muted>
               <source src="~assets/video/vid(14).mp4" type="video/mp4" />

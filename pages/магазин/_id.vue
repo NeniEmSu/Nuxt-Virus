@@ -11,22 +11,22 @@
           <div class="row">
             <div class="main-image col-lg-4">
               <div class="image-showcase col-12 text-center">
-                <img src="~assets/img/86.png" class="mx-auto" alt="Koch Chemie Fresh UP">
+                <img src="~assets/img/86.jpg" class="mx-auto" alt="Koch Chemie Fresh UP">
               </div>
               <div class="small-more-images">
                 <div class="row mx-auto">
                   <img
-                    src="~assets/img/86.png"
+                    src="~assets/img/86.jpg"
                     alt="Koch chemie fresh up"
                     class="col-4 mx-auto mt-2 more-images"
                   >
                   <img
-                    src="~assets/img/86.png"
+                    src="~assets/img/86.jpg"
                     alt="Koch chemie fresh up"
                     class="col-4 mx-auto mt-2 more-images"
                   >
                   <img
-                    src="~assets/img/86.png"
+                    src="~assets/img/86.jpg"
                     alt="Kosh chemie fresh up"
                     class="col-4 mx-auto mt-2 more-images"
                   >
@@ -103,7 +103,7 @@
                   <div class="cart-item row col-12 m-auto p-0">
                     <img
                       id="item-img"
-                      src="~assets/img/86.png"
+                      src="~assets/img/86.jpg"
                       alt="Koch Chemie Fresh UP"
                       class="col-sm-1 m-auto"
                     >
@@ -132,7 +132,7 @@
                   <div class="cart-item row col-12 m-auto p-0">
                     <img
                       id="item-img"
-                      src="~assets/img/MaskGroup(3).png"
+                      src="~assets/img/MaskGroup(3).jpg"
                       alt="Soft 99"
                       class="col-sm-1 m-auto"
                     >
@@ -210,7 +210,7 @@
           <div class="item">
             <div class="card details-page-card one card__hover mx-auto">
               <img
-                src="~assets/img/86.png"
+                src="~assets/img/86.jpg"
                 class="card-img-top img-fluid"
                 alt="Koch Chemie Fresh UP"
               >
@@ -243,7 +243,7 @@
           <div class="item">
             <div class="card details-page-card two card__hover mx-auto">
               <img
-                src="~assets/img/9BFZEPHIR-1.png"
+                src="~assets/img/9BFZEPHIR-1.jpg"
                 class="card-img-top img-fluid"
                 alt="Rupes Coarse Zephir Gloss"
               >
@@ -277,7 +277,7 @@
           <div class="item">
             <div class="card details-page-card three card__hover mx-auto">
               <img
-                src="~assets/img/MaskGroup(3).png"
+                src="~assets/img/MaskGroup(3).jpg"
                 class="card-img-top img-fluid small-img"
                 alt="Soft 99"
               >
@@ -311,7 +311,7 @@
           <div class="item">
             <div class="card details-page-card four card__hover mx-auto">
               <img
-                src="~assets/img/86.png"
+                src="~assets/img/86.jpg"
                 class="card-img-top img-fluid"
                 alt="Koch Chemie Fresh UP"
               >
@@ -344,7 +344,7 @@
           <div class="item">
             <div class="card details-page-card five card__hover mx-auto">
               <img
-                src="~assets/img/9BFZEPHIR-1.png"
+                src="~assets/img/9BFZEPHIR-1.jpg"
                 class="card-img-top img-fluid"
                 alt="Rupes Coarse Zephir Gloss"
               >
@@ -377,7 +377,7 @@
           <div class="item">
             <div class="card details-page-card six card__hover mx-auto">
               <img
-                src="~assets/img/MaskGroup(3).png"
+                src="~assets/img/MaskGroup(3).jpg"
                 alt="Soft 99"
                 class="card-img-top img-fluid small-img"
               >
@@ -411,7 +411,7 @@
           <div class="item">
             <div class="card details-page-card seven card__hover mx-auto">
               <img
-                src="~assets/img/86.png"
+                src="~assets/img/86.jpg"
                 alt="Koch Chemie Fresh UP"
                 class="card-img-top img-fluid"
               >
@@ -444,7 +444,7 @@
           <div class="item">
             <div class="card details-page-card eight card__hover mx-auto">
               <img
-                src="~assets/img/9BFZEPHIR-1.png"
+                src="~assets/img/9BFZEPHIR-1.jpg"
                 class="card-img-top img-fluid"
                 alt="Rupes Coarse Zephir Gloss"
               >
@@ -477,7 +477,7 @@
           <div class="item">
             <div class="card details-page-card nine card__hover mx-auto">
               <img
-                src="~assets/img/MaskGroup(3).png"
+                src="~assets/img/MaskGroup(3).jpg"
                 class="card-img-top img-fluid small-img"
                 alt="Soft 99"
               >
@@ -535,7 +535,7 @@ h1.details-page-header {
 }
 
 .image-showcase img {
-  background: url("~assets/img/86.png");
+  background: url("~assets/img/86.jpg");
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
   border-radius: 20px;
 }
@@ -548,7 +548,7 @@ h1.details-page-header {
   width: 100%;
   object-fit: scale-down;
   object-position: center;
-  background: url("~assets/img/86.png");
+  background: url("~assets/img/86.jpg");
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
 }

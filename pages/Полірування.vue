@@ -4,7 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/Полірування.png" :alt="heading">
+            <img src="~assets/img/Полірування.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading }}</h1>
@@ -140,11 +140,11 @@ export default {
 @import "~assets/scss/servicesPages.scss";
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter1.png");
+  background-image: url("~assets/img/beforeAfter1_001.jpg");
 }
 
 .before {
-  background-image: url("~assets/img/beforeAfter1.0.png");
+  background-image: url("~assets/img/beforeAfter1_001.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
@@ -160,7 +160,7 @@ export default {
 }
 
 .after {
-  background-image: url("~assets/img/beforeAfter1.1.png");
+  background-image: url("~assets/img/beforeAfter1_002.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 286px;

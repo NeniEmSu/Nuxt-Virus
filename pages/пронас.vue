@@ -88,7 +88,7 @@ export default {
 .aboutUs-heading-image {
   margin-top: -10.5px;
   background: $lightColor;
-  background-image: url(~assets/img/aboutUsHead.png) !important;
+  background-image: url(~assets/img/aboutUsHead.jpg) !important;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: contain;

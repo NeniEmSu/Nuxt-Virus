@@ -112,7 +112,7 @@ export default {
 .contact-heading-image {
   margin-top: -10.5px;
   background: #000000;
-  background-image: url("~assets/img/contactPageHeadImg.png");
+  background-image: url("~assets/img/contactPageHeadImg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

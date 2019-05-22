@@ -6,7 +6,7 @@
           <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/86.png"
+            src="~/assets/img/86.jpg"
             class="card-img-top img-fluid store-img"
             alt="Koch Chemie Fresh UP"
           >
@@ -43,7 +43,7 @@
           <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/9BFZEPHIR-1.png"
+            src="~/assets/img/9BFZEPHIR-1.jpg"
             class="card-img-top img-fluid store-img"
             alt="Rupes Coarse Zephir Gloss"
           >
@@ -80,7 +80,7 @@
           <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/MaskGroup(3).png"
+            src="~/assets/img/MaskGroup(3).jpg"
             class="card-img-top img-fluid store-img small-img"
             alt="Soft 99"
           >
@@ -120,7 +120,7 @@
           <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/86.png"
+            src="~/assets/img/86.jpg"
             class="card-img-top img-fluid store-img"
             alt="Koch Chemie Fresh UP"
           >
@@ -159,7 +159,7 @@
           <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/9BFZEPHIR-1.png"
+            src="~/assets/img/9BFZEPHIR-1.jpg"
             class="card-img-top img-fluid store-img"
             alt="Rupes Coarse Zephir Gloss"
           >
@@ -195,7 +195,7 @@
           <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/MaskGroup(3).png"
+            src="~/assets/img/MaskGroup(3).jpg"
             class="card-img-top img-fluid store-img small-img"
             alt="Soft 99"
           >
@@ -234,7 +234,7 @@
           <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/86.png"
+            src="~/assets/img/86.jpg"
             class="card-img-top img-fluid store-img"
             alt="Koch Chemie Fresh UP"
           >
@@ -273,7 +273,7 @@
           <source srcset="~/assets/imgWebP/9BFZEPHIR-1.webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/9BFZEPHIR-1.png"
+            src="~/assets/img/9BFZEPHIR-1.jpg"
             class="card-img-top img-fluid store-img"
             alt="Rupes Coarse Zephir Gloss"
           >
@@ -309,7 +309,7 @@
           <source srcset="~/assets/imgWebP/MaskGroup(3).webp" type="image/webp">
           <img
             id="item-img"
-            src="~/assets/img/MaskGroup(3).png"
+            src="~/assets/img/MaskGroup(3).jpg"
             class="card-img-top img-fluid store-img small-img"
             alt="Soft 99"
           >

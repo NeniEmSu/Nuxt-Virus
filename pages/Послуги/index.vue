@@ -967,168 +967,168 @@ form.choose-brand p {
       }
 
       &.service-one {
-        background-image: url("~assets/img/services1.png");
+        background-image: url("~assets/img/services1.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-two {
-        background-image: url("~assets/img/services2.png");
+        background-image: url("~assets/img/services2.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-three {
-        background-image: url("~assets/img/services3.png");
+        background-image: url("~assets/img/services3.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-four {
-        background-image: url("~assets/img/services4.png");
+        background-image: url("~assets/img/services4.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-five {
-        background-image: url("~assets/img/services5.png");
+        background-image: url("~assets/img/services5.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-six {
-        background-image: url("~assets/img/services6.png");
+        background-image: url("~assets/img/services6.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-seven {
-        background-image: url("~assets/img/services7.png");
+        background-image: url("~assets/img/services7.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-eight {
-        background-image: url("~assets/img/services8.png");
+        background-image: url("~assets/img/services8.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-nine {
-        background-image: url("~assets/img/services9.png");
+        background-image: url("~assets/img/services9.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-ten {
-        background-image: url("~assets/img/services10.png");
+        background-image: url("~assets/img/services10.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-eleven {
-        background-image: url("~assets/img/services11.png");
+        background-image: url("~assets/img/services11.jpg");
         background-repeat: no-repeat;
         background-position: top center;
         background-size: scale-down;
       }
 
       &.service-twelve {
-        background-image: url("~assets/img/services12.png");
+        background-image: url("~assets/img/services12.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-13 {
-        background-image: url("~assets/img/services13.png");
+        background-image: url("~assets/img/services13.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-14 {
-        background-image: url("~assets/img/services14.png");
+        background-image: url("~assets/img/services14.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-15 {
-        background-image: url("~assets/img/services15.png");
+        background-image: url("~assets/img/services15.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-16 {
-        background-image: url("~assets/img/services16.png");
+        background-image: url("~assets/img/services16.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-17 {
-        background-image: url("~assets/img/services17.png");
+        background-image: url("~assets/img/services17.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-18 {
-        background-image: url("~assets/img/services18.png");
+        background-image: url("~assets/img/services18.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-19 {
-        background-image: url("~assets/img/services19.png");
+        background-image: url("~assets/img/services19.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-20 {
-        background-image: url("~assets/img/services20.png");
+        background-image: url("~assets/img/services20.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-21 {
-        background-image: url("~assets/img/services21.png");
+        background-image: url("~assets/img/services21.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-22 {
-        background-image: url("~assets/img/services22.png");
+        background-image: url("~assets/img/services22.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-23 {
-        background-image: url("~assets/img/services23.png");
+        background-image: url("~assets/img/services23.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;
       }
 
       &.service-24 {
-        background-image: url("~assets/img/services24.png");
+        background-image: url("~assets/img/services24.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: scale-down;

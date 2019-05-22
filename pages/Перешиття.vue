@@ -4,7 +4,7 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/Перешиття.png" :alt="heading">
+            <img src="~assets/img/Перешиття.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages">{{ heading }}</h1>
@@ -115,6 +115,6 @@ export default {
 @import "~assets/scss/servicesPages.scss";
 
 .service-time-image {
-  background-image: url("~assets/img/beforeAfter9.png");
+  background-image: url("~assets/img/beforeAfter9.jpg");
 }
 </style>

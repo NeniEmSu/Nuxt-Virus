@@ -129,7 +129,7 @@
                   <div class="cart-item row col-12 m-auto p-0">
                     <img
                       id="item-img"
-                      src="img/86.png"
+                      src="img/86.jpg"
                       alt="Koch Chemie Fresh UP"
                       class="col-sm-1 m-auto"
                     >
@@ -158,7 +158,7 @@
                   <div class="cart-item row col-12 m-auto p-0">
                     <img
                       id="item-img"
-                      src="img/MaskGroup(3).png"
+                      src="img/MaskGroup(3).jpg"
                       alt="Soft 99"
                       class="col-sm-1 m-auto"
                     >
@@ -333,7 +333,7 @@ export default {
   margin-top: -10px;
   margin-bottom: 40px;
   background: $darkColor;
-  background-image: url(~assets/img/shopPageHeadImg.png);
+  background-image: url(~assets/img/shopPageHeadImg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

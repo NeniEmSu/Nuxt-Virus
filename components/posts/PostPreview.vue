@@ -86,21 +86,21 @@ h1:after {
 }
 
 .block-one {
-  background-image: url("~assets/img/Блог1.png");
+  background-image: url("~assets/img/Блог1.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-two {
-  background-image: url("~assets/img/Блог2.png");
+  background-image: url("~assets/img/Блог2.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
 }
 
 .block-three {
-  background-image: url("~assets/img/Блог1.png");
+  background-image: url("~assets/img/Блог1.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: scale-down;
@@ -269,21 +269,21 @@ h2 {
     text-align: center;
 
     .block-one {
-      background-image: url("~assets/img/Блог1-small.png");
+      background-image: url("~assets/img/Блог1-small.jpg");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-two {
-      background-image: url("~assets/img/Блог2-small.png");
+      background-image: url("~assets/img/Блог2-small.jpg");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);
     }
 
     .block-three {
-      background-image: url("~assets/img/Блог1-small.png");
+      background-image: url("~assets/img/Блог1-small.jpg");
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.64);
       backdrop-filter: blur(5px);

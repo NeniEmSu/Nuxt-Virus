@@ -13,7 +13,7 @@
             <img
               class="img-fluid one mr-1 mb-1"
               style="position: relative"
-              src="~/assets/img/top1.png"
+              src="~/assets/img/top1.jpg"
               alt="black car from its back with word ПОЛІРУВАННЯ over."
             >
           </picture>
@@ -27,7 +27,7 @@
             <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
             <img
               class="two img-fluid"
-              src="~/assets/img/top2.png"
+              src="~/assets/img/top2.jpg"
               alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
             >
           </picture>
@@ -41,7 +41,7 @@
             <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
             <img
               class="three img-fluid mt-1"
-              src="~/assets/img/top3.png"
+              src="~/assets/img/top3.jpg"
               alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
             >
           </picture>
@@ -54,7 +54,7 @@
               <img
                 class="four img-fluid mt-n3"
                 style="margin-top: -16px;"
-                src="~/assets/img/top4.png"
+                src="~/assets/img/top4.jpg"
                 alt="image from the angle of a cars stearing wheel with the text ХІМЧИСТКА over."
               >
             </picture>
@@ -70,7 +70,7 @@
               <img
                 class="five img-fluid mt-n3"
                 style="margin-top: -16px;"
-                src="~/assets/img/top5.png"
+                src="~/assets/img/top5.jpg"
                 alt="Image of a blue car from the back at low angle showing it's left tyre with the text РЕСТАВРАЦІЯ
                             СКОЛІВ over."
               >
@@ -82,7 +82,7 @@
               <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
               <img
                 class="six img-fluid mt-2"
-                src="~/assets/img/top6.png"
+                src="~/assets/img/top6.jpg"
                 alt="a black saloon car from it's right side with the text КЕРАМІЧНЕ ПОКРИТТЯ over."
               >
             </picture>
@@ -97,7 +97,7 @@
             <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
             <img
               class="seven img-fluid mt-2"
-              src="~/assets/img/top7.png"
+              src="~/assets/img/top7.jpg"
               alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
                         ПІДГОТОВКА over."
             >

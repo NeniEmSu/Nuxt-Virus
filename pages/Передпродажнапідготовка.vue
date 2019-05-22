@@ -4,8 +4,8 @@
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
-            <img src="~assets/img/Передпродажнапідготовка1.png" :alt="heading">
-            <img src="~assets/img/Передпродажнапідготовка2.png" :alt="heading">
+            <img src="~assets/img/Передпродажнапідготовка1.jpg" :alt="heading">
+            <img src="~assets/img/Передпродажнапідготовка2.jpg" :alt="heading">
           </div>
 
           <div class="col-xl-6">
@@ -21,10 +21,10 @@
           </div>
           <div class="row mx-auto">
             <div class="col-xl-6">
-              <img src="~assets/img/Передпродажнапідготовка3.png" :alt="heading">
+              <img src="~assets/img/Передпродажнапідготовка3.jpg" :alt="heading">
             </div>
             <div class="col-xl-6">
-              <img src="~assets/img/Передпродажнапідготовка4.png" :alt="heading">
+              <img src="~assets/img/Передпродажнапідготовка4.jpg" :alt="heading">
             </div>
           </div>
         </div>
