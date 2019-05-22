@@ -5,7 +5,7 @@ export default {
     host: '0.0.0.0'
   },
   router: {
-    base: 'Nuxt-Virus'
+    base: '/Nuxt-Virus/'
   },
   head: {
     title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
