@@ -720,10 +720,7 @@ export default {
     padding: 10px;
   }
 }
-</style>
 
-<style lang="scss" scoped>
-@import "~assets/scss/config.scss";
 main {
   .top-grid {
     h2 a {

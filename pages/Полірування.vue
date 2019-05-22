@@ -19,10 +19,20 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="card p-0 mt-4 service-time-image">
+        <!-- <div class="card p-0 mt-4 service-time-image">
           <div class="row my-auto">
             <p class="before col-sm-6 text-md-right text-center my-auto p-5">До</p>
             <p class="after col-sm-6 text-md-left text-center my-auto p-5">Після</p>
+          </div>
+        </div>-->
+
+        <div class="row mx-auto">
+          <div class="col-md-6 mx-auto p-0 before">
+            <font class="before-image-text">До</font>
+          </div>
+
+          <div class="col-md-6 mx-auto p-0 after">
+            <font class="after-image-text">Після</font>
           </div>
         </div>
 
@@ -131,5 +141,37 @@ export default {
 
 .service-time-image {
   background-image: url("~assets/img/beforeAfter1.png");
+}
+
+.before {
+  background-image: url("~assets/img/beforeAfter1.0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  min-height: 286px;
+  max-height: 286px;
+  width: 100%;
+}
+.before-image-text {
+  position: relative;
+  top: 40%;
+  left: 40%;
+  color: white;
+}
+
+.after {
+  background-image: url("~assets/img/beforeAfter1.1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 286px;
+  max-height: 286px;
+  width: 100%;
+}
+.after-image-text {
+  position: relative;
+  top: 40%;
+  left: 40%;
+
+  color: white;
 }
 </style>
