@@ -139,10 +139,6 @@ export default {
 
 @import "~assets/scss/servicesPages.scss";
 
-.service-time-image {
-  background-image: url("~assets/img/beforeAfter1_001.jpg");
-}
-
 .before {
   background-image: url("~assets/img/beforeAfter1_001.jpg");
   background-size: cover;
@@ -160,7 +156,7 @@ export default {
 }
 
 .after {
-  background-image: url("~assets/img/beforeAfter1_002.jpg");
+  background-image: url("~assets/img/beforeAfter1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 286px;

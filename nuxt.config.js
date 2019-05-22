@@ -4,9 +4,6 @@ export default {
     port: 8383,
     host: '0.0.0.0'
   },
-  router: {
-    base: '/Nuxt-Virus/'
-  },
   head: {
     title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
     htmlAttrs: {
