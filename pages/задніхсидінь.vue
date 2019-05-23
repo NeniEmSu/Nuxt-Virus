@@ -114,7 +114,7 @@ export default {
 @import "~assets/scss/servicesPages.scss";
 
 .before {
-  background-image: url("~assets/img/beforeAfter1_001.jpg");
+  background-image: url("~assets/img/beforeAfter8_001.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
@@ -130,7 +130,7 @@ export default {
 }
 
 .after {
-  background-image: url("~assets/img/beforeAfter1.jpg");
+  background-image: url("~assets/img/beforeAfter8_002.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 286px;

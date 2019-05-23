@@ -64,7 +64,6 @@
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
 export default {
-  layout: "default",
   components: {
     ContactForm,
     progressSection
@@ -118,7 +117,7 @@ export default {
 @import "~assets/scss/servicesPages.scss";
 
 .before {
-  background-image: url("~assets/img/beforeAfter1_001.jpg");
+  background-image: url("~assets/img/beforeAfter9_001.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
@@ -134,7 +133,7 @@ export default {
 }
 
 .after {
-  background-image: url("~assets/img/beforeAfter1.jpg");
+  background-image: url("~assets/img/beforeAfter9_002.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 286px;

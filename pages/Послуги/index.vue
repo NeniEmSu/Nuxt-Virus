@@ -566,7 +566,7 @@ export default {
           additionalCost: "500",
           additionalCostHigh: "3000",
           fixedRange: true,
-          additionalLink: "Перешиття ",
+          additionalLink: "Перешиття",
           additionalClass: "service-14"
         },
         {
