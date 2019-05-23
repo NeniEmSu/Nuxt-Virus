@@ -55,13 +55,6 @@ footer {
   background: $darkColor;
   color: $lightColor;
 
-  i {
-    font-size: 20px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    line-height: 20px;
-  }
-
   a,
   img {
     text-decoration: none;

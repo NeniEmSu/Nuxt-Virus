@@ -153,4 +153,13 @@ main {
 .container {
   padding: 0 20px;
 }
+
+@include mediaMenu {
+  main {
+    position: relative;
+    margin-top: 51px;
+    min-height: 80vh;
+    height: 100%;
+  }
+}
 </style>
