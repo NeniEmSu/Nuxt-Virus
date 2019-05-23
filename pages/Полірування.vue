@@ -19,13 +19,6 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <!-- <div class="card p-0 mt-4 service-time-image">
-          <div class="row my-auto">
-            <p class="before col-sm-6 text-md-right text-center my-auto p-5">До</p>
-            <p class="after col-sm-6 text-md-left text-center my-auto p-5">Після</p>
-          </div>
-        </div>-->
-
         <div class="row mx-auto">
           <div class="col-md-6 mx-auto p-0 before">
             <font class="before-image-text">До</font>
@@ -35,12 +28,6 @@
             <font class="after-image-text">Після</font>
           </div>
         </div>
-
-        <!-- <div class="videoContainer mt-4 text-center">
-          <video class="mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(23).mp4" type="video/mp4" />
-          </video>
-        </div>-->
 
         <div class="col-md-7 m-auto">
           <div class="row text-center">

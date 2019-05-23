@@ -2,7 +2,7 @@
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card p-5">
-        <form class="text-right" method="POST" action="includes/contactForm.inc.php">
+        <form class="text-right" method="POST">
           <h3 class="text-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
@@ -24,10 +24,31 @@
               <div class="form-group">
                 <label hidden for="typeOfWork">Оберіть тип робіт</label>
                 <select id="typeOfWork" aria-describedby="typeOfWork" class="form-control mx-auto">
-                  <option>Оберіть тип робіт</option>
-                  <option>Оберіть тип робіт</option>
-                  <option>Оберіть тип робіт</option>
-                  <option>Оберіть тип робіт</option>
+                  <option class="disable">Оберіть тип робіт</option>
+                  <option>Полірування автомобіля</option>
+                  <option>Полірування фар</option>
+                  <option>Полірування вставок салону</option>
+                  <option>Полірування центральних стійок</option>
+                  <option>Хімчистка</option>
+                  <option>Хімчистка колесних арок, підвіски, дисків</option>
+                  <option>Хімчистка передніх сидінь</option>
+                  <option>Хімчистка задніх сидінь</option>
+                  <option>Покриття твердим універсальним воском Soft 99</option>
+                  <option>Рідке скло</option>
+                  <option>Керамічне покриття кузова</option>
+                  <option>Комплекс</option>
+                  <option>Реставрація подряпин на кузові</option>
+                  <option>Перешиття шкіряних деталей салону</option>
+                  <option>Антидощ</option>
+                  <option>Мийка мотору парою</option>
+                  <option>Шумоізоляція</option>
+                  <option>Видалення запахів Бактерецидна обробка</option>
+                  <option>Видалення вмятин без покраски PDR</option>
+                  <option>Поклейка антигравійної плівки</option>
+                  <option>Очистка кондиціонера</option>
+                  <option>Чистка дисків</option>
+                  <option>Керамічне покриття сидінь</option>
+                  <option>Озонація</option>
                 </select>
               </div>
             </div>

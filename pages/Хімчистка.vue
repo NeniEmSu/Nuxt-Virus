@@ -19,19 +19,15 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="card p-0 mt-4 service-time-image" style="background-Image: ">
-          <div class="row my-auto">
-            <p class="before col-sm-6 text-md-right text-center my-auto p-5">До</p>
-            <!-- <hr class="col-1 my-auto d-none d-sm-block"> -->
-            <p class="after col-sm-6 text-md-left text-center my-auto p-5">Після</p>
+        <div class="row mx-auto">
+          <div class="col-md-6 mx-auto p-0 before">
+            <font class="before-image-text">До</font>
+          </div>
+
+          <div class="col-md-6 mx-auto p-0 after">
+            <font class="after-image-text">Після</font>
           </div>
         </div>
-
-        <!-- <div class="videoContainer mt-4 text-center">
-          <video controls autoplay="true" muted>
-            <source src="~assets/video/vid(6).mp4" type="video/mp4" />
-          </video>
-        </div>-->
 
         <div class="col-md-7 m-auto">
           <div class="row text-center">
@@ -152,7 +148,35 @@ export default {
 
 @import "~assets/scss/servicesPages.scss";
 
-.service-time-image {
-  background-image: url("~assets/img/beforeAfter5.jpg");
+.before {
+  background-image: url("~assets/img/beforeAfter1_001.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  min-height: 286px;
+  max-height: 286px;
+  width: 100%;
+}
+.before-image-text {
+  position: relative;
+  top: 40%;
+  left: 40%;
+  color: white;
+}
+
+.after {
+  background-image: url("~assets/img/beforeAfter1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 286px;
+  max-height: 286px;
+  width: 100%;
+}
+.after-image-text {
+  position: relative;
+  top: 40%;
+  left: 40%;
+
+  color: white;
 }
 </style>

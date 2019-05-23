@@ -18,15 +18,6 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <!-- <div class="row mt-3">
-          <video class="col-md-6 mt-3 mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(7).mp4" type="video/mp4" />
-          </video>
-          <video class="col-md-6 mt-3 mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(25).mp4" type="video/mp4" />
-          </video>
-        </div>-->
-
         <div class="col-md-7 m-auto">
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
