@@ -1,9 +1,9 @@
 <template>
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
-      <div class="card p-5">
-        <form class="text-right" method="POST">
-          <h3 class="text-left px-0">
+      <div class="card text-center">
+        <form class="text-md-right" method="POST">
+          <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
           </h3>
@@ -381,13 +381,14 @@ export default {};
 
 @include mediaMd {
   .contact {
+    padding-bottom: 40px;
     .card {
-      background: $lightColor;
-      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
-      border-radius: 20px;
-      height: 100%;
-      min-height: 330px;
-      padding-bottom: 5rem !important;
+      padding: 0 !important;
+      box-shadow: none;
+      padding: none !important;
+      background-color: inherit;
+      border: none;
+      border-radius: none;
 
       form {
         padding-left: 10px;
@@ -473,11 +474,12 @@ export default {};
 @include mediaSm {
   .contact {
     .card {
-      background: $lightColor;
-      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
-      border-radius: 20px;
-      padding: 10px !important;
-      height: 480px;
+      padding: 0 !important;
+      box-shadow: none;
+      padding: none !important;
+      background-color: inherit;
+      border: none;
+      border-radius: none;
 
       form {
         padding-top: 10px;
@@ -563,7 +565,14 @@ export default {};
 
 @include mediaXXSm {
   .contact {
+    padding-bottom: 20px;
     .card {
+      padding: 0 !important;
+      box-shadow: none;
+      padding: none !important;
+      background-color: inherit;
+      border: none;
+      border-radius: none;
       form {
         padding-top: 5px;
         padding-left: 10px;
