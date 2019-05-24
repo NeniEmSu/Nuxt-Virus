@@ -5,7 +5,6 @@
         <div class="video-text row">
           <div class="col-xl-6">
             <img src="~assets/img/Передпродажнапідготовка1.jpg" :alt="heading">
-            <img src="~assets/img/Передпродажнапідготовка2.jpg" :alt="heading">
           </div>
 
           <div class="col-xl-6">
@@ -19,11 +18,14 @@
               <li v-for="items in inclusiveInService">{{ items.services }}</li>
             </ul>
           </div>
+          <div class="col-xl-6 side-image">
+            <img src="~assets/img/Передпродажнапідготовка2.jpg" :alt="heading">
+          </div>
           <div class="row mx-auto">
-            <div class="col-xl-6">
+            <div class="col-xl-6 mt-3">
               <img src="~assets/img/Передпродажнапідготовка3.jpg" :alt="heading">
             </div>
-            <div class="col-xl-6">
+            <div class="col-xl-6 mt-3">
               <img src="~assets/img/Передпродажнапідготовка4.jpg" :alt="heading">
             </div>
           </div>
@@ -132,4 +134,14 @@ export default {
 @import "~assets/scss/config.scss";
 
 @import "~assets/scss/servicesPages.scss";
+
+.side-image {
+  margin-top: -240px;
+}
+
+@include mediaMenu {
+  .side-image {
+    margin-top: 0px;
+  }
+}
 </style>
