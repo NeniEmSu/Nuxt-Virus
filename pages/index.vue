@@ -40,7 +40,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Хімчистка" class="col-4 p-0 four">
+        <nuxt-link to="/Хімчистка" class="col-5 p-0 four">
           <div class="card bg-inverse">
             <img class="card-img" src="~/assets/img/top4.jpg" alt="ХІМЧИСТКА">
             <div
@@ -50,7 +50,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Реставраціяподряпин" class="col-4 p-0 five">
+        <nuxt-link to="/Реставраціяподряпин" class="col-3 p-0 five">
           <div class="card bg-inverse">
             <img class="card-img" src="~/assets/img/top5.jpg" alt="РЕСТАВРАЦІЯ СКОЛІВ">
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
@@ -370,6 +370,8 @@ export default {
     .card {
       img {
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+        object-fit: cover;
+        height: 312px;
       }
     }
   }
@@ -378,6 +380,8 @@ export default {
     .card {
       img {
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+        object-fit: cover;
+        height: 312px;
       }
     }
   }
@@ -855,22 +859,17 @@ export default {
 
 @include mediaMenu {
   .top-grid {
-    .four {
-      margin-top: -70px;
-      .card {
-        img {
-          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-        }
-      }
-    }
+    .four,
     .five {
       margin-top: -70px;
       .card {
         img {
-          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+          object-fit: cover;
+          height: 260px;
         }
       }
     }
+
     .six {
       margin-top: -257px;
       .card {
@@ -923,12 +922,17 @@ export default {
       font-size: 18px;
       line-height: 20px;
     }
-    .four {
-      margin-top: -52px;
-    }
+    .four,
     .five {
       margin-top: -52px;
+      .card {
+        img {
+          object-fit: cover;
+          height: 200px;
+        }
+      }
     }
+
     .six {
       margin-top: -193px;
     }
@@ -954,12 +958,17 @@ export default {
       font-size: 15px;
       line-height: 16px;
     }
-    .four {
-      margin-top: -40px;
-    }
+    .four,
     .five {
       margin-top: -40px;
+      .card {
+        img {
+          object-fit: cover;
+          height: 150px;
+        }
+      }
     }
+
     .six {
       margin-top: -145px;
     }
@@ -984,11 +993,15 @@ export default {
       line-height: 16px;
     }
 
-    .four {
-      margin-top: -30px;
-    }
+    .four,
     .five {
       margin-top: -30px;
+      .card {
+        img {
+          object-fit: cover;
+          height: 120px;
+        }
+      }
     }
     .six {
       margin-top: -110px;
@@ -1161,11 +1174,15 @@ export default {
       margin-bottom: 0;
     }
 
-    .four {
-      margin-top: -26px;
-    }
+    .four,
     .five {
       margin-top: -26px;
+      .card {
+        img {
+          object-fit: cover;
+          height: 100px;
+        }
+      }
     }
     .six {
       margin-top: -100px;
@@ -1229,12 +1246,17 @@ export default {
       line-height: 14px;
       margin-bottom: 0;
     }
-    .four {
-      margin-top: -22px;
-    }
+    .four,
     .five {
       margin-top: -22px;
+      .card {
+        img {
+          object-fit: cover;
+          height: 80px;
+        }
+      }
     }
+
     .six {
       margin-top: -85px;
     }
