@@ -87,11 +87,4 @@ export default {
 @import "~assets/scss/config.scss";
 
 @import "~assets/scss/servicesPages.scss";
-
-video {
-  width: 100%;
-  max-width: 570px;
-  height: 100%;
-  max-height: 427px;
-}
 </style>

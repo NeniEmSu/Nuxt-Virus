@@ -1,107 +1,86 @@
 <template>
   <section>
-    <div class="container text-center top-grid p-0 pt-4 pb-5">
+    <div class="container text-center top-grid pt-4 pb-5">
       <h1 class="text-left">
         Ми
         <br>пропонуємо
       </h1>
-      <div class="row p-0">
-        <nuxt-link to="/Полірування">
-          <h2 class="top1">ПОЛІРУВАННЯ</h2>
-          <picture>
-            <source srcset="~/assets/imgWebP/top1.webp" type="image/webp">
-            <img
-              class="img-fluid one mr-1 mb-1"
-              style="position: relative"
-              src="~/assets/img/top1.jpg"
-              alt="black car from its back with word ПОЛІРУВАННЯ over."
-            >
-          </picture>
+      <div class="row">
+        <nuxt-link to="/Полірування" class="col-4 p-0 one">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top1.jpg" alt="ПОЛІРУВАННЯ">
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
+              <h2 class="card-title">ПОЛІРУВАННЯ</h2>
+            </div>
+          </div>
         </nuxt-link>
-        <nuxt-link to="/Покриттявоском">
-          <h2 class="top2">
-            ВОСКОВЕ
-            <br>ПОКРИТТЯ
-          </h2>
-          <picture>
-            <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
-            <img
-              class="two img-fluid"
-              src="~/assets/img/top2.jpg"
-              alt="orange car left headlight with text ВОСКОВЕ ПОКРИТТЯ over."
+        <nuxt-link to="/Покриттявоском" class="col-8 p-0 two">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top2.jpg" alt="ВОСКОВЕ ПОКРИТТЯ">
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right"
             >
-          </picture>
+              <h2 class="card-title text-right">
+                ВОСКОВЕ
+                <br>ПОКРИТТЯ
+              </h2>
+            </div>
+          </div>
         </nuxt-link>
-        <nuxt-link to="/Мийкамотору">
-          <h2 class="top3">
-            МИЙКА
-            <br>МОТОРУ
-          </h2>
-          <picture>
-            <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
-            <img
-              class="three img-fluid mt-1"
-              src="~/assets/img/top3.jpg"
-              alt="hood of a car showing it's engine with the text МИЙКА МОТОРУ over."
-            >
-          </picture>
+      </div>
+      <div class="row">
+        <nuxt-link to="/Мийкамотору" class="col-4 p-0 three">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top3.jpg" alt=" МИЙКА МОТОРУ">
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
+              <h2 class="card-title">
+                МИЙКА
+                <br>МОТОРУ
+              </h2>
+            </div>
+          </div>
         </nuxt-link>
-        <div class="col-md">
-          <nuxt-link to="/Хімчистка">
-            <h2 class="top4">ХІМЧИСТКА</h2>
-            <picture>
-              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp">
-              <img
-                class="four img-fluid mt-n3"
-                style="margin-top: -16px;"
-                src="~/assets/img/top4.jpg"
-                alt="image from the angle of a cars stearing wheel with the text ХІМЧИСТКА over."
-              >
-            </picture>
-          </nuxt-link>
-
-          <nuxt-link to="/Реставраціяподряпин">
-            <h2 class="top5">
-              РЕСТАВРАЦІЯ
-              <br>СКОЛІВ
-            </h2>
-            <picture>
-              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp">
-              <img
-                class="five img-fluid mt-n3"
-                style="margin-top: -16px;"
-                src="~/assets/img/top5.jpg"
-                alt="Image of a blue car from the back at low angle showing it's left tyre with the text РЕСТАВРАЦІЯ
-                            СКОЛІВ over."
-              >
-            </picture>
-          </nuxt-link>
-          <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ">
-            <h2 class="top6">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
-            <picture>
-              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
-              <img
-                class="six img-fluid mt-2"
-                src="~/assets/img/top6.jpg"
-                alt="a black saloon car from it's right side with the text КЕРАМІЧНЕ ПОКРИТТЯ over."
-              >
-            </picture>
-          </nuxt-link>
-        </div>
-        <nuxt-link to="/Передпродажнапідготовка">
-          <h2 class="top7">
-            ПЕРЕДПРОДАЖНА
-            <br>ПІДГОТОВКА
-          </h2>
-          <picture>
-            <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
-            <img
-              class="seven img-fluid mt-2"
-              src="~/assets/img/top7.jpg"
-              alt="image of a white car from it's front with other cars in the background and the text ПЕРЕДПРОДАЖНА
-                        ПІДГОТОВКА over."
+        <nuxt-link to="/Хімчистка" class="col-4 p-0 four">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top4.jpg" alt="ХІМЧИСТКА">
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center"
             >
-          </picture>
+              <h2 class="card-title">ХІМЧИСТКА</h2>
+            </div>
+          </div>
+        </nuxt-link>
+        <nuxt-link to="/Реставраціяподряпин" class="col-4 p-0 five">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top5.jpg" alt="РЕСТАВРАЦІЯ СКОЛІВ">
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
+              <h2 class="card-title">
+                РЕСТАВРАЦІЯ
+                <br>СКОЛІВ
+              </h2>
+            </div>
+          </div>
+        </nuxt-link>
+        <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ" class="col-md-8 offset-4 p-0 six">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top6.jpg" alt="КЕРАМІЧНЕ ПОКРИТТЯ">
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
+              <h2 class="card-title">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
+            </div>
+          </div>
+        </nuxt-link>
+      </div>
+      <div class="row">
+        <nuxt-link to="/Передпродажнапідготовка" class="col-12 p-0 seven">
+          <div class="card bg-inverse">
+            <img class="card-img" src="~/assets/img/top7.jpg" alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА">
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
+              <h2 class="card-title">
+                ПЕРЕДПРОДАЖНА
+                <br>ПІДГОТОВКА
+              </h2>
+            </div>
+          </div>
         </nuxt-link>
       </div>
     </div>
@@ -323,513 +302,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/config.scss";
 
-.top-grid h2 {
-  position: absolute;
-  z-index: 1;
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: normal;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  padding: 5px;
-}
-
-.top1 {
-  margin-top: 260px;
-  margin-left: 70px;
-}
-
-.top2 {
-  margin-top: 130px;
-  margin-left: 500px;
-}
-
-.top3 {
-  margin-top: 450px;
-  margin-left: 250px;
-}
-
-.top4 {
-  margin-top: 0px;
-  margin-left: 150px;
-}
-
-.top5 {
-  margin-top: -100px;
-  margin-left: 580px;
-  text-align: left;
-}
-
-.top6 {
-  margin-top: 250px;
-  margin-left: 250px;
-}
-
-.top7 {
-  margin-top: 150px;
-  margin-left: 100px;
-  text-align: left;
-}
-
-@media screen and (min-width: 991px) and (max-width: 1199.9px) {
-  .top1 {
-    margin-top: 230px;
-    margin-left: 30px;
-  }
-
-  .top2 {
-    margin-top: 80px;
-    margin-left: 300px;
-  }
-
-  .top3 {
-    margin-top: 280px;
-    margin-left: 130px;
-  }
-
-  .top4 {
-    margin-top: 0px;
-    margin-left: 150px;
-  }
-
-  .top5 {
-    margin-top: -80px;
-    margin-left: 400px;
-    text-align: left;
-  }
-
-  .top6 {
-    margin-top: 160px;
-    margin-left: 170px;
-  }
-
-  .top7 {
-    margin-top: 120px;
-    margin-left: 50px;
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 767px) and (max-width: 990.9px) {
-  .top-grid h2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    color: #ffffff;
-  }
-
-  .top1 {
-    margin-top: 150px;
-    margin-left: 12px;
-  }
-
-  .top2 {
-    margin-top: 60px;
-    margin-left: 220px;
-  }
-
-  .top3 {
-    margin-top: 200px;
-    margin-left: 90px;
-  }
-
-  .top4 {
-    margin-top: 0px;
-    margin-left: 75px;
-  }
-
-  .top5 {
-    margin-top: -60px;
-    margin-left: 250px;
-  }
-
-  .top6 {
-    margin-top: 120px;
-    margin-left: 85px;
-  }
-
-  .top7 {
-    margin-top: 90px;
-    margin-left: 25px;
-  }
-}
-
-@media screen and (max-width: 766.9px) {
-  .top-grid h2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 30px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .top1 {
-    margin-top: 480px;
-    margin-left: 200px;
-  }
-
-  .top2 {
-    margin-top: 100px;
-    margin-left: 350px;
-  }
-
-  .top3 {
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-
-  .top4 {
-    margin-top: 20px;
-    margin-left: 230px;
-  }
-
-  .top5 {
-    margin-top: 350px;
-    margin-left: 300px;
-  }
-
-  .top6 {
-    margin-top: 20px;
-    margin-left: 120px;
-  }
-
-  .top7 {
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-}
-
-@media screen and (max-width: 700.9px) {
-  .top4 {
-    margin-top: 20px;
-    margin-left: 180px;
-  }
-
-  .top6 {
-    margin-top: 20px;
-    margin-left: 95px;
-  }
-}
-
-@media screen and (max-width: 560.9px) {
-  .top-grid h2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 26px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .top1 {
-    margin-top: 450px;
-    margin-left: 180px;
-  }
-
-  .top2 {
-    margin-top: 80px;
-    margin-left: 280px;
-  }
-
-  .top3 {
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-
-  .top4 {
-    margin-top: 20px;
-    margin-left: 180px;
-  }
-
-  .top5 {
-    margin-top: 280px;
-    margin-left: 240px;
-  }
-
-  .top6 {
-    margin-top: 20px;
-    margin-left: 100px;
-  }
-
-  .top7 {
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .top-grid h2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 22px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .top1 {
-    margin-top: 320px;
-    margin-left: 120px;
-  }
-
-  .top2 {
-    margin-top: 60px;
-    margin-left: 230px;
-  }
-
-  .top3 {
-    margin-top: 460px;
-    margin-left: 260px;
-  }
-
-  .top4 {
-    margin-top: 20px;
-    margin-left: 150px;
-  }
-
-  .top5 {
-    margin-top: 250px;
-    margin-left: 180px;
-  }
-
-  .top6 {
-    margin-top: 130px;
-    margin-left: 40px;
-  }
-
-  .top7 {
-    margin-top: 50px;
-    margin-left: 20px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .top-grid h2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 22px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .top1 {
-    margin-top: 300px;
-    margin-left: 20px;
-  }
-
-  .top2 {
-    margin-top: 60px;
-    margin-left: 180px;
-  }
-
-  .top3 {
-    margin-top: 380px;
-    margin-left: 200px;
-  }
-
-  .top4 {
-    margin-top: 20px;
-    margin-left: 100px;
-  }
-
-  .top5 {
-    margin-top: 210px;
-    margin-left: 150px;
-  }
-
-  .top6 {
-    margin-top: 110px;
-    margin-left: 30px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .top-grid h2 {
-    position: absolute;
-    z-index: 1;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px !important;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .top1 {
-    margin-top: 280px;
-    margin-left: 80px;
-  }
-
-  .top2 {
-    margin-top: 80px;
-    margin-left: 170px;
-  }
-
-  .top3 {
-    margin-top: 370px;
-    margin-left: 200px;
-  }
-
-  .top4 {
-    margin-top: 20px;
-    margin-left: 100px;
-    padding: 10px;
-  }
-
-  .top5 {
-    margin-top: 200px;
-    margin-left: 150px;
-  }
-
-  .top6 {
-    margin-top: 100px;
-    margin-left: 40px;
-  }
-
-  .top7 {
-    margin-top: 40px;
-    margin-left: 20px;
-    padding: 10px;
-  }
-}
-
-main {
-  .top-grid {
-    h2 a {
-      color: $lightColor;
-    }
-
-    a[rel="bookmark"]:hover + .meta * {
-      color: $redColor;
-    }
-
-    a h2 {
-      transition: all ease-in-out 300ms;
-      -webkit-transition: all ease-in-out 300ms;
-      -moz-transition: all ease-in-out 300ms;
-      -ms-transition: all ease-in-out 300ms;
-      -o-transition: all ease-in-out 300ms;
-
-      &:hover {
-        text-decoration: none;
-        color: $redColor;
-        transform: scale(1.02);
-        -webkit-transform: scale(1.02);
-        -moz-transform: scale(1.02);
-        -ms-transform: scale(1.02);
-        -o-transform: scale(1.02);
-        color: $redColor;
-      }
-    }
-
-    a img {
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      opacity: 1;
-      transition: all ease-in-out 300ms;
-      -webkit-transition: all ease-in-out 300ms;
-      -moz-transition: all ease-in-out 300ms;
-      -ms-transition: all ease-in-out 300ms;
-      -o-transition: all ease-in-out 300ms;
-
-      &:hover {
-        opacity: 0.99;
-        text-decoration: none;
-        color: $redColor;
-        transform: scale(1.01);
-        -webkit-transform: scale(1.01);
-        -moz-transform: scale(1.01);
-        -ms-transform: scale(1.01);
-        -o-transform: scale(1.01);
-        color: $redColor;
-      }
-
-      &.one {
-        width: 373.96px;
-        height: 410px;
-        border-radius: 20px 0 0 0;
-        -webkit-border-radius: 20px 0 0 0;
-        -moz-border-radius: 20px 0 0 0;
-        -ms-border-radius: 20px 0 0 0;
-        -o-border-radius: 20px 0 0 0;
-      }
-
-      &.two {
-        width: 780.1px;
-        height: 340px;
-        border-radius: 0 20px 0 0;
-        -webkit-border-radius: 0 20px 0 0;
-        -moz-border-radius: 0 20px 0 0;
-        -ms-border-radius: 0 20px 0 0;
-        -o-border-radius: 0 20px 0 0;
-      }
-
-      &.three {
-        width: 373.96px;
-        height: 532px;
-      }
-
-      &.four {
-        width: 448.32px;
-        height: 274px;
-      }
-
-      &.five {
-        border: 0.15px grey solid;
-        width: 325.85px;
-        height: 274px;
-      }
-
-      &.six {
-        width: 778.1px;
-        height: 318px;
-      }
-
-      &.seven {
-        width: 1156px;
-        height: 364px;
-        border-radius: 0 0 20px 20px;
-        -webkit-border-radius: 0 0 20px 20px;
-        -moz-border-radius: 0 0 20px 20px;
-        -ms-border-radius: 0 0 20px 20px;
-        -o-border-radius: 0 0 20px 20px;
-      }
-    }
-
-    .col-md {
-      margin: 0;
-      padding: 0;
-      margin-top: -3rem;
-      margin-left: -0.5rem;
-    }
-  }
-
+.top-grid {
   h1 {
     color: $headingsFontColor;
     font-family: $secondaryFont;
@@ -841,15 +314,88 @@ main {
     margin-bottom: 20px;
   }
 
-  .row {
-    img {
-      padding: 0;
-      margin: 0;
-    }
+  h2 {
+    color: $lightColor;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0.1em;
+    color: $lightColor;
+  }
 
-    a {
-      margin: 0;
-      padding: 0;
+  a {
+    opacity: 1;
+    transition: all ease-in-out 300ms;
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    -ms-transition: all ease-in-out 300ms;
+    -o-transition: all ease-in-out 300ms;
+
+    &:hover {
+      opacity: 0.99;
+      text-decoration: none;
+      color: $redColor;
+      transform: scale(1.01);
+      -webkit-transform: scale(1.01);
+      -moz-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+      -o-transform: scale(1.01);
+      color: $redColor;
+    }
+  }
+
+  .one .card {
+    border-top-left-radius: 20px;
+    img {
+      border-top-left-radius: 20px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+    }
+  }
+  .two .card {
+    border-top-right-radius: 20px;
+    img {
+      border-top-right-radius: 20px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+    }
+  }
+  .three .card {
+    img {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+    }
+  }
+  .four {
+    margin-top: -85px;
+    .card {
+      img {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+  .five {
+    margin-top: -85px;
+    .card {
+      img {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+  .six {
+    margin-top: -305px;
+    .card {
+      img {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+  .seven .card {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    img {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
     }
   }
 }
@@ -1308,6 +854,32 @@ main {
 }
 
 @include mediaMenu {
+  .top-grid {
+    .four {
+      margin-top: -70px;
+      .card {
+        img {
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+        }
+      }
+    }
+    .five {
+      margin-top: -70px;
+      .card {
+        img {
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+        }
+      }
+    }
+    .six {
+      margin-top: -257px;
+      .card {
+        img {
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+        }
+      }
+    }
+  }
   .cars-card {
     .card {
       max-width: 580px;
@@ -1329,105 +901,12 @@ main {
 }
 
 @include mediaLg2 {
-  .top-grid {
-    h1 {
-      text-align: center !important;
-    }
-
-    .row {
-      margin-left: 80px;
-      margin-right: 40px;
-    }
-
-    a img {
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      opacity: 0.9;
-      transition: all ease-in-out 300ms;
-      -webkit-transition: all ease-in-out 300ms;
-      -moz-transition: all ease-in-out 300ms;
-      -ms-transition: all ease-in-out 300ms;
-      -o-transition: all ease-in-out 300ms;
-
-      &:hover {
-        opacity: 1;
-        text-decoration: none;
-        color: $redColor;
-        transform: scale(1.02);
-        -webkit-transform: scale(1.02);
-        -moz-transform: scale(1.02);
-        -ms-transform: scale(1.02);
-        -o-transform: scale(1.02);
-      }
-
-      &.one {
-        width: 249.306666667px !important;
-        height: 273.333333333px !important;
-        border-radius: 20px 0 0 0;
-        -webkit-border-radius: 20px 0 0 0;
-        -moz-border-radius: 20px 0 0 0;
-        -ms-border-radius: 20px 0 0 0;
-        -o-border-radius: 20px 0 0 0;
-      }
-
-      &.two {
-        width: 520.066666667px !important;
-        height: 226.666666667px !important;
-        border-radius: 0 20px 0 0;
-        -webkit-border-radius: 0 20px 0 0;
-        -moz-border-radius: 0 20px 0 0;
-        -ms-border-radius: 0 20px 0 0;
-        -o-border-radius: 0 20px 0 0;
-      }
-
-      &.three {
-        width: 249.306666667px !important;
-        height: 354.666666667px !important;
-      }
-
-      &.four {
-        width: 298.88px !important;
-        height: 182.666666667px !important;
-      }
-
-      &.five {
-        width: 217.233333333px !important;
-        height: 182.666666667px !important;
-      }
-
-      &.six {
-        width: 518.733333333px !important;
-        height: 212px !important;
-      }
-
-      &.seven {
-        width: 770.666666667px !important;
-        height: 242.666666667px !important;
-        border-radius: 0 0 20px 20px;
-        -webkit-border-radius: 0 0 20px 20px;
-        -moz-border-radius: 0 0 20px 20px;
-        -ms-border-radius: 0 0 20px 20px;
-        -o-border-radius: 0 0 20px 20px;
-      }
-    }
-
-    .col-md {
-      margin: 0;
-      padding: 0;
-      margin-top: -1.8rem !important;
-      margin-left: -4rem !important;
-    }
-  }
-
   .jumbotron {
     margin-right: 0px;
 
     &.recomendations {
       padding-left: 0px;
       padding-right: 2rem;
-
-      h2 {
-        text-align: center !important;
-      }
 
       .item {
         margin-left: 0px;
@@ -1438,105 +917,28 @@ main {
 
 @include mediaLg {
   .top-grid {
-    h1 {
-      text-align: center !important;
+    h2 {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 20px;
     }
-
-    .row {
-      margin-left: 80px;
-      margin-right: 40px;
+    .four {
+      margin-top: -52px;
     }
-
-    a img {
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      opacity: 0.9;
-      transition: all ease-in-out 300ms;
-      -webkit-transition: all ease-in-out 300ms;
-      -moz-transition: all ease-in-out 300ms;
-      -ms-transition: all ease-in-out 300ms;
-      -o-transition: all ease-in-out 300ms;
-
-      &:hover {
-        opacity: 1;
-        text-decoration: none;
-        color: $redColor;
-        transform: scale(1.02);
-        -webkit-transform: scale(1.02);
-        -moz-transform: scale(1.02);
-        -ms-transform: scale(1.02);
-        -o-transform: scale(1.02);
-      }
-
-      &.one {
-        width: 186.98px !important;
-        height: 205px !important;
-        border-radius: 20px 0 0 0;
-        -webkit-border-radius: 20px 0 0 0;
-        -moz-border-radius: 20px 0 0 0;
-        -ms-border-radius: 20px 0 0 0;
-        -o-border-radius: 20px 0 0 0;
-      }
-
-      &.two {
-        width: 390.05px !important;
-        height: 170px !important;
-        border-radius: 0 20px 0 0;
-        -webkit-border-radius: 0 20px 0 0;
-        -moz-border-radius: 0 20px 0 0;
-        -ms-border-radius: 0 20px 0 0;
-        -o-border-radius: 0 20px 0 0;
-      }
-
-      &.three {
-        width: 186.98px !important;
-        height: 266px !important;
-      }
-
-      &.four {
-        width: 224.16px !important;
-        height: 137px !important;
-      }
-
-      &.five {
-        width: 162.925px !important;
-        height: 137px !important;
-      }
-
-      &.six {
-        width: 389.05px !important;
-        height: 159px !important;
-      }
-
-      &.seven {
-        width: 578px !important;
-        height: 182px !important;
-        border-radius: 0 0 20px 20px;
-        -webkit-border-radius: 0 0 20px 20px;
-        -moz-border-radius: 0 0 20px 20px;
-        -ms-border-radius: 0 0 20px 20px;
-        -o-border-radius: 0 0 20px 20px;
-      }
+    .five {
+      margin-top: -52px;
     }
-
-    .col-md {
-      margin: 0;
-      padding: 0;
-      margin-top: -1rem !important;
-      margin-left: -0.99rem !important;
+    .six {
+      margin-top: -193px;
     }
   }
-
   .jumbotron {
     margin-right: 0px;
 
     &.recomendations {
       padding-left: 0px;
       padding-right: 0px;
-
-      h2 {
-        text-align: center !important;
-      }
-
       .item {
         margin-left: -12px;
       }
@@ -1546,96 +948,20 @@ main {
 
 @include mediaMd {
   .top-grid {
-    a img {
-      box-shadow: none !important;
-      opacity: 1 !important;
-      transition: all ease-in-out 300ms;
-      -webkit-transition: all ease-in-out 300ms;
-      -moz-transition: all ease-in-out 300ms;
-      -ms-transition: all ease-in-out 300ms;
-      -o-transition: all ease-in-out 300ms;
-
-      &:hover {
-        opacity: 1;
-        text-decoration: none;
-        color: $redColor;
-        transform: scale(1.02);
-        -webkit-transform: scale(1.02);
-        -moz-transform: scale(1.02);
-        -ms-transform: scale(1.02);
-        -o-transform: scale(1.02);
-      }
+    h2 {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 15px;
+      line-height: 16px;
     }
-
-    .one,
-    .two,
-    .three,
-    .four,
-    .five,
-    .six,
-    .seven {
-      width: 100vw !important;
-      height: auto !important;
-      margin: 0px 0 !important;
-      padding: 5px !important;
+    .four {
+      margin-top: -40px;
     }
-
-    .one {
-      border-radius: 20px 20px 0 0 !important;
-      -webkit-border-radius: 20px 20px 0 0 !important;
-      -moz-border-radius: 20px 20px 0 0 !important;
-      -ms-border-radius: 20px 20px 0 0 !important;
-      -o-border-radius: 20px 20px 0 0 !important;
+    .five {
+      margin-top: -40px;
     }
-
-    .two {
-      border-radius: 0 !important;
-      -webkit-border-radius: 0 !important;
-      -moz-border-radius: 0 !important;
-      -ms-border-radius: 0 !important;
-      -o-border-radius: 0 !important;
-    }
-
-    h1 {
-      text-align: center !important;
-      font-size: 62px;
-      line-height: 47px;
-      letter-spacing: -0.05em;
-      margin-bottom: 40px;
-    }
-
-    a {
-      margin: 0 auto !important;
-      padding: 0 !important;
-
-      img {
-        margin: 0 auto !important;
-        padding: 0 !important;
-      }
-    }
-
-    .col-md {
-      margin: 0 !important;
-      padding: 0 !important;
-
-      .four,
-      .five,
-      .six {
-        width: 100vw !important;
-        height: auto !important;
-        margin: 0px 0 !important;
-        padding: 5px !important;
-      }
-
-      a {
-        margin: 0 auto !important;
-        padding: 0 !important;
-
-        img {
-          margin: 0 auto !important;
-          padding: 0 !important;
-        }
-      }
+    .six {
+      margin-top: -145px;
     }
   }
 }
@@ -1643,46 +969,43 @@ main {
 @include mediaSm {
   .top-grid {
     h1 {
-      text-align: center !important;
-      font-size: 62px;
-      line-height: 47px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 58.59%;
+
       letter-spacing: -0.05em;
-      margin-bottom: 40px;
     }
 
-    a {
-      margin: 0 auto !important;
-      padding: 0 !important;
-
-      img {
-        margin: 0 auto !important;
-        padding: 0 !important;
-      }
+    h2 {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 15px;
+      line-height: 16px;
     }
 
-    .col-md {
-      margin: 0 auto !important;
-      padding: 0 !important;
-
-      a {
-        margin: 0 auto !important;
-        padding: 0 !important;
-
-        img {
-          margin: 0 auto !important;
-          padding: 0 !important;
-        }
-      }
+    .four {
+      margin-top: -30px;
+    }
+    .five {
+      margin-top: -30px;
+    }
+    .six {
+      margin-top: -110px;
+    }
+    .card-img-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0.25rem 0.25rem 0.5rem 0.25rem;
     }
   }
 
   .recomendations {
     padding-left: 20px;
     padding-right: 0px;
-
-    h2 {
-      text-align: center !important;
-    }
 
     .item {
       margin-left: 18px;
@@ -1828,6 +1151,35 @@ main {
 }
 
 @include mediaXSm {
+  .top-grid {
+    h2 {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 14px;
+
+      margin-bottom: 0;
+    }
+
+    .four {
+      margin-top: -26px;
+    }
+    .five {
+      margin-top: -26px;
+    }
+    .six {
+      margin-top: -100px;
+    }
+    .card-img-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0.25rem 0.2rem 0.5rem 0.2rem;
+    }
+  }
+
   .recomendations {
     text-align: center;
 
@@ -1846,10 +1198,6 @@ main {
   .recomendations {
     padding-left: 10px;
     padding-right: 0px;
-
-    h2 {
-      text-align: center !important;
-    }
 
     .item {
       margin-left: 10px;
@@ -1873,6 +1221,32 @@ main {
 }
 
 @include mediaXXSm {
+  .top-grid {
+    h2 {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 0;
+    }
+    .four {
+      margin-top: -22px;
+    }
+    .five {
+      margin-top: -22px;
+    }
+    .six {
+      margin-top: -85px;
+    }
+    .card-img-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0.25rem 0.1rem 0.5rem 0.1rem;
+    }
+  }
   .cars-card {
     text-align: center;
 

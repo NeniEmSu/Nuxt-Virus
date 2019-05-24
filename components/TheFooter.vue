@@ -144,6 +144,7 @@ footer {
   footer {
     background: $darkColor;
     color: $lightColor;
+    padding: 10px 0;
 
     a {
       text-decoration: none;
@@ -163,8 +164,9 @@ footer {
     }
 
     .bottom-contact {
-      padding: 40px 0;
+      padding: 00px 0;
       background: $darkColor;
+      height: auto;
 
       ul {
         position: relative;
