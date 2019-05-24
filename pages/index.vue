@@ -8,7 +8,11 @@
       <div class="row">
         <nuxt-link to="/Полірування" class="col-4 p-0 one">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top1.jpg" alt="ПОЛІРУВАННЯ">
+            <picture>
+              <source srcset="~/assets/img/top1.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top1.jpg" alt="ПОЛІРУВАННЯ">
+            </picture>
+
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
               <h2 class="card-title">ПОЛІРУВАННЯ</h2>
             </div>
@@ -16,7 +20,11 @@
         </nuxt-link>
         <nuxt-link to="/Покриттявоском" class="col-8 p-0 two">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top2.jpg" alt="ВОСКОВЕ ПОКРИТТЯ">
+            <picture>
+              <source srcset="~/assets/img/top2.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top2.jpg" alt="ВОСКОВЕ ПОКРИТТЯ">
+            </picture>
+
             <div
               class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right"
             >
@@ -31,7 +39,11 @@
       <div class="row">
         <nuxt-link to="/Мийкамотору" class="col-4 p-0 three">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top3.jpg" alt=" МИЙКА МОТОРУ">
+            <picture>
+              <source srcset="~/assets/img/top3.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top3.jpg" alt="МИЙКА МОТОРУ">
+            </picture>
+
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 МИЙКА
@@ -42,7 +54,11 @@
         </nuxt-link>
         <nuxt-link to="/Хімчистка" class="col-5 p-0 four">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top4.jpg" alt="ХІМЧИСТКА">
+            <picture>
+              <source srcset="~/assets/img/top4.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top4.jpg" alt="ХІМЧИСТКА">
+            </picture>
+
             <div
               class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center"
             >
@@ -52,7 +68,11 @@
         </nuxt-link>
         <nuxt-link to="/Реставраціяподряпин" class="col-3 p-0 five">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top5.jpg" alt="РЕСТАВРАЦІЯ СКОЛІВ">
+            <picture>
+              <source srcset="~/assets/img/top5.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top5.jpg" alt="РЕСТАВРАЦІЯ СКОЛІВ">
+            </picture>
+
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 РЕСТАВРАЦІЯ
@@ -63,7 +83,11 @@
         </nuxt-link>
         <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ" class="col-md-8 offset-4 p-0 six">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top6.jpg" alt="КЕРАМІЧНЕ ПОКРИТТЯ">
+            <picture>
+              <source srcset="~/assets/img/top6.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top6.jpg" alt="КЕРАМІЧНЕ ПОКРИТТЯ">
+            </picture>
+
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
               <h2 class="card-title">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
             </div>
@@ -73,7 +97,11 @@
       <div class="row">
         <nuxt-link to="/Передпродажнапідготовка" class="col-12 p-0 seven">
           <div class="card bg-inverse">
-            <img class="card-img" src="~/assets/img/top7.jpg" alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА">
+            <picture>
+              <source srcset="~/assets/img/top7.jpg" type="image/webp">
+              <img class="card-img" src="~/assets/img/top7.jpg" alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА">
+            </picture>
+
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
               <h2 class="card-title">
                 ПЕРЕДПРОДАЖНА
