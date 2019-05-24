@@ -122,10 +122,6 @@ export default {
 
 @import "~assets/scss/servicesPages.scss";
 
-.service-time-image {
-  background-image: url("~assets/img/beforeAfter6.jpg");
-}
-
 .before {
   background-image: url("~assets/img/beforeAfter6_001.jpg");
   background-size: cover;

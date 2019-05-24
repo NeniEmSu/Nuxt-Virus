@@ -16,12 +16,6 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <!-- <div class="videoContainer mt-4 text-center">
-          <video class="mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(10).mp4" type="video/mp4" />
-          </video>
-        </div>-->
-
         <div class="col-md-7 m-auto">
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
@@ -98,8 +92,4 @@ export default {
 @import "~assets/scss/config.scss";
 
 @import "~assets/scss/servicesPages.scss";
-
-.service-time-image {
-  background-image: url("~assets/img/beforeAfter10.jpg");
-}
 </style>
