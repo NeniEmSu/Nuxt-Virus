@@ -32,7 +32,29 @@
 
         <img src="~/assets/img/icons8-marker-100.png" alt="Location marker icon">
 
-        <div id="map"></div>
+        <GmapMap
+          id="map"
+          :options="{
+              zoomControl: true,
+               mapTypeControl: true,
+              scaleControl: true,
+              streetViewControl: true,
+              rotateControl: true,
+              fullscreenControl: true,
+              disableDefaultUi: false
+            }"
+          :center="center"
+          :zoom="16"
+          map-type-id="terrain"
+        >
+          <GmapMarker
+            :key="index"
+            v-for="(m, index) in markers"
+            :position="m.position"
+            :clickable="true"
+          />
+        </GmapMap>
+
         <div class="contact-page-socials">
           <h4>Більше інформації тут:</h4>
           <a target="_blank" href="https://www.instagram.com/virusdetailing/">
@@ -48,30 +70,6 @@
     <ContactForm/>
 
     <progressSection/>
-    <!-- google map Api call -->
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKJciVrAvST8C9SJzwkjmHFnoPM8FwooY&callback=initMap"
-    ></script>
-
-    <!-- displaying map -->
-    <script>
-  function initMap() {
-    let location = {
-      lat: 49.558033,
-      lng: 25.56692
-    };
-    let map = new google.maps.Map(document.querySelector("#map"), {
-      zoom: 16,
-      center: location
-    });
-    let marker = new google.maps.Marker({
-      position: location,
-      map: map
-    });
-  }
-    </script>
   </div>
 </template>
 
@@ -97,9 +95,16 @@ export default {
         }
       ]
     };
+  },
+  data() {
+    return {
+      center: { lat: 49.558033, lng: 25.56692 },
+      markers: [{ position: { lat: 49.558033, lng: 25.56692 } }]
+    };
   }
 };
 </script>
+
 <style lang="scss">
 .contact-page-socials {
   padding-bottom: 40px;
@@ -151,5 +156,20 @@ export default {
   margin-top: -8rem;
   content: "";
   display: block;
+}
+@include mediaMenu {
+  #map {
+    margin: 20px auto;
+    height: 450px;
+    width: 100%;
+  }
+}
+
+@include mediaSm {
+  #map {
+    margin: 20px auto;
+    height: 380px;
+    width: 100%;
+  }
 }
 </style>

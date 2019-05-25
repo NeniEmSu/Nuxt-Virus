@@ -137,9 +137,14 @@ export default {
   css: ['~/assets/scss/config.scss'],
 
   plugins: [{
-    src: '~plugins/ga.js',
-    ssr: false
-  }],
+      src: '~plugins/ga.js',
+      ssr: false
+    },
+    {
+      src: "~/plugins/google-maps",
+      ssr: true
+    }
+  ],
 
   modules: [
     '@nuxtjs/axios',
@@ -166,6 +171,7 @@ export default {
   axios: {},
 
   build: {
+    transpile: [/^vue2-google-maps($|\/)/],
 
     extend(config, ctx) {
       // Run ESLint on save
