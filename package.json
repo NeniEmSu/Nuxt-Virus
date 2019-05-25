@@ -22,15 +22,16 @@
     "@nuxtjs/pwa": "^2.6.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.20",
+    "imagemin-webp": "^5.1.0",
     "nuxt": "^2.7.1",
     "nuxt-fontawesome": "^0.4.0",
+    "nuxt-imagemin": "^1.0.0",
     "vue-lazyload": "^1.2.6",
     "vue-scrollto": "^2.15.0",
     "vue2-google-maps": "^0.10.6",
     "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
