@@ -147,7 +147,6 @@ export default {
   ],
 
   modules: [
-    "nuxt-imagemin",
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'bootstrap-vue/nuxt',
