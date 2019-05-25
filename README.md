@@ -2,6 +2,16 @@
 
 > Virus project using Nuxt js
 
+##Technologies
+1. Vue js
+2. Nuxt js
+3. Bootstrap
+4. Bootstrap Vue
+5. Axios
+6. Nuxt caching
+7. Google Maps
+
+
 ## Build Setup
 
 ``` bash
