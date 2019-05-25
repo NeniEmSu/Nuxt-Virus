@@ -137,14 +137,9 @@ export default {
   css: ['~/assets/scss/config.scss'],
 
   plugins: [{
-      src: '~plugins/ga.js',
-      ssr: false
-    },
-    {
-      src: '~/plugins/vue-gallery.js',
-      ssr: false
-    }
-  ],
+    src: '~plugins/ga.js',
+    ssr: false
+  }],
 
   modules: [
     '@nuxtjs/axios',

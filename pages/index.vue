@@ -6,7 +6,7 @@
         <br>пропонуємо
       </h1>
       <div class="row">
-        <nuxt-link to="/Полірування" class="col-4 p-0 one">
+        <nuxt-link to="/Послуги/Полірування" class="col-4 p-0 one">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top1.jpg" type="image/webp">
@@ -18,7 +18,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Покриттявоском" class="col-8 p-0 two">
+        <nuxt-link to="/Послуги/Покриттявоском" class="col-8 p-0 two">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top2.jpg" type="image/webp">
@@ -37,7 +37,7 @@
         </nuxt-link>
       </div>
       <div class="row">
-        <nuxt-link to="/Мийкамотору" class="col-4 p-0 three">
+        <nuxt-link to="/Послуги/Мийкамотору" class="col-4 p-0 three">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top3.jpg" type="image/webp">
@@ -52,7 +52,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Хімчистка" class="col-5 p-0 four">
+        <nuxt-link to="/Послуги/Хімчистка" class="col-5 p-0 four">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top4.jpg" type="image/webp">
@@ -66,7 +66,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Реставраціяподряпин" class="col-3 p-0 five">
+        <nuxt-link to="/Послуги/Реставраціяподряпин" class="col-3 p-0 five">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top5.jpg" type="image/webp">
@@ -81,7 +81,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ" class="col-md-8 offset-4 p-0 six">
+        <nuxt-link to="/Послуги/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ" class="col-md-8 offset-4 p-0 six">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top6.jpg" type="image/webp">
@@ -95,7 +95,7 @@
         </nuxt-link>
       </div>
       <div class="row">
-        <nuxt-link to="/Передпродажнапідготовка" class="col-12 p-0 seven">
+        <nuxt-link to="/Послуги/Передпродажнапідготовка" class="col-12 p-0 seven">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/img/top7.jpg" type="image/webp">
