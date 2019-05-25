@@ -1,5 +1,3 @@
-import imageminWebp from 'imagemin-webp'
-
 export default {
   mode: 'universal',
   server: {
@@ -168,14 +166,7 @@ export default {
           icons: ['fas']
         }]
       }
-    ],
-    ['nuxt-imagemin', {
-      plugins: [
-        imageminWebp({
-          quality: 50
-        })
-      ]
-    }]
+    ]
   ],
 
   axios: {},
