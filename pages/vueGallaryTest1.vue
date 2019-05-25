@@ -5,7 +5,6 @@
 
       <div class="row mx-auto">
         <Lightbox1 :images="images"/>
-
         <Lightbox1 :images="carImages"/>
         <Lightbox1 :images="carImages"/>
         <Lightbox1 :images="carImages"/>

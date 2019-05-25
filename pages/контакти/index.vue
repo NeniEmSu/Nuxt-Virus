@@ -32,26 +32,13 @@
 
         <img src="~/assets/img/icons8-marker-100.png" alt="Location marker icon">
 
-        <GmapMap
-          id="map"
-          :options="{
-              zoomControl: true,
-               mapTypeControl: true,
-              scaleControl: true,
-              streetViewControl: true,
-              rotateControl: true,
-              fullscreenControl: true,
-              disableDefaultUi: false
-            }"
-          :center="center"
-          :zoom="16"
-          map-type-id="terrain"
-        >
+        <GmapMap id="map" :center="center" :zoom="16" map-type-id="terrain">
           <GmapMarker
             :key="index"
             v-for="(m, index) in markers"
             :position="m.position"
             :clickable="true"
+            @click="center=m.position"
           />
         </GmapMap>
 
