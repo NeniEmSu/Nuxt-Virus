@@ -1004,6 +1004,14 @@ export default {
   }
 }
 
+@media only screen and (min-width: 451px) and (max-width: 500px) {
+  .top-grid {
+    .six {
+      margin-top: -135px !important;
+    }
+  }
+}
+
 @include mediaSm {
   .top-grid {
     h1 {
@@ -1192,6 +1200,14 @@ export default {
   }
 }
 
+@media only screen and (min-width: 390px) and (max-width: 416px) {
+  .top-grid {
+    .six {
+      margin-top: -108px !important;
+    }
+  }
+}
+
 @include mediaXSm {
   .top-grid {
     h2 {
@@ -1262,6 +1278,14 @@ export default {
       letter-spacing: -0.05em;
       color: $headingsFontColor;
       margin: 40px 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 330px) and (max-width: 358px) {
+  .top-grid {
+    .six {
+      margin-top: -95px !important;
     }
   }
 }
