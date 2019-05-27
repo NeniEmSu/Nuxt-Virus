@@ -11,17 +11,6 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label hidden for="carModel">Введіть модель авто</label>
-                <input
-                  id="carModel"
-                  type="text"
-                  name="carModel"
-                  class="form-control mx-auto"
-                  aria-describedby="carModel"
-                  placeholder="Введіть модель авто"
-                >
-              </div>
-              <div class="form-group">
                 <label hidden for="typeOfWork">Оберіть тип робіт</label>
                 <select id="typeOfWork" aria-describedby="typeOfWork" class="form-control mx-auto">
                   <option class="disable">Оберіть тип робіт</option>
@@ -50,6 +39,17 @@
                   <option>Керамічне покриття сидінь</option>
                   <option>Озонація</option>
                 </select>
+              </div>
+              <div class="form-group">
+                <label hidden for="carModel">Введіть модель авто</label>
+                <input
+                  id="carModel"
+                  type="text"
+                  name="carModel"
+                  class="form-control mx-auto"
+                  aria-describedby="carModel"
+                  placeholder="Введіть модель авто"
+                >
               </div>
             </div>
 

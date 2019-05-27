@@ -1,22 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,900&display=swap&subset=cyrillic,cyrillic-ext');
-
 $backgroudColor: #ffffff;
 $primary-color: #333333;
 $secondary-color: #2C5E8E;
 $mainFont: 'Roboto',
 sans-serif;
-$secondaryFont:'Roboto Condensed', sans-serif;
+$secondaryFont:'Roboto Condensed',
+sans-serif;
 $headingsFontColor: #8B8B8B;
 $lightColor: #FFFFFF;
 $darkColor: #000000;
 $redColor: #D41F26;
 $borderColor: #C4C4C4;
-
-@font-face {
-  font-family: 'Roboto', 'Roboto Condensed', sans-serif;
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
-  font-display: swap;
-}
 
 @mixin easeOut {
   transition: all 300ms ease-in-out;

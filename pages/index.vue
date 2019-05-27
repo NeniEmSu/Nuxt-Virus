@@ -128,168 +128,7 @@
     <div class="container cars-card">
       <h2>Наші роботи</h2>
 
-      <div class="row mx-auto">
-        <div class="text-center col-xl-6">
-          <a
-            id="card-1"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('audi')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card p-0 mx-auto one">
-              <div class="row text-center card__hover_two work-one img-fluid">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Audi
-                    <span>A6</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-2"
-            class
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('bmw')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card p-0 mx-auto two">
-              <div class="row text-center card__hover_two work-two">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    BMW
-                    <span>4 Series</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-3"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('cooper')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card mx-auto three">
-              <div class="row text-center card__hover_two work-three">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Mini Cooper
-                    <span>Works</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-4"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('merin')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card mx-auto four">
-              <div class="row text-center card__hover_two work-four">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Mercedes
-                    <span>GLS</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-5"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('rover')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card mx-auto five">
-              <div class="row text-center card__hover_two work-five">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Range
-                    <span>Rover</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-6"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('subaru')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card mx-auto six">
-              <div class="row text-center card__hover_two work-six">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Subaru
-                    <span>Forester</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-7"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('santa_fe')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card mx-auto seven">
-              <div class="row text-center card__hover_two work-seven">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Hundai
-                    <span>Santa Fe</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="text-center col-xl-6">
-          <a
-            id="card-8"
-            onClick="if (!window.__cfRLUnblockHandlers) return false; openGallery('vw')"
-            data-cf-modified-74bf624512b1c6414329bcb4-
-          >
-            <div class="card mx-auto eight">
-              <div class="row text-center card__hover_two work-eight">
-                <div class="col-8"></div>
-                <div class="col-sm-4 my-auto">
-                  <h4>
-                    Wolksvagen
-                    <span>Touareg</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      <worksGallery/>
     </div>
 
     <ContactForm/>
@@ -301,11 +140,13 @@
 <script>
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
+import worksGallery from "@/components/gallery/worksGallery.vue";
 import productCards from "@/components/shop/productCards";
 
 export default {
   components: {
     ContactForm,
+    worksGallery,
     progressSection,
     productCards
   },
@@ -718,136 +559,6 @@ export default {
     margin: 40px 0;
   }
 
-  .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: 0 !important;
-    margin-left: -1px !important;
-  }
-
-  .card {
-    background: #000000;
-    width: 100%;
-    max-width: 580px;
-    min-width: 540px;
-    height: 168px;
-    margin: 5px 0;
-    justify-content: center;
-    justify-items: center;
-    align-self: center;
-    padding: 0 !important;
-    cursor: pointer;
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-
-    .work-one {
-      box-sizing: border-box;
-      background-image: url("~assets/imgWebP/car1.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: border-box;
-      height: 100%;
-      max-height: 168px;
-    }
-
-    .work-two {
-      background-image: url("~assets/imgWebp/car2.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: border-box;
-      height: 100%;
-    }
-
-    .work-three {
-      background-image: url("~assets/imgWebp/car3.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: padding-box;
-      height: 100%;
-    }
-
-    .work-four {
-      background-image: url("~assets/imgWebp/car4.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: padding-box;
-      height: 100%;
-    }
-
-    .work-five {
-      background-image: url("~assets/imgWebp/car5.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: padding-box;
-      height: 100%;
-    }
-
-    .work-six {
-      background-image: url("~assets/imgWebp/car6.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: padding-box;
-      height: 100%;
-    }
-
-    .work-seven {
-      background-image: url("~assets/imgWebp/car7.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: padding-box;
-      height: 100%;
-    }
-
-    .work-eight {
-      background-image: url("~assets/imgWebp/car8.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-origin: padding-box;
-      height: 100%;
-    }
-
-    h4 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: normal;
-      text-align: right;
-      letter-spacing: 0.05em;
-      color: $lightColor;
-      margin-right: 5px;
-
-      span {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: normal;
-        text-align: right;
-        letter-spacing: 0.05em;
-        color: $lightColor;
-      }
-    }
-
-    img {
-      height: 168px;
-      margin-left: -1px;
-    }
-  }
-
   .card__hover_two {
     &::before,
     &::after {
@@ -906,24 +617,6 @@ export default {
           box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
         }
       }
-    }
-  }
-  .cars-card {
-    .card {
-      max-width: 580px;
-      min-width: 200px;
-    }
-
-    h2 {
-      font-family: "Roboto Condensed", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 62px;
-      line-height: 39px;
-      letter-spacing: -0.05em;
-      color: $headingsFontColor;
-      margin: 40px 0;
-      text-align: center;
     }
   }
 }
@@ -1075,128 +768,6 @@ export default {
       color: $headingsFontColor;
       margin: 40px 0;
     }
-
-    .card {
-      background: transparent;
-      border-radius: 20px;
-
-      max-width: 580px;
-      height: 168px;
-      margin: 5px 0;
-      justify-content: center;
-      justify-items: center;
-      align-self: center;
-      padding: 0;
-      border: 0;
-
-      h4 {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: normal;
-        text-align: center;
-        letter-spacing: 0.05em;
-        color: $lightColor;
-        margin-right: 10px;
-        background: $darkColor;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-
-        span {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 20px;
-          line-height: normal;
-          text-align: right;
-          letter-spacing: 0.05em;
-          color: $lightColor;
-        }
-      }
-    }
-  }
-
-  .cars-card {
-    .card {
-      .work-one {
-        box-sizing: border-box;
-        background-image: url("~assets/imgWebp/1.webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: border-box;
-        height: 100%;
-        max-height: 168px;
-      }
-
-      .work-two {
-        background-image: url("~assets/imgWebp/1(1).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: border-box;
-        height: 100%;
-      }
-
-      .work-three {
-        background-image: url("~assets/imgWebp/1(2).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: padding-box;
-        height: 100%;
-      }
-
-      .work-four {
-        background-image: url("~assets/imgWebp/1(3).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: padding-box;
-        height: 100%;
-      }
-
-      .work-five {
-        box-sizing: border-box;
-        background-image: url("~assets/imgWebp/1(4).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: padding-box;
-        height: 100%;
-      }
-
-      .work-six {
-        background-image: url("~assets/imgWebp/1(5).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: padding-box;
-        height: 100%;
-      }
-
-      .work-seven {
-        background-image: url("~assets/imgWebp/1(6).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: padding-box;
-        height: 100%;
-      }
-
-      .work-eight {
-        background-image: url("~assets/imgWebp/1(7).webp");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left;
-        background-origin: padding-box;
-        height: 100%;
-      }
-    }
   }
 }
 
@@ -1243,8 +814,6 @@ export default {
   }
 
   .recomendations {
-    text-align: center;
-
     h2 {
       color: $headingsFontColor;
       font-family: "Roboto Condensed", sans-serif;
@@ -1267,8 +836,6 @@ export default {
   }
 
   .cars-card {
-    text-align: center;
-
     h2 {
       font-family: "Roboto Condensed", sans-serif;
       font-style: normal;

@@ -2,40 +2,56 @@
   <div class="jumbotron">
     <div class="container text-center process">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-3">
           <picture>
             <source srcset="~/assets/imgWebP/icons8-paint-palette-96.webp" type="image/webp">
-            <img src="~/assets/img/icons8-paint-palette-96.png" alt="icons paint palette">
+            <img
+              src="~/assets/img/icons8-paint-palette-96.png"
+              class="img-fluid"
+              alt="icons paint palette"
+            >
           </picture>
 
           <div>
             <h6>Великий спектр послуг</h6>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-3">
           <picture>
             <source srcset="~/assets/imgWebP/icons8-service-filled-100.webp" type="image/webp">
-            <img src="~/assets/img/icons8-service-filled-100.png" alt="icons service filled">
+            <img
+              src="~/assets/img/icons8-service-filled-100.png"
+              class="img-fluid"
+              alt="icons service filled"
+            >
           </picture>
 
           <div>
             <h6>Персонал та сервіс</h6>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-3">
           <picture>
             <source srcset="~/assets/imgWebP/icons8-discount-filled-100.webp" type="image/webp">
-            <img src="~/assets/img/icons8-discount-filled-100.png" alt="icons discount filled">
+            <img
+              src="~/assets/img/icons8-discount-filled-100.png"
+              class="img-fluid"
+              alt="icons discount filled"
+            >
           </picture>
 
           <div>
             <h6>Лояльність</h6>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-3">
           <picture>
             <source srcset="~/assets/imgWebP/icons8-gift-filled-100(1).webp" type="image/webp">
-            <img src="~/assets/img/icons8-gift-filled-100(1).png" alt="icons gift filled">
+            <img
+              src="~/assets/img/icons8-gift-filled-100(1).png"
+              class="img-fluid"
+              alt="icons gift filled"
+            >
           </picture>
 
           <div>
@@ -76,6 +92,57 @@ export default {};
       -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
       -o-transform: scale(1.2);
+    }
+  }
+}
+
+@include mediaSm {
+  .process {
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    h6 {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 15px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@include mediaXSm {
+  .process {
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    h6 {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 13px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@include mediaXXSm {
+  .process {
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    h6 {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 11px;
+      align-items: center;
+      text-align: center;
     }
   }
 }

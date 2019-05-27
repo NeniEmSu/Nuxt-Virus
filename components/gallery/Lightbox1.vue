@@ -1,13 +1,13 @@
 <template>
   <div>
-    <a class="text-center col-xl-6 mx-auto" href="#" @click.prevent="show" title="See more images!">
-      <div class="card p-0 mx-auto one">
-        <div class="row text-center card__hover_two work-one img-fluid">
+    <a class="text-center" href="#" @click.prevent="show" title="See more images!">
+      <div class="card col-xl-6 mx-auto py-5">
+        <div class="row text-center card__hover_two img-fluid" :class="workclass">
           <div class="col-8"></div>
           <div class="col-sm-4 my-auto">
             <h4>
-              Audi
-              <span>A6</span>
+              {{title}}
+              <span>{{subtitle}}</span>
             </h4>
           </div>
         </div>
@@ -75,6 +75,18 @@ export default {
     images: {
       type: Array,
       default: () => []
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    subtitle: {
+      type: String,
+      required: true
+    },
+    workclass: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -158,379 +170,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/scss/config.scss";
-
-.top-grid {
-  h1 {
-    color: $headingsFontColor;
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 47px;
-    letter-spacing: -0.05em;
-    margin-bottom: 20px;
-  }
-
-  h2 {
-    color: $lightColor;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    color: $lightColor;
-  }
-
-  a {
-    opacity: 1;
-    transition: all ease-in-out 300ms;
-    -webkit-transition: all ease-in-out 300ms;
-    -moz-transition: all ease-in-out 300ms;
-    -ms-transition: all ease-in-out 300ms;
-    -o-transition: all ease-in-out 300ms;
-
-    &:hover {
-      opacity: 0.99;
-      text-decoration: none;
-      color: $redColor;
-      transform: scale(1.01);
-      -webkit-transform: scale(1.01);
-      -moz-transform: scale(1.01);
-      -ms-transform: scale(1.01);
-      -o-transform: scale(1.01);
-      color: $redColor;
-    }
-  }
-
-  .one .card {
-    border-top-left-radius: 20px;
-    img {
-      border-top-left-radius: 20px;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-    }
-  }
-  .two .card {
-    border-top-right-radius: 20px;
-    img {
-      border-top-right-radius: 20px;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-    }
-  }
-  .three .card {
-    img {
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-    }
-  }
-  .four {
-    margin-top: -85px;
-    .card {
-      img {
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-        object-fit: cover;
-        height: 312px;
-      }
-    }
-  }
-  .five {
-    margin-top: -85px;
-    .card {
-      img {
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-        object-fit: cover;
-        height: 312px;
-      }
-    }
-  }
-  .six {
-    margin-top: -305px;
-    .card {
-      img {
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      }
-    }
-  }
-  .seven .card {
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    img {
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-    }
-  }
-}
-
-.jumbotron.recomendations {
-  background: #f2f2f2;
-  padding: 40px 0;
-  margin: 0;
-  margin-top: 40px;
-
-  a .btn {
-    text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
-
-    &:hover {
-      color: $redColor;
-      background: $lightColor;
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-    }
-  }
-
-  h2 {
-    color: $headingsFontColor;
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 47px;
-    letter-spacing: -0.05em;
-    margin-bottom: 40px;
-  }
-
-  .card-deck {
-    // Currently disabled but this is used for there styling
-    .owl-carousel .owl-nav button.owl-next,
-    .owl-carousel .owl-nav button.owl-prev {
-      background: 0 0;
-      color: $redColor;
-      border: none;
-      padding: 0 !important;
-      font: inherit;
-      font-size: 42px;
-      cursor: pointer !important;
-      margin-top: -40px;
-    }
-
-    .owl-theme .owl-nav.disabled + .owl-dots {
-      margin-top: -5px;
-      z-index: 3;
-      outline: none;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 343px;
-      min-width: 285px;
-      height: 343px;
-      background: $lightColor;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      border-radius: 20px;
-      margin-bottom: 40px;
-      margin-left: auto;
-      margin-right: auto;
-
-      img {
-        align-self: center;
-
-        &.small-img {
-          width: 100%;
-          height: auto;
-          max-width: 343px;
-          min-height: 200px;
-          object-fit: scale-down;
-        }
-      }
-
-      &.one,
-      &.four,
-      &.seven {
-        img {
-          width: 209px;
-          height: auto;
-        }
-      }
-
-      &.two,
-      &.five,
-      &.eight {
-        img {
-          margin: 8.5px 0;
-          width: 182px;
-          height: auto;
-        }
-      }
-
-      &.three,
-      &.six,
-      &.nine {
-        img {
-        }
-      }
-
-      hr {
-        width: 270px;
-        align-self: center;
-        margin: 0;
-        border: 1px solid #c4c4c4;
-      }
-
-      .card-title {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: normal;
-        color: $darkColor;
-      }
-
-      small {
-        s {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 12px;
-          line-height: normal;
-          text-align: center;
-          text-decoration-line: line-through;
-          color: $redColor;
-        }
-      }
-
-      .card-text {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 28px;
-        letter-spacing: -0.05em;
-        color: $headingsFontColor;
-
-        span {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 12px;
-          line-height: 10px;
-          text-align: center;
-        }
-      }
-
-      .discount {
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: normal;
-        color: #239a0f;
-        margin-right: 22px;
-      }
-
-      a .btn {
-        padding: 10px 30px;
-        background: $redColor;
-        border-radius: 50px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: normal;
-        text-align: center;
-        color: $lightColor;
-        text-decoration: none;
-        transition: ease-in-out 300ms;
-        -webkit-transition: ease-in-out 300ms;
-        -moz-transition: ease-in-out 300ms;
-        -ms-transition: ease-in-out 300ms;
-        -o-transition: ease-in-out 300ms;
-
-        &:hover {
-          color: $redColor;
-          background: $lightColor;
-          transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          -o-transform: scale(1.1);
-        }
-      }
-    }
-
-    .card__hover {
-      transition: transform 500ms;
-      -webkit-transition: transform 500ms;
-      -moz-transition: transform 500ms;
-      -ms-transition: transform 500ms;
-      -o-transition: transform 500ms;
-
-      &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.15);
-        content: "";
-        opacity: 0;
-        z-index: -1;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-      }
-
-      &:hover,
-      &:focus {
-        transform: scale3d(1.01, 1.01, 1);
-        -webkit-transform: scale3d(1.01, 1.01, 1);
-        -moz-transform: scale3d(1.01, 1.01, 1);
-        -ms-transform: scale3d(1.01, 1.01, 1);
-        -o-transform: scale3d(1.01, 1.01, 1);
-
-        &::after {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .btn {
-    padding: 10px 32px;
-    background: $redColor;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
-    border-radius: 50px;
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: normal;
-    text-align: center;
-    color: $lightColor;
-    border: none;
-    text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
-
-    &:hover {
-      color: $redColor;
-      background: $lightColor;
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-    }
-
-    &.see-more {
-      margin-top: 40px;
-    }
-  }
-}
 
 .cars-card {
   margin-bottom: 40px;
@@ -715,27 +354,6 @@ export default {
 }
 
 @include mediaMenu {
-  .top-grid {
-    .four,
-    .five {
-      margin-top: -70px;
-      .card {
-        img {
-          object-fit: cover;
-          height: 260px;
-        }
-      }
-    }
-
-    .six {
-      margin-top: -257px;
-      .card {
-        img {
-          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-        }
-      }
-    }
-  }
   .cars-card {
     .card {
       max-width: 580px;
