@@ -33,12 +33,6 @@
           </div>
         </div>
 
-        <!-- <div class="videoContainer mt-4 text-center">
-          <video controls autoplay="true" muted>
-            <source src="~assets/video/vid(8).mp4" type="video/mp4" />
-          </video>
-        </div>-->
-
         <div class="col-md-7 m-auto">
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
@@ -61,7 +55,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -93,6 +87,7 @@ export default {
   },
   data() {
     return {
+      service: "3",
       heading: "ПОЛІРУВАННЯ центральних стійок",
       question: "Для чого полірувати стійки?",
       firstParagraph:

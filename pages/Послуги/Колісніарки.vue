@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -85,6 +85,7 @@ export default {
   },
   data() {
     return {
+      service: "3",
       heading: "ПОЛІРУВАННЯ центральних стійок",
       question: "Для чого полірувати стійки?",
       firstParagraph:

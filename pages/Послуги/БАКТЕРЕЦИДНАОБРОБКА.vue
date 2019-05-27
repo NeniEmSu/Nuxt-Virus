@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -69,6 +69,7 @@ export default {
   },
   data() {
     return {
+      service: "17",
       heading: "БАКТЕРЕЦИДНА ОБРОБКА",
       firstParagraph:
         "Процедура відбувається за рахунок спеціальних речовин, які наносяться на всі деталі салону (підлога, сидіння, стеля, панель), і які очищають їх від мікробів, бактерій та бруду.",

@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -82,6 +82,7 @@ export default {
   },
   data() {
     return {
+      service: "22",
       heading: "КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ",
       firstParagraph:
         "Як зберегти салон нового автомобіля чистим надовго? Як продовжити ефект від детейлінг-хімчистки салону? Як уникнути появи плям на текстилі і шкірі?",

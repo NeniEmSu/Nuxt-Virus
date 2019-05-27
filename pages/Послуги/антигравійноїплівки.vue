@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -77,7 +77,8 @@ export default {
   },
   data() {
     return {
-      heading: "Покриття твердим воском",
+      service: "19",
+      heading: "ПОКЛЕЙКА АНТИГРАВІЙНОЇ ПЛІВКИ",
       firstParagraph:
         "Антигравійна плівка - це, мабуть, саме прогресивне на поточний момент захисне покриття.",
       secondParagraph:

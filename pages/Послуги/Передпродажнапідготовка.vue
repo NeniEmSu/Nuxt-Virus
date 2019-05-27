@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -87,6 +87,7 @@ export default {
   },
   data() {
     return {
+      service: "11",
       heading: "Передпродажна підготовка",
       firstParagraph:
         "Продаєте автомобіль? Команда VIRUS  допоможе продати його дорожче!",

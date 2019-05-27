@@ -30,15 +30,6 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <!-- <div class="row mt-3">
-          <video class="col-md-6 mt-3 mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(12).mp4" type="video/mp4" />
-          </video>
-          <video class="col-md-6 mt-3 mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(15).mp4" type="video/mp4" />
-          </video>
-        </div>-->
-
         <div class="col-md-7 m-auto">
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
@@ -61,7 +52,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -93,6 +84,7 @@ export default {
   },
   data() {
     return {
+      service: "10",
       heading: "Керамічне покриття",
       firstParagraph:
         "Керамічне покриття автомобіля - це тонка плівка на поверхні ЛКП кузова, утворена зернами оксиду титану, діоксиду кремнію, карбідів та інших неорганічних сполук. Йдеться про зерна розміром до 100 нанометрів (мільярдна частина метра!)",

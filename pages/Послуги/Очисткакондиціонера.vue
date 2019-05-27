@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -94,6 +94,7 @@ export default {
   },
   data() {
     return {
+      service: "20",
       heading: "ОЧИСТКА КОНДИЦІОНЕРА",
       question:
         " Навіщо взагалі потрібна антибактеріальна чистка кондиціонера?",

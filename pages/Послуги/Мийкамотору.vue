@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -85,6 +85,7 @@ export default {
   },
   data() {
     return {
+      service: "15",
       heading: "МИЙКА МОТОРУ ПАРОЮ",
       firstParagraph:
         "Детейлінг моторного відсіку - важливий штрих в догляді за автомобілем.",

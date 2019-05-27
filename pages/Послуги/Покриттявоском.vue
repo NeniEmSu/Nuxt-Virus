@@ -22,12 +22,6 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <!-- <div class="videoContainer mt-4 text-center">
-          <video class="mx-auto" controls autoplay="true" muted>
-            <source src="~assets/video/vid(23).mp4" type="video/mp4" />
-          </video>
-        </div>-->
-
         <div class="col-md-7 m-auto">
           <div class="row text-center">
             <div class="col-md-4 mx-auto">
@@ -50,7 +44,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -82,6 +76,7 @@ export default {
   },
   data() {
     return {
+      service: "8",
       heading: "Покриття твердим воском",
       firstParagraph:
         "Воскове покриття авто - це додатковий захист вашого автомобіля від подряпин, пилу, дрібних відколів, що неодмінно відбувається з машиною при її щоденній експлуатації.",

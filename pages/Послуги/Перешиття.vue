@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -85,6 +85,7 @@ export default {
   },
   data() {
     return {
+      service: "13",
       heading: "Перешиття шкіряних деталей салону",
       firstParagraph:
         "Якщо шкіряні сидіння протерлися, потріскалися або просто виглядають вже не як нові, - ми допоможемо повернути авто первозданний вигляд.",

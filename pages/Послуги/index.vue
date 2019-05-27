@@ -376,7 +376,7 @@
         </div>
       </div>
 
-      <ContactForm/>
+      <ContactForm :service="service"/>
 
       <progressSection/>
     </div>

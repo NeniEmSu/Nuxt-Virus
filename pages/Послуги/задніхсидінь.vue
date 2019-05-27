@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -91,6 +91,7 @@ export default {
   },
   data() {
     return {
+      service: "7",
       heading: "ХІМЧИСТКА задніх сидінь (тканина, шкіра)",
       question: "Для чого полірувати стійки?",
       firstParagraph:

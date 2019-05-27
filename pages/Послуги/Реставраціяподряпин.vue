@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm :service="service"/>
 
     <progressSection/>
   </div>
@@ -94,6 +94,7 @@ export default {
   },
   data() {
     return {
+      service: "12",
       heading: "РЕСТАВРАЦІЯ ПОДРЯПИН (СКОЛІВ) НА КУЗОВІ",
       firstParagraph:
         "Коли трапилася неприємність, і Ви помітили на своєму автомобілі подряпини, сколи й потертості - не турбуйтеся! Найпростіше рішення проблеми – реставрація подряпин.",
