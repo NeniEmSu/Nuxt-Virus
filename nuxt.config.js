@@ -126,6 +126,10 @@ export default {
       {
         rel: 'shortcut icon',
         href: '/favicon.ico'
+      }.
+           {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,900&display=swap&subset=cyrillic,cyrillic-ext'
       }
     ]
   },
