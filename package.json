@@ -27,6 +27,7 @@
     "nuxt": "^2.7.1",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-imagemin": "^1.0.0",
+    "storyblok-nuxt": "^1.0.1",
     "vue-lazyload": "^1.2.6",
     "vue-scrollto": "^2.15.0",
     "vue2-google-maps": "^0.10.6",
