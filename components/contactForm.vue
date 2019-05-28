@@ -25,6 +25,7 @@
                   aria-describedby="typeOfWork"
                   class="form-control mx-auto"
                   v-model="service"
+                  name="typeOfWork"
                 >
                   <option value="00">Оберіть тип робіт</option>
                   <option value="0">Полірування автомобіля</option>
