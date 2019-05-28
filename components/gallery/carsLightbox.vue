@@ -7,7 +7,10 @@
   >
     <div class="row no-gutters">
       <div class="col-9 p-0">
-        <img :src="thumbnail" class="card-img img-fluid" :alt="title">
+        <picture>
+          <source :srcset="thumbnailWebP" type="image/webp">
+          <img :src="thumbnail" :alt="title">
+        </picture>
       </div>
       <div class="col-3">
         <div class="card-body h-100 d-flex flex-column justify-content-center text-center p-0 pr-2">
@@ -74,6 +77,10 @@
 export default {
   props: {
     thumbnail: {
+      type: String,
+      required: true
+    },
+    thumbnailWebP: {
       type: String,
       required: true
     },
@@ -194,6 +201,7 @@ export default {
     img {
       object-fit: cover;
       object-position: left;
+      margin-left: -1px;
     }
 
     h4 {
