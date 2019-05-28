@@ -147,10 +147,6 @@ export default {
     {
       src: "~/plugins/google-maps",
       ssr: true
-    },
-    {
-      src: "~/plugins/components",
-      ssr: true
     }
   ],
 
@@ -173,11 +169,7 @@ export default {
           icons: ['fas']
         }]
       }
-    ],
-    ['storyblok-nuxt', {
-      accessToken: 'QO1km7grKjnfdWUvqdLDNAtt',
-      cacheProvider: 'memory'
-    }]
+    ]
   ],
 
   axios: {},
