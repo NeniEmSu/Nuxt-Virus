@@ -88,10 +88,6 @@ export default {
     subtitle: {
       type: String,
       required: true
-    },
-    workclass: {
-      type: String,
-      required: true
     }
   },
   data() {
