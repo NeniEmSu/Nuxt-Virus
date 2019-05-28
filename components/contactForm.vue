@@ -2,7 +2,15 @@
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card text-center">
-        <form class="text-md-right" @submit.prevent="submit">
+        <form
+          class="text-md-right"
+          @submit.prevent="submit"
+          name="contact"
+          method="POST"
+          data-netlify-recaptcha="true"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+        >
           <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
@@ -85,6 +93,8 @@
                   v-model="number"
                 >
               </div>
+
+              <div data-netlify-recaptcha="true"></div>
 
               <button type="submit" name="submit" class="contact-btn">ВІДПРАВИТИ</button>
             </div>
