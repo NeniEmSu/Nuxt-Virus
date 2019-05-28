@@ -68,7 +68,7 @@
         :images="tenth"
         :title="title10"
         :subtitle="subtitle10"
-        :thumbnail="thumbnail0"
+        :thumbnail="thumbnail10"
         :thumbnailWebP="thumbnailWebP10"
       />
     </div>
@@ -137,8 +137,8 @@ export default {
       ],
       title5: "Nissan",
       subtitle5: "Juke",
-      thumbnail5: "/img/car5.png",
-      thumbnailWebP5: "/imgWebP/car5.webp",
+      thumbnail5: "/img/car2.png",
+      thumbnailWebP5: "/imgWebP/car2.webp",
       rover: [
         "/img/gallery/5/1.jpg",
         "/img/gallery/5/2.jpg",

@@ -9,7 +9,7 @@
       <div class="col-9 p-0">
         <picture>
           <source :srcset="thumbnailWebP" type="image/webp">
-          <img :src="thumbnail" :alt="title">
+          <img :src="thumbnail" class="img-fluid" :alt="title">
         </picture>
       </div>
       <div class="col-3">

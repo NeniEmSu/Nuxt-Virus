@@ -138,7 +138,7 @@ export default {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 
-    padding: 3rem !important;
+    padding: 3rem;
 
     form {
       padding-left: 120px;
@@ -413,9 +413,9 @@ export default {
   .contact {
     padding-bottom: 40px;
     .card {
-      padding: 0 !important;
+      padding: 0;
       box-shadow: none;
-      padding: none !important;
+      padding: none;
       background-color: inherit;
       border: none;
       border-radius: none;
@@ -504,9 +504,9 @@ export default {
 @include mediaSm {
   .contact {
     .card {
-      padding: 0 !important;
+      padding: 0;
       box-shadow: none;
-      padding: none !important;
+      padding: none;
       background-color: inherit;
       border: none;
       border-radius: none;
@@ -597,9 +597,9 @@ export default {
   .contact {
     padding-bottom: 20px;
     .card {
-      padding: 0 !important;
+      padding: 0;
       box-shadow: none;
-      padding: none !important;
+      padding: none;
       background-color: inherit;
       border: none;
       border-radius: none;

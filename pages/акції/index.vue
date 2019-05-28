@@ -9,11 +9,11 @@
       <div class="container mx-auto contact">
         <div class="card display block-one p-5">
           <div class="row m-auto display-inner">
-            <div class="col-lg-9 mx-auto">
+            <div class="col-9 mx-auto">
               <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
               <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
             </div>
-            <div class="col-lg-3 m-auto text-center">
+            <div class="col-3 m-auto text-center">
               <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
             </div>
           </div>
@@ -23,10 +23,10 @@
 
         <div class="card display block-two p-5">
           <div class="row m-auto display-inner">
-            <div class="col-lg-3 m-auto text-center">
+            <div class="col-3 m-auto text-center">
               <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
             </div>
-            <div class="col-md-9 m-auto text-right">
+            <div class="col-9 m-auto text-right">
               <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
               <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
             </div>
@@ -37,11 +37,11 @@
 
         <div class="card display block-three p-5">
           <div class="row m-auto display-inner">
-            <div class="col-md-9 m-auto">
+            <div class="col-9 m-auto">
               <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
               <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
             </div>
-            <div class="col-lg-3 m-auto text-center">
+            <div class="col-3 m-auto text-center">
               <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
             </div>
           </div>
@@ -218,8 +218,8 @@ h2 {
     min-height: 300px;
     max-height: 400px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0 !important;
-    background-color: $darkColor !important;
+    border-radius: 0;
+    background-color: $darkColor;
     margin-top: 40px;
     margin-bottom: 40px;
 
@@ -231,11 +231,11 @@ h2 {
       font-family: $mainFont;
       font-style: normal;
       font-weight: bold;
-      font-size: 30px !important;
+      font-size: 30px;
       line-height: normal;
       letter-spacing: 0;
 
-      color: $lightColor !important;
+      color: $lightColor;
     }
   }
 
@@ -244,8 +244,8 @@ h2 {
     min-height: 300px;
     max-height: 400px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0 !important;
-    background-color: $darkColor !important;
+    border-radius: 0;
+    background-color: $darkColor;
     margin-top: 40px;
     margin-bottom: 40px;
 
@@ -257,11 +257,11 @@ h2 {
       font-family: $mainFont;
       font-style: normal;
       font-weight: bold;
-      font-size: 30px !important;
+      font-size: 30px;
       line-height: normal;
       letter-spacing: 0;
 
-      color: $lightColor !important;
+      color: $lightColor;
     }
   }
 }
@@ -272,8 +272,8 @@ h2 {
     min-height: 300px;
     max-height: 400px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0 !important;
-    background-color: $darkColor !important;
+    border-radius: 0;
+    background-color: $darkColor;
     margin-top: 40px;
     margin-bottom: 40px;
 
@@ -285,11 +285,11 @@ h2 {
       font-family: $mainFont;
       font-style: normal;
       font-weight: bold;
-      font-size: 30px !important;
+      font-size: 30px;
       line-height: normal;
       letter-spacing: 0;
 
-      color: $lightColor !important;
+      color: $lightColor;
     }
   }
 
@@ -303,8 +303,8 @@ h2 {
     min-height: 300px;
     max-height: 400px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0 !important;
-    background-color: $darkColor !important;
+    border-radius: 0;
+    background-color: $darkColor;
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -337,11 +337,11 @@ h2 {
       font-family: $mainFont;
       font-style: normal;
       font-weight: bold;
-      font-size: 30px !important;
+      font-size: 30px;
       line-height: normal;
       letter-spacing: 0;
 
-      color: $lightColor !important;
+      color: $lightColor;
     }
 
     .display-inner {
@@ -357,8 +357,8 @@ h2 {
     min-height: 300px;
     max-height: 420px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0 !important;
-    background-color: $darkColor !important;
+    border-radius: 0;
+    background-color: $darkColor;
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -371,20 +371,18 @@ h2 {
     font-family: $mainFont;
     font-style: normal;
     font-weight: bold;
-    font-size: 28px !important;
+    font-size: 28px;
     line-height: normal;
     letter-spacing: 0;
 
-    color: $lightColor !important;
+    color: $lightColor;
   }
 
   .display {
-    height: 100%;
-    min-height: 300px;
-    max-height: 420px;
+    max-height: 90px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0 !important;
-    background-color: $darkColor !important;
+    border-radius: 0;
+    background-color: $darkColor;
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -397,11 +395,11 @@ h2 {
     font-family: $mainFont;
     font-style: normal;
     font-weight: bold;
-    font-size: 28px !important;
-    line-height: normal;
-    letter-spacing: 0;
+    font-size: 12px;
+    line-height: 14px;
+    align-items: center;
 
-    color: $lightColor !important;
+    color: $lightColor;
   }
 }
 </style>
