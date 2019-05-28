@@ -1,5 +1,14 @@
 <template>
   <div>
+    <nav class="container" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <nuxt-link to="/">Головна</nuxt-link>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Про нас</li>
+      </ol>
+    </nav>
+
     <div class="aboutUs-heading-image"></div>
     <div class="jumbotron about-content">
       <div class="container">

@@ -1,6 +1,15 @@
 <template>
   <div>
-    <div class="contact-heading-image"></div>
+    <div class="contact-heading-image">
+      <nav class="container" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <nuxt-link to="/">Головна</nuxt-link>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">контакти</li>
+        </ol>
+      </nav>
+    </div>
 
     <div class="jumbotron" style="margin-top : 0;">
       <div class="container text-center process">

@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="jumbotron">
+      <sercivesBreadcrumbs :heading="heading"/>
       <div class="container text-left">
         <div class="video-text row">
           <div class="col-xl-6">
@@ -64,11 +65,13 @@
 <script>
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
+import sercivesBreadcrumbs from "@/components/breadcrumbs/sercivesBreadcrumbs.vue";
 export default {
   layout: "Services",
   components: {
     ContactForm,
-    progressSection
+    progressSection,
+    sercivesBreadcrumbs
   },
 
   head() {

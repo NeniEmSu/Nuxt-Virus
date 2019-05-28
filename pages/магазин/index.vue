@@ -1,6 +1,14 @@
 <template>
   <div>
     <div class="shop-heading-image">
+      <nav class="container mb-n5" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <nuxt-link to="/">Головна</nuxt-link>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">контакти</li>
+        </ol>
+      </nav>
       <div class="container text-center">
         <h1 class="my-auto">
           <span class="my-auto">-50%</span> на Антидощ до кінця місяця

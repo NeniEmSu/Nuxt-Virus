@@ -1,6 +1,14 @@
 <template>
   <div>
-    <div class="container text-center heading p-0 pt-4">
+    <div class="container text-center heading p-0">
+      <nav class="container mb-n4" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <nuxt-link to="/">Головна</nuxt-link>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Акції</li>
+        </ol>
+      </nav>
       <h1>Акції</h1>
     </div>
     <hr class="top-separator">

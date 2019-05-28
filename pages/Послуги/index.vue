@@ -1,5 +1,13 @@
 <template>
   <div>
+    <nav class="container" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <nuxt-link to="/">Головна</nuxt-link>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Послуги і ціни</li>
+      </ol>
+    </nav>
     <div class="container text-center p-0 pt-4">
       <img class="col-12 m-auto img-fluid" :src="image" :alt="description">
 
@@ -386,10 +394,12 @@
 <script>
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
+import sercivesBreadcrumbs from "@/components/breadcrumbs/sercivesBreadcrumbs.vue";
 export default {
   components: {
     ContactForm,
-    progressSection
+    progressSection,
+    sercivesBreadcrumbs
   },
 
   head() {

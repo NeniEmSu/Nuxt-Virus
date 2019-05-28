@@ -182,12 +182,93 @@ main {
   padding: 0 20px;
 }
 
+.breadcrumb {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 12px 0;
+
+  li {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #8b8b8b;
+  }
+
+  a {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #8b8b8b;
+
+    :hover {
+      color: #8c8c8c;
+    }
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: #8b8b8b;
+  content: "\232a";
+  font-size: 18px;
+  line-height: 18px;
+}
+
 @include mediaMenu {
   main {
     position: relative;
     margin-top: 51px;
     min-height: 80vh;
     height: 100%;
+  }
+}
+
+@include mediaXSm {
+  .breadcrumb {
+    padding: 12px 0;
+
+    li {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+@include mediaXSm {
+  .breadcrumb {
+    padding: 12px 0;
+
+    li {
+      font-size: 13px;
+      line-height: 14px;
+    }
+
+    a {
+      font-size: 13px;
+      line-height: 14px;
+    }
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    font-size: 13px;
+    line-height: 13px;
   }
 }
 </style>
