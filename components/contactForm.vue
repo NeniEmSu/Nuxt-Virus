@@ -7,8 +7,6 @@
           @submit.prevent="submit"
           name="contact"
           method="POST"
-          data-netlify-recaptcha="true"
-          netlify-honeypot="bot-field"
           data-netlify="true"
         >
           <h3 class="text-md-left px-0">
