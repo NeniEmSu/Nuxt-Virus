@@ -6,8 +6,6 @@
           class="text-md-right"
           @submit.prevent="submit"
           name="contact"
-          method="POST"
-          data-netlify="true"
         >
           <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
