@@ -1,8 +1,6 @@
 <template>
   <div>
-    <TheHeader/>
-
-    <TheSideNav/>
+    <TheNavbar/>
 
     <main>
       <transition name="fade" mode="out-in">
@@ -49,13 +47,15 @@
 </template>
 <script>
 import TheHeader from "@/components/TheHeader.vue";
+import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import TheSideNav from "@/components/TheSideNav";
+
 export default {
   components: {
     TheHeader,
-    TheSideNav,
-    TheFooter
+
+    TheFooter,
+    TheNavbar
   },
 
   head() {
@@ -73,32 +73,24 @@ export default {
 </script>
 
 <style lang="scss">
+@charset "UTF-8";
 @import "~assets/scss/config.scss";
-
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 1500ms;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  outline: none !important;
-  font-family: $mainFont;
-}
 
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 1023px) {
+  html {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -110,6 +102,105 @@ body {
   overflow-x: hidden;
 
   font-family: $mainFont;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0 0 20px 0;
+  padding: 0;
+  text-align: center;
+}
+
+figcaption {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none !important;
+  font-family: $mainFont;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .desktop-only,
+  .navbar-user {
+    display: none;
+  }
+}
+
+@media (min-width: 820px) {
+  .mobile-only,
+  .navbar-mobile-item {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 820px) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 1500ms;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 
 button {
@@ -173,7 +264,6 @@ select option {
 
 main {
   position: relative;
-  margin-top: 140px;
   min-height: 80vh;
   height: 100%;
 }
@@ -224,7 +314,6 @@ main {
 @include mediaMenu {
   main {
     position: relative;
-    margin-top: 51px;
     min-height: 80vh;
     height: 100%;
   }
