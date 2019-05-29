@@ -14,13 +14,16 @@
       </div>
 
       <div class="btn-hamburger" @click="mobileNavOpen = !mobileNavOpen">
-        <!-- use .btn-humburger-active to open the menu -->
         <img src="~/assets/img/menu.svg" alt="menu Icon">
       </div>
 
-      <!-- use .navbar-open to open nav -->
       <nav class="navbar" :class="{'navbar-open': mobileNavOpen}">
         <app-links></app-links>
+        <div
+          class="close-hamburger text-right text-black p-2"
+          style="font-size: 30px; cursor: pointer; color: black;  margin-top: -260px;"
+          @click.stop="hide"
+        >&times;</div>
       </nav>
     </div>
   </header>
@@ -49,6 +52,9 @@ export default {
       this.userDropdownOpen = false;
     },
     closeMobileNavbar() {
+      this.mobileNavOpen = false;
+    },
+    hide() {
       this.mobileNavOpen = false;
     }
   }
@@ -95,6 +101,7 @@ header {
 
 .logo {
   float: left;
+
   padding-top: 5px;
   line-height: 80px;
 
@@ -113,18 +120,6 @@ header {
   display: none;
 }
 
-.btn-hamburger .top {
-  top: 7px;
-}
-
-.btn-hamburger .middle {
-  top: 16px;
-}
-
-.btn-hamburger .bottom {
-  top: 26px;
-}
-
 @include mediaMenu {
   .navbar {
     display: none;
@@ -140,8 +135,9 @@ header {
   .logo {
     float: left;
     padding-top: 5px;
+    line-height: 40px;
 
-    margin-top: -15px;
+    margin-top: -5px;
     img {
       height: 1.8rem;
     }
@@ -171,20 +167,10 @@ header {
     border-radius: 0px 0px 20px 20px;
   }
 
-  .navbar-open .navbar-item,
-  .navbar-open .navbar-mobile-item {
-    margin: 6px 0;
+  .close-hamburger {
+    display: block;
   }
-
-  .navbar-open ul {
-    flex: 1;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-left: 20px;
-  }
-}
-
-@include mediaSm {
 }
 </style>
+
+

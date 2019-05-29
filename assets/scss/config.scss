@@ -21,7 +21,7 @@ $borderColor: #C4C4C4;
 
 // Functions
 @function set-text-color($backgroudColor) {
-  @if(lightness($backgroudColor) > 40) {
+  @if(lightness($backgroudColor) > 100) {
     @return $darkColor;
   }
 

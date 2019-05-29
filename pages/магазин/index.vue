@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="shop-heading-image">
-      <nav class="container mb-n5" aria-label="breadcrumb">
+      <nav class="container mt-2 mb-n5" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>

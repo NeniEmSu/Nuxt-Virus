@@ -46,14 +46,11 @@
   </div>
 </template>
 <script>
-import TheHeader from "@/components/TheHeader.vue";
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 
 export default {
   components: {
-    TheHeader,
-
     TheFooter,
     TheNavbar
   },
@@ -95,7 +92,7 @@ html {
 
 body {
   background-color: $backgroudColor;
-  color: set-text-color($backgroudColor);
+  color: $darkColor;
   width: 100%;
   height: 100%;
   padding: 0;

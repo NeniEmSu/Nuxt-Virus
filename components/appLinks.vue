@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scope="scoped">
+<style lang="scss" scoped>
 @import "~assets/scss/config.scss";
 .menu {
   margin-left: 0;
@@ -127,17 +127,19 @@ export default {
     display: flex;
   }
 
-  .menu ul li a {
-    text-decoration: none;
-    color: set-text-color($backgroudColor);
-    font-size: 18px;
-    line-height: 21px;
-    padding: 10px 0 10px 30px;
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: normal;
-    text-align: center;
-    border: none;
+  .menu ul li {
+    a {
+      text-decoration: none;
+      color: $darkColor;
+      font-size: 18px;
+      line-height: 21px;
+      padding: 10px 0 10px 30px;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      border: none !important;
+    }
 
     &.active {
       box-sizing: border-box;
@@ -148,12 +150,13 @@ export default {
       text-decoration: none;
       color: $redColor;
     }
-  }
-  .nuxt-link-exact-active a {
-    border: none;
-    box-sizing: border-box;
-    border-radius: 0px;
-    color: $redColor;
+
+    &.nuxt-link-exact-active a {
+      border: none;
+      box-sizing: border-box;
+      border-radius: 0px;
+      color: $redColor;
+    }
   }
 }
 </style>

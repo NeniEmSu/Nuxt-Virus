@@ -146,7 +146,7 @@ export default {
   position: relative;
   top: 40%;
   left: 40%;
-  color: white;
+  color: set-text-color($backgroudColor);
 }
 
 .after {
@@ -162,6 +162,6 @@ export default {
   top: 40%;
   left: 40%;
 
-  color: white;
+  color: set-text-color($backgroudColor);
 }
 </style>

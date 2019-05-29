@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container text-center heading p-0">
+    <div class="container text-center heading p-0 mt-n1">
       <nav class="container mb-n4" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
