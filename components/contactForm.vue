@@ -93,8 +93,6 @@
                 >
               </div>
 
-              <div data-netlify-recaptcha="true"></div>
-
               <button type="submit" name="submit" class="contact-btn">ВІДПРАВИТИ</button>
             </div>
           </div>
