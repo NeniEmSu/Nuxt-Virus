@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .aboutUs-heading-image {
   margin-top: -10.5px;

@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 .menu {
   margin-left: 0;
   position: relative;

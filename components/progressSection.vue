@@ -68,7 +68,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .process {
   margin-top: 40px;

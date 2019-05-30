@@ -170,7 +170,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .top-grid {
   h1 {

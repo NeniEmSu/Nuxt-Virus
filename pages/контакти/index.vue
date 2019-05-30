@@ -108,7 +108,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .contact-heading-image {
   margin-top: -10.5px;

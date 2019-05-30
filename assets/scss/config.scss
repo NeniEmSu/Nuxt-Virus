@@ -30,19 +30,6 @@ $borderColor: #C4C4C4;
   }
 }
 
-
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 1500ms;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-
 //Media Query Mixins
 
 @mixin mediaXlLandscape {

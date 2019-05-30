@@ -153,6 +153,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
     'bootstrap-vue/nuxt',
     'vue-scrollto/nuxt',
     [
@@ -174,8 +175,17 @@ export default {
 
   axios: {},
 
+  styleResources: {
+    scss: [
+        'assets/scss/config.scss'
+    ]
+},
+
+  
+
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
+    extractCSS: true,
 
     extend(config, ctx) {
       // Run ESLint on save

@@ -177,7 +177,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .cars-card {
   margin-bottom: 40px;

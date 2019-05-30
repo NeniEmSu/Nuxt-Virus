@@ -51,7 +51,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .top-contacts {
   background: $darkColor;

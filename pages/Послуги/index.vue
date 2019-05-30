@@ -684,7 +684,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/config.scss";
+
 
 .choose-brand {
   .choose-brand-desc {

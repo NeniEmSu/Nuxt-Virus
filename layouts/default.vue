@@ -71,7 +71,6 @@ export default {
 
 <style lang="scss">
 @charset "UTF-8";
-@import "~assets/scss/config.scss";
 
 html {
   overflow-x: hidden;

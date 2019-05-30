@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scope="scoped">
-@import "~assets/scss/config.scss";
+
 
 @include mediaMenu {
   .menu ul li {
