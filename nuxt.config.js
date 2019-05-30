@@ -147,6 +147,10 @@ export default {
     {
       src: "~/plugins/google-maps",
       ssr: true
+    },
+    {
+      src: "~/plugins/components",
+      ssr: true
     }
   ],
 
@@ -177,11 +181,11 @@ export default {
 
   styleResources: {
     scss: [
-        'assets/scss/config.scss'
+      'assets/scss/config.scss'
     ]
-},
+  },
 
-  
+
 
   build: {
     transpile: [/^vue2-google-maps($|\/)/],

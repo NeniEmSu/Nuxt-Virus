@@ -21,52 +21,11 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="row mx-auto">
-          <div class="col-6 mx-auto p-0 before img-fluid">
-            <font class="before-image-text">До</font>
-          </div>
+        <servicesBeforeAndAfter/>
 
-          <div class="col-6 mx-auto p-0 after img-fluid">
-            <font class="after-image-text">Після</font>
-          </div>
-        </div>
+        <servicesYoutubeVideo :videoUrl="videoUrl"/>
 
-        <div class="youtube-video-container">
-          <iframe
-            src="https://www.youtube.com/embed/NpEaa2P7qZI"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <div class="col-sm-10 col-xl-7 m-auto">
-          <div class="row text-center">
-            <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
-              <a class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector" href="#">Ⅰ категорія</a>
-              <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2">5999 грн</p>
-              <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
-              <a
-                href="#"
-                class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
-              >ⅠⅠ категорія</a>
-              <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2">6999 грн</p>
-              <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
-              <a
-                href="#"
-                class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
-              >ⅠⅠⅠ категорія</a>
-              <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2">8499 грн</p>
-              <p
-                class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2"
-              >повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -106,6 +65,10 @@ export default {
     return {
       service: "0",
       heading: "ПОЛІРУВАННЯ",
+      category1: "5999 грн",
+      category2: "6999 грн грн",
+      category3: "8499 грн",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:
         "Якщо ви не знаєте, яке полірування вибрати – абразивне, відновлююче, захисне - нічого страшного, не ламайте голову! Суть детейлінг-полірування в студії VIRUS - це індивідуальний підхід до кожного автомобіля, в залежності від його стану.",
       secondParagraph:

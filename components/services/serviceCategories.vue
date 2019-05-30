@@ -1,34 +1,48 @@
-h1.info-pages {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 30px;
-  line-height: normal;
-  text-transform: uppercase;
+<template>
+  <div class="col-sm-10 col-xl-7 m-auto">
+    <div class="row text-center">
+      <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
+        <a class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector" href="#">Ⅰ категорія</a>
+        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2">{{category1}}</p>
+        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2">середній бізнес спорт купе</p>
+      </div>
+      <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
+        <a href="#" class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector">ⅠⅠ категорія</a>
+        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2">{{category2}}</p>
+        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2">середній кросовер позашляховик</p>
+      </div>
+      <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
+        <a href="#" class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector">ⅠⅠⅠ категорія</a>
+        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2">{{category3}}</p>
+        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2">повнорозмірний кросовер позашляховик</p>
+      </div>
+    </div>
+  </div>
+</template>
 
-  color: $headingsFontColor;
-}
+<script>
+export default {
+  props: {
+    category1: {
+      type: String,
+      default: "0",
+      required: true
+    },
+    category2: {
+      type: String,
+      default: "0",
+      required: true
+    },
+    category3: {
+      type: String,
+      default: "0",
+      required: true
+    }
+  }
+};
+</script>
 
-.mobile-only {
-  display: none;
-}
-
-h2 {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: $headingsFontColor;
-  text-align: left;
-  margin: 0 0 10px 0;
-}
-
-.red {
-  color: $redColor;
-}
-
+<style lang="scss" scoped>
 p {
   font-family: $mainFont;
   font-style: normal;
@@ -122,46 +136,6 @@ li {
   -o-transform: scale(1.1);
 }
 
-.service-time-image p {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 47px;
-
-  color: #f2f2f2;
-}
-
-.service-time-image hr {
-  border: 1px solid #f2f2f2;
-  transform: rotate(90deg);
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-img {
-  margin-bottom: 40px;
-  width: 100%;
-  max-width: 540px;
-  height: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  object-position: center;
-  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-}
-
-.contact p {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-
-  color: $darkColor;
-}
-
 .contact h3,
 .contact h3 span.red {
   font-family: $secondaryFont;
@@ -197,14 +171,10 @@ img {
   line-height: 70px;
 
   align-items: center;
-
 }
 
-
 @include mediaMenu {
-
   h1.info-pages {
-
     font-size: 30px;
     line-height: 36px;
     text-transform: uppercase;
@@ -212,21 +182,10 @@ img {
     color: $darkColor;
   }
 
-
-  .desktop-only {
-    display: none;
-  }
-
-  .mobile-only {
-    display: block;
-
-  }
-
   p,
   li {
     font-size: 18px;
     line-height: 20px;
-
   }
 
   .btn.category-selector {
@@ -243,18 +202,6 @@ img {
     line-height: 21px;
 
     color: $headingsFontColor;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: $darkColor;
-    text-align: left;
-    margin: 10px 0 10px 0;
   }
 
   .work-cost-btn {
@@ -287,17 +234,13 @@ img {
     font-size: 40px;
     line-height: 50px;
   }
-
-
 }
 
 @include mediaLg {
-
   p,
   li {
     font-size: 16px;
     line-height: 18px;
-
   }
 
   .btn.category-selector {
@@ -316,18 +259,6 @@ img {
     color: $headingsFontColor;
   }
 
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: $darkColor;
-    text-align: left;
-    margin: 10px 0 10px 0;
-  }
-
   .work-cost-btn {
     display: flex;
     padding: 0;
@@ -339,8 +270,6 @@ img {
     background-repeat: no-repeat;
     background-color: $darkColor;
     background-position: center;
-
-
 
     min-height: 200px;
     max-height: 286px;
@@ -358,17 +287,14 @@ img {
     line-height: 22px;
 
     align-items: center;
-
   }
 }
 
 @include mediaMd {
-
   p,
   li {
     font-size: 16px;
     line-height: 18px;
-
   }
 
   .btn.category-selector {
@@ -385,18 +311,6 @@ img {
     line-height: 21px;
 
     color: $headingsFontColor;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: $darkColor;
-    text-align: left;
-    margin: 10px 0 10px 0;
   }
 
   .work-cost-btn {
@@ -430,17 +344,14 @@ img {
     line-height: 16px;
 
     align-items: center;
-
   }
 }
 
 @include mediaSm {
-
   p,
   li {
     font-size: 16px;
     line-height: 18px;
-
   }
 
   .btn.category-selector {
@@ -457,18 +368,6 @@ img {
     line-height: 21px;
 
     color: $headingsFontColor;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: $darkColor;
-    text-align: left;
-    margin: 10px 0 10px 0;
   }
 
   .work-cost-btn {
@@ -502,18 +401,14 @@ img {
     line-height: 16px;
 
     align-items: center;
-
   }
-
 }
 
 @include mediaXSm {
-
   p,
   li {
     font-size: 13px;
     line-height: 15px;
-
   }
 
   .btn.category-selector {
@@ -530,18 +425,6 @@ img {
     line-height: 21px;
 
     color: $headingsFontColor;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: $darkColor;
-    text-align: left;
-    margin: 10px 0 10px 0;
   }
 
   .work-cost-btn {
@@ -575,30 +458,16 @@ img {
     line-height: 16px;
 
     align-items: center;
-
   }
-
 }
 
-
 @include mediaXXSm {
-  h1.info-pages {
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-
-    margin: 10px auto;
-
-    color: $darkColor;
-  }
-
   p,
   li {
     font-size: 10px;
     line-height: 12px;
     text-align: left;
   }
-
 
   .btn.category-selector {
     padding: 6px 12px;
@@ -614,18 +483,6 @@ img {
     line-height: 18px;
 
     color: $headingsFontColor;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: $darkColor;
-    text-align: left;
-    margin: 10px 0 10px 0;
   }
 
   .work-cost-btn {
@@ -659,9 +516,7 @@ img {
     line-height: 16px;
 
     align-items: center;
-
-
-
   }
-
 }
+</style>
+
