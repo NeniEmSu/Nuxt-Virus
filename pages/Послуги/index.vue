@@ -9,6 +9,8 @@
       </ol>
     </nav>
     <div class="container text-center p-0 pt-4">
+      <picture>
+            <source :srcset="require(`~/assets/imgWebP/${image}`)" type="image/webp">
       <img class="col-12 m-auto img-fluid" :src="require(`~/assets/imgWebP/${image}`)" :alt="description">
 
       <div class="col-md-7 m-auto car-toggle">
