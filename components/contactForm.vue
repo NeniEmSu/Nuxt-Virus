@@ -2,11 +2,7 @@
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card text-center">
-        <form
-          class="text-md-right"
-          @submit.prevent="submit"
-          name="contact"
-        >
+        <form class="text-md-right" @submit.prevent="submit" name="contact">
           <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
@@ -129,7 +125,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .contact {
   .card {
     background: $lightColor;
@@ -272,7 +267,7 @@ export default {
     select {
       height: 40px;
       margin-top: 10px;
-      border: 2px solid $borderColor;
+      border: 2px solid #c4c4c4;
       box-sizing: border-box;
       border-radius: 50px;
       font-family: $mainFont;
@@ -361,7 +356,7 @@ export default {
     select {
       height: 40px;
       margin-top: 10px;
-      border: 2px solid $borderColor;
+      border: 2px solid #c4c4c4;
       box-sizing: border-box;
       border-radius: 50px;
       font-family: $mainFont;
@@ -453,7 +448,7 @@ export default {
     select {
       height: 40px;
       margin-top: 10px;
-      border: 2px solid $borderColor;
+      border: none;
       box-sizing: border-box;
       border-radius: 50px;
       font-family: $mainFont;
@@ -545,7 +540,7 @@ export default {
     select {
       height: 40px;
       margin-top: 10px;
-      border: 2px solid $borderColor;
+      border: none;
       box-sizing: border-box;
       border-radius: 50px;
       font-family: $mainFont;

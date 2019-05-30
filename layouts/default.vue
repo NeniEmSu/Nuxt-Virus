@@ -72,23 +72,6 @@ export default {
 <style lang="scss">
 @charset "UTF-8";
 
-html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-@media (min-width: 1024px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 240px) and (max-width: 1023px) {
-  html {
-    font-size: 14px;
-  }
-}
-
 body {
   background-color: $backgroudColor;
   color: $darkColor;
@@ -99,8 +82,6 @@ body {
 
   font-family: $mainFont;
   line-height: 1.5;
-  margin: 0;
-  padding: 0;
 }
 
 img {
@@ -129,62 +110,8 @@ figcaption {
   font-family: $mainFont;
 }
 
-@media (min-width: 240px) and (max-width: 720px) {
-  body {
-    font-size: 15px;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 700;
-  margin-bottom: 10px;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-p {
-  margin: 0;
-}
-
 figure {
   margin: 0;
-}
-
-@media (max-width: 820px) {
-  .desktop-only,
-  .navbar-user {
-    display: none;
-  }
-}
-
-@media (min-width: 820px) {
-  .mobile-only,
-  .navbar-mobile-item {
-    display: none;
-  }
-}
-
-@media (max-width: 720px) {
-  .hide-mobile {
-    display: none;
-  }
-}
-
-@media (min-width: 720px) and (max-width: 820px) {
-  .hide-tablet {
-    display: none;
-  }
-}
-
-@media (max-width: 720px) {
-  .hide-desktop {
-    display: none;
-  }
 }
 
 .fade-enter-active,

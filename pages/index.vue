@@ -170,8 +170,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .top-grid {
   h1 {
     color: $headingsFontColor;
@@ -317,10 +315,10 @@ export default {
       background: 0 0;
       color: $redColor;
       border: none;
-      padding: 0 !important;
+      padding: 0;
       font: inherit;
       font-size: 42px;
-      cursor: pointer !important;
+      cursor: pointer;
       margin-top: -40px;
     }
 
@@ -697,14 +695,6 @@ export default {
   }
 }
 
-@media only screen and (min-width: 451px) and (max-width: 500px) {
-  .top-grid {
-    .six {
-      margin-top: -135px !important;
-    }
-  }
-}
-
 @include mediaSm {
   .top-grid {
     h1 {
@@ -734,7 +724,7 @@ export default {
       }
     }
     .six {
-      margin-top: -110px;
+      margin-top: -113px;
     }
     .card-img-overlay {
       position: absolute;
@@ -771,10 +761,44 @@ export default {
   }
 }
 
-@media only screen and (min-width: 390px) and (max-width: 416px) {
+@media only screen and (min-width: 569px) and (max-width: 573px) {
+  .top-grid {
+    .six {
+      margin-top: -152px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 468px) and (max-width: 499px) {
+  .top-grid {
+    .six {
+      margin-top: -135px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 405px) and (max-width: 416px) {
   .top-grid {
     .six {
       margin-top: -108px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 404px) {
+  .top-grid {
+    .four,
+    .five {
+      margin-top: -30px !important;
+      .card {
+        img {
+          object-fit: cover;
+          height: 100px !important;
+        }
+      }
+    }
+    .six {
+      margin-top: -95px !important;
     }
   }
 }
@@ -819,7 +843,7 @@ export default {
       font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 50px !important;
+      font-size: 50px;
       line-height: 47px;
       letter-spacing: -0.05em;
       margin-bottom: 40px;
@@ -914,7 +938,7 @@ export default {
       font-family: "Roboto Condensed", sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 42px !important;
+      font-size: 42px;
       line-height: 47px;
       letter-spacing: -0.05em;
       margin-bottom: 40px;
@@ -968,7 +992,7 @@ export default {
       }
 
       .btn {
-        padding: 10px 28px !important;
+        padding: 10px 28px;
         background: $redColor;
         border-radius: 50px;
         font-family: $secondaryFont;

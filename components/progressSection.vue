@@ -68,8 +68,6 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-
-
 .process {
   margin-top: 40px;
   padding-bottom: 40px;
@@ -130,10 +128,81 @@ export default {};
   }
 }
 
+@include mediaMd {
+  .process {
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    h6 {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 11px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@include mediaSm {
+  .process {
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    h6 {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 11px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@include mediaXSm {
+  .process {
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+
+    h6 {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 11px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
 @include mediaXXSm {
   .process {
     margin-top: 20px;
     padding-bottom: 20px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
 
     h6 {
       margin-top: 20px;

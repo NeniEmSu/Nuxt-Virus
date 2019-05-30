@@ -10,8 +10,13 @@
     </nav>
     <div class="container text-center p-0 pt-4">
       <picture>
-            <source :srcset="require(`~/assets/imgWebP/${image}`)" type="image/webp">
-      <img class="col-12 m-auto img-fluid" :src="require(`~/assets/imgWebP/${image}`)" :alt="description">
+        <source :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)" type="image/webp">
+        <img
+          class="col-12 m-auto img-fluid"
+          :src="require(`~/assets/img/${image + '.jpg'}`)"
+          :alt="description"
+        >
+      </picture>
 
       <div class="col-md-7 m-auto car-toggle">
         <div class="row text-center">
@@ -420,7 +425,7 @@ export default {
   },
   asyncData() {
     return {
-      image: "services-car-goup-all.webp",
+      image: "services-car-goup-all",
       description:
         " white mercedes , jeep grand cherokee srt white & Black Range Rover Piano",
       isActive: false,
@@ -432,19 +437,19 @@ export default {
           variantId: 1,
           variantTitle: "Ⅰ категорія",
           variantDescription: "середній бізнес спорт купе",
-          variantImage: "services-car-goup-var-1.webp"
+          variantImage: "services-car-goup-var-1"
         },
         {
           variantId: 2,
           variantTitle: "ⅠⅠ категорія",
           variantDescription: "середній кросовер позашляховик",
-          variantImage: "services-car-goup-var-2.webp"
+          variantImage: "services-car-goup-var-2"
         },
         {
           variantId: 3,
           variantTitle: "ⅠⅠⅠ категорія",
           variantDescription: "повнорозмірний кросовер позашляховик",
-          variantImage: "services-car-goup-var-3.webp"
+          variantImage: "services-car-goup-var-3"
         }
       ],
       polishing: [
@@ -686,8 +691,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .choose-brand {
   .choose-brand-desc {
     font-family: $mainFont;
