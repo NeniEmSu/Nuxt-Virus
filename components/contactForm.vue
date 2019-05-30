@@ -415,10 +415,10 @@ export default {
     .card {
       padding: 0;
       box-shadow: none;
-      padding: none;
+      padding: 0;
       background-color: inherit;
       border: none;
-      border-radius: none;
+      border-radius: 0;
 
       form {
         padding-left: 10px;
@@ -506,10 +506,10 @@ export default {
     .card {
       padding: 0;
       box-shadow: none;
-      padding: none;
+      padding: 0;
       background-color: inherit;
       border: none;
-      border-radius: none;
+      border-radius: 0;
 
       form {
         padding-top: 10px;
@@ -599,10 +599,10 @@ export default {
     .card {
       padding: 0;
       box-shadow: none;
-      padding: none;
+      padding: 0;
       background-color: inherit;
       border: none;
-      border-radius: none;
+      border-radius: 0;
       form {
         padding-top: 5px;
         padding-left: 10px;
