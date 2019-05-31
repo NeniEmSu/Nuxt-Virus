@@ -151,15 +151,21 @@ export default {
     {
       src: "~/plugins/components",
       ssr: true
+    },
+    {
+      src: "~/plugins/vuemask"
+
     }
   ],
 
   modules: [
+    'nuxt-purgecss',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     'bootstrap-vue/nuxt',
     'vue-scrollto/nuxt',
+    '@nuxtjs/robots',
     [
       '@nuxtjs/google-analytics',
       {
@@ -174,10 +180,24 @@ export default {
           icons: ['fas']
         }]
       }
-    ]
+    ],
+    '@nuxtjs/sitemap'
   ],
 
   axios: {},
+
+  purgeCSS: {
+
+  },
+
+  sitemap: {
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+      lastmodrealtime: true
+    }
+  },
 
   styleResources: {
     scss: [

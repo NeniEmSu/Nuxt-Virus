@@ -1,9 +1,7 @@
 <template>
   <div class="row mx-auto">
-    <div
-      class="col-6 mx-auto p-0 before img-fluid"
-      :style="{ backgroundImage: `url(~assets/img/${image})` }"
-    >
+    <div class="col-6 mx-auto p-0 before img-fluid">
+      <!-- :style="{ backgroundImage: `url(~assets/img/${image})` }" -->
       <font class="before-image-text">До</font>
     </div>
 
@@ -24,13 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.before {
-  background-image: url("~assets/img/beforeAfter1_001.jpg");
-}
-
-.after {
-  background-image: url("~assets/img/beforeAfter1.jpg");
-}
 .before,
 .after {
   background-size: cover;

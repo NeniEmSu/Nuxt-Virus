@@ -1,7 +1,7 @@
 <template>
   <div
     @click.prevent="show"
-    class="card mb-3 mx-auto card__hover_two work-card"
+    class="card mb-3 mx-auto card__hover_two work-card img-fluid"
     style="width: 100%; max-width: 540px;"
     title="View more images!"
   >
@@ -177,8 +177,6 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-
-
 .cars-card {
   margin-bottom: 40px;
 

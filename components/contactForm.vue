@@ -19,7 +19,7 @@
                   v-model="service"
                   name="typeOfWork"
                 >
-                  <option value="00">Оберіть тип робіт</option>
+                  <option value="00" disabled>Оберіть тип робіт</option>
                   <option value="0">Полірування автомобіля</option>
                   <option value="1">Полірування фар</option>
                   <option value="2">Полірування вставок салону</option>
@@ -77,13 +77,14 @@
               <div class="form-group">
                 <label hidden for="phone">Телефон</label>
                 <input
-                  id="phone"
-                  type="number"
                   aria-describedby="phone"
                   name="phone"
+                  type="text"
                   class="form-control mx-auto"
+                  id="phone"
                   placeholder="Телефон*"
-                  v-model="number"
+                  v-mask="'+38(0##) ###-####'"
+                  v-model="models.phoneNumber"
                 >
               </div>
 
@@ -112,7 +113,7 @@ export default {
     return {
       name: "",
       carModel: "",
-      number: "",
+      models: { phoneNumber: "" },
       submitted: false
     };
   },

@@ -3,12 +3,13 @@
     <div class="jumbotron">
       <sercivesBreadcrumbs :heading="heading"/>
       <div class="container text-left">
-        <div class="video-text row">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
           <div class="col-xl-6">
             <img src="~assets/img/антигравійноїплівки.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
             <p class>{{ thirdParagraph }}</p>
@@ -24,25 +25,7 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">1000 грн</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -53,17 +36,9 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import sercivesBreadcrumbs from "@/components/breadcrumbs/sercivesBreadcrumbs.vue";
-
 export default {
   layout: "default",
-  components: {
-    ContactForm,
-    progressSection,
-    sercivesBreadcrumbs
-  },
+  components: {},
 
   head() {
     return {
@@ -83,6 +58,10 @@ export default {
     return {
       service: "19",
       heading: "ПОКЛЕЙКА АНТИГРАВІЙНОЇ ПЛІВКИ",
+      category1: "1000 грн",
+      category2: "0 грн",
+      category3: "0 грн",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:
         "Антигравійна плівка - це, мабуть, саме прогресивне на поточний момент захисне покриття.",
       secondParagraph:
@@ -116,7 +95,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 @import "~assets/scss/servicesPages.scss";
 </style>

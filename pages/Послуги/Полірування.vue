@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
         <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
         <div class="row">
-          <div class="col-xl-6 mb-3">
+          <div class="col-xl-6">
             <img src="~assets/img/Полірування.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
@@ -21,7 +21,15 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <servicesBeforeAndAfter/>
+        <div class="row mx-auto">
+          <div class="col-6 mx-auto p-0 before img-fluid">
+            <font class="before-image-text">До</font>
+          </div>
+
+          <div class="col-6 mx-auto p-0 after img-fluid">
+            <font class="after-image-text">Після</font>
+          </div>
+        </div>
 
         <servicesYoutubeVideo :videoUrl="videoUrl"/>
 
@@ -36,16 +44,8 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import sercivesBreadcrumbs from "@/components/breadcrumbs/sercivesBreadcrumbs.vue";
 export default {
-  layout: "default",
-  components: {
-    ContactForm,
-    progressSection,
-    sercivesBreadcrumbs
-  },
+  components: {},
 
   head() {
     return {
@@ -66,7 +66,7 @@ export default {
       service: "0",
       heading: "ПОЛІРУВАННЯ",
       category1: "5999 грн",
-      category2: "6999 грн грн",
+      category2: "6999 грн",
       category3: "8499 грн",
       videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:

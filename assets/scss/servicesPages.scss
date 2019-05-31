@@ -212,7 +212,6 @@ img {
     color: $darkColor;
   }
 
-
   .desktop-only {
     display: none;
   }
@@ -228,6 +227,13 @@ img {
     line-height: 20px;
 
   }
+
+  .col-xl-6 {
+
+    margin-bottom: 10px;
+
+  }
+
 
   .btn.category-selector {
     padding: 7px 23px;
@@ -435,6 +441,10 @@ img {
 }
 
 @include mediaSm {
+
+  .desktop-tablet-only {
+    display: none;
+  }
 
   p,
   li {

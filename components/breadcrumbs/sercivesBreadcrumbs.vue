@@ -5,7 +5,7 @@
         <nuxt-link to="/">Головна</nuxt-link>
       </li>
       <li class="breadcrumb-item">
-        <nuxt-link to="/Послуги">Послуги і ціни</nuxt-link>
+        <nuxt-link to="/Послугиіціни">Послуги і ціни</nuxt-link>
       </li>
       <li class="breadcrumb-item active" aria-current="page">{{ heading }}</li>
     </ol>
