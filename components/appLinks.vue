@@ -54,11 +54,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .menu {
-  margin-left: 0;
-  position: relative;
-  line-height: 90px;
+  margin-right: 0;
+  margin-top: 40px;
+  position: absolute;
 }
 
 .menu ul {
@@ -109,7 +108,7 @@ export default {
 
 @include mediaMenu {
   .menu {
-    margin-left: 0;
+    margin-top: 0;
     position: relative;
     line-height: 90px;
   }
