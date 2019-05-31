@@ -138,16 +138,12 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
 import worksGallery from "@/components/gallery/worksGallery.vue";
 import productCards from "@/components/shop/productCards";
 
 export default {
   components: {
-    ContactForm,
     worksGallery,
-    progressSection,
     productCards
   },
 

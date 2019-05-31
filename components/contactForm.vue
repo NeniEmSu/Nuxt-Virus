@@ -56,6 +56,7 @@
                   aria-describedby="carModel"
                   placeholder="Введіть модель авто"
                   v-model="carModel"
+                  required
                 >
               </div>
             </div>
@@ -85,10 +86,17 @@
                   placeholder="Телефон*"
                   v-mask="'+38(0##) ###-####'"
                   v-model="models.phoneNumber"
+                  required
                 >
               </div>
-
-              <button type="submit" name="submit" class="contact-btn">ВІДПРАВИТИ</button>
+              <b-button
+                type="submit"
+                name="submit"
+                class="contact-btn"
+                variant="success"
+                @click="makeToast('success')"
+              >ВІДПРАВИТИ</b-button>
+              <!-- <button   ></button> -->
             </div>
           </div>
           <p
@@ -120,6 +128,13 @@ export default {
   methods: {
     submit: function() {
       this.submitted = true;
+    },
+    makeToast(variant = null) {
+      this.$bvToast.toast("Message Was Sent Sucessfully", {
+        title: `Message ${variant || "default"}`,
+        variant: variant,
+        solid: true
+      });
     }
   }
 };

@@ -5,11 +5,13 @@ import servicesBeforeAndAfter from '~/components/services/servicesBeforeAndAfter
 import sercivesBreadcrumbs from '@/components/breadcrumbs/sercivesBreadcrumbs.vue'
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
+import toastTest from "@/components/toastTest.vue";
 
 
 Vue.component("ContactForm", ContactForm)
-Vue.component("progressSection", progressSection)
+Vue.component("toastTest", toastTest)
 Vue.component("sercivesBreadcrumbs", sercivesBreadcrumbs)
 Vue.component("servicesBeforeAndAfter", servicesBeforeAndAfter)
 Vue.component("serviceCategories", serviceCategories)
 Vue.component("servicesYoutubeVideo", servicesYoutubeVideo)
+Vue.component("progressSection", progressSection)
