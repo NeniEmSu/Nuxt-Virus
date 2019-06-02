@@ -159,7 +159,6 @@ export default {
   ],
 
   modules: [
-    'nuxt-purgecss',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
