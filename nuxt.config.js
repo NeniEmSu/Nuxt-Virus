@@ -3,7 +3,6 @@ require('dotenv').config()
 const glob = require('glob-all')
 const path = require('path')
 const collect = require('collect.js')
-import axios from 'axios'
 
 export default {
   mode: 'universal',
@@ -254,7 +253,6 @@ export default {
     path: '/sitemap.xml',
     hostname: process.env.URL,
     cacheTime: 1000 * 60 * 15,
-    generate: true, // Enable me when using nuxt generate
     async routes() {
       let {
         data
