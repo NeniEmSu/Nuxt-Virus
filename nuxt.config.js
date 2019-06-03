@@ -4,6 +4,8 @@ const glob = require('glob-all')
 const path = require('path')
 const collect = require('collect.js')
 
+const axios = require('axios')
+
 export default {
   mode: 'universal',
   server: {
