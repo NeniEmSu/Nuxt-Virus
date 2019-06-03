@@ -146,7 +146,8 @@ export default {
   },
 
   css: ['~/assets/scss/config.scss',
-  'highlight.js/styles/dracula.css'],
+    'highlight.js/styles/dracula.css'
+  ],
 
   plugins: [
     '~/plugins/filters.js',
@@ -201,69 +202,83 @@ export default {
 
   generate: {
     routes: async () => {
-      let { data } = await axios.post(process.env.POSTS_URL,
-      JSON.stringify({
-          filter: { published: true },
-          sort: {_created:-1},
+      let {
+        data
+      } = await axios.post(process.env.POSTS_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
           populate: 1
-        }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
-  
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
       const collection = collect(data.entries)
-  
+
       let tags = collection.map(post => post.tags)
-      .flatten()
-      .unique()
-      .map(tag => {
-        let payload = collection.filter(item => {
-          return collect(item.tags).contains(tag)
+        .flatten()
+        .unique()
+        .map(tag => {
+          let payload = collection.filter(item => {
+            return collect(item.tags).contains(tag)
+          }).all()
+
+          return {
+            route: `category/${tag}`,
+            payload: payload
+          }
         }).all()
-  
-        return {
-          route: `category/${tag}`,
-          payload: payload
-        }
-      }).all()
-  
+
       let posts = collection.map(post => {
         return {
           route: post.title_slug,
           payload: post
         }
       }).all()
-  
+
       return posts.concat(tags)
     }
   },
-  
+
   sitemap: {
     path: '/sitemap.xml',
     hostname: process.env.URL,
     cacheTime: 1000 * 60 * 15,
     generate: true, // Enable me when using nuxt generate
-    async routes () {
-      let { data } = await axios.post(process.env.POSTS_URL,
-      JSON.stringify({
-          filter: { published: true },
-          sort: {_created:-1},
+    async routes() {
+      let {
+        data
+      } = await axios.post(process.env.POSTS_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
           populate: 1
-        }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
-  
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
       const collection = collect(data.entries)
-  
+
       let tags = collection.map(post => post.tags)
-      .flatten()
-      .unique()
-      .map(tag => `category/${tag}`)
-      .all()
-  
+        .flatten()
+        .unique()
+        .map(tag => `category/${tag}`)
+        .all()
+
       let posts = collection.map(post => post.title_slug).all()
-  
+
       return posts.concat(tags)
     }
   },

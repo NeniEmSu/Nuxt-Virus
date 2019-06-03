@@ -1,5 +1,16 @@
 <template>
   <section class="container">
+    <nav class="container mb-n4 p-0 mobile-only" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <nuxt-link to="/">Головна</nuxt-link>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/блог">Блог</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
+      </ol>
+    </nav>
     <article class="my-5">
       <div class="text-grey-dark font-bold text-sm tracking-wide">
         <p>{{ post._created | toDate }}</p>
@@ -53,3 +64,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@include mediaMenu {
+  .mobile-only {
+    display: none;
+  }
+}
+</style>
+
