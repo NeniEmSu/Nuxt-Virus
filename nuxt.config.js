@@ -149,6 +149,7 @@ export default {
   'highlight.js/styles/dracula.css'],
 
   plugins: [
+    '~/plugins/Axios.js',
     '~/plugins/filters.js',
     {
       src: '~plugins/ga.js',
@@ -175,6 +176,7 @@ export default {
     'bootstrap-vue/nuxt',
     'vue-scrollto/nuxt',
     '@nuxtjs/robots',
+    '@nuxtjs/dotenv',
     [
       '@nuxtjs/google-analytics',
       {
@@ -193,7 +195,9 @@ export default {
     '@nuxtjs/sitemap'
   ],
 
-  axios: {},
+  axios: {
+    baseURL: process.env.apiUrl
+  },
 
   purgeCSS: {
 
