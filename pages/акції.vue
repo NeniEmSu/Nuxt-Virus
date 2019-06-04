@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="container text-center heading p-0 mt-n1">
-      <nav class="container mb-n4" aria-label="breadcrumb">
+  <section>
+    <div class="container text-center heading p-0 mt-xl-n1">
+      <nav class="container mb-n4 mobile-only" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
@@ -12,66 +12,47 @@
       <h1>Акції</h1>
     </div>
     <hr class="top-separator">
-
-    <div class="jumbotron displays">
-      <div class="container mx-auto contact">
-        <div class="card display block-one p-5">
-          <div class="row m-auto display-inner">
-            <div class="col-9 mx-auto">
-              <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
-              <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
-            </div>
-            <div class="col-3 m-auto text-center">
-              <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
-            </div>
+    <div class="card-container container" v-for="(promotion, key) in promotions" :key="key">
+      <div class="card mx-auto">
+        <img class="card-img img-fliud" :src="promotion.image.path" alt="Card image">
+        <div class="card-img-overlay pl-2 py-0 row">
+          <div class="col-8 m-auto py-0">
+            <div></div>
+            <a :href="'/'+promotion.title_slug">
+              <h2 class="card-title text-white">{{ promotion.title }}</h2>
+            </a>
+            <p class="card-text">{{ promotion.duration }}</p>
           </div>
-        </div>
-
-        <hr class="separator">
-
-        <div class="card display block-two p-5">
-          <div class="row m-auto display-inner">
-            <div class="col-3 m-auto text-center">
-              <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
-            </div>
-            <div class="col-9 m-auto text-right">
-              <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
-              <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
-            </div>
-          </div>
-        </div>
-
-        <hr class="separator">
-
-        <div class="card display block-three p-5">
-          <div class="row m-auto display-inner">
-            <div class="col-9 m-auto">
-              <h2>Скидка -50% на Антидощ при замовленні Полірування автомобіля</h2>
-              <p class="col-md-12 m-auto p-0">Акція діє з 01.04.19 до 01.05.19</p>
-            </div>
-            <div class="col-3 m-auto text-center">
-              <a href="#" class="btn mx-auto mb-3">ЗАМОВИТИ</a>
-            </div>
+          <div class="col-4 m-auto px-0 text-right">
+            <a class="btn mr-5" :href="'/'+promotion.title_slug">ЗАМОВИТИ</a>
           </div>
         </div>
       </div>
+      <hr class="separator">
     </div>
 
-    <ContactForm/>
-
+    <contactForm/>
     <progressSection/>
-  </div>
+  </section>
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
 export default {
-  components: {
-    ContactForm,
-    progressSection
-  },
+  async asyncData({ app }) {
+    const { data } = await app.$axios.post(
+      process.env.PROMOTIONS_URL,
+      JSON.stringify({
+        filter: { published: true },
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
 
+    return { promotions: data.entries };
+  },
   head() {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
@@ -90,7 +71,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 h1 {
   font-family: $mainFont;
   font-style: normal;
@@ -125,66 +105,47 @@ h1:after {
 }
 
 .top-separator {
-  margin: 0;
+  margin: 0 0 20px 0;
   border: 3px solid $darkColor;
 }
 
-.displays {
-  margin-top: 0;
-  padding-bottom: 40px;
-}
-
-.display p {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  margin-top: 20px;
-
-  color: $lightColor;
-}
-
-.block-one {
-  background-image: url("~assets/img/Блог1.jpg");
-}
-
-.block-two {
-  background-image: url("~assets/img/Блог1.jpg");
-}
-
-.block-three {
-  background-image: url("~assets/img/Блог1.jpg");
-}
-
-.display {
-  height: 300px;
-
+.card {
+  height: 100%;
+  min-height: 300px;
+  max-height: 420px;
   box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
   border-radius: 0;
   background-color: $darkColor;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+  margin-bottom: 20px;
+  border: none;
 
-h2 {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: normal;
-  letter-spacing: 0;
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: auto;
+    height: 320px;
+  }
 
-  color: $lightColor;
-}
+  h2 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
 
-.separator {
-  margin: 0;
-  opacity: 0.6;
-  border: 1px solid $darkColor;
-}
+    color: $lightColor;
+  }
 
-.display {
+  p {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #f2f2f2;
+  }
+
   .btn {
     background: $redColor;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
@@ -217,196 +178,145 @@ h2 {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
   }
+
+  a {
+    text-decoration: none;
+    color: $lightColor;
+
+    &:hover {
+      color: $headingsFontColor;
+    }
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.separator {
+  margin: 0 0 20px 0;
+  opacity: 0.6;
+  border: 1px solid $darkColor;
 }
 
 @include mediaMenu {
-  .display {
-    height: 100%;
-    min-height: 300px;
-    max-height: 400px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    background-color: $darkColor;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
-    p {
-      text-align: center;
-    }
-
-    h2 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 30px;
-      line-height: normal;
-      letter-spacing: 0;
-
-      color: $lightColor;
-    }
+  .mobile-only {
+    display: none;
   }
 
-  .display {
-    height: 100%;
-    min-height: 300px;
-    max-height: 400px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    background-color: $darkColor;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  h1 {
+    font-size: 30px;
+    line-height: 33px;
+  }
 
-    p {
-      text-align: center;
+  h1:before,
+  h1:after {
+    display: none;
+  }
+
+  .top-separator {
+    display: none;
+  }
+
+  .card {
+    height: 100%;
+    min-height: 180px;
+    max-height: 180px;
+    margin-bottom: 20px;
+    border: none;
+
+    img,
+    .card-img-overlay {
+      object-fit: cover;
+      object-position: center;
+      width: auto;
+      height: 180px;
     }
 
     h2 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 30px;
-      line-height: normal;
-      letter-spacing: 0;
+      font-size: 18px;
+      line-height: 20px;
 
-      color: $lightColor;
+      margin-bottom: 12px;
     }
+
+    a,
+    p {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    .btn {
+      font-size: 16px;
+      line-height: 18px;
+
+      padding: 6px 22px;
+    }
+  }
+  .separator {
+    display: none;
   }
 }
 
 @include mediaMd {
-  .display {
-    height: 100%;
-    min-height: 300px;
-    max-height: 400px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    background-color: $darkColor;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
-    p {
-      text-align: center;
-    }
-
-    h2 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 30px;
-      line-height: normal;
-      letter-spacing: 0;
-
-      color: $lightColor;
-    }
-  }
-
-  .display-inner {
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(5px);
-  }
-
-  .display {
-    height: 100%;
-    min-height: 300px;
-    max-height: 400px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    background-color: $darkColor;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  p {
-    text-align: center;
-
-    .block-one {
-      background-image: url("~assets/img/Блог1-small.jpg");
-      background-size: cover;
-      background-color: rgba(0, 0, 0, 0.64);
-      backdrop-filter: blur(5px);
-    }
-
-    .block-two {
-      background-image: url("~assets/img/Блог2-small.jpg");
-      background-size: cover;
-      background-color: rgba(0, 0, 0, 0.64);
-      backdrop-filter: blur(5px);
-    }
-
-    .block-three {
-      background-image: url("~assets/img/Блог1-small.jpg");
-      background-size: cover;
-      background-color: rgba(0, 0, 0, 0.64);
-      backdrop-filter: blur(5px);
-    }
-
-    h2 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 30px;
-      line-height: normal;
-      letter-spacing: 0;
-
-      color: $lightColor;
-    }
-
-    .display-inner {
-      background-color: rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(5px);
-    }
-  }
 }
 
-@include mediaXSm {
-  .display {
+@include mediaSm {
+  h1 {
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  h1:before,
+  h1:after {
+    display: none;
+  }
+
+  .top-separator {
+    display: none;
+  }
+
+  .card {
     height: 100%;
-    min-height: 300px;
-    max-height: 420px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    background-color: $darkColor;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    min-height: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+    border: none;
+
+    img,
+    .card-img-overlay {
+      object-fit: cover;
+      object-position: center;
+      width: auto;
+      height: 100px;
+    }
+
+    h2 {
+      font-size: 12px;
+      line-height: 14px;
+
+      margin-bottom: 6px;
+    }
+
+    a {
+      font-size: 10px;
+      line-height: 10px;
+    }
+
+    p {
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .btn {
+      font-size: 14px;
+      line-height: 16px;
+
+      padding: 6px 16px;
+    }
   }
-
-  .display p {
-    text-align: center;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: normal;
-    letter-spacing: 0;
-
-    color: $lightColor;
-  }
-
-  .display {
-    max-height: 90px;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 0;
-    background-color: $darkColor;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .display p {
-    text-align: center;
-  }
-
-  h2 {
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    align-items: center;
-
-    color: $lightColor;
+  .separator {
+    display: none;
   }
 }
 </style>
