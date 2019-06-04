@@ -151,7 +151,7 @@ export default {
     }
 
     &.nuxt-link-exact-active a {
-      border: none;
+      border: 0;
       box-sizing: border-box;
       border-radius: 0px;
       color: $redColor;

@@ -312,7 +312,7 @@ export default {};
     line-height: normal;
     text-align: center;
     color: $lightColor;
-    border: none;
+    border: 0;
     text-decoration: none;
     transition: ease-in-out 300ms;
     -webkit-transition: ease-in-out 300ms;

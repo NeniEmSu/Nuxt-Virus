@@ -124,7 +124,7 @@ h1:after {
   border-radius: 0;
   background-color: $darkColor;
   margin-bottom: 20px;
-  border: none;
+  border: 0;
 
   img {
     object-fit: cover;
@@ -235,7 +235,7 @@ li {
     min-height: 180px;
     max-height: 180px;
     margin-bottom: 20px;
-    border: none;
+    border: 0;
 
     img,
     .card-img-overlay {
@@ -296,7 +296,7 @@ li {
     min-height: 100px;
     max-height: 100px;
     margin-bottom: 10px;
-    border: none;
+    border: 0;
 
     img,
     .card-img-overlay {

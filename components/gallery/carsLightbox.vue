@@ -8,8 +8,8 @@
     <div class="row no-gutters">
       <div class="col-9 p-0">
         <picture>
-          <source :srcset="thumbnailWebP" type="image/webp">
-          <img :src="thumbnail" class="img-fluid" :alt="title">
+          <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp">
+          <img :src="require(`~/assets/img/${thumbnail + '.png'}`)" class="img-fluid" :alt="title">
         </picture>
       </div>
       <div class="col-3">
@@ -48,6 +48,7 @@
           </svg>
         </div>
         <div class="lightbox-image col-10 my-auto p-2" @click.stop>
+          
           <img class="img-fluid" :src="images[index]">
         </div>
         <div
@@ -77,10 +78,6 @@
 export default {
   props: {
     thumbnail: {
-      type: String,
-      required: true
-    },
-    thumbnailWebP: {
       type: String,
       required: true
     },
@@ -157,7 +154,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+
 .lightbox {
   top: 0;
   left: 0;
@@ -174,22 +172,6 @@ export default {
   max-height: calc(100vh - 90px);
   margin: auto;
 }
-</style>
-
-<style lang="scss" scoped>
-.cars-card {
-  margin-bottom: 40px;
-
-  h2 {
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 39px;
-    letter-spacing: -0.05em;
-    color: $headingsFontColor;
-    margin: 40px 0;
-  }
 
   .work-card {
     background: #000000;
@@ -258,33 +240,17 @@ export default {
       }
     }
   }
-}
 
-@include mediaMenu {
-  .cars-card {
-    h2 {
-      font-family: "Roboto Condensed", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 62px;
-      line-height: 39px;
-      letter-spacing: -0.05em;
-      color: $headingsFontColor;
-      margin: 40px 0;
-      text-align: center;
-    }
-  }
-}
 
 @include mediaSm {
-  .cars-card {
-    margin-bottom: 40px;
-
-    h2 {
-      font-size: 80px;
-      line-height: 39px;
-    }
+  
     .work-card {
+img {
+      object-fit: cover;
+      object-position: left;
+      margin-left: -1px;
+    }
+
       h4 {
         font-size: 14px;
         line-height: 15px;
@@ -295,15 +261,16 @@ export default {
       }
     }
   }
-}
+
 
 @include mediaXSm {
-  .cars-card {
-    h2 {
-      font-size: 50px;
-      line-height: 39px;
-    }
+  
     .work-card {
+      img {
+      object-fit: cover;
+      object-position: left;
+      margin-left: -1px;
+    }
       h4 {
         font-size: 12px;
         line-height: 13px;
@@ -314,15 +281,16 @@ export default {
       }
     }
   }
-}
+
 
 @include mediaXXSm {
-  .cars-card {
-    h2 {
-      font-size: 48px;
-      line-height: 39px;
-    }
+  
     .work-card {
+      img {
+      object-fit: cover;
+      object-position: left;
+      margin-left: -2px;
+    }
       h4 {
         font-size: 8px;
         line-height: 9px;
@@ -333,5 +301,5 @@ export default {
       }
     }
   }
-}
+
 </style>

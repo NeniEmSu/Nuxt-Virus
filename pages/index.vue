@@ -271,30 +271,11 @@ export default {
   }
 }
 
-.jumbotron.recomendations {
+.recomendations {
   background: #f2f2f2;
   padding: 40px 0;
   margin: 0;
   margin-top: 40px;
-
-  a .btn {
-    text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
-
-    &:hover {
-      color: $redColor;
-      background: $lightColor;
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-    }
-  }
 
   h2 {
     color: $headingsFontColor;
@@ -305,205 +286,6 @@ export default {
     line-height: 47px;
     letter-spacing: -0.05em;
     margin-bottom: 40px;
-  }
-
-  .card-deck {
-    // Currently disabled but this is used for there styling
-    .owl-carousel .owl-nav button.owl-next,
-    .owl-carousel .owl-nav button.owl-prev {
-      background: 0 0;
-      color: $redColor;
-      border: none;
-      padding: 0;
-      font: inherit;
-      font-size: 42px;
-      cursor: pointer;
-      margin-top: -40px;
-    }
-
-    .owl-theme .owl-nav.disabled + .owl-dots {
-      margin-top: -5px;
-      z-index: 3;
-      outline: none;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 343px;
-      min-width: 285px;
-      height: 343px;
-      background: $lightColor;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      border-radius: 20px;
-      margin-bottom: 40px;
-      margin-left: auto;
-      margin-right: auto;
-
-      img {
-        align-self: center;
-
-        &.small-img {
-          width: 100%;
-          height: auto;
-          max-width: 343px;
-          min-height: 200px;
-          object-fit: scale-down;
-        }
-      }
-
-      &.one,
-      &.four,
-      &.seven {
-        img {
-          width: 209px;
-          height: auto;
-        }
-      }
-
-      &.two,
-      &.five,
-      &.eight {
-        img {
-          margin: 8.5px 0;
-          width: 182px;
-          height: auto;
-        }
-      }
-
-      &.three,
-      &.six,
-      &.nine {
-        img {
-        }
-      }
-
-      hr {
-        width: 270px;
-        align-self: center;
-        margin: 0;
-        border: 1px solid #c4c4c4;
-      }
-
-      .card-title {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: normal;
-        color: $darkColor;
-      }
-
-      small {
-        s {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 12px;
-          line-height: normal;
-          text-align: center;
-          text-decoration-line: line-through;
-          color: $redColor;
-        }
-      }
-
-      .card-text {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 28px;
-        letter-spacing: -0.05em;
-        color: $headingsFontColor;
-
-        span {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 12px;
-          line-height: 10px;
-          text-align: center;
-        }
-      }
-
-      .discount {
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: normal;
-        color: #239a0f;
-        margin-right: 22px;
-      }
-
-      a .btn {
-        padding: 10px 30px;
-        background: $redColor;
-        border-radius: 50px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: normal;
-        text-align: center;
-        color: $lightColor;
-        text-decoration: none;
-        transition: ease-in-out 300ms;
-        -webkit-transition: ease-in-out 300ms;
-        -moz-transition: ease-in-out 300ms;
-        -ms-transition: ease-in-out 300ms;
-        -o-transition: ease-in-out 300ms;
-
-        &:hover {
-          color: $redColor;
-          background: $lightColor;
-          transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          -o-transform: scale(1.1);
-        }
-      }
-    }
-
-    .card__hover {
-      transition: transform 500ms;
-      -webkit-transition: transform 500ms;
-      -moz-transition: transform 500ms;
-      -ms-transition: transform 500ms;
-      -o-transition: transform 500ms;
-
-      &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.15);
-        content: "";
-        opacity: 0;
-        z-index: -1;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-      }
-
-      &:hover,
-      &:focus {
-        transform: scale3d(1.01, 1.01, 1);
-        -webkit-transform: scale3d(1.01, 1.01, 1);
-        -moz-transform: scale3d(1.01, 1.01, 1);
-        -ms-transform: scale3d(1.01, 1.01, 1);
-        -o-transform: scale3d(1.01, 1.01, 1);
-
-        &::after {
-          opacity: 1;
-        }
-      }
-    }
   }
 
   .btn {
@@ -518,7 +300,7 @@ export default {
     line-height: normal;
     text-align: center;
     color: $lightColor;
-    border: none;
+    border: 0;
     text-decoration: none;
     transition: ease-in-out 300ms;
     -webkit-transition: ease-in-out 300ms;
@@ -618,20 +400,6 @@ export default {
   }
 }
 
-@include mediaLg2 {
-  .jumbotron {
-    margin-right: 0px;
-
-    &.recomendations {
-      padding-left: 0px;
-      padding-right: 2rem;
-
-      .item {
-        margin-left: 0px;
-      }
-    }
-  }
-}
 
 @include mediaLg {
   .top-grid {
@@ -656,18 +424,9 @@ export default {
       margin-top: -193px;
     }
   }
-  .jumbotron {
-    margin-right: 0px;
-
-    &.recomendations {
-      padding-left: 0px;
-      padding-right: 0px;
-      .item {
-        margin-left: -12px;
-      }
-    }
+  
   }
-}
+
 
 @include mediaMd {
   .top-grid {
@@ -697,17 +456,11 @@ export default {
 @include mediaSm {
   .top-grid {
     h1 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 58.59%;
-
-      letter-spacing: -0.05em;
+      font-size: 26px;
+       line-height: 70%;
     }
 
     h2 {
-      font-style: normal;
-      font-weight: 900;
       font-size: 15px;
       line-height: 16px;
     }
@@ -736,8 +489,15 @@ export default {
   }
 
   .recomendations {
-    padding-left: 20px;
-    padding-right: 0px;
+    padding: 10px 0 20px;
+    h2 {
+      
+      font-size: 24px;
+      line-height: 70%;
+
+      margin: 20px 0;
+      text-align: left;
+    }
 
     .item {
       margin-left: 18px;
@@ -745,17 +505,13 @@ export default {
   }
 
   .cars-card {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     h2 {
-      font-family: $secondaryFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 80px;
-      line-height: 39px;
-      letter-spacing: -0.05em;
-      color: $headingsFontColor;
-      margin: 40px 0;
+      font-size: 24px;
+      line-height: 70%;
+      margin: 20px 0;
+      text-align: left;
     }
   }
 }
@@ -805,8 +561,6 @@ export default {
 @include mediaXSm {
   .top-grid {
     h2 {
-      font-style: normal;
-      font-weight: 900;
       font-size: 12px;
       line-height: 14px;
 
@@ -838,14 +592,11 @@ export default {
 
   .recomendations {
     h2 {
-      color: $headingsFontColor;
-      font-family: "Roboto Condensed", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 50px;
-      line-height: 47px;
-      letter-spacing: -0.05em;
-      margin-bottom: 40px;
+      font-size: 20px;
+      line-height: 24px;
+
+      margin-bottom: 20px;
+      text-align: left;
     }
   }
 
@@ -860,14 +611,12 @@ export default {
 
   .cars-card {
     h2 {
-      font-family: "Roboto Condensed", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 50px;
-      line-height: 39px;
-      letter-spacing: -0.05em;
-      color: $headingsFontColor;
-      margin: 40px 0;
+      
+      font-size: 20px;
+      line-height: 24px;
+
+      margin: 20px 0;
+      text-align: left;
     }
   }
 }
@@ -916,14 +665,12 @@ export default {
     text-align: center;
 
     h2 {
-      font-family: "Roboto Condensed", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 48px;
-      line-height: 39px;
-      letter-spacing: -0.05em;
-      color: $headingsFontColor;
-      margin: 40px 0;
+      
+      font-size: 20px;
+      line-height: 24px;
+      
+      margin: 20px 0;
+      text-align: left;
     }
   }
 
@@ -933,92 +680,15 @@ export default {
     padding-right: 20px;
 
     h2 {
-      color: $headingsFontColor;
-      font-family: "Roboto Condensed", sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 42px;
-      line-height: 47px;
-      letter-spacing: -0.05em;
-      margin-bottom: 40px;
+      
+      font-size: 20px;
+      line-height: 24px;
+     
+      margin-bottom: 20px;
+      text-align: left;
     }
 
-    .item {
-      margin-left: 5px;
-    }
-
-    .card-deck .card {
-      width: 100%;
-      max-width: 240px;
-      min-width: 240px;
-      height: 343px;
-      background: $lightColor;
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-      border-radius: 20px;
-      margin-bottom: 40px;
-      justify-items: center;
-      margin-left: auto;
-      margin-right: auto;
-
-      hr {
-        width: 80%;
-        align-self: center;
-        margin: 0;
-        border: 1px solid $borderColor;
-      }
-
-      hr {
-        width: 80%;
-      }
-
-      .card-text {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 28px;
-        letter-spacing: -0.05em;
-        color: $headingsFontColor;
-
-        span {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 12px;
-          line-height: 10px;
-          text-align: center;
-        }
-      }
-
-      .btn {
-        padding: 10px 28px;
-        background: $redColor;
-        border-radius: 50px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: normal;
-        text-align: center;
-        color: $lightColor;
-        text-decoration: none;
-        transition: ease-in-out 300ms;
-        -webkit-transition: ease-in-out 300ms;
-        -moz-transition: ease-in-out 300ms;
-        -ms-transition: ease-in-out 300ms;
-        -o-transition: ease-in-out 300ms;
-
-        &:hover {
-          color: $redColor;
-          background: $lightColor;
-          transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          -o-transform: scale(1.1);
-        }
-      }
-    }
+    
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="cart-icon col-md-1 text-center mr-n3">
+    <div class="cart-icon">
       <b-button variant="link" @click="modalShow = !modalShow">
         <img id="cart" src="~/assets/img/cart.png" alt="Cart icon">
       </b-button>

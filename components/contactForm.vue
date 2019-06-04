@@ -233,7 +233,7 @@ export default {
     line-height: normal;
     text-align: center;
     color: $lightColor;
-    border: none;
+    border: 0;
     transition: ease-in-out 300ms;
     -webkit-transition: ease-in-out 300ms;
     -moz-transition: ease-in-out 300ms;
@@ -330,7 +330,7 @@ export default {
       line-height: normal;
       text-align: center;
       color: $lightColor;
-      border: none;
+      border: 0;
       margin-top: 40px;
     }
   }
@@ -419,7 +419,7 @@ export default {
       line-height: normal;
       text-align: center;
       color: $lightColor;
-      border: none;
+      border: 0;
       margin-top: 40px;
     }
   }
@@ -433,7 +433,7 @@ export default {
       box-shadow: none;
       padding: 0;
       background-color: inherit;
-      border: none;
+      border: 0;
       border-radius: 0;
 
       form {
@@ -464,7 +464,7 @@ export default {
     select {
       height: 40px;
       margin-top: 10px;
-      border: none;
+      border: 0;
       box-sizing: border-box;
       border-radius: 50px;
       font-family: $mainFont;
@@ -511,7 +511,7 @@ export default {
       line-height: normal;
       text-align: center;
       color: $lightColor;
-      border: none;
+      border: 0;
       margin-top: 40px;
     }
   }
@@ -524,7 +524,7 @@ export default {
       box-shadow: none;
       padding: 0;
       background-color: inherit;
-      border: none;
+      border: 0;
       border-radius: 0;
 
       form {
@@ -556,7 +556,7 @@ export default {
     select {
       height: 40px;
       margin-top: 10px;
-      border: none;
+      border: 0;
       box-sizing: border-box;
       border-radius: 50px;
       font-family: $mainFont;
@@ -603,7 +603,7 @@ export default {
       line-height: normal;
       text-align: center;
       color: $lightColor;
-      border: none;
+      border: 0;
       margin-top: 40px;
     }
   }
@@ -617,7 +617,7 @@ export default {
       box-shadow: none;
       padding: 0;
       background-color: inherit;
-      border: none;
+      border: 0;
       border-radius: 0;
       form {
         padding-top: 5px;

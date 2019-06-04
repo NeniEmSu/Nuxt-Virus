@@ -104,7 +104,7 @@
             </div>
           </div>
 
-          <div class="cart-icon col-md-1 text-center mr-n3">
+          <div class="cart-icon col-md-1 text-center ">
             <div class="position-fixed col-0">
               <modalComponent :cart="cart"/>
             </div>
@@ -567,7 +567,7 @@ export default {
         line-height: 20px;
         text-align: center;
         color: $lightColor;
-        border: none;
+        border: 0;
         text-decoration: none;
         transition: ease-in-out 300ms;
         -webkit-transition: ease-in-out 300ms;
