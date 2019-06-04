@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav class="container mb-n4 mobile-only" aria-label="breadcrumb">
+      <nav class="container mb-n4 desktop-only" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
@@ -16,16 +16,21 @@
       <div class="card mx-auto">
         <img class="card-img img-fliud" :src="post.image.path" alt="Card image">
         <div class="card-img-overlay pl-2 py-0 row">
-          <div class="col-8 m-auto py-0">
+          <div class="col-8 m-auto py-0 post-detail">
             <div>
-              <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag">{{ tag }}&nbsp;|&nbsp;</a>
+              <a
+                v-for="tag in post.tags"
+                :key="tag"
+                :href="'/category/'+tag"
+                class="desktop-tablet-only"
+              >{{ tag }}&nbsp;|&nbsp;</a>
             </div>
             <a :href="'/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>
             </a>
             <p class="card-text">Date Created {{ post._created | toDate }}</p>
           </div>
-          <div class="col-4 m-auto px-0 text-left mr-0">
+          <div class="col-4 m-auto px-0 text-right">
             <a class="btn" :href="'/'+post.title_slug">ЧИТАТИ</a>
           </div>
         </div>
@@ -128,6 +133,10 @@ h1:after {
     height: 320px;
   }
 
+  .post-detail {
+    padding-left: 75px;
+  }
+
   h2 {
     font-family: $mainFont;
     font-style: normal;
@@ -162,6 +171,7 @@ h1:after {
 
     color: $lightColor;
     padding: 12px 50px;
+    margin-right: 75px;
 
     transition: ease-in-out 300ms;
     -webkit-transition: ease-in-out 300ms;
@@ -202,7 +212,7 @@ li {
 }
 
 @include mediaMenu {
-  .mobile-only {
+  .desktop-only {
     display: none;
   }
 
@@ -264,6 +274,9 @@ li {
 }
 
 @include mediaSm {
+  .desktop-tablet-only {
+    display: none;
+  }
   h1 {
     font-size: 20px;
     line-height: 23px;
@@ -293,6 +306,10 @@ li {
       height: 100px;
     }
 
+    .post-detail {
+      padding-left: 20px;
+    }
+
     h2 {
       font-size: 12px;
       line-height: 14px;
@@ -315,6 +332,7 @@ li {
       line-height: 16px;
 
       padding: 6px 16px;
+      margin-right: 20px;
     }
   }
   .separator {

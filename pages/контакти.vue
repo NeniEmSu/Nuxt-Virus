@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="contact-heading-image">
+    <div class="contact-heading-image desktop-only">
       <nav class="container mt-2" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -11,35 +11,49 @@
       </nav>
     </div>
 
-    <div class="jumbotron" style="margin-top : 0;">
+    <div class="jumbotron">
       <div class="container text-center process">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-4 mx-auto">
             <h4>Графік роботи</h4>
-            <img src="~/assets/img/contactPageClock.png" alt="image of a clock">
+            <img src="~/assets/img/contactPageClock.png" class="img-fluid" alt="image of a clock">
             <p>пн-пт 9:00 до 19:00 сб-нд Вихідний</p>
           </div>
-          <div class="col-md-4">
-            <h4>Телефон</h4>
-            <a href="tel:+380673334040">
-              <img src="~/assets/img/contactPagePhone.png" alt=" image of a phone icon">
-            </a>
-            <p>+38 (067) 333-40-40</p>
-          </div>
-          <div class="col-md-4">
+
+          <div class="col-4 mx-auto">
             <h4>Пошта</h4>
             <a href="mailto:deteylingvirus@gmail.com">
-              <img src="~/assets/img/contactPageMail.png" alt="image of a mail icon">
+              <img
+                src="~/assets/img/contactPageMail.png"
+                class="img-fluid"
+                alt="image of a mail icon"
+              >
             </a>
-            <p>deteylingvirus@gmail.com</p>
+            <p class="text-center">deteylingvirus@gmail.com</p>
+          </div>
+
+          <div class="col-4 mx-auto">
+            <h4>Телефон</h4>
+            <a href="tel:+380673334040">
+              <img
+                src="~/assets/img/contactPagePhone.png"
+                class="img-fluid"
+                alt=" image of a phone icon"
+              >
+            </a>
+            <p>+38 (067) 333-40-40</p>
           </div>
         </div>
       </div>
 
       <div class="container text-center">
-        <hr id="map-top" class="map-separator offset">
+        <hr id="map-top" class="map-separator offset desktop-only">
 
-        <img src="~/assets/img/icons8-marker-100.png" alt="Location marker icon">
+        <img
+          src="~/assets/img/icons8-marker-100.png"
+          class="desktop-only"
+          alt="Location marker icon"
+        >
 
         <GmapMap id="map" :center="center" :zoom="16" map-type-id="terrain">
           <GmapMarker
@@ -108,8 +122,6 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-
-
 .contact-heading-image {
   margin-top: -10.5px;
   background: #000000;
@@ -159,12 +171,69 @@ export default {
     height: 450px;
     width: 100%;
   }
+
+  .desktop-only {
+    display: none;
+  }
 }
 
 @include mediaSm {
+  .process {
+    padding-top: 20px;
+    h4 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 12px;
+
+      align-items: center;
+
+      color: $darkColor;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+
+    p {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+
+      color: #3e3e3e;
+
+      text-align: center;
+    }
+  }
+
+  .contact-page-socials {
+    padding-bottom: 10px;
+
+    h4 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+
+      align-items: center;
+      text-align: center;
+
+      color: $darkColor;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
   #map {
     margin: 20px auto;
-    height: 380px;
+    height: 250px;
     width: 100%;
   }
 }

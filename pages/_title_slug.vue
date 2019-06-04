@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <nav class="container mb-n4 p-0 mobile-only" aria-label="breadcrumb">
+    <nav class="container mb-n4 p-0 desktop-only" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">Головна</nuxt-link>
@@ -67,7 +67,7 @@ export default {
 
 <style lang="scss" scoped>
 @include mediaMenu {
-  .mobile-only {
+  .desktop-only {
     display: none;
   }
 }

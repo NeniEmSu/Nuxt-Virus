@@ -92,8 +92,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .aboutUs-heading-image {
   margin-top: -10.5px;
   background: $lightColor;
@@ -103,6 +101,8 @@ export default {
   background-size: contain;
   width: 100%;
   height: 30vh;
+
+  border-bottom: 3px solid #000000;
 }
 
 video {

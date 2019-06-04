@@ -425,6 +425,7 @@ export default {
   },
   asyncData() {
     return {
+      service: "00",
       image: "services-car-goup-all",
       description:
         " white mercedes , jeep grand cherokee srt white & Black Range Rover Piano",
@@ -1215,5 +1216,8 @@ form.choose-brand p {
       }
     }
   }
+}
+
+@include mediaSm {
 }
 </style>

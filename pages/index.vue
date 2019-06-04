@@ -117,8 +117,11 @@
       <div class="container text-center">
         <h2 class="text-left">Рекомендуємо</h2>
 
-        <div class="sales-cards col-md text-center mx-auto p-0">
-          <productCards/>
+        <div class="row">
+          <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>
         </div>
 
         <a href="магазин" class="btn">Показати більше</a>

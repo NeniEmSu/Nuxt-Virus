@@ -12,21 +12,19 @@
       <h1>Акції</h1>
     </div>
     <hr class="top-separator">
-    <div class="card-container container" v-for="(post, key) in posts" :key="key">
+    <div class="card-container container" v-for="(promotion, key) in promotions" :key="key">
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="post.image.path" alt="Card image">
+        <img class="card-img img-fliud" :src="promotion.image.path" alt="Card image">
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0">
-            <div>
-              <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag">{{ tag }}&nbsp;|&nbsp;</a>
-            </div>
-            <a :href="'/'+post.title_slug">
-              <h2 class="card-title text-white">{{ post.title }}</h2>
+            <div></div>
+            <a :href="'/'+promotion.title_slug">
+              <h2 class="card-title text-white">{{ promotion.title }}</h2>
             </a>
-            <p class="card-text">Date Created {{ post._created | toDate }}</p>
+            <p class="card-text">{{ promotion.duration }}</p>
           </div>
-          <div class="col-4 m-auto px-0 text-left mr-0">
-            <a class="btn" :href="'/'+post.title_slug">ЧИТАТИ</a>
+          <div class="col-4 m-auto px-0 text-right">
+            <a class="btn mr-5" :href="'/'+promotion.title_slug">ЗАМОВИТИ</a>
           </div>
         </div>
       </div>
@@ -53,7 +51,7 @@ export default {
       }
     );
 
-    return { posts: data.entries };
+    return { promotions: data.entries };
   },
   head() {
     return {

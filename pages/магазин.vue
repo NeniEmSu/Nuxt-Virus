@@ -96,23 +96,17 @@
 
           <div class="sales-cards col-md-9 text-center mx-auto p-0">
             <productCards/>
+            <div class="row">
+              <card class="mb-5 mx-auto"/>
+              <card class="mb-5 mx-auto"/>
+              <card class="mb-5 mx-auto"/>
+              <card class="mb-5 mx-auto"/>
+            </div>
           </div>
 
           <div class="cart-icon col-md-1 text-center mr-n3">
             <div class="position-fixed col-0">
-              <a href="#корзина">
-                <img
-                  id="cart"
-                  src="~/assets/img/cart.png"
-                  alt="Cart icon"
-                  class="cart.icon text-center m-auto ml-n5"
-                  data-toggle="modal"
-                  data-target="#myModal"
-                >
-              </a>
-              <div id="show-total" class="text-center justify-center">
-                <span id="item-count" class="text-center m-auto p-0">{{ cart }}</span>
-              </div>
+              <modalComponent :cart="cart"/>
             </div>
           </div>
         </div>
@@ -303,39 +297,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
-
-.cart-icon {
-  #show-total {
-    width: 35px;
-    height: 35px;
-
-    background-color: $redColor;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-
-    margin: 17px auto 0;
-
-    justify-content: center;
-    margin: auto;
-
-    span {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 35px;
-
-      color: $lightColor;
-      text-align: center;
-      margin: auto;
-    }
-  }
-}
 
 .shop-heading-image {
   margin-top: -10px;
@@ -413,25 +375,25 @@ export default {
     outline: none;
   }
 
-  .accordion:after {
-    color: $headingsFontColor;
-    float: right;
-    font-size: 14px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0d7";
-    margin-right: 10px;
-  }
+  // .accordion:after {
+  //   color: $headingsFontColor;
+  //   float: right;
+  //   font-size: 14px;
+  //   font-family: "Font Awesome 5 Free";
+  //   font-weight: 900;
+  //   content: "\f0d7";
+  //   margin-right: 10px;
+  // }
 
-  .accordion.open:after {
-    color: $headingsFontColor;
-    float: right;
-    font-size: 14px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0d8";
-    margin-right: 10px;
-  }
+  // .accordion.open:after {
+  //   color: $headingsFontColor;
+  //   float: right;
+  //   font-size: 14px;
+  //   font-family: "Font Awesome 5 Free";
+  //   font-weight: 900;
+  //   content: "\f0d8";
+  //   margin-right: 10px;
+  // }
 
   .panel {
     font-family: $mainFont;
