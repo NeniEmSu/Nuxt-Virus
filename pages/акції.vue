@@ -16,15 +16,15 @@
       <div class="card mx-auto">
         <img class="card-img img-fliud" :src="promotion.image.path" alt="Card image">
         <div class="card-img-overlay pl-2 py-0 row">
-          <div class="col-8 m-auto py-0">
-            <div></div>
-            <a :href="'/'+promotion.title_slug">
+          <div class="col-8 m-auto py-0 post-detail">
+            
+            <a href="#">
               <h2 class="card-title text-white">{{ promotion.title }}</h2>
             </a>
             <p class="card-text">{{ promotion.duration }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <a class="btn mr-5" :href="'/'+promotion.title_slug">ЗАМОВИТИ</a>
+            <a class="btn" href="#">ЗАМОВИТИ</a>
           </div>
         </div>
       </div>
@@ -126,6 +126,10 @@ h1:after {
     height: 320px;
   }
 
+  .post-detail {
+    padding-left: 75px;
+  }
+
   h2 {
     font-family: $mainFont;
     font-style: normal;
@@ -160,6 +164,7 @@ h1:after {
 
     color: $lightColor;
     padding: 12px 50px;
+    margin-right: 75px;
 
     transition: ease-in-out 300ms;
     -webkit-transition: ease-in-out 300ms;
@@ -233,6 +238,10 @@ li {
       height: 180px;
     }
 
+    .post-detail {
+      padding-left: 20px;
+    }
+
     h2 {
       font-size: 18px;
       line-height: 20px;
@@ -250,15 +259,13 @@ li {
       font-size: 16px;
       line-height: 18px;
 
-      padding: 6px 22px;
+      padding: 6px 20px;
+      margin-right: 20px;
     }
   }
   .separator {
     display: none;
   }
-}
-
-@include mediaMd {
 }
 
 @include mediaSm {
@@ -291,6 +298,10 @@ li {
       height: 100px;
     }
 
+    .post-detail {
+      padding-left: 20px;
+    }
+
     h2 {
       font-size: 12px;
       line-height: 14px;
@@ -309,10 +320,11 @@ li {
     }
 
     .btn {
-      font-size: 14px;
-      line-height: 16px;
+      font-size: 12px;
+      line-height: 14px;
 
       padding: 6px 16px;
+      margin-right: 20px;
     }
   }
   .separator {
