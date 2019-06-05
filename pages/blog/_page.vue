@@ -96,7 +96,7 @@ export default {
   },
   head() {
     return {
-      title: `Nuxt Cockpit Static Blog - Page ${this.page}`
+      title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`
     };
   }
 };

@@ -54,12 +54,12 @@ export default {
   },
   head() {
     return {
-      title: `Posts tagged with ${this.category}`,
+      title: `Повідомлення з тегами ${this.category}`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `All blog posts categorised as ${this.category}.`
+          content: `Усі публікації в блогах класифікуються як ${this.category}.`
         }
       ]
     };
