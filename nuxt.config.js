@@ -3,6 +3,7 @@ require('dotenv').config()
 const glob = require('glob-all')
 const path = require('path')
 const collect = require('collect.js')
+const perPage = Number(process.env.PER_PAGE)
 
 const axios = require('axios')
 
@@ -213,38 +214,31 @@ export default {
 
   generate: {
     routes: async () => {
-      let {
-        data
-      } = await axios.post(process.env.POSTS_URL,
-        JSON.stringify({
-          filter: {
-            published: true
-          },
-          sort: {
-            _created: -1
-          },
+      let { data } = await axios.post(process.env.POSTS_URL,
+      JSON.stringify({
+          filter: { published: true },
+          sort: {_created:-1},
           populate: 1
-        }), {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
+        }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      })
 
       const collection = collect(data.entries)
 
       let tags = collection.map(post => post.tags)
-        .flatten()
-        .unique()
-        .map(tag => {
-          let payload = collection.filter(item => {
-            return collect(item.tags).contains(tag)
-          }).all()
-
-          return {
-            route: `category/${tag}`,
-            payload: payload
-          }
+      .flatten()
+      .unique()
+      .map(tag => {
+        let payload = collection.filter(item => {
+          return collect(item.tags).contains(tag)
         }).all()
+
+        return {
+          route: `category/${tag}`,
+          payload: payload
+        }
+      }).all()
 
       let posts = collection.map(post => {
         return {
@@ -253,42 +247,66 @@ export default {
         }
       }).all()
 
+      if(perPage < data.total) {
+        let pages = collection
+        .take(perPage-data.total)
+        .chunk(perPage)
+        .map((items, key) => {
+          let currentPage = key + 2
+
+          return {
+            route: `blog/${currentPage}`,
+            payload: {
+              posts: items.all(),
+              hasNext: data.total > currentPage*perPage
+            }
+          }
+        }).all()
+
+        return posts.concat(tags,pages)
+      }
+
       return posts.concat(tags)
     }
   },
+
 
   sitemap: {
     path: '/sitemap.xml',
     hostname: process.env.URL,
     cacheTime: 1000 * 60 * 15,
-    async routes() {
-      let {
-        data
-      } = await axios.post(process.env.POSTS_URL,
-        JSON.stringify({
-          filter: {
-            published: true
-          },
-          sort: {
-            _created: -1
-          },
+    
+    async routes () {
+      let { data } = await axios.post(process.env.POSTS_URL,
+      JSON.stringify({
+          filter: { published: true },
+          sort: {_created:-1},
           populate: 1
-        }), {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-
+        }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      })
+  
       const collection = collect(data.entries)
-
+  
       let tags = collection.map(post => post.tags)
-        .flatten()
-        .unique()
-        .map(tag => `category/${tag}`)
-        .all()
-
+      .flatten()
+      .unique()
+      .map(tag => `category/${tag}`)
+      .all()
+  
       let posts = collection.map(post => post.title_slug).all()
-
+  
+      if(perPage < data.total) {
+        let pages = collection
+        .take(perPage-data.total)
+        .chunk(perPage)
+        .map((items, key) => `blog/${key+2}`)
+        .all()
+  
+        return posts.concat(tags,pages)
+      }
+  
       return posts.concat(tags)
     }
   },
