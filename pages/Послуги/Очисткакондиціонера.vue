@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
-        <div class="video-text row">
-          <div class="col-xl-6">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
+          <div class="col-xl-6 text-center">
             <img src="~assets/img/Очисткакондиціонера.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p>
               {{ question }}{{ firstParagraph }}
               <br>
@@ -41,25 +42,7 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">1200 грн</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -99,6 +82,9 @@ export default {
     return {
       service: "20",
       heading: "ОЧИСТКА КОНДИЦІОНЕРА",
+      category1: "1200 грн",
+      category2: "1200 грн",
+      category3: "1200 грн",
       question:
         " Навіщо взагалі потрібна антибактеріальна чистка кондиціонера?",
       firstParagraph:
@@ -133,7 +119,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 @import "~assets/scss/servicesPages.scss";
 </style>

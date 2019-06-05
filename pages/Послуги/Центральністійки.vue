@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
-        <div class="video-text row">
-          <div class="col-xl-6">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
+          <div class="col-xl-6 text-center">
             <img src="~/assets/img/Центральністійки.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p class>
               {{ question }}
               <br>
@@ -25,34 +26,18 @@
         <h2 class="red">{{ timeTaken }}</h2>
 
         <div class="row mx-auto">
-          <div class="col-md-6 mx-auto p-0 before">
+          <div class="col-6 mx-auto p-0 before img-fluid">
             <font class="before-image-text">До</font>
           </div>
 
-          <div class="col-md-6 mx-auto p-0 after">
+          <div class="col-6 mx-auto p-0 after img-fluid">
             <font class="after-image-text">Після</font>
           </div>
         </div>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">800 грн</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">900 грн</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">1000 грн</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <servicesYoutubeVideo :videoUrl="videoUrl"/>
+
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -92,6 +77,10 @@ export default {
     return {
       service: "3",
       heading: "ПОЛІРУВАННЯ центральних стійок",
+      category1: "800 грн",
+      category2: "900 грн",
+      category3: "1000 грн",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       question: "Для чого полірувати стійки?",
       firstParagraph:
         "Згодом пластик затирається та мутніє. Крім того, це красиво. Коли весь автомобіль блискучий, центральні стійки виглядають несолідно, якщо їх упустити. Втім, навпаки теж не дуже)) Тому полірування їх важливо робити в комплексі з поліруванням автомобіля.",
@@ -129,39 +118,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 @import "~assets/scss/servicesPages.scss";
 
 .before {
   background-image: url("~assets/img/beforeAfter4_001.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: black;
-  min-height: 286px;
-  max-height: 286px;
-  width: 100%;
-}
-.before-image-text {
-  position: relative;
-  top: 40%;
-  left: 40%;
-  color: set-text-color($backgroudColor);
 }
 
 .after {
   background-image: url("~assets/img/beforeAfter4_002.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 286px;
-  max-height: 286px;
-  width: 100%;
-}
-.after-image-text {
-  position: relative;
-  top: 40%;
-  left: 40%;
-
-  color: set-text-color($backgroudColor);
 }
 </style>

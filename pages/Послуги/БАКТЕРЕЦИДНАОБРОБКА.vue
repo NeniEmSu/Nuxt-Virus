@@ -5,7 +5,7 @@
       <div class="container text-left">
         <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
         <div class="row">
-          <div class="col-xl-6">
+          <div class="col-xl-6 text-center">
             <img src="~assets/img/БАКТЕРЕЦИДНАОБРОБКА.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">

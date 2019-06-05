@@ -203,6 +203,11 @@ img {
 
 @include mediaMenu {
 
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h1.info-pages {
 
     font-size: 30px;
@@ -425,7 +430,7 @@ img {
   .before-image-text,
   .after-image-text {
     position: relative;
-    top: 30%;
+    top: 40%;
     left: 40%;
     color: $lightColor;
 
@@ -501,7 +506,7 @@ img {
   .before-image-text,
   .after-image-text {
     position: relative;
-    top: 20%;
+    top: 40%;
     left: 40%;
     color: $lightColor;
 
@@ -574,7 +579,7 @@ img {
   .before-image-text,
   .after-image-text {
     position: relative;
-    top: 20%;
+    top: 40%;
     left: 40%;
     color: $lightColor;
 
@@ -658,7 +663,7 @@ img {
   .before-image-text,
   .after-image-text {
     position: relative;
-    top: 20%;
+    top: 40%;
     left: 40%;
     color: $lightColor;
 

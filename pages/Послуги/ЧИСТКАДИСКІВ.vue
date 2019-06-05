@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
-        <div class="video-text row">
-          <div class="col-xl-6">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
+          <div class="col-xl-6 text-center">
             <img src="~/assets/img/ЧИСТКАДИСКІВ.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
             <p class>{{ thirdParagraph }}</p>
@@ -28,34 +29,18 @@
         <h2 class="red">{{ timeTaken }}</h2>
 
         <div class="row mx-auto">
-          <div class="col-md-6 mx-auto p-0 before">
+          <div class="col-6 mx-auto p-0 before img-fluid">
             <font class="before-image-text">До</font>
           </div>
 
-          <div class="col-md-6 mx-auto p-0 after">
+          <div class="col-6 mx-auto p-0 after img-fluid">
             <font class="after-image-text">Після</font>
           </div>
         </div>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">250 грн</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <servicesYoutubeVideo :videoUrl="videoUrl"/>
+
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -95,6 +80,10 @@ export default {
     return {
       service: "21",
       heading: "ЧИСТКА ДИСКІВ",
+      category1: "250 грн",
+      category2: "250 грн",
+      category3: "250 грн",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:
         "Унікальна методика мийки, використовувана в нашій компанії для дбайливого догляду за колісними дисками, передбачає комплексний підхід. Досвідчені фахівці проводять дбайливе усунення забруднень з дисків авто, застосовуючи якісні засоби. ",
       secondParagraph:
@@ -119,39 +108,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 @import "~assets/scss/servicesPages.scss";
 
 .before {
-  background-image: url("~assets/img/beforeAfter1_001.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: black;
-  min-height: 286px;
-  max-height: 286px;
-  width: 100%;
-}
-.before-image-text {
-  position: relative;
-  top: 40%;
-  left: 40%;
-  color: set-text-color($backgroudColor);
+  background-image: url("~assets/img/beforeAfter6_001.jpg");
 }
 
 .after {
-  background-image: url("~assets/img/beforeAfter1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 286px;
-  max-height: 286px;
-  width: 100%;
-}
-.after-image-text {
-  position: relative;
-  top: 40%;
-  left: 40%;
-
-  color: set-text-color($backgroudColor);
+  background-image: url("~assets/img/beforeAfter6_002.jpg");
 }
 </style>

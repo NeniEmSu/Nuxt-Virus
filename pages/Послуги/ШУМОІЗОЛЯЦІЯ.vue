@@ -1,18 +1,15 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
-        <div class="video-text row">
-          <div class="col-xl-6">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
+          <div class="col-xl-6 text-center">
             <img src="~assets/img/ШУМОІЗОЛЯЦІЯ.jpg" :alt="heading">
-
-            <!-- <video controls autoplay="true" muted>
-              <source src="~assets/video/vid(14).mp4" type="video/mp4" />
-            </video>-->
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
             <p class>{{ thirdParagraph }}</p>
@@ -27,25 +24,9 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">330 $</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">0 $</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">0 $</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <servicesYoutubeVideo :videoUrl="videoUrl"/>
+
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -86,6 +67,10 @@ export default {
     return {
       service: "16",
       heading: "ШУМОІЗОЛЯЦІЯ",
+      category1: "330 $",
+      category2: "330 $",
+      category3: "330 $",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:
         "Шуми (звуки) присутні в автомобілі при різних режимах і умовах руху. Джерела шумів можна розділити на первинні та вторинні. До первинних джерел відносяться механізми двигуна, трансмісії, шини, вітер, дощ, дорожні нерівності, інші автомобілі. Вторинними джерелами є панелі кузова і елементи салону. Первинні джерела шумів породжують коливання «вторинних» джерел, які і випромінюють звук в салон.",
       secondParagraph:
@@ -129,15 +114,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 
 @import "~assets/scss/servicesPages.scss";
-
-video {
-  width: 100%;
-  max-width: 570px;
-  height: 100%;
-  max-height: 427px;
-}
 </style>

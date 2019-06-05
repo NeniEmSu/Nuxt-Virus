@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
-        <div class="video-text row">
-          <div class="col-xl-6">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
+          <div class="col-xl-6 text-center">
             <img src="~assets/img/Озонація.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
             <p class>{{ thirdParagraph }}</p>
@@ -16,6 +17,10 @@
         </div>
 
         <h2 class="red">{{ timeTaken }}</h2>
+
+        <servicesYoutubeVideo :videoUrl="videoUrl"/>
+
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
 
         <div class="col-md-7 m-auto">
           <div class="row text-center">
@@ -75,6 +80,10 @@ export default {
     return {
       service: "23",
       heading: "ОЗОНУВАННЯ",
+      category1: "1000 грн",
+      category2: "1000 грн",
+      category3: "1000 грн",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:
         "За допомогою озонатора можна не тільки швидко і ефективно вбити бактерії, віруси, грибки та інші шкідливі мікроорганізми, що знаходяться в повітрі і воді, але і усунути неприємні запахи: вогкості, сигаретного диму, після горіння приміщення.",
       secondParagraph:
@@ -93,7 +102,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 @import "~assets/scss/servicesPages.scss";
 </style>

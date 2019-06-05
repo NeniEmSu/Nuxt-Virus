@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading"/>
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
       <div class="container text-left">
-        <div class="video-text row">
-          <div class="col-xl-6">
+        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <div class="row">
+          <div class="col-xl-6 text-center">
             <img src="~assets/img/Рідкескло.jpg" :alt="heading">
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages">{{ heading }}</h1>
+            <h1 class="info-pages desktop-only">{{ heading }}</h1>
             <p class>{{ firstParagraph }}</p>
             <p class>{{ secondParagraph }}</p>
             <p class>{{ thirdParagraph }}</p>
@@ -22,25 +23,9 @@
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">1200 грн</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">1300 грн</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">1400 грн</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+        <servicesYoutubeVideo :videoUrl="videoUrl"/>
+
+        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
       </div>
     </div>
 
@@ -80,6 +65,10 @@ export default {
     return {
       service: "9",
       heading: "Рідке скло",
+      category1: "3000 грн",
+      category2: "3000 грн",
+      category3: "3000 грн",
+      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       firstParagraph:
         "Рідке скло для авто - популярний склад для створення на кузові машини гідрофобного шару, що додає лакофарбовому покриттю блиск і маскує дрібні дефекти. Відмінна риса цього складу - вміст діоксиду кремнію: при грамотному нанесенні саме він надає автомобілю ефект тільки що зробленого полірування і перешкоджає забрудненню.",
       secondParagraph:
@@ -121,7 +110,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed:400,700|Roboto:400,500,700,900");
 
 @import "~assets/scss/servicesPages.scss";
