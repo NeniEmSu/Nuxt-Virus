@@ -39,7 +39,7 @@
     </div>
     <div class="container">
       <div v-if="hasNext" class="text-center my-3">
-        <a href="/blog/2" class="text-info">Next Page</a>
+        <a href="/blog/2" class="text-info">Наступна сторінка</a>
       </div>
     </div>
 

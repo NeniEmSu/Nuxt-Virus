@@ -42,8 +42,12 @@
         <nuxt-link
           :to="page === '2' ? '/блог' : `/blog/${Number(page)-1}`"
           class="text-info pr-2"
-        >Previous Page</nuxt-link>
-        <nuxt-link v-if="hasNext" :to="`/blog/${Number(page)+1}`" class="text-info pl-2">Next Page</nuxt-link>
+        >Попередня сторінка</nuxt-link>
+        <nuxt-link
+          v-if="hasNext"
+          :to="`/blog/${Number(page)+1}`"
+          class="text-info pl-2"
+        >Наступна сторінка</nuxt-link>
       </div>
     </div>
     <contactForm/>
