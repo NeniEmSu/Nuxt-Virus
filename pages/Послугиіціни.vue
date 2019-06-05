@@ -34,11 +34,118 @@
         </div>
       </div>
 
-      <form class="choose-brand" :class="{ hideMe: selected !== undefined }">
+      <style>
+  .none {
+    width: 290px;
+
+    background: #c4c4c4;
+    border-radius: 10px;
+    border: 0;
+    min-height: 80px;
+    max-height: 80px;
+    height: 100%;
+  }
+
+  .card-img img {
+    object-fit: scale-down;
+    object-position: center;
+  }
+
+  .none h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+
+    margin-bottom: 5px;
+  }
+
+  .none p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    text-align: center;
+
+    color: #000000;
+
+    margin-bottom: 5px;
+  }
+
+  hr {
+    border: 1px solid #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+      </style>
+
+      <div class="card mb-3 none p-1 mx-auto">
+        <div class="row no-gutters">
+          <div class="col-6">
+            <img src="~/assets/img/mercedes-png-white-m.png" class="card-img img-fluid" alt="...">
+          </div>
+          <div class="col-6">
+            <div class="card-body p-0 pl-1">
+              <h5 class="card-title text-left">Ⅰ категорія</h5>
+              <hr>
+              <p class="card-text text-left">•середній</p>
+              <p class="card-text text-left">•спорт купе</p>
+              <p class="card-text text-left">•бізнес</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 none p-1 mx-auto">
+        <div class="row no-gutters">
+          <div class="col-6">
+            <img
+              src="~/assets/img/png-hd-of-car-jeep-grand-cherokee-srt-white-car-png-image-car-hd-png-1550.png"
+              class="card-img img-fluid"
+              alt="..."
+            >
+          </div>
+          <div class="col-6">
+            <div class="card-body p-0 pl-1">
+              <h5 class="card-title text-left">ⅠⅠ категорія</h5>
+              <hr>
+              <p class="card-text text-left">•середній кросовер</p>
+              <p class="card-text text-left">•позашляховик</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 none p-1 mx-auto">
+        <div class="row no-gutters">
+          <div class="col-6">
+            <img
+              src="~/assets/img/PNGPIX-COM-Black-Range-Rover-Piano-Car-PNG-Image.png"
+              class="card-img img-fluid"
+              alt="..."
+            >
+          </div>
+          <div class="col-6">
+            <div class="card-body p-0 pl-1">
+              <h5 class="card-title text-left">ⅠⅠⅠ категорія</h5>
+              <hr>
+              <p class="card-text text-left">•позашляховик</p>
+              <p class="card-text text-left">•повнорозмірний кросовер</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="choose-brand col-12" :class="{ hideMe: selected !== undefined }">
         <h3 class="col-12 red">Оберіть категорію автомобіля</h3>
         <p class="col-12 choose-brand-desc">Введіть можель свого авто для визначення категорії</p>
 
-        <div class="form-group w-25 mx-auto">
+        <div class="form-group w-75 mx-auto">
           <label hidden for="brand">Марка</label>
           <select id="brand" aria-describedby="brand" class="form-control brand">
             <option>Марка</option>
@@ -48,7 +155,7 @@
           </select>
         </div>
 
-        <div class="form-group w-25 mx-auto">
+        <div class="form-group w-75 mx-auto">
           <label hidden for="model">Модель</label>
           <select id="model" aria-describedby="model" class="form-control model">
             <option>Модель</option>
