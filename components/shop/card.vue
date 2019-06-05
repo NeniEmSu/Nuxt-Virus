@@ -32,10 +32,8 @@
         </div>
       </div>
     </div>
-
-    <a href="#" class="card-footer">
-      <span class="mobile-only buy">Купити</span>
-      <div class="row bg-transparent desktop-only">
+    <div class="card-footer desktop-only">
+<div class="row bg-transparent ">
         <div class="col-6 bg-transparent cost">
           <small>
             <s class="discount-price">2975 грн</s>
@@ -51,6 +49,11 @@
           <a href="Магазинdetail" class="btn">Купити</a>
         </div>
       </div>
+    </div>
+
+    <a href="#" class="card-footer mobile-only">
+      Купити
+      
     </a>
   </div>
 </template>
@@ -127,9 +130,6 @@ hr {
   border-bottom-right-radius: 16.7347px;
 
   padding: 0 20px;
-
-  text-decoration: none;
-  cursor: default;
 }
 
 .cost {
@@ -244,6 +244,100 @@ hr {
   }
 }
 
+@include mediaMd {
+
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+  
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    width: 100%;
+    min-width: 160px;
+    max-width: 160px;
+    height: 160px;
+  }
+
+  .card-body {
+    padding: 2.5px 10px;
+  }
+
+  .card-img-top {
+    border-radius: 10px;
+    width: 160px;
+    height: 100%;
+    min-height: 80px;
+    max-height: 80px;
+    object-fit: scale-down;
+    object-position: center;
+  }
+
+  .card-title {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .card-footer {
+    padding: 4px 52px;
+    background: #d41f26;
+    border-radius: 0px 0px 10px 10px;
+
+    border: 0;
+
+    
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+
+      align-items: center;
+      text-align: center;
+
+      color: #ffffff;
+    
+  }
+
+  .card-price {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    letter-spacing: -0.05em;
+    text-align: left;
+
+    color: #8b8b8b;
+
+    margin: auto;
+    padding-top: 5px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .discount {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    align-items: center;
+    text-align: right;
+
+    color: #239a0f;
+  }
+}
+
 @include mediaSm {
   .mobile-only {
     display: block;
@@ -290,7 +384,7 @@ hr {
 
     border: 0;
 
-    span.buy {
+    
       font-family: $secondaryFont;
       font-style: normal;
       font-weight: bold;
@@ -301,7 +395,7 @@ hr {
       text-align: center;
 
       color: #ffffff;
-    }
+    
   }
 
   .card-price {
@@ -320,6 +414,92 @@ hr {
 
     span {
       font-size: 14px;
+    }
+  }
+
+  .discount {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    align-items: center;
+    text-align: right;
+
+    color: #239a0f;
+  }
+}
+
+@include mediaXXSm {
+
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    width: 100%;
+    min-width: 130px;
+    max-width: 130px;
+    height: 130px;
+  }
+
+  .card-body {
+    padding: 1.25px 5px;
+  }
+
+  .card-img-top {
+    border-radius: 10px;
+    width: 130px;
+    height: 100%;
+    min-height: 55px;
+    max-height: 55px;
+    object-fit: scale-down;
+    object-position: center;
+  }
+
+  .card-title {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .card-footer {
+    padding: 4px 25px;
+    background: #d41f26;
+    border-radius: 0px 0px 10px 10px;
+
+    border: 0;
+
+    
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+
+      align-items: center;
+      text-align: center;
+
+      color: $lightColor;
+    
+  }
+
+  .card-price {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+
+    letter-spacing: -0.05em;
+    text-align: left;
+
+    color: #8b8b8b;
+
+    margin: auto;
+    padding-top: 5px;
+
+    span {
+      font-size: 12px;
     }
   }
 

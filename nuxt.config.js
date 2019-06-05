@@ -139,6 +139,11 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,900&display=swap&subset=cyrillic,cyrillic-ext'
       }
+    ],
+    script: [
+      { src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
+      "data-cf-settings":"74bf624512b1c6414329bcb4-|49", defer: true
+       }
     ]
   },
 
@@ -153,6 +158,7 @@ export default {
   plugins: [
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
+    { ssr: false, src: '~plugins/chatBot' },
     {
       src: '~plugins/ga.js',
       ssr: false

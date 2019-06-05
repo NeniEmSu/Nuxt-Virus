@@ -18,7 +18,7 @@
     <div id="app">
       <div class="container">
         <div class="row">
-          <div class="filter-sidebar col-lg-2 text-center p-0">
+          <div class="filter-sidebar col-xl-2 text-center p-0">
             <div class="col-0">
               <button class="accordion">Засоби догляду</button>
               <div class="panel">
@@ -94,8 +94,7 @@
             </div>
           </div>
 
-          <div class="sales-cards col-md-9 text-center mx-auto p-0">
-            <productCards/>
+          <div class="sales-cards col-lg-9 text-center mx-auto p-0">
             <div class="row">
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
@@ -104,7 +103,7 @@
             </div>
           </div>
 
-          <div class="cart-icon col-md-1 text-center ">
+          <div class="cart-icon col-lg-1 text-center ">
             <div class="position-fixed col-0">
               <modalComponent :cart="cart"/>
             </div>
@@ -647,6 +646,7 @@ export default {
 }
 @include mediaMenu {
   .shop-heading-image {
+     display: none;
     h1 {
       color: $lightColor;
 
@@ -665,24 +665,25 @@ export default {
 }
 
 @include mediaMd {
-  .shop-heading-image {
-    h1 {
-      font-size: 25px;
+  // .shop-heading-image {
+   
+  //   h1 {
+  //     font-size: 25px;
 
-      color: $lightColor;
+  //     color: $lightColor;
 
-      padding: 10px 0;
+  //     padding: 10px 0;
 
-      span {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 60px;
+  //     span {
+  //       font-family: $mainFont;
+  //       font-style: normal;
+  //       font-weight: bold;
+  //       font-size: 60px;
 
-        color: $redColor;
-      }
-    }
-  }
+  //       color: $redColor;
+  //     }
+  //   }
+  // }
 }
 
 @include mediaSm {
