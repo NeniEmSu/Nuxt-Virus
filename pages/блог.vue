@@ -37,12 +37,11 @@
       </div>
       <hr class="separator">
     </div>
-<div class="container">
-    <div v-if="hasNext" class="text-center my-3">
-        <a href="/blog/2" class="text-info">
-          Next Page
-        </a>
-      </div></div>
+    <div class="container">
+      <div v-if="hasNext" class="text-center my-3">
+        <a href="/blog/2" class="text-info">Next Page</a>
+      </div>
+    </div>
 
     <contactForm/>
     <progressSection/>
@@ -51,23 +50,25 @@
 
 <script>
 export default {
-  async asyncData ({ app, error }) {
-    const { data } = await app.$axios.post(process.env.POSTS_URL,
-    JSON.stringify({
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.POSTS_URL,
+      JSON.stringify({
         filter: { published: true },
         limit: process.env.PER_PAGE,
-        sort: {_created:-1},
+        sort: { _created: -1 },
         populate: 1
       }),
-    {
-      headers: { 'Content-Type': 'application/json' }
-    })
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
 
     if (!data.entries[0]) {
-      return error({ message: '404 Page not found', statusCode: 404 })
+      return error({ message: "404 Page not found", statusCode: 404 });
     }
 
-    return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total }
+    return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total };
   },
   head() {
     return {
@@ -83,7 +84,7 @@ export default {
       ]
     };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

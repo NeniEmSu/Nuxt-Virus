@@ -1,6 +1,6 @@
 <template>
   <section>
-      <div class="container text-center heading p-0 mt-xl-n1">
+    <div class="container text-center heading p-0 mt-xl-n1">
       <nav class="container mb-n4 desktop-only" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -38,50 +38,64 @@
       <hr class="separator">
     </div>
     <div class="container">
-        <div class="text-center my-3">
-        <nuxt-link :to="page === '2' ? '/блог' : `/blog/${Number(page)-1}`" class="text-info pr-2">
-          Previous Page
-        </nuxt-link>
-        <nuxt-link v-if="hasNext" :to="`/blog/${Number(page)+1}`" class="text-info pl-2">
-          Next Page
-        </nuxt-link>
+      <div class="text-center my-3">
+        <nuxt-link
+          :to="page === '2' ? '/блог' : `/blog/${Number(page)-1}`"
+          class="text-info pr-2"
+        >Previous Page</nuxt-link>
+        <nuxt-link v-if="hasNext" :to="`/blog/${Number(page)+1}`" class="text-info pl-2">Next Page</nuxt-link>
       </div>
     </div>
+    <contactForm/>
+    <progressSection/>
   </section>
 </template>
 
 
 <script>
 export default {
-  async asyncData ({ app, params, error, payload }) {
+  async asyncData({ app, params, error, payload }) {
     if (payload) {
-      return { posts: payload.posts, page: params.page, hasNext: payload.hasNext }
+      return {
+        posts: payload.posts,
+        page: params.page,
+        hasNext: payload.hasNext
+      };
     } else {
-      let { data } = await app.$axios.post(process.env.POSTS_URL,
-      JSON.stringify({
+      let { data } = await app.$axios.post(
+        process.env.POSTS_URL,
+        JSON.stringify({
           filter: { published: true },
           limit: process.env.PER_PAGE,
-          skip: (params.page-1)*process.env.PER_PAGE,
-          sort: {_created:-1},
+          skip: (params.page - 1) * process.env.PER_PAGE,
+          sort: { _created: -1 },
           populate: 1
         }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
+        {
+          headers: { "Content-Type": "application/json" }
+        }
+      );
 
       if (!data.entries[0]) {
-        return error({ message: '404 Page not found', statusCode: 404 })
+        return error({ message: "404 Page not found", statusCode: 404 });
       }
 
-      return { posts: data.entries, page: params.page, hasNext: Number((params.page-1)*process.env.PER_PAGE) + Number(process.env.PER_PAGE) < data.total }
+      return {
+        posts: data.entries,
+        page: params.page,
+        hasNext:
+          Number((params.page - 1) * process.env.PER_PAGE) +
+            Number(process.env.PER_PAGE) <
+          data.total
+      };
     }
   },
-  head () {
+  head() {
     return {
       title: `Nuxt Cockpit Static Blog - Page ${this.page}`
-    }
+    };
   }
-}
+};
 </script>
 
 
