@@ -158,6 +158,10 @@ export default {
     'highlight.js/styles/dracula.css'
   ],
 
+  env: {
+    contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`
+  },
+
   plugins: [
     '~/plugins/Axios.js',
     '~/plugins/filters.js',

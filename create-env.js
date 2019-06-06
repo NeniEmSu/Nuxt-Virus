@@ -10,5 +10,6 @@ listCollectionsToken=${process.env.listCollectionsToken}\n
 apiToken=${process.env.apiToken}\n
 imagePath=${process.env.imagePath}\n
 baseUrl=${process.env.baseUrl}\n
-pagesToken=${process.env.pagesToken}
+pagesToken=${process.env.pagesToken}\n
+FORMS_TOKEN=${process.env.FORMS_TOKEN}
 `)

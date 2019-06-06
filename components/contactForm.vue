@@ -2,11 +2,23 @@
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card text-center">
-        <form class="text-md-right" @submit.prevent="submit" name="contact">
+        <form class="text-md-right" @submit.prevent="checkForm" method="post" name="contact">
           <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
           </h3>
+          <div v-if="errors.length"  class="text-left text-danger">
+
+        <b>Please correct the following error(s):</b>
+        <ol>
+          <li class="ml-3" v-for="error in errors" :key="error">
+            {{ error }}
+          </li>
+        </ol>
+      </div>
+      <div v-if="success" @submitForm="makeToast('success')" class="text-left text-sucess">
+        <b>Your message has been sent succesfully</b>
+      </div>
 
           <div class="row">
             <div class="col-md-6">
@@ -19,7 +31,7 @@
                   v-model="service"
                   name="typeOfWork"
                 >
-                  <option value="00" disabled>Оберіть тип робіт</option>
+                  <option value=null disabled>Оберіть тип робіт</option>
                   <option value="0">Полірування автомобіля</option>
                   <option value="1">Полірування фар</option>
                   <option value="2">Полірування вставок салону</option>
@@ -56,7 +68,7 @@
                   aria-describedby="carModel"
                   placeholder="Введіть модель авто"
                   v-model="carModel"
-                  required
+                 
                 >
               </div>
             </div>
@@ -67,7 +79,7 @@
                 <input
                   name="name"
                   id="name"
-                  required
+                  
                   type="text"
                   class="form-control mx-auto"
                   aria-describedby="name"
@@ -86,48 +98,110 @@
                   placeholder="Телефон*"
                   v-mask="'+38(0##) ###-####'"
                   v-model="models.phoneNumber"
-                  required
+                  
                 >
               </div>
-              <b-button
+              <!-- <b-button
                 type="submit"
                 name="submit"
                 class="contact-btn"
+                :class="{ 'cursor-not-allowed opacity-50': loading }"
                 variant="success"
                 @click="makeToast('success')"
-              >ВІДПРАВИТИ</b-button>
-              <!-- <button   ></button> -->
+              >ВІДПРАВИТИ</b-button> -->
+              <button  type="submit"
+                name="submit"
+                class="contact-btn"
+                :class="{ 'disabled': loading }" >ВІДПРАВИТИ</button>
             </div>
+           
           </div>
           <p
             class="text-left col-12 w-md-50 px-0"
           >Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом</p>
+
+           
+
         </form>
+        
       </div>
+      
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   props: {
     service: {
       type: String,
-      default: "00",
+      default: null,
       required: false
     }
   },
   data() {
     return {
-      name: "",
-      carModel: "",
-      models: { phoneNumber: "" },
-      submitted: false
+      errors: [],
+      name: null,
+      carModel: null,
+      models: { phoneNumber: null },
+      loading: false,
+      success: false
     };
   },
   methods: {
-    submit: function() {
-      this.submitted = true;
+    checkForm: function (e) {
+      this.errors = []
+      this.success = false
+
+      if (!this.name) {
+        this.errors.push("Ім’я required")
+      }
+      if (!this.carModel) {
+        this.errors.push("Введіть модель авто required")
+      }
+      if (!this.service) {
+        this.errors.push("тип робіт required")
+      }
+      if (!this.models.phoneNumber) {
+        this.errors.push("Телефон required")
+      }
+      if (!this.errors.length) {
+        this.submitForm()
+      }
+      e.preventDefault()
+    },
+    submitForm: function () {
+      this.loading = true
+
+      axios.post(process.env.contactUrl,
+      JSON.stringify({
+          form: {
+            name: this.name,
+            carModel: this.carModel,
+            service: this.service,
+            phoneNumber: this.models.phoneNumber
+          }
+        }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(({ data }) => {
+        this.loading = false
+
+        if(data.error){
+          this.errors.push(data.error)
+        } else if(data.name && data.carModel && data.service && data.models.phoneNumber) {
+          this.name = this.carModel = this.service = this.models.phoneNumber = null
+          this.success = true
+        }
+      }).catch(error => {
+        this.loading = false
+
+        this.errors.push('An error occured, please try again later')
+      })
     },
     makeToast(variant = null) {
       this.$bvToast.toast("Message Was Sent Sucessfully", {
