@@ -152,6 +152,9 @@
         <div class="container services-container">
           <!-- Полірування -->
           <h2 class="text-center fab-header">Полірування</h2>
+
+          <!-- <serviceCard/> -->
+
           <div class="card-deck m-0 p-0">
             <div
               v-for="polish in polishing"
@@ -485,15 +488,8 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import categorySelectionMobile from "@/components/services/categorySelectionMobile.vue";
 export default {
-  components: {
-    ContactForm,
-    progressSection,
-    categorySelectionMobile
-  },
+  components: {},
 
   head() {
     return {
