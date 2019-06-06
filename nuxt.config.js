@@ -6,6 +6,7 @@ const collect = require('collect.js')
 const perPage = Number(process.env.PER_PAGE)
 
 const axios = require('axios')
+import purgecss from '@fullhuman/postcss-purgecss'
 
 export default {
   mode: 'universal',
@@ -16,6 +17,7 @@ export default {
   head: {
     title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
     htmlAttrs: {
+      class: 'has-navbar-fixed-top',
       lang: 'uk',
       amp: true
     },
@@ -141,11 +143,11 @@ export default {
         href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,900&display=swap&subset=cyrillic,cyrillic-ext'
       }
     ],
-    script: [
-      { src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
-      "data-cf-settings":"74bf624512b1c6414329bcb4-|49", defer: true
-       }
-    ]
+    script: [{
+      src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
+      "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
+      defer: true
+    }]
   },
 
   loading: {
@@ -159,7 +161,10 @@ export default {
   plugins: [
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
-    { ssr: false, src: '~plugins/chatBot' },
+    {
+      ssr: false,
+      src: '~plugins/chatBot'
+    },
     {
       src: '~plugins/ga.js',
       ssr: false
@@ -214,31 +219,38 @@ export default {
 
   generate: {
     routes: async () => {
-      let { data } = await axios.post(process.env.POSTS_URL,
-      JSON.stringify({
-          filter: { published: true },
-          sort: {_created:-1},
+      let {
+        data
+      } = await axios.post(process.env.POSTS_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
           populate: 1
-        }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
 
       const collection = collect(data.entries)
 
       let tags = collection.map(post => post.tags)
-      .flatten()
-      .unique()
-      .map(tag => {
-        let payload = collection.filter(item => {
-          return collect(item.tags).contains(tag)
-        }).all()
+        .flatten()
+        .unique()
+        .map(tag => {
+          let payload = collection.filter(item => {
+            return collect(item.tags).contains(tag)
+          }).all()
 
-        return {
-          route: `category/${tag}`,
-          payload: payload
-        }
-      }).all()
+          return {
+            route: `category/${tag}`,
+            payload: payload
+          }
+        }).all()
 
       let posts = collection.map(post => {
         return {
@@ -247,23 +259,23 @@ export default {
         }
       }).all()
 
-      if(perPage < data.total) {
+      if (perPage < data.total) {
         let pages = collection
-        .take(perPage-data.total)
-        .chunk(perPage)
-        .map((items, key) => {
-          let currentPage = key + 2
+          .take(perPage - data.total)
+          .chunk(perPage)
+          .map((items, key) => {
+            let currentPage = key + 2
 
-          return {
-            route: `blog/${currentPage}`,
-            payload: {
-              posts: items.all(),
-              hasNext: data.total > currentPage*perPage
+            return {
+              route: `blog/${currentPage}`,
+              payload: {
+                posts: items.all(),
+                hasNext: data.total > currentPage * perPage
+              }
             }
-          }
-        }).all()
+          }).all()
 
-        return posts.concat(tags,pages)
+        return posts.concat(tags, pages)
       }
 
       return posts.concat(tags)
@@ -275,38 +287,45 @@ export default {
     path: '/sitemap.xml',
     hostname: process.env.URL,
     cacheTime: 1000 * 60 * 15,
-    
-    async routes () {
-      let { data } = await axios.post(process.env.POSTS_URL,
-      JSON.stringify({
-          filter: { published: true },
-          sort: {_created:-1},
+
+    async routes() {
+      let {
+        data
+      } = await axios.post(process.env.POSTS_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
           populate: 1
-        }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
-  
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
       const collection = collect(data.entries)
-  
+
       let tags = collection.map(post => post.tags)
-      .flatten()
-      .unique()
-      .map(tag => `category/${tag}`)
-      .all()
-  
-      let posts = collection.map(post => post.title_slug).all()
-  
-      if(perPage < data.total) {
-        let pages = collection
-        .take(perPage-data.total)
-        .chunk(perPage)
-        .map((items, key) => `blog/${key+2}`)
+        .flatten()
+        .unique()
+        .map(tag => `category/${tag}`)
         .all()
-  
-        return posts.concat(tags,pages)
+
+      let posts = collection.map(post => post.title_slug).all()
+
+      if (perPage < data.total) {
+        let pages = collection
+          .take(perPage - data.total)
+          .chunk(perPage)
+          .map((items, key) => `blog/${key+2}`)
+          .all()
+
+        return posts.concat(tags, pages)
       }
-  
+
       return posts.concat(tags)
     }
   },
@@ -317,15 +336,79 @@ export default {
     ]
   },
 
-
-
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
 
-    extend(config, ctx) {
-      // Run ESLint on save
+    extend(config, {
+      isDev,
+      isClient
+    }) {
+      config.module.rules.forEach(rule => {
+        if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+          // add a second loader when loading images
+          rule.use.push({
+            loader: 'image-webpack-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  // use these settings for internet explorer for proper scalable SVGs
+                  // https://css-tricks.com/scale-svg/
+                  {
+                    removeViewBox: false
+                  },
+                  {
+                    removeDimensions: true
+                  }
+                ]
+              }
+            }
+          })
+        }
+      })
+    },
 
+    build: {
+      extend(config, {
+        isDev,
+        isClient
+      }) {
+        // adding the new loader as the first in the list
+        config.module.rules.unshift({
+          test: /\.(png|jpe?g|gif)$/,
+          use: {
+            loader: 'responsive-loader',
+            options: {
+              // disable: isDev,
+              placeholder: true,
+              quality: 85,
+              placeholderSize: 30,
+              name: 'img/[name].[hash:hex:7].[width].[ext]'
+            }
+          }
+        })
+        // remove old pattern from the older loader
+        config.module.rules.forEach(value => {
+          if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+            // reduce to svg and webp, as other images are handled above
+            value.test = /\.(svg|webp)$/
+            // keep the configuration from image-webpack-loader here unchanged
+          }
+        })
+      }
+    },
+    build: {
+      postcss: {
+        plugins: [
+          purgecss({
+            content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './content/**/*.md', './content/**/*.json'],
+            whitelist: ['html', 'body', 'has-navbar-fixed-top', 'nuxt-link-exact-active', 'nuxt-progress'],
+            whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/],
+          })
+        ]
+      },
     }
+
+
   }
 }
