@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="container" aria-label="breadcrumb">
+    <nav class="container desktop-only" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">Головна</nuxt-link>
@@ -8,7 +8,7 @@
         <li class="breadcrumb-item active" aria-current="page">Послуги і ціни</li>
       </ol>
     </nav>
-    <div class="container text-center p-0 pt-4">
+    <div class="container text-center desktop-big-tab-only p-0 pt-4">
       <picture>
         <source :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)" type="image/webp">
         <img
@@ -33,142 +33,121 @@
           </div>
         </div>
       </div>
-
-      <style>
-  .none {
-    width: 290px;
-
-    background: #c4c4c4;
-    border-radius: 10px;
-    border: 0;
-    min-height: 80px;
-    max-height: 80px;
-    height: 100%;
-  }
-
-  .card-img img {
-    object-fit: scale-down;
-    object-position: center;
-  }
-
-  .none h5 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
-
-    color: #000000;
-
-    margin-bottom: 5px;
-  }
-
-  .none p {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-    line-height: 12px;
-
-    text-align: center;
-
-    color: #000000;
-
-    margin-bottom: 5px;
-  }
-
-  hr {
-    border: 1px solid #ffffff;
-    padding: 0;
-    margin: 0;
-  }
-      </style>
-
-      <div class="card mb-3 none p-1 mx-auto">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <img src="~/assets/img/mercedes-png-white-m.png" class="card-img img-fluid" alt="...">
-          </div>
-          <div class="col-6">
-            <div class="card-body p-0 pl-1">
-              <h5 class="card-title text-left">Ⅰ категорія</h5>
-              <hr>
-              <p class="card-text text-left">•середній</p>
-              <p class="card-text text-left">•спорт купе</p>
-              <p class="card-text text-left">•бізнес</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3 none p-1 mx-auto">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <img
-              src="~/assets/img/png-hd-of-car-jeep-grand-cherokee-srt-white-car-png-image-car-hd-png-1550.png"
-              class="card-img img-fluid"
-              alt="..."
-            >
-          </div>
-          <div class="col-6">
-            <div class="card-body p-0 pl-1">
-              <h5 class="card-title text-left">ⅠⅠ категорія</h5>
-              <hr>
-              <p class="card-text text-left">•середній кросовер</p>
-              <p class="card-text text-left">•позашляховик</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3 none p-1 mx-auto">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <img
-              src="~/assets/img/PNGPIX-COM-Black-Range-Rover-Piano-Car-PNG-Image.png"
-              class="card-img img-fluid"
-              alt="..."
-            >
-          </div>
-          <div class="col-6">
-            <div class="card-body p-0 pl-1">
-              <h5 class="card-title text-left">ⅠⅠⅠ категорія</h5>
-              <hr>
-              <p class="card-text text-left">•позашляховик</p>
-              <p class="card-text text-left">•повнорозмірний кросовер</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <form class="choose-brand col-12" :class="{ hideMe: selected !== undefined }">
-        <h3 class="col-12 red">Оберіть категорію автомобіля</h3>
-        <p class="col-12 choose-brand-desc">Введіть можель свого авто для визначення категорії</p>
-
-        <div class="form-group w-75 mx-auto">
-          <label hidden for="brand">Марка</label>
-          <select id="brand" aria-describedby="brand" class="form-control brand">
-            <option>Марка</option>
-            <option>Марка</option>
-            <option>Марка</option>
-            <option>Марка</option>
-          </select>
-        </div>
-
-        <div class="form-group w-75 mx-auto">
-          <label hidden for="model">Модель</label>
-          <select id="model" aria-describedby="model" class="form-control model">
-            <option>Модель</option>
-            <option>Модель</option>
-            <option>Модель</option>
-            <option>Модель</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn">Вибрати</button>
-      </form>
     </div>
-    <div class="mt-3" :class="{ hideMe: selected == undefined }">
+
+    <div class="jumbotron mobile-only pb-1">
+      <div class="container">
+        <div
+          class="card none mx-auto"
+          @click.prevent="(selected = 1)"
+          :class="{ hideMe: selected == 2 || selected == 3 }"
+        >
+          <div class="row no-gutters">
+            <div class="col-6">
+              <img src="~/assets/img/mercedes-png-white-m.png" class="card-img img-fluid" alt="...">
+            </div>
+            <div class="col-6">
+              <div class="card-body p-0 pl-1">
+                <h5 class="card-title text-left">Ⅰ категорія</h5>
+                <hr>
+                <div class="row">
+                  <div class="col-6">
+                    <p class="card-text text-left">•середній</p>
+                    <p class="card-text text-left">•бізнес</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text text-left">•спорт купе</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card none mx-auto"
+          @click.prevent="(selected = 2)"
+          :class="{ hideMe: selected == 1 || selected == 3 }"
+        >
+          <div class="row no-gutters">
+            <div class="col-6">
+              <img
+                src="~/assets/img/png-hd-of-car-jeep-grand-cherokee-srt-white-car-png-image-car-hd-png-1550.png"
+                class="card-img img-fluid"
+                alt="..."
+              >
+            </div>
+            <div class="col-6">
+              <div class="card-body p-0 pl-1">
+                <h5 class="card-title text-left">ⅠⅠ категорія</h5>
+                <hr>
+                <p class="card-text text-left">•середній кросовер</p>
+                <p class="card-text text-left">•позашляховик</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card none mx-auto"
+          @click.prevent="(selected = 3)"
+          :class="{ hideMe: selected == 1 || selected == 2 }"
+        >
+          <div class="row no-gutters">
+            <div class="col-6">
+              <img
+                src="~/assets/img/PNGPIX-COM-Black-Range-Rover-Piano-Car-PNG-Image.png"
+                class="card-img img-fluid"
+                alt="..."
+              >
+            </div>
+            <div class="col-6">
+              <div class="card-body p-0 pl-1">
+                <h5 class="card-title text-left">ⅠⅠⅠ категорія</h5>
+                <hr>
+                <p class="card-text text-left">•позашляховик</p>
+                <p class="card-text text-left">•повнорозмірний кросовер</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="jumbotron choose-brand-container pt-2 pb-2"
+      :class="{ hideMe: selected !== undefined }"
+    >
+      <div class="container text-center">
+        <form class="choose-brand">
+          <h3 class="col-12 red">Оберіть категорію автомобіля</h3>
+          <p class="col-12 choose-brand-desc">Введіть можель свого авто для визначення категорії</p>
+
+          <div class="form-group mx-auto">
+            <label hidden for="brand">Марка</label>
+            <select id="brand" aria-describedby="brand" class="form-control brand">
+              <option>Марка</option>
+              <option>Марка</option>
+              <option>Марка</option>
+              <option>Марка</option>
+            </select>
+          </div>
+
+          <div class="form-group mx-auto">
+            <label hidden for="model">Модель</label>
+            <select id="model" aria-describedby="model" class="form-control model">
+              <option>Модель</option>
+              <option>Модель</option>
+              <option>Модель</option>
+              <option>Модель</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn">Вибрати</button>
+        </form>
+      </div>
+    </div>
+
+    <div class :class="{ hideMe: selected == undefined }">
       <div class="jumbotron services">
         <div class="container services-container">
           <!-- Полірування -->
@@ -508,12 +487,12 @@
 <script>
 import ContactForm from "@/components/contactForm.vue";
 import progressSection from "@/components/progressSection.vue";
-import sercivesBreadcrumbs from "@/components/breadcrumbs/sercivesBreadcrumbs.vue";
+import categorySelectionMobile from "@/components/services/categorySelectionMobile.vue";
 export default {
   components: {
     ContactForm,
     progressSection,
-    sercivesBreadcrumbs
+    categorySelectionMobile
   },
 
   head() {
@@ -798,6 +777,7 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
 .choose-brand {
   .choose-brand-desc {
@@ -937,7 +917,9 @@ select.model {
   cursor: pointer;
 
   height: 48px;
-  margin-top: 20px;
+  width: 50%;
+
+  margin: 20px auto 0 auto;
   border: 2px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 50px;
@@ -1016,6 +998,7 @@ form.choose-brand p {
     .card {
       background-color: $darkColor;
       box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+      border: 0;
 
       border-radius: 20px;
       -webkit-border-radius: 20px;
@@ -1093,70 +1076,70 @@ form.choose-brand p {
         background-image: url("~assets/img/services1.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-two {
         background-image: url("~assets/img/services2.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-three {
         background-image: url("~assets/img/services3.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-four {
         background-image: url("~assets/img/services4.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-five {
         background-image: url("~assets/img/services5.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-six {
         background-image: url("~assets/img/services6.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-seven {
         background-image: url("~assets/img/services7.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-eight {
         background-image: url("~assets/img/services8.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-nine {
         background-image: url("~assets/img/services9.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-ten {
         background-image: url("~assets/img/services10.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-eleven {
@@ -1170,91 +1153,91 @@ form.choose-brand p {
         background-image: url("~assets/img/services12.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-13 {
         background-image: url("~assets/img/services13.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-14 {
         background-image: url("~assets/img/services14.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-15 {
         background-image: url("~assets/img/services15.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-16 {
         background-image: url("~assets/img/services16.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-17 {
         background-image: url("~assets/img/services17.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-18 {
         background-image: url("~assets/img/services18.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-19 {
         background-image: url("~assets/img/services19.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-20 {
         background-image: url("~assets/img/services20.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-21 {
         background-image: url("~assets/img/services21.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-22 {
         background-image: url("~assets/img/services22.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-23 {
         background-image: url("~assets/img/services23.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       &.service-24 {
         background-image: url("~assets/img/services24.jpg");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: scale-down;
+        background-size: cover;
       }
 
       .card-body {
@@ -1325,6 +1308,307 @@ form.choose-brand p {
   }
 }
 
+.mobile-only {
+  display: none;
+}
+
+.choose-brand-container {
+  background-color: $lightColor;
+}
+
+.none {
+  width: 100%;
+  max-width: 500px;
+
+  cursor: pointer;
+
+  background: $lightColor;
+  border-radius: 10px;
+  border: 0;
+  min-height: 80px;
+  max-height: 80px;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.none .card-img {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+  object-position: center;
+}
+.none h5 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: $darkColor;
+
+  margin-bottom: 5px;
+}
+
+.none p {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+
+  text-align: center;
+
+  color: $darkColor;
+
+  margin-bottom: 5px;
+}
+
+.none hr {
+  border: 1px solid #c4c4c4;
+  padding: 0;
+  margin: 0 0 5px 0;
+}
+@include mediaMenu {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@include mediaLg {
+  .choose-brand-container {
+    background-color: #e9ecef;
+  }
+
+  .desktop-big-tab-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+
+  select.brand,
+  select.model {
+    width: 75%;
+  }
+
+  .fab-header:before,
+  .fab-header:after {
+    display: none;
+  }
+
+  .fab-header:after {
+    display: none;
+  }
+
+  form.choose-brand {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .none {
+    width: 100%;
+    max-width: 500px;
+
+    cursor: pointer;
+
+    background: $lightColor;
+    border-radius: 10px;
+    border: 0;
+    min-height: 100px;
+    max-height: 100px;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+
+  .none .card-img {
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+    object-position: center center;
+  }
+  .none h5 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+
+    color: $darkColor;
+
+    margin-bottom: 5px;
+  }
+
+  .none p {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    text-align: center;
+
+    color: $darkColor;
+
+    margin-bottom: 5px;
+  }
+
+  .none hr {
+    border: 1px solid #c4c4c4;
+    padding: 0;
+    margin: 0 0 5px 0;
+  }
+}
+
+@include mediaMd {
+  .choose-brand-container {
+    background-color: #e9ecef;
+  }
+  .desktop-big-tab-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+
+  select.brand,
+  select.model {
+    width: 100%;
+  }
+
+  .fab-header:before,
+  .fab-header:after {
+    display: none;
+  }
+
+  .fab-header:after {
+    display: none;
+  }
+
+  form.choose-brand {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
 @include mediaSm {
+  .jumbotron.services {
+    h2 {
+      padding-top: 0px;
+      margin: 0px auto;
+
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    .card-deck,
+    .cards-grouppings-3,
+    .testing {
+      .card {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+
+        border-radius: 10px;
+
+        &.four-cards {
+          height: 163px;
+          width: 100%;
+          min-width: 163px;
+          max-width: 163px;
+        }
+
+        &.two-cards {
+          height: 163px;
+          width: 100%;
+
+          max-width: 163px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: normal;
+
+            color: $lightColor;
+
+            padding: 0;
+          }
+        }
+
+        &.two-cards-seprate-titles {
+          height: 162px;
+          width: 100%;
+
+          max-width: 335px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-size: 8px;
+            line-height: 9px;
+          }
+        }
+
+        &.three-cards {
+          height: 162px;
+          width: 100%;
+          min-width: 162px;
+          max-width: 162px;
+        }
+
+        .card-body {
+          height: 80px;
+          box-sizing: border-box;
+          padding: 10px;
+          margin-bottom: 5px;
+        }
+
+        .card-end {
+          background-color: rgba(0, 0, 0, 0.64);
+          backdrop-filter: blur(5px);
+          border-radius: 0px 0px 10px 10px;
+          box-sizing: border-box;
+          padding: 0 5px;
+
+          h5 {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 4px;
+          }
+
+          p {
+            padding: 2px 0;
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 12px;
+
+            &.subtext {
+              margin-bottom: 5px;
+            }
+
+            small {
+              font-size: 10px;
+              line-height: 12px;
+            }
+          }
+
+          .btn {
+            font-size: 10px;
+            line-height: 12px;
+
+            padding: 4px 5px;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
