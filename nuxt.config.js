@@ -436,7 +436,7 @@ export default {
         plugins: [
           purgecss({
             content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './content/**/*.md', './content/**/*.json'],
-            whitelist: ['html', 'body', 'has-navbar-fixed-top', 'nuxt-link-exact-active', 'nuxt-progress'],
+            whitelist: ['html', 'body', 'has-navbar-fixed-top', 'nuxt-link-exact-active', 'nuxt-progress', 'hidden', 'opacity-0'],
             whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/],
           })
         ]

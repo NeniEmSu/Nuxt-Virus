@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label class="hidden opacity-0 z-0" for="typeOfWork">Оберіть тип робіт</label>
+                <label class="hidden opacity-0" for="typeOfWork">Оберіть тип робіт</label>
                 <select
                   aria-label="typeOfWork"
                   id="typeOfWork"
