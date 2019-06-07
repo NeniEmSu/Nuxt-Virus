@@ -6,7 +6,7 @@
           <nuxt-link to="/">Головна</nuxt-link>
         </li>
         <li class="breadcrumb-item">
-          <a href="/блог">Блог</a>
+          <nuxt-link to="/блог">Блог</nuxt-link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
       </ol>
@@ -14,11 +14,11 @@
     <article class="my-5">
       <div class="text-grey-dark font-bold text-sm tracking-wide">
         <p>{{ post._created | toDate }}</p>
-        <a
+        <nuxt-link
           v-for="(tag, key) in post.tags"
           :key="key"
-          :href="'/category/'+tag"
-        >{{ tag }}&nbsp;|&nbsp;</a>
+          :to="'/category/'+tag"
+        >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
       </div>
       <h1 class="mt-2">{{ post.title }}</h1>
       <div

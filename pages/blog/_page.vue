@@ -18,20 +18,20 @@
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
-              <a
+              <nuxt-link
                 v-for="tag in post.tags"
                 :key="tag"
-                :href="'/category/'+tag"
+                :to="'/category/'+tag"
                 class="desktop-tablet-only"
-              >{{ tag }}&nbsp;|&nbsp;</a>
+              >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
             </div>
-            <a :href="'/'+post.title_slug">
+            <nuxt-link :to="'/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>
-            </a>
+            </nuxt-link>
             <p class="card-text">Date Created {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <a class="btn" :href="'/'+post.title_slug">ЧИТАТИ</a>
+            <nuxt-link class="btn" :to="'/'+post.title_slug">ЧИТАТИ</nuxt-link>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
     <TheTopContact/>
     <div class="container">
       <div class="logo">
-        <nuxt-link class="navbar-brand logo" to="/">
+        <nuxt-link class="navbar-brand logo" to="/" aria-label="Virus Logo">
           <img src="~/assets/img/virus-logo.svg" alt="virus logo">
         </nuxt-link>
       </div>

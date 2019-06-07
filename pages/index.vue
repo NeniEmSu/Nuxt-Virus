@@ -124,7 +124,7 @@
           <card class="mb-5 mx-auto"/>
         </div>
 
-        <a href="магазин" class="btn">Показати більше</a>
+        <nuxt-link to="магазин" class="btn">Показати більше</nuxt-link>
       </div>
     </div>
 

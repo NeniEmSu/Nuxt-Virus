@@ -18,13 +18,13 @@
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             
-            <a href="#">
+            <nuxt-link to="#">
               <h2 class="card-title text-white">{{ promotion.title }}</h2>
-            </a>
+            </nuxt-link>
             <p class="card-text">{{ promotion.duration }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <a class="btn" href="#">ЗАМОВИТИ</a>
+            <nuxt-link class="btn" to="#">ЗАМОВИТИ</nuxt-link>
           </div>
         </div>
       </div>

@@ -22,25 +22,7 @@
 
         <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
 
-        <div class="col-md-7 m-auto">
-          <div class="row text-center">
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">Ⅰ категорія</a>
-              <p class="pricing">1000 грн</p>
-              <p class="mt-2 mb-0">середній бізнес спорт купе</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">середній кросовер позашляховик</p>
-            </div>
-            <div class="col-md-4 mx-auto">
-              <a href="#" class="btn category-selector">ⅠⅠⅠ категорія</a>
-              <p class="pricing">0 грн</p>
-              <p class="mt-2 mb-0">повнорозмірний кросовер позашляховик</p>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
 

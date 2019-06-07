@@ -164,10 +164,6 @@ export default {
       {
         rel: 'shortcut icon',
         href: '/favicon.ico'
-      },
-      {
-        rel: "dns-prefetch",
-        href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,900&display=swap&subset=cyrillic,cyrillic-ext'
       }
     ],
     script: [{
@@ -189,12 +185,19 @@ export default {
     contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`
   },
 
+  webfontloader: {
+    google: {
+      families: ['Roboto+Condensed:400,700:latin,cyrillic,cyrillic-ext', 'Roboto:400,500,700,900:latin,cyrillic,cyrillic-ext' ],
+      display:'swap',
+    }
+  },
+
   plugins: [
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     {
       ssr: false,
-      src: '~plugins/chatBot'
+      src: '~plugins/JivoChat'
     },
     {
       src: '~plugins/ga.js',
@@ -214,6 +217,7 @@ export default {
   ],
 
   modules: [
+    'nuxt-webfontloader',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',

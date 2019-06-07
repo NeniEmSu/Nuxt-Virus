@@ -5,20 +5,20 @@
       <ul class="flex flex-col w-full p-0">
         <li class="mb-6 w-full list-reset" v-for="(post, key) in posts" :key="key">
           <div class="text-grey-dark font-bold text-sm tracking-wide">
-            <a
+            <nuxt-link
               v-for="(tag, key) in post.tags"
               :key="key"
-              :href="'/category/'+tag"
-            >{{ tag }}&nbsp;|&nbsp;</a>
+              :to="'/category/'+tag"
+            >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
           </div>
           <p>{{ post._created | toDate }}</p>
 
-          <a :href="'/'+post.title_slug" class="no-underline">
+          <nuxt-link :to="'/'+post.title_slug" class="no-underline">
             <h2 class="my-2 text-grey-darkest text-lg lg:text-xl">{{ post.title }}</h2>
-          </a>
+          </nuxt-link>
 
           <div class="page-content md:block text-base mb-2" v-html="post.excerpt"></div>
-          <a class="text-info" :href="'/'+post.title_slug">Read more</a>
+          <nuxt-link class="text-info" :to="'/'+post.title_slug">Read more</nuxt-link>
           <hr>
         </li>
       </ul>

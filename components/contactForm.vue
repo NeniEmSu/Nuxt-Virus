@@ -25,6 +25,7 @@
               <div class="form-group">
                 <label hidden for="typeOfWork">Оберіть тип робіт</label>
                 <select
+                 aria-label="typeOfWork"
                   id="typeOfWork"
                   aria-describedby="typeOfWork"
                   class="form-control mx-auto"
@@ -61,6 +62,7 @@
               <div class="form-group">
                 <label hidden for="carModel">Введіть модель авто</label>
                 <input
+                 aria-label="carModel"
                   id="carModel"
                   type="text"
                   name="carModel"
@@ -79,7 +81,7 @@
                 <input
                   name="name"
                   id="name"
-                  
+                   aria-label="name"
                   type="text"
                   class="form-control mx-auto"
                   aria-describedby="name"
@@ -91,6 +93,7 @@
                 <label hidden for="phone">Телефон</label>
                 <input
                   aria-describedby="phone"
+                   aria-label="phone"
                   name="phone"
                   type="text"
                   class="form-control mx-auto"
@@ -101,15 +104,9 @@
                   
                 >
               </div>
-              <!-- <b-button
-                type="submit"
-                name="submit"
-                class="contact-btn"
-                :class="{ 'cursor-not-allowed opacity-50': loading }"
-                variant="success"
-                @click="makeToast('success')"
-              >ВІДПРАВИТИ</b-button> -->
+              
               <button  type="submit"
+              aria-label="submit"
                 name="submit"
                 class="contact-btn"
                 :class="{ 'disabled': loading }" >ВІДПРАВИТИ</button>

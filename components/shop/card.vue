@@ -4,7 +4,7 @@
       <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
       <img
         src="~assets/img/86.png"
-        id="item-img"
+      
         class="card-img-top img-fluid store-img"
         alt="Koch Chemie Fresh UP"
       >
