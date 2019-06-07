@@ -48,7 +48,6 @@
           </svg>
         </div>
         <div class="lightbox-image col-10 my-auto p-2" @click.stop>
-          
           <img class="img-fluid" :src="images[index]">
         </div>
         <div
@@ -155,7 +154,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .lightbox {
   top: 0;
   left: 0;
@@ -169,15 +167,80 @@ export default {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: calc(100vh - 90px);
+  max-height: calc(100vh - 120px);
   margin: auto;
 }
 
-  .work-card {
-    background: #000000;
-    border-radius: 22px;
-    cursor: pointer;
+.work-card {
+  background: #000000;
+  border-radius: 22px;
+  cursor: pointer;
 
+  img {
+    object-fit: cover;
+    object-position: left;
+    margin-left: -1px;
+  }
+
+  h4 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.05em;
+
+    color: $lightColor;
+
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.card__hover_two {
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: "";
+    pointer-events: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+
+  &::before {
+    transform-origin: left top;
+  }
+
+  &::after {
+    transform-origin: right bottom;
+  }
+
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+
+@include mediaSm {
+  .work-card {
     img {
       object-fit: cover;
       object-position: left;
@@ -185,121 +248,49 @@ export default {
     }
 
     h4 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
       font-size: 14px;
-      line-height: 16px;
-      align-items: center;
-      text-align: right;
-      letter-spacing: 0.05em;
-
-      color: $lightColor;
-
+      line-height: 15px;
       span {
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-      }
-    }
-  }
-
-  .card__hover_two {
-    &::before,
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: scale3d(0, 0, 1);
-      transition: transform 0.3s ease-out 0s;
-      background: rgba(255, 255, 255, 0.1);
-      content: "";
-      pointer-events: none;
-      border-radius: 20px;
-      -webkit-border-radius: 20px;
-      -moz-border-radius: 20px;
-      -ms-border-radius: 20px;
-      -o-border-radius: 20px;
-    }
-
-    &::before {
-      transform-origin: left top;
-    }
-
-    &::after {
-      transform-origin: right bottom;
-    }
-
-    &:hover,
-    &:focus {
-      &::before,
-      &::after {
-        transform: scale3d(1, 1, 1);
-      }
-    }
-  }
-
-
-@include mediaSm {
-  
-    .work-card {
-img {
-      object-fit: cover;
-      object-position: left;
-      margin-left: -1px;
-    }
-
-      h4 {
         font-size: 14px;
         line-height: 15px;
-        span {
-          font-size: 14px;
-          line-height: 15px;
-        }
       }
     }
   }
-
+}
 
 @include mediaXSm {
-  
-    .work-card {
-      img {
+  .work-card {
+    img {
       object-fit: cover;
       object-position: left;
       margin-left: -1px;
     }
-      h4 {
+    h4 {
+      font-size: 12px;
+      line-height: 13px;
+      span {
         font-size: 12px;
         line-height: 13px;
-        span {
-          font-size: 12px;
-          line-height: 13px;
-        }
       }
     }
   }
-
+}
 
 @include mediaXXSm {
-  
-    .work-card {
-      img {
+  .work-card {
+    img {
       object-fit: cover;
       object-position: left;
       margin-left: -2px;
     }
-      h4 {
+    h4 {
+      font-size: 8px;
+      line-height: 9px;
+      span {
         font-size: 8px;
         line-height: 9px;
-        span {
-          font-size: 8px;
-          line-height: 9px;
-        }
       }
     }
   }
-
+}
 </style>
