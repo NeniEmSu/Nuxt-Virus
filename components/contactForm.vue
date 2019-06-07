@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label class="hidden opacity-0" for="typeOfWork">Оберіть тип робіт</label>
+                <label class="sr-only" for="typeOfWork">Оберіть тип робіт</label>
                 <select
                   aria-label="typeOfWork"
                   id="typeOfWork"
@@ -57,7 +57,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <label class="hidden opacity-0 z-0" for="carModel">Введіть модель авто</label>
+                <label class="sr-only" for="carModel">Введіть модель авто</label>
                 <input
                   aria-label="carModel"
                   id="carModel"
@@ -73,7 +73,7 @@
 
             <div class="col-md-6">
               <div class="form-group">
-                <label class="hidden opacity-0 z-0" for="name">Ім’я</label>
+                <label class="sr-only" for="name">Ім’я</label>
                 <input
                   name="name"
                   id="name"
@@ -86,7 +86,7 @@
                 >
               </div>
               <div class="form-group">
-                <label class="hidden opacity-0 z-0" for="phone">Телефон</label>
+                <label class="sr-only" for="phone">Телефон</label>
                 <input
                   aria-describedby="phone"
                   aria-label="phone"
