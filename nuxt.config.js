@@ -116,23 +116,23 @@ export default {
         type: 'image/png',
         size: '180x180',
         href: '/apple-touch-icon.png'
-      },{
+      }, {
         rel: 'icon',
         type: 'image/png',
         size: '512x512',
         href: '/android-chrome-512x512.png'
       },
-       {
+      {
         rel: 'icon',
         type: 'image/png',
         size: '310x310',
         href: '/mstile-310x310.png'
-      },{
+      }, {
         rel: 'icon',
         type: 'image/png',
         size: '192x192',
         href: '/android-chrome-192x192.png'
-      },{
+      }, {
         rel: 'icon',
         type: 'image/png',
         size: '150x150',
@@ -187,8 +187,8 @@ export default {
 
   webfontloader: {
     google: {
-      families: ['Roboto+Condensed:400,700:latin,cyrillic,cyrillic-ext', 'Roboto:400,500,700,900:latin,cyrillic,cyrillic-ext' ],
-      display:'swap',
+      families: ['Roboto+Condensed:400,700:latin,cyrillic,cyrillic-ext', 'Roboto:400,500,700,900:latin,cyrillic,cyrillic-ext'],
+      display: 'swap',
     }
   },
 

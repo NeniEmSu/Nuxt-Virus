@@ -7,32 +7,29 @@
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
           </h3>
-          <div v-if="errors.length"  class="text-left text-danger">
-
-        <b>Please correct the following error(s):</b>
-        <ol>
-          <li class="ml-3" v-for="error in errors" :key="error">
-            {{ error }}
-          </li>
-        </ol>
-      </div>
-      <div v-if="success" @submitForm="makeToast('success')" class="text-left text-sucess">
-        <b>Your message has been sent succesfully</b>
-      </div>
+          <div v-if="errors.length" class="text-left text-danger">
+            <b>Please correct the following error(s):</b>
+            <ol>
+              <li class="ml-3" v-for="error in errors" :key="error">{{ error }}</li>
+            </ol>
+          </div>
+          <div v-if="success" @submitForm="makeToast('success')" class="text-left text-sucess">
+            <b>Your message has been sent succesfully</b>
+          </div>
 
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label hidden for="typeOfWork">Оберіть тип робіт</label>
+                <label class="hidden opacity-0 z-0" for="typeOfWork">Оберіть тип робіт</label>
                 <select
-                 aria-label="typeOfWork"
+                  aria-label="typeOfWork"
                   id="typeOfWork"
                   aria-describedby="typeOfWork"
                   class="form-control mx-auto"
                   v-model="service"
                   name="typeOfWork"
                 >
-                  <option value=null disabled>Оберіть тип робіт</option>
+                  <option value="null" disabled>Оберіть тип робіт</option>
                   <option value="0">Полірування автомобіля</option>
                   <option value="1">Полірування фар</option>
                   <option value="2">Полірування вставок салону</option>
@@ -60,9 +57,9 @@
                 </select>
               </div>
               <div class="form-group">
-                <label hidden for="carModel">Введіть модель авто</label>
+                <label class="hidden opacity-0 z-0" for="carModel">Введіть модель авто</label>
                 <input
-                 aria-label="carModel"
+                  aria-label="carModel"
                   id="carModel"
                   type="text"
                   name="carModel"
@@ -70,18 +67,17 @@
                   aria-describedby="carModel"
                   placeholder="Введіть модель авто"
                   v-model="carModel"
-                 
                 >
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
-                <label hidden for="name">Ім’я</label>
+                <label class="hidden opacity-0 z-0" for="name">Ім’я</label>
                 <input
                   name="name"
                   id="name"
-                   aria-label="name"
+                  aria-label="name"
                   type="text"
                   class="form-control mx-auto"
                   aria-describedby="name"
@@ -90,10 +86,10 @@
                 >
               </div>
               <div class="form-group">
-                <label hidden for="phone">Телефон</label>
+                <label class="hidden opacity-0 z-0" for="phone">Телефон</label>
                 <input
                   aria-describedby="phone"
-                   aria-label="phone"
+                  aria-label="phone"
                   name="phone"
                   type="text"
                   class="form-control mx-auto"
@@ -101,34 +97,29 @@
                   placeholder="Телефон*"
                   v-mask="'+38(0##) ###-####'"
                   v-model="models.phoneNumber"
-                  
                 >
               </div>
-              
-              <button  type="submit"
-              aria-label="submit"
+
+              <button
+                type="submit"
+                aria-label="submit"
                 name="submit"
                 class="contact-btn"
-                :class="{ 'disabled': loading }" >ВІДПРАВИТИ</button>
+                :class="{ 'disabled': loading }"
+              >ВІДПРАВИТИ</button>
             </div>
-           
           </div>
           <p
             class="text-left col-12 w-md-50 px-0"
           >Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом</p>
-
-           
-
         </form>
-        
       </div>
-      
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   props: {
@@ -149,56 +140,65 @@ export default {
     };
   },
   methods: {
-    checkForm: function (e) {
-      this.errors = []
-      this.success = false
+    checkForm: function(e) {
+      this.errors = [];
+      this.success = false;
 
       if (!this.name) {
-        this.errors.push("Ім’я required")
+        this.errors.push("Ім’я вимагається");
       }
       if (!this.carModel) {
-        this.errors.push("Введіть модель авто required")
+        this.errors.push("Введіть модель авто вимагається");
       }
       if (!this.service) {
-        this.errors.push("тип робіт required")
+        this.errors.push("тип робіт вимагається");
       }
       if (!this.models.phoneNumber) {
-        this.errors.push("Телефон required")
+        this.errors.push("Телефон вимагається");
       }
       if (!this.errors.length) {
-        this.submitForm()
+        this.submitForm();
       }
-      e.preventDefault()
+      e.preventDefault();
     },
-    submitForm: function () {
-      this.loading = true
+    submitForm: function() {
+      this.loading = true;
 
-      axios.post(process.env.contactUrl,
-      JSON.stringify({
-          form: {
-            name: this.name,
-            carModel: this.carModel,
-            service: this.service,
-            phoneNumber: this.models.phoneNumber
+      axios
+        .post(
+          process.env.contactUrl,
+          JSON.stringify({
+            form: {
+              name: this.name,
+              carModel: this.carModel,
+              service: this.service,
+              phoneNumber: this.models.phoneNumber
+            }
+          }),
+          {
+            headers: { "Content-Type": "application/json" }
           }
-        }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(({ data }) => {
-        this.loading = false
+        )
+        .then(({ data }) => {
+          this.loading = false;
 
-        if(data.error){
-          this.errors.push(data.error)
-        } else if(data.name && data.carModel && data.service && data.models.phoneNumber) {
-          this.name = this.carModel = this.service = this.models.phoneNumber = null
-          this.success = true
-        }
-      }).catch(error => {
-        this.loading = false
+          if (data.error) {
+            this.errors.push(data.error);
+          } else if (
+            data.name &&
+            data.carModel &&
+            data.service &&
+            data.models.phoneNumber
+          ) {
+            this.name = this.carModel = this.service = this.models.phoneNumber = null;
+            this.success = true;
+          }
+        })
+        .catch(error => {
+          this.loading = false;
 
-        this.errors.push('An error occured, please try again later')
-      })
+          this.errors.push("An error occured, please try again later");
+        });
     },
     makeToast(variant = null) {
       this.$bvToast.toast("Message Was Sent Sucessfully", {
