@@ -25,7 +25,7 @@
         </li>
 
         <li class="facebook">
-          <a href="https://www.facebook.com/virus.te.ua/" target="_blank">
+          <a href="https://www.facebook.com/virus.te.ua/" target="_blank" rel="noopener">
             <picture>
               <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
               <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
@@ -34,7 +34,7 @@
         </li>
 
         <li class="instagram">
-          <a href="https://www.instagram.com/virusdetailing/" target="_blank">
+          <a href="https://www.instagram.com/virusdetailing/" target="_blank" rel="noopener">
             <picture>
               <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp">
               <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">

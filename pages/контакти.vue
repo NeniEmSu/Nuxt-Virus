@@ -67,10 +67,10 @@
 
         <div class="contact-page-socials">
           <h4>Більше інформації тут:</h4>
-          <a target="_blank" href="https://www.instagram.com/virusdetailing/">
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/virusdetailing/">
             <img src="~/assets/img/contacPageIg.png" alt="Instagram icon">
           </a>
-          <a target="_blank" href="https://www.facebook.com/virus.te.ua/">
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/virus.te.ua/">
             <img src="~/assets/img/contactPageFb.png" alt="Facebook icon">
           </a>
         </div>

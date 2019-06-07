@@ -116,6 +116,33 @@ export default {
         type: 'image/png',
         size: '180x180',
         href: '/apple-touch-icon.png'
+      },{
+        rel: 'icon',
+        type: 'image/png',
+        size: '512x512',
+        href: '/android-chrome-512x512.png'
+      },
+       {
+        rel: 'icon',
+        type: 'image/png',
+        size: '310x310',
+        href: '/mstile-310x310.png'
+      },{
+        rel: 'icon',
+        type: 'image/png',
+        size: '192x192',
+        href: '/android-chrome-192x192.png'
+      },{
+        rel: 'icon',
+        type: 'image/png',
+        size: '150x150',
+        href: '/mstile-150x150.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        size: '70x70',
+        href: '/mstile-70x70.png'
       },
       {
         rel: 'icon',
