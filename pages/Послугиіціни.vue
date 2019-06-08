@@ -505,7 +505,7 @@ export default {
       ]
     };
   },
-  asyncData() {
+  data() {
     return {
       service: "00",
       image: "services-car-goup-all",
