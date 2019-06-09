@@ -102,7 +102,7 @@ export default {
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true });
     }
   }
 };

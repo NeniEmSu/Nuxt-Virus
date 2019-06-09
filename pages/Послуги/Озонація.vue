@@ -22,7 +22,7 @@
 
         <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
 
-       
+
       </div>
     </div>
 
@@ -77,7 +77,7 @@ export default {
   },
   mounted() {
     if (process.client) {
-      this.$scrollTo("#__nuxt", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true });
     }
   }
 };

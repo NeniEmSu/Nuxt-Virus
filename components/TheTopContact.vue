@@ -1,5 +1,5 @@
 <template>
-  <div class="top-contacts">
+  <div class="top-contacts" id="top-contact">
     <div class="container p-0">
       <ul>
         <li>

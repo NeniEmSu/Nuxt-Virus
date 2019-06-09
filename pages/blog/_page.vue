@@ -94,6 +94,11 @@ export default {
       };
     }
   },
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#top-contact", 0, { force: true });
+    }
+  },
   head() {
     return {
       title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`
