@@ -55,8 +55,10 @@
                 <input aria-label="carModel" id="carModel" type="text" name="carModel" list="models"
                   class="form-control mx-auto" aria-describedby="carModel" placeholder="Введіть модель авто"
                   v-model="carModel">
+
                 <datalist id="models">
-                  <option>Audi</option>
+
+                  <option value="Acura"></option>
                   <option>Chevrolet</option>
                   <option>Honda</option>
                   <option>Lada</option>
