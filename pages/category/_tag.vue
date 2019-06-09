@@ -29,6 +29,7 @@
 
 <script>
 export default {
+  scrollToTop: true,
   async asyncData({ app, params, error, payload }) {
     if (payload) {
       return { posts: payload, category: params.tag };
@@ -50,6 +51,11 @@ export default {
       }
 
       return { posts: data.entries, category: params.tag };
+    }
+  },
+   mounted() {
+    if (process.client) {
+      this.$scrollTo("#top-contact", 0, { force: true });
     }
   },
   head() {
