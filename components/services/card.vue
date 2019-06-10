@@ -1,57 +1,22 @@
 <template>
-  <div class="card card__hover" style="width: 18rem;">
-    <picture>
-      <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
-      <img
-        src="~assets/img/86.png"
-        
-        class="card-img-top img-fluid store-img"
-        alt="Koch Chemie Fresh UP"
-      >
-    </picture>
-    <hr class="desktop-only">
-    <div class="card-body">
-      <a href>
-        <h5 class="card-title">Koch Chemie Fresh UP</h5>
-      </a>
-      <p class="card-text desktop-only">
-        Розпилюючий засіб для видалення
-        небажаних запахів
-      </p>
-      <div class="mobile-only">
-        <div class="row">
-          <div class="col-6 pr-0">
-            <p class="card-price">
-              2 900
-              <span>ГРН</span>
-            </p>
-          </div>
-          <div class="col-6 pl-0">
-            <small class="discount">В наявності</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer desktop-only">
-      <div class="row bg-transparent">
-        <div class="col-6 bg-transparent cost">
-          <small>
-            <s class="discount-price">2975 грн</s>
-          </small>
-          <p class="card-price">
-            2 900
-            <span>ГРН</span>
+  <div class="card bg-dark text-white">
+    <img class="card-img" src="~assets/img/services1.jpg" alt="Card image">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Car polishing</h5>
+      <div class="row">
+        <div class="col-6">
+          <p class="card-text">
+            <small>від</small>
+            5999
+            <small>грн</small>
           </p>
         </div>
-        <div class="col-6 bg-transparent btn-container">
-          <small class="discount">В наявності</small>
-          <br>
-          <a href="Магазинdetail" class="btn">Купити</a>
+        <div class="col-6">
+          <nuxt-link to="#" class="btn">Читати більше</nuxt-link>
         </div>
       </div>
+      <p class="card-text"></p>
     </div>
-
-    <a href="#" class="card-footer mobile-only">Купити</a>
   </div>
 </template>
 
@@ -60,40 +25,32 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.mobile-only {
-  display: none;
-}
 .card {
-  background: #ffffff;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+  background-color: $darkColor;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+  border: 0;
+
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+
+  width: 100%;
+  min-width: 277px;
+  max-width: 277px;
+  height: 277px;
+}
+
+img {
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
   border-radius: 16.7347px;
 
   width: 100%;
-  min-width: 250px;
-  max-width: 250px;
-  height: 250px;
+  min-width: 277px;
+  max-width: 277px;
+  height: 277px;
   border: 0;
-}
-
-.card-body {
-  padding: 5px 20px;
-}
-
-.card-img-top {
-  border-radius: 16.7347px 16.7347px 0px 0px;
-  width: 250px;
-  height: 100%;
-  min-height: 135px;
-  max-height: 135px;
-  object-fit: scale-down;
-  object-position: center;
-}
-
-hr {
-  width: 82%;
-  align-self: center;
-  margin: 0;
-  border: 1px solid #c4c4c4;
 }
 
 .card-title {
@@ -103,7 +60,7 @@ hr {
   font-size: 14px;
   line-height: 16px;
 
-  color: #000000;
+  color: $lightColor;
   text-align: left;
   margin-bottom: 5px;
 }
@@ -120,85 +77,64 @@ hr {
   margin-bottom: 3px;
 }
 
-.card-footer {
-  background: transparent;
-  border-top: 0;
-  border-bottom-left-radius: 16.7347px;
-  border-bottom-right-radius: 16.7347px;
+.card-img-overlay {
+  top: 195px;
+  background-color: rgba(0, 0, 0, 0.64);
+  backdrop-filter: blur(5px);
+  border-radius: 0px 0px 20px 20px;
+  box-sizing: border-box;
+  padding: 0 10px;
 
-  padding: 0 20px;
-}
+  h5 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
 
-.cost {
-  text-align: left;
-}
+    color: $lightColor;
 
-.btn-container {
-  margin-top: -10px;
-}
+    box-sizing: border-box;
+    padding-top: 5px;
+  }
 
-.discount-price {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  text-decoration-line: line-through;
-
-  color: #d7000b;
-}
-
-.discount {
-  font-family: $secondaryFont;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-
-  text-align: center;
-
-  color: #239a0f;
-}
-
-.card-price {
-  font-family: $mainFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 19px;
-  letter-spacing: -0.05em;
-
-  color: #8b8b8b;
-
-  span {
+  p {
+    padding: 7px 0;
     font-family: $mainFont;
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 10px;
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 18px;
 
-    text-align: center;
+    color: $redColor;
 
-    color: #8b8b8b;
+    &.subtext {
+      margin-bottom: 5px;
+    }
+
+    small {
+      font-size: 14px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      line-height: normal;
+    }
   }
 }
 
 .btn {
-  background: #d41f26;
-  border-radius: 41.8367px;
-
-  padding: 7px 24px;
-
   font-family: $secondaryFont;
   font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  background-color: transparent;
+  border: $redColor 1px solid;
+  border-radius: 50px;
 
-  text-align: center;
-
-  color: #ffffff;
+  color: $lightColor;
+  padding: 8px 10px;
 }
 
 .card__hover {

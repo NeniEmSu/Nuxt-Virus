@@ -98,7 +98,7 @@
               <img
                 src="~/assets/img/PNGPIX-COM-Black-Range-Rover-Piano-Car-PNG-Image.png"
                 class="card-img img-fluid"
-                alt="..."
+                alt="Black-Range-Rover-Piano-Car"
               >
             </div>
             <div class="col-6">
@@ -153,9 +153,46 @@
           <!-- Полірування -->
           <h2 class="text-center fab-header">Полірування</h2>
 
-          <!-- <serviceCard/> -->
+          <div class="row">
+            <div
+              v-for="polish in polishing"
+              :key="polish.polishingId"
+              class="card polishing card__hover mx-auto"
+            >
+              <img
+                class="card-img"
+                :src="require(`~/assets/img/${polish.polishingImg + '.jpg'}`)"
+                :alt="polish.polishingTitle"
+              >
+              <div class="card-img-overlay">
+                <h5 class="card-title">{{ polish.polishingTitle }}</h5>
+                <div class="row">
+                  <div class="col-6 pr-0">
+                    <p v-show="selected == 1" class>
+                      <small>від</small>
+                      {{ polish.polishingCost }}
+                      <small>грн</small>
+                    </p>
+                    <p v-show="selected == 2" class>
+                      <small>від</small>
+                      {{ polish.polishingCostVar1 }}
+                      <small>грн</small>
+                    </p>
+                    <p v-show="selected == 3" class>
+                      <small>від</small>
+                      {{ polish.polishingCostVar2 }}
+                      <small>грн</small>
+                    </p>
+                  </div>
+                  <div class="col-6 text-right pl-0">
+                    <nuxt-link :to="polish.polishingLink" class="btn">Читати більше</nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <div class="card-deck m-0 p-0">
+          <!-- <div class="card-deck m-0 p-0">
             <div
               v-for="polish in polishing"
               :key="polish.polishingId"
@@ -190,11 +227,50 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <!-- Хімчистка -->
           <h2 class="text-center fab-header">Хімчистка</h2>
-          <div class="card-deck">
+
+          <div class="row">
+            <div
+              v-for="cleaner in cleaners"
+              :key="cleaner.cleanersId"
+              class="card cleaning card__hover mx-auto"
+            >
+              <img
+                class="card-img"
+                :src="require(`~/assets/img/${cleaner.cleanersImg + '.jpg'}`)"
+                :alt="cleaner.cleanersTitle"
+              >
+              <div class="card-img-overlay cleaning">
+                <h5 class="card-title">{{ cleaner.cleanersTitle }}</h5>
+                <div class="row">
+                  <div class="col-6 pr-0">
+                    <p v-show="selected == 1" class>
+                      <small>від</small>
+                      {{ cleaner.cleanersCost }}
+                      <small>грн</small>
+                    </p>
+                    <p v-show="selected == 2" class>
+                      <small>від</small>
+                      {{ cleaner.cleanersCostVar1 }}
+                      <small>грн</small>
+                    </p>
+                    <p v-show="selected == 3" class>
+                      <small>від</small>
+                      {{ cleaner.cleanersCostVar2 }}
+                      <small>грн</small>
+                    </p>
+                  </div>
+                  <div class="col-6 text-right pl-0">
+                    <nuxt-link :to="cleaner.cleanersLink" class="btn">Читати більше</nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="card-deck">
             <div
               v-for="cleaner in cleaners"
               :key="cleaner.cleanersId"
@@ -229,7 +305,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <!-- Воскове покриття -->
           <h2 class="text-center fab-header">Воскове покриття</h2>
@@ -287,16 +363,16 @@
                     <h5 class="col-12 px-0">Керамічне покриття кузова</h5>
                     <hr>
                     <div class="row">
-                      <div class="col-md-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">Двухфазна мийка</p>
                       </div>
-                      <div class="col-md-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">Очищення кузова від бітуму</p>
                       </div>
-                      <div class="col-md-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">Легке вілновлююче полірування</p>
                       </div>
-                      <div class="col-md-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto">
                         <p class="subtext">Керамічне покриття окремих деталей</p>
                       </div>
                     </div>
@@ -341,13 +417,13 @@
                     <h5 class="col-12 px-0">Комплекс</h5>
                     <hr style="width: 100%;">
                     <div class="row">
-                      <div class="col-md-4 mt-2 text-left mx-md-auto">
+                      <div class="col-4 mt-2 text-left mx-md-auto">
                         <p class="subtext">Трьохфазна мийка авто + Чистка ковроліну підлоги</p>
                       </div>
-                      <div class="col-md-4 mt-2 text-left mx-md-auto">
+                      <div class="col-4 mt-2 text-left mx-md-auto">
                         <p class="subtext">Чистка дверних карт + Чистка панелі</p>
                       </div>
-                      <div class="col-md-4 mt-2 text-left mx-md-auto">
+                      <div class="col-4 mt-2 text-left mx-md-auto">
                         <p class="subtext">
                           Чистка воздуховодів + Чистка сидінь і стелі +
                           Ароматизація салону
@@ -507,7 +583,7 @@ export default {
   },
   data() {
     return {
-      service: "00",
+      service: null,
       image: "services-car-goup-all",
       description:
         " white mercedes , jeep grand cherokee srt white & Black Range Rover Piano",
@@ -543,7 +619,8 @@ export default {
           polishingCostVar1: "6999",
           polishingCostVar2: "8499",
           polishingLink: "Послуги/Полірування",
-          polishingClass: "service-one"
+          polishingClass: "service-one",
+          polishingImg: "services1"
         },
         {
           polishingId: "02",
@@ -552,7 +629,8 @@ export default {
           polishingCostVar1: "700",
           polishingCostVar2: "800",
           polishingLink: "Послуги/Поліруванняфар",
-          polishingClass: "service-two"
+          polishingClass: "service-two",
+          polishingImg: "services2"
         },
         {
           polishingId: "03",
@@ -561,7 +639,8 @@ export default {
           polishingCostVar1: "600",
           polishingCostVar2: "700",
           polishingLink: "Послуги/Вставкисалону",
-          polishingClass: "service-three"
+          polishingClass: "service-three",
+          polishingImg: "services3"
         },
         {
           polishingId: "04",
@@ -570,7 +649,8 @@ export default {
           polishingCostVar1: "900",
           polishingCostVar2: "1000",
           polishingLink: "Послуги/Центральністійки",
-          polishingClass: "service-four"
+          polishingClass: "service-four",
+          polishingImg: "services4"
         }
       ],
       cleaners: [
@@ -581,7 +661,8 @@ export default {
           cleanersCostVar1: "2499",
           cleanersCostVar2: "3199",
           cleanersLink: "Послуги/Хімчистка",
-          cleanersClass: "service-five"
+          cleanersClass: "service-five",
+          cleanersImg: "services5"
         },
         {
           cleanersId: "06",
@@ -590,7 +671,8 @@ export default {
           cleanersCostVar1: "0",
           cleanersCostVar2: "0",
           cleanersLink: "Послуги/Колісніарки",
-          cleanersClass: "service-six"
+          cleanersClass: "service-six",
+          cleanersImg: "services6"
         },
         {
           cleanersId: "07",
@@ -599,7 +681,8 @@ export default {
           cleanersCostVar1: "330",
           cleanersCostVar2: "385",
           cleanersLink: "Послуги/передніхсидінь",
-          cleanersClass: "service-seven"
+          cleanersClass: "service-seven",
+          cleanersImg: "services7"
         },
         {
           cleanersId: "08",
@@ -608,7 +691,8 @@ export default {
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
           cleanersLink: "Послуги/задніхсидінь",
-          cleanersClass: "service-eight"
+          cleanersClass: "service-eight",
+          cleanersImg: "services8"
         }
       ],
       WaxCovers: [
@@ -772,6 +856,454 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.card.polishing,
+.card.cleaning {
+  background-color: $darkColor;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+  border: 0;
+
+  margin-bottom: 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+
+  width: 100%;
+  min-width: 277px;
+  max-width: 277px;
+  height: 277px;
+
+  img {
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+
+    width: 100%;
+    min-width: 277px;
+    max-width: 277px;
+    height: 277px;
+    border: 0;
+  }
+
+  .card-title {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: $lightColor;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+}
+.cleaning .card-img.overlay {
+  top: 70%;
+}
+.card-img-overlay {
+  top: 70%;
+  background-color: rgba(0, 0, 0, 0.64);
+  backdrop-filter: blur(5px);
+  border-radius: 0px 0px 20px 20px;
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  h5 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+
+    color: $lightColor;
+
+    box-sizing: border-box;
+    padding-top: 5px;
+  }
+
+  p {
+    padding: 7px 0;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 18px;
+
+    color: $redColor;
+
+    &.subtext {
+      margin-bottom: 5px;
+    }
+
+    small {
+      font-size: 14px;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      line-height: normal;
+    }
+  }
+
+  .btn {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    background-color: transparent;
+    border: $redColor 1px solid;
+    border-radius: 50px;
+
+    color: $lightColor;
+    padding: 8px 10px;
+  }
+}
+
+.card__hover {
+  transition: transform 500ms;
+  -webkit-transition: transform 500ms;
+  -moz-transition: transform 500ms;
+  -ms-transition: transform 500ms;
+  -o-transition: transform 500ms;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    content: "";
+    opacity: 0;
+    z-index: -1;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.01, 1.01, 1);
+    -webkit-transform: scale3d(1.01, 1.01, 1);
+    -moz-transform: scale3d(1.01, 1.01, 1);
+    -ms-transform: scale3d(1.01, 1.01, 1);
+    -o-transform: scale3d(1.01, 1.01, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+@include mediaMd {
+  .card.polishing,
+  .card.cleaning {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+
+    height: 210px;
+    width: 100%;
+    min-width: 210px;
+    max-width: 210px;
+
+    img {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+
+      height: 210px;
+      width: 100%;
+      min-width: 210px;
+      max-width: 210px;
+    }
+
+    .card-title {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: $lightColor;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-img-overlay {
+    top: 70%;
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 10px 10px;
+    box-sizing: border-box;
+    padding: 0 5px;
+
+    h5 {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      padding: 2px 0;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 12px;
+
+      &.subtext {
+        margin-bottom: 5px;
+      }
+
+      small {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    .btn {
+      font-size: 10px;
+      line-height: 12px;
+
+      padding: 4px 5px;
+    }
+  }
+  .card-img.overlay.cleaning {
+    top: 65%;
+  }
+}
+
+@include mediaSm {
+  .card.polishing,
+  .card.cleaning {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 0;
+
+    height: 163px;
+    width: 100%;
+    min-width: 163px;
+    max-width: 163px;
+
+    img {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+
+      height: 163px;
+      width: 100%;
+      min-width: 163px;
+      max-width: 163px;
+    }
+
+    .card-title {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: $lightColor;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-img-overlay {
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 10px 10px;
+    box-sizing: border-box;
+    padding: 0 5px;
+
+    h5 {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      padding: 2px 0;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 12px;
+
+      &.subtext {
+        margin-bottom: 5px;
+      }
+
+      small {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    .btn {
+      font-size: 10px;
+      line-height: 12px;
+
+      padding: 4px 5px;
+    }
+  }
+  .card-img.overlay.cleaning {
+    top: 30%;
+  }
+}
+
+@include mediaXSm {
+  .card.polishing,
+  .card.cleaning {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 0;
+
+    height: 158px;
+    width: 100%;
+    min-width: 158px;
+    max-width: 158px;
+
+    img {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+
+      height: 158px;
+      width: 100%;
+      min-width: 158px;
+      max-width: 158px;
+    }
+
+    .card-title {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: $lightColor;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-img-overlay {
+    top: 40%;
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 10px 10px;
+    box-sizing: border-box;
+    padding: 0 5px;
+
+    h5 {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      padding: 2px 0;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 12px;
+
+      &.subtext {
+        margin-bottom: 5px;
+      }
+
+      small {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    .btn {
+      font-size: 10px;
+      line-height: 12px;
+
+      padding: 4px 5px;
+    }
+  }
+  .card-img.overlay.cleaning {
+    top: 30%;
+  }
+}
+
+@include mediaXXSm {
+  .card.polishing,
+  .card.cleaning {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+
+    height: 135px;
+    width: 100%;
+    min-width: 135px;
+    max-width: 135px;
+
+    img {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+
+      height: 135px;
+      width: 100%;
+      min-width: 135px;
+      max-width: 135px;
+    }
+
+    .card-title {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: $lightColor;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-img-overlay {
+    top: 40%;
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 10px 10px;
+    box-sizing: border-box;
+    padding: 0 2.5px;
+
+    h5 {
+      font-size: 10px;
+      line-height: 12px;
+      margin-bottom: 2px;
+    }
+
+    p {
+      padding: 1px 0;
+      font-size: 10px;
+      line-height: 12px;
+      margin-top: 6px;
+
+      small {
+        font-size: 8px;
+        line-height: 10px;
+      }
+    }
+
+    .btn {
+      font-size: 8px;
+      line-height: 10px;
+
+      padding: 2px 2.5px;
+    }
+  }
+  .card-img.overlay.cleaning {
+    top: 10%;
+  }
+}
+</style>
 
 
 <style lang="scss" scoped>
@@ -1489,7 +2021,7 @@ form.choose-brand p {
   .jumbotron.services {
     h2 {
       padding-top: 0px;
-      margin: 0px auto;
+      margin: 0 auto 10px auto;
 
       font-size: 20px;
       line-height: 23px;
