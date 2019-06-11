@@ -174,6 +174,55 @@ export default {
     }]
   },
 
+  manifest: {
+    short_name: "Virus",
+    name: 'Детейлінг центр Virus',
+    description: "Детейлінг студія Virus Тернопіль - комплексний догляд за Вашим авто.",
+    lang: 'uk',
+    icons: [{
+        src: "/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16"
+      }, {
+        src: "/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32"
+      }, {
+        src: "/mstile-70x70.png",
+        type: "image/png",
+        sizes: "70x70"
+      }, {
+        src: "/mstile-150x150.png",
+        type: "image/png",
+        sizes: "150x150"
+      }, {
+        src: "/apple-touch-icon.png",
+        type: "image/png",
+        sizes: "180x180"
+      },
+      {
+        src: "/android-chrome-192x192.png",
+        type: "image/png",
+        sizes: "192x192"
+      }, {
+        src: "/mstile-310x310.png",
+        type: "image/png",
+        sizes: "310x310"
+      },
+      {
+        src: "/android-chrome-512x512.png",
+        type: "image/png",
+        sizes: "512x512"
+      }
+    ],
+    categories: ["business", "utilities", "shopping"],
+    start_url: "/",
+    background_color: "#FFFFFF",
+    display: "standalone",
+    scope: "/app/",
+    theme_color: "#e32124"
+  },
+
   loading: {
     color: '#e32124'
   },
