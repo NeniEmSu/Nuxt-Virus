@@ -228,6 +228,7 @@ export default {
   },
 
   css: ['~/assets/scss/config.scss',
+    '~/assets/fonts/fonts.css',
     'highlight.js/styles/dracula.css'
   ],
 
@@ -235,12 +236,12 @@ export default {
     contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`
   },
 
-  webfontloader: {
-    google: {
-      families: ['Roboto+Condensed:400,700:latin,cyrillic,cyrillic-ext', 'Roboto:400,500,700,900:latin,cyrillic,cyrillic-ext'],
-      display: 'swap',
-    }
-  },
+  // webfontloader: {
+  //   google: {
+  //     families: ['Roboto+Condensed:400,700:latin,cyrillic,cyrillic-ext', 'Roboto:400,500,700,900:latin,cyrillic,cyrillic-ext'],
+  //     display: 'swap',
+  //   }
+  // },
 
   plugins: [
     '~/plugins/Axios.js',
@@ -267,7 +268,7 @@ export default {
   ],
 
   modules: [
-    'nuxt-webfontloader',
+    // 'nuxt-webfontloader',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
