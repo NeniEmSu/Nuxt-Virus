@@ -56,7 +56,7 @@ export default {
       {
         hid: 'msapplication-config',
         name: 'msapplication-config',
-        content: 'img/icons/browserconfig.xml'
+        content: '/browserconfig.xml'
       },
       {
         hid: 'theme-color',
@@ -116,33 +116,51 @@ export default {
         type: 'image/png',
         size: '180x180',
         href: '/apple-touch-icon.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        size: '128x128',
+        href: '/icon-128x128.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        size: '96x96',
+        href: '/icon-96x96.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        size: '144x144',
+        href: '/icon-144x144.png'
       }, {
         rel: 'icon',
         type: 'image/png',
         size: '512x512',
-        href: '/android-chrome-512x512.png'
+        href: '/icon-512x512.png'
       },
       {
         rel: 'icon',
         type: 'image/png',
-        size: '310x310',
-        href: '/mstile-310x310.png'
+        size: '384x384',
+        href: '/icon-384x384.png'
       }, {
         rel: 'icon',
         type: 'image/png',
         size: '192x192',
-        href: '/android-chrome-192x192.png'
+        href: '/icon-192x192.png'
       }, {
         rel: 'icon',
         type: 'image/png',
-        size: '150x150',
-        href: '/mstile-150x150.png'
+        size: '152x152',
+        href: '/icon-152x152.png'
       },
       {
         rel: 'icon',
         type: 'image/png',
-        size: '70x70',
-        href: '/mstile-70x70.png'
+        size: '72x72',
+        href: '/icon-72x72.png'
       },
       {
         rel: 'icon',
@@ -175,52 +193,67 @@ export default {
   },
 
   manifest: {
-    short_name: "Virus",
-    name: 'Детейлінг центр Virus',
+    name: "Детейлінг центр Virus",
+    short_name: "Virus Детейлінг",
     description: "Детейлінг студія Virus Тернопіль - комплексний догляд за Вашим авто.",
+    theme_color: "#e32124",
+    background_color: "#ffffff",
+    display: "standalone",
+    orientation: "landscape",
     lang: 'uk',
     icons: [{
-        src: "/favicon-16x16.png",
-        type: "image/png",
-        sizes: "16x16"
-      }, {
-        src: "/favicon-32x32.png",
-        type: "image/png",
-        sizes: "32x32"
-      }, {
-        src: "/mstile-70x70.png",
-        type: "image/png",
-        sizes: "70x70"
-      }, {
-        src: "/mstile-150x150.png",
-        type: "image/png",
-        sizes: "150x150"
-      }, {
-        src: "/apple-touch-icon.png",
-        type: "image/png",
-        sizes: "180x180"
+        type: 'image/png',
+        size: '32x32',
+        src: '/favicon-32x32.png'
       },
       {
-        src: "/android-chrome-192x192.png",
-        type: "image/png",
-        sizes: "192x192"
-      }, {
-        src: "/mstile-310x310.png",
-        type: "image/png",
-        sizes: "310x310"
+        type: 'image/png',
+        size: '16x16',
+        src: '/favicon-16x16.png'
       },
       {
-        src: "/android-chrome-512x512.png",
-        type: "image/png",
-        sizes: "512x512"
+        src: "/icon-72x72.png",
+        sizes: "72x72",
+        type: "image/png"
+      },
+      {
+        src: "/icon-96x96.png",
+        sizes: "96x96",
+        type: "image/png"
+      },
+      {
+        src: "/icon-128x128.png",
+        sizes: "128x128",
+        type: "image/png"
+      },
+      {
+        src: "/icon-144x144.png",
+        sizes: "144x144",
+        type: "image/png"
+      },
+      {
+        src: "/icon-152x152.png",
+        sizes: "152x152",
+        type: "image/png"
+      },
+      {
+        src: "/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png"
+      },
+      {
+        src: "/icon-384x384.png",
+        sizes: "384x384",
+        type: "image/png"
+      },
+      {
+        src: "/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png"
       }
     ],
     categories: ["business", "utilities", "shopping"],
-    start_url: "/",
-    background_color: "#FFFFFF",
-    display: "standalone",
-    scope: "/app/",
-    theme_color: "#e32124"
+    scope: "/app/"
   },
 
   loading: {
