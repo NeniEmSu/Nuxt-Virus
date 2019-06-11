@@ -199,7 +199,7 @@ export default {
     theme_color: "#e32124",
     background_color: "#ffffff",
     display: "standalone",
-    orientation: "landscape",
+    orientation: "portrait",
     lang: 'uk',
     icons: [{
         type: 'image/png',
