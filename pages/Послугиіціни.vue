@@ -44,7 +44,11 @@
         >
           <div class="row no-gutters">
             <div class="col-6">
-              <img src="~/assets/img/mercedes-png-white-m.png" class="card-img img-fluid" alt="...">
+              <img
+                src="~/assets/img/mercedes-png-white-m.png"
+                class="card-img img-fluid"
+                alt="mercedes-png-white"
+              >
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
@@ -74,7 +78,7 @@
               <img
                 src="~/assets/img/png-hd-of-car-jeep-grand-cherokee-srt-white-car-png-image-car-hd-png-1550.png"
                 class="card-img img-fluid"
-                alt="..."
+                alt="car-jeep-grand-cherokee-srt-white-car-png-image"
               >
             </div>
             <div class="col-6">
@@ -153,7 +157,7 @@
           <!-- Полірування -->
           <h2 class="text-center fab-header">Полірування</h2>
 
-          <div class="row">
+          <div class="row mx-auto">
             <div
               v-for="polish in polishing"
               :key="polish.polishingId"
@@ -165,7 +169,7 @@
                 :alt="polish.polishingTitle"
               >
               <div class="card-img-overlay">
-                <h5 class="card-title">{{ polish.polishingTitle }}</h5>
+                <h5 class="card-title crop">{{ polish.polishingTitle }}</h5>
                 <div class="row">
                   <div class="col-6 pr-0">
                     <p v-show="selected == 1" class>
@@ -232,7 +236,7 @@
           <!-- Хімчистка -->
           <h2 class="text-center fab-header">Хімчистка</h2>
 
-          <div class="row">
+          <div class="row mx-auto">
             <div
               v-for="cleaner in cleaners"
               :key="cleaner.cleanersId"
@@ -244,7 +248,7 @@
                 :alt="cleaner.cleanersTitle"
               >
               <div class="card-img-overlay cleaning">
-                <h5 class="card-title">{{ cleaner.cleanersTitle }}</h5>
+                <h5 class="card-title crop">{{ cleaner.cleanersTitle }}</h5>
                 <div class="row">
                   <div class="col-6 pr-0">
                     <p v-show="selected == 1" class>
@@ -309,12 +313,52 @@
 
           <!-- Воскове покриття -->
           <h2 class="text-center fab-header">Воскове покриття</h2>
+
+          <!-- <div class="row mx-auto">
+            <div
+               v-for="WaxCover in WaxCovers"
+                :key="WaxCover.WaxCoversId"
+              class="card WaxCovers card__hover mx-auto"
+            >
+              <img
+                class="card-img"
+                :src="require(`~/assets/img/${WaxCover.WaxCoversImg + '.jpg'}`)"
+                :alt="WaxCover.WaxCoversTitle"
+              >
+              <div class="card-img-overlay cleaning">
+                <h5 class="card-title crop">{{ WaxCover.WaxCoversTitle }}</h5>
+                <div class="row">
+                  <div class="col-6 pr-0">
+                    <p v-show="selected == 1" class>
+                      <small>від</small>
+                      {{ WaxCover.WaxCoversCost }}
+                      <small>грн</small>
+                    </p>
+                    <p v-show="selected == 2" class>
+                      <small>від</small>
+                      {{ WaxCover.WaxCoversCostVar1 }}
+                      <small>грн</small>
+                    </p>
+                    <p v-show="selected == 3" class>
+                      <small>від</small>
+                      {{ WaxCover.WaxCoversCostVar2 }}
+                      <small>грн</small>
+                    </p>
+                  </div>
+                  <div class="col-6 text-right pl-0">
+                    <nuxt-link :to="WaxCover.WaxCoversLink" class="btn">Читати більше</nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
           <div class="testing">
-            <div class="row">
+            <div class="row mx-auto">
               <div
                 v-for="WaxCover in WaxCovers"
                 :key="WaxCover.WaxCoversId"
-                class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto store-item p-0 p-lg-2"
+                class="col-6 mx-auto store-item p-0 p-lg-2"
               >
                 <div class="card two-cards" :class="WaxCover.WaxCoversClass">
                   <div class="card-body"></div>
@@ -363,16 +407,19 @@
                     <h5 class="col-12 px-0">Керамічне покриття кузова</h5>
                     <hr>
                     <div class="row">
-                      <div class="col-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto pr-0">
                         <p class="subtext">Двухфазна мийка</p>
                       </div>
-                      <div class="col-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto p-0">
                         <p class="subtext">Очищення кузова від бітуму</p>
                       </div>
-                      <div class="col-3 mt-2 text-left mx-md-auto">
+                      <div class="col-3 mt-2 text-left mx-md-auto p-0">
                         <p class="subtext">Легке вілновлююче полірування</p>
                       </div>
-                      <div class="col-3 mt-2 text-left mx-md-auto">
+                      <div
+                        class="col-3 mt-2 text-left mx-md-auto pl-0"
+                        style="padding-right: 13px !important;"
+                      >
                         <p class="subtext">Керамічне покриття окремих деталей</p>
                       </div>
                     </div>
@@ -417,13 +464,13 @@
                     <h5 class="col-12 px-0">Комплекс</h5>
                     <hr style="width: 100%;">
                     <div class="row">
-                      <div class="col-4 mt-2 text-left mx-md-auto">
+                      <div class="col-4 mt-2 text-left mx-md-auto pr-1">
                         <p class="subtext">Трьохфазна мийка авто + Чистка ковроліну підлоги</p>
                       </div>
-                      <div class="col-4 mt-2 text-left mx-md-auto">
+                      <div class="col-4 mt-2 text-left mx-md-auto p-1">
                         <p class="subtext">Чистка дверних карт + Чистка панелі</p>
                       </div>
-                      <div class="col-4 mt-2 text-left mx-md-auto">
+                      <div class="col-4 mt-2 text-left mx-md-auto pl-0 pr-2">
                         <p class="subtext">
                           Чистка воздуховодів + Чистка сидінь і стелі +
                           Ароматизація салону
@@ -464,7 +511,98 @@
 
           <h2 class="text-center fab-header">Додаткові послуги</h2>
 
-          <div class="row cards-grouppings-3">
+          <div class="row mx-auto">
+            <div
+              v-for="addition in additional"
+              :key="addition.additionalId"
+              class="card additional card__hover mx-auto"
+            >
+              <img
+                class="card-img"
+                :src="require(`~/assets/img/${addition.additionalImg + '.jpg'}`)"
+                :alt="addition.additionalTitle"
+              >
+              <div class="card-img-overlay">
+                <h5 class="card-title crop">{{ addition.additionalTitle }}</h5>
+                <div class="row">
+                  <div v-show="selected == 1" class="col-6 pr-0">
+                    <p v-show="!addition.fixedRange">
+                      <small v-show="!addition.perItem">від</small>
+                      {{ addition.additionalCost }}
+                      <small
+                        v-if="addition.dollar"
+                      >$</small>
+                      <small v-else-if="addition.perItem">грн / шт</small>
+                      <small v-else>грн</small>
+                    </p>
+                    <p v-show="addition.fixedRange">
+                      <small v-show="!addition.perItem">від</small>
+                      {{ addition.additionalCost }}
+                      <small>До</small>
+                      {{ addition.additionalCostHigh }}
+                      <small
+                        v-if="addition.dollar"
+                      >$</small>
+
+                      <small v-else-if="addition.perItem">грн / шт</small>
+                      <small v-else>грн</small>
+                    </p>
+                  </div>
+                  <div v-show="selected == 2" class="col-6 pr-0">
+                    <p v-show="!addition.fixedRange">
+                      <small v-show="!addition.perItem">від</small>
+                      {{ addition.additionalCostVar1 }}
+                      <small
+                        v-if="addition.dollar"
+                      >$</small>
+                      <small v-else-if="addition.perItem">грн / шт</small>
+                      <small v-else>грн</small>
+                    </p>
+                    <p v-show="addition.fixedRange">
+                      <small v-show="!addition.perItem">від</small>
+                      {{ addition.additionalCost }}
+                      <small>До</small>
+                      {{ addition.additionalCostHigh }}
+                      <small
+                        v-if="addition.dollar"
+                      >$</small>
+
+                      <small v-else-if="addition.perItem">грн / шт</small>
+                      <small v-else>грн</small>
+                    </p>
+                  </div>
+                  <div v-show="selected == 3" class="col-6 pr-0">
+                    <p v-show="!addition.fixedRange">
+                      <small v-show="!addition.perItem">від</small>
+                      {{ addition.additionalCostVar2 }}
+                      <small
+                        v-if="addition.dollar"
+                      >$</small>
+                      <small v-else-if="addition.perItem">грн / шт</small>
+                      <small v-else>грн</small>
+                    </p>
+                    <p v-show="addition.fixedRange">
+                      <small v-show="!addition.perItem">від</small>
+                      {{ addition.additionalCost }}
+                      <small>До</small>
+                      {{ addition.additionalCostHigh }}
+                      <small
+                        v-if="addition.dollar"
+                      >$</small>
+
+                      <small v-else-if="addition.perItem">грн / шт</small>
+                      <small v-else>грн</small>
+                    </p>
+                  </div>
+                  <div class="col-6 text-right pl-0">
+                    <nuxt-link :to="addition.additionalLink" class="btn">Читати більше</nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row cards-grouppings-3">
             <div
               v-for="addition in additional"
               :key="addition.additionalId"
@@ -552,7 +690,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
 
@@ -619,7 +757,7 @@ export default {
           polishingCostVar1: "6999",
           polishingCostVar2: "8499",
           polishingLink: "Послуги/Полірування",
-          polishingClass: "service-one",
+
           polishingImg: "services1"
         },
         {
@@ -629,7 +767,7 @@ export default {
           polishingCostVar1: "700",
           polishingCostVar2: "800",
           polishingLink: "Послуги/Поліруванняфар",
-          polishingClass: "service-two",
+
           polishingImg: "services2"
         },
         {
@@ -639,7 +777,7 @@ export default {
           polishingCostVar1: "600",
           polishingCostVar2: "700",
           polishingLink: "Послуги/Вставкисалону",
-          polishingClass: "service-three",
+
           polishingImg: "services3"
         },
         {
@@ -649,7 +787,7 @@ export default {
           polishingCostVar1: "900",
           polishingCostVar2: "1000",
           polishingLink: "Послуги/Центральністійки",
-          polishingClass: "service-four",
+
           polishingImg: "services4"
         }
       ],
@@ -661,7 +799,7 @@ export default {
           cleanersCostVar1: "2499",
           cleanersCostVar2: "3199",
           cleanersLink: "Послуги/Хімчистка",
-          cleanersClass: "service-five",
+
           cleanersImg: "services5"
         },
         {
@@ -671,7 +809,7 @@ export default {
           cleanersCostVar1: "0",
           cleanersCostVar2: "0",
           cleanersLink: "Послуги/Колісніарки",
-          cleanersClass: "service-six",
+
           cleanersImg: "services6"
         },
         {
@@ -681,7 +819,7 @@ export default {
           cleanersCostVar1: "330",
           cleanersCostVar2: "385",
           cleanersLink: "Послуги/передніхсидінь",
-          cleanersClass: "service-seven",
+
           cleanersImg: "services7"
         },
         {
@@ -691,7 +829,7 @@ export default {
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
           cleanersLink: "Послуги/задніхсидінь",
-          cleanersClass: "service-eight",
+
           cleanersImg: "services8"
         }
       ],
@@ -742,7 +880,8 @@ export default {
           additionalCostHigh: "250",
           fixedRange: true,
           additionalLink: "Послуги/Реставраціяподряпин",
-          additionalClass: "service-13"
+
+          additionalImg: "services13"
         },
         {
           additionalId: "14",
@@ -751,7 +890,8 @@ export default {
           additionalCostHigh: "3000",
           fixedRange: true,
           additionalLink: "Послуги/Перешиття",
-          additionalClass: "service-14"
+
+          additionalImg: "services14"
         },
         {
           additionalId: "15",
@@ -760,7 +900,8 @@ export default {
           additionalCostHigh: "1200",
           fixedRange: true,
           additionalLink: "Послуги/Антидощ",
-          additionalClass: "service-15"
+
+          additionalImg: "services15"
         },
         {
           additionalId: "16",
@@ -769,7 +910,8 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink: "Послуги/Мийкамотору",
-          additionalClass: "service-16"
+
+          additionalImg: "services16"
         },
         {
           additionalId: "17",
@@ -779,7 +921,8 @@ export default {
           additionalCostVar2: "0",
           dollar: true,
           additionalLink: "Послуги/ШУМОІЗОЛЯЦІЯ",
-          additionalClass: "service-17"
+
+          additionalImg: "services17"
         },
         {
           additionalId: "18",
@@ -788,7 +931,8 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink: "Послуги/БАКТЕРЕЦИДНАОБРОБКА",
-          additionalClass: "service-18"
+
+          additionalImg: "services18"
         },
         {
           additionalId: "19",
@@ -797,7 +941,8 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink: "Послуги/Видаленнявмятин",
-          additionalClass: "service-19"
+
+          additionalImg: "services19"
         },
         {
           additionalId: "20",
@@ -806,7 +951,8 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink: "Послуги/антигравійноїплівки",
-          additionalClass: "service-20"
+
+          additionalImg: "services20"
         },
         {
           additionalId: "21",
@@ -815,7 +961,8 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink: "Послуги/Очисткакондиціонера",
-          additionalClass: "service-21"
+
+          additionalImg: "services21"
         },
         {
           additionalId: "22",
@@ -825,7 +972,8 @@ export default {
           additionalCostVar2: "0",
           perItem: true,
           additionalLink: "Послуги/ЧИСТКАДИСКІВ",
-          additionalClass: "service-22"
+
+          additionalImg: "services22"
         },
         {
           additionalId: "23",
@@ -835,7 +983,8 @@ export default {
           additionalCostVar2: "0",
           perItem: true,
           additionalLink: "Послуги/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ",
-          additionalClass: "service-23"
+
+          additionalImg: "services23"
         },
         {
           additionalId: "24",
@@ -844,7 +993,8 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink: "Послуги/Озонація",
-          additionalClass: "service-24"
+
+          additionalImg: "services24"
         }
       ]
     };
@@ -859,7 +1009,8 @@ export default {
 
 <style lang="scss" scoped>
 .card.polishing,
-.card.cleaning {
+.card.cleaning,
+.card.additional {
   background-color: $darkColor;
   box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
   border: 0;
@@ -899,6 +1050,24 @@ export default {
     margin-bottom: 5px;
   }
 }
+
+.card.additional {
+  min-width: 370px;
+  max-width: 370px;
+  height: 277px;
+
+  img {
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+
+    width: 100%;
+    min-width: 370px;
+    max-width: 370px;
+    height: 277px;
+    border: 0;
+  }
+}
+
 .cleaning .card-img.overlay {
   top: 70%;
 }
@@ -1002,9 +1171,199 @@ export default {
   }
 }
 
+@include mediaLg2 {
+  .card.polishing,
+  .card.cleaning,
+  .card.additional {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+
+    height: 220px;
+    width: 100%;
+    min-width: 220px;
+    max-width: 220px;
+
+    img {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+
+      height: 220px;
+      width: 100%;
+      min-width: 220px;
+      max-width: 220px;
+    }
+
+    .card-title {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: $lightColor;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card.additional {
+    min-width: 300px;
+    max-width: 300px;
+    height: 277px;
+
+    img {
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+
+      width: 100%;
+      min-width: 300px;
+      max-width: 300px;
+      height: 277px;
+      border: 0;
+    }
+  }
+
+  .card-img-overlay {
+    top: 60%;
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+    box-sizing: border-box;
+    padding: 0 10px;
+
+    h5 {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 4px;
+      height: 45px;
+      overflow: hidden;
+    }
+
+    p {
+      padding: 2px 0;
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 12px;
+
+      &.subtext {
+        margin-bottom: 5px;
+      }
+
+      small {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    .btn {
+      font-size: 14px;
+      line-height: 16px;
+
+      padding: 4px 5px;
+    }
+  }
+  .card-img.overlay.cleaning {
+    top: 65%;
+  }
+}
+
+@include mediaLg {
+  .card.polishing,
+  .card.cleaning,
+  .card.additional {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+
+    height: 220px;
+    width: 100%;
+    min-width: 220px;
+    max-width: 220px;
+
+    img {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+
+      height: 220px;
+      width: 100%;
+      min-width: 220px;
+      max-width: 220px;
+    }
+
+    .card-title {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: $lightColor;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  .card.additional {
+    min-width: 220px;
+    max-width: 220px;
+    height: 200px;
+
+    img {
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+
+      width: 100%;
+      min-width: 220px;
+      max-width: 220px;
+      height: 200px;
+      border: 0;
+    }
+  }
+
+  .card-img-overlay {
+    top: 65%;
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+    box-sizing: border-box;
+    padding: 0 5px;
+
+    h5 {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 4px;
+      height: 35px;
+      overflow: hidden;
+    }
+
+    p {
+      padding: 2px 0;
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 12px;
+
+      &.subtext {
+        margin-bottom: 5px;
+      }
+
+      small {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    .btn {
+      font-size: 10px;
+      line-height: 12px;
+
+      padding: 4px 5px;
+    }
+  }
+}
+
 @include mediaMd {
   .card.polishing,
-  .card.cleaning {
+  .card.cleaning,
+  .card.additional {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
 
@@ -1080,7 +1439,8 @@ export default {
 
 @include mediaSm {
   .card.polishing,
-  .card.cleaning {
+  .card.cleaning,
+  .card.additional {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
     border: 0;
@@ -1156,8 +1516,16 @@ export default {
 }
 
 @include mediaXSm {
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 152px;
+  }
+
   .card.polishing,
-  .card.cleaning {
+  .card.cleaning,
+  .card.additional {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
     border: 0;
@@ -1191,7 +1559,7 @@ export default {
   }
 
   .card-img-overlay {
-    top: 40%;
+    top: 60%;
     background-color: rgba(0, 0, 0, 0.64);
     backdrop-filter: blur(5px);
     border-radius: 0px 0px 10px 10px;
@@ -1227,14 +1595,19 @@ export default {
       padding: 4px 5px;
     }
   }
-  .card-img.overlay.cleaning {
-    top: 30%;
-  }
 }
 
 @include mediaXXSm {
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 130px;
+  }
+
   .card.polishing,
-  .card.cleaning {
+  .card.cleaning,
+  .card.additional {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
 
@@ -1267,7 +1640,7 @@ export default {
   }
 
   .card-img-overlay {
-    top: 40%;
+    top: 60%;
     background-color: rgba(0, 0, 0, 0.64);
     backdrop-filter: blur(5px);
     border-radius: 0px 0px 10px 10px;
@@ -1298,9 +1671,6 @@ export default {
 
       padding: 2px 2.5px;
     }
-  }
-  .card-img.overlay.cleaning {
-    top: 10%;
   }
 }
 </style>
@@ -1512,7 +1882,6 @@ form.choose-brand p {
   }
 
   h2 {
-    padding-top: 25px;
     margin: 30px auto;
   }
 
@@ -1536,13 +1905,6 @@ form.choose-brand p {
 
       margin: 10px auto;
 
-      &.four-cards {
-        height: 277px;
-        width: 100%;
-        min-width: 277px;
-        max-width: 277px;
-      }
-
       &.two-cards {
         height: 277px;
         width: 100%;
@@ -1553,18 +1915,6 @@ form.choose-brand p {
           width: 100%;
           border: 0.75px solid $lightColor;
           margin: 0;
-        }
-
-        .subtext {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: normal;
-
-          color: $lightColor;
-
-          padding: 0;
         }
       }
 
@@ -1593,69 +1943,6 @@ form.choose-brand p {
         }
       }
 
-      &.three-cards {
-        height: 277px;
-        width: 100%;
-        min-width: 260px;
-        max-width: 368px;
-      }
-
-      &.service-one {
-        background-image: url("~assets/img/services1.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-two {
-        background-image: url("~assets/img/services2.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-three {
-        background-image: url("~assets/img/services3.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-four {
-        background-image: url("~assets/img/services4.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-five {
-        background-image: url("~assets/img/services5.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-six {
-        background-image: url("~assets/img/services6.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-seven {
-        background-image: url("~assets/img/services7.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-eight {
-        background-image: url("~assets/img/services8.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
       &.service-nine {
         background-image: url("~assets/img/services9.jpg");
         background-repeat: no-repeat;
@@ -1674,95 +1961,11 @@ form.choose-brand p {
         background-image: url("~assets/img/services11.jpg");
         background-repeat: no-repeat;
         background-position: top center;
-        background-size: scale-down;
+        background-size: contain;
       }
 
       &.service-twelve {
         background-image: url("~assets/img/services12.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-13 {
-        background-image: url("~assets/img/services13.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-14 {
-        background-image: url("~assets/img/services14.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-15 {
-        background-image: url("~assets/img/services15.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-16 {
-        background-image: url("~assets/img/services16.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-17 {
-        background-image: url("~assets/img/services17.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-18 {
-        background-image: url("~assets/img/services18.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-19 {
-        background-image: url("~assets/img/services19.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-20 {
-        background-image: url("~assets/img/services20.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-21 {
-        background-image: url("~assets/img/services21.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-22 {
-        background-image: url("~assets/img/services22.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-23 {
-        background-image: url("~assets/img/services23.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      &.service-24 {
-        background-image: url("~assets/img/services24.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -1900,6 +2103,51 @@ form.choose-brand p {
   .desktop-only {
     display: none;
   }
+
+  .jumbotron.services {
+    h2 {
+      padding-top: 0px;
+      margin: 0 auto 10px auto;
+
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    .card-deck,
+    .cards-grouppings-3,
+    .testing {
+      .card {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+
+        border-radius: 10px;
+
+        &.two-cards {
+          height: 280px;
+          width: 100%;
+
+          max-width: 450px;
+        }
+
+        &.two-cards-seprate-titles {
+          height: 280px;
+          width: 100%;
+
+          max-width: 450px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-size: 8px;
+            line-height: 9px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include mediaLg {
@@ -1985,6 +2233,113 @@ form.choose-brand p {
     padding: 0;
     margin: 0 0 5px 0;
   }
+
+  .jumbotron.services {
+    h2 {
+      padding-top: 0px;
+      margin: 0 auto 10px auto;
+
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    .card-deck,
+    .cards-grouppings-3,
+    .testing {
+      .card {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+
+        border-radius: 10px;
+
+        &.two-cards {
+          height: 220px;
+          width: 100%;
+
+          max-width: 300px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: normal;
+
+            color: $lightColor;
+
+            padding: 0;
+          }
+        }
+
+        &.two-cards-seprate-titles {
+          height: 162px;
+          width: 100%;
+
+          max-width: 335px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-size: 8px;
+            line-height: 9px;
+          }
+        }
+
+        .card-body {
+          height: 80px;
+          box-sizing: border-box;
+          padding: 10px;
+          margin-bottom: 5px;
+        }
+
+        .card-end {
+          background-color: rgba(0, 0, 0, 0.64);
+          backdrop-filter: blur(5px);
+          border-radius: 0px 0px 10px 10px;
+          box-sizing: border-box;
+          padding: 0 5px;
+
+          h5 {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 4px;
+          }
+
+          p {
+            padding: 2px 0;
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 12px;
+
+            &.subtext {
+              margin-bottom: 5px;
+            }
+
+            small {
+              font-size: 10px;
+              line-height: 12px;
+            }
+          }
+
+          .btn {
+            font-size: 10px;
+            line-height: 12px;
+
+            padding: 4px 5px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include mediaMd {
@@ -2015,6 +2370,120 @@ form.choose-brand p {
   form.choose-brand {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .jumbotron.services {
+    h2 {
+      padding-top: 0px;
+      margin: 0 auto 10px auto;
+
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    .card-deck,
+    .cards-grouppings-3,
+    .testing {
+      .card {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+
+        border-radius: 10px;
+
+        &.two-cards {
+          height: 200px;
+          width: 100%;
+
+          max-width: 220px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: normal;
+
+            color: $lightColor;
+
+            padding: 0;
+          }
+        }
+
+        &.two-cards-seprate-titles {
+          height: 162px;
+          width: 100%;
+
+          max-width: 335px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-size: 8px;
+            line-height: 9px;
+          }
+        }
+
+        &.three-cards {
+          height: 162px;
+          width: 100%;
+          min-width: 162px;
+          max-width: 162px;
+        }
+
+        .card-body {
+          height: 80px;
+          box-sizing: border-box;
+          padding: 10px;
+          margin-bottom: 5px;
+        }
+
+        .card-end {
+          background-color: rgba(0, 0, 0, 0.64);
+          backdrop-filter: blur(5px);
+          border-radius: 0px 0px 10px 10px;
+          box-sizing: border-box;
+          padding: 0 5px;
+
+          h5 {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 4px;
+          }
+
+          p {
+            padding: 2px 0;
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 12px;
+
+            &.subtext {
+              margin-bottom: 5px;
+            }
+
+            small {
+              font-size: 10px;
+              line-height: 12px;
+            }
+          }
+
+          .btn {
+            font-size: 10px;
+            line-height: 12px;
+
+            padding: 4px 5px;
+          }
+        }
+      }
+    }
   }
 }
 @include mediaSm {
@@ -2085,11 +2554,113 @@ form.choose-brand p {
           }
         }
 
-        &.three-cards {
-          height: 162px;
+        .card-body {
+          height: 80px;
+          box-sizing: border-box;
+          padding: 10px;
+          margin-bottom: 5px;
+        }
+
+        .card-end {
+          background-color: rgba(0, 0, 0, 0.64);
+          backdrop-filter: blur(5px);
+          border-radius: 0px 0px 10px 10px;
+          box-sizing: border-box;
+          padding: 0 5px;
+
+          h5 {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 4px;
+          }
+
+          p {
+            padding: 2px 0;
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 12px;
+
+            &.subtext {
+              margin-bottom: 5px;
+            }
+
+            small {
+              font-size: 10px;
+              line-height: 12px;
+            }
+          }
+
+          .btn {
+            font-size: 10px;
+            line-height: 12px;
+
+            padding: 4px 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mediaXXSm {
+  .jumbotron.services {
+    h2 {
+      padding-top: 0px;
+      margin: 0 auto 10px auto;
+
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    .card-deck,
+    .cards-grouppings-3,
+    .testing {
+      .card {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+
+        border-radius: 10px;
+
+        &.two-cards {
+          height: 135px;
           width: 100%;
-          min-width: 162px;
-          max-width: 162px;
+
+          max-width: 135px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: normal;
+
+            color: $lightColor;
+
+            padding: 0;
+          }
+        }
+
+        &.two-cards-seprate-titles {
+          height: 135px;
+          width: 100%;
+
+          max-width: 335px;
+
+          hr {
+            width: 100%;
+            border: 0.75px solid $lightColor;
+            margin: 0;
+          }
+
+          .subtext {
+            font-size: 8px;
+            line-height: 9px;
+          }
         }
 
         .card-body {
