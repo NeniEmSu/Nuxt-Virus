@@ -3,7 +3,7 @@
     <div class="bottom-contact container">
       <div class="logo">
         <nuxt-link class="/navbar-brand logo" to="/" aria-label="Virus Logo">
-          <img src="~/assets/img/virus-logo.svg" alt="virus logo">
+          <img  v-lazy="require('~/assets/img/virus-logo.svg')" alt="virus logo">
         </nuxt-link>
       </div>
       <ul>
@@ -30,13 +30,13 @@
           <a href="https://www.instagram.com/virusdetailing/" target="_blank" rel="noopener" class="instagram">
             <picture>
               <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp">
-              <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled">
+              <img  v-lazy="require('~/assets/img/icons8-instagram-filled-100.png')" alt="icons instagram filled">
             </picture>
           </a>
           <a href="https://www.facebook.com/virus.te.ua/" target="_blank" rel="noopener" class="facebook">
             <picture>
               <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
-              <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled">
+              <img  v-lazy="require('~/assets/img/icons8-facebook-filled-100.png')" alt="icons facebook filled">
             </picture>
           </a>
         </li>

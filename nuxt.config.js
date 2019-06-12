@@ -280,11 +280,15 @@ export default {
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     {
+      src: '~/plugins/vue-lazyload',
+      ssr: false
+    },
+    {
       ssr: false,
       src: '~plugins/JivoChat'
     },
     {
-      src: '~plugins/ga.js',
+      src: '~plugins/ga',
       ssr: false
     },
     {

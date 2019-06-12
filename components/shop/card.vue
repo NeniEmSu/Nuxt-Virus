@@ -3,7 +3,7 @@
     <picture>
       <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
       <img
-        src="~assets/img/86.png"
+        v-lazy="require('~/assets/img/86.png')"
         class="card-img-top img-fluid store-img"
         alt="Koch Chemie Fresh UP"
       >

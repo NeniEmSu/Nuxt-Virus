@@ -9,8 +9,8 @@
         <nuxt-link to="/Послуги/Полірування" class="col-4 p-0 one">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top1.jpg" type="image/webp">
-              <img class="card-img" src="~/assets/img/top1.jpg" alt="ПОЛІРУВАННЯ">
+              <source srcset="~/assets/imgWebP/top1.webp" type="image/webp">
+              <img class="card-img" v-lazy="require('~/assets/img/top1.jpg')" alt="ПОЛІРУВАННЯ">
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -21,7 +21,7 @@
         <nuxt-link to="/Послуги/Покриттявоском" class="col-8 p-0 two">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top2.jpg" type="image/webp">
+              <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
               <img class="card-img" src="~/assets/img/top2.jpg" alt="ВОСКОВЕ ПОКРИТТЯ">
             </picture>
 
@@ -40,7 +40,7 @@
         <nuxt-link to="/Послуги/Мийкамотору" class="col-4 p-0 three">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top3.jpg" type="image/webp">
+              <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
               <img class="card-img" src="~/assets/img/top3.jpg" alt="МИЙКА МОТОРУ">
             </picture>
 
@@ -55,7 +55,7 @@
         <nuxt-link to="/Послуги/Хімчистка" class="col-5 p-0 four">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top4.jpg" type="image/webp">
+              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp">
               <img class="card-img" src="~/assets/img/top4.jpg" alt="ХІМЧИСТКА">
             </picture>
 
@@ -69,7 +69,7 @@
         <nuxt-link to="/Послуги/Реставраціяподряпин" class="col-3 p-0 five">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top5.jpg" type="image/webp">
+              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp">
               <img class="card-img" src="~/assets/img/top5.jpg" alt="РЕСТАВРАЦІЯ СКОЛІВ">
             </picture>
 
@@ -84,7 +84,7 @@
         <nuxt-link to="/Послуги/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ" class="col-md-8 offset-4 p-0 six">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top6.jpg" type="image/webp">
+              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
               <img class="card-img" src="~/assets/img/top6.jpg" alt="КЕРАМІЧНЕ ПОКРИТТЯ">
             </picture>
 
@@ -98,7 +98,7 @@
         <nuxt-link to="/Послуги/Передпродажнапідготовка" class="col-12 p-0 seven">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/img/top7.jpg" type="image/webp">
+              <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
               <img class="card-img" src="~/assets/img/top7.jpg" alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА">
             </picture>
 
