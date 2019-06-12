@@ -3,6 +3,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
   src: url('../fonts/roboto-v19-latin_cyrillic_cyrillic-ext-300.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Light'), local('Roboto-Light'),
@@ -23,6 +24,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('../fonts/roboto-v19-latin_cyrillic_cyrillic-ext-regular.eot');
   /* IE9 Compat Modes */
   src: local('Roboto'), local('Roboto-Regular'),
@@ -43,6 +45,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
   src: url('../fonts/roboto-v19-latin_cyrillic_cyrillic-ext-500.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Medium'), local('Roboto-Medium'),
@@ -63,6 +66,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url('../fonts/roboto-v19-latin_cyrillic_cyrillic-ext-700.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Bold'), local('Roboto-Bold'),
@@ -83,6 +87,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: url('../fonts/roboto-v19-latin_cyrillic_cyrillic-ext-900.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Black'), local('Roboto-Black'),
@@ -104,6 +109,7 @@
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
   src: url('../fonts/roboto-condensed-v17-latin_cyrillic_cyrillic-ext-300.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
@@ -124,6 +130,7 @@
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url('../fonts/roboto-condensed-v17-latin_cyrillic_cyrillic-ext-700.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Condensed Bold'), local('RobotoCondensed-Bold'),
@@ -144,6 +151,7 @@
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('../fonts/roboto-condensed-v17-latin_cyrillic_cyrillic-ext-regular.eot');
   /* IE9 Compat Modes */
   src: local('Roboto Condensed'), local('RobotoCondensed-Regular'),

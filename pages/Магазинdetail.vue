@@ -205,7 +205,17 @@
       <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;">
 
       <h2 class="text-center my-2">Схожі товари та пропозиції</h2>
-      <div class="card-deck">
+
+      <div class="text-center mx-auto p-0">
+        <div class="row">
+          <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>
+        </div>
+      </div>
+
+      <!-- <div class="card-deck">
         <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="card details-page-card one card__hover mx-auto">
@@ -508,13 +518,28 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import productCards from "@/components/shop/productCards";
+export default {
+  components: {
+    productCards
+  },
+  data() {
+    return {
+      cart: 0
+    };
+  },
+  methods: {
+    addToCart() {
+      this.cart += 1;
+    }
+  }
+};
 </script>
 
  <style lang="scss" scoped>
@@ -609,103 +634,103 @@ h1.details-page-header {
   margin-top: 5px;
 }
 
-.card {
-  width: 100%;
-  max-width: 320px;
-  min-width: 250px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-  border-radius: 20px;
-  margin-bottom: 20px !important;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .card {
+//   width: 100%;
+//   max-width: 320px;
+//   min-width: 250px;
+//   height: 100%;
+//   background: #ffffff;
+//   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+//   border-radius: 20px;
+//   margin-bottom: 20px !important;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-.card img {
-  object-fit: scale-down;
-  height: 180px;
-}
+// .card img {
+//   object-fit: scale-down;
+//   height: 180px;
+// }
 
-.card p {
-  padding: 0px 0;
-}
+// .card p {
+//   padding: 0px 0;
+// }
 
-hr {
-  width: 270px;
-  align-self: center;
-  margin: 0;
-  border: 1px solid #c4c4c4;
-}
+// hr {
+//   width: 270px;
+//   align-self: center;
+//   margin: 0;
+//   border: 1px solid #c4c4c4;
+// }
 
-.card-title {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: normal;
-  color: #000000;
-}
+// .card-title {
+//   font-family: "Roboto", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 16px;
+//   line-height: normal;
+//   color: #000000;
+// }
 
-small s {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: normal;
-  text-align: center;
-  text-decoration-line: line-through;
-  color: #d41f26;
-}
+// small s {
+//   font-family: "Roboto", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 12px;
+//   line-height: normal;
+//   text-align: center;
+//   text-decoration-line: line-through;
+//   color: #d41f26;
+// }
 
-.card-text {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 28px;
-  letter-spacing: -0.05em;
-  color: #8b8b8b;
-}
+// .card-text {
+//   font-family: "Roboto", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 30px;
+//   line-height: 28px;
+//   letter-spacing: -0.05em;
+//   color: #8b8b8b;
+// }
 
-span {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 10px;
-  text-align: center;
-}
+// span {
+//   font-family: "Roboto", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 12px;
+//   line-height: 10px;
+//   text-align: center;
+// }
 
-.discount {
-  font-family: "Roboto Condensed", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: normal;
-  color: #239a0f;
-  margin-right: 22px;
-}
+// .discount {
+//   font-family: "Roboto Condensed", sans-serif;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 14px;
+//   line-height: normal;
+//   color: #239a0f;
+//   margin-right: 22px;
+// }
 
-.card .btn {
-  padding: 10px 30px;
-  background: #d41f26;
-  border-radius: 50px;
-  font-family: "Roboto Condensed", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: normal;
-  text-align: center;
-  color: #ffffff;
-  text-decoration: none;
-  transition: ease-in-out 300ms;
-  -webkit-transition: ease-in-out 300ms;
-  -moz-transition: ease-in-out 300ms;
-  -ms-transition: ease-in-out 300ms;
-  -o-transition: ease-in-out 300ms;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
-}
+// .card .btn {
+//   padding: 10px 30px;
+//   background: #d41f26;
+//   border-radius: 50px;
+//   font-family: "Roboto Condensed", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 20px;
+//   line-height: normal;
+//   text-align: center;
+//   color: #ffffff;
+//   text-decoration: none;
+//   transition: ease-in-out 300ms;
+//   -webkit-transition: ease-in-out 300ms;
+//   -moz-transition: ease-in-out 300ms;
+//   -ms-transition: ease-in-out 300ms;
+//   -o-transition: ease-in-out 300ms;
+//   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+// }
 
 .btn:hover {
   color: #d41f26;
@@ -718,17 +743,17 @@ span {
 }
 
 @media screen and (max-width: 320px) {
-  .card {
-    width: 100%;
-    max-width: 270px;
-    min-width: 250px;
-    height: 100%;
-    background: #ffffff;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
-    border-radius: 20px;
-    margin-bottom: 20px !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  // .card {
+  //   width: 100%;
+  //   max-width: 270px;
+  //   min-width: 250px;
+  //   height: 100%;
+  //   background: #ffffff;
+  //   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+  //   border-radius: 20px;
+  //   margin-bottom: 20px !important;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }
 </style>

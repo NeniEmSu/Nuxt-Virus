@@ -4,16 +4,15 @@
       <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
       <img
         src="~assets/img/86.png"
-      
         class="card-img-top img-fluid store-img"
         alt="Koch Chemie Fresh UP"
       >
     </picture>
     <hr class="desktop-only">
     <div class="card-body">
-      <a href>
+      <nuxt-link to="/Магазинdetail">
         <h5 class="card-title">Koch Chemie Fresh UP</h5>
-      </a>
+      </nuxt-link>
       <p class="card-text desktop-only">
         Розпилюючий засіб для видалення
         небажаних запахів
@@ -46,12 +45,12 @@
         <div class="col-6 bg-transparent btn-container">
           <small class="discount">В наявності</small>
           <br>
-          <a href="Магазинdetail" class="btn">Купити</a>
+          <a href="/Магазинdetail" class="btn">Купити</a>
         </div>
       </div>
     </div>
 
-    <a href="#" class="card-footer mobile-only">Купити</a>
+    <nuxt-link to="#" class="card-footer mobile-only">Купити</nuxt-link>
   </div>
 </template>
 
