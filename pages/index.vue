@@ -22,7 +22,11 @@
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
-              <img class="card-img" src="~/assets/img/top2.jpg" alt="ВОСКОВЕ ПОКРИТТЯ">
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top2.jpg')"
+                alt="ВОСКОВЕ ПОКРИТТЯ"
+              >
             </picture>
 
             <div
@@ -41,7 +45,7 @@
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
-              <img class="card-img" src="~/assets/img/top3.jpg" alt="МИЙКА МОТОРУ">
+              <img class="card-img" v-lazy="require('~/assets/img/top3.jpg')" alt="МИЙКА МОТОРУ">
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
@@ -56,7 +60,7 @@
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top4.webp" type="image/webp">
-              <img class="card-img" src="~/assets/img/top4.jpg" alt="ХІМЧИСТКА">
+              <img class="card-img" v-lazy="require('~/assets/img/top4.jpg')" alt="ХІМЧИСТКА">
             </picture>
 
             <div
@@ -70,7 +74,11 @@
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top5.webp" type="image/webp">
-              <img class="card-img" src="~/assets/img/top5.jpg" alt="РЕСТАВРАЦІЯ СКОЛІВ">
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top5.jpg')"
+                alt="РЕСТАВРАЦІЯ СКОЛІВ"
+              >
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
@@ -85,7 +93,11 @@
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
-              <img class="card-img" src="~/assets/img/top6.jpg" alt="КЕРАМІЧНЕ ПОКРИТТЯ">
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top6.jpg')"
+                alt="КЕРАМІЧНЕ ПОКРИТТЯ"
+              >
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -99,7 +111,11 @@
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
-              <img class="card-img" src="~/assets/img/top7.jpg" alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА">
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top7.jpg')"
+                alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
+              >
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
