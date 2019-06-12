@@ -400,7 +400,6 @@ export default {
   }
 }
 
-
 @include mediaLg {
   .top-grid {
     h2 {
@@ -424,9 +423,7 @@ export default {
       margin-top: -193px;
     }
   }
-  
-  }
-
+}
 
 @include mediaMd {
   .top-grid {
@@ -457,7 +454,7 @@ export default {
   .top-grid {
     h1 {
       font-size: 26px;
-       line-height: 70%;
+      line-height: 70%;
     }
 
     h2 {
@@ -491,7 +488,6 @@ export default {
   .recomendations {
     padding: 10px 0 20px;
     h2 {
-      
       font-size: 24px;
       line-height: 70%;
 
@@ -524,16 +520,48 @@ export default {
   }
 }
 
-@media only screen and (min-width: 468px) and (max-width: 499px) {
+@media only screen and (min-width: 470px) and (max-width: 499px) {
   .top-grid {
+    .four,
+    .five {
+      margin-top: -35px !important;
+      .card {
+        img {
+          object-fit: cover;
+          height: 128px;
+        }
+      }
+    }
     .six {
-      margin-top: -135px !important;
+      margin-top: -130px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 459px) and (max-width: 469px) {
+  .top-grid {
+    .four,
+    .five {
+      margin-top: -32px !important;
+    }
+    .six {
+      margin-top: -122px !important;
     }
   }
 }
 
 @media only screen and (min-width: 405px) and (max-width: 416px) {
   .top-grid {
+    .four,
+    .five {
+      margin-top: -30px !important;
+      .card {
+        img {
+          object-fit: cover;
+          height: 110px !important;
+        }
+      }
+    }
     .six {
       margin-top: -108px !important;
     }
@@ -573,12 +601,12 @@ export default {
       .card {
         img {
           object-fit: cover;
-          height: 100px;
+          height: 105px !important;
         }
       }
     }
     .six {
-      margin-top: -100px;
+      margin-top: -110px !important;
     }
     .card-img-overlay {
       position: absolute;
@@ -611,12 +639,18 @@ export default {
 
   .cars-card {
     h2 {
-      
       font-size: 20px;
       line-height: 24px;
 
       margin: 20px 0;
       text-align: left;
+    }
+  }
+}
+@media only screen and (min-width: 330px) and (max-width: 375px) {
+  .top-grid {
+    .six {
+      margin-top: -100px !important;
     }
   }
 }
@@ -650,7 +684,7 @@ export default {
     }
 
     .six {
-      margin-top: -85px;
+      margin-top: -85px !important;
     }
     .card-img-overlay {
       position: absolute;
@@ -665,10 +699,9 @@ export default {
     text-align: center;
 
     h2 {
-      
       font-size: 20px;
       line-height: 24px;
-      
+
       margin: 20px 0;
       text-align: left;
     }
@@ -680,15 +713,12 @@ export default {
     padding-right: 20px;
 
     h2 {
-      
       font-size: 20px;
       line-height: 24px;
-     
+
       margin-bottom: 20px;
       text-align: left;
     }
-
-    
   }
 }
 </style>
