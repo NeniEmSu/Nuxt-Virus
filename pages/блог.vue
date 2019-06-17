@@ -83,6 +83,12 @@ export default {
         }
       ]
     };
+  },
+
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#top-contact", 0, { force: true });
+    }
   }
 };
 </script>

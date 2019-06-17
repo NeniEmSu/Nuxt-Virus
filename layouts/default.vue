@@ -8,7 +8,7 @@
       </transition>
     </main>
 
-    <TheFooter/>     
+    <TheFooter/>
   </div>
 </template>
 <script>
@@ -45,6 +45,7 @@ body {
   height: 100%;
   padding: 0;
   overflow-x: hidden;
+  margin-top: 150px;
 
   font-family: $mainFont;
   line-height: 1.5;
@@ -201,6 +202,9 @@ main {
 }
 
 @include mediaMenu {
+  body {
+    margin-top: 50px;
+  }
   main {
     position: relative;
     min-height: 80vh;

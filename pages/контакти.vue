@@ -111,6 +111,12 @@ export default {
       center: { lat: 49.558033, lng: 25.56692 },
       markers: [{ position: { lat: 49.558033, lng: 25.56692 } }]
     };
+  },
+
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#top-contact", 0, { force: true });
+    }
   }
 };
 </script>

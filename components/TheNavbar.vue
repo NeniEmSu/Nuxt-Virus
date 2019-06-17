@@ -1,6 +1,7 @@
 <template>
   <header
     class="header"
+    :class="{ 'header--hidden': !showHeader }"
     id="header"
     v-click-outside="closeMobileNavbar"
     v-handle-scroll="closeMobileNavbar"
@@ -43,7 +44,9 @@ export default {
   data() {
     return {
       userDropdownOpen: false,
-      mobileNavOpen: false
+      mobileNavOpen: false,
+      showHeader: true,
+      lastScrollPosition: 0
     };
   },
   computed: {},
@@ -56,22 +59,51 @@ export default {
     },
     hide() {
       this.mobileNavOpen = false;
+    },
+    onScroll() {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollPosition < 0) {
+        return;
+      }
+      // Stop executing this function if the difference between
+      // current scroll position and last scroll position is less than some offset
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+        return;
+      }
+      this.showHeader = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
     }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.header.header--hidden {
+  box-shadow: none;
+  transform: translate3d(0, -100%, 0);
+}
+
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
     url("~assets/imgWebP/Хедер.webp");
   background-size: cover;
   background-color: $darkColor;
-  width: 100%;
+  width: 100vw;
   height: 140px;
   left: 0px;
   top: 0px;
+  position: fixed;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35);
+  transform: translate3d(0, 0, 0);
+  transition: 0.1s all ease-out;
+  z-index: 1000;
 
   a {
     text-decoration: none;
