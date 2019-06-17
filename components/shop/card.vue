@@ -45,12 +45,12 @@
         <div class="col-6 bg-transparent btn-container">
           <small class="discount">В наявності</small>
           <br>
-          <a href="/Магазинdetail" class="btn">Купити</a>
+          <nuxt-link to="/Магазинdetail" class="btn">Купити</nuxt-link>
         </div>
       </div>
     </div>
 
-    <nuxt-link to="#" class="card-footer mobile-only">Купити</nuxt-link>
+    <nuxt-link to="/Магазинdetail" class="card-footer mobile-only">Купити</nuxt-link>
   </div>
 </template>
 
