@@ -94,15 +94,10 @@
             </div>
           </div>
 
-          <div class="filter-sidebar-mobile col-xl-2 text-center mb-5 mobile-only">
-            <form
-              method="post"
-              name="filter"
-              style="height: 40px; width: 100%; mx-0 px-0 background: #FFFFFF;
-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);"
-            >
+          <div class="filter-sidebar-mobile col-xl-2 text-center mb-5 mobile-only" style>
+            <form method="post" name="filter">
               <div class="row">
-                <div class="form-group col-6 text-left m-auto">
+                <div class="form-group col-8 text-left m-auto">
                   <label class="sr-only" for="filter">від дорогих до дешевих</label>
                   <select
                     aria-label="filter"
@@ -112,7 +107,7 @@ box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);"
                     v-model="filter"
                     name="filter"
                   >
-                    <option value="від дорогих до дешевих">від дорогих до дешевих</option>
+                    <option value="null">від дорогих до дешевих</option>
                     <option value="All">All</option>
                     <option value="Фібри">Фібри</option>
                     <option value="Шампунь">Шампунь</option>
@@ -155,22 +150,17 @@ box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);"
                     </option>
                   </select>
                 </div>
-                <div class="col-6 text-right m-auto">
-                  <p>
+                <div class="col-4 text-right m-auto">
+                  <p class="m-auto">
                     Фільтр
-                    <img
-                      width="20px"
-                      height="20px"
-                      src="~assets/img/icons8-slider-filled-90.png"
-                      alt="filter icon"
-                    >
+                    <img src="~assets/img/icons8-slider-filled-90.png" alt="filter icon">
                   </p>
                 </div>
               </div>
             </form>
           </div>
 
-          <div class="sales-cards col-lg-9 text-center mx-auto p-0">
+          <div class="sales-cards col-xl-9 text-center mx-auto p-0">
             <div class="row">
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
@@ -179,7 +169,7 @@ box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);"
             </div>
           </div>
 
-          <div class="cart-icon col-lg-1 text-center">
+          <div class="cart-icon col-xl-1 desktop-only text-center">
             <div class="position-fixed col-0">
               <modalComponent :cart="cart"/>
             </div>
@@ -242,7 +232,8 @@ export default {
   },
   data() {
     return {
-      cart: 0
+      cart: 0,
+      filter: null
     };
   },
   methods: {
@@ -259,6 +250,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.filter-sidebar-mobile {
+  height: 40px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  select {
+    border: 0;
+  }
+}
+
 .mobile-only {
   display: none;
 }

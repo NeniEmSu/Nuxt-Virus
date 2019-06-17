@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="container" aria-label="breadcrumb">
+    <nav class="container desktop-only" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">Головна</nuxt-link>
@@ -123,5 +123,11 @@ video {
 
 .about-content {
   padding-bottom: 40px;
+}
+
+@include mediaSm {
+  .desktop-only {
+    display: none;
+  }
 }
 </style>
