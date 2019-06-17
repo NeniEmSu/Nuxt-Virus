@@ -90,7 +90,9 @@ export default {
     window.removeEventListener("scroll", this.onScroll);
   },
   watch: {
-    $route() {}
+    $route() {
+      this.mobileNavOpen = false;
+    }
   }
 };
 </script>
