@@ -669,6 +669,7 @@ export default {
     }
   }
 }
+
 @media only screen and (min-width: 330px) and (max-width: 375px) {
   .top-grid {
     .six {
@@ -685,7 +686,7 @@ export default {
   }
 }
 
-@include mediaXXSm {
+@include mediaXXXSm {
   .top-grid {
     h2 {
       font-style: normal;
@@ -700,7 +701,7 @@ export default {
       .card {
         img {
           object-fit: cover;
-          height: 80px;
+          height: 85px !important;
         }
       }
     }
