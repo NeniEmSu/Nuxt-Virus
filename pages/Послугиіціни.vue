@@ -47,6 +47,7 @@
               <img
                 src="~/assets/img/mercedes-png-white-m.png"
                 class="card-img img-fluid"
+                style="width: 290px;"
                 alt="mercedes-png-white"
               >
             </div>
@@ -78,6 +79,7 @@
               <img
                 src="~/assets/img/png-hd-of-car-jeep-grand-cherokee-srt-white-car-png-image-car-hd-png-1550.png"
                 class="card-img img-fluid"
+                style="width: 290px;"
                 alt="car-jeep-grand-cherokee-srt-white-car-png-image"
               >
             </div>
@@ -102,6 +104,7 @@
               <img
                 src="~/assets/img/PNGPIX-COM-Black-Range-Rover-Piano-Car-PNG-Image.png"
                 class="card-img img-fluid"
+                style="width: 290px;"
                 alt="Black-Range-Rover-Piano-Car"
               >
             </div>

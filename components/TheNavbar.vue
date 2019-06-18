@@ -18,11 +18,8 @@
         <img src="~/assets/img/menu.svg" alt="menu Icon">
       </div>
 
-      <div class="cart">
-        <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="menu Icon">
-        <div id="show-total" class="text-center mt-n3 ml-n3">
-          <span id="item-count" class="text-center">{{ cart }}</span>
-        </div>
+      <div>
+        <shopCartModal :cart="cart" style="float: right;"/>
       </div>
 
       <nav class="navbar" :class="{'navbar-open': mobileNavOpen}">
@@ -98,29 +95,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#show-total {
-  span {
-    padding: 4px 6px;
-
-    background-color: $redColor;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    position: relative;
-    z-index: 3;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 12px;
-
-    color: $lightColor;
-    text-align: center;
-  }
-}
-
 .header.header--hidden {
   box-shadow: none;
   transform: translate3d(0, -100%, 0);

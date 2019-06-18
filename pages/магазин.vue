@@ -20,8 +20,12 @@
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
-              <button class="accordion">Засоби догляду</button>
-              <div class="panel">
+              <button class="accordion" @click.prevent="active = !active">
+                Засоби догляду
+                <span class="down-Arrow" v-show="!active">&#9660;</span>
+                <span class="up-Arrow" v-show="active">&#9650;</span>
+              </button>
+              <div class="panel" v-show="active">
                 <a href="#" class="btn text-uppercase filter-btn all" data-filter="all">-All</a>
                 <a href="#" class="btn text-uppercase filter-btn Фібри" data-filter="Фібри">-Фібри</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Шампунь">-Шампунь</a>
@@ -34,8 +38,12 @@
                 </a>
               </div>
 
-              <button class="accordion">Захисні покриття</button>
-              <div class="panel">
+              <button class="accordion" @click.prevent="active = !active">
+                Захисні покриття
+                <span class="down-Arrow" v-show="!active">&#9660;</span>
+                <span class="up-Arrow" v-show="active">&#9650;</span>
+              </button>
+              <div class="panel" v-show="active">
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Кераміка">-Кераміка</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Рідкескло">
                   -Рідке
@@ -69,15 +77,23 @@
                 </a>
               </div>
 
-              <button class="accordion">Хімія</button>
-              <div class="panel">
+              <button class="accordion" @click.prevent="active = !active">
+                Хімія
+                <span class="down-Arrow" v-show="!active">&#9660;</span>
+                <span class="up-Arrow" v-show="active">&#9650;</span>
+              </button>
+              <div class="panel" v-show="active">
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
               </div>
 
-              <button class="accordion">Подарункові набори</button>
-              <div class="panel">
+              <button class="accordion" @click.prevent="active = !active">
+                Подарункові набори
+                <span class="down-Arrow" v-show="!active">&#9660;</span>
+                <span class="up-Arrow" v-show="active">&#9650;</span>
+              </button>
+              <div class="panel" v-show="active">
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Подарунковінабори">
                   -Подарункові
                   набори
@@ -177,22 +193,7 @@
         </div>
       </div>
     </div>
-    <script>
-  let acc = document.getElementsByClassName("accordion");
-  let i;
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("open");
-      let panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  }
-    </script>
     <script>
   (function() {
     const filterBtn = document.querySelectorAll(".filter-btn");
@@ -233,7 +234,8 @@ export default {
   data() {
     return {
       cart: 0,
-      filter: null
+      filter: null,
+      active: false
     };
   },
   methods: {
@@ -342,25 +344,14 @@ export default {
     outline: none;
   }
 
-  // .accordion:after {
-  //   color: $headingsFontColor;
-  //   float: right;
-  //   font-size: 14px;
-  //   font-family: "Font Awesome 5 Free";
-  //   font-weight: 900;
-  //   content: "\f0d7";
-  //   margin-right: 10px;
-  // }
-
-  // .accordion.open:after {
-  //   color: $headingsFontColor;
-  //   float: right;
-  //   font-size: 14px;
-  //   font-family: "Font Awesome 5 Free";
-  //   font-weight: 900;
-  //   content: "\f0d8";
-  //   margin-right: 10px;
-  // }
+  .down-Arrow,
+  .up-Arrow {
+    color: $headingsFontColor;
+    float: right;
+    font-size: 14px;
+    font-weight: 900;
+    margin-right: 10px;
+  }
 
   .panel {
     font-family: $mainFont;
@@ -372,7 +363,6 @@ export default {
 
     color: #8b8b8b;
 
-    display: none;
     overflow: hidden;
     outline: none;
 

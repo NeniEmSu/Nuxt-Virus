@@ -672,8 +672,17 @@ export default {
 
 @media only screen and (min-width: 330px) and (max-width: 375px) {
   .top-grid {
+    .four,
+    .five {
+      .card {
+        img {
+          object-fit: cover;
+          height: 100px !important;
+        }
+      }
+    }
     .six {
-      margin-top: -100px !important;
+      margin-top: -95px !important;
     }
   }
 }

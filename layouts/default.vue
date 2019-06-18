@@ -203,7 +203,7 @@ main {
 
 @include mediaMenu {
   body {
-    margin-top: 50px;
+    margin-top: 55px;
   }
   main {
     position: relative;
