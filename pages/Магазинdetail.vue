@@ -10,6 +10,16 @@
         <div class="col-md-10">
           <div class="row">
             <div class="main-image col-lg-4">
+              <!-- <div class="product__images">
+      <div v-if="blok.images.length > 0">
+        <img :src="(selectedImage.filename || blok.images[0].filename) | resize('550x0')" :alt="selectedImage.name || blok.images[0].name">
+      </div>
+      <ul class="product__thumbs">
+        <li class="product__thumb" v-for="image in blok.images" :key="image.filename" @click="selectedImage = image">
+          <img class="product__thumb-image" :src="image.filename | resize('55x55')" :alt="image.name">
+        </li>
+      </ul>
+              </div>-->
               <div class="image-showcase col-12 text-center">
                 <img src="~assets/img/86.jpg" class="mx-auto" alt="Koch Chemie Fresh UP">
               </div>
@@ -402,7 +412,8 @@ export default {
   },
   data() {
     return {
-      cart: 0
+      cart: 0,
+      selectedImage: {}
     };
   },
   methods: {

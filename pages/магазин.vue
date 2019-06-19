@@ -20,13 +20,13 @@
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
-              <button class="accordion" @click.prevent="active = !active">
+              <button class="accordion" @click.prevent="active1 = !active1">
                 Засоби догляду
-                <span class="down-Arrow" v-show="!active">&#9660;</span>
-                <span class="up-Arrow" v-show="active">&#9650;</span>
+                <span class="down-Arrow" v-show="!active1">&#9660;</span>
+                <span class="up-Arrow" v-show="active1">&#9650;</span>
               </button>
-              <div class="panel" v-show="active">
-                <a href="#" class="btn text-uppercase filter-btn all" data-filter="all">-All</a>
+              <div class="panel" v-show="active1">
+                <a href="#" class="btn text-uppercase filter-btn all" data-filter="Все">-Все</a>
                 <a href="#" class="btn text-uppercase filter-btn Фібри" data-filter="Фібри">-Фібри</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Шампунь">-Шампунь</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Віск">-Віск</a>
@@ -38,12 +38,12 @@
                 </a>
               </div>
 
-              <button class="accordion" @click.prevent="active = !active">
+              <button class="accordion" @click.prevent="active2 = !active2">
                 Захисні покриття
-                <span class="down-Arrow" v-show="!active">&#9660;</span>
-                <span class="up-Arrow" v-show="active">&#9650;</span>
+                <span class="down-Arrow" v-show="!active2">&#9660;</span>
+                <span class="up-Arrow" v-show="active2">&#9650;</span>
               </button>
-              <div class="panel" v-show="active">
+              <div class="panel" v-show="active2">
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Кераміка">-Кераміка</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Рідкескло">
                   -Рідке
@@ -77,23 +77,23 @@
                 </a>
               </div>
 
-              <button class="accordion" @click.prevent="active = !active">
+              <button class="accordion" @click.prevent="active3 = !active3">
                 Хімія
-                <span class="down-Arrow" v-show="!active">&#9660;</span>
-                <span class="up-Arrow" v-show="active">&#9650;</span>
+                <span class="down-Arrow" v-show="!active3">&#9660;</span>
+                <span class="up-Arrow" v-show="active3">&#9650;</span>
               </button>
-              <div class="panel" v-show="active">
+              <div class="panel" v-show="active3">
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
               </div>
 
-              <button class="accordion" @click.prevent="active = !active">
+              <button class="accordion" @click.prevent="active4 = !active4">
                 Подарункові набори
-                <span class="down-Arrow" v-show="!active">&#9660;</span>
-                <span class="up-Arrow" v-show="active">&#9650;</span>
+                <span class="down-Arrow" v-show="!active4">&#9660;</span>
+                <span class="up-Arrow" v-show="active4">&#9650;</span>
               </button>
-              <div class="panel" v-show="active">
+              <div class="panel" v-show="active4">
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Подарунковінабори">
                   -Подарункові
                   набори
@@ -124,7 +124,7 @@
                     name="filter"
                   >
                     <option value="null">від дорогих до дешевих</option>
-                    <option value="All">All</option>
+                    <option value="Все">Все</option>
                     <option value="Фібри">Фібри</option>
                     <option value="Шампунь">Шампунь</option>
                     <option value="Віск">Віск</option>
@@ -182,6 +182,8 @@
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
+              <card class="mb-5 mx-auto"/>
+              <card class="mb-5 mx-auto"/>
             </div>
           </div>
 
@@ -235,7 +237,10 @@ export default {
     return {
       cart: 0,
       filter: null,
-      active: false
+      active1: false,
+      active2: false,
+      active3: false,
+      active4: false
     };
   },
   methods: {
