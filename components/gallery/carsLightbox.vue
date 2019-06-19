@@ -51,12 +51,12 @@ export default {
     subtitle: {
       type: String,
       required: true
-    },
-    index: {
-      type: Number,
-      required: true,
-      default: null
     }
+  },
+  data() {
+    return {
+      index: null
+    };
   }
 };
 </script>

@@ -1,29 +1,10 @@
 <template>
   <div>
     <div class="row mx-auto">
+      <carsLightbox :images="audi" :title="title1" :subtitle="subtitle1" :thumbnail="thumbnail1"/>
+      <carsLightbox :images="bmw" :title="title2" :subtitle="subtitle2" :thumbnail="thumbnail2"/>
+      <carsLightbox :images="mini" :title="title3" :subtitle="subtitle3" :thumbnail="thumbnail3"/>
       <carsLightbox
-        :index="index"
-        :images="audi"
-        :title="title1"
-        :subtitle="subtitle1"
-        :thumbnail="thumbnail1"
-      />
-      <carsLightbox
-        :index="index"
-        :images="bmw"
-        :title="title2"
-        :subtitle="subtitle2"
-        :thumbnail="thumbnail2"
-      />
-      <carsLightbox
-        :index="index"
-        :images="mini"
-        :title="title3"
-        :subtitle="subtitle3"
-        :thumbnail="thumbnail3"
-      />
-      <carsLightbox
-        :index="index"
         :images="mercedes"
         :title="title4"
         :subtitle="subtitle4"
@@ -31,35 +12,20 @@
       />
       <carsLightbox :images="rover" :title="title5" :subtitle="subtitle5" :thumbnail="thumbnail5"/>
       <carsLightbox
-        :index="index"
         :images="forester"
         :title="title6"
         :subtitle="subtitle6"
         :thumbnail="thumbnail6"
       />
+      <carsLightbox :images="hundai" :title="title7" :subtitle="subtitle7" :thumbnail="thumbnail7"/>
       <carsLightbox
-        :index="index"
-        :images="hundai"
-        :title="title7"
-        :subtitle="subtitle7"
-        :thumbnail="thumbnail7"
-      />
-      <carsLightbox
-        :index="index"
         :images="volkswagen"
         :title="title8"
         :subtitle="subtitle8"
         :thumbnail="thumbnail8"
       />
+      <carsLightbox :images="ninth" :title="title9" :subtitle="subtitle9" :thumbnail="thumbnail9"/>
       <carsLightbox
-        :index="index"
-        :images="ninth"
-        :title="title9"
-        :subtitle="subtitle9"
-        :thumbnail="thumbnail9"
-      />
-      <carsLightbox
-        :index="index"
         :images="tenth"
         :title="title10"
         :subtitle="subtitle10"
@@ -77,7 +43,6 @@ export default {
   },
   data() {
     return {
-      index: null,
       title1: "Volkswagen",
       subtitle1: "Bettle",
       thumbnail1: "car1",
