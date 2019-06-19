@@ -1,72 +1,32 @@
 <template>
   <div
-    @click.prevent="show"
     class="card mb-3 mx-auto card__hover_two work-card img-fluid"
     style="width: 100%; max-width: 540px;"
-    title="View more images!"
   >
-    <div class="row no-gutters">
-      <div class="col-9 p-0">
-        <picture>
-          <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp">
-          <img :src="require(`~/assets/img/${thumbnail + '.png'}`)" class="img-fluid" :alt="title">
-        </picture>
-      </div>
-      <div class="col-3">
-        <div class="card-body h-100 d-flex flex-column justify-content-center text-center p-0 pr-2">
-          <h4>
-            {{title}}
-            <span>{{subtitle}}</span>
-          </h4>
+    <no-ssr>
+      <LightGallery :images="images" :index="index" :disable-scroll="true" @close="index = null"/>
+    </no-ssr>
+    <div @click="index = 0" title="View more images!">
+      <div class="row no-gutters">
+        <div class="col-9 p-0">
+          <picture>
+            <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp">
+            <img
+              :src="require(`~/assets/img/${thumbnail + '.png'}`)"
+              class="img-fluid"
+              :alt="title"
+            >
+          </picture>
         </div>
-      </div>
-    </div>
-
-    <div class="lightbox m-auto text-center" v-if="visible" @click="hide">
-      <div
-        class="text-right text-white p-2"
-        style="font-size: 50px; cursor: pointer;"
-        @click.stop="hide"
-      >&times;</div>
-      <div class="row h-75 m-auto">
-        <div
-          class="col-1 text-left my-auto p-0"
-          style="font-size: 50px; line-height: 52px; cursor: pointer;"
-          @click.stop="prev"
-          :class="{'invisible': ! hasPrev()}"
-        >
-          <svg
-            class="pointer-events-none"
-            fill="#fff"
-            height="48"
-            viewBox="0 0 24 24"
-            width="48"
-            xmlns="http://www.w3.org/2000/svg"
+        <div class="col-3">
+          <div
+            class="card-body h-100 d-flex flex-column justify-content-center text-center p-0 pr-2"
           >
-            <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
-            <path d="M0-.5h24v24H0z" fill="none"></path>
-          </svg>
-        </div>
-        <div class="lightbox-image col-10 my-auto p-2" @click.stop>
-          <img class="img-fluid" :src="images[index]">
-        </div>
-        <div
-          class="col-1 text-right my-auto p-0 ml-n3"
-          style="font-size: 50px; line-height: 52px; cursor: pointer;"
-          @click.stop="next"
-          :class="{'invisible': ! hasNext()}"
-        >
-          <svg
-            class="pointer-events-none"
-            fill="#fff"
-            height="48"
-            viewBox="0 0 24 24"
-            width="48"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
-            <path d="M0-.25h24v24H0z" fill="none"></path>
-          </svg>
+            <h4>
+              {{title}}
+              <span>{{subtitle}}</span>
+            </h4>
+          </div>
         </div>
       </div>
     </div>
@@ -91,86 +51,17 @@ export default {
     subtitle: {
       type: String,
       required: true
+    },
+    index: {
+      type: Number,
+      required: true,
+      default: null
     }
-  },
-  data() {
-    return {
-      visible: false,
-      index: 0
-    };
-  },
-  methods: {
-    show() {
-      this.visible = true;
-    },
-    hide() {
-      this.visible = false;
-      this.index = 0;
-    },
-    hasNext() {
-      return this.index + 1 < this.images.length;
-    },
-    hasPrev() {
-      return this.index - 1 >= 0;
-    },
-    prev() {
-      if (this.hasPrev()) {
-        this.index -= 1;
-      }
-    },
-    next() {
-      if (this.hasNext()) {
-        this.index += 1;
-      }
-    },
-    onKeydown(e) {
-      if (this.visible) {
-        switch (e.key) {
-          case "ArrowRight":
-            this.next();
-            break;
-          case "ArrowLeft":
-            this.prev();
-            break;
-          case "ArrowDown":
-          case "ArrowUp":
-          case " ":
-            e.preventDefault();
-            break;
-          case "Escape":
-            this.hide();
-            break;
-        }
-      }
-    }
-  },
-  mounted() {
-    window.addEventListener("keydown", this.onKeydown);
-  },
-  destroyed() {
-    window.removeEventListener("keydown", this.onKeydown);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.lightbox {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.9);
-}
-.lightbox-image img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: calc(100vh - 120px);
-  margin: auto;
-}
-
 .work-card {
   background: #000000;
   border-radius: 22px;
@@ -179,7 +70,7 @@ export default {
   img {
     object-fit: cover;
     object-position: left;
-    margin-left: -1px;
+    margin-left: -2px;
   }
 
   h4 {

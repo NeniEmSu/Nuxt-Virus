@@ -1,10 +1,29 @@
 <template>
   <div>
     <div class="row mx-auto">
-      <carsLightbox :images="audi" :title="title1" :subtitle="subtitle1" :thumbnail="thumbnail1"/>
-      <carsLightbox :images="bmw" :title="title2" :subtitle="subtitle2" :thumbnail="thumbnail2"/>
-      <carsLightbox :images="mini" :title="title3" :subtitle="subtitle3" :thumbnail="thumbnail3"/>
       <carsLightbox
+        :index="index"
+        :images="audi"
+        :title="title1"
+        :subtitle="subtitle1"
+        :thumbnail="thumbnail1"
+      />
+      <carsLightbox
+        :index="index"
+        :images="bmw"
+        :title="title2"
+        :subtitle="subtitle2"
+        :thumbnail="thumbnail2"
+      />
+      <carsLightbox
+        :index="index"
+        :images="mini"
+        :title="title3"
+        :subtitle="subtitle3"
+        :thumbnail="thumbnail3"
+      />
+      <carsLightbox
+        :index="index"
         :images="mercedes"
         :title="title4"
         :subtitle="subtitle4"
@@ -12,20 +31,35 @@
       />
       <carsLightbox :images="rover" :title="title5" :subtitle="subtitle5" :thumbnail="thumbnail5"/>
       <carsLightbox
+        :index="index"
         :images="forester"
         :title="title6"
         :subtitle="subtitle6"
         :thumbnail="thumbnail6"
       />
-      <carsLightbox :images="hundai" :title="title7" :subtitle="subtitle7" :thumbnail="thumbnail7"/>
       <carsLightbox
+        :index="index"
+        :images="hundai"
+        :title="title7"
+        :subtitle="subtitle7"
+        :thumbnail="thumbnail7"
+      />
+      <carsLightbox
+        :index="index"
         :images="volkswagen"
         :title="title8"
         :subtitle="subtitle8"
         :thumbnail="thumbnail8"
       />
-      <carsLightbox :images="ninth" :title="title9" :subtitle="subtitle9" :thumbnail="thumbnail9"/>
       <carsLightbox
+        :index="index"
+        :images="ninth"
+        :title="title9"
+        :subtitle="subtitle9"
+        :thumbnail="thumbnail9"
+      />
+      <carsLightbox
+        :index="index"
         :images="tenth"
         :title="title10"
         :subtitle="subtitle10"
@@ -43,20 +77,33 @@ export default {
   },
   data() {
     return {
+      index: null,
       title1: "Volkswagen",
       subtitle1: "Bettle",
       thumbnail1: "car1",
       audi: [
-        "https://i.ibb.co/SBT0Rs3/1.jpg",
-        "https://i.ibb.co/kJgJ0hn/2.jpg",
-        "https://i.ibb.co/b6Bhfz0/3.jpg",
-        "https://i.ibb.co/nDhzsVD/4.jpg",
-        "https://i.ibb.co/wLv8sTR/5.jpg",
-        "https://i.ibb.co/R7HtSzr/6.jpg",
-        "https://i.ibb.co/vQWv3Bm/7.jpg",
-        "https://i.ibb.co/vwdSchM/8.jpg",
-        "https://i.ibb.co/S0CBfwy/9.jpg",
-        "https://i.ibb.co/YX8kT5L/10.jpg"
+        // "https://i.ibb.co/SBT0Rs3/1.jpg",
+        // "https://i.ibb.co/kJgJ0hn/2.jpg",
+        // "https://i.ibb.co/b6Bhfz0/3.jpg",
+        // "https://i.ibb.co/nDhzsVD/4.jpg",
+        // "https://i.ibb.co/wLv8sTR/5.jpg",
+        // "https://i.ibb.co/R7HtSzr/6.jpg",
+        // "https://i.ibb.co/vQWv3Bm/7.jpg",
+        // "https://i.ibb.co/vwdSchM/8.jpg",
+        // "https://i.ibb.co/S0CBfwy/9.jpg",
+        // "https://i.ibb.co/YX8kT5L/10.jpg"
+
+        { title: "img 1", url: "https://i.ibb.co/SBT0Rs3/1.jpg" },
+        { title: "img 2", url: "https://i.ibb.co/kJgJ0hn/2.jpg" },
+        { title: "img 3", url: "https://i.ibb.co/b6Bhfz0/3.jpg" },
+        { title: "img 4", url: "https://i.ibb.co/nDhzsVD/4.jpg" },
+        { title: "img 5", url: "https://i.ibb.co/wLv8sTR/5.jpg" },
+        { title: "img 6", url: "https://i.ibb.co/R7HtSzr/6.jpg" },
+        { title: "img 7", url: "https://i.ibb.co/vQWv3Bm/7.jpg" },
+        { title: "img 8", url: "https://i.ibb.co/vwdSchM/8.jpg" },
+        { title: "img 9", url: "https://i.ibb.co/S0CBfwy/9.jpg" },
+        { title: "img 10", url: "https://i.ibb.co/YX8kT5L/10.jpg" }
+
         // "/img/gallery/1/1.jpg",
         // "/img/gallery/1/2.jpg",
         // "/img/gallery/1/3.jpg",
@@ -73,12 +120,19 @@ export default {
       thumbnail2: "car2",
 
       bmw: [
-        "/img/gallery/2/1.jpg",
-        "/img/gallery/2/2.jpg",
-        "/img/gallery/2/3.jpg",
-        "/img/gallery/2/4.jpg",
-        "/img/gallery/2/5.jpg",
-        "/img/gallery/2/6.jpg"
+        { title: "img 1", url: "/img/gallery/2/1.jpg" },
+        { title: "img 2", url: "/img/gallery/2/2.jpg" },
+        { title: "img 3", url: "/img/gallery/2/3.jpg" },
+        { title: "img 4", url: "/img/gallery/2/4.jpg" },
+        { title: "img 5", url: "/img/gallery/2/5.jpg" },
+        { title: "img 6", url: "/img/gallery/2/6.jpg" }
+
+        // "/img/gallery/2/1.jpg",
+        // "/img/gallery/2/2.jpg",
+        // "/img/gallery/2/3.jpg",
+        // "/img/gallery/2/4.jpg",
+        // "/img/gallery/2/5.jpg",
+        // "/img/gallery/2/6.jpg"
       ],
       title3: "Skoda",
       subtitle3: "Superb",

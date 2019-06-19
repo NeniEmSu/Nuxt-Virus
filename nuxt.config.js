@@ -277,6 +277,7 @@ export default {
   // },
 
   plugins: [
+    '~/plugins/lightGallery.client.js',
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     {
