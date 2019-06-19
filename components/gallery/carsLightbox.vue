@@ -6,7 +6,7 @@
     <no-ssr>
       <LightGallery :images="images" :index="index" :disable-scroll="true" @close="index = null"/>
     </no-ssr>
-    <div @click="index = 0" title="View more images!">
+    <div @click="index = 0" title="Переглянути більше зображень!">
       <div class="row no-gutters">
         <div class="col-9 p-0">
           <picture>

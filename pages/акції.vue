@@ -17,7 +17,7 @@
         <img class="card-img img-fliud" :src="promotion.image.path" alt="Card image">
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
-            <nuxt-link to="#">
+            <nuxt-link :to="promotion.link">
               <h2 class="card-title text-white">{{ promotion.title }}</h2>
             </nuxt-link>
             <p class="card-text">{{ promotion.duration }}</p>

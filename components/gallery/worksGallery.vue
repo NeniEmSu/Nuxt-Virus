@@ -192,11 +192,11 @@ export default {
       tenth: [
         "/img/gallery/10/1.jpg",
         "/img/gallery/10/2.jpg",
+        "/img/gallery/10/7.jpg",
         "/img/gallery/10/3.jpg",
         "/img/gallery/10/4.jpg",
         "/img/gallery/10/5.jpg",
         "/img/gallery/10/6.jpg",
-        "/img/gallery/10/7.jpg",
         "/img/gallery/9/8.jpg"
       ]
     };
