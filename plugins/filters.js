@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import highlightjs from 'highlight.js'
-import marked, { Renderer } from 'marked'
+import marked, {
+  Renderer
+} from 'marked'
 const dayjs = require('dayjs')
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
+const sanitizeHtml = require('sanitize-html')
 
 // Only import the languages that you need to keep our js bundle small
 highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
@@ -22,12 +25,16 @@ renderer.code = (code, language) => {
 }
 
 // Set the renderer to marked.
-marked.setOptions({ renderer })
-
-Vue.filter('parseMd', function(content) {
-    return marked(content)
+marked.setOptions({
+  renderer
 })
 
-Vue.filter('toDate', function(timestamp) {
-  return dayjs(timestamp*1000).format('Do MMM YY')
+Vue.filter('parseMd', function (content) {
+  let clean = sanitizeHtml(content)
+
+  return marked(clean)
+})
+
+Vue.filter('toDate', function (timestamp) {
+  return dayjs(timestamp * 1000).format('Do MMM YY')
 })

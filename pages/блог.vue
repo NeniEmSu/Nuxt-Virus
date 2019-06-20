@@ -18,12 +18,29 @@
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
+              <span class="ml-1 text-xs text-light">•</span>
               <nuxt-link
                 v-for="tag in post.tags"
                 :key="tag"
                 :to="'/category/'+tag"
                 class="desktop-tablet-only"
               >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+              <span class="mx-1 text-xs text-light">•</span>
+              <span class="text-light">
+                {{ post.comments ? post.comments.length : 0 }}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="-2 -2 24 24"
+                  width="12"
+                  height="12"
+                  preserveAspectRatio="xMinYMin"
+                  class="text-light fill-current"
+                >
+                  <path
+                    d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
+                  ></path>
+                </svg>
+              </span>
             </div>
             <nuxt-link :to="'/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>

@@ -266,7 +266,8 @@ export default {
   ],
 
   env: {
-    contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`
+    contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`,
+    commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`
   },
 
   // webfontloader: {
@@ -277,6 +278,7 @@ export default {
   // },
 
   plugins: [
+    '~/plugins/vue-scrollto.js',
     '~/plugins/lightGallery.client.js',
     '~/plugins/Axios.js',
     '~/plugins/filters.js',

@@ -11,5 +11,8 @@ apiToken=${process.env.apiToken}\n
 imagePath=${process.env.imagePath}\n
 baseUrl=${process.env.baseUrl}\n
 pagesToken=${process.env.pagesToken}\n
-FORMS_TOKEN=${process.env.FORMS_TOKEN}
+FORMS_TOKEN=${process.env.FORMS_TOKEN}\n
+APPROVE_TOKEN=${process.env.APPROVE_TOKEN}\n
+SITE_URL=${process.env.SITE_URL}\n
+FRONTEND_URL=${process.env.FRONTEND_URL}
 `)

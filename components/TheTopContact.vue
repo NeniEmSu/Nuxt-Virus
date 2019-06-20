@@ -3,7 +3,7 @@
     <div class="container p-0">
       <ul>
         <li>
-          <nuxt-link to="/контакти#map-top">
+          <nuxt-link to="/контакти" v-scroll-to="{el: '#map-top', duration: 500, offset: -5 }">
             <span>Україна, м. Тернопіль, вул. Приміська 15А</span>
             <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="bounce mx-1 fa-lg"/>
           </nuxt-link>
