@@ -21,7 +21,7 @@
                 </ul>
               </div>-->
               <div class="image-showcase col-12 text-center">
-                <img src="~assets/img/86.jpg" class="mx-auto" alt="Koch Chemie Fresh UP">
+                <img src="~assets/img/86.jpg" class="mx-auto img-fluid" alt="Koch Chemie Fresh UP">
               </div>
               <div class="small-more-images">
                 <div class="row mx-auto">
