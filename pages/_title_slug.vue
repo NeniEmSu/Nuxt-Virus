@@ -42,6 +42,10 @@
         class="mt-4 markdown"
         v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
       ></div>
+
+      <div class="mt-5 text-center text-secondary">
+        <nuxt-link to="/блог" class="pr-2 text-secondary">Знайти більше повідомлень у блогах!</nuxt-link>
+      </div>
       <div id="comments" class="mt-8 mb-4 pt-3 border-t-2">
         <h2 class="mb-2">Comments</h2>
         <comment-form class="border-b-2" :post_id="post._id"/>
