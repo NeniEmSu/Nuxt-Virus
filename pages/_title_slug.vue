@@ -43,7 +43,7 @@
         v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
       ></div>
 
-      <div class="mt-5 text-center text-secondary">
+      <div class="mt-5 text-center">
         <nuxt-link to="/блог" class="pr-2 text-secondary">Знайти більше повідомлень у блогах!</nuxt-link>
       </div>
       <div id="comments" class="mt-8 mb-4 pt-3 border-t-2">
