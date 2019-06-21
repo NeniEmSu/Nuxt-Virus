@@ -10,7 +10,9 @@ import card from "@/components/shop/card.vue";
 import serviceCard from "@/components/services/card.vue";
 import modalComponent from "@/components/shop/modalComponent.vue";
 import shopCartModal from "@/components/shop/shopCartModal.vue";
+import cardsSlider from "@/components/cardsSlider.vue";
 
+Vue.component("cardsSlider", cardsSlider)
 Vue.component("shopCartModal", shopCartModal)
 Vue.component("modalComponent", modalComponent)
 Vue.component("card", card)

@@ -133,12 +133,14 @@
       <div class="container text-center">
         <h2 class="text-left">Рекомендуємо</h2>
 
-        <div class="row">
+        <!-- <div class="row">
           <card class="mb-5 mx-auto"/>
           <card class="mb-5 mx-auto"/>
           <card class="mb-5 mx-auto"/>
           <card class="mb-5 mx-auto"/>
-        </div>
+        </div>-->
+
+        <cardsSlider/>
 
         <nuxt-link to="магазин" class="btn">Показати більше</nuxt-link>
       </div>

@@ -88,12 +88,13 @@
       <h2 class="text-center my-2">Схожі товари та пропозиції</h2>
 
       <div class="text-center mx-auto p-0">
-        <div class="row">
+        <!-- <div class="row">
           <card class="mb-5 mx-auto"/>
           <card class="mb-5 mx-auto"/>
           <card class="mb-5 mx-auto"/>
           <card class="mb-5 mx-auto"/>
-        </div>
+        </div>-->
+        <cardsSlider/>
       </div>
 
       <!-- <div class="card-deck">
