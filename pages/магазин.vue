@@ -185,6 +185,34 @@
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
             </div>
+            <!-- <div class="card">
+              <header class="card-header">
+                <div class="card-header-title is-centered">{{ product.Name }}</div>
+              </header>
+
+              <div class="card-image">
+                <img v-bind:src="product.ThumbUrl">
+              </div>
+
+              <div class="card-content">
+                <div class="content">{{ product.Description }}</div>
+              </div>
+
+              <div class="card-footer">
+                <a
+                  href="#"
+                  class="snipcart-add-item card-footer-item"
+                  data-item-url="/"
+                  v-bind:data-item-name="product.Name"
+                  v-bind:data-item-price="product.Price"
+                  v-bind:data-item-id="product._id"
+                  v-bind:data-item-url="product.ThumbUrl"
+                  v-bind:data-item-description="product.Description"
+                >
+                  <i class="fa fa-cart-plus"></i> &nbsp;Add to cart
+                </a>
+              </div>
+            </div>-->
           </div>
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
@@ -233,6 +261,26 @@ export default {
   components: {
     productCards
   },
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.POSTS_URL,
+      JSON.stringify({
+        filter: { published: true },
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
+
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
+    }
+
+    return { product: data.entries };
+  },
+
   data() {
     return {
       cart: 0,
@@ -243,6 +291,7 @@ export default {
       active4: false
     };
   },
+
   methods: {
     addToCart() {
       this.cart += 1;

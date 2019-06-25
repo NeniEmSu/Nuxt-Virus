@@ -67,7 +67,17 @@
                 <div class="col-md-6 text-center mt-lg-n3">
                   <small class="detail-discount">В наявності</small>
                   <br>
-                  <a href="#" class="btn add-to-cart" @click.prevent="addToCart">
+                  <a
+                    href="#"
+                    class="btn add-to-cart snipcart-add-item card-footer-item"
+                    data-item-url="/"
+                    :data-item-id="id"
+                    :data-item-name="Name"
+                    :data-item-price="Price"
+                    :data-item-image="ThumbUrl"
+                    :data-item-description="Description"
+                    :data-item-shippable="false"
+                  >
                     Додати
                     до корзини +
                   </a>
@@ -402,6 +412,12 @@
         </div>
       </div>-->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script
+      id="snipcart"
+      src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+      data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
+    ></script>
   </div>
 </template>
 
@@ -414,7 +430,13 @@ export default {
   data() {
     return {
       cart: 0,
-      selectedImage: {}
+      selectedImage: {},
+      Name: "Koch Chemie Fresh UP",
+      Price: "2900",
+      id: "12345",
+      Quantity: "20",
+      Description: "Koch Chemie Fresh UP",
+      ThumbUrl: require("~/assets/img/86.jpg")
     };
   },
   methods: {

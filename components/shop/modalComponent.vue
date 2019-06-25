@@ -1,13 +1,21 @@
 <template>
   <div>
     <div class="cart-icon">
+      <b-button variant="link" class="snipcart-checkout">
+        <img id="cart" src="~/assets/img/cart.png" alt="Cart icon">
+      </b-button>
+      <div id="show-total" class="text-center justify-center snipcart-summary">
+        <span id="item-count" class="text-center m-auto p-0 snipcart-total-items">0</span>
+      </div>
+    </div>
+    <!-- <div class="cart-icon">
       <b-button v-b-modal.modal-xl variant="link" @click="modalShow = !modalShow">
         <img id="cart" src="~/assets/img/cart.png" alt="Cart icon">
       </b-button>
       <div id="show-total" class="text-center justify-center">
-        <span id="item-count" class="text-center m-auto p-0">{{ cart }}</span>
+        <span id="item-count" class="text-center m-auto p-0 snipcart-total-items">0</span>
       </div>
-    </div>
+    </div>-->
     <b-modal
       v-model="modalShow"
       id="modal-xl"

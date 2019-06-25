@@ -1,10 +1,8 @@
 <template>
   <section>
     <div class="container text-center top-grid pt-4 pb-5">
-      <h1 class="text-left">
-        Ми
-        <br>пропонуємо
-      </h1>
+      <pre><h1 class="text-left">Ми
+пропонуємо</h1></pre>
       <div class="row">
         <nuxt-link to="/Послуги/Полірування" class="col-4 p-0 one">
           <div class="card bg-inverse">
@@ -32,10 +30,10 @@
             <div
               class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right"
             >
-              <h2 class="card-title text-right">
+              <pre><h2 class="card-title text-right">
                 ВОСКОВЕ
-                <br>ПОКРИТТЯ
-              </h2>
+                ПОКРИТТЯ
+              </h2></pre>
             </div>
           </div>
         </nuxt-link>

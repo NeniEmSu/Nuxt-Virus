@@ -1,12 +1,17 @@
 <template>
   <div class="desktop-only">
-    <b-button v-b-modal.modal-xl-mobile variant="link" @click="mobileModalShow = !mobileModalShow">
+    <b-button variant="link" class="snipcart-checkout">
       <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon">
-      <div id="show-total" class="text-center mt-n3 ml-n3">
-        <span id="item-count" class="text-center">{{ cart }}</span>
+      <div id="show-total" class="text-center mt-n3 ml-n3 snipcart-summary">
+        <span id="item-count" class="text-center snipcart-total-items">0</span>
       </div>
     </b-button>
-
+    <!-- <b-button v-b-modal.modal-xl-mobile variant="link" @click="mobileModalShow = !mobileModalShow">
+      <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon">
+      <div id="show-total" class="text-center mt-n3 ml-n3">
+        <span id="item-count" class="text-centersnipcart-total-items">0</span>
+      </div>
+    </b-button>-->
     <b-modal
       v-model="mobileModalShow"
       id="modal-xl-mobile"

@@ -182,6 +182,10 @@ export default {
       {
         rel: 'shortcut icon',
         href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
       }
     ],
     script: [{
@@ -268,8 +272,14 @@ export default {
   ],
 
   env: {
+    productUrl: `${process.env.BASE_URL}/api/collections/get/Product?token=${process.env.PRODUCT_TOKEN}`,
     contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`,
-    commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`
+    commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`,
+    cockpit: {
+      apiUrl: 'https://cms.neniemsu.com/api',
+      apiToken: '478b68417378bbac86af13a57561ef',
+      baseUrl: 'https://cms.neniemsu.com'
+    }
   },
 
   // webfontloader: {
@@ -283,44 +293,44 @@ export default {
   polyfill: {
     features: [
 
-        /*
-            Feature without detect:
+      /*
+          Feature without detect:
 
-            Note:
-              This is not recommended for most polyfills
-              because the polyfill will always be loaded, parsed and executed.
-        */
-        {
-            require: 'url-polyfill' // NPM package or require path of file
-        },
-        /*
-            Feature with detect:
+          Note:
+            This is not recommended for most polyfills
+            because the polyfill will always be loaded, parsed and executed.
+      */
+      {
+        require: 'url-polyfill' // NPM package or require path of file
+      },
+      /*
+          Feature with detect:
 
-            Detection is better because the polyfill will not be
-            loaded, parsed and executed if it's not necessary.
-        */
-        {
-            require: 'intersection-observer',
-            detect: () => 'IntersectionObserver' in window,
-        },
+          Detection is better because the polyfill will not be
+          loaded, parsed and executed if it's not necessary.
+      */
+      {
+        require: 'intersection-observer',
+        detect: () => 'IntersectionObserver' in window,
+      },
 
-        /*
-            Feature with detect & install:
+      /*
+          Feature with detect & install:
 
-            Some polyfills require a installation step
-            Hence you could supply a install function which accepts the require result
-        */
-        {
-            require: 'smoothscroll-polyfill',
+          Some polyfills require a installation step
+          Hence you could supply a install function which accepts the require result
+      */
+      {
+        require: 'smoothscroll-polyfill',
 
-            // Detection found in source: https://github.com/iamdustan/smoothscroll/blob/master/src/smoothscroll.js
-            detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
+        // Detection found in source: https://github.com/iamdustan/smoothscroll/blob/master/src/smoothscroll.js
+        detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
 
-            // Optional install function called client side after the package is required:
-            install: (smoothscroll) => smoothscroll.polyfill()
-        }
+        // Optional install function called client side after the package is required:
+        install: (smoothscroll) => smoothscroll.polyfill()
+      }
     ]
-},
+  },
 
   plugins: [
 
@@ -328,7 +338,10 @@ export default {
     '~/plugins/lightGallery.client.js',
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
-    { src: '~/plugins/swiper.js', ssr: false },
+    {
+      src: '~/plugins/swiper.js',
+      ssr: false
+    },
     {
       src: '~/plugins/vue-lazyload',
       ssr: false
