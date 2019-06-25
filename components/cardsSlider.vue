@@ -2,7 +2,7 @@
   <div class="container">
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper mx-auto">
-        <card class="mt-2 mb-5 swiper-slide"/>
+        <card class="mt-2 mb-5 swiper-slide" />
         <card class="mt-2 mb-5 swiper-slide"/>
         <card class="mt-2 mb-5 swiper-slide"/>
         <card class="mt-2 mb-5 swiper-slide"/>

@@ -178,24 +178,25 @@
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
             <div class="row">
+              <card class="mb-5 mx-auto" v-for="product in products" :key="product._id" :name="product.Name" :summary="product.Overview" :price="product.Price"/>
+              <!-- <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>
+              <card class="mb-5 mx-auto"/> -->
             </div>
-            <!-- <div class="card">
+            <div class="card" v-for="product in products" :key="product._id">
               <header class="card-header">
-                <div class="card-header-title is-centered">{{ product.Name }}</div>
+                <div class="text-primary text-center">{{ product.Name }}</div>
               </header>
 
               <div class="card-image">
-                <img v-bind:src="product.ThumbUrl">
+                <img :src="product.Image">
               </div>
 
               <div class="card-content">
-                <div class="content">{{ product.Description }}</div>
+                <div class="content">{{ product.Overview }}</div>
               </div>
 
               <div class="card-footer">
@@ -206,13 +207,12 @@
                   v-bind:data-item-name="product.Name"
                   v-bind:data-item-price="product.Price"
                   v-bind:data-item-id="product._id"
-                  v-bind:data-item-url="product.ThumbUrl"
-                  v-bind:data-item-description="product.Description"
+                  v-bind:data-item-description="product.Overview"
                 >
                   <i class="fa fa-cart-plus"></i> &nbsp;Add to cart
                 </a>
               </div>
-            </div>-->
+            </div>
           </div>
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
@@ -263,9 +263,9 @@ export default {
   },
   async asyncData({ app, error }) {
     const { data } = await app.$axios.post(
-      process.env.POSTS_URL,
+      process.env.PRODUCT_URL,
       JSON.stringify({
-        filter: { published: true },
+        filter: { Published: true },
         sort: { _created: -1 },
         populate: 1
       }),
@@ -278,7 +278,7 @@ export default {
       return error({ message: "404 Page not found", statusCode: 404 });
     }
 
-    return { product: data.entries };
+    return { products: data.entries };
   },
 
   data() {

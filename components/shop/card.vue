@@ -11,17 +11,16 @@
     <hr class="desktop-only">
     <div class="card-body">
       <nuxt-link to="/Магазинdetail">
-        <h5 class="card-title">Koch Chemie Fresh UP</h5>
+        <h5 class="card-title">{{ name }}</h5>
       </nuxt-link>
       <p class="card-text desktop-only">
-        Розпилюючий засіб для видалення
-        небажаних запахів
+        {{ summary }}}
       </p>
       <div class="mobile-only">
         <div class="row">
           <div class="col-6 pr-0">
             <p class="card-price">
-              2 900
+              {{ price }}}
               <span>ГРН</span>
             </p>
           </div>
@@ -38,7 +37,7 @@
             <s class="discount-price">2975 грн</s>
           </small>
           <p class="card-price">
-            2 900
+            {{price}}
             <span>ГРН</span>
           </p>
         </div>
@@ -55,7 +54,28 @@
 </template>
 
 <script>
-export default {};
+export default {
+ props: {
+    name: {
+      type: String,
+      default: null,
+      required: false,
+      default: "Koch Chemie Fresh UP"
+    },
+    summary: {
+      type: String,
+      default: null,
+      required: false,
+      default: "Розпилюючий засіб для видалення небажаних запахів"
+    },
+    price: {
+      type: String,
+      default: null,
+      required: false,
+      default: "2900"
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
