@@ -178,13 +178,20 @@
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
             <div class="row">
-              <card class="mb-5 mx-auto" v-for="product in products" :key="product._id" :name="product.Name" :summary="product.Overview" :price="product.Price"/>
+              <card
+                class="mb-5 mx-auto"
+                v-for="product in products"
+                :key="product._id"
+                :name="product.Name"
+                :summary="product.Overview"
+                :price="product.Price"
+              />
               <!-- <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/> -->
+              <card class="mb-5 mx-auto"/>-->
             </div>
             <div class="card" v-for="product in products" :key="product._id">
               <header class="card-header">
@@ -192,7 +199,11 @@
               </header>
 
               <div class="card-image">
-                <img :src="product.Image">
+                <img :src="product.ThumbUrl">
+                <!-- <img
+                  src="https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=2.jpg&w=200&h=200&f[brighten]=25&o=true"
+                  alt="img"
+                >-->
               </div>
 
               <div class="card-content">
@@ -256,13 +267,33 @@
 </template>
 
 <script>
+import axios from "axios";
 import productCards from "@/components/shop/productCards";
 export default {
   components: {
     productCards
   },
-  async asyncData({ app, error }) {
-    const { data } = await app.$axios.post(
+  // async asyncData({ app, error }) {
+  //   const { data } = await app.$axios.post(
+  //     process.env.PRODUCT_URL,
+  //     JSON.stringify({
+  //       filter: { Published: true },
+  //       sort: { _created: -1 },
+  //       populate: 1
+  //     }),
+  //     {
+  //       headers: { "Content-Type": "application/json" }
+  //     }
+  //   );
+
+  //   if (!data.entries[0]) {
+  //     return error({ message: "404 Page not found", statusCode: 404 });
+  //   }
+
+  //   return { products: data.entries };
+  // },
+  async asyncData({ env, params, app, error }) {
+    let { data } = await axios.get(
       process.env.PRODUCT_URL,
       JSON.stringify({
         filter: { Published: true },
@@ -274,11 +305,33 @@ export default {
       }
     );
 
-    if (!data.entries[0]) {
-      return error({ message: "404 Page not found", statusCode: 404 });
-    }
+    let products = await Promise.all(
+      await data.entries.map(async p => {
+        let result = await axios.post(
+          "https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef",
+          {
+            images: [p.Image],
+            m:
+              "thumbnail" | "bestFit" | "resize" | "fitToWidth" | "fitToHeight",
+            w: 300,
+            h: 300,
+            options: {
+              quality: 80,
+              mode: "resize"
+            }
+          }
+        );
 
-    return { products: data.entries };
+        p.ThumbUrl = `${process.env.baseUrl}/api/cockpit/image?token=${
+          process.env.apiToken
+        }&src=86.jpg&w=200&h=200&o=true&options=quality=80&options=mode=resize`;
+        return p;
+      })
+    );
+
+    return {
+      products
+    };
   },
 
   data() {

@@ -13,9 +13,7 @@
       <nuxt-link to="/Магазинdetail">
         <h5 class="card-title">{{ name }}</h5>
       </nuxt-link>
-      <p class="card-text desktop-only">
-        {{ summary }}}
-      </p>
+      <p class="card-text desktop-only">{{ summary }}}</p>
       <div class="mobile-only">
         <div class="row">
           <div class="col-6 pr-0">
@@ -55,7 +53,7 @@
 
 <script>
 export default {
- props: {
+  props: {
     name: {
       type: String,
       default: null,
@@ -74,7 +72,7 @@ export default {
       required: false,
       default: "2900"
     }
-  },
+  }
 };
 </script>
 
