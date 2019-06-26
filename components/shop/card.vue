@@ -1,13 +1,6 @@
 <template>
   <div class="card card__hover" style="width: 18rem;">
-    <picture>
-      <source srcset="~/assets/imgWebP/86.webp" type="image/webp">
-      <img
-        v-lazy="require('~/assets/img/86.png')"
-        class="card-img-top img-fluid store-img"
-        alt="Koch Chemie Fresh UP"
-      >
-    </picture>
+    <img :src="image" class="card-img-top img-fluid store-img" alt="Koch Chemie Fresh UP">
     <hr class="desktop-only">
     <div class="card-body">
       <nuxt-link to="/Магазинdetail">
@@ -67,6 +60,12 @@ export default {
       default: "Розпилюючий засіб для видалення небажаних запахів"
     },
     price: {
+      type: String,
+      default: null,
+      required: false,
+      default: "2900"
+    },
+    image: {
       type: String,
       default: null,
       required: false,

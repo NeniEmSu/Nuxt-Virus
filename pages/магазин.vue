@@ -185,6 +185,7 @@
                 :name="product.Name"
                 :summary="product.Overview"
                 :price="product.Price"
+                :image="`https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
               />
               <!-- <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
@@ -199,11 +200,11 @@
               </header>
 
               <div class="card-image">
-                <img :src="product.ThumbUrl">
-                <!-- <img
-                  src="https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=2.jpg&w=200&h=200&f[brighten]=25&o=true"
+                <!-- <img :src="product.ThumbUrl"> -->
+                <img
+                  :src="`https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                   alt="img"
-                >-->
+                >
               </div>
 
               <div class="card-content">
@@ -273,27 +274,8 @@ export default {
   components: {
     productCards
   },
-  // async asyncData({ app, error }) {
-  //   const { data } = await app.$axios.post(
-  //     process.env.PRODUCT_URL,
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { "Content-Type": "application/json" }
-  //     }
-  //   );
-
-  //   if (!data.entries[0]) {
-  //     return error({ message: "404 Page not found", statusCode: 404 });
-  //   }
-
-  //   return { products: data.entries };
-  // },
-  async asyncData({ env, params, app, error }) {
-    let { data } = await axios.get(
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
         filter: { Published: true },
@@ -305,34 +287,55 @@ export default {
       }
     );
 
-    let products = await Promise.all(
-      await data.entries.map(async p => {
-        let result = await axios.post(
-          "https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef",
-          {
-            images: [p.Image],
-            m:
-              "thumbnail" | "bestFit" | "resize" | "fitToWidth" | "fitToHeight",
-            w: 300,
-            h: 300,
-            options: {
-              quality: 80,
-              mode: "resize"
-            }
-          }
-        );
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
+    }
 
-        p.ThumbUrl = `${process.env.baseUrl}/api/cockpit/image?token=${
-          process.env.apiToken
-        }&src=86.jpg&w=200&h=200&o=true&options=quality=80&options=mode=resize`;
-        return p;
-      })
-    );
-
-    return {
-      products
-    };
+    return { products: data.entries };
   },
+  // async asyncData({ env, params, app, error }) {
+  //   let { data } = await axios.get(
+  //     process.env.PRODUCT_URL,
+  //     JSON.stringify({
+  //       filter: { Published: true },
+  //       sort: { _created: -1 },
+  //       populate: 1
+  //     }),
+  //     {
+  //       headers: { "Content-Type": "application/json" }
+  //     }
+  //   );
+
+  //   let products = await Promise.all(
+  //     await data.entries.map(async p => {
+  //       let result = await axios.post(
+  //         "https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef",
+  //         {
+  //           images: [p.Image],
+  //           m:
+  //             "thumbnail" | "bestFit" | "resize" | "fitToWidth" | "fitToHeight",
+  //           w: 300,
+  //           h: 300,
+  //           options: {
+  //             quality: 80,
+  //             mode: "resize"
+  //           }
+  //         }
+  //       );
+
+  //       p.ThumbUrl = `${process.env.baseUrl}/api/cockpit/image?token=${
+  //         process.env.apiToken
+  //       }&src=${
+  //         this.product.Image.path
+  //       }&w=200&h=200&o=true&options=quality=80&options=mode=resize`;
+  //       return p;
+  //     })
+  //   );
+
+  //   return {
+  //     products
+  //   };
+  // },
 
   data() {
     return {
