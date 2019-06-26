@@ -131,14 +131,22 @@
       <div class="container text-center">
         <h2 class="text-left">Рекомендуємо</h2>
 
-        <!-- <div class="row">
-          <card class="mb-5 mx-auto"/>
-          <card class="mb-5 mx-auto"/>
-          <card class="mb-5 mx-auto"/>
-          <card class="mb-5 mx-auto"/>
-        </div>-->
+        <div class="row">
+          <card
+            class="mb-5 mx-auto"
+            v-for="product in products"
+            :key="product._id"
+            :name="product.Name"
+            :summary="product.Overview"
+            :price="product.Price"
+            :image="`https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+          />
+          <!-- <card class="mb-5 mx-auto"/> -->
+          <!-- <card class="mb-5 mx-auto"/>
+          <card class="mb-5 mx-auto"/>-->
+        </div>
 
-        <cardsSlider/>
+        <!-- <cardsSlider/> -->
 
         <nuxt-link to="магазин" class="btn">Показати більше</nuxt-link>
       </div>
@@ -180,6 +188,26 @@ export default {
         }
       ]
     };
+  },
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.PRODUCT_URL,
+      JSON.stringify({
+        filter: { Published: true },
+        limit: 4,
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
+
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
+    }
+
+    return { products: data.entries };
   },
 
   mounted() {

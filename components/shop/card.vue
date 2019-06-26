@@ -69,7 +69,7 @@ export default {
       type: String,
       default: null,
       required: false,
-      default: "2900"
+      default: require("~/assets/img/86.jpg")
     }
   }
 };

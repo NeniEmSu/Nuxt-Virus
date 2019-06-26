@@ -194,14 +194,14 @@
               <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>-->
             </div>
-            <div class="card" v-for="product in products" :key="product._id">
+            <!-- <div class="card" v-for="product in products" :key="product._id">
               <header class="card-header">
                 <div class="text-primary text-center">{{ product.Name }}</div>
               </header>
 
-              <div class="card-image">
-                <!-- <img :src="product.ThumbUrl"> -->
-                <img
+            <div class="card-image">-->
+            <!-- <img :src="product.ThumbUrl"> -->
+            <!-- <img
                   :src="`https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                   alt="img"
                 >
@@ -224,7 +224,7 @@
                   <i class="fa fa-cart-plus"></i> &nbsp;Add to cart
                 </a>
               </div>
-            </div>
+            </div>-->
           </div>
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
@@ -293,50 +293,6 @@ export default {
 
     return { products: data.entries };
   },
-  // async asyncData({ env, params, app, error }) {
-  //   let { data } = await axios.get(
-  //     process.env.PRODUCT_URL,
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { "Content-Type": "application/json" }
-  //     }
-  //   );
-
-  //   let products = await Promise.all(
-  //     await data.entries.map(async p => {
-  //       let result = await axios.post(
-  //         "https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef",
-  //         {
-  //           images: [p.Image],
-  //           m:
-  //             "thumbnail" | "bestFit" | "resize" | "fitToWidth" | "fitToHeight",
-  //           w: 300,
-  //           h: 300,
-  //           options: {
-  //             quality: 80,
-  //             mode: "resize"
-  //           }
-  //         }
-  //       );
-
-  //       p.ThumbUrl = `${process.env.baseUrl}/api/cockpit/image?token=${
-  //         process.env.apiToken
-  //       }&src=${
-  //         this.product.Image.path
-  //       }&w=200&h=200&o=true&options=quality=80&options=mode=resize`;
-  //       return p;
-  //     })
-  //   );
-
-  //   return {
-  //     products
-  //   };
-  // },
-
   data() {
     return {
       cart: 0,
