@@ -182,10 +182,11 @@
                 class="mb-5 mx-auto"
                 v-for="product in products"
                 :key="product._id"
-                :name="product.Name"
+                :name="product.name"
                 :summary="product.Overview"
                 :price="product.Price"
                 :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                :link="'/'+product.name_slug"
               />
               <!-- <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>

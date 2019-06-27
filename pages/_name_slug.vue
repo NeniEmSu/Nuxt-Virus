@@ -1,86 +1,162 @@
 <template>
-  <div class="card card__hover" style="width: 18rem;">
-    <img :src="image" class="card-img-top img-fluid store-img" :alt="name">
-    <hr class="desktop-only">
-    <div class="card-body">
-      <nuxt-link :to="link">
-        <h5 class="card-title">{{ name }}</h5>
-      </nuxt-link>
-      <p class="card-text desktop-only">{{ summary }}}</p>
-      <div class="mobile-only">
-        <div class="row">
-          <div class="col-6 pr-0">
-            <p class="card-price">
-              {{ price }}}
-              <span>ГРН</span>
-            </p>
+  <section class="container">
+    <nav class="container mb-n4 p-0 desktop-only" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <nuxt-link to="/">Головна</nuxt-link>
+        </li>
+        <li class="breadcrumb-item">
+          <nuxt-link to="/магазин">магазин</nuxt-link>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+      </ol>
+    </nav>
+    <div class="container pt-5">
+      <div class="row mx-auto">
+        <div class="col-md-1 mb-3">
+          <nuxt-link to="/магазин">
+            <img src="~assets/img/chevron-right.png" alt="chevron-right">
+          </nuxt-link>
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="main-image col-lg-4">
+              <div class="image-showcase col-12 text-center">
+                <img
+                  :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                  class="mx-auto img-fluid"
+                  :alt="product.name"
+                >
+              </div>
+              <div class="small-more-images">
+                <div class="row mx-auto">
+                  <img
+                    :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.name"
+                    class="col-4 mx-auto mt-2 more-images"
+                  >
+                  <img
+                    :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.name"
+                    class="col-4 mx-auto mt-2 more-images"
+                  >
+                  <img
+                    :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.name"
+                    class="col-4 mx-auto mt-2 more-images"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="main-text col-lg-8 text-center text-md-left">
+              <h1 class="details-page-header">{{product.name}}</h1>
+              <p class="my-lg-5">{{ product.Description }}</p>
+              <div class="row">
+                <div class="col-md-6 text-center text-md-left my-auto">
+                  <small class="mb-2 detail-discount-cost">
+                    <s>2975 грн</s>
+                  </small>
+                  <p id="store-item-price" class="detail-cost">
+                    {{product.Price}}
+                    <span>ГРН</span>
+                  </p>
+                </div>
+                <div class="col-md-6 text-center mt-lg-n3">
+                  <small class="detail-discount">В наявності</small>
+                  <br>
+                  <a
+                    href="#"
+                    class="btn add-to-cart snipcart-add-item card-footer-item"
+                    data-item-url="/"
+                    :data-item-id="product._id"
+                    :data-item-name="product.name"
+                    :data-item-price="product.Price"
+                    :data-item-image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :data-item-description="product.Overview"
+                    :data-item-shippable="false"
+                  >
+                    Додати
+                    до корзини +
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-6 pl-0">
-            <small class="discount">В наявності</small>
+        </div>
+        <div class="col-md-1 mt-2">
+          <div class="cart-icon text-center mx-auto">
+            <modalComponent :cart="cart"/>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card-footer desktop-only">
-      <div class="row bg-transparent">
-        <div class="col-6 bg-transparent cost">
-          <small>
-            <s class="discount-price">2975 грн</s>
-          </small>
-          <p class="card-price">
-            {{price}}
-            <span>ГРН</span>
-          </p>
-        </div>
-        <div class="col-6 bg-transparent btn-container">
-          <small class="discount">В наявності</small>
-          <br>
 
-          <nuxt-link :to="link" class="btn">Купити</nuxt-link>
-        </div>
+      <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;">
+
+      <h2 class="text-center my-2">Схожі товари та пропозиції</h2>
+
+      <div class="text-center mx-auto p-0">
+        <cardsSlider/>
       </div>
     </div>
-
-    <nuxt-link :to="link" class="card-footer mobile-only">Купити</nuxt-link>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  props: {
-    name: {
-      type: String,
-      default: null,
-      required: false,
-      default: "Koch Chemie Fresh UP"
-    },
-    summary: {
-      type: String,
-      default: null,
-      required: false,
-      default: "Розпилюючий засіб для видалення небажаних запахів"
-    },
-    price: {
-      type: String,
-      default: null,
-      required: false,
-      default: "2900"
-    },
-    image: {
-      type: String,
-      default: null,
-      required: false,
-      default: require("~/assets/img/86.jpg")
-    },
-    link: {
-      type: String,
-      default: null,
-      required: false,
-      default: "/Магазин"
+  async asyncData({ app, params, error, payload }) {
+    if (payload) {
+      return { product: payload };
+    } else {
+      let { data } = await app.$axios.post(
+        process.env.PRODUCT_URL,
+        JSON.stringify({
+          filter: { Published: true, name_slug: params.name_slug },
+          sort: { _created: -1 },
+          populate: 1
+        }),
+        {
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+
+      if (!data.entries) {
+        return error({ message: "404 Page not found", statusCode: 404 });
+      }
+
+      return { product: data.entries[0] };
+    }
+  },
+  data() {
+    return {
+      cart: 0,
+      imageApiUrl: process.env.IMAGE_URL
+    };
+  },
+
+  head() {
+    return {
+      title: this.product.name,
+      titleTemplate: "%s! - Virus",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.product.Overview
+        }
+      ]
+    };
+  },
+
+  computed: {},
+  mounted() {
+    if (process.client) {
+      this.$scrollTo("#top-contact", 0, { force: true });
     }
   }
 };
 </script>
+
 
 <style lang="scss" scoped>
 .mobile-only {
@@ -529,3 +605,5 @@ hr {
   }
 }
 </style>
+
+
