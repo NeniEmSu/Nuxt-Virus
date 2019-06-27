@@ -101,6 +101,7 @@ export default {
   head() {
     return {
       title: this.post.title,
+      titleTemplate: "%s! - Virus",
       meta: [
         { hid: "description", name: "description", content: this.post.excerpt }
       ]

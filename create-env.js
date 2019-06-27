@@ -16,5 +16,6 @@ FORMS_TOKEN=${process.env.FORMS_TOKEN}\n
 APPROVE_TOKEN=${process.env.APPROVE_TOKEN}\n
 SITE_URL=${process.env.SITE_URL}\n
 PRODUCT_TOKEN=${process.env.PRODUCT_TOKEN}\n
-FRONTEND_URL=${process.env.FRONTEND_URL}
+FRONTEND_URL=${process.env.FRONTEND_URL}\n
+IMAGE_URL=${process.env.IMAGE_URL}
 `)

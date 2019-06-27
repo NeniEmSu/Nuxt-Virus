@@ -185,7 +185,7 @@
                 :name="product.Name"
                 :summary="product.Overview"
                 :price="product.Price"
-                :image="`https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
               />
               <!-- <card class="mb-5 mx-auto"/>
               <card class="mb-5 mx-auto"/>
@@ -300,7 +300,8 @@ export default {
       active1: false,
       active2: false,
       active3: false,
-      active4: false
+      active4: false,
+      imageApiUrl: process.env.IMAGE_URL
     };
   },
 
