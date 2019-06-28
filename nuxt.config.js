@@ -414,7 +414,7 @@ export default {
           }).all()
 
           return {
-            route: `category/${tag}`,
+            route: `блог/category/${tag}`,
             payload: payload
           }
         }).all()
@@ -434,7 +434,7 @@ export default {
             let currentPage = key + 2
 
             return {
-              route: `blog/${currentPage}`,
+              route: `блог/pages/${currentPage}`,
               payload: {
                 posts: items.all(),
                 hasNext: data.total > currentPage * perPage
@@ -479,7 +479,7 @@ export default {
       let tags = collection.map(post => post.tags)
         .flatten()
         .unique()
-        .map(tag => `category/${tag}`)
+        .map(tag => `блог/category/${tag}`)
         .all()
 
       let posts = collection.map(post => post.title_slug).all()
@@ -488,7 +488,7 @@ export default {
         let pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
-          .map((items, key) => `blog/${key+2}`)
+          .map((items, key) => `блог/pages/${key+2}`)
           .all()
 
         return posts.concat(tags, pages)
