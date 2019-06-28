@@ -57,7 +57,18 @@
 
     <div class="mb-4">
       <div class="form-group">
-        <input id="btn" type="submit" value="Add Comment" :class="{ 'disabled': loading }" class>
+        <input v-show="loading === false" id="btn" type="submit" value="Додати коментар">
+        <button
+          v-show="loading ===false"
+          type="loading"
+          aria-label="loading"
+          name="loading"
+          id="btn-loading"
+          class="btn-loading"
+        >
+          Вантаження
+          <font-awesome-icon :icon="['fas', 'spinner']" class="fa-spin"/>
+        </button>
       </div>
     </div>
     <div v-if="errors.length" class="mb-4 text-danger">
@@ -216,5 +227,22 @@ input#btn {
   text-align: center;
   color: $lightColor;
   border: 0;
+}
+
+#btn-loading {
+  padding: 10px 35px;
+  background: $redColor;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 50px;
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+  color: $lightColor;
+  border: 0;
+  cursor: wait;
+  opacity: 0.65;
 }
 </style>

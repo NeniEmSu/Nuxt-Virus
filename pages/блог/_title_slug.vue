@@ -18,7 +18,7 @@
         <nuxt-link
           v-for="(tag, key) in post.tags"
           :key="key"
-          :to="'/category/'+tag"
+          :to="'/блог/category/'+tag"
         >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
         <span class="mx-1 text-xs">•</span>
         <a href="#" v-scroll-to="'#comments'" class="text-dark">
@@ -47,7 +47,7 @@
         <nuxt-link to="/блог" class="pr-2 text-secondary">Знайти більше повідомлень у блогах!</nuxt-link>
       </div>
       <div id="comments" class="mt-8 mb-4 pt-3 border-t-2">
-        <h2 class="mb-2">Comments</h2>
+        <h2 class="mb-2">Коментарі</h2>
         <comment-form class="border-b-2" :post_id="post._id"/>
       </div>
 

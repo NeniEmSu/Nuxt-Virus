@@ -72,12 +72,6 @@
 
                 <datalist id="models">
                   <option v-for="(items, key) in carmodeloptions" :key="key">{{ items.name }}</option>
-                  <!-- <option value="Acura"></option>
-                  <option>Chevrolet</option>
-                  <option>Honda</option>
-                  <option>Lada</option>
-                  <option>Lamboghini</option>
-                  <option>Toyota</option> -->
                 </datalist>
               </div>
             </div>
@@ -112,12 +106,21 @@
               </div>
 
               <button
+              v-show="loading === true"
+                type="loading"
+                aria-label="loading"
+                name="loading"
+                class="contact-btn-loading"
+              >Вантаження <font-awesome-icon :icon="['fas', 'spinner']" class="fa-spin"/> </button>
+
+              <button
+               v-show="loading === false"
                 type="submit"
                 aria-label="submit"
                 name="submit"
                 class="contact-btn"
-                :class="{ 'disabled': loading }"
               >ВІДПРАВИТИ</button>
+
             </div>
           </div>
           <p
@@ -756,11 +759,11 @@ export default {
         .catch(error => {
           this.loading = false;
 
-          this.errors.push("An error occured, please try again later");
+          this.errors.push("Сталася помилка. Повторіть спробу пізніше");
         });
     },
     makeToast(variant = null) {
-      this.$bvToast.toast("Message Was Sent Sucessfully", {
+      this.$bvToast.toast("Повідомлення було надіслано успішно", {
         title: `Message ${variant || "default"}`,
         variant: variant,
         solid: true
@@ -880,7 +883,26 @@ export default {
       -o-transform: scale(1.1);
     }
   }
+  .contact-btn-loading{
+    padding: 12px 45px;
+    background: $redColor;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 50px;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+    color: $lightColor;
+    border: 0;
+    cursor: wait;
+    opacity: .65;
+    }
+    
 }
+
+
 
 @include mediaLg2 {
   .contact {

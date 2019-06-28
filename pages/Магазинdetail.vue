@@ -452,7 +452,7 @@ export default {
 };
 </script>
 
- <style lang="scss" scoped>
+<style lang="scss" scoped>
 h1.details-page-header {
   font-family: "Roboto", sans-serif;
   font-style: normal;

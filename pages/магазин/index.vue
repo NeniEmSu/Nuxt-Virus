@@ -26,7 +26,7 @@
                 <span class="up-Arrow" v-show="active1">&#9650;</span>
               </button>
               <div class="panel" v-show="active1">
-                <a href="#" class="btn text-uppercase filter-btn all" data-filter="Все">-Все</a>
+                <a href="#" class="btn text-uppercase filter-btn all" data-filter="all">-Все</a>
                 <a href="#" class="btn text-uppercase filter-btn Фібри" data-filter="Фібри">-Фібри</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Шампунь">-Шампунь</a>
                 <a href="#" class="btn text-uppercase filter-btn" data-filter="Віск">-Віск</a>
@@ -123,10 +123,10 @@
                     v-model="filter"
                     name="filter"
                   >
-                    <option value="null">від дорогих до дешевих</option>
-                    <option value="Все">Все</option>
-                    <option value="Фібри">Фібри</option>
-                    <option value="Шампунь">Шампунь</option>
+                    <option value="null" class="filter-btn">від дорогих до дешевих</option>
+                    <option value="all" class="filter-btn all" data-filter="all">Все</option>
+                    <option value="Фібри" class="filter-btn Фібри" data-filter="Фібри">Фібри</option>
+                    <option value="Шампунь" class="filter-btn Шампунь" data-filter="Шампунь">Шампунь</option>
                     <option value="Віск">Віск</option>
                     <option value="Пахнючки">Пахнючки</option>
                     <option value="чорніннярезини">
@@ -154,7 +154,11 @@
                       Кераміка
                       резина
                     </option>
-                    <option value="ВіскSoft99">
+                    <option
+                      value="ВіскSoft99"
+                      class="filter-btn ВіскSoft99"
+                      data-filter="ВіскSoft99"
+                    >
                       Віск
                       Soft
                       99
@@ -177,7 +181,7 @@
           </div>
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
-            <div class="row">
+            <div class="row" id="store-items">
               <card
                 class="mb-5 mx-auto"
                 v-for="product in products"
@@ -186,14 +190,9 @@
                 :summary="product.Overview"
                 :price="product.Price"
                 :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                :link="'/'+product.name_slug"
+                :link="'/магазин/'+product.name_slug"
+                :filterData="product.Filter"
               />
-              <!-- <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>
-              <card class="mb-5 mx-auto"/>-->
             </div>
             <!-- <div class="card" v-for="product in products" :key="product._id">
               <header class="card-header">
@@ -236,6 +235,13 @@
         </div>
       </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script
+      id="snipcart"
+      src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+      data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
+    ></script>
 
     <script>
   (function() {

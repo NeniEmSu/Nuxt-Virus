@@ -1,5 +1,10 @@
 <template>
-  <div class="card card__hover" style="width: 18rem;">
+  <div
+    class="card card__hover store-item"
+    :class="filterData"
+    :data-item="filterData"
+    style="width: 18rem;"
+  >
     <img :src="image" class="card-img-top img-fluid store-img" :alt="name">
     <hr class="desktop-only">
     <div class="card-body">
@@ -77,6 +82,12 @@ export default {
       default: null,
       required: false,
       default: "/Магазин"
+    },
+    filterData: {
+      type: String,
+      default: null,
+      required: false,
+      default: "all"
     }
   }
 };
