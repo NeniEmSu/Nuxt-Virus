@@ -59,7 +59,7 @@
       <div class="form-group">
         <input v-show="loading === false" id="btn" type="submit" value="Додати коментар">
         <button
-          v-show="loading ===false"
+          v-show="loading === true"
           type="loading"
           aria-label="loading"
           name="loading"
