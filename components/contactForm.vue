@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label class="sr-only" for="typeOfWork">Оберіть тип робіт</label>
+                <label class="m-0 p-0" for="typeOfWork">
                 <select
                   aria-label="typeOfWork"
                   id="typeOfWork"
@@ -55,15 +55,17 @@
                   <option value="22">Керамічне покриття сидінь</option>
                   <option value="23">Озонація</option>
                 </select>
+                </label>
               </div>
               <div class="form-group">
-                <label class="sr-only" for="carModel">Введіть модель авто</label>
+                <label for="carModel">
                 <input
                   aria-label="carModel"
                   id="carModel"
                   type="text"
                   name="carModel"
                   list="models"
+                 
                   class="form-control mx-auto"
                   aria-describedby="carModel"
                   placeholder="Введіть модель авто"
@@ -73,12 +75,13 @@
                 <datalist id="models">
                   <option v-for="(items, key) in carmodeloptions" :key="key">{{ items.name }}</option>
                 </datalist>
+                </label>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
-                <label class="sr-only" for="name">Ім’я</label>
+                <label class="m-0 p-0" for="name">
                 <input
                   name="name"
                   id="name"
@@ -88,10 +91,10 @@
                   aria-describedby="name"
                   placeholder="Ім’я*"
                   v-model="name"
-                >
+                ></label>
               </div>
               <div class="form-group">
-                <label class="sr-only" for="phone">Телефон</label>
+                <label class="m-0 p-0" for="phone">
                 <input
                   aria-describedby="phone"
                   aria-label="phone"
@@ -102,7 +105,7 @@
                   placeholder="Телефон*"
                   v-mask="'+38(0##) ###-####'"
                   v-model="models.phoneNumber"
-                >
+                ></label>
               </div>
 
               <button
@@ -813,6 +816,10 @@ export default {
     }
   }
 
+  label{
+    width: 100%;
+  }
+
   input,
   select {
     height: 48px;
@@ -822,7 +829,7 @@ export default {
     border-radius: 50px;
     font-family: $mainFont;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: normal;
     color: $headingsFontColor;
@@ -940,7 +947,7 @@ export default {
       border-radius: 50px;
       font-family: $mainFont;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 500;
       font-size: 12px;
       line-height: normal;
       color: $headingsFontColor;
@@ -1029,7 +1036,7 @@ export default {
       border-radius: 50px;
       font-family: $mainFont;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 500;
       font-size: 12px;
       line-height: normal;
       color: $headingsFontColor;
@@ -1122,7 +1129,7 @@ export default {
       border-radius: 50px;
       font-family: $mainFont;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 500l;
       font-size: 12px;
       line-height: normal;
       color: $headingsFontColor;
@@ -1214,7 +1221,7 @@ export default {
       border-radius: 50px;
       font-family: $mainFont;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 500;
       font-size: 12px;
       line-height: normal;
       color: $headingsFontColor;

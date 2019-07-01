@@ -1,8 +1,8 @@
 {
   "name": "nuxt-Virus",
   "version": "1.0.0",
-  "description": "Virus project using Nuxt js",
-  "author": "Emmanuel Neni",
+  "description": "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.",
+  "author": "W-Start",
   "private": true,
   "scripts": {
     "dev": "nuxt",

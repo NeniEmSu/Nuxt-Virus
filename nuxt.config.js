@@ -184,7 +184,7 @@ export default {
         href: '/favicon.ico'
       },
       {
-        rel: 'stylesheet',
+        rel: 'noreferrer',
         href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
       }
     ],
