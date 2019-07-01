@@ -9,9 +9,10 @@
     </main>
 
     <TheFooter/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script
+      rel="noopener"
       src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
       id="snipcart"
       data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"

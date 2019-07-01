@@ -63,10 +63,11 @@
                   </p>
                 </div>
                 <div class="col-md-6 text-center mt-lg-n3">
-                  <small class="detail-discount">В наявності</small>
+                  <small v-show="product.Stock === true" class="inStock">В наявності</small>
+                  <small v-show="product.Stock === false" class="notInStock">Не в наявності</small>
                   <br>
-                  <a
-                    href="#"
+                  <button
+                    v-show="product.Stock === true"
                     class="btn add-to-cart snipcart-add-item card-footer-item"
                     data-item-url="/"
                     :data-item-id="product._id"
@@ -78,7 +79,15 @@
                   >
                     Додати
                     до корзини +
-                  </a>
+                  </button>
+                  <button
+                    v-show="product.Stock === false"
+                    class="btn add-to-cart card-footer-item"
+                    style="cursor: not-allowed;"
+                  >
+                    Додати
+                    до корзини +
+                  </button>
                 </div>
               </div>
             </div>
@@ -98,8 +107,9 @@
       <div class="text-center mx-auto p-0">
         <cardsSlider/>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script
+        rel="noopener"
         id="snipcart"
         src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
         data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
@@ -224,7 +234,7 @@ h1.details-page-header {
   color: #d7000b;
 }
 
-.detail-discount {
+.inStock {
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: normal;
@@ -233,6 +243,17 @@ h1.details-page-header {
   text-align: center;
 
   color: #239a0f;
+}
+
+.notInStock {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+
+  color: $redColor;
 }
 
 .btn.add-to-cart {

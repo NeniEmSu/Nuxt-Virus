@@ -192,6 +192,7 @@
                 :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                 :link="'/магазин/'+product.name_slug"
                 :filterData="product.Filter"
+                :stock="product.Stock"
               />
             </div>
             <!-- <div class="card" v-for="product in products" :key="product._id">
@@ -236,8 +237,9 @@
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
+      rel="noopener"
       id="snipcart"
       src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
       data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"

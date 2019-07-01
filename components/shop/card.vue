@@ -3,25 +3,27 @@
     class="card card__hover store-item"
     :class="filterData"
     :data-item="filterData"
+    :title="name"
     style="width: 18rem;"
   >
     <img :src="image" class="card-img-top img-fluid store-img" :alt="name">
     <hr class="desktop-only">
     <div class="card-body">
       <nuxt-link :to="link">
-        <h5 class="card-title">{{ name }}</h5>
+        <h5 class="card-title crop" :title="name">{{ name }}</h5>
       </nuxt-link>
-      <p class="card-text desktop-only">{{ summary }}}</p>
+      <p class="card-text desktop-only">{{ summary }}</p>
       <div class="mobile-only">
         <div class="row">
           <div class="col-6 pr-0">
             <p class="card-price">
-              {{ price }}}
+              {{ price }}
               <span>ГРН</span>
             </p>
           </div>
           <div class="col-6 pl-0">
-            <small class="discount">В наявності</small>
+            <small v-show="stock === false" class="notInStock">Не в наявності</small>
+            <small v-show="stock === true" class="inStock">В наявності</small>
           </div>
         </div>
       </div>
@@ -38,15 +40,16 @@
           </p>
         </div>
         <div class="col-6 bg-transparent btn-container">
-          <small class="discount">В наявності</small>
+          <small v-show="stock === true" class="inStock">В наявності</small>
+          <small v-show="stock === false" class="notInStock">Не в наявності</small>
           <br>
 
-          <nuxt-link :to="link" class="btn">Купити</nuxt-link>
+          <nuxt-link :to="link" tag="button" class="btn">Купити</nuxt-link>
         </div>
       </div>
     </div>
 
-    <nuxt-link :to="link" class="card-footer mobile-only">Купити</nuxt-link>
+    <nuxt-link :to="link" tag="button" class="card-footer mobile-only">Купити</nuxt-link>
   </div>
 </template>
 
@@ -55,39 +58,38 @@ export default {
   props: {
     name: {
       type: String,
-      default: null,
       required: false,
       default: "Koch Chemie Fresh UP"
     },
     summary: {
       type: String,
-      default: null,
       required: false,
       default: "Розпилюючий засіб для видалення небажаних запахів"
     },
     price: {
       type: String,
-      default: null,
       required: false,
       default: "2900"
     },
     image: {
       type: String,
-      default: null,
       required: false,
       default: require("~/assets/img/86.jpg")
     },
     link: {
       type: String,
-      default: null,
       required: false,
       default: "/Магазин"
     },
     filterData: {
       type: String,
-      default: null,
       required: false,
       default: "all"
+    },
+    stock: {
+      type: Boolean,
+      default: true,
+      required: false
     }
   }
 };
@@ -183,7 +185,7 @@ hr {
   color: #d7000b;
 }
 
-.discount {
+.inStock {
   font-family: $secondaryFont;
   font-style: normal;
   font-weight: normal;
@@ -193,6 +195,18 @@ hr {
   text-align: center;
 
   color: #239a0f;
+}
+
+.notInStock {
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  text-align: center;
+
+  color: #d7000b;
 }
 
 .card-price {
@@ -222,7 +236,7 @@ hr {
   background: #d41f26;
   border-radius: 41.8367px;
 
-  padding: 7px 24px;
+  padding: 7px 22px;
 
   font-family: $secondaryFont;
   font-style: normal;
@@ -278,6 +292,13 @@ hr {
 @include mediaMd {
   .mobile-only {
     display: block;
+  }
+
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 142px;
   }
 
   .desktop-only {
@@ -352,7 +373,7 @@ hr {
     }
   }
 
-  .discount {
+  .inStock {
     font-family: $secondaryFont;
     font-style: normal;
     font-weight: normal;
@@ -363,6 +384,19 @@ hr {
     text-align: right;
 
     color: #239a0f;
+  }
+
+  .notInStock {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    align-items: center;
+    text-align: right;
+
+    color: $redColor;
   }
 }
 
@@ -443,7 +477,7 @@ hr {
     }
   }
 
-  .discount {
+  .inStock {
     font-family: $secondaryFont;
     font-style: normal;
     font-weight: normal;
@@ -455,9 +489,29 @@ hr {
 
     color: #239a0f;
   }
+
+  .notInStock {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    align-items: center;
+    text-align: right;
+
+    color: $redColor;
+  }
 }
 
 @include mediaXXSm {
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 120px;
+  }
+
   .card {
     background: #ffffff;
     box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
@@ -526,7 +580,7 @@ hr {
     }
   }
 
-  .discount {
+  .inStock {
     font-family: $secondaryFont;
     font-style: normal;
     font-weight: normal;
@@ -537,6 +591,20 @@ hr {
     text-align: right;
 
     color: #239a0f;
+  }
+
+  .notInStock {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 10px;
+
+    align-items: center;
+    text-align: right;
+
+    color: $redColor;
+    margin-left: -2.5px;
   }
 }
 </style>

@@ -197,42 +197,7 @@
             </div>
           </div>
 
-          <!-- <div class="card-deck m-0 p-0">
-            <div
-              v-for="polish in polishing"
-              :key="polish.polishingId"
-              class="card four-cards"
-              :class="polish.polishingClass"
-            >
-              <div class="card-body"></div>
-              <div class="card-end">
-                <h5>{{ polish.polishingTitle }}</h5>
-                <div class="row">
-                  <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
-                      <small>від</small>
-                      {{ polish.polishingCost }}
-                      <small>грн</small>
-                    </p>
-                    <p v-show="selected == 2" class>
-                      <small>від</small>
-                      {{ polish.polishingCostVar1 }}
-                      <small>грн</small>
-                    </p>
-                    <p v-show="selected == 3" class>
-                      <small>від</small>
-                      {{ polish.polishingCostVar2 }}
-                      <small>грн</small>
-                    </p>
-                  </div>
-
-                  <div class="col-6 m-0 p-0">
-                    <nuxt-link :to="polish.polishingLink" class="btn">Читати більше</nuxt-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>-->
+         
 
           <!-- Хімчистка -->
           <h2 class="text-center fab-header">Хімчистка</h2>
@@ -275,84 +240,12 @@
               </div>
             </div>
           </div>
-          <!-- <div class="card-deck">
-            <div
-              v-for="cleaner in cleaners"
-              :key="cleaner.cleanersId"
-              class="card four-cards"
-              :class="cleaner.cleanersClass"
-            >
-              <div class="card-body"></div>
-              <div class="card-end">
-                <h5>{{ cleaner.cleanersTitle }}</h5>
-                <div class="row">
-                  <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
-                      <small>від</small>
-                      {{ cleaner.cleanersCost }}
-                      <small>грн</small>
-                    </p>
-                    <p v-show="selected == 2" class>
-                      <small>від</small>
-                      {{ cleaner.cleanersCostVar1 }}
-                      <small>грн</small>
-                    </p>
-                    <p v-show="selected == 3" class>
-                      <small>від</small>
-                      {{ cleaner.cleanersCostVar2 }}
-                      <small>грн</small>
-                    </p>
-                  </div>
-
-                  <div class="col-6 m-0 p-0">
-                    <nuxt-link :to="cleaner.cleanersLink" class="btn">Читати більше</nuxt-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>-->
+         
 
           <!-- Воскове покриття -->
           <h2 class="text-center fab-header">Воскове покриття</h2>
 
-          <!-- <div class="row mx-auto">
-            <div
-               v-for="WaxCover in WaxCovers"
-                :key="WaxCover.WaxCoversId"
-              class="card WaxCovers card__hover mx-auto"
-            >
-              <img
-                class="card-img"
-                :src="require(`~/assets/img/${WaxCover.WaxCoversImg + '.jpg'}`)"
-                :alt="WaxCover.WaxCoversTitle"
-              >
-              <div class="card-img-overlay cleaning">
-                <h5 class="card-title crop">{{ WaxCover.WaxCoversTitle }}</h5>
-                <div class="row">
-                  <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
-                      <small>від</small>
-                      {{ WaxCover.WaxCoversCost }}
-                      <small>грн</small>
-                    </p>
-                    <p v-show="selected == 2" class>
-                      <small>від</small>
-                      {{ WaxCover.WaxCoversCostVar1 }}
-                      <small>грн</small>
-                    </p>
-                    <p v-show="selected == 3" class>
-                      <small>від</small>
-                      {{ WaxCover.WaxCoversCostVar2 }}
-                      <small>грн</small>
-                    </p>
-                  </div>
-                  <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="WaxCover.WaxCoversLink" class="btn">Читати більше</nuxt-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>-->
+          
 
           <div class="testing">
             <div class="row mx-auto">
