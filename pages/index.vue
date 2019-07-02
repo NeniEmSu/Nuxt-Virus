@@ -7,8 +7,8 @@
         <nuxt-link to="/Послуги/Полірування" class="col-4 p-0 one">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top1.webp" type="image/webp">
-              <img class="card-img" v-lazy="require('~/assets/img/top1.jpg')" alt="ПОЛІРУВАННЯ">
+              <source srcset="~/assets/imgWebP/top1.webp" type="image/webp" />
+              <img class="card-img" v-lazy="require('~/assets/img/top1.jpg')" alt="ПОЛІРУВАННЯ" />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -19,12 +19,12 @@
         <nuxt-link to="/Послуги/Покриттявоском" class="col-8 p-0 two">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top2.webp" type="image/webp">
+              <source srcset="~/assets/imgWebP/top2.webp" type="image/webp" />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top2.jpg')"
                 alt="ВОСКОВЕ ПОКРИТТЯ"
-              >
+              />
             </picture>
 
             <div
@@ -42,14 +42,14 @@
         <nuxt-link to="/Послуги/Мийкамотору" class="col-4 p-0 three">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top3.webp" type="image/webp">
-              <img class="card-img" v-lazy="require('~/assets/img/top3.jpg')" alt="МИЙКА МОТОРУ">
+              <source srcset="~/assets/imgWebP/top3.webp" type="image/webp" />
+              <img class="card-img" v-lazy="require('~/assets/img/top3.jpg')" alt="МИЙКА МОТОРУ" />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 МИЙКА
-                <br>МОТОРУ
+                <br />МОТОРУ
               </h2>
             </div>
           </div>
@@ -57,8 +57,8 @@
         <nuxt-link to="/Послуги/Хімчистка" class="col-5 p-0 four">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp">
-              <img class="card-img" v-lazy="require('~/assets/img/top4.jpg')" alt="ХІМЧИСТКА">
+              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp" />
+              <img class="card-img" v-lazy="require('~/assets/img/top4.jpg')" alt="ХІМЧИСТКА" />
             </picture>
 
             <div
@@ -71,18 +71,18 @@
         <nuxt-link to="/Послуги/Реставраціяподряпин" class="col-3 p-0 five">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp">
+              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp" />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top5.jpg')"
                 alt="РЕСТАВРАЦІЯ СКОЛІВ"
-              >
+              />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 РЕСТАВРАЦІЯ
-                <br>СКОЛІВ
+                <br />СКОЛІВ
               </h2>
             </div>
           </div>
@@ -90,12 +90,12 @@
         <nuxt-link to="/Послуги/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ" class="col-md-8 offset-4 p-0 six">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp">
+              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp" />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top6.jpg')"
                 alt="КЕРАМІЧНЕ ПОКРИТТЯ"
-              >
+              />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -108,18 +108,18 @@
         <nuxt-link to="/Послуги/Передпродажнапідготовка" class="col-12 p-0 seven">
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top7.webp" type="image/webp">
+              <source srcset="~/assets/imgWebP/top7.webp" type="image/webp" />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top7.jpg')"
                 alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
-              >
+              />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
               <h2 class="card-title">
                 ПЕРЕДПРОДАЖНА
-                <br>ПІДГОТОВКА
+                <br />ПІДГОТОВКА
               </h2>
             </div>
           </div>
@@ -131,24 +131,31 @@
       <div class="container text-center">
         <h2 class="text-left">Рекомендуємо</h2>
 
-        <div class="row">
-          <card
-            class="mb-5 mx-auto"
-            v-for="product in products"
-            :key="product._id"
-            :name="product.name"
-            :summary="product.Overview"
-            :price="product.Price"
-            :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-            :link="'/магазин/'+product.name_slug"
-            :stock="product.Stock"
-          />
-          <!-- <card class="mb-5 mx-auto"/> -->
-          <!-- <card class="mb-5 mx-auto"/>
-          <card class="mb-5 mx-auto"/>-->
-        </div>
+        <no-ssr>
+          <!-- important to add no-ssr-->
 
-        <!-- <cardsSlider/> -->
+          <carousel
+            :autoplay="true"
+            :nav="false"
+            :items="4"
+            :mouseDrag="true"
+            :touchDrag="true"
+            :autoplayHoverPause="true"
+            :responsive="{0:{items:1,nav:false},400:{items:2,nav:false},550:{items:3,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
+          >
+            <card
+              class="mb-5 mx-auto"
+              v-for="product in products"
+              :key="product._id"
+              :name="product.name"
+              :summary="product.Overview"
+              :price="product.Price"
+              :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+              :link="'/магазин/'+product.name_slug"
+              :stock="product.Stock"
+            />
+          </carousel>
+        </no-ssr>
 
         <nuxt-link to="магазин" class="btn">Показати більше</nuxt-link>
       </div>
@@ -157,12 +164,12 @@
     <div class="container cars-card">
       <h2>Наші роботи</h2>
 
-      <worksGallery/>
+      <worksGallery />
     </div>
 
-    <ContactForm/>
+    <ContactForm />
 
-    <progressSection/>
+    <progressSection />
   </section>
 </template>
 
@@ -202,7 +209,7 @@ export default {
       process.env.PRODUCT_URL,
       JSON.stringify({
         filter: { Published: true },
-        limit: 4,
+        limit: 6,
         sort: { _created: -1 },
         populate: 1
       }),

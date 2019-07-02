@@ -268,7 +268,6 @@ export default {
   css: [
     '~/assets/scss/config.scss',
     '~/assets/fonts/fonts.css',
-    'swiper/dist/css/swiper.css',
     'highlight.js/styles/dracula.css'
   ],
 
@@ -321,9 +320,10 @@ export default {
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     {
-      src: '~/plugins/swiper.js',
+      src: 'plugins/v-owl-carousel.js',
       ssr: false
     },
+
     {
       src: '~/plugins/vue-lazyload',
       ssr: false

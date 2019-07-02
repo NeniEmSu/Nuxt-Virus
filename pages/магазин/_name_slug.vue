@@ -106,25 +106,30 @@
 
       <h2 class="text-center my-2 relatedProducts">Схожі товари та пропозиції</h2>
 
-      <!-- <div class="text-center mx-auto p-0">
-        <cardsSlider />
-      </div>-->
-      <div class="row">
-        <card
-          class="mb-5 mx-auto"
-          v-for="item in products"
-          :key="item._id"
-          :name="item.name"
-          :summary="item.Overview"
-          :price="item.Price"
-          :image="`${imageApiUrl}&src=${item.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-          :link="'/магазин/'+item.name_slug"
-          :stock="item.Stock"
-        />
-        <!-- <card class="mb-5 mx-auto"/> -->
-        <!-- <card class="mb-5 mx-auto"/>
-        <card class="mb-5 mx-auto"/>-->
-      </div>
+      <no-ssr>
+        <carousel
+          :autoplay="true"
+          :nav="false"
+          :items="4"
+          :mouseDrag="true"
+          :touchDrag="true"
+          :autoplayHoverPause="true"
+          :responsive="{0:{items:1,nav:false},400:{items:2,nav:false},550:{items:3,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
+        >
+          <card
+            class="mb-5 mx-auto"
+            v-for="product in products"
+            :key="product._id"
+            :name="product.name"
+            :summary="product.Overview"
+            :price="product.Price"
+            :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+            :link="'/магазин/'+product.name_slug"
+            :stock="product.Stock"
+          />
+        </carousel>
+      </no-ssr>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script
         id="snipcart"
