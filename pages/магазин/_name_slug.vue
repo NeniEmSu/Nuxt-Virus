@@ -13,20 +13,20 @@
     </nav>
     <div class="container pt-5">
       <div class="row mx-auto">
-        <div class="col-md-1 mb-3">
+        <div class="col-lg-1 mb-3 desktop-only">
           <nuxt-link to="/магазин">
-            <img src="~assets/img/chevron-right.png" alt="chevron-right">
+            <img src="~assets/img/chevron-right.png" alt="chevron-right" />
           </nuxt-link>
         </div>
-        <div class="col-md-10">
+        <div class="col-12 col-xl-10">
           <div class="row">
-            <div class="main-image col-lg-4">
-              <div class="image-showcase col-12 text-center">
+            <div class="main-image col-4 p-0">
+              <div class="image-showcase col-12 text-center p-0">
                 <img
                   :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                   class="mx-auto img-fluid"
                   :alt="product.name"
-                >
+                />
               </div>
               <div class="small-more-images">
                 <div class="row mx-auto">
@@ -34,26 +34,26 @@
                     :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.name"
                     class="col-4 mx-auto mt-2 more-images"
-                  >
+                  />
                   <img
                     :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.name"
                     class="col-4 mx-auto mt-2 more-images"
-                  >
+                  />
                   <img
                     :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.name"
                     class="col-4 mx-auto mt-2 more-images"
-                  >
+                  />
                 </div>
               </div>
             </div>
 
-            <div class="main-text col-lg-8 text-center text-md-left">
+            <div class="main-text col-8 text-center text-md-left">
               <h1 class="details-page-header">{{product.name}}</h1>
-              <p class="my-lg-5">{{ product.Description }}</p>
+              <p class="my-lg-5 desktop-tablet-only">{{ product.Description }}</p>
               <div class="row">
-                <div class="col-md-6 text-center text-md-left my-auto">
+                <div class="col-6 text-center text-md-left my-auto pr-0">
                   <small class="mb-2 detail-discount-cost">
                     <s>2975 грн</s>
                   </small>
@@ -62,10 +62,10 @@
                     <span>ГРН</span>
                   </p>
                 </div>
-                <div class="col-md-6 text-center mt-lg-n3">
+                <div class="col-6 text-center mt-lg-n3 p-0">
                   <small v-show="product.Stock === true" class="inStock">В наявності</small>
                   <small v-show="product.Stock === false" class="notInStock">Не в наявності</small>
-                  <br>
+                  <br />
                   <button
                     v-show="product.Stock === true"
                     class="btn add-to-cart snipcart-add-item card-footer-item"
@@ -93,23 +93,40 @@
             </div>
           </div>
         </div>
-        <div class="col-md-1 mt-2">
+        <div class="col-lg-1 mt-2 desktop-only">
           <div class="cart-icon text-center mx-auto">
-            <modalComponent :cart="cart"/>
+            <modalComponent :cart="cart" />
           </div>
         </div>
       </div>
 
-      <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;">
+      <p class="mt-3 sm-xsm-xxsm-only">{{ product.Description }}</p>
 
-      <h2 class="text-center my-2">Схожі товари та пропозиції</h2>
+      <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;" />
 
-      <div class="text-center mx-auto p-0">
-        <cardsSlider/>
+      <h2 class="text-center my-2 relatedProducts">Схожі товари та пропозиції</h2>
+
+      <!-- <div class="text-center mx-auto p-0">
+        <cardsSlider />
+      </div>-->
+      <div class="row">
+        <card
+          class="mb-5 mx-auto"
+          v-for="item in products"
+          :key="item._id"
+          :name="item.name"
+          :summary="item.Overview"
+          :price="item.Price"
+          :image="`${imageApiUrl}&src=${item.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+          :link="'/магазин/'+item.name_slug"
+          :stock="item.Stock"
+        />
+        <!-- <card class="mb-5 mx-auto"/> -->
+        <!-- <card class="mb-5 mx-auto"/>
+        <card class="mb-5 mx-auto"/>-->
       </div>
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script
-        rel="noopener"
         id="snipcart"
         src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
         data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
@@ -124,10 +141,22 @@ export default {
     if (payload) {
       return { product: payload };
     } else {
-      let { data } = await app.$axios.post(
+      var { data } = await app.$axios.post(
         process.env.PRODUCT_URL,
         JSON.stringify({
           filter: { Published: true, name_slug: params.name_slug },
+          sort: { _created: -1 },
+          populate: 1
+        }),
+        {
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+      var { data } = await app.$axios.post(
+        process.env.PRODUCT_URL,
+        JSON.stringify({
+          filter: { Published: true },
+          limit: 4,
           sort: { _created: -1 },
           populate: 1
         }),
@@ -140,9 +169,10 @@ export default {
         return error({ message: "404 Page not found", statusCode: 404 });
       }
 
-      return { product: data.entries[0] };
+      return { product: data.entries[0], products: data.entries };
     }
   },
+
   data() {
     return {
       cart: 0,
@@ -174,6 +204,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.sm-xsm-xxsm-only {
+  display: none;
+}
+
 h1.details-page-header {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -286,6 +320,329 @@ h1.details-page-header {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+
+.relatedProducts {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+
+  align-items: center;
+
+  color: #8b8b8b;
+}
+
+@include mediaMenu {
+  .desktop-only,
+  .sm-xsm-xxsm-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .more-images {
+    max-height: 63px;
+    min-height: 63px;
+    height: 100%;
+    max-width: 63px;
+    min-width: 63px;
+    margin-top: 4px;
+    width: 100%;
+    object-fit: scale-down;
+    object-position: center;
+    background: url("~assets/img/86.jpg");
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+  }
+}
+
+@include mediaMd {
+  .desktop-only,
+  .desktop-tablet-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .more-images {
+    max-height: 40px;
+    min-height: 40px;
+    height: 100%;
+    max-width: 40px;
+    min-width: 40px;
+    margin-top: 4px;
+    width: 100%;
+    object-fit: scale-down;
+    object-position: center;
+
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+  }
+}
+
+@include mediaSm {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only,
+  .sm-xsm-xxsm-only {
+    display: block;
+  }
+
+  h1.details-page-header {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 0px;
+
+    color: #000000;
+  }
+
+  .image-showcase {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .image-showcase img {
+    min-height: 100px;
+    max-height: 100px;
+    height: 100%;
+    min-width: 100px;
+    max-width: 100px;
+    width: 100%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+
+  p {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #8b8b8b;
+  }
+
+  .more-images {
+    display: none;
+  }
+
+  .detail-cost {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 93.75%;
+    letter-spacing: -0.05em;
+
+    color: #8b8b8b;
+    margin-bottom: -10px;
+  }
+
+  .detail-discount-cost {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    text-decoration-line: line-through;
+
+    color: #d7000b;
+    padding-top: 25px;
+  }
+
+  .inStock {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #239a0f;
+  }
+
+  .notInStock {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+
+    color: $redColor;
+  }
+
+  .btn.add-to-cart {
+    padding: 7px 4px;
+    background: #d41f26;
+    border-radius: 50px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+
+    margin-top: 0px;
+  }
+
+  .more-images {
+    display: none;
+  }
+
+  .relatedProducts {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+
+    align-items: center;
+
+    color: #8b8b8b;
+  }
+}
+
+@include mediaXXXSm {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only,
+  .sm-xsm-xxsm-only {
+    display: block;
+  }
+
+  h1.details-page-header {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0px;
+
+    color: #000000;
+  }
+
+  .image-showcase {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .image-showcase img {
+    min-height: 90px;
+    max-height: 90px;
+    height: 100%;
+    min-width: 90px;
+    max-width: 90px;
+    width: 100%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+
+  .more-images {
+    display: none;
+  }
+
+  .detail-cost {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 93.75%;
+    letter-spacing: -0.05em;
+
+    color: #8b8b8b;
+    margin-bottom: -10px;
+  }
+
+  p {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #8b8b8b;
+  }
+
+  .detail-discount-cost {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    text-decoration-line: line-through;
+
+    color: #d7000b;
+    padding-top: 25px;
+  }
+
+  .inStock {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+
+    color: #239a0f;
+  }
+
+  .notInStock {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+
+    color: $redColor;
+  }
+
+  .btn.add-to-cart {
+    padding: 2px 1px;
+    background: #d41f26;
+    border-radius: 50px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 12px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+
+    margin-top: 0px;
+  }
+
+  .more-images {
+    display: none;
+  }
 }
 </style>
 

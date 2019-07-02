@@ -48,7 +48,7 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@nuxtjs/sitemap": "^1.2.0",
     "autoprefixer": "^9.6.0",
-    "collect.js": "^4.12.5",
+    "collect.js": "^4.12.6",
     "cross-env": "^5.2.0",
     "dayjs": "^1.8.14",
     "dotenv": "^8.0.0",

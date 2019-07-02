@@ -26,12 +26,20 @@
                 <span class="up-Arrow" v-show="active1">&#9650;</span>
               </button>
               <div class="panel" v-show="active1">
-                <a href="#" class="btn text-uppercase filter-btn all" data-filter="all">-Все</a>
-                <a href="#" class="btn text-uppercase filter-btn Фібри" data-filter="Фібри">-Фібри</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Шампунь">-Шампунь</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Віск">-Віск</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Пахнючки">-Пахнючки</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="чорніннярезини">
+                <a tag="button" class="btn text-uppercase filter-btn all" data-filter="all">-Все</a>
+                <a
+                  tag="button"
+                  class="btn text-uppercase filter-btn Фібри"
+                  data-filter="Фібри"
+                >-Фібри</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="Шампунь">-Шампунь</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="Віск">-Віск</a>
+                <a
+                  tag="button"
+                  class="btn text-uppercase filter-btn"
+                  data-filter="Пахнючки"
+                >-Пахнючки</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="чорніннярезини">
                   -Засіб
                   для
                   чорніння резини
@@ -44,30 +52,34 @@
                 <span class="up-Arrow" v-show="active2">&#9650;</span>
               </button>
               <div class="panel" v-show="active2">
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Кераміка">-Кераміка</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Рідкескло">
+                <a
+                  tag="button"
+                  class="btn text-uppercase filter-btn"
+                  data-filter="Кераміка"
+                >-Кераміка</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="Рідкескло">
                   -Рідке
                   скло
                 </a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="тканини">
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="тканини">
                   -Кераміка
                   для
                   тканини
                 </a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="шкіри">
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="шкіри">
                   -Кераміка для
                   шкіри
                 </a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="диски">
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="диски">
                   -Кераміка
                   диски
                 </a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="резина">
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="резина">
                   -Кераміка
                   резина
                 </a>
                 <a
-                  href="#"
+                  tag="button"
                   class="btn text-uppercase filter-btn ВіскSoft99"
                   data-filter="ВіскSoft99"
                 >
@@ -83,9 +95,9 @@
                 <span class="up-Arrow" v-show="active3">&#9650;</span>
               </button>
               <div class="panel" v-show="active3">
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
+                <a tag="button" class="btn text-uppercase filter-btn" data-filter="Хімія">-Хімія</a>
               </div>
 
               <button class="accordion" @click.prevent="active4 = !active4">
@@ -94,15 +106,27 @@
                 <span class="up-Arrow" v-show="active4">&#9650;</span>
               </button>
               <div class="panel" v-show="active4">
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Подарунковінабори">
+                <a
+                  tag="button"
+                  class="btn text-uppercase filter-btn"
+                  data-filter="Подарунковінабори"
+                >
                   -Подарункові
                   набори
                 </a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Подарунковінабори">
+                <a
+                  tag="button"
+                  class="btn text-uppercase filter-btn"
+                  data-filter="Подарунковінабори"
+                >
                   -Подарункові
                   набори
                 </a>
-                <a href="#" class="btn text-uppercase filter-btn" data-filter="Подарунковінабори">
+                <a
+                  tag="button"
+                  class="btn text-uppercase filter-btn"
+                  data-filter="Подарунковінабори"
+                >
                   -Подарункові
                   набори
                 </a>
@@ -173,7 +197,7 @@
                 <div class="col-4 text-right m-auto">
                   <p class="m-auto">
                     Фільтр
-                    <img src="~assets/img/icons8-slider-filled-90.png" alt="filter icon">
+                    <img src="~assets/img/icons8-slider-filled-90.png" alt="filter icon" />
                   </p>
                 </div>
               </div>
@@ -214,7 +238,7 @@
 
               <div class="card-footer">
                 <a
-                  href="#"
+                  tag="button"
                   class="snipcart-add-item card-footer-item"
                   data-item-url="/"
                   v-bind:data-item-name="product.Name"
@@ -230,16 +254,15 @@
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
             <div class="position-fixed col-0">
-              <modalComponent :cart="cart"/>
+              <modalComponent :cart="cart" />
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
-      rel="noopener"
       id="snipcart"
       src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
       data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
