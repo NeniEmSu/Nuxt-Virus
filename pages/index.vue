@@ -138,6 +138,7 @@
             :autoplay="true"
             :nav="false"
             :items="4"
+            :loop="true"
             :mouseDrag="true"
             :touchDrag="true"
             :autoplayHoverPause="true"
