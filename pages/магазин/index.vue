@@ -219,37 +219,6 @@
                 :stock="product.Stock"
               />
             </div>
-            <!-- <div class="card" v-for="product in products" :key="product._id">
-              <header class="card-header">
-                <div class="text-primary text-center">{{ product.Name }}</div>
-              </header>
-
-            <div class="card-image">-->
-            <!-- <img :src="product.ThumbUrl"> -->
-            <!-- <img
-                  :src="`https://cms.neniemsu.com/api/cockpit/image?token=478b68417378bbac86af13a57561ef&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                  alt="img"
-                >
-              </div>
-
-              <div class="card-content">
-                <div class="content">{{ product.Overview }}</div>
-              </div>
-
-              <div class="card-footer">
-                <a
-                  tag="button"
-                  class="snipcart-add-item card-footer-item"
-                  data-item-url="/"
-                  v-bind:data-item-name="product.Name"
-                  v-bind:data-item-price="product.Price"
-                  v-bind:data-item-id="product._id"
-                  v-bind:data-item-description="product.Overview"
-                >
-                  <i class="fa fa-cart-plus"></i> &nbsp;Add to cart
-                </a>
-              </div>
-            </div>-->
           </div>
 
           <div class="cart-icon col-xl-1 desktop-only text-center">

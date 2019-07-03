@@ -11,37 +11,46 @@
       </nav>
       <h1>Акції</h1>
     </div>
-    <hr class="top-separator">
+    <hr class="top-separator" />
     <div class="card-container container" v-for="(promotion, key) in promotions" :key="key">
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="promotion.image.path" alt="Card image">
+        <img
+          class="card-img img-fliud"
+          :src="`${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`"
+        />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
-            <nuxt-link :to="promotion.link">
-              <h2 class="card-title text-white">{{ promotion.title }}</h2>
+            <nuxt-link :to="'/магазин/'+promotion.name_slug">
+              <h2 class="card-title text-white">{{ promotion.promotionTitle }}</h2>
             </nuxt-link>
-            <p class="card-text">{{ promotion.duration }}</p>
+            <p class="card-text">{{ promotion.promotionTimeLimit }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="promotion.link">ЗАМОВИТИ</nuxt-link>
+            <nuxt-link class="btn" :to="'/магазин/'+promotion.name_slug">ЗАМОВИТИ</nuxt-link>
           </div>
         </div>
       </div>
-      <hr class="separator">
+      <hr class="separator" />
     </div>
 
-    <contactForm/>
-    <progressSection/>
+    <contactForm />
+    <progressSection />
   </section>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      imageApiUrl: process.env.IMAGE_URL
+    };
+  },
   async asyncData({ app }) {
     const { data } = await app.$axios.post(
-      process.env.PROMOTIONS_URL,
+      process.env.PRODUCT_URL,
       JSON.stringify({
-        filter: { published: true },
+        filter: { Published: true },
+        filter: { promotion: true },
         sort: { _created: -1 },
         populate: 1
       }),

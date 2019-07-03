@@ -11,10 +11,10 @@
       </nav>
       <h1>Блог</h1>
     </div>
-    <hr class="top-separator">
+    <hr class="top-separator" />
     <div class="card-container container" v-for="(post, key) in posts" :key="key">
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="post.image.path" alt="Card image">
+        <img class="card-img img-fliud" :src="post.image.path" :alt="post.title" />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -38,7 +38,7 @@
                 >
                   <path
                     d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
-                  ></path>
+                  />
                 </svg>
               </span>
             </div>
@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <hr class="separator">
+      <hr class="separator" />
     </div>
     <div class="container">
       <div v-if="hasNext" class="text-center my-3">
@@ -60,8 +60,8 @@
       </div>
     </div>
 
-    <contactForm/>
-    <progressSection/>
+    <contactForm />
+    <progressSection />
   </section>
 </template>
 
