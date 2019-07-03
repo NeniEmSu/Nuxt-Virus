@@ -142,12 +142,14 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   async asyncData({ app, params, error, payload }) {
     if (payload) {
       return { product: payload };
     } else {
-      var { data } = await app.$axios.post(
+      const product = await axios.post(
         process.env.PRODUCT_URL,
         JSON.stringify({
           filter: { Published: true, name_slug: params.name_slug },
@@ -158,12 +160,12 @@ export default {
           headers: { "Content-Type": "application/json" }
         }
       );
-      var { data } = await app.$axios.post(
+      const products = await axios.get(
         process.env.PRODUCT_URL,
         JSON.stringify({
           filter: { Published: true },
           limit: 4,
-          sort: { _created: -1 },
+          sort: { _created: +1 },
           populate: 1
         }),
         {
@@ -171,11 +173,14 @@ export default {
         }
       );
 
-      if (!data.entries) {
+      if (!product.data.entries || !products.data.entries) {
         return error({ message: "404 Page not found", statusCode: 404 });
       }
 
-      return { product: data.entries[0], products: data.entries };
+      return {
+        product: product.data.entries[0],
+        products: products.data.entries
+      };
     }
   },
 

@@ -17,7 +17,7 @@ const Actions = {
         const promises = []
 
 
-        promises.push(dispatch('Pages/fetch'))
+        promises.push(dispatch('Products/fetch'))
 
 
         return Promise.all(promises)
