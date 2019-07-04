@@ -30,19 +30,29 @@
               </div>
               <div class="small-more-images">
                 <div class="row mx-auto">
+                  <!-- <img
+                    :v-for="galimg in product.Gallery"
+                    :src="`${imageApiUrl}&src=${product.Gallery[0 || 1 || 2].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.Gallery[0 || 1 || 2].meta.title"
+                    :title="product.Gallery[0 || 1 || 2].meta.title"
+                    class="col-4 mx-auto mt-2 more-images"
+                  />-->
                   <img
-                    :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                    :alt="product.name"
+                    :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.Gallery[0].meta.title"
+                    :title="product.Gallery[0].meta.title"
                     class="col-4 mx-auto mt-2 more-images"
                   />
                   <img
-                    :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                    :alt="product.name"
+                    :src="`${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.Gallery[1].meta.title"
+                    :title="product.Gallery[1].meta.title"
                     class="col-4 mx-auto mt-2 more-images"
                   />
                   <img
-                    :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                    :alt="product.name"
+                    :src="`${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :alt="product.Gallery[2].meta.title"
+                    :title="product.Gallery[2].meta.title"
                     class="col-4 mx-auto mt-2 more-images"
                   />
                 </div>
@@ -165,7 +175,7 @@ export default {
         JSON.stringify({
           filter: { Published: true },
           limit: 4,
-          sort: { _created: +1 },
+          sort: { _created: -1 },
           populate: 1
         }),
         {
@@ -205,7 +215,6 @@ export default {
     };
   },
 
-  computed: {},
   mounted() {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
