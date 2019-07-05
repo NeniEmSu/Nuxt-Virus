@@ -508,6 +508,7 @@ export default {
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
+    vendor: ['axios', 'highlight.js/lib/highlight.js'],
 
     extend(config, {
       isDev,

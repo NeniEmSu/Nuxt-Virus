@@ -45,7 +45,7 @@
             <nuxt-link :to="'/блог/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>
             </nuxt-link>
-            <p class="card-text">Date Created {{ post._created | toDate }}</p>
+            <p class="card-text">Дата створення {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
             <nuxt-link class="btn" :to="'/блог/'+post.title_slug">ЧИТАТИ</nuxt-link>

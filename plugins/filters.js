@@ -9,7 +9,7 @@ dayjs.extend(advancedFormat)
 const sanitizeHtml = require('sanitize-html')
 
 // Only import the languages that you need to keep our js bundle small
-highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
+// highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
 highlightjs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
 highlightjs.registerLanguage('css', require('highlight.js/lib/languages/css'))
 
@@ -36,5 +36,5 @@ Vue.filter('parseMd', function (content) {
 })
 
 Vue.filter('toDate', function (timestamp) {
-  return dayjs(timestamp * 1000).format('Do MMM YY')
+  return dayjs(timestamp * 1000).format('Do - MM - YY')
 })
