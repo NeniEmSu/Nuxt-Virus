@@ -1,5 +1,14 @@
 <template>
   <form @submit="checkForm" method="post" :id="parent_id ? `reply-${parent_id}` : ''">
+    <div v-if="errors.length" class="mb-4 text-danger">
+      <b>Виправте такі помилки:</b>
+      <ul>
+        <li v-for="error in errors" :key="error">{{ error }}</li>
+      </ul>
+    </div>
+    <div v-if="success" class="text-success mb-4">
+      <b>Ваш коментар зараз очікує модерації</b>
+    </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
@@ -10,7 +19,7 @@
             name="name"
             placeholder="Твоє ім'я"
             class="col-12 mx-auto p-2"
-          >
+          />
         </div>
       </div>
 
@@ -23,7 +32,7 @@
             name="email"
             placeholder="Ваша електронна адреса"
             class="col-12 mx-auto p-2"
-          >
+          />
         </div>
       </div>
     </div>
@@ -40,7 +49,7 @@
     </div>
     <div class>
       <div class="form-group text-left">
-        <input v-model="notify_replies" type="checkbox">
+        <input v-model="notify_replies" type="checkbox" />
         <span class="text-center">Повідомляти мене, коли хто-небудь відповість</span>
       </div>
     </div>
@@ -53,13 +62,20 @@
       hidden
       tabindex="-1"
       autocomplete="off"
-    >
+    />
 
     <div class="mb-4">
       <div class="form-group">
-        <input v-show="loading === false" id="btn" type="submit" value="Додати коментар">
+        <input
+          v-show="loading === false"
+          :disabled="loading === true"
+          id="btn"
+          type="submit"
+          value="Додати коментар"
+        />
         <button
           v-show="loading === true"
+          :disabled="loading === false"
           type="loading"
           aria-label="loading"
           name="loading"
@@ -67,18 +83,9 @@
           class="btn-loading"
         >
           Вантаження
-          <font-awesome-icon :icon="['fas', 'spinner']" class="fa-spin"/>
+          <font-awesome-icon :icon="['fas', 'spinner']" class="fa-spin" />
         </button>
       </div>
-    </div>
-    <div v-if="errors.length" class="mb-4 text-danger">
-      <b>Виправте такі помилки:</b>
-      <ul>
-        <li v-for="error in errors" :key="error">{{ error }}</li>
-      </ul>
-    </div>
-    <div v-if="success" class="text-success mb-4">
-      <b>Ваш коментар зараз очікує модерації</b>
     </div>
   </form>
 </template>

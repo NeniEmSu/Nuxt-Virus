@@ -366,6 +366,17 @@ export default {
       }
     ],
     [
+      "nuxt-compress",
+      {
+        gzip: {
+          cache: true
+        },
+        brotli: {
+          threshold: 10240
+        }
+      }
+    ],
+    [
       'nuxt-fontawesome',
       {
         imports: [{
@@ -508,7 +519,6 @@ export default {
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
-    vendor: ['axios', 'highlight.js/lib/highlight.js'],
 
     extend(config, {
       isDev,

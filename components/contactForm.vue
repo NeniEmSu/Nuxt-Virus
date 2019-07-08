@@ -110,6 +110,7 @@
 
               <button
               v-show="loading === true"
+              :disabled="loading === true"
                 type="loading"
                 aria-label="loading"
                 name="loading"
@@ -122,6 +123,7 @@
                 aria-label="submit"
                 name="submit"
                 class="contact-btn"
+                :disabled="loading === false"
               >ВІДПРАВИТИ</button>
 
             </div>

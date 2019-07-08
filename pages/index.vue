@@ -138,11 +138,13 @@
             :autoplay="true"
             :nav="false"
             :items="4"
+            :lazyLoad="true"
+            :v-lazy="true"
             :loop="true"
             :mouseDrag="true"
             :touchDrag="true"
             :autoplayHoverPause="true"
-            :responsive="{0:{items:1,nav:false},400:{items:2,nav:false},550:{items:3,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
+            :responsive="{0:{items:1,nav:false},350:{items:2,nav:false},550:{items:3,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
           >
             <card
               class="mb-5 mx-auto"

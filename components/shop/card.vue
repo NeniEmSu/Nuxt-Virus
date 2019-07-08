@@ -6,8 +6,8 @@
     :title="name"
     style="width: 18rem;"
   >
-    <img :src="image" class="card-img-top img-fluid store-img" :alt="name">
-    <hr class="desktop-only">
+    <img :src="image" class="card-img-top img-fluid store-img" :alt="name" />
+    <hr class="desktop-only" />
     <div class="card-body">
       <nuxt-link :to="link">
         <h5 class="card-title crop" :title="name">{{ name }}</h5>
@@ -42,7 +42,7 @@
         <div class="col-6 bg-transparent btn-container">
           <small v-show="stock === true" class="inStock">В наявності</small>
           <small v-show="stock === false" class="notInStock">Не в наявності</small>
-          <br>
+          <br />
 
           <nuxt-link :to="link" tag="button" class="btn">Купити</nuxt-link>
         </div>
@@ -501,6 +501,110 @@ hr {
     text-align: right;
 
     color: $redColor;
+  }
+}
+
+@include mediaXSm {
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 120px;
+  }
+
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    width: 100%;
+    min-width: 130px;
+    max-width: 130px;
+    height: 130px;
+  }
+
+  .card-body {
+    padding: 1.25px 5px;
+  }
+
+  .card-img-top {
+    border-radius: 10px;
+    width: 130px;
+    height: 100%;
+    min-height: 55px;
+    max-height: 55px;
+    object-fit: scale-down;
+    object-position: center;
+  }
+
+  .card-title {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .card-footer {
+    padding: 4px 25px;
+    background: #d41f26;
+    border-radius: 0px 0px 10px 10px;
+
+    border: 0;
+
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    align-items: center;
+    text-align: center;
+
+    color: $lightColor;
+  }
+
+  .card-price {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+
+    letter-spacing: -0.05em;
+    text-align: left;
+
+    color: #8b8b8b;
+
+    margin: auto;
+    padding-top: 5px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .inStock {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    align-items: center;
+    text-align: right;
+
+    color: #239a0f;
+  }
+
+  .notInStock {
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 10px;
+
+    align-items: center;
+    text-align: right;
+
+    color: $redColor;
+    margin-left: -2.5px;
   }
 }
 

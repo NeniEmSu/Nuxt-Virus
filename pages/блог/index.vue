@@ -18,7 +18,6 @@
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
-              <span class="ml-1 text-xs text-light desktop-tablet-only">•</span>
               <nuxt-link
                 v-for="tag in post.tags"
                 :key="tag"

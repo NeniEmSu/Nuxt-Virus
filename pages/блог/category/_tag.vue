@@ -17,10 +17,10 @@
       </nav>
       <h1 class="mb-3">Блог Повідомлення з тегами "{{ category }}"</h1>
     </div>
-    <hr class="top-separator">
+    <hr class="top-separator" />
     <div class="card-container container" v-for="(post, key) in posts" :key="key">
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="post.image.path" alt="Card image">
+        <img class="card-img img-fliud" :src="post.image.path" alt="Card image" />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -30,6 +30,22 @@
                 :to="'/блог/category/'+tag"
                 class="desktop-tablet-only"
               >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+              <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
+              <span class="text-light">
+                {{ post.comments ? post.comments.length : 0 }}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="-2 -2 24 24"
+                  width="12"
+                  height="12"
+                  preserveAspectRatio="xMinYMin"
+                  class="text-light fill-current"
+                >
+                  <path
+                    d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
+                  />
+                </svg>
+              </span>
             </div>
             <nuxt-link :to="'/блог/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>
@@ -41,12 +57,12 @@
           </div>
         </div>
       </div>
-      <hr class="separator">
+      <hr class="separator" />
     </div>
     <div class="container"></div>
 
-    <contactForm/>
-    <progressSection/>
+    <contactForm />
+    <progressSection />
   </section>
 </template>
 
