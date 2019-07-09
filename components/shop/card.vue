@@ -3,6 +3,7 @@
     class="card card__hover store-item"
     :class="filterData"
     :data-item="filterData"
+    v-b-tooltip.hover
     :title="name"
     style="width: 18rem;"
   >
@@ -10,7 +11,7 @@
     <hr class="desktop-only" />
     <div class="card-body">
       <nuxt-link :to="link">
-        <h5 class="card-title crop" :title="name">{{ name }}</h5>
+        <h5 class="card-title crop">{{ name }}</h5>
       </nuxt-link>
       <p class="card-text desktop-only">{{ summary }}</p>
       <div class="mobile-only">

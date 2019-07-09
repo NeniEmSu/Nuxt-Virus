@@ -4,18 +4,18 @@
     style="width: 100%; max-width: 540px;"
   >
     <no-ssr>
-      <LightGallery :images="images" :index="index" :disable-scroll="true" @close="index = null"/>
+      <LightGallery :images="images" :index="index" :disable-scroll="true" @close="index = null" />
     </no-ssr>
-    <div @click="index = 0" title="Переглянути більше зображень!">
+    <div @click="index = 0" v-b-tooltip.hover title="Переглянути більше зображень!">
       <div class="row no-gutters">
         <div class="col-9 p-0">
           <picture>
-            <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp">
+            <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp" />
             <img
               :src="require(`~/assets/img/${thumbnail + '.png'}`)"
               class="img-fluid"
               :alt="title"
-            >
+            />
           </picture>
         </div>
         <div class="col-3">

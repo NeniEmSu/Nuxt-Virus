@@ -22,12 +22,61 @@
           <div class="row">
             <div class="main-image col-4 p-0">
               <div class="image-showcase col-12 text-center p-0">
-                <img
+                <no-ssr>
+                  <carousel
+                    :autoplay="false"
+                    :nav="false"
+                    :items="1"
+                    :lazyLoad="true"
+                    :v-lazy="true"
+                    :loop="true"
+                    :mouseDrag="true"
+                    :touchDrag="true"
+                  >
+                    <img
+                      :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                      class="mx-auto img-fluid"
+                      :alt="product.name"
+                    />
+                    <img
+                      :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
+                      class="mx-auto img-fluid"
+                      :alt="product.Gallery[0].meta.title"
+                    />
+                    <img
+                      :src="`${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`"
+                      class="mx-auto img-fluid"
+                      :alt="product.Gallery[0].meta.title"
+                    />
+                  </carousel>
+                </no-ssr>
+                <!-- <img
                   :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
                   class="mx-auto img-fluid"
                   :alt="product.name"
-                />
+                />-->
               </div>
+              <style>
+  .main-image .owl-theme .owl-dots .owl-dot span {
+    width: 73px !important;
+    height: 73px !important;
+    margin-bottom: -80px;
+    background-color: transparent;
+    margin-left: 2px;
+  }
+
+  .main-image .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: transparent;
+  }
+
+  .main-image .owl-theme .owl-dots .owl-dot.active span {
+    background-color: transparent;
+  }
+
+  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+    background-color: transparent;
+  }
+              </style>
               <div class="small-more-images">
                 <div class="row mx-auto">
                   <!-- <img
@@ -41,19 +90,19 @@
                     :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.Gallery[0].meta.title"
                     :title="product.Gallery[0].meta.title"
-                    class="col-4 mx-auto mt-2 more-images"
+                    class="col-4 mx-auto mt-n4 more-images"
                   />
                   <img
                     :src="`${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.Gallery[1].meta.title"
                     :title="product.Gallery[1].meta.title"
-                    class="col-4 mx-auto mt-2 more-images"
+                    class="col-4 mx-auto mt-n4 more-images"
                   />
                   <img
                     :src="`${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.Gallery[2].meta.title"
                     :title="product.Gallery[2].meta.title"
-                    class="col-4 mx-auto mt-2 more-images"
+                    class="col-4 mx-auto mt-n4 more-images"
                   />
                 </div>
               </div>
@@ -259,6 +308,11 @@ h1.details-page-header {
   background: url("~assets/img/86.jpg");
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
   border-radius: 20px;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 200px;
+  margin: 10px;
 }
 
 .more-images {
