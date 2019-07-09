@@ -1,14 +1,4 @@
-export const state = () => ({
-  counter: 0
-})
-
-export const mutations = {
-  increment(state) {
-    state.counter++
-  }
-}
-
-export const actions = {
+const Actions = {
   nuxtServerInit({
     dispatch
   }) {
@@ -27,17 +17,25 @@ export const actions = {
         const promises = []
 
 
-        promises.push(dispatch('Posts/fetch')),
-          promises.push(dispatch('Products/fetch'))
+        promises.push(dispatch('Products/fetch'))
+
 
         return Promise.all(promises)
       })
+
+
       .catch(ex => {
+
         error.message = ex.message
+
+
         throw error
       })
     )
-
   }
+}
 
+
+export {
+  Actions as actions
 }

@@ -101,6 +101,12 @@ export default {
     };
   },
 
+  computed: {
+    products() {
+      return this.$store.state.Posts.posts;
+    }
+  },
+
   mounted() {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });

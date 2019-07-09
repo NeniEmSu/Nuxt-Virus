@@ -48,13 +48,13 @@ const Actions = {
 
       const products = response.data.entries
 
-
+      // Set pages
       commit('SET_PRODUCTS', products)
 
-
+      // Set fetched flag
       commit('SET_FETCHED', true)
 
-
+      // And resolve promise
       resolve()
     })
   }

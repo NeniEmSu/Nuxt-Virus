@@ -1,7 +1,7 @@
 const State = () => {
   return {
     fetched: false,
-    products: []
+    posts: []
   }
 }
 
@@ -10,8 +10,8 @@ const Mutations = {
     state.fetched = trueFalse
   },
 
-  SET_PRODUCTS(state, products) {
-    state.products = products
+  SET_POSTS(state, posts) {
+    state.posts = posts
   }
 }
 
@@ -25,7 +25,7 @@ const Actions = {
 
     return new Promise(async (resolve, reject) => {
 
-      const url = `/collections/get/Product?token=${process.env.PRODUCT_TOKEN}`
+      const url = `/collections/get/posts?token=${process.env.apiToken}`
 
 
       let response = null
@@ -46,10 +46,10 @@ const Actions = {
       }
 
 
-      const products = response.data.entries
+      const posts = response.data.entries
 
 
-      commit('SET_PRODUCTS', products)
+      commit('SET_POSTS', posts)
 
 
       commit('SET_FETCHED', true)
