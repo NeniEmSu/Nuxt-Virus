@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-4 mx-auto">
             <h4>Графік роботи</h4>
-            <img src="~/assets/img/contactPageClock.png" class="img-fluid" alt="image of a clock">
+            <img src="~/assets/img/contactPageClock.png" class="img-fluid" alt="image of a clock" />
             <p>пн-пт 9:00 до 19:00 сб-нд Вихідний</p>
           </div>
 
@@ -27,7 +27,7 @@
                 src="~/assets/img/contactPageMail.png"
                 class="img-fluid"
                 alt="image of a mail icon"
-              >
+              />
             </a>
             <p class="text-center">deteylingvirus@gmail.com</p>
           </div>
@@ -39,7 +39,7 @@
                 src="~/assets/img/contactPagePhone.png"
                 class="img-fluid"
                 alt=" image of a phone icon"
-              >
+              />
             </a>
             <p>+38 (067) 333-40-40</p>
           </div>
@@ -47,13 +47,13 @@
       </div>
 
       <div class="container text-center">
-        <hr id="map-top" class="map-separator offset desktop-only">
+        <hr id="map-top" class="map-separator offset desktop-only" />
 
         <img
           src="~/assets/img/icons8-marker-100.png"
           class="desktop-only"
           alt="Location marker icon"
-        >
+        />
 
         <GmapMap id="map" :center="center" :zoom="16" map-type-id="terrain">
           <GmapMarker
@@ -68,18 +68,18 @@
         <div class="contact-page-socials">
           <h4>Більше інформації тут:</h4>
           <a target="_blank" rel="noopener" href="https://www.instagram.com/virusdetailing/">
-            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon">
+            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon" />
           </a>
           <a target="_blank" rel="noopener" href="https://www.facebook.com/virus.te.ua/">
-            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon">
+            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon" />
           </a>
         </div>
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm />
 
-    <progressSection/>
+    <progressSection />
   </div>
 </template>
 
@@ -137,6 +137,21 @@ export default {
   background-size: contain;
   width: 100%;
   height: 280px;
+}
+
+.process {
+  p {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    align-items: center;
+
+    color: #3e3e3e;
+    text-decoration: none;
+  }
 }
 
 .map-separator {
