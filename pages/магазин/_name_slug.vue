@@ -34,11 +34,6 @@
                     :touchDrag="true"
                   >
                     <img
-                      :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                      class="mx-auto img-fluid"
-                      :alt="product.name"
-                    />
-                    <img
                       :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[0].meta.title"
@@ -46,15 +41,15 @@
                     <img
                       :src="`${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`"
                       class="mx-auto img-fluid"
-                      :alt="product.Gallery[0].meta.title"
+                      :alt="product.Gallery[1].meta.title"
+                    />
+                    <img
+                      :src="`${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`"
+                      class="mx-auto img-fluid"
+                      :alt="product.Gallery[2].meta.title"
                     />
                   </carousel>
                 </no-ssr>
-                <!-- <img
-                  :src="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-                  class="mx-auto img-fluid"
-                  :alt="product.name"
-                />-->
               </div>
               <style>
   .small-more-images {
@@ -177,13 +172,6 @@
               </style>
               <div class="small-more-images">
                 <div class="row mx-auto">
-                  <!-- <img
-                    :v-for="galimg in product.Gallery"
-                    :src="`${imageApiUrl}&src=${product.Gallery[0 || 1 || 2].path}&w=200&h=200&f[brighten]=0&o=true`"
-                    :alt="product.Gallery[0 || 1 || 2].meta.title"
-                    :title="product.Gallery[0 || 1 || 2].meta.title"
-                    class="col-4 mx-auto mt-2 more-images"
-                  />-->
                   <img
                     :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
                     :alt="product.Gallery[0].meta.title"

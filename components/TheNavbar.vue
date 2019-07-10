@@ -6,23 +6,23 @@
     v-click-outside="closeMobileNavbar"
     v-handle-scroll="closeMobileNavbar"
   >
-    <TheTopContact/>
-    <div class="container">
+    <TheTopContact />
+    <div class="container p-md-0">
       <div class="logo">
         <nuxt-link class="navbar-brand logo" to="/" aria-label="Virus Logo">
-          <img src="~/assets/img/virus-logo.svg" alt="virus logo">
+          <img src="~/assets/img/virus-logo.svg" alt="virus logo" />
         </nuxt-link>
       </div>
 
       <div class="btn-hamburger" @click="mobileNavOpen = !mobileNavOpen">
-        <img src="~/assets/img/menu.svg" alt="menu Icon">
+        <img src="~/assets/img/menu.svg" alt="menu Icon" />
       </div>
 
       <div>
-        <shopCartModal :cart="cart" style="float: right;"/>
+        <shopCartModal :cart="cart" style="float: right;" />
       </div>
 
-      <nav class="navbar" :class="{'navbar-open': mobileNavOpen}">
+      <nav class="navbar pr-0" :class="{'navbar-open': mobileNavOpen}">
         <app-links></app-links>
         <div
           class="close-hamburger text-right text-black p-2"

@@ -56,8 +56,8 @@ export default {
 <style lang="scss" scoped>
 .menu {
   margin-right: 0;
-  margin-top: 40px;
-  position: absolute;
+  margin-top: 20px;
+  position: relative;
 }
 
 .menu ul {
@@ -65,12 +65,13 @@ export default {
   background: transparent;
   overflow: hidden;
   padding: 0;
-  text-align: right;
   margin: 0;
+  position: relative;
 }
 
 .menu ul li {
   display: inline-flex;
+  margin: 0 2px 0 2px;
 }
 
 .menu ul li a {
