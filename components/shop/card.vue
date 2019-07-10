@@ -412,7 +412,7 @@ hr {
 
   .card {
     background: #ffffff;
-    box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
     width: 100%;
@@ -515,7 +515,7 @@ hr {
 
   .card {
     background: #ffffff;
-    box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
     width: 100%;

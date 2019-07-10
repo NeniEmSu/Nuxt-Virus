@@ -57,12 +57,18 @@
                 />-->
               </div>
               <style>
+  .small-more-images {
+    margin-top: -20px;
+  }
   .main-image .owl-theme .owl-dots .owl-dot span {
     width: 73px !important;
     height: 73px !important;
-    margin-bottom: -80px;
+    margin-bottom: -60px;
     background-color: transparent;
-    margin-left: 2px;
+
+    margin-right: 12.5px;
+    margin-left: 12.5px;
+    display: abslolute;
   }
 
   .main-image .owl-theme .owl-dots .owl-dot:hover span {
@@ -75,6 +81,98 @@
 
   .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
     background-color: transparent;
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .main-image .owl-theme .owl-dots .owl-dot span {
+      width: 73px !important;
+      height: 73px !important;
+      margin-bottom: -55px;
+      background-color: transparent;
+
+      margin-right: 12px;
+      margin-left: 12px;
+      display: abslolute;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    .main-image .owl-theme .owl-dots .owl-dot span {
+      width: 60px !important;
+      height: 60px !important;
+      margin-bottom: -48px;
+      background-color: transparent;
+
+      margin-right: 5.5px;
+      margin-left: 5.6px;
+      display: abslolute;
+    }
+  }
+
+  @media only screen and (min-width: 500px) and (max-width: 767.9px) {
+    .main-image .owl-theme .owl-dots .owl-dot span {
+      width: 10px !important;
+      height: 10px !important;
+      margin-top: -25px;
+      background-color: grey;
+
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    .main-image .owl-theme .owl-dots .owl-dot:hover span {
+      background-color: #d41f26;
+    }
+
+    .main-image .owl-theme .owl-dots {
+      margin-bottom: -30px;
+    }
+
+    .main-image .owl-theme .owl-dots .owl-dot.active span {
+      background-color: #d41f26;
+    }
+
+    .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+      background-color: red;
+    }
+
+    .small-more-images {
+      margin-top: 0px;
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 499.9px) {
+    .main-image .owl-theme .owl-dots .owl-dot span {
+      width: 5px !important;
+      height: 5px !important;
+      margin-top: -29px;
+      background-color: grey;
+
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    .main-image .owl-theme .owl-dots .owl-dot:hover span {
+      background-color: #d41f26;
+    }
+
+    .main-image .owl-theme .owl-dots {
+      margin-bottom: -30px;
+    }
+
+    .main-image .owl-theme .owl-dots .owl-dot.active span {
+      background-color: #d41f26;
+    }
+
+    .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+      background-color: red;
+    }
+
+    .small-more-images {
+      margin-top: 0px;
+      display: none;
+    }
   }
               </style>
               <div class="small-more-images">
@@ -176,7 +274,7 @@
           :mouseDrag="true"
           :touchDrag="true"
           :autoplayHoverPause="true"
-          :responsive="{0:{items:1,nav:false},350:{items:2,nav:false},550:{items:3,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
+          :responsive="{0:{items:1,nav:false},350:{items:2,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
         >
           <card
             class="mb-5 mx-auto"
@@ -305,7 +403,6 @@ h1.details-page-header {
 }
 
 .image-showcase img {
-  background: url("~assets/img/86.jpg");
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
   border-radius: 20px;
   width: 100%;
@@ -451,8 +548,22 @@ h1.details-page-header {
     display: none;
   }
 
+  .sm-xsm-xxsm-only {
+    display: block;
+  }
+
   .mobile-only {
     display: block;
+  }
+
+  .image-showcase img {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 130px;
+    height: 100%;
+    max-height: 130px;
+    margin: 15px;
   }
 
   .more-images {
@@ -468,6 +579,75 @@ h1.details-page-header {
 
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
+  }
+
+  .detail-cost {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 93.75%;
+    letter-spacing: -0.05em;
+
+    color: #8b8b8b;
+    margin-bottom: -10px;
+  }
+
+  .detail-discount-cost {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration-line: line-through;
+
+    color: #d7000b;
+    padding-top: 25px;
+  }
+
+  .inStock {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    color: #239a0f;
+  }
+
+  .notInStock {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+
+    color: $redColor;
+  }
+
+  .btn.add-to-cart {
+    padding: 14px 8px;
+    background: #d41f26;
+    border-radius: 50px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+
+    margin-top: 0px;
   }
 }
 
@@ -607,7 +787,18 @@ h1.details-page-header {
     color: #8b8b8b;
   }
 }
-
+@include mediaXSm {
+  .image-showcase img {
+    min-height: 70px;
+    max-height: 70px;
+    height: 100%;
+    min-width: 70px;
+    max-width: 70px;
+    width: 100%;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+}
 @include mediaXXXSm {
   .desktop-only {
     display: none;
@@ -632,13 +823,13 @@ h1.details-page-header {
   }
 
   .image-showcase img {
-    min-height: 90px;
-    max-height: 90px;
+    min-height: 70px;
+    max-height: 70px;
     height: 100%;
-    min-width: 90px;
-    max-width: 90px;
+    min-width: 70px;
+    max-width: 70px;
     width: 100%;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
   }
 

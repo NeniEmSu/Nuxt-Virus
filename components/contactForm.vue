@@ -10,10 +10,10 @@
           <div v-if="errors.length" class="text-left text-danger">
             <b>Please correct the following error(s):</b>
             <ol>
-              <li class="ml-3" v-for="error in errors" :key="error">{{ error }}</li>
+              <li  class="ml-3" v-for="error in errors" :key="error">{{ error }}</li>
             </ol>
           </div>
-          <div v-if="success" @submitForm="makeToast('success')" class="text-left text-sucess">
+          <div v-if="success && !errors.length" class="text-left text-success">
             <b>Your message has been sent succesfully</b>
           </div>
 
@@ -110,7 +110,7 @@
 
               <button
               v-show="loading === true"
-              :disabled="loading === true"
+              :disabled="loading === false"
                 type="loading"
                 aria-label="loading"
                 name="loading"
@@ -123,7 +123,7 @@
                 aria-label="submit"
                 name="submit"
                 class="contact-btn"
-                :disabled="loading === false"
+                :disabled="loading === true"
               >ВІДПРАВИТИ</button>
 
             </div>
