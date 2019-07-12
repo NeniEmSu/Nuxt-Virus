@@ -257,8 +257,7 @@ export default {
         type: "image/png"
       }
     ],
-    categories: ["business", "utilities", "shopping"],
-    scope: "/app/"
+    categories: ["business", "utilities", "shopping"]
   },
 
   loading: {
