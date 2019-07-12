@@ -1,7 +1,8 @@
 const State = () => {
   return {
     fetched: false,
-    products: []
+    products: [],
+    inCart: []
   }
 }
 
@@ -12,7 +13,20 @@ const Mutations = {
 
   SET_PRODUCTS(state, products) {
     state.products = products
-  }
+  },
+
+  ADD_TO_CART(state, _id) {
+    state.inCart.push(_id);
+  },
+
+  REMOVE_FROM_CART(state, index) {
+    state.inCart.splice(index, 1);
+  },
+}
+
+const Getters = {
+  products: state => state.products,
+  inCart: state => state.inCart,
 }
 
 const Actions = {
@@ -48,20 +62,32 @@ const Actions = {
 
       const products = response.data.entries
 
-      // Set pages
+
       commit('SET_PRODUCTS', products)
 
-      // Set fetched flag
+
       commit('SET_FETCHED', true)
 
-      // And resolve promise
+
       resolve()
     })
-  }
+  },
+
+  addToCart(context, _id) {
+    context.commit('ADD_TO_CART', _id);
+  },
+
+  removeFromCart(context, index) {
+    context.commit('REMOVE_FROM_CART', index);
+  },
+
 }
 
 export {
   State as state
+}
+export {
+  Getters as getters
 }
 export {
   Actions as actions

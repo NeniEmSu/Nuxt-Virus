@@ -1,12 +1,4 @@
-export const state = () => ({
-
-})
-
-export const mutations = {
-
-}
-
-export const actions = {
+const Actions = {
   nuxtServerInit({
     dispatch
   }) {
@@ -25,17 +17,25 @@ export const actions = {
         const promises = []
 
 
-        promises.push(dispatch('Posts/fetch')),
-          promises.push(dispatch('Products/fetch'))
+        promises.push(dispatch('Products/fetch'))
+
 
         return Promise.all(promises)
       })
+
+
       .catch(ex => {
+
         error.message = ex.message
+
+
         throw error
       })
     )
-
   }
+}
 
+
+export {
+  Actions as actions
 }

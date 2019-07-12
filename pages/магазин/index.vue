@@ -271,30 +271,31 @@
 <script>
 import axios from "axios";
 import productCards from "@/components/shop/productCards";
+import { mapMutations, mapgetters } from "vuex";
 
 export default {
   components: {
     productCards
   },
-  // async asyncData({ app, error }) {
-  //   const { data } = await app.$axios.post(
-  //     process.env.PRODUCT_URL,
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { "Content-Type": "application/json" }
-  //     }
-  //   );
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.PRODUCT_URL,
+      JSON.stringify({
+        filter: { Published: true },
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
 
-  //   if (!data.entries[0]) {
-  //     return error({ message: "404 Page not found", statusCode: 404 });
-  //   }
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
+    }
 
-  //   return { products: data.entries };
-  // },
+    return { products: data.entries };
+  },
   data() {
     return {
       cart: 0,
@@ -306,11 +307,11 @@ export default {
       imageApiUrl: process.env.IMAGE_URL
     };
   },
-  computed: {
-    products() {
-      return this.$store.state.Products.products;
-    }
-  },
+  // computed: {
+  //   products() {
+  //     return this.$store.getters.Products.products;
+  //   }
+  // },
 
   methods: {
     addToCart() {

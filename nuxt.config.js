@@ -190,11 +190,22 @@ export default {
       }
     ],
     script: [{
-      rel: 'prefetch',
-      src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
-      "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
-      defer: true
-    }]
+        rel: 'prefetch',
+        src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
+        "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
+        defer: true
+      },
+      {
+        rel: 'prefetch',
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'
+
+      },
+      {
+        rel: 'prefetch',
+        src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
+
+      }
+    ]
   },
 
   manifest: {
@@ -204,6 +215,7 @@ export default {
     theme_color: "#e32124",
     background_color: "#ffffff",
     display: "standalone",
+    start_url: "https://virus-car-detailing.netlify.com/?standalone=true",
     dir: "auto",
     lang: 'uk',
     icons: [{

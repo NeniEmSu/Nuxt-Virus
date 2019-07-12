@@ -38,3 +38,13 @@ Vue.filter('parseMd', function (content) {
 Vue.filter('toDate', function (timestamp) {
   return dayjs(timestamp * 1000).format('Do - MM - YY')
 })
+
+const dollars = num => `$${num / 100}`;
+
+export {
+  dollars
+};
+
+export default {
+  dollars,
+};

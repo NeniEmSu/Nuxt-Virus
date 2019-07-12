@@ -207,32 +207,32 @@ export default {
       ]
     };
   },
-  // async asyncData({ app, error }) {
-  //   const { data } = await app.$axios.post(
-  //     process.env.PRODUCT_URL,
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       limit: 6,
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { "Content-Type": "application/json" }
-  //     }
-  //   );
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.PRODUCT_URL,
+      JSON.stringify({
+        filter: { Published: true },
+        limit: 6,
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
 
-  //   if (!data.entries[0]) {
-  //     return error({ message: "404 Page not found", statusCode: 404 });
-  //   }
-
-  //   return { products: data.entries };
-  // },
-
-  computed: {
-    products() {
-      return this.$store.state.Products.products;
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
     }
+
+    return { products: data.entries };
   },
+
+  // computed: {
+  //   products() {
+  //     return this.$store.state.Products.products;
+  //   }
+  // },
 
   mounted() {
     if (process.client) {
