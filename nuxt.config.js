@@ -1,12 +1,12 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const glob = require('glob-all')
-const path = require('path')
-const collect = require('collect.js')
-const perPage = Number(process.env.PER_PAGE)
+const glob = require('glob-all');
+const path = require('path');
+const collect = require('collect.js');
+const perPage = Number(process.env.PER_PAGE);
 
-const axios = require('axios')
-import purgecss from '@fullhuman/postcss-purgecss'
+const axios = require('axios');
+import purgecss from '@fullhuman/postcss-purgecss';
 
 export default {
   mode: 'universal',
@@ -274,12 +274,8 @@ export default {
   env: {
     productUrl: `${process.env.BASE_URL}/api/collections/get/Product?token=${process.env.PRODUCT_TOKEN}`,
     contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`,
-    commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`,
-    cockpit: {
-      apiUrl: 'https://cms.neniemsu.com/api',
-      apiToken: '478b68417378bbac86af13a57561ef',
-      baseUrl: 'https://cms.neniemsu.com'
-    }
+    commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`
+
   },
 
   // webfontloader: {
@@ -413,37 +409,37 @@ export default {
           headers: {
             'Content-Type': 'application/json'
           }
-        })
+        });
 
-      const collection = collect(data.entries)
+      const collection = collect(data.entries);
 
       let tags = collection.map(post => post.tags)
         .flatten()
         .unique()
         .map(tag => {
           let payload = collection.filter(item => {
-            return collect(item.tags).contains(tag)
-          }).all()
+            return collect(item.tags).contains(tag);
+          }).all();
 
           return {
             route: `блог/category/${tag}`,
             payload: payload
-          }
+          };
         }).all()
 
       let posts = collection.map(post => {
         return {
-          route: post.title_slug,
+          route: `блог/${post.title_slug}`,
           payload: post
         }
-      }).all()
+      }).all();
 
       if (perPage < data.total) {
         let pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
           .map((items, key) => {
-            let currentPage = key + 2
+            let currentPage = key + 2;
 
             return {
               route: `блог/pages/${currentPage}`,
@@ -452,12 +448,12 @@ export default {
                 hasNext: data.total > currentPage * perPage
               }
             }
-          }).all()
+          }).all();
 
-        return posts.concat(tags, pages)
+        return posts.concat(tags, pages);
       }
 
-      return posts.concat(tags)
+      return posts.concat(tags);
     },
 
   },
@@ -492,9 +488,9 @@ export default {
         .flatten()
         .unique()
         .map(tag => `блог/category/${tag}`)
-        .all()
+        .all();
 
-      let posts = collection.map(post => post.title_slug).all()
+      let posts = collection.map(post => post.title_slug).all();
 
       if (perPage < data.total) {
         let pages = collection
@@ -526,14 +522,13 @@ export default {
     }) {
       config.module.rules.forEach(rule => {
         if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-          // add a second loader when loading images
+
           rule.use.push({
             loader: 'image-webpack-loader',
             options: {
               svgo: {
                 plugins: [
-                  // use these settings for internet explorer for proper scalable SVGs
-                  // https://css-tricks.com/scale-svg/
+
                   {
                     removeViewBox: false
                   },
