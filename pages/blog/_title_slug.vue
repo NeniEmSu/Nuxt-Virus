@@ -17,8 +17,8 @@
           {{ post._created | toDate }}
           <span class="ml-1 text-xs">•</span>
           <nuxt-link
-            v-for="(tag, key) in post.tags"
-            :key="key"
+            v-for="tag in post.tags"
+            :key="tag"
             :to="'/blog/category/'+tag"
           >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
           <span class="mx-1 text-xs">•</span>

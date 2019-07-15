@@ -133,7 +133,7 @@
             <label hidden for="brand">Марка</label>
             <select id="brand" aria-describedby="brand" v-model="brandSelect" class="form-control brand">
               <option value="null" disabled>Марка</option>
-              <option v-for="(items, key) in carBrandOptions" :key="key" value="items.name">{{ items.name }}</option>
+              <option v-for="items in carBrandOptions" :key="items.name" :value="items.name">{{ items.name }}</option>
             </select>
           </div>
 

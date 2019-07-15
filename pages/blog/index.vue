@@ -12,7 +12,11 @@
       <h1>Блог</h1>
     </div>
     <hr class="top-separator" />
-    <div class="card-container container" v-for="(post, key) in posts" :key="key">
+    <div
+      class="card-container container"
+      v-for="post in posts"
+      :key="`${post.title} ${post._created}`"
+    >
       <div class="card mx-auto">
         <img class="card-img img-fliud" :src="post.image.path" :alt="post.title" />
         <div class="card-img-overlay pl-2 py-0 row">

@@ -19,7 +19,7 @@
 
             <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
             <ul class="ml-3">
-              <li v-for="(items, key) in inclusiveInService" :key="key"> {{items.services}}</li>
+              <li v-for="(items, heading) in inclusiveInService" :key="heading"> {{items.services}}</li>
             </ul>
           </div>
         </div>

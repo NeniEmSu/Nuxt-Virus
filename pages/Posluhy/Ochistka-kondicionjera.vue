@@ -31,8 +31,8 @@
             <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
             <ul class="ml-3">
               <li
-                v-for="(items, key) in inclusiveInService"
-                :key="key"
+                v-for="(items, heading) in inclusiveInService"
+                :key="heading"
                 class="list-unstyled"
                 style="margin-left: -16px;"
               >{{ items.services }}</li>

@@ -12,7 +12,11 @@
       <h1>Акції</h1>
     </div>
     <hr class="top-separator" />
-    <div class="card-container container" v-for="(promotion, key) in promotions" :key="key">
+    <div
+      class="card-container container"
+      v-for="promotion in promotions"
+      :key="promotion.promotionTitle"
+    >
       <div class="card mx-auto">
         <img
           class="card-img img-fliud"

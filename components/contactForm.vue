@@ -73,7 +73,7 @@
                 >
 
                 <datalist id="models">
-                  <option v-for="(items, key) in carmodeloptions" :key="key">{{ items.name }}</option>
+                  <option v-for="items  in carmodeloptions" :key="items.name">{{ items.name }}</option>
                 </datalist>
                 </label>
               </div>
