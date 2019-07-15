@@ -374,17 +374,17 @@ export default {
         id: 'UA-62479125-9'
       }
     ],
-    [
-      "nuxt-compress",
-      {
-        gzip: {
-          cache: true
-        },
-        brotli: {
-          threshold: 10240
-        }
-      }
-    ],
+    // [
+    //   "nuxt-compress",
+    //   {
+    //     gzip: {
+    //       cache: true
+    //     },
+    //     brotli: {
+    //       threshold: 10240
+    //     }
+    //   }
+    // ],
     [
       'nuxt-fontawesome',
       {
