@@ -157,13 +157,13 @@
               :summary="product.Overview"
               :price="product.Price"
               :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-              :link="'/магазин/'+product.name_slug"
+              :link="'/mahazyn/'+product.name_slug"
               :stock="product.Stock"
             />
           </carousel>
         </no-ssr>
 
-        <nuxt-link to="магазин" class="btn">Показати більше</nuxt-link>
+        <nuxt-link to="/mahazyn" class="btn">Показати більше</nuxt-link>
       </div>
     </div>
 
