@@ -407,7 +407,7 @@ export default {
 
   generate: {
     routes: async () => {
-      var {
+      let {
         data
       } = await axios.post(process.env.POSTS_URL,
         JSON.stringify({
@@ -467,33 +467,37 @@ export default {
       }
 
       return posts.concat(tags);
-    },
-    routes: async () => {
-      var {
-        data
-      } = await axios.get(process.env.PRODUCT_URL,
-        JSON.stringify({
-          filter: {
-            published: true
-          },
-          sort: {
-            _created: -1
-          },
-          populate: 1
-        }), {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-      return data.entries.map((product) => {
-        return {
-          route: `mahazyn/${product.name_slug}`,
-          payload: product
-        }
-      })
     }
-
   },
+
+  // generate: {
+
+  //   routes: async () => {
+  //     var {
+  //       data
+  //     } = await axios.get(process.env.PRODUCT_URL,
+  //       JSON.stringify({
+  //         filter: {
+  //           published: true
+  //         },
+  //         sort: {
+  //           _created: -1
+  //         },
+  //         populate: 1
+  //       }), {
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       })
+  //     return data.entries.map((product) => {
+  //       return {
+  //         route: `mahazyn/${product.name_slug}`,
+  //         payload: product
+  //       }
+  //     })
+  //   }
+
+  // },
 
 
 
