@@ -5,9 +5,9 @@ const path = require('path');
 const collect = require('collect.js');
 const perPage = Number(process.env.PER_PAGE);
 
-import axios from 'axios'
+const axios = require('axios')
 
-// const axios = require('axios');
+
 import purgecss from '@fullhuman/postcss-purgecss';
 
 export default {
@@ -422,22 +422,22 @@ export default {
           headers: {
             'Content-Type': 'application/json'
           }
-        });
+        })
 
-      const collection = collect(data.entries);
+      const collection = collect(data.entries)
 
       let tags = collection.map(post => post.tags)
         .flatten()
         .unique()
         .map(tag => {
           let payload = collection.filter(item => {
-            return collect(item.tags).contains(tag);
-          }).all();
+            return collect(item.tags).contains(tag)
+          }).all()
 
           return {
             route: `/blog/category/${tag}`,
             payload: payload
-          };
+          }
         }).all()
 
       let posts = collection.map(post => {
@@ -445,14 +445,14 @@ export default {
           route: `/blog/${post.title_slug}`,
           payload: post
         }
-      }).all();
+      }).all()
 
       if (perPage < data.total) {
         let pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
           .map((items, key) => {
-            let currentPage = key + 2;
+            let currentPage = key + 2
 
             return {
               route: `/blog/pages/${currentPage}`,
@@ -461,12 +461,12 @@ export default {
                 hasNext: data.total > currentPage * perPage
               }
             }
-          }).all();
+          }).all()
 
-        return posts.concat(tags, pages);
+        return posts.concat(tags, pages)
       }
 
-      return posts.concat(tags);
+      return posts.concat(tags)
     }
   },
 
