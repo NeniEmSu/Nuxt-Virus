@@ -5,7 +5,9 @@ const path = require('path');
 const collect = require('collect.js');
 const perPage = Number(process.env.PER_PAGE);
 
-const axios = require('axios');
+import axios from 'axios'
+
+// const axios = require('axios');
 import purgecss from '@fullhuman/postcss-purgecss';
 
 export default {
@@ -405,7 +407,7 @@ export default {
 
   generate: {
     routes: async () => {
-      let {
+      var {
         data
       } = await axios.post(process.env.POSTS_URL,
         JSON.stringify({
@@ -433,14 +435,14 @@ export default {
           }).all();
 
           return {
-            route: `блог/category/${tag}`,
+            route: `blog/category/${tag}`,
             payload: payload
           };
         }).all()
 
       let posts = collection.map(post => {
         return {
-          route: `блог/${post.title_slug}`,
+          route: `blog/${post.title_slug}`,
           payload: post
         }
       }).all();
@@ -453,7 +455,7 @@ export default {
             let currentPage = key + 2;
 
             return {
-              route: `блог/pages/${currentPage}`,
+              route: `blog/pages/${currentPage}`,
               payload: {
                 posts: items.all(),
                 hasNext: data.total > currentPage * perPage
@@ -466,8 +468,34 @@ export default {
 
       return posts.concat(tags);
     },
+    routes: async () => {
+      var {
+        data
+      } = await axios.get(process.env.PRODUCT_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
+          populate: 1
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+      return data.entries.map((product) => {
+        return {
+          route: `mahazyn/${product.name_slug}`,
+          payload: product
+        }
+      })
+    }
 
   },
+
+
 
 
   sitemap: {
@@ -498,7 +526,7 @@ export default {
       let tags = collection.map(post => post.tags)
         .flatten()
         .unique()
-        .map(tag => `блог/category/${tag}`)
+        .map(tag => `blog/category/${tag}`)
         .all();
 
       let posts = collection.map(post => post.title_slug).all();
@@ -507,7 +535,7 @@ export default {
         let pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
-          .map((items, key) => `блог/pages/${key+2}`)
+          .map((items, key) => `blog/pages/${key+2}`)
           .all()
 
         return posts.concat(tags, pages)

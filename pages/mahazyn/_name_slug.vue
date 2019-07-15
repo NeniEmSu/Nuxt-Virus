@@ -6,7 +6,7 @@
           <nuxt-link to="/">Головна</nuxt-link>
         </li>
         <li class="breadcrumb-item">
-          <nuxt-link to="/магазин">магазин</nuxt-link>
+          <nuxt-link to="/mahazyn">магазин</nuxt-link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
       </ol>
@@ -14,7 +14,7 @@
     <div class="container pt-5">
       <div class="row mx-auto">
         <div class="col-lg-1 mb-3 desktop-only">
-          <nuxt-link to="/магазин">
+          <nuxt-link to="/mahazyn">
             <img src="~assets/img/chevron-right.png" alt="chevron-right" />
           </nuxt-link>
         </div>
@@ -272,7 +272,7 @@
             :summary="product.Overview"
             :price="product.Price"
             :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-            :link="'/магазин/'+product.name_slug"
+            :link="'/mahazyn/'+product.name_slug"
             :stock="product.Stock"
           />
         </carousel>

@@ -6,7 +6,7 @@
           <nuxt-link to="/">Головна</nuxt-link>
         </li>
         <li class="breadcrumb-item">
-          <nuxt-link to="/блог">Блог</nuxt-link>
+          <nuxt-link to="/blog">Блог</nuxt-link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
       </ol>
@@ -19,7 +19,7 @@
           <nuxt-link
             v-for="(tag, key) in post.tags"
             :key="key"
-            :to="'/блог/category/'+tag"
+            :to="'/blog/category/'+tag"
           >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
           <span class="mx-1 text-xs">•</span>
           <a href="#" v-scroll-to="'#comments'" class="text-dark">
@@ -46,7 +46,7 @@
       ></div>
 
       <div class="mt-5 text-center">
-        <nuxt-link to="/блог" class="pr-2 text-secondary">Знайти більше повідомлень у блогах!</nuxt-link>
+        <nuxt-link to="/blog" class="pr-2 text-secondary">Знайти більше повідомлень у блогах!</nuxt-link>
       </div>
       <div id="comments" class="mt-8 mb-4 pt-3 border-t-2">
         <h2 class="mb-2">Коментарі</h2>

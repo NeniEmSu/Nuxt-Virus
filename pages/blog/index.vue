@@ -6,28 +6,22 @@
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
           </li>
-          <li class="breadcrumb-item">
-            <nuxt-link to="/блог">Блог</nuxt-link>
-          </li>
-          <li
-            class="breadcrumb-item active"
-            aria-current="page"
-          >Блог Повідомлення з тегами {{ category }}</li>
+          <li class="breadcrumb-item active" aria-current="page">Блог</li>
         </ol>
       </nav>
-      <h1 class="mb-3">Блог Повідомлення з тегами "{{ category }}"</h1>
+      <h1>Блог</h1>
     </div>
     <hr class="top-separator" />
     <div class="card-container container" v-for="(post, key) in posts" :key="key">
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="post.image.path" alt="Card image" />
+        <img class="card-img img-fliud" :src="post.image.path" :alt="post.title" />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
               <nuxt-link
                 v-for="tag in post.tags"
                 :key="tag"
-                :to="'/блог/category/'+tag"
+                :to="'/blog/category/'+tag"
                 class="desktop-tablet-only"
               >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
@@ -47,73 +41,81 @@
                 </svg>
               </span>
             </div>
-            <nuxt-link :to="'/блог/'+post.title_slug">
+            <nuxt-link :to="'/blog/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>
             </nuxt-link>
-            <p class="card-text">Date Created {{ post._created | toDate }}</p>
+            <p class="card-text">Дата створення {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/блог/'+post.title_slug">ЧИТАТИ</nuxt-link>
+            <nuxt-link class="btn" :to="'/blog/'+post.title_slug">ЧИТАТИ</nuxt-link>
           </div>
         </div>
       </div>
       <hr class="separator" />
     </div>
-    <div class="container"></div>
+    <div class="container">
+      <div v-if="hasNext" class="text-center my-3">
+        <nuxt-link to="/blog/pages/2" class="text-info">Наступна сторінка</nuxt-link>
+      </div>
+    </div>
 
     <contactForm />
     <progressSection />
   </section>
 </template>
 
-
 <script>
 export default {
-  scrollToTop: true,
-  async asyncData({ app, params, error, payload }) {
-    if (payload) {
-      return { posts: payload, category: params.tag };
-    } else {
-      let { data } = await app.$axios.post(
-        process.env.POSTS_URL,
-        JSON.stringify({
-          filter: { published: true, tags: { $has: params.tag } },
-          sort: { _created: -1 },
-          populate: 1
-        }),
-        {
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-
-      if (!data.entries[0]) {
-        return error({ message: "404 Page not found", statusCode: 404 });
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.POSTS_URL,
+      JSON.stringify({
+        filter: { published: true },
+        limit: process.env.PER_PAGE,
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
       }
+    );
 
-      return { posts: data.entries, category: params.tag };
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
     }
-  },
-  mounted() {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
-    }
+
+    return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total };
   },
   head() {
     return {
-      title: `Повідомлення з тегами ${this.category}`,
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: "блог - %s!",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `Усі публікації в блогах класифікуються як ${this.category}.`
+          content:
+            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
     };
   }
+
+  // computed: {
+  //   products() {
+  //     return this.$store.state.Posts.posts;
+  //   }
+  // },
+
+  // mounted() {
+  //   if (process.client) {
+  //     this.$scrollTo("#top-contact", 0, { force: true });
+  //   }
+  // }
 };
 </script>
 
-<<style lang="scss" scoped>
+<style lang="scss" scoped>
 h1 {
   font-family: $mainFont;
   font-style: normal;
@@ -376,4 +378,3 @@ li {
   }
 }
 </style>
-

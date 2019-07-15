@@ -651,7 +651,7 @@ export default {
           polishingCost: "5999",
           polishingCostVar1: "6999",
           polishingCostVar2: "8499",
-          polishingLink: "Послуги/Полірування",
+          polishingLink: "Posluhy/Полірування",
 
           polishingImg: "services1"
         },
@@ -661,7 +661,7 @@ export default {
           polishingCost: "600",
           polishingCostVar1: "700",
           polishingCostVar2: "800",
-          polishingLink: "Послуги/Поліруванняфар",
+          polishingLink: "Posluhy/Поліруванняфар",
 
           polishingImg: "services2"
         },
@@ -671,7 +671,7 @@ export default {
           polishingCost: "500",
           polishingCostVar1: "600",
           polishingCostVar2: "700",
-          polishingLink: "Послуги/Вставкисалону",
+          polishingLink: "Posluhy/Вставкисалону",
 
           polishingImg: "services3"
         },
@@ -681,7 +681,7 @@ export default {
           polishingCost: "800",
           polishingCostVar1: "900",
           polishingCostVar2: "1000",
-          polishingLink: "Послуги/Центральністійки",
+          polishingLink: "Posluhy/Центральністійки",
 
           polishingImg: "services4"
         }
@@ -693,7 +693,7 @@ export default {
           cleanersCost: "1999",
           cleanersCostVar1: "2499",
           cleanersCostVar2: "3199",
-          cleanersLink: "Послуги/Хімчистка",
+          cleanersLink: "Posluhy/Хімчистка",
 
           cleanersImg: "services5"
         },
@@ -703,7 +703,7 @@ export default {
           cleanersCost: "800",
           cleanersCostVar1: "0",
           cleanersCostVar2: "0",
-          cleanersLink: "Послуги/Колісніарки",
+          cleanersLink: "Posluhy/Колісніарки",
 
           cleanersImg: "services6"
         },
@@ -713,7 +713,7 @@ export default {
           cleanersCost: "275",
           cleanersCostVar1: "330",
           cleanersCostVar2: "385",
-          cleanersLink: "Послуги/передніхсидінь",
+          cleanersLink: "Posluhy/передніхсидінь",
 
           cleanersImg: "services7"
         },
@@ -723,7 +723,7 @@ export default {
           cleanersCost: "495",
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
-          cleanersLink: "Послуги/задніхсидінь",
+          cleanersLink: "Posluhy/задніхсидінь",
 
           cleanersImg: "services8"
         }
@@ -735,7 +735,7 @@ export default {
           WaxCoversCost: "1200",
           WaxCoversCostVar1: "1300",
           WaxCoversCostVar2: "1400",
-          WaxCoversLink: "Послуги/Покриттявоском",
+          WaxCoversLink: "Posluhy/Покриттявоском",
           WaxCoversClass: "service-nine"
         },
         {
@@ -744,7 +744,7 @@ export default {
           WaxCoversCost: "3000",
           WaxCoversCostVar1: "0",
           WaxCoversCostVar2: "0",
-          WaxCoversLink: "Послуги/Рідкескло",
+          WaxCoversLink: "Posluhy/Рідкескло",
           WaxCoversClass: "service-ten"
         }
       ],
@@ -754,7 +754,7 @@ export default {
           ceramicCoatingCost: "12999",
           ceramicCoatingCostVar1: "14499",
           ceramicCoatingCostVar2: "15999",
-          ceramicCoatingLink: "Послуги/Керамічнепокриття"
+          ceramicCoatingLink: "Posluhy/Керамічнепокриття"
         }
       ],
       PreSalePreparations: [
@@ -763,7 +763,7 @@ export default {
           PreSalePreparationsCost: "1100",
           PreSalePreparationsCostVar1: "1200",
           PreSalePreparationsCostVar2: "1300",
-          PreSalePreparationsLink: "Послуги/Передпродажнапідготовка"
+          PreSalePreparationsLink: "Posluhy/Передпродажнапідготовка"
         }
       ],
 
@@ -774,7 +774,7 @@ export default {
           additionalCost: "130",
           additionalCostHigh: "250",
           fixedRange: true,
-          additionalLink: "Послуги/Реставраціяподряпин",
+          additionalLink: "Posluhy/Реставраціяподряпин",
 
           additionalImg: "services13"
         },
@@ -784,7 +784,7 @@ export default {
           additionalCost: "500",
           additionalCostHigh: "3000",
           fixedRange: true,
-          additionalLink: "Послуги/Перешиття",
+          additionalLink: "Posluhy/Перешиття",
 
           additionalImg: "services14"
         },
@@ -794,7 +794,7 @@ export default {
           additionalCost: "600",
           additionalCostHigh: "1200",
           fixedRange: true,
-          additionalLink: "Послуги/Антидощ",
+          additionalLink: "Posluhy/Антидощ",
 
           additionalImg: "services15"
         },
@@ -804,7 +804,7 @@ export default {
           additionalCost: "500",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Послуги/Мийкамотору",
+          additionalLink: "Posluhy/Мийкамотору",
 
           additionalImg: "services16"
         },
@@ -815,7 +815,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           dollar: true,
-          additionalLink: "Послуги/ШУМОІЗОЛЯЦІЯ",
+          additionalLink: "Posluhy/ШУМОІЗОЛЯЦІЯ",
 
           additionalImg: "services17"
         },
@@ -825,7 +825,7 @@ export default {
           additionalCost: "500",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Послуги/БАКТЕРЕЦИДНАОБРОБКА",
+          additionalLink: "Posluhy/БАКТЕРЕЦИДНАОБРОБКА",
 
           additionalImg: "services18"
         },
@@ -835,7 +835,7 @@ export default {
           additionalCost: "0",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Послуги/Видаленнявмятин",
+          additionalLink: "Posluhy/Видаленнявмятин",
 
           additionalImg: "services19"
         },
@@ -845,7 +845,7 @@ export default {
           additionalCost: "1000",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Послуги/антигравійноїплівки",
+          additionalLink: "Posluhy/антигравійноїплівки",
 
           additionalImg: "services20"
         },
@@ -855,7 +855,7 @@ export default {
           additionalCost: "1200",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Послуги/Очисткакондиціонера",
+          additionalLink: "Posluhy/Очисткакондиціонера",
 
           additionalImg: "services21"
         },
@@ -866,7 +866,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "Послуги/ЧИСТКАДИСКІВ",
+          additionalLink: "Posluhy/ЧИСТКАДИСКІВ",
 
           additionalImg: "services22"
         },
@@ -877,7 +877,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "Послуги/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ",
+          additionalLink: "Posluhy/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ",
 
           additionalImg: "services23"
         },
@@ -887,7 +887,7 @@ export default {
           additionalCost: "1000",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Послуги/Озонація",
+          additionalLink: "Posluhy/Озонація",
 
           additionalImg: "services24"
         }

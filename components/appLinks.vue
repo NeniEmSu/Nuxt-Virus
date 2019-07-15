@@ -20,27 +20,27 @@ export default {
         },
         {
           title: "Послуги і ціни",
-          to: "/Послуги-і-ціни"
+          to: "/Posluhy-i-ciny"
         },
         {
           title: "Акції",
-          to: "/акції"
+          to: "/akciyi"
         },
         {
           title: "Магазин",
-          to: "/магазин"
+          to: "/mahazyn"
         },
         {
           title: "Блог",
-          to: "/блог"
+          to: "/blog"
         },
         {
           title: "Про нас",
-          to: "/про-нас"
+          to: "/pro-nas"
         },
         {
           title: "Контакти",
-          to: "/контакти"
+          to: "/kontakty"
         }
       ]
     };

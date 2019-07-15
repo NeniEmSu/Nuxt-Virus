@@ -21,7 +21,7 @@
               <nuxt-link
                 v-for="tag in post.tags"
                 :key="tag"
-                :to="'/блог/category/'+tag"
+                :to="'/blog/category/'+tag"
                 class="desktop-tablet-only"
               >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
@@ -41,13 +41,13 @@
                 </svg>
               </span>
             </div>
-            <nuxt-link :to="'/блог/'+post.title_slug">
+            <nuxt-link :to="'/blog/'+post.title_slug">
               <h2 class="card-title text-white">{{ post.title }}</h2>
             </nuxt-link>
             <p class="card-text">Date Created {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/блог/'+post.title_slug">ЧИТАТИ</nuxt-link>
+            <nuxt-link class="btn" :to="'/blog/'+post.title_slug">ЧИТАТИ</nuxt-link>
           </div>
         </div>
       </div>
@@ -56,12 +56,12 @@
     <div class="container">
       <div class="text-center my-3">
         <nuxt-link
-          :to="page === '2' ? '/блог' : `/блог/pages/${Number(page)-1}`"
+          :to="page === '2' ? '/blog' : `/blog/pages/${Number(page)-1}`"
           class="text-info pr-2"
         >Попередня сторінка</nuxt-link>
         <nuxt-link
           v-if="hasNext"
-          :to="`/блог/pages/${Number(page)+1}`"
+          :to="`/blog/pages/${Number(page)+1}`"
           class="text-info pl-2"
         >Наступна сторінка</nuxt-link>
       </div>

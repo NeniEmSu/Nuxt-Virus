@@ -3,40 +3,56 @@
     <div class="bottom-contact container">
       <div class="logo">
         <nuxt-link class="/navbar-brand logo" to="/" aria-label="Virus Logo">
-          <img  v-lazy="require('~/assets/img/virus-logo.svg')" alt="virus logo">
+          <img v-lazy="require('~/assets/img/virus-logo.svg')" alt="virus logo" />
         </nuxt-link>
       </div>
       <ul>
         <li>
           <a href="mailto:deteylingvirus@gmail.com">
             deteylingvirus@gmail.com
-            <font-awesome-icon :icon="['fa', 'envelope']" class="ml-2 fa-lg"/>
+            <font-awesome-icon :icon="['fa', 'envelope']" class="ml-2 fa-lg" />
           </a>
         </li>
         <li>
           <a href="tel:+380673334040">
             +38 (067) 333-40-40
-            <font-awesome-icon :icon="['fas', 'phone']" class="ml-2 fa-lg"/>
+            <font-awesome-icon :icon="['fas', 'phone']" class="ml-2 fa-lg" />
           </a>
         </li>
 
         <li>
-          <a href="контакти#map-top">
+          <nuxt-link to="/kontakty" v-scroll-to="{el: '#map-top', duration: 500, offset: -60 }">
             Україна, м. Тернопіль, вул. Приміська 15А
-            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="ml-2 fa-lg"/>
-          </a>
+            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="ml-2 fa-lg" />
+          </nuxt-link>
         </li>
         <li>
-          <a href="https://www.instagram.com/virusdetailing/" target="_blank" rel="noopener" class="instagram">
+          <a
+            href="https://www.instagram.com/virusdetailing/"
+            target="_blank"
+            rel="noopener"
+            class="instagram"
+          >
             <picture>
-              <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp">
-              <img  v-lazy="require('~/assets/img/icons8-instagram-filled-100.png')" alt="icons instagram filled">
+              <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp" />
+              <img
+                v-lazy="require('~/assets/img/icons8-instagram-filled-100.png')"
+                alt="icons instagram filled"
+              />
             </picture>
           </a>
-          <a href="https://www.facebook.com/virus.te.ua/" target="_blank" rel="noopener" class="facebook">
+          <a
+            href="https://www.facebook.com/virus.te.ua/"
+            target="_blank"
+            rel="noopener"
+            class="facebook"
+          >
             <picture>
-              <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp">
-              <img  v-lazy="require('~/assets/img/icons8-facebook-filled-100.png')" alt="icons facebook filled">
+              <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp" />
+              <img
+                v-lazy="require('~/assets/img/icons8-facebook-filled-100.png')"
+                alt="icons facebook filled"
+              />
             </picture>
           </a>
         </li>
@@ -49,7 +65,6 @@
 export default {};
 </script>
 <style lang="scss" scoped>
-
 footer {
   width: 100vw;
   background: $darkColor;
