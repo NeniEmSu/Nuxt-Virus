@@ -217,7 +217,7 @@ export default {
     theme_color: "#e32124",
     background_color: "#ffffff",
     display: "standalone",
-    start_url: "https://virus-car-detailing.netlify.com/?standalone=true",
+    start_url: "/",
     dir: "auto",
     lang: 'uk',
     icons: [{
@@ -435,14 +435,14 @@ export default {
           }).all();
 
           return {
-            route: `blog/category/${tag}`,
+            route: `/blog/category/${tag}`,
             payload: payload
           };
         }).all()
 
       let posts = collection.map(post => {
         return {
-          route: `blog/${post.title_slug}`,
+          route: `/blog/${post.title_slug}`,
           payload: post
         }
       }).all();
@@ -455,7 +455,7 @@ export default {
             let currentPage = key + 2;
 
             return {
-              route: `blog/pages/${currentPage}`,
+              route: `/blog/pages/${currentPage}`,
               payload: {
                 posts: items.all(),
                 hasNext: data.total > currentPage * perPage
