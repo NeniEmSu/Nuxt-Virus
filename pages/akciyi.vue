@@ -20,13 +20,13 @@
         />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
-            <nuxt-link :to="'/магазин/'+promotion.name_slug">
+            <nuxt-link :to="'/mahazyn/'+promotion.name_slug">
               <h2 class="card-title text-white">{{ promotion.promotionTitle }}</h2>
             </nuxt-link>
             <p class="card-text">{{ promotion.promotionTimeLimit }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/магазин/'+promotion.name_slug">ЗАМОВИТИ</nuxt-link>
+            <nuxt-link class="btn" :to="'/mahazyn/'+promotion.name_slug">ЗАМОВИТИ</nuxt-link>
           </div>
         </div>
       </div>
