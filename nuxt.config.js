@@ -405,122 +405,94 @@ export default {
   },
 
   generate: {
-    routes: [
-      // '/',
-      // '/akciyi',
-      // '/mahazyn',
-      // '/Posluhy-i-ciny',
-      // '/kontakty',
-      // '/Posluhy/PoliruvannJa-avtomobilJa',
-      // '/Posluhy/PoliruvannJa-far',
-      // '/Posluhy/RjestavnaciJa-podrJapіn-na-kuzovi',
-      // '/Posluhy/PokrittJa-tvjerdиm-univjersalnіm-voskom-Soft-99',
-      // '/Posluhy/ozonacija',
-      // '/Posluhy/Kjeramichnje-pokrіttJa-sіdin',
-      // '/Posluhy/Pokljejka-antиgravijnoї-plivkи',
-      // '/Posluhy/Ridkje-sklo',
-      // '/Posluhy/Ochistka-kondicionjera',
-      // '/Posluhy/PoliruvannJa-cjentralnіh-stijok',
-      // '/Posluhy/PjerjeshіttJa-shkirJanіh-djetaljej-salonu',
-      // '/Posluhy/pjerjedprodazhna-pidgotovka',
-      // '/Posluhy/Himchіstka-koljesnіh-arok-pidviskі-dіskiv',
-      // '/Posluhy/Ochistka-kondicionjera',
-      // '/Posluhy/Himchіstka-pjerjednih-sіdin',
-      // '/Posluhy/antidosh',
-      // '/Posluhy/Chіstka-dіskiv',
-      // '/Posluhy/Himchіstka',
-      // '/Posluhy/Ridkje-sklo',
-      // '/Posluhy/VіdaljennJa-vmJatіn-bjez-pokraskі-PDR',
-      // '/Posluhy/PoliruvannJa-far',
-      // '/Posluhy/Himchіstka-zadnih-sіdin',
-      async () => {
-          let {
-            data
-          } = await axios.post(process.env.POSTS_URL,
-            JSON.stringify({
-              filter: {
-                published: true
-              },
-              sort: {
-                _created: -1
-              },
-              populate: 1
-            }), {
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            });
+    routes: async () => {
+      let {
+        data
+      } = await axios.post(process.env.POSTS_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
+          populate: 1
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
 
-          const collection = collect(data.entries);
+      const collection = collect(data.entries);
 
-          let tags = collection.map(post => post.tags)
-            .flatten()
-            .unique()
-            .map(tag => {
-              let payload = collection.filter(item => {
-                return collect(item.tags).contains(tag);
-              }).all();
+      let tags = collection.map(post => post.tags)
+        .flatten()
+        .unique()
+        .map(tag => {
+          let payload = collection.filter(item => {
+            return collect(item.tags).contains(tag);
+          }).all();
 
-              return {
-                route: `/blog/category/${tag}`,
-                payload: payload
-              };
-            }).all();
+          return {
+            route: `/blog/category/${tag}`,
+            payload: payload
+          };
+        }).all();
 
-          let posts = collection.map(post => {
+      let posts = collection.map(post => {
+        return {
+          route: `/blog/${post.title_slug}`,
+          payload: post
+        };
+      }).all();
+
+      if (perPage < data.total) {
+        let pages = collection
+          .take(perPage - data.total)
+          .chunk(perPage)
+          .map((items, key) => {
+            let currentPage = key + 2;
+
             return {
-              route: `/blog/${post.title_slug}`,
-              payload: post
+              route: `/blog/pages/${currentPage}`,
+              payload: {
+                posts: items.all(),
+                hasNext: data.total > currentPage * perPage
+              }
             };
           }).all();
 
-          if (perPage < data.total) {
-            let pages = collection
-              .take(perPage - data.total)
-              .chunk(perPage)
-              .map((items, key) => {
-                let currentPage = key + 2;
+        return posts.concat(tags, pages);
+      }
 
-                return {
-                  route: `/blog/pages/${currentPage}`,
-                  payload: {
-                    posts: items.all(),
-                    hasNext: data.total > currentPage * perPage
-                  }
-                };
-              }).all();
+      return posts.concat(tags);
+    }
 
-            return posts.concat(tags, pages);
-          }
+    // async () => {
+    //   let {
+    //     data
+    //   } = await axios.get(process.env.PRODUCT_URL,
+    //     JSON.stringify({
+    //       filter: {
+    //         published: true
+    //       },
+    //       sort: {
+    //         _created: -1
+    //       },
+    //       populate: 1
+    //     }), {
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     })
+    //   return data.entries.map((product) => {
+    //     return {
+    //       route: `/mahazyn/${product.name_slug}`,
+    //       payload: product
+    //     }
+    //   })
+    // }
 
-          return posts.concat(tags);
-        },
-
-        async () => {
-          let {
-            data
-          } = await axios.get(process.env.PRODUCT_URL,
-            JSON.stringify({
-              filter: {
-                published: true
-              },
-              sort: {
-                _created: -1
-              },
-              populate: 1
-            }), {
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            })
-          return data.entries.map((product) => {
-            return {
-              route: `/mahazyn/${product.name_slug}`,
-              payload: product
-            }
-          })
-        }
-    ]
   },
 
 

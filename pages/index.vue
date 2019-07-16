@@ -4,7 +4,7 @@
       <pre><h1 class="text-left">Ми
 пропонуємо</h1></pre>
       <div class="row">
-        <nuxt-link to="/Posluhy/PoliruvannJa-avtomobilJa" class="col-4 p-0 one">
+        <nuxt-link to="/Posluhy-i-ciny/PoliruvannJa-avtomobilJa" class="col-4 p-0 one">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top1.webp" type="image/webp" />
@@ -17,7 +17,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/Posluhy/PokrittJa-tvjerdиm-univjersalnіm-voskom-Soft-99"
+          to="/Posluhy-i-ciny/PokrittJa-tvjerdиm-univjersalnіm-voskom-Soft-99"
           class="col-8 p-0 two"
         >
           <div class="card bg-inverse">
@@ -42,7 +42,7 @@
         </nuxt-link>
       </div>
       <div class="row">
-        <nuxt-link to="/Posluhy/Mіjka-motoru-paroju" class="col-4 p-0 three">
+        <nuxt-link to="/Posluhy-i-ciny/Mіjka-motoru-paroju" class="col-4 p-0 three">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top3.webp" type="image/webp" />
@@ -57,7 +57,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Posluhy/Himchіstka" class="col-5 p-0 four">
+        <nuxt-link to="/Posluhy-i-ciny/Himchіstka" class="col-5 p-0 four">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top4.webp" type="image/webp" />
@@ -71,7 +71,7 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Posluhy/RjestavnaciJa-podrJapіn-na-kuzovi" class="col-3 p-0 five">
+        <nuxt-link to="/Posluhy-i-ciny/RjestavnaciJa-podrJapіn-na-kuzovi" class="col-3 p-0 five">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top5.webp" type="image/webp" />
@@ -90,7 +90,10 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Posluhy/Kjeramichnje-pokrіttJa-sіdin" class="col-md-8 offset-4 p-0 six">
+        <nuxt-link
+          to="/Posluhy-i-ciny/Kjeramichnje-pokrіttJa-sіdin"
+          class="col-md-8 offset-4 p-0 six"
+        >
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top6.webp" type="image/webp" />
@@ -108,7 +111,7 @@
         </nuxt-link>
       </div>
       <div class="row">
-        <nuxt-link to="/Posluhy/pjerjedprodazhna-pidgotovka" class="col-12 p-0 seven">
+        <nuxt-link to="/Posluhy-i-ciny/pjerjedprodazhna-pidgotovka" class="col-12 p-0 seven">
           <div class="card bg-inverse">
             <picture>
               <source srcset="~/assets/imgWebP/top7.webp" type="image/webp" />
@@ -210,31 +213,25 @@ export default {
       ]
     };
   },
-  // async asyncData({ app, error }) {
-  //   const { data } = await app.$axios.post(
-  //     process.env.PRODUCT_URL,
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       limit: 6,
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { "Content-Type": "application/json" }
-  //     }
-  //   );
+  async asyncData({ app, error }) {
+    const { data } = await app.$axios.post(
+      process.env.PRODUCT_URL,
+      JSON.stringify({
+        filter: { Published: true },
+        limit: 6,
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
 
-  //   if (!data.entries[0]) {
-  //     return error({ message: "404 Page not found", statusCode: 404 });
-  //   }
-
-  //   return { products: data.entries };
-  // },
-
-  computed: {
-    products() {
-      return this.$store.state.Products.products;
+    if (!data.entries[0]) {
+      return error({ message: "404 Page not found", statusCode: 404 });
     }
+
+    return { products: data.entries };
   },
 
   mounted() {
