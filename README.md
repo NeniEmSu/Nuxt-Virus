@@ -1,8 +1,8 @@
 # nuxt-Virus
 
-> Virus project using Nuxt js
+> Virus project using Nuxt js for ssr, and proper seo integration.
 
-##Technologies
+## Technologies
 
 1. Vue js
 2. Nuxt js
@@ -11,12 +11,20 @@
 5. Axios
 6. Nuxt caching
 7. Google Maps
+8. VueX
+9. PWA
+10. Owl carousel
+11. JivoChat
+12. Vuemask
+13. Lazyload
 
 ## Deployment Setup
 
 ### nginx
 
-A detailed [Blog post on the deployment process to nginx](https://www.waysquare.com/creating-vue-js-application-using-nuxt-js-and-nginx/)
+- [Using nginx as a reverse proxy](https://nuxtjs.org/faq/nginx-proxy/)
+- [Blog post on the deployment process to nginx](https://www.waysquare.com/creating-vue-js-application-using-nuxt-js-and-nginx/)
+- [Deploy nuxt app (Vue.js) with Pm2 and Nginx](https://kenyaappexperts.com/blog/deploy-vue-js%E2%80%8A-with-pm2-and-nginx/)
 
 <!-- Given the .env page is populated with relevant data -->
 
