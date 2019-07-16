@@ -8,10 +8,16 @@
     </no-ssr>
     <div @click="index = 0" v-b-tooltip.hover title="Переглянути більше зображень!">
       <div class="row no-gutters">
-        <div class="col-9 p-0">
-          <picture>
+        <div
+          class="col-9 p-0"
+          style="-webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+"
+        >
+          <picture style="border-top-left-radius: 22px; border-bottom-left-radius: 22px;">
             <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp" />
             <img
+              style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
               :src="require(`~/assets/img/${thumbnail + '.png'}`)"
               class="img-fluid"
               :alt="title"
@@ -66,11 +72,12 @@ export default {
   background: #000000;
   border-radius: 22px;
   cursor: pointer;
+  border: 0;
 
   img {
     object-fit: cover;
-    object-position: left;
-    margin-left: -2px;
+    object-position: right;
+    margin-left: 0px;
   }
 
   h4 {

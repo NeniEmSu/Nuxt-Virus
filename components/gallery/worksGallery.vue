@@ -1,20 +1,20 @@
 <template>
   <div>
     <div class="row mx-auto">
-      <carsLightbox :images="first" :title="title1" :subtitle="subtitle1" :thumbnail="thumbnail1"/>
-      <carsLightbox :images="second" :title="title2" :subtitle="subtitle2" :thumbnail="thumbnail2"/>
-      <carsLightbox :images="third" :title="title3" :subtitle="subtitle3" :thumbnail="thumbnail3"/>
-      <carsLightbox :images="fourth" :title="title4" :subtitle="subtitle4" :thumbnail="thumbnail4"/>
-      <carsLightbox :images="fifth" :title="title5" :subtitle="subtitle5" :thumbnail="thumbnail5"/>
-      <carsLightbox :images="sixth" :title="title6" :subtitle="subtitle6" :thumbnail="thumbnail6"/>
+      <carsLightbox :images="first" :title="title1" :subtitle="subtitle1" :thumbnail="thumbnail1" />
+      <carsLightbox :images="second" :title="title2" :subtitle="subtitle2" :thumbnail="thumbnail2" />
+      <carsLightbox :images="third" :title="title3" :subtitle="subtitle3" :thumbnail="thumbnail3" />
+      <carsLightbox :images="fourth" :title="title4" :subtitle="subtitle4" :thumbnail="thumbnail4" />
+      <carsLightbox :images="fifth" :title="title5" :subtitle="subtitle5" :thumbnail="thumbnail5" />
+      <carsLightbox :images="sixth" :title="title6" :subtitle="subtitle6" :thumbnail="thumbnail6" />
       <carsLightbox
         :images="seventh"
         :title="title7"
         :subtitle="subtitle7"
         :thumbnail="thumbnail7"
       />
-      <carsLightbox :images="eighth" :title="title8" :subtitle="subtitle8" :thumbnail="thumbnail8"/>
-      <carsLightbox :images="ninth" :title="title9" :subtitle="subtitle9" :thumbnail="thumbnail9"/>
+      <carsLightbox :images="eighth" :title="title8" :subtitle="subtitle8" :thumbnail="thumbnail8" />
+      <carsLightbox :images="ninth" :title="title9" :subtitle="subtitle9" :thumbnail="thumbnail9" />
       <carsLightbox
         :images="tenth"
         :title="title10"
@@ -130,7 +130,7 @@ export default {
       ],
       title5: "Nissan",
       subtitle5: "Juke",
-      thumbnail5: "car2",
+      thumbnail5: "car5",
 
       fifth: [
         require("~/assets/img/gallery/5/1.jpg"),
@@ -178,7 +178,7 @@ export default {
       ],
       title9: "Jaguar",
       subtitle9: "XJL",
-      thumbnail9: "car3",
+      thumbnail9: "car9",
 
       ninth: [
         require("~/assets/img/gallery/9/1.jpg"),
@@ -192,7 +192,7 @@ export default {
       ],
       title10: "Mercedes Benz",
       subtitle10: "GLK 220",
-      thumbnail10: "car1",
+      thumbnail10: "car10",
 
       tenth: [
         require("~/assets/img/gallery/10/1.jpg"),
