@@ -835,7 +835,7 @@ export default {
           additionalCost: "0",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Posluhy/VіdaljennJa-vmJatіn-bjez-pokraskі-PDR",
+          additionalLink: "Posluhy/vіdaljennJa-vmJatіn-bjez-pokraskі-pdr",
 
           additionalImg: "services19"
         },
@@ -887,7 +887,7 @@ export default {
           additionalCost: "1000",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "Posluhy/OzonaciJa",
+          additionalLink: "Posluhy/ozonacija",
 
           additionalImg: "services24"
         }

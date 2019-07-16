@@ -5,7 +5,7 @@ const path = require('path');
 const collect = require('collect.js');
 const perPage = Number(process.env.PER_PAGE);
 
-const axios = require('axios')
+const axios = require('axios');
 
 
 import purgecss from '@fullhuman/postcss-purgecss';
@@ -329,20 +329,19 @@ export default {
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     {
-      src: 'plugins/v-owl-carousel.js',
-      ssr: false
-    },
-
-    {
       src: '~/plugins/vue-lazyload',
       ssr: false
     },
     {
-      ssr: false,
-      src: '~plugins/JivoChat'
+      src: '~/plugins/v-owl-carousel',
+      ssr: false
     },
     {
-      src: '~plugins/ga',
+      ssr: false,
+      src: '~/plugins/JivoChat'
+    },
+    {
+      src: '~/plugins/ga',
       ssr: false
     },
     {
@@ -406,98 +405,125 @@ export default {
   },
 
   generate: {
-    routes: async () => {
-      let {
-        data
-      } = await axios.post(process.env.POSTS_URL,
-        JSON.stringify({
-          filter: {
-            published: true
-          },
-          sort: {
-            _created: -1
-          },
-          populate: 1
-        }), {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-
-      const collection = collect(data.entries)
-
-      let tags = collection.map(post => post.tags)
-        .flatten()
-        .unique()
-        .map(tag => {
-          let payload = collection.filter(item => {
-            return collect(item.tags).contains(tag)
-          }).all()
-
-          return {
-            route: `/blog/category/${tag}`,
-            payload: payload
-          }
-        }).all()
-
-      let posts = collection.map(post => {
-        return {
-          route: `/blog/${post.title_slug}`,
-          payload: post
-        }
-      }).all()
-
-      if (perPage < data.total) {
-        let pages = collection
-          .take(perPage - data.total)
-          .chunk(perPage)
-          .map((items, key) => {
-            let currentPage = key + 2
-
-            return {
-              route: `/blog/pages/${currentPage}`,
-              payload: {
-                posts: items.all(),
-                hasNext: data.total > currentPage * perPage
+    routes: [
+      '/',
+      '/akciyi',
+      '/mahazyn',
+      '/Posluhy-i-ciny',
+      '/kontakty',
+      '/Posluhy/PoliruvannJa-avtomobilJa',
+      '/Posluhy/PoliruvannJa-far',
+      '/Posluhy/RjestavnaciJa-podrJapіn-na-kuzovi',
+      '/Posluhy/PokrittJa-tvjerdиm-univjersalnіm-voskom-Soft-99',
+      '/Posluhy/ozonacija',
+      '/Posluhy/Kjeramichnje-pokrіttJa-sіdin',
+      '/Posluhy/Pokljejka-antиgravijnoї-plivkи',
+      '/Posluhy/Ridkje-sklo',
+      '/Posluhy/Ochistka-kondicionjera',
+      '/Posluhy/PoliruvannJa-cjentralnіh-stijok',
+      '/Posluhy/PjerjeshіttJa-shkirJanіh-djetaljej-salonu',
+      '/Posluhy/pjerjedprodazhna-pidgotovka',
+      '/Posluhy/Himchіstka-koljesnіh-arok-pidviskі-dіskiv',
+      '/Posluhy/Ochistka-kondicionjera',
+      '/Posluhy/Himchіstka-pjerjednih-sіdin',
+      '/Posluhy/antidosh',
+      '/Posluhy/Chіstka-dіskiv',
+      '/Posluhy/Himchіstka',
+      '/Posluhy/Ridkje-sklo',
+      '/Posluhy/VіdaljennJa-vmJatіn-bjez-pokraskі-PDR',
+      '/Posluhy/PoliruvannJa-far',
+      '/Posluhy/Himchіstka-zadnih-sіdin',
+      async () => {
+          let {
+            data
+          } = await axios.post(process.env.POSTS_URL,
+            JSON.stringify({
+              filter: {
+                published: true
+              },
+              sort: {
+                _created: -1
+              },
+              populate: 1
+            }), {
+              headers: {
+                'Content-Type': 'application/json'
               }
+            });
+
+          const collection = collect(data.entries);
+
+          let tags = collection.map(post => post.tags)
+            .flatten()
+            .unique()
+            .map(tag => {
+              let payload = collection.filter(item => {
+                return collect(item.tags).contains(tag);
+              }).all();
+
+              return {
+                route: `/blog/category/${tag}`,
+                payload: payload
+              };
+            }).all();
+
+          let posts = collection.map(post => {
+            return {
+              route: `/blog/${post.title_slug}`,
+              payload: post
+            };
+          }).all();
+
+          if (perPage < data.total) {
+            let pages = collection
+              .take(perPage - data.total)
+              .chunk(perPage)
+              .map((items, key) => {
+                let currentPage = key + 2;
+
+                return {
+                  route: `/blog/pages/${currentPage}`,
+                  payload: {
+                    posts: items.all(),
+                    hasNext: data.total > currentPage * perPage
+                  }
+                };
+              }).all();
+
+            return posts.concat(tags, pages);
+          }
+
+          return posts.concat(tags);
+        },
+
+        async () => {
+          let {
+            data
+          } = await axios.get(process.env.PRODUCT_URL,
+            JSON.stringify({
+              filter: {
+                published: true
+              },
+              sort: {
+                _created: -1
+              },
+              populate: 1
+            }), {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+          return data.entries.map((product) => {
+            return {
+              route: `/mahazyn/${product.name_slug}`,
+              payload: product
             }
-          }).all()
-
-        return posts.concat(tags, pages)
-      }
-
-      return posts.concat(tags)
-    }
+          })
+        }
+    ]
   },
 
-  // generate: {
 
-  //   routes: async () => {
-  //     var {
-  //       data
-  //     } = await axios.get(process.env.PRODUCT_URL,
-  //       JSON.stringify({
-  //         filter: {
-  //           published: true
-  //         },
-  //         sort: {
-  //           _created: -1
-  //         },
-  //         populate: 1
-  //       }), {
-  //         headers: {
-  //           'Content-Type': 'application/json'
-  //         }
-  //       })
-  //     return data.entries.map((product) => {
-  //       return {
-  //         route: `mahazyn/${product.name_slug}`,
-  //         payload: product
-  //       }
-  //     })
-  //   }
-
-  // },
 
 
 
@@ -523,9 +549,9 @@ export default {
           headers: {
             'Content-Type': 'application/json'
           }
-        })
+        });
 
-      const collection = collect(data.entries)
+      const collection = collect(data.entries);
 
       let tags = collection.map(post => post.tags)
         .flatten()
@@ -540,12 +566,12 @@ export default {
           .take(perPage - data.total)
           .chunk(perPage)
           .map((items, key) => `blog/pages/${key+2}`)
-          .all()
+          .all();
 
-        return posts.concat(tags, pages)
+        return posts.concat(tags, pages);
       }
 
-      return posts.concat(tags)
+      return posts.concat(tags);
     }
   },
 
@@ -581,9 +607,9 @@ export default {
                 ]
               }
             }
-          })
+          });
         }
-      })
+      });
     },
 
     build: {
