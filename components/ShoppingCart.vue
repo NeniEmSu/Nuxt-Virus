@@ -1,91 +1,78 @@
 <template>
-  <div>
-    <button
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target="#shoppingCart"
-    >Cart ({{ numInCart }})</button>
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <p v-if="!products.length">
+      <i>Please add some products to cart.</i>
+    </p>
+    <ul>
+      <li class="row" v-for="product in products" :key="product.id">
+        <img id="item-img" src="~assets/img/MaskGroup(3).jpg" alt="Soft 99" class="col-1 m-auto" />
+        <h4 class="col-4 m-auto text-left">{{ product.title }}</h4>
 
-    <div id="shoppingCart" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Shopping cart</h5>
-            <button class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <tbody>
-                <tr v-for="(item, index) in cart" :key="item.invId">
-                  <td>{{ item.name }}</td>
-                  <td>{{ item.price | dollars }}</td>
-                  <td>
-                    <button class="btn btn-sm btn-danger" @click="removeFromCart(index)">&times;</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <th>{{ total | dollars }}</th>
-                  <th></th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-            <button class="btn btn-primary">Check out</button>
-          </div>
-        </div>
+        <button type="button" class="btn btn-light col-1 m-auto">
+          <font-awesome-icon :icon="['fas', 'minus']" class="ml-2 fa-lg" />
+        </button>
+        <p class="col-1 m-auto">{{ product.quantity }}</p>
+        <button class="btn btn-light col-1 m-auto">
+          <font-awesome-icon :icon="['fas', 'plus']" class="ml-2 fa-lg" />
+        </button>
+        <p class="col-2 m-auto text-left">{{ product.price | currency }}</p>
+        <button class="btn btn-light col-1 m-auto">
+          <font-awesome-icon :icon="['fas', 'times']" class="ml-2 fa-lg" />
+        </button>
+      </li>
+    </ul>
+    <div class="row my-3">
+      <div class="col-auto mr-auto"></div>
+      <div class="col-auto">
+        Total:
+        {{ total | currency }}
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+
+    <div class="row my-3">
+      <div class="col-auto mr-auto">
+        <button type="button" class="btn btn-outline-primary">Return to Store</button>
+      </div>
+      <div class="col-auto">
+        <button
+          type="button"
+          class="btn btn-primary"
+          :disabled="!products.length"
+          @click="$store.dispatch('checkout')"
+        >Checkout</button>
+      </div>
+    </div>
+    <p
+      class="text-success"
+      v-show="$store.state.checkoutStatus"
+    >Checkout {{ $store.state.checkoutStatus }}.</p>
   </div>
 </template>
 
 <script>
-import { dollars } from "~/plugins/filters.js";
-
+import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 export default {
-  name: "shoppingCart",
   computed: {
-    inCart() {
-      return this.$store.getters.inCart;
-    },
-    numInCart() {
-      return this.inCart.length;
-    },
-    cart() {
-      return this.$store.getters.inCart.map(cartItem => {
-        return this.$store.getters.forSale.find(forSaleItem => {
-          return cartItem === forSaleItem.invId;
-        });
-      });
+    products() {
+      return this.$store.getters.cartProducts;
     },
     total() {
-      return this.cart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.$store.getters.cartTotal;
     }
   },
-  filters: {
-    dollars
-  },
-  methods: {
-    removeFromCart(index) {
-      this.$store.dispatch("removeFromCart", index);
-    }
-  }
+  methods: {}
 };
 </script>
+
+<style lang="scss" scoped>
+li {
+  list-style: none;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  object-fit: scale-down;
+}
+</style>

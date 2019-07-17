@@ -8,6 +8,10 @@ import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
 const sanitizeHtml = require('sanitize-html')
 
+import {
+  currency
+} from '~/plugins/currency.js'
+
 // Only import the languages that you need to keep our js bundle small
 // highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
 highlightjs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
@@ -39,12 +43,4 @@ Vue.filter('toDate', function (timestamp) {
   return dayjs(timestamp * 1000).format('Do - MM - YY')
 })
 
-const dollars = num => `$${num / 100}`;
-
-export {
-  dollars
-};
-
-export default {
-  dollars,
-};
+Vue.filter('currency', currency)
