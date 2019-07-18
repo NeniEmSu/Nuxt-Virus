@@ -14,8 +14,10 @@ export const state = () => ({ // = data
 })
 
 export const getters = { // = computed properties
-  productsCount() {
-    // ...
+  productIsInStock() {
+    return (product) => {
+      return product.inventory > 0;
+    }
   },
 
   availableProducts(state, getters) {
@@ -61,15 +63,35 @@ export const actions = { //methods
 
   },
 
-  addProductToCart(context, product) {
-    if (product.inventory > 0) {
-      const cartItem = context.state.cart.find(item => item.id === product.id)
+  addProductToCart({
+    state,
+    getters,
+    commit
+  }, product) {
+    // if (product.inventory > 0) { or we can use
+    if (getters.productIsInStock(product)) {
+      const cartItem = state.cart.find(item => item.id === product.id)
       if (!cartItem) {
-        context.commit('pushProducctToCart', product.id)
+        commit('pushProducctToCart', product.id)
       } else {
-        context.commit('incrementItemQuantity', cartItem)
+        commit('incrementItemQuantity', cartItem)
       }
-      context.commit('decrementProductInventory', product)
+      commit('decrementProductInventory', product)
+    }
+  },
+
+  incrementProductQuantityInCart({
+    state,
+    getters,
+    commit
+  }, product) {
+    // if (product.inventory > 0) { or we can use
+    if (getters.productIsInStock(product)) {
+      const cartItem = state.cart.find(item => item.id === product.id)
+
+      commit('incrementItemQuantity', cartItem)
+
+      commit('decrementProductInventory', product)
     }
   },
 
@@ -108,6 +130,12 @@ export const mutations = {
 
   incrementItemQuantity(state, cartItem) {
     cartItem.quantity++
+  },
+  decrementItemQuantity(state, cartItem) {
+    cartItem.quantity--
+  },
+  incrementProductInventory(state, product) {
+    product.inventory++
   },
   decrementProductInventory(state, product) {
     product.inventory--

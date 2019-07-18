@@ -17,7 +17,7 @@
           <button
             type="button"
             class="btn btn-outline-success"
-            :disabled="!product.inventory"
+            :disabled="!productIsInStock(product)"
             @click="addProductToCart(product)"
           >Add to cart</button>
         </div>
@@ -40,11 +40,16 @@ export default {
       this.$store.dispatch("addProductToCart", product);
     }
   },
+
   computed: {
     products() {
-      return this.$store.getters.availableProducts;
+      return this.$store.state.products;
+    },
+    productIsInStock() {
+      return this.$store.getters.productIsInStock;
     }
   },
+
   created() {
     this.loading = true;
     this.$store.dispatch("fetchProducts").then(() => (this.loading = false));

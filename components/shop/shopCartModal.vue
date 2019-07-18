@@ -1,17 +1,17 @@
 <template>
   <div class="desktop-only">
-    <b-button variant="link" class="snipcart-checkout">
+    <!-- <b-button variant="link" class="snipcart-checkout">
       <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon">
       <div id="show-total" class="text-center mt-n3 ml-n3 snipcart-summary">
         <span id="item-count" class="text-center snipcart-total-items">0</span>
       </div>
-    </b-button>
-    <!-- <b-button v-b-modal.modal-xl-mobile variant="link" @click="mobileModalShow = !mobileModalShow">
-      <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon">
-      <div id="show-total" class="text-center mt-n3 ml-n3">
-        <span id="item-count" class="text-centersnipcart-total-items">0</span>
-      </div>
     </b-button>-->
+    <b-button v-b-modal.modal-xl-mobile variant="link" @click="mobileModalShow = !mobileModalShow">
+      <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon" />
+      <div id="show-total" class="text-center mt-n3 ml-n3">
+        <span id="item-count" class="text-centersnipcart-total-items">{{cart}}</span>
+      </div>
+    </b-button>
     <b-modal
       v-model="mobileModalShow"
       id="modal-xl-mobile"
@@ -21,26 +21,25 @@
       hide-footer
     >
       <div class="modal-body basket text-center">
-        <div class="basket-content col-12">
+        <div v-for="product in products" :key="product.id" class="basket-content col-12">
           <div class="cart-item row col-12 m-auto p-0">
             <img
               id="item-img"
               src="~assets/img/86.jpg"
               alt="Koch Chemie Fresh UP"
               class="col-sm-1 m-auto"
-            >
-            <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">
-              Koch
-              Chemie Fresh
-              UP
-            </h5>
+            />
+            <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">{{ product.title }}</h5>
             <div class="toggle-quantity col-sm-2 m-auto">
               <a href="#">&minus;</a>
-              <p>1</p>
+              <p>{{ product.quantity }}</p>
               <a href="#">&plus;</a>
             </div>
             <div class="cost col-sm-2 m-auto">
-              <p id="cart-item-price" class="cart-item-price card-text">2900 грн</p>
+              <p
+                id="cart-item-price"
+                class="cart-item-price card-text"
+              >{{ product.price | currency }}</p>
             </div>
             <div class="remove-from-chart col-sm-1 m-auto text-center">
               <a href="#">
@@ -50,14 +49,14 @@
           </div>
         </div>
 
-        <div class="basket-content col-12">
+        <!-- <div class="basket-content col-12">
           <div class="cart-item row col-12 m-auto p-0">
             <img
               id="item-img"
               src="~assets/img/MaskGroup(3).jpg"
               alt="Soft 99"
               class="col-sm-1 m-auto"
-            >
+            />
             <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">Soft 99</h5>
             <div class="toggle-quantity col-sm-2 m-auto">
               <a href="#">&minus;</a>
@@ -73,12 +72,12 @@
               </a>
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="sum-total col-12 text-right">
           <span id="cart-total">
             Всього:
             <span class="cart-items-value">
-              5800
+              {{ total | currency }}
               грн
             </span>
           </span>
@@ -95,7 +94,7 @@
                 class="form-control"
                 aria-describedby="name"
                 placeholder="Ім’я*"
-              >
+              />
             </div>
             <div class="form-group col-lg-6">
               <label hidden for="phone">Телефон</label>
@@ -106,17 +105,31 @@
                 name="phone"
                 class="form-control"
                 placeholder="Телефон*"
-              >
+              />
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 mx-auto mt-2 text-md-left">
-              <a id="clear-cart" href="#" class="btn go-back">Повернутися</a>
+            <div class="col-auto mr-auto my-2">
+              <b-button
+                id="clear-cart"
+                to="/mahazyn"
+                @click="$bvModal.hide('modal-xl-mobile')"
+                class="btn go-back"
+              >Повернутися</b-button>
             </div>
-            <div class="col-md-6 mx-auto mt-2 text-md-right">
-              <button type="submit" class="btn order">Замовити</button>
+            <div class="col-auto my-2">
+              <button
+                :disabled="!products.length"
+                @click.prevent="$store.dispatch('checkout')"
+                type="submit"
+                class="btn order"
+              >Замовити</button>
             </div>
           </div>
+          <p
+            class="text-success"
+            v-show="$store.state.checkoutStatus"
+          >Checkout {{ $store.state.checkoutStatus }}.</p>
         </form>
       </div>
     </b-modal>
@@ -124,6 +137,7 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 export default {
   props: {
     cart: {
@@ -137,8 +151,17 @@ export default {
     };
   },
   methods: {
-    addToCart() {
-      this.cart += 1;
+    addProductToCart(product) {
+      this.$store.dispatch("addProductToCart", product);
+    }
+  },
+  computed: {
+    products() {
+      return this.$store.getters.cartProducts;
+    },
+
+    total() {
+      return this.$store.getters.cartTotal;
     }
   }
 };
@@ -301,35 +324,20 @@ export default {
         color: $lightColor;
         border: 0;
         text-decoration: none;
-        transition: ease-in-out 300ms;
-        -webkit-transition: ease-in-out 300ms;
-        -moz-transition: ease-in-out 300ms;
-        -ms-transition: ease-in-out 300ms;
-        -o-transition: ease-in-out 300ms;
 
         &.go-back {
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
           background: #e5e5e5;
-          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
-          border-radius: 50px;
-
+          padding: 10px 20px;
           font-family: $secondaryFont;
           font-style: normal;
-          font-weight: normal;
+          font-weight: bold;
           font-size: 20px;
           line-height: 20px;
           text-align: center;
+          border: 0;
 
           color: $darkColor;
-        }
-
-        &:hover {
-          color: $redColor;
-          background: $lightColor;
-          transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          -o-transform: scale(1.1);
         }
       }
 
@@ -337,42 +345,22 @@ export default {
         color: $lightColor;
         float: right;
         font-size: 20px;
-        font-family: "Font Awesome 5 Free";
+
         font-weight: 900;
         content: "\0203A";
         margin-left: 20px;
         margin-right: -20px;
-        transition: ease-in-out 300ms;
-        -webkit-transition: ease-in-out 300ms;
-        -moz-transition: ease-in-out 300ms;
-        -ms-transition: ease-in-out 300ms;
-        -o-transition: ease-in-out 300ms;
-      }
-
-      .order.btn:hover:after {
-        color: $redColor;
-        background: transparent;
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        -o-transform: scale(1.1);
       }
 
       .go-back.btn:before {
         color: $darkColor;
         float: left;
         font-size: 20px;
-        font-family: "Font Awesome 5 Free";
+
         font-weight: 900;
         content: "\02039";
-        margin-left: -20px;
-        margin-right: 20px;
-        transition: ease-in-out 300ms;
-        -webkit-transition: ease-in-out 300ms;
-        -moz-transition: ease-in-out 300ms;
-        -ms-transition: ease-in-out 300ms;
-        -o-transition: ease-in-out 300ms;
+        margin-left: -10px;
+        margin-right: 10px;
       }
     }
   }

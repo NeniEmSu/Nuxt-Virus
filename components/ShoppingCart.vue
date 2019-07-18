@@ -13,9 +13,10 @@
           <font-awesome-icon :icon="['fas', 'minus']" class="ml-2 fa-lg" />
         </button>
         <p class="col-1 m-auto">{{ product.quantity }}</p>
-        <button class="btn btn-light col-1 m-auto">
+        <button @click="addProductToCart(product)" class="btn btn-light col-1 m-auto">
           <font-awesome-icon :icon="['fas', 'plus']" class="ml-2 fa-lg" />
         </button>
+
         <p class="col-2 m-auto text-left">{{ product.price | currency }}</p>
         <button class="btn btn-light col-1 m-auto">
           <font-awesome-icon :icon="['fas', 'times']" class="ml-2 fa-lg" />
@@ -53,15 +54,20 @@
 <script>
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 export default {
+  methods: {
+    addProductToCart(product) {
+      this.$store.dispatch("addProductToCart", product);
+    }
+  },
   computed: {
     products() {
       return this.$store.getters.cartProducts;
     },
+
     total() {
       return this.$store.getters.cartTotal;
     }
-  },
-  methods: {}
+  }
 };
 </script>
 
