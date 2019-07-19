@@ -6,36 +6,56 @@
         <span id="item-count" class="text-center snipcart-total-items">0</span>
       </div>
     </b-button>-->
-    <b-button v-b-modal.modal-xl-mobile variant="link" @click="mobileModalShow = !mobileModalShow">
-      <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon" />
-      <div id="show-total" class="text-center mt-n3 ml-n3">
-        <span id="item-count" class="text-centersnipcart-total-items">{{cart}}</span>
+    <b-button
+      v-b-modal.modal-xl-mobile
+      variant="link"
+      @click="mobileModalShow = !mobileModalShow"
+    >
+      <img
+        src="~/assets/img/icons8-shopping-bag-filled-100.png"
+        alt="Cart Icon"
+      />
+      <div
+        id="show-total"
+        class="text-center mt-n3 ml-n3"
+      >
+        <span
+          id="item-count"
+          class="text-centersnipcart-total-items"
+        >{{cart}}</span>
       </div>
     </b-button>
     <b-modal
       v-model="mobileModalShow"
       id="modal-xl-mobile"
       size="xl"
-      title="Корзина"
+      :title="`Корзина ${total} грн`"
       class="modal-content text-center"
       hide-footer
     >
       <div class="modal-body basket text-center">
-        <div v-for="product in products" :key="product.id" class="basket-content col-12">
+        <div
+          v-for="product in products"
+          :key="product.id"
+          class="basket-content col-12"
+        >
           <div class="cart-item row col-12 m-auto p-0">
             <img
               id="item-img"
               src="~assets/img/86.jpg"
               alt="Koch Chemie Fresh UP"
-              class="col-sm-1 m-auto"
+              class="col-sm-1 p-0 m-auto"
             />
-            <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">{{ product.title }}</h5>
+            <h5
+              id="cart-item-title"
+              class="col-sm-5 m-auto text-sm-left"
+            >{{ product.title }}</h5>
             <div class="toggle-quantity col-sm-2 m-auto">
               <a href="#">&minus;</a>
               <p>{{ product.quantity }}</p>
               <a href="#">&plus;</a>
             </div>
-            <div class="cost col-sm-2 m-auto">
+            <div class="cost col-sm-3 m-auto">
               <p
                 id="cart-item-price"
                 class="cart-item-price card-text"
@@ -73,6 +93,13 @@
             </div>
           </div>
         </div>-->
+
+        <div
+          class="col-12"
+          v-if="!products.length"
+        >
+          <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
+        </div>
         <div class="sum-total col-12 text-right">
           <span id="cart-total">
             Всього:
@@ -83,29 +110,73 @@
           </span>
         </div>
 
-        <form action="#" method="POST" class="checkOut">
+        <form
+          action="#"
+          method="POST"
+          class="checkOut"
+        >
           <div class="row">
             <div class="form-group col-lg-6">
-              <label hidden for="name">Ім’я</label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                class="form-control"
-                aria-describedby="name"
-                placeholder="Ім’я*"
-              />
+              <label
+                class="m-0 p-0"
+                for="name"
+              ><input
+                  id="name"
+                  type="text"
+                  name="name"
+                  class="form-control mx-auto"
+                  aria-describedby="name"
+                  placeholder="Ім’я*"
+                  v-model="cartName"
+                /></label>
+
             </div>
             <div class="form-group col-lg-6">
-              <label hidden for="phone">Телефон</label>
-              <input
-                id="phone"
-                type="number"
-                aria-describedby="phone"
-                name="phone"
-                class="form-control"
-                placeholder="Телефон*"
-              />
+              <label
+                class="m-0 p-0"
+                for="cartPhone"
+              ><input
+                  aria-describedby="cartPhone"
+                  aria-label="cartPhone"
+                  name="cartPhone"
+                  type="text"
+                  class="form-control mx-auto"
+                  id="cartPhone"
+                  placeholder="Телефон*"
+                  v-mask="'+38(0##) ###-####'"
+                  v-model="models.cartphoneNumber"
+                /></label>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-lg-6">
+              <label
+                class="m-0 p-0"
+                for="newMail"
+              ><input
+                  id="newMail"
+                  type="text"
+                  name="newMail"
+                  class="form-control mx-auto"
+                  aria-describedby="newMail"
+                  placeholder="Нова пошта*"
+                /></label>
+
+            </div>
+            <div class="form-group col-lg-6">
+              <label
+                class="m-0 p-0"
+                for="Новапоштаdidistrict"
+              ><input
+                  id="Новапоштаdidistrict"
+                  type="number"
+                  aria-describedby="Новапоштаdidistrict"
+                  name="Новапоштаdidistrict"
+                  class="form-control mx-auto"
+                  placeholder="Нова пошта district*"
+                /></label>
+
             </div>
           </div>
           <div class="row">
@@ -145,22 +216,26 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
-      mobileModalShow: false
+      mobileModalShow: false,
+      cartName: null,
+      models: {
+        cartphoneNumber: null
+      },
     };
   },
   methods: {
-    addProductToCart(product) {
+    addProductToCart (product) {
       this.$store.dispatch("addProductToCart", product);
     }
   },
   computed: {
-    products() {
+    products () {
       return this.$store.getters.cartProducts;
     },
 
-    total() {
+    total () {
       return this.$store.getters.cartTotal;
     }
   }
@@ -168,6 +243,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.modal-title {
+  text-align: center;
+}
+
 .desktop-only {
   display: none;
 }
@@ -298,13 +377,16 @@ export default {
       }
     }
 
+    label {
+      width: 100%;
+    }
+
     .checkOut {
       margin-bottom: 60px;
 
       input {
         height: 48px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 10px;
         border: 2px solid #e5e5e5;
         box-sizing: border-box;
         border-radius: 50px;
@@ -331,7 +413,7 @@ export default {
           padding: 10px 20px;
           font-family: $secondaryFont;
           font-style: normal;
-          font-weight: bold;
+          font-weight: normal;
           font-size: 20px;
           line-height: 20px;
           text-align: center;
@@ -357,7 +439,7 @@ export default {
         float: left;
         font-size: 20px;
 
-        font-weight: 900;
+        font-weight: normal;
         content: "\02039";
         margin-left: -10px;
         margin-right: 10px;

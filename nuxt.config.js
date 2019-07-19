@@ -328,6 +328,7 @@ export default {
     '~/plugins/lightGallery.client.js',
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
+
     {
       src: '~/plugins/vue-lazyload',
       ssr: false
@@ -359,6 +360,17 @@ export default {
 
   modules: [
     // 'nuxt-webfontloader',
+    'vue-currency-filter/nuxt',
+
+    // Or if you have custom options...
+    ['vue-currency-filter/nuxt', {
+      symbol: '₴',
+      thousandsSeparator: ',',
+      fractionCount: 2,
+      fractionSeparator: '.',
+      symbolPosition: 'front',
+      symbolSpacing: true
+    }],
     'nuxt-polyfill',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',

@@ -3,9 +3,6 @@ import {
 } from "assert";
 
 import shop from "~/plugins/api/shop";
-import {
-  resolve
-} from "q";
 
 export const state = () => ({ // = data
   products: [],

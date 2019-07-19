@@ -2,123 +2,156 @@
   <div class="jumbotron pt-5">
     <div class="container mx-auto contact">
       <div class="card text-center">
-        <form class="text-md-right" @submit.prevent="checkForm" method="post" name="contact">
+        <form
+          class="text-md-right"
+          @submit.prevent="checkForm"
+          method="post"
+          name="contact"
+        >
           <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
           </h3>
-          <div v-if="errors.length" class="text-left text-danger">
+          <div
+            v-if="errors.length"
+            class="text-left text-danger"
+          >
             <b>Please correct the following error(s):</b>
             <ol>
-              <li  class="ml-3" v-for="error in errors" :key="error">{{ error }}</li>
+              <li
+                class="ml-3"
+                v-for="error in errors"
+                :key="error"
+              >{{ error }}</li>
             </ol>
           </div>
-          <div v-if="success && !errors.length" class="text-left text-success">
+          <div
+            v-if="success && !errors.length"
+            class="text-left text-success"
+          >
             <b>Your message has been sent succesfully</b>
           </div>
 
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label class="m-0 p-0" for="typeOfWork">
-                <select
-                  aria-label="typeOfWork"
-                  id="typeOfWork"
-                  aria-describedby="typeOfWork"
-                  class="form-control mx-auto"
-                  v-model="service"
-                  name="typeOfWork"
+                <label
+                  class="m-0 p-0"
+                  for="typeOfWork"
                 >
-                  <option value="null" disabled>Оберіть тип робіт</option>
-                  <option value="0">Полірування автомобіля</option>
-                  <option value="1">Полірування фар</option>
-                  <option value="2">Полірування вставок салону</option>
-                  <option value="3">Полірування центральних стійок</option>
-                  <option value="4">Хімчистка</option>
-                  <option value="5">Хімчистка колесних арок, підвіски, дисків</option>
-                  <option value="6">Хімчистка передніх сидінь</option>
-                  <option value="7">Хімчистка задніх сидінь</option>
-                  <option value="8">Покриття твердим універсальним воском Soft 99</option>
-                  <option value="9">Рідке скло</option>
-                  <option value="10">Керамічне покриття кузова</option>
-                  <option value="11">Передпродажна підготовка Комплекс</option>
-                  <option value="12">Реставрація подряпин на кузові</option>
-                  <option value="13">Перешиття шкіряних деталей салону</option>
-                  <option value="14">Антидощ</option>
-                  <option value="15">Мийка мотору парою</option>
-                  <option value="16">Шумоізоляція</option>
-                  <option value="17">Видалення запахів Бактерецидна обробка</option>
-                  <option value="18">Видалення вмятин без покраски PDR</option>
-                  <option value="19">Поклейка антигравійної плівки</option>
-                  <option value="20">Очистка кондиціонера</option>
-                  <option value="21">Чистка дисків</option>
-                  <option value="22">Керамічне покриття сидінь</option>
-                  <option value="23">Озонація</option>
-                </select>
+                  <select
+                    aria-label="typeOfWork"
+                    id="typeOfWork"
+                    aria-describedby="typeOfWork"
+                    class="form-control mx-auto"
+                    v-model="service"
+                    name="typeOfWork"
+                  >
+                    <option
+                      value="null"
+                      disabled
+                    >Оберіть тип робіт</option>
+                    <option value="0">Полірування автомобіля</option>
+                    <option value="1">Полірування фар</option>
+                    <option value="2">Полірування вставок салону</option>
+                    <option value="3">Полірування центральних стійок</option>
+                    <option value="4">Хімчистка</option>
+                    <option value="5">Хімчистка колесних арок, підвіски, дисків</option>
+                    <option value="6">Хімчистка передніх сидінь</option>
+                    <option value="7">Хімчистка задніх сидінь</option>
+                    <option value="8">Покриття твердим універсальним воском Soft 99</option>
+                    <option value="9">Рідке скло</option>
+                    <option value="10">Керамічне покриття кузова</option>
+                    <option value="11">Передпродажна підготовка Комплекс</option>
+                    <option value="12">Реставрація подряпин на кузові</option>
+                    <option value="13">Перешиття шкіряних деталей салону</option>
+                    <option value="14">Антидощ</option>
+                    <option value="15">Мийка мотору парою</option>
+                    <option value="16">Шумоізоляція</option>
+                    <option value="17">Видалення запахів Бактерецидна обробка</option>
+                    <option value="18">Видалення вмятин без покраски PDR</option>
+                    <option value="19">Поклейка антигравійної плівки</option>
+                    <option value="20">Очистка кондиціонера</option>
+                    <option value="21">Чистка дисків</option>
+                    <option value="22">Керамічне покриття сидінь</option>
+                    <option value="23">Озонація</option>
+                  </select>
                 </label>
               </div>
               <div class="form-group">
                 <label for="carModel">
-                <input
-                  aria-label="carModel"
-                  id="carModel"
-                  type="text"
-                  name="carModel"
-                  list="models"
-                 
-                  class="form-control mx-auto"
-                  aria-describedby="carModel"
-                  placeholder="Введіть модель авто"
-                  v-model="carModel"
-                >
+                  <input
+                    aria-label="carModel"
+                    id="carModel"
+                    type="text"
+                    name="carModel"
+                    list="models"
+                    class="form-control mx-auto"
+                    aria-describedby="carModel"
+                    placeholder="Введіть модель авто"
+                    v-model="carModel"
+                  >
 
-                <datalist id="models">
-                  <option v-for="items  in carmodeloptions" :key="items.name">{{ items.name }}</option>
-                </datalist>
+                  <datalist id="models">
+                    <option
+                      v-for="items  in carmodeloptions"
+                      :key="items.name"
+                    >{{ items.name }}</option>
+                  </datalist>
                 </label>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
-                <label class="m-0 p-0" for="name">
-                <input
-                  name="name"
-                  id="name"
-                  aria-label="name"
-                  type="text"
-                  class="form-control mx-auto"
-                  aria-describedby="name"
-                  placeholder="Ім’я*"
-                  v-model="name"
-                ></label>
+                <label
+                  class="m-0 p-0"
+                  for="name"
+                >
+                  <input
+                    name="name"
+                    id="name"
+                    aria-label="name"
+                    type="text"
+                    class="form-control mx-auto"
+                    aria-describedby="name"
+                    placeholder="Ім’я*"
+                    v-model="name"
+                  ></label>
               </div>
               <div class="form-group">
-                <label class="m-0 p-0" for="phone">
-                <input
-                  aria-describedby="phone"
-                  aria-label="phone"
-                  name="phone"
-                  type="text"
-                  class="form-control mx-auto"
-                  id="phone"
-                  placeholder="Телефон*"
-                  v-mask="'+38(0##) ###-####'"
-                  v-model="models.phoneNumber"
-                ></label>
+                <label
+                  class="m-0 p-0"
+                  for="phone"
+                >
+                  <input
+                    aria-describedby="phone"
+                    aria-label="phone"
+                    name="phone"
+                    type="text"
+                    class="form-control mx-auto"
+                    id="phone"
+                    placeholder="Телефон*"
+                    v-mask="'+38(0##) ###-####'"
+                    v-model="models.phoneNumber"
+                  ></label>
               </div>
 
               <button
-              v-show="loading === true"
-              :disabled="loading === false"
+                v-show="loading === true"
+                :disabled="loading === false"
                 type="loading"
                 aria-label="loading"
                 name="loading"
                 class="contact-btn-loading"
-              >Вантаження <font-awesome-icon :icon="['fas', 'spinner']" class="fa-spin"/> </button>
+              >Вантаження
+                <font-awesome-icon
+                  :icon="['fas', 'spinner']"
+                  class="fa-spin"
+                /> </button>
 
               <button
-               v-show="loading === false"
+                v-show="loading === false"
                 type="submit"
                 aria-label="submit"
                 name="submit"
@@ -128,9 +161,7 @@
 
             </div>
           </div>
-          <p
-            class="text-left col-12 w-md-50 px-0"
-          >Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом</p>
+          <p class="text-left col-12 w-md-50 px-0">Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом</p>
         </form>
       </div>
     </div>
@@ -148,7 +179,7 @@ export default {
       required: false
     }
   },
-  data() {
+  data () {
     return {
       errors: [],
       name: null,
@@ -160,552 +191,552 @@ export default {
       success: false,
       carmodeloptions: [
         {
-	"name": "AC"
-}, {
-	"name": "AC PROPULSION"
-}, {
-	"name": "ACURA"
-}, {
-	"name": "A.D. TRAMONTANA"
-}, {
-	"name": "ALFA ROMEO"
-}, {
-	"name": "ALMAC"
-}, {
-	"name": "ALTERNATIVE CARS"
-}, {
-	"name": "AMUZA"
-}, {
-	"name": "ANTEROS"
-}, {
-	"name": "ARASH"
-}, {
-	"name": "ARIEL"
-}, {
-	"name": "ARRINERA"
-}, {
-	"name": "ASL"
-}, {
-	"name": "ASTERIO"
-}, {
-	"name": "ASTON MARTIN"
-}, {
-	"name": "AUDI"
-}, {
-	"name": "BAC"
-}, {
-	"name": "BAJAJ"
-}, {
-	"name": "BEIJING AUTOMOBILE WORKS"
-}, {
-	"name": "BENTLEY"
-}, {
-	"name": "BMW"
-}, {
-	"name": "BOLLORÉ"
-}, {
-	"name": "BOLWELL"
-}, {
-	"name": "BRILLIANCE / HUACHEN"
-}, {
-	"name": "BRISTOL"
-}, {
-	"name": "BRITISH LEYLAND"
-}, {
-	"name": "BRM BUGGY"
-}, {
-	"name": "BROOKE"
-}, {
-	"name": "BUDDY"
-}, {
-	"name": "BUFORI"
-}, {
-	"name": "BUGATTI"
-}, {
-	"name": "BUICK"
-}, {
-	"name": "BYD"
-}, {
-	"name": "CADILLAC"
-}, {
-	"name": "CAPARO"
-}, {
-	"name": "CARBONTECH"
-}, {
-	"name": "CARICE"
-}, {
-	"name": "CHANG'AN"
-}, {
-	"name": "CHANGHE"
-}, {
-	"name": "CHERY"
-}, {
-	"name": "CHEVROLET"
-}, {
-	"name": "CHEVRON"
-}, {
-	"name": "CITROËN"
-}, {
-	"name": "CHRYSLER"
-}, {
-	"name": "COMMUTER CARS"
-}, {
-	"name": "CONNAUGHT"
-}, {
-	"name": "COVINI"
-}, {
-	"name": "DACIA"
-}, {
-	"name": "DAIHATSU"
-}, {
-	"name": "DATSUN"
-}, {
-	"name": "DE LA CHAPELLE"
-}, {
-	"name": "DMC"
-}, {
-	"name": "DIARDI"
-}, {
-	"name": "DODGE"
-}, {
-	"name": "DONKERVOORT"
-}, {
-	"name": "DONGFENG"
-}, {
-	"name": "DONTO"
-}, {
-	"name": "DS AUTOMOBILES"
-}, {
-	"name": "DYNASTI ELECTRIC CAR CORP."
-}, {
-	"name": "E-VADE"
-}, {
-	"name": "EFFEDI"
-}, {
-	"name": "EGY-TECH ENGINEERING"
-}, {
-	"name": "ELECTRIC RACEABOUT"
-}, {
-	"name": "ELFIN"
-}, {
-	"name": "EMGRAND"
-}, {
-	"name": "ENGLON"
-}, {
-	"name": "ETERNITI"
-}, {
-	"name": "ETOX"
-}, {
-	"name": "EQUUS"
-}, {
-	"name": "EXAGON"
-}, {
-	"name": "FARALLI & MAZZANTI"
-}, {
-	"name": "FAW"
-}, {
-	"name": "FERRARI"
-}, {
-	"name": "FIAT"
-}, {
-	"name": "FISKER"
-}, {
-	"name": "FODAY"
-}, {
-	"name": "FORCE"
-}, {
-	"name": "FORD"
-}, {
-	"name": "FORD AUSTRALIA"
-}, {
-	"name": "FORD GERMANY"
-}, {
-	"name": "FORNASARI"
-}, {
-	"name": "FRASER"
-}, {
-	"name": "GAC GROUP"
-}, {
-	"name": "GALPIN"
-}, {
-	"name": "GEELY"
-}, {
-	"name": "GENESIS"
-}, {
-	"name": "GIBBS"
-}, {
-	"name": "GILLET"
-}, {
-	"name": "GINETTA"
-}, {
-	"name": "GMC"
-}, {
-	"name": "GONOW"
-}, {
-	"name": "GREAT WALL / CHANGCHENG"
-}, {
-	"name": "GREENTECH AUTOMOTIVE"
-}, {
-	"name": "GRINNALL"
-}, {
-	"name": "GTA MOTOR"
-}, {
-	"name": "GUMPERT"
-}, {
-	"name": "GURGEL"
-}, {
-	"name": "HENNESSEY"
-}, {
-	"name": "HINDUSTAN"
-}, {
-	"name": "HOLDEN"
-}, {
-	"name": "HONDA"
-}, {
-	"name": "HONGQI"
-}, {
-	"name": "HRADYESH"
-}, {
-	"name": "HTT TECHNOLOGIES"
-}, {
-	"name": "HULME"
-}, {
-	"name": "HYUNDAI"
-}, {
-	"name": "ICML"
-}, {
-	"name": "IFR"
-}, {
-	"name": "IRAN KHODRO"
-}, {
-	"name": "IKCO"
-}, {
-	"name": "IMPERIA"
-}, {
-	"name": "INFINITI"
-}, {
-	"name": "IVM"
-}, {
-	"name": "INVICTA"
-}, {
-	"name": "ISDERA"
-}, {
-	"name": "ISUZU"
-}, {
-	"name": "JAC"
-}, {
-	"name": "JAGUAR"
-}, {
-	"name": "JEEP"
-}, {
-	"name": "JENSEN MOTORS"
-}, {
-	"name": "JETCAR"
-}, {
-	"name": "JONWAY"
-}, {
-	"name": "JOSS"
-}, {
-	"name": "KAIPAN"
-}, {
-	"name": "KANTANKA"
-}, {
-	"name": "KARMA"
-}, {
-	"name": "KOENIGSEGG"
-}, {
-	"name": "KORRES"
-}, {
-	"name": "KIA"
-}, {
-	"name": "KIAT"
-}, {
-	"name": "KISH KHODRO"
-}, {
-	"name": "KTM"
-}, {
-	"name": "LADA"
-}, {
-	"name": "LAMBORGHINI"
-}, {
-	"name": "LANCIA"
-}, {
-	"name": "LAND ROVER"
-}, {
-	"name": "LANDWIND"
-}, {
-	"name": "LARAKI"
-}, {
-	"name": "LEBLANC"
-}, {
-	"name": "LEITCH"
-}, {
-	"name": "LEOPARD"
-}, {
-	"name": "LEXUS"
-}, {
-	"name": "LI-ION"
-}, {
-	"name": "LIFAN"
-}, {
-	"name": "LIGHTNING"
-}, {
-	"name": "LINCOLN"
-}, {
-	"name": "LISTER"
-}, {
-	"name": "LOCAL MOTORS"
-}, {
-	"name": "LOBINI"
-}, {
-	"name": "LOTEC"
-}, {
-	"name": "LOTUS CARS"
-}, {
-	"name": "LUCRA CARS"
-}, {
-	"name": "LUXGEN"
-}, {
-	"name": "MAHINDRA"
-}, {
-	"name": "MARUSSIA"
-}, {
-	"name": "MARUTI SUZUKI"
-}, {
-	"name": "MASERATI"
-}, {
-	"name": "MASTRETTA"
-}, {
-	"name": "MAZDA"
-}, {
-	"name": "MCLAREN"
-}, {
-	"name": "MERCEDES-BENZ"
-}, {
-	"name": "MG"
-}, {
-	"name": "MICRO"
-}, {
-	"name": "MINI"
-}, {
-	"name": "MITSUBISHI"
-}, {
-	"name": "MITSUOKA"
-}, {
-	"name": "MORGAN"
-}, {
-	"name": "MULLEN"
-}, {
-	"name": "MYCAR"
-}, {
-	"name": "MYVI-PERODUA"
-}, {
-	"name": "NISSAN"
-}, {
-	"name": "NOBLE"
-}, {
-	"name": "NOTA"
-}, {
-	"name": "OLDSMOBILE"
-}, {
-	"name": "OPEL"
-}, {
-	"name": "OPTIMAL ENERGY"
-}, {
-	"name": "ORCA"
-}, {
-	"name": "OLTCIT"
-}, {
-	"name": "PAGANI"
-}, {
-	"name": "PANHARD"
-}, {
-	"name": "PANOZ"
-}, {
-	"name": "PERANA"
-}, {
-	"name": "PERODUA"
-}, {
-	"name": "PEUGEOT"
-}, {
-	"name": "P.G.O."
-}, {
-	"name": "POLARSUN"
-}, {
-	"name": "PLYMOUTH"
-}, {
-	"name": "PORSCHE"
-}, {
-	"name": "PROTO"
-}, {
-	"name": "OULLIM"
-}, {
-	"name": "PROTON"
-}, {
-	"name": "PURITALIA"
-}, {
-	"name": "QOROS"
-}, {
-	"name": "QVALE"
-}, {
-	"name": "RADICAL"
-}, {
-	"name": "RELIANT"
-}, {
-	"name": "RENAULT"
-}, {
-	"name": "REVA"
-}, {
-	"name": "RIMAC"
-}, {
-	"name": "RINSPEED"
-}, {
-	"name": "RODING"
-}, {
-	"name": "ROEWE"
-}, {
-	"name": "ROLLS-ROYCE"
-}, {
-	"name": "ROSSIN-BERTIN"
-}, {
-	"name": "ROSSION"
-}, {
-	"name": "ROVER"
-}, {
-	"name": "SAAB"
-}, {
-	"name": "SALEEN"
-}, {
-	"name": "SAIC-GM-WULING"
-}, {
-	"name": "SAIPA"
-}, {
-	"name": "SAKER"
-}, {
-	"name": "SAMSUNG"
-}, {
-	"name": "SAN"
-}, {
-	"name": "SBARRO"
-}, {
-	"name": "SCION"
-}, {
-	"name": "SEAT"
-}, {
-	"name": "SHANGHAI MAPLE"
-}, {
-	"name": "SIN"
-}, {
-	"name": "ŠKODA"
-}, {
-	"name": "SMART"
-}, {
-	"name": "SPADA VETTURE SPORT"
-}, {
-	"name": "SPYKER"
-}, {
-	"name": "SSANGYONG"
-}, {
-	"name": "SSC NORTH AMERICA"
-}, {
-	"name": "STREET & RACING TECHNOLOGY"
-}, {
-	"name": "SUBARU"
-}, {
-	"name": "SUZUKI"
-}, {
-	"name": "TANOM"
-}, {
-	"name": "TATA"
-}, {
-	"name": "TAURO"
-}, {
-	"name": "TAWON CAR"
-}, {
-	"name": "TD CARS"
-}, {
-	"name": "TESLA"
-}, {
-	"name": "THAI RUNG"
-}, {
-	"name": "TOYOTA"
-}, {
-	"name": "TREKKA"
-}, {
-	"name": "TRIDENT"
-}, {
-	"name": "TRIUMPH"
-}, {
-	"name": "TROLLER"
-}, {
-	"name": "TRUMPCHI"
-}, {
-	"name": "TUSHEK"
-}, {
-	"name": "TVR"
-}, {
-	"name": "TVS"
-}, {
-	"name": "ULTIMA"
-}, {
-	"name": "UMM"
-}, {
-	"name": "UEV"
-}, {
-	"name": "URI"
-}, {
-	"name": "UAZ"
-}, {
-	"name": "VAUXHALL MOTORS"
-}, {
-	"name": "VECTOR"
-}, {
-	"name": "VENCER"
-}, {
-	"name": "VENIRAUTO"
-}, {
-	"name": "VENTURI"
-}, {
-	"name": "VEPR"
-}, {
-	"name": "VOLKSWAGEN"
-}, {
-	"name": "VOLVO"
-}, {
-	"name": "VINFAST"
-}, {
-	"name": "W MOTORS"
-}, {
-	"name": "WALLYSCAR"
-}, {
-	"name": "WESTFIELD"
-}, {
-	"name": "WHEEGO"
-}, {
-	"name": "WIESMANN"
-}, {
-	"name": "XENIA"
-}, {
-	"name": "YES!"
-}, {
-	"name": "YOUABIAN PUMA"
-}, {
-	"name": "ZASTAVA AUTOMOBILES"
-}, {
-	"name": "ZENDER CARS"
-}, {
-	"name": "ZENOS CARS"
-}, {
-	"name": "ZENVO"
-}, {
-	"name": "ZIL"
-}, {
-	"name": "ZX AUTO"
-}]
+          "name": "AC"
+        }, {
+          "name": "AC PROPULSION"
+        }, {
+          "name": "ACURA"
+        }, {
+          "name": "A.D. TRAMONTANA"
+        }, {
+          "name": "ALFA ROMEO"
+        }, {
+          "name": "ALMAC"
+        }, {
+          "name": "ALTERNATIVE CARS"
+        }, {
+          "name": "AMUZA"
+        }, {
+          "name": "ANTEROS"
+        }, {
+          "name": "ARASH"
+        }, {
+          "name": "ARIEL"
+        }, {
+          "name": "ARRINERA"
+        }, {
+          "name": "ASL"
+        }, {
+          "name": "ASTERIO"
+        }, {
+          "name": "ASTON MARTIN"
+        }, {
+          "name": "AUDI"
+        }, {
+          "name": "BAC"
+        }, {
+          "name": "BAJAJ"
+        }, {
+          "name": "BEIJING AUTOMOBILE WORKS"
+        }, {
+          "name": "BENTLEY"
+        }, {
+          "name": "BMW"
+        }, {
+          "name": "BOLLORÉ"
+        }, {
+          "name": "BOLWELL"
+        }, {
+          "name": "BRILLIANCE / HUACHEN"
+        }, {
+          "name": "BRISTOL"
+        }, {
+          "name": "BRITISH LEYLAND"
+        }, {
+          "name": "BRM BUGGY"
+        }, {
+          "name": "BROOKE"
+        }, {
+          "name": "BUDDY"
+        }, {
+          "name": "BUFORI"
+        }, {
+          "name": "BUGATTI"
+        }, {
+          "name": "BUICK"
+        }, {
+          "name": "BYD"
+        }, {
+          "name": "CADILLAC"
+        }, {
+          "name": "CAPARO"
+        }, {
+          "name": "CARBONTECH"
+        }, {
+          "name": "CARICE"
+        }, {
+          "name": "CHANG'AN"
+        }, {
+          "name": "CHANGHE"
+        }, {
+          "name": "CHERY"
+        }, {
+          "name": "CHEVROLET"
+        }, {
+          "name": "CHEVRON"
+        }, {
+          "name": "CITROËN"
+        }, {
+          "name": "CHRYSLER"
+        }, {
+          "name": "COMMUTER CARS"
+        }, {
+          "name": "CONNAUGHT"
+        }, {
+          "name": "COVINI"
+        }, {
+          "name": "DACIA"
+        }, {
+          "name": "DAIHATSU"
+        }, {
+          "name": "DATSUN"
+        }, {
+          "name": "DE LA CHAPELLE"
+        }, {
+          "name": "DMC"
+        }, {
+          "name": "DIARDI"
+        }, {
+          "name": "DODGE"
+        }, {
+          "name": "DONKERVOORT"
+        }, {
+          "name": "DONGFENG"
+        }, {
+          "name": "DONTO"
+        }, {
+          "name": "DS AUTOMOBILES"
+        }, {
+          "name": "DYNASTI ELECTRIC CAR CORP."
+        }, {
+          "name": "E-VADE"
+        }, {
+          "name": "EFFEDI"
+        }, {
+          "name": "EGY-TECH ENGINEERING"
+        }, {
+          "name": "ELECTRIC RACEABOUT"
+        }, {
+          "name": "ELFIN"
+        }, {
+          "name": "EMGRAND"
+        }, {
+          "name": "ENGLON"
+        }, {
+          "name": "ETERNITI"
+        }, {
+          "name": "ETOX"
+        }, {
+          "name": "EQUUS"
+        }, {
+          "name": "EXAGON"
+        }, {
+          "name": "FARALLI & MAZZANTI"
+        }, {
+          "name": "FAW"
+        }, {
+          "name": "FERRARI"
+        }, {
+          "name": "FIAT"
+        }, {
+          "name": "FISKER"
+        }, {
+          "name": "FODAY"
+        }, {
+          "name": "FORCE"
+        }, {
+          "name": "FORD"
+        }, {
+          "name": "FORD AUSTRALIA"
+        }, {
+          "name": "FORD GERMANY"
+        }, {
+          "name": "FORNASARI"
+        }, {
+          "name": "FRASER"
+        }, {
+          "name": "GAC GROUP"
+        }, {
+          "name": "GALPIN"
+        }, {
+          "name": "GEELY"
+        }, {
+          "name": "GENESIS"
+        }, {
+          "name": "GIBBS"
+        }, {
+          "name": "GILLET"
+        }, {
+          "name": "GINETTA"
+        }, {
+          "name": "GMC"
+        }, {
+          "name": "GONOW"
+        }, {
+          "name": "GREAT WALL / CHANGCHENG"
+        }, {
+          "name": "GREENTECH AUTOMOTIVE"
+        }, {
+          "name": "GRINNALL"
+        }, {
+          "name": "GTA MOTOR"
+        }, {
+          "name": "GUMPERT"
+        }, {
+          "name": "GURGEL"
+        }, {
+          "name": "HENNESSEY"
+        }, {
+          "name": "HINDUSTAN"
+        }, {
+          "name": "HOLDEN"
+        }, {
+          "name": "HONDA"
+        }, {
+          "name": "HONGQI"
+        }, {
+          "name": "HRADYESH"
+        }, {
+          "name": "HTT TECHNOLOGIES"
+        }, {
+          "name": "HULME"
+        }, {
+          "name": "HYUNDAI"
+        }, {
+          "name": "ICML"
+        }, {
+          "name": "IFR"
+        }, {
+          "name": "IRAN KHODRO"
+        }, {
+          "name": "IKCO"
+        }, {
+          "name": "IMPERIA"
+        }, {
+          "name": "INFINITI"
+        }, {
+          "name": "IVM"
+        }, {
+          "name": "INVICTA"
+        }, {
+          "name": "ISDERA"
+        }, {
+          "name": "ISUZU"
+        }, {
+          "name": "JAC"
+        }, {
+          "name": "JAGUAR"
+        }, {
+          "name": "JEEP"
+        }, {
+          "name": "JENSEN MOTORS"
+        }, {
+          "name": "JETCAR"
+        }, {
+          "name": "JONWAY"
+        }, {
+          "name": "JOSS"
+        }, {
+          "name": "KAIPAN"
+        }, {
+          "name": "KANTANKA"
+        }, {
+          "name": "KARMA"
+        }, {
+          "name": "KOENIGSEGG"
+        }, {
+          "name": "KORRES"
+        }, {
+          "name": "KIA"
+        }, {
+          "name": "KIAT"
+        }, {
+          "name": "KISH KHODRO"
+        }, {
+          "name": "KTM"
+        }, {
+          "name": "LADA"
+        }, {
+          "name": "LAMBORGHINI"
+        }, {
+          "name": "LANCIA"
+        }, {
+          "name": "LAND ROVER"
+        }, {
+          "name": "LANDWIND"
+        }, {
+          "name": "LARAKI"
+        }, {
+          "name": "LEBLANC"
+        }, {
+          "name": "LEITCH"
+        }, {
+          "name": "LEOPARD"
+        }, {
+          "name": "LEXUS"
+        }, {
+          "name": "LI-ION"
+        }, {
+          "name": "LIFAN"
+        }, {
+          "name": "LIGHTNING"
+        }, {
+          "name": "LINCOLN"
+        }, {
+          "name": "LISTER"
+        }, {
+          "name": "LOCAL MOTORS"
+        }, {
+          "name": "LOBINI"
+        }, {
+          "name": "LOTEC"
+        }, {
+          "name": "LOTUS CARS"
+        }, {
+          "name": "LUCRA CARS"
+        }, {
+          "name": "LUXGEN"
+        }, {
+          "name": "MAHINDRA"
+        }, {
+          "name": "MARUSSIA"
+        }, {
+          "name": "MARUTI SUZUKI"
+        }, {
+          "name": "MASERATI"
+        }, {
+          "name": "MASTRETTA"
+        }, {
+          "name": "MAZDA"
+        }, {
+          "name": "MCLAREN"
+        }, {
+          "name": "MERCEDES-BENZ"
+        }, {
+          "name": "MG"
+        }, {
+          "name": "MICRO"
+        }, {
+          "name": "MINI"
+        }, {
+          "name": "MITSUBISHI"
+        }, {
+          "name": "MITSUOKA"
+        }, {
+          "name": "MORGAN"
+        }, {
+          "name": "MULLEN"
+        }, {
+          "name": "MYCAR"
+        }, {
+          "name": "MYVI-PERODUA"
+        }, {
+          "name": "NISSAN"
+        }, {
+          "name": "NOBLE"
+        }, {
+          "name": "NOTA"
+        }, {
+          "name": "OLDSMOBILE"
+        }, {
+          "name": "OPEL"
+        }, {
+          "name": "OPTIMAL ENERGY"
+        }, {
+          "name": "ORCA"
+        }, {
+          "name": "OLTCIT"
+        }, {
+          "name": "PAGANI"
+        }, {
+          "name": "PANHARD"
+        }, {
+          "name": "PANOZ"
+        }, {
+          "name": "PERANA"
+        }, {
+          "name": "PERODUA"
+        }, {
+          "name": "PEUGEOT"
+        }, {
+          "name": "P.G.O."
+        }, {
+          "name": "POLARSUN"
+        }, {
+          "name": "PLYMOUTH"
+        }, {
+          "name": "PORSCHE"
+        }, {
+          "name": "PROTO"
+        }, {
+          "name": "OULLIM"
+        }, {
+          "name": "PROTON"
+        }, {
+          "name": "PURITALIA"
+        }, {
+          "name": "QOROS"
+        }, {
+          "name": "QVALE"
+        }, {
+          "name": "RADICAL"
+        }, {
+          "name": "RELIANT"
+        }, {
+          "name": "RENAULT"
+        }, {
+          "name": "REVA"
+        }, {
+          "name": "RIMAC"
+        }, {
+          "name": "RINSPEED"
+        }, {
+          "name": "RODING"
+        }, {
+          "name": "ROEWE"
+        }, {
+          "name": "ROLLS-ROYCE"
+        }, {
+          "name": "ROSSIN-BERTIN"
+        }, {
+          "name": "ROSSION"
+        }, {
+          "name": "ROVER"
+        }, {
+          "name": "SAAB"
+        }, {
+          "name": "SALEEN"
+        }, {
+          "name": "SAIC-GM-WULING"
+        }, {
+          "name": "SAIPA"
+        }, {
+          "name": "SAKER"
+        }, {
+          "name": "SAMSUNG"
+        }, {
+          "name": "SAN"
+        }, {
+          "name": "SBARRO"
+        }, {
+          "name": "SCION"
+        }, {
+          "name": "SEAT"
+        }, {
+          "name": "SHANGHAI MAPLE"
+        }, {
+          "name": "SIN"
+        }, {
+          "name": "ŠKODA"
+        }, {
+          "name": "SMART"
+        }, {
+          "name": "SPADA VETTURE SPORT"
+        }, {
+          "name": "SPYKER"
+        }, {
+          "name": "SSANGYONG"
+        }, {
+          "name": "SSC NORTH AMERICA"
+        }, {
+          "name": "STREET & RACING TECHNOLOGY"
+        }, {
+          "name": "SUBARU"
+        }, {
+          "name": "SUZUKI"
+        }, {
+          "name": "TANOM"
+        }, {
+          "name": "TATA"
+        }, {
+          "name": "TAURO"
+        }, {
+          "name": "TAWON CAR"
+        }, {
+          "name": "TD CARS"
+        }, {
+          "name": "TESLA"
+        }, {
+          "name": "THAI RUNG"
+        }, {
+          "name": "TOYOTA"
+        }, {
+          "name": "TREKKA"
+        }, {
+          "name": "TRIDENT"
+        }, {
+          "name": "TRIUMPH"
+        }, {
+          "name": "TROLLER"
+        }, {
+          "name": "TRUMPCHI"
+        }, {
+          "name": "TUSHEK"
+        }, {
+          "name": "TVR"
+        }, {
+          "name": "TVS"
+        }, {
+          "name": "ULTIMA"
+        }, {
+          "name": "UMM"
+        }, {
+          "name": "UEV"
+        }, {
+          "name": "URI"
+        }, {
+          "name": "UAZ"
+        }, {
+          "name": "VAUXHALL MOTORS"
+        }, {
+          "name": "VECTOR"
+        }, {
+          "name": "VENCER"
+        }, {
+          "name": "VENIRAUTO"
+        }, {
+          "name": "VENTURI"
+        }, {
+          "name": "VEPR"
+        }, {
+          "name": "VOLKSWAGEN"
+        }, {
+          "name": "VOLVO"
+        }, {
+          "name": "VINFAST"
+        }, {
+          "name": "W MOTORS"
+        }, {
+          "name": "WALLYSCAR"
+        }, {
+          "name": "WESTFIELD"
+        }, {
+          "name": "WHEEGO"
+        }, {
+          "name": "WIESMANN"
+        }, {
+          "name": "XENIA"
+        }, {
+          "name": "YES!"
+        }, {
+          "name": "YOUABIAN PUMA"
+        }, {
+          "name": "ZASTAVA AUTOMOBILES"
+        }, {
+          "name": "ZENDER CARS"
+        }, {
+          "name": "ZENOS CARS"
+        }, {
+          "name": "ZENVO"
+        }, {
+          "name": "ZIL"
+        }, {
+          "name": "ZX AUTO"
+        }]
     };
   },
   methods: {
-    checkForm: function(e) {
+    checkForm: function (e) {
       this.errors = [];
       this.success = false;
 
@@ -726,7 +757,7 @@ export default {
       }
       e.preventDefault();
     },
-    submitForm: function() {
+    submitForm: function () {
       this.loading = true;
 
       axios
@@ -767,7 +798,7 @@ export default {
           this.errors.push("Сталася помилка. Повторіть спробу пізніше");
         });
     },
-    makeToast(variant = null) {
+    makeToast (variant = null) {
       this.$bvToast.toast("Повідомлення було надіслано успішно", {
         title: `Message ${variant || "default"}`,
         variant: variant,
@@ -818,7 +849,7 @@ export default {
     }
   }
 
-  label{
+  label {
     width: 100%;
   }
 
@@ -892,7 +923,7 @@ export default {
       -o-transform: scale(1.1);
     }
   }
-  .contact-btn-loading{
+  .contact-btn-loading {
     padding: 12px 45px;
     background: $redColor;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
@@ -906,12 +937,9 @@ export default {
     color: $lightColor;
     border: 0;
     cursor: wait;
-    opacity: .65;
-    }
-    
+    opacity: 0.65;
+  }
 }
-
-
 
 @include mediaLg2 {
   .contact {

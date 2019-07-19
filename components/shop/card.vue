@@ -7,7 +7,11 @@
     :title="name"
     style="width: 18rem;"
   >
-    <img :src="image" class="card-img-top img-fluid store-img" :alt="name" />
+    <img
+      :src="image"
+      class="card-img-top img-fluid store-img"
+      :alt="name"
+    />
     <hr class="desktop-only" />
     <div class="card-body">
       <nuxt-link :to="link">
@@ -23,8 +27,14 @@
             </p>
           </div>
           <div class="col-6 pl-0">
-            <small v-show="stock === false" class="notInStock">Не в наявності</small>
-            <small v-show="stock === true" class="inStock">В наявності</small>
+            <small
+              v-show="stock === false"
+              class="notInStock"
+            >Не в наявності</small>
+            <small
+              v-show="stock === true"
+              class="inStock"
+            >В наявності</small>
           </div>
         </div>
       </div>
@@ -41,16 +51,30 @@
           </p>
         </div>
         <div class="col-6 bg-transparent btn-container">
-          <small v-show="stock === true" class="inStock">В наявності</small>
-          <small v-show="stock === false" class="notInStock">Не в наявності</small>
+          <small
+            v-show="stock === true"
+            class="inStock"
+          >В наявності</small>
+          <small
+            v-show="stock === false"
+            class="notInStock"
+          >Не в наявності</small>
           <br />
 
-          <nuxt-link :to="link" tag="button" class="btn">Купити</nuxt-link>
+          <nuxt-link
+            :to="link"
+            tag="button"
+            class="btn"
+          >Купити</nuxt-link>
         </div>
       </div>
     </div>
 
-    <nuxt-link :to="link" tag="button" class="card-footer mobile-only">Купити</nuxt-link>
+    <nuxt-link
+      :to="link"
+      tag="button"
+      class="card-footer mobile-only"
+    >Купити</nuxt-link>
   </div>
 </template>
 

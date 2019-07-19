@@ -4,11 +4,21 @@
       <pre><h1 class="text-left">Ми
 пропонуємо</h1></pre>
       <div class="row">
-        <nuxt-link to="/Posluhy-i-ciny/PoliruvannJa-avtomobilJa" class="col-4 p-0 one">
+        <nuxt-link
+          to="/Posluhy-i-ciny/PoliruvannJa-avtomobilJa"
+          class="col-4 p-0 one"
+        >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top1.webp" type="image/webp" />
-              <img class="card-img" v-lazy="require('~/assets/img/top1.jpg')" alt="ПОЛІРУВАННЯ" />
+              <source
+                srcset="~/assets/imgWebP/top1.webp"
+                type="image/webp"
+              />
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top1.jpg')"
+                alt="ПОЛІРУВАННЯ"
+              />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -22,7 +32,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top2.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top2.webp"
+                type="image/webp"
+              />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top2.jpg')"
@@ -30,9 +43,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
               <pre><h2 class="card-title text-right">
                 ВОСКОВЕ
                 ПОКРИТТЯ
@@ -42,11 +53,21 @@
         </nuxt-link>
       </div>
       <div class="row">
-        <nuxt-link to="/Posluhy-i-ciny/Mіjka-motoru-paroju" class="col-4 p-0 three">
+        <nuxt-link
+          to="/Posluhy-i-ciny/Mіjka-motoru-paroju"
+          class="col-4 p-0 three"
+        >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top3.webp" type="image/webp" />
-              <img class="card-img" v-lazy="require('~/assets/img/top3.jpg')" alt="МИЙКА МОТОРУ" />
+              <source
+                srcset="~/assets/imgWebP/top3.webp"
+                type="image/webp"
+              />
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top3.jpg')"
+                alt="МИЙКА МОТОРУ"
+              />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
@@ -57,24 +78,38 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Posluhy-i-ciny/Himchіstka" class="col-5 p-0 four">
+        <nuxt-link
+          to="/Posluhy-i-ciny/Himchіstka"
+          class="col-5 p-0 four"
+        >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp" />
-              <img class="card-img" v-lazy="require('~/assets/img/top4.jpg')" alt="ХІМЧИСТКА" />
+              <source
+                srcset="~/assets/imgWebP/top4.webp"
+                type="image/webp"
+              />
+              <img
+                class="card-img"
+                v-lazy="require('~/assets/img/top4.jpg')"
+                alt="ХІМЧИСТКА"
+              />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center">
               <h2 class="card-title">ХІМЧИСТКА</h2>
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/Posluhy-i-ciny/RjestavnaciJa-podrJapіn-na-kuzovi" class="col-3 p-0 five">
+        <nuxt-link
+          to="/Posluhy-i-ciny/RjestavnaciJa-podrJapіn-na-kuzovi"
+          class="col-3 p-0 five"
+        >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top5.webp"
+                type="image/webp"
+              />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top5.jpg')"
@@ -96,7 +131,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top6.webp"
+                type="image/webp"
+              />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top6.jpg')"
@@ -111,10 +149,16 @@
         </nuxt-link>
       </div>
       <div class="row">
-        <nuxt-link to="/Posluhy-i-ciny/pjerjedprodazhna-pidgotovka" class="col-12 p-0 seven">
+        <nuxt-link
+          to="/Posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
+          class="col-12 p-0 seven"
+        >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top7.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top7.webp"
+                type="image/webp"
+              />
               <img
                 class="card-img"
                 v-lazy="require('~/assets/img/top7.jpg')"
@@ -166,7 +210,10 @@
           </carousel>
         </no-ssr>
 
-        <nuxt-link to="/mahazyn" class="btn">Показати більше</nuxt-link>
+        <nuxt-link
+          to="/mahazyn"
+          class="btn"
+        >Показати більше</nuxt-link>
       </div>
     </div>
 
@@ -184,21 +231,21 @@
 
 <script>
 import worksGallery from "@/components/gallery/worksGallery.vue";
-import productCards from "@/components/shop/productCards";
+
 
 export default {
   components: {
     worksGallery,
-    productCards
+
   },
 
-  data() {
+  data () {
     return {
       imageApiUrl: process.env.IMAGE_URL
     };
   },
 
-  head() {
+  head () {
     return {
       title:
         "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
@@ -213,7 +260,7 @@ export default {
       ]
     };
   },
-  async asyncData({ app, error }) {
+  async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
@@ -234,7 +281,7 @@ export default {
     return { products: data.entries };
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }
