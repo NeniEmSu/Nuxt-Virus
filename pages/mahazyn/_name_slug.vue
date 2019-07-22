@@ -280,7 +280,7 @@
                 <span
                   id="item-count"
                   class="text-center m-auto p-0 snipcart-total-items"
-                >0</span>
+                >{{ $store.state.cartCount }}</span>
               </div>
             </div>
 
@@ -377,6 +377,7 @@ export default {
   data () {
     return {
       cart: 0,
+      mobileModalShow: false,
       imageApiUrl: process.env.IMAGE_URL
     };
   },

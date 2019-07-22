@@ -3,10 +3,23 @@ import {
 } from "assert";
 
 import shop from "~/plugins/api/shop";
+import {
+  getData,
+  setData
+} from 'nuxt-storage/local-storage';
+
+// let cart = window.localStorage.getItem('cart');
+// let cartCount = window.localStorage.getItem('cartCount');
+
+let cart = getData('cart');
+let cartCount = getData('cartCount');
 
 export const state = () => ({ // = data
   products: [],
-  cart: [],
+  cart: cart ? JSON.parse(cart) : [],
+  cartCount: cartCount ? parseInt(cartCount) : 0,
+  // cart: [],
+  // cartCount: 0,
   setCheckoutStatus: null
 })
 
@@ -75,6 +88,7 @@ export const actions = { //methods
       }
       commit('decrementProductInventory', product)
     }
+    commit('saveCart');
   },
 
   incrementProductQuantityInCart({
@@ -108,6 +122,7 @@ export const actions = { //methods
       },
 
     )
+    commit('saveCart');
   }
 
 }
@@ -118,18 +133,36 @@ export const mutations = {
     state.products = products
   },
 
+  removeFromCart({
+    state,
+    commit
+  }, product) {
+    let index = state.cart.indexOf(product);
+
+    if (index > -1) {
+      let item = state.cart[index];
+      state.cartCount -= item.quantity;
+
+      state.cart.splice(index, 1);
+    }
+    commit('saveCart');
+  },
+
   pushProducctToCart(state, productId) {
     state.cart.push({
       id: productId,
       quantity: 1
     })
+    state.cartCount++;
   },
 
   incrementItemQuantity(state, cartItem) {
     cartItem.quantity++
+    state.cartCount++;
   },
   decrementItemQuantity(state, cartItem) {
     cartItem.quantity--
+    state.cartCount--;
   },
   incrementProductInventory(state, product) {
     product.inventory++
@@ -144,5 +177,15 @@ export const mutations = {
 
   emptyCart(state) {
     state.cart = []
+    state.cartCount = 0
+
+  },
+
+  saveCart(state) {
+    setData('cart', JSON.stringify(state.cart));
+    setData('cartCount', state.cartCount);
+    // window.localStorage.setItem('cart', JSON.stringify(state.cart));
+    // window.localStorage.setItem('cartCount', state.cartCount);
   }
+
 }

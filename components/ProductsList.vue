@@ -1,7 +1,14 @@
 <template>
   <div>
-    <img v-show="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="Loading gif" />
-    <ul class="row" v-show="!loading">
+    <img
+      v-show="loading"
+      src="https://i.imgur.com/JfPpwOA.gif"
+      alt="Loading gif"
+    />
+    <ul
+      class="row"
+      v-show="!loading"
+    >
       <li
         class="card mx-auto"
         style="width: 18rem; border-radius: 20px;"
@@ -18,7 +25,7 @@
             type="button"
             class="btn btn-outline-success"
             :disabled="!productIsInStock(product)"
-            @click="addProductToCart(product)"
+            @click.prevent="addProductToCart(product)"
           >Add to cart</button>
         </div>
       </li>
@@ -30,27 +37,27 @@
 import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
-  data() {
+  data () {
     return {
       loading: false
     };
   },
   methods: {
-    addProductToCart(product) {
+    addProductToCart (product) {
       this.$store.dispatch("addProductToCart", product);
     }
   },
 
   computed: {
-    products() {
+    products () {
       return this.$store.state.products;
     },
-    productIsInStock() {
+    productIsInStock () {
       return this.$store.getters.productIsInStock;
     }
   },
 
-  created() {
+  created () {
     this.loading = true;
     this.$store.dispatch("fetchProducts").then(() => (this.loading = false));
   }

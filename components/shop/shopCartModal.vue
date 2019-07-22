@@ -20,9 +20,10 @@
         class="text-center mt-n3 ml-n3"
       >
         <span
+          style="text-decoration: none;"
           id="item-count"
           class="text-centersnipcart-total-items"
-        >{{cart}}</span>
+        >{{ $store.state.cartCount }}</span>
       </div>
     </b-button>
     <b-modal
@@ -32,12 +33,17 @@
       :title="`Корзина ${total} грн`"
       class="modal-content text-center"
       hide-footer
+      style="border-radius: 20px; border: none;"
     >
-      <div class="modal-body basket text-center">
+      <div
+        class="modal-body basket text-center"
+        style="border-radius: 20px; border: none;"
+      >
         <div
           v-for="product in products"
           :key="product.id"
           class="basket-content col-12"
+          style="border-radius: 20px; border: none;"
         >
           <div class="cart-item row col-12 m-auto p-0">
             <img
@@ -62,9 +68,11 @@
               >{{ product.price | currency }}</p>
             </div>
             <div class="remove-from-chart col-sm-1 m-auto text-center">
-              <a href="#">
-                <p class="close text-center">&plus;</p>
-              </a>
+              <span
+                @click.prevent="removeFromCart(product)"
+                class="close text-center"
+              >X
+              </span>
             </div>
           </div>
         </div>
@@ -228,6 +236,9 @@ export default {
   methods: {
     addProductToCart (product) {
       this.$store.dispatch("addProductToCart", product);
+    },
+    removeFromCart (product) {
+      this.$store.commit('removeFromCart', product);
     }
   },
   computed: {

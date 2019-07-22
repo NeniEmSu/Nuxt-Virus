@@ -375,7 +375,7 @@
                   <span
                     id="item-count"
                     class="text-center m-auto p-0 snipcart-total-items"
-                  >0</span>
+                  >{{ $store.state.cartCount }}</span>
                 </div>
               </div>
             </div>
@@ -454,6 +454,7 @@ export default {
       active2: false,
       active3: false,
       active4: false,
+      mobileModalShow: false,
       imageApiUrl: process.env.IMAGE_URL
     };
   },
