@@ -3,7 +3,10 @@
     <TheNavbar />
 
     <main>
-      <transition name="fade" mode="out-in">
+      <transition
+        name="fade"
+        mode="out-in"
+      >
         <nuxt />
       </transition>
     </main>
@@ -28,7 +31,7 @@ export default {
     TheNavbar
   },
 
-  head() {
+  head () {
     return {
       link: [
         {

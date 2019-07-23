@@ -23,14 +23,14 @@
           style="text-decoration: none;"
           id="item-count"
           class="text-centersnipcart-total-items"
-        >{{ $store.state.cartCount }}</span>
+        >{{cartSize}}</span>
       </div>
     </b-button>
     <b-modal
       v-model="mobileModalShow"
       id="modal-xl-mobile"
       size="xl"
-      :title="`Корзина ${total} грн`"
+      title="Корзина"
       class="modal-content text-center"
       hide-footer
       style="border-radius: 20px; border: none;"
@@ -40,7 +40,7 @@
         style="border-radius: 20px; border: none;"
       >
         <div
-          v-for="product in products"
+          v-for="(product, index) in cart"
           :key="product.id"
           class="basket-content col-12"
           style="border-radius: 20px; border: none;"
@@ -48,71 +48,58 @@
           <div class="cart-item row col-12 m-auto p-0">
             <img
               id="item-img"
-              src="~assets/img/86.jpg"
+              :src="require(`~/assets/img/${product.image + '.jpg'}`)"
               alt="Koch Chemie Fresh UP"
               class="col-sm-1 p-0 m-auto"
             />
             <h5
               id="cart-item-title"
               class="col-sm-5 m-auto text-sm-left"
-            >{{ product.title }}</h5>
+            >{{product.name}}</h5>
             <div class="toggle-quantity col-sm-2 m-auto">
-              <a href="#">&minus;</a>
-              <p>{{ product.quantity }}</p>
-              <a href="#">&plus;</a>
+              <button
+                @click="removeFromCart(product.id)"
+                :disabled="product.quantity === 1"
+              >
+                &minus;
+              </button>
+              <p>{{product.quantity}}</p>
+              <button
+                @click="addToCart(product.id)"
+                :disabled="product.quantity === product.stock"
+              >
+                &plus;
+              </button>
+
             </div>
             <div class="cost col-sm-3 m-auto">
               <p
                 id="cart-item-price"
                 class="cart-item-price card-text"
-              >{{ product.price | currency }}</p>
+              >{{ product.quantity* product.price | currency }}</p>
             </div>
             <div class="remove-from-chart col-sm-1 m-auto text-center">
               <span
-                @click.prevent="removeFromCart(product)"
+                @click="deleteFromCart(product.id)"
                 class="close text-center"
-              >X
+              >&times;
               </span>
             </div>
           </div>
         </div>
 
-        <!-- <div class="basket-content col-12">
-          <div class="cart-item row col-12 m-auto p-0">
-            <img
-              id="item-img"
-              src="~assets/img/MaskGroup(3).jpg"
-              alt="Soft 99"
-              class="col-sm-1 m-auto"
-            />
-            <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">Soft 99</h5>
-            <div class="toggle-quantity col-sm-2 m-auto">
-              <a href="#">&minus;</a>
-              <p>1</p>
-              <a href="#">&plus;</a>
-            </div>
-            <div class="cost col-sm-2 m-auto">
-              <p id="cart-item-price" class="cart-item-price card-text">2900 грн</p>
-            </div>
-            <div class="remove-from-chart col-sm-1 m-auto">
-              <a href="#">
-                <p class="close">&plus;</p>
-              </a>
-            </div>
-          </div>
-        </div>-->
-
         <div
           class="col-12"
-          v-if="!products.length"
+          v-if="!cartSize"
         >
+
           <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
         </div>
         <div class="sum-total col-12 text-right">
           <span id="cart-total">
             Всього:
             <span class="cart-items-value">
-              {{ total | currency }}
+              {{cartTotalAmount | currency}}
               грн
             </span>
           </span>
@@ -194,11 +181,12 @@
                 to="/mahazyn"
                 @click="$bvModal.hide('modal-xl-mobile')"
                 class="btn go-back"
-              >Повернутися</b-button>
+              >
+                Повернутися</b-button>
             </div>
             <div class="col-auto my-2">
               <button
-                :disabled="!products.length"
+                :disabled="!cartSize"
                 @click.prevent="$store.dispatch('checkout')"
                 type="submit"
                 class="btn order"
@@ -208,22 +196,24 @@
           <p
             class="text-success"
             v-show="$store.state.checkoutStatus"
-          >Checkout {{ $store.state.checkoutStatus }}.</p>
+          >Checkout
+            {{ $store.state.checkoutStatus }}.
+          </p>
         </form>
       </div>
     </b-modal>
   </div>
 </template>
 
-<script>
+ <script>
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 export default {
-  props: {
-    cart: {
-      type: Number,
-      required: true
-    }
-  },
+  // props: {
+  //   cart: {
+  //     type: Number,
+  //     required: true
+  //   }
+  // },
   data () {
     return {
       mobileModalShow: false,
@@ -233,23 +223,43 @@ export default {
       },
     };
   },
-  methods: {
-    addProductToCart (product) {
-      this.$store.dispatch("addProductToCart", product);
-    },
-    removeFromCart (product) {
-      this.$store.commit('removeFromCart', product);
-    }
-  },
   computed: {
-    products () {
-      return this.$store.getters.cartProducts;
+    ...mapState([
+      "cart"
+    ]),
+    ...mapGetters([
+      "cartSize",
+      "cartTotalAmount"
+    ])
+  },
+  methods: {
+    addToCart (id) {
+      this.$store.dispatch("addToCart", id);
     },
-
-    total () {
-      return this.$store.getters.cartTotal;
+    removeFromCart (id) {
+      this.$store.dispatch("removeFromCart", id);
+    },
+    deleteFromCart (id) {
+      this.$store.dispatch("deleteFromCart", id);
     }
   }
+  //   methods: {
+  //     addProductToCart (product) {
+  //       this.$store.dispatch("addProductToCart", product);
+  //     },
+  //     removeFromCart (product) {
+  //       this.$store.commit('removeFromCart', product);
+  //     }
+  //   },
+  //   computed: {
+  //     products () {
+  //       return this.$store.getters.cartProducts;
+  //     },
+
+  //     total () {
+  //       return this.$store.getters.cartTotal;
+  //     }
+  //   }
 };
 </script>
 
@@ -335,8 +345,20 @@ export default {
         display: flex;
         justify-content: space-between;
 
+        button {
+          border: 0;
+          background-color: transparent;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 28px;
+          cursor: pointer;
+          margin: auto;
+          color: $darkColor;
+          text-decoration: none;
+        }
+
         p,
-        a {
+        button {
           font-family: $mainFont;
           font-style: normal;
           font-weight: bold;
@@ -351,16 +373,11 @@ export default {
       }
 
       .remove-from-chart {
-        a p.close {
+        span {
           font-weight: bold;
           font-size: 28px;
           line-height: 28px;
-          transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
-          -webkit-transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
-          -moz-transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
-          -ms-transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
-          -o-transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
-
+          cursor: pointer;
           margin: auto;
           color: $darkColor;
           text-decoration: none;

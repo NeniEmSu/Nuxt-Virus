@@ -1,11 +1,14 @@
 <template>
-  <div class="container text-center" id="app">
-    <h1>Shop</h1>
+  <div
+    class="container text-center"
+    id="app"
+  >
+    <!-- <h1>Shop</h1>
     <hr />
     <h2>Products</h2>
     <ProductList />
     <hr />
-    <ShoppingCart />
+    <ShoppingCart /> -->
   </div>
 </template>
 

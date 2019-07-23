@@ -359,11 +359,10 @@ export default {
   ],
 
   modules: [
-    // 'nuxt-webfontloader',
-    'vue-currency-filter/nuxt',
 
-    // Or if you have custom options...
+    'vue-currency-filter/nuxt',
     ['vue-currency-filter/nuxt', {
+      name: 'currency',
       symbol: '₴',
       thousandsSeparator: ',',
       fractionCount: 2,

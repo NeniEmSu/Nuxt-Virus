@@ -2,108 +2,84 @@ import {
   strictEqual
 } from "assert";
 
-import shop from "~/plugins/api/shop";
 import {
   getData,
   setData
 } from 'nuxt-storage/local-storage';
 
-// let cart = window.localStorage.getItem('cart');
-// let cartCount = window.localStorage.getItem('cartCount');
+import myApi from '~/plugins/api/myApi'
 
 let cart = getData('cart');
-let cartCount = getData('cartCount');
+
+
 
 export const state = () => ({ // = data
-  products: [],
+  products: null,
   cart: cart ? JSON.parse(cart) : [],
-  cartCount: cartCount ? parseInt(cartCount) : 0,
-  // cart: [],
-  // cartCount: 0,
-  setCheckoutStatus: null
+  setCheckoutStatus: null,
+  toast: {
+    text: "",
+    show: false
+  }
 })
 
 export const getters = { // = computed properties
-  productIsInStock() {
-    return (product) => {
-      return product.inventory > 0;
-    }
+
+  cartSize: (state) => {
+    return state.cart.length;
   },
 
-  availableProducts(state, getters) {
-    return state.products.filter(product => product.inventory > 0)
+  cartTotalAmount: (state) => {
+    return state.cart.reduce((total, product) => {
+      return total + (product.price * product.quantity);
+    }, 0);
   },
 
-  cartProducts(state) {
-    return state.cart.map(cartItem => {
-      const product = state.products.find(product => product.id === cartItem.id)
-      return {
-        title: product.title,
-        price: product.price,
-        quantity: cartItem.quantity
-      }
-    })
-  },
-  cartTotal(state, getters) {
-    // For simplicity
-    // let total = 0
-    // getters.cartProducts.forEach(product => {
-    //   total += product.price * product.quantity
-    // })
-    // return total
-
-    // Using Reduce
-    return getters.cartProducts.reduce((total, product) => total += product.price * product.quantity, 0)
+  toast: (state) => {
+    return state.toast;
   }
-
 }
 
+
 export const actions = { //methods
-  fetchProducts({
-    commit
-  }) {
-    return new Promise((resolve, reject) => {
-      // make the call
-      // call the setProducts mutaion
-      shop.getProducts(products => {
-        commit("setProducts", products);
-        resolve()
-      });
-    })
 
+  fetchProducts: ({
+    commit
+  }) => {
+    //simulating a fake ajax request to fetch products from database
+    myApi.getProducts().then((products) => {
+      //passing the products recieved from response as a payload to the mutation
+      commit("setUpProducts", products);
+      commit("showToast", "Продукти завантажені");
+    });
   },
 
-  addProductToCart({
-    state,
-    getters,
+  addToCart: ({
     commit
-  }, product) {
-    // if (product.inventory > 0) { or we can use
-    if (getters.productIsInStock(product)) {
-      const cartItem = state.cart.find(item => item.id === product.id)
-      if (!cartItem) {
-        commit('pushProducctToCart', product.id)
-      } else {
-        commit('incrementItemQuantity', cartItem)
-      }
-      commit('decrementProductInventory', product)
-    }
-    commit('saveCart');
+  }, productId) => {
+    myApi.products("add", productId).then((productId) => {
+      commit("addToCart", productId);
+      commit("showToast", "Додано з кошика");
+    });
   },
 
-  incrementProductQuantityInCart({
-    state,
-    getters,
+  removeFromCart: ({
     commit
-  }, product) {
-    // if (product.inventory > 0) { or we can use
-    if (getters.productIsInStock(product)) {
-      const cartItem = state.cart.find(item => item.id === product.id)
+  }, productId) => {
+    myApi.products("remove", productId).then((productId) => {
+      commit("removeFromCart", productId);
+      commit("showToast", "Видалено з кошика");
+    });
+  },
 
-      commit('incrementItemQuantity', cartItem)
+  deleteFromCart: ({
+    commit
+  }, productId) => {
+    myApi.products("delete", productId).then((productId) => {
+      commit("deleteFromCart", productId);
+      commit("showToast", "Видалено з кошика");
+    });
 
-      commit('decrementProductInventory', product)
-    }
   },
 
   checkout({
@@ -124,51 +100,69 @@ export const actions = { //methods
     )
     commit('saveCart');
   }
-
 }
 
 export const mutations = {
-  setProducts(state, products) {
-    // update products
-    state.products = products
+
+  setUpProducts: (state, productsPayload) => {
+    //sets the state's  products property to the products array recieved as payload
+    state.products = productsPayload;
   },
 
-  removeFromCart({
-    state,
-    commit
-  }, product) {
-    let index = state.cart.indexOf(product);
+  addToCart: (state, productId) => {
+    //find the product in the products list
+    let product = state.products.find((product) => product.id === productId);
+    //find the product in the cart list
+    let cartProduct = state.cart.find((product) => product.id === productId);
 
-    if (index > -1) {
-      let item = state.cart[index];
-      state.cartCount -= item.quantity;
-
-      state.cart.splice(index, 1);
+    if (cartProduct) {
+      //product already present in the cart. so increase the quantity
+      cartProduct.quantity++;
+    } else {
+      state.cart.push({
+        // product newly added to cart
+        ...product,
+        stock: product.quantity,
+        quantity: 1,
+      });
     }
+    //reduce the quantity in products list by 1
+    product.quantity--;
     commit('saveCart');
   },
 
-  pushProducctToCart(state, productId) {
-    state.cart.push({
-      id: productId,
-      quantity: 1
-    })
-    state.cartCount++;
+  removeFromCart: (state, productId) => {
+    //find the product in the products list
+    let product = state.products.find((product) => product.id === productId);
+    //find the product in the cart list
+    let cartProduct = state.cart.find((product) => product.id === productId);
+
+    cartProduct.quantity--;
+    //Add back the quantity in products list by 1
+    product.quantity++;
+    commit('saveCart');
   },
 
-  incrementItemQuantity(state, cartItem) {
-    cartItem.quantity++
-    state.cartCount++;
+  deleteFromCart: (state, productId) => {
+    //find the product in the products list
+    let product = state.products.find((product) => product.id === productId);
+    //find the product index in the cart list
+    let cartProductIndex = state.cart.findIndex((product) => product.id === productId);
+    //srt back the quantity of the product to intial quantity
+    product.quantity = state.cart[cartProductIndex].stock;
+    // remove the product from the cart
+    state.cart.splice(cartProductIndex, 1);
+    commit('saveCart');
   },
-  decrementItemQuantity(state, cartItem) {
-    cartItem.quantity--
-    state.cartCount--;
+
+  showToast: (state, toastText) => {
+    state.toast.show = true;
+    state.toast.text = toastText;
   },
-  incrementProductInventory(state, product) {
-    product.inventory++
-  },
-  decrementProductInventory(state, product) {
-    product.inventory--
+
+  hideToast: (state) => {
+    state.toast.show = false;
+    state.toast.text = "";
   },
 
   setCheckoutStatus(state, status) {
@@ -178,14 +172,11 @@ export const mutations = {
   emptyCart(state) {
     state.cart = []
     state.cartCount = 0
-
+    commit('saveCart');
   },
 
   saveCart(state) {
     setData('cart', JSON.stringify(state.cart));
     setData('cartCount', state.cartCount);
-    // window.localStorage.setItem('cart', JSON.stringify(state.cart));
-    // window.localStorage.setItem('cartCount', state.cartCount);
   }
-
 }

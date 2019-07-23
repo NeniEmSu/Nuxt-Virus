@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="shop-heading-image">
       <nav
         class="container mt-2 mb-n5"
@@ -21,6 +22,12 @@
         </h1>
       </div>
     </div>
+    <toast
+      :show="toast.show"
+      :text="toast.text"
+      @hide-toast="hideToast"
+    ></toast>
+
     <div id="app">
       <div class="container">
         <div class="row">
@@ -334,6 +341,7 @@
           </div>
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
+            <products></products>
             <div
               class="row"
               id="store-items"
@@ -351,6 +359,7 @@
                 :stock="product.Stock"
               />
             </div>
+
           </div>
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
@@ -375,7 +384,7 @@
                   <span
                     id="item-count"
                     class="text-center m-auto p-0 snipcart-total-items"
-                  >{{ $store.state.cartCount }}</span>
+                  >{{cartSize}}</span>
                 </div>
               </div>
             </div>
@@ -420,12 +429,12 @@
 
 <script>
 import axios from "axios";
-
-import { mapMutations, mapgetters } from "vuex";
+import Products from '@/components/Products.vue'
+import { mapMutations, mapGetters, mapState } from "vuex";
 
 export default {
   components: {
-
+    Products,
   },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
@@ -448,7 +457,6 @@ export default {
   },
   data () {
     return {
-      cart: 0,
       filter: null,
       active1: false,
       active2: false,
@@ -458,15 +466,22 @@ export default {
       imageApiUrl: process.env.IMAGE_URL
     };
   },
-  // computed: {
-  //   products() {
-  //     return this.$store.getters.Products.products;
-  //   }
-  // },
+  computed: {
+    ...mapState([
+      "cart"
+    ]),
+    ...mapGetters([
+      "cartSize",
+      "cartTotalAmount"
+    ]),
+    toast () {
+      return this.$store.getters.toast;
+    }
+  },
 
   methods: {
-    addToCart () {
-      this.cart += 1;
+    hideToast () {
+      this.$store.commit("hideToast");
     }
   },
   mounted () {

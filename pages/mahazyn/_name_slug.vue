@@ -280,7 +280,7 @@
                 <span
                   id="item-count"
                   class="text-center m-auto p-0 snipcart-total-items"
-                >{{ $store.state.cartCount }}</span>
+                >{{cartSize}}</span>
               </div>
             </div>
 
@@ -333,6 +333,7 @@
 
 <script>
 import axios from "axios";
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   async asyncData ({ app, params, error, payload }) {
@@ -376,7 +377,7 @@ export default {
 
   data () {
     return {
-      cart: 0,
+
       mobileModalShow: false,
       imageApiUrl: process.env.IMAGE_URL
     };
@@ -401,7 +402,15 @@ export default {
       ]
     };
   },
-
+  computed: {
+    ...mapState([
+      "cart"
+    ]),
+    ...mapGetters([
+      "cartSize",
+      "cartTotalAmount"
+    ])
+  },
   mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
