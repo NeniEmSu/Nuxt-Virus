@@ -383,7 +383,7 @@
                 >
                   <span
                     id="item-count"
-                    class="text-center m-auto p-0 snipcart-total-items"
+                    class="text-center m-auto p-0"
                   >{{cartSize}}</span>
                 </div>
               </div>
@@ -392,13 +392,6 @@
         </div>
       </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-      id="snipcart"
-      src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
-      data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
-    ></script>
 
     <script>
     (function() {

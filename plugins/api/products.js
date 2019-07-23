@@ -4,7 +4,8 @@ export default [{
     price: 2900,
     quantity: 6,
     image: 86,
-    summary: "Розпилюючий засіб для видалення небажаних запахів"
+    summary: "Розпилюючий засіб для видалення небажаних запахів",
+
   },
   {
     name: "Soft 99",
@@ -12,7 +13,8 @@ export default [{
     price: 2900,
     quantity: 5,
     image: 'MaskGroup(3)',
-    summary: "Розпилюючий засіб для видалення небажаних запахів"
+    summary: "Розпилюючий засіб для видалення небажаних запахів",
+    filterData: "ВіскSoft99"
   },
   {
     name: "Rupes Coarse Zephir Gloss",
@@ -20,7 +22,8 @@ export default [{
     price: 2900,
     quantity: 8,
     image: '9BFZEPHIR-1',
-    summary: "Розпилюючий засіб для видалення небажаних запахів"
+    summary: "Розпилюючий засіб для видалення небажаних запахів",
+    filterData: "Шампунь"
   },
   {
     name: "Soft 99",
@@ -28,7 +31,8 @@ export default [{
     price: 2900,
     quantity: 5,
     image: 'MaskGroup(3)',
-    summary: "Розпилюючий засіб для видалення небажаних запахів"
+    summary: "Розпилюючий засіб для видалення небажаних запахів",
+    filterData: "ВіскSoft99"
   },
   {
     name: "Rupes Coarse Zephir Gloss",
@@ -36,7 +40,8 @@ export default [{
     price: 2900,
     quantity: 12,
     image: '9BFZEPHIR-1',
-    summary: "Розпилюючий засіб для видалення небажаних запахів"
+    summary: "Розпилюючий засіб для видалення небажаних запахів",
+    filterData: "Шампунь"
   },
   {
     name: "Koch Chemie Fresh UP",
@@ -44,6 +49,7 @@ export default [{
     price: 2900,
     quantity: 10,
     image: '86',
-    summary: "Розпилюючий засіб для видалення небажаних запахів"
+    summary: "Розпилюючий засіб для видалення небажаних запахів",
+    filterData: "Фібри"
   }
 ]

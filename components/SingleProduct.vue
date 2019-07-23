@@ -2,16 +2,16 @@
 
   <div
     class="card card__hover store-item"
-    :class="filterData"
-    :data-item="filterData"
+    :class="product.filterData"
+    :data-item="product.filterData"
     v-b-tooltip.hover
-    :title="name"
+    :title="product.name"
     style="width: 18rem;"
   >
     <img
       :src="require(`~/assets/img/${product.image + '.jpg'}`)"
       class="card-img-top img-fluid store-img"
-      :alt="name"
+      :alt="product.name"
     />
     <hr class="desktop-only" />
     <div class="card-body">
@@ -23,19 +23,12 @@
         <div class="row">
           <div class="col-6 pr-0">
             <p class="card-price">
-              {{product.price | currencyTwo({name: 'currencyTwo',symbol: '$', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+              {{product.price | currency({symbol: 'ГРН', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
 
             </p>
           </div>
           <div class="col-6 pl-0">
-            <small
-              v-show="stock === false"
-              class="notInStock"
-            >Не в наявності</small>
-            <small
-              v-show="stock === true"
-              class="inStock"
-            >В наявності</small>
+            <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{inCartQuantity ? "В наявності" : "Не в наявності"}}</small>
           </div>
         </div>
       </div>
@@ -52,93 +45,34 @@
           </p>
         </div>
         <div class="col-6 bg-transparent btn-container">
-          <small
-            v-show="stock === true"
-            class="inStock"
-          >В наявності</small>
-          <small
-            v-show="stock === false"
-            class="notInStock"
-          >Не в наявності</small>
+          <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{inCartQuantity ? "В наявності" : "Не в наявності"}}</small>
+
           <br />
 
           <button
-            :class="inCartQuantity ? 'btn' :  'btn-danger'"
+            class="btn"
             @click.prevent="addToCart(product.id)"
             :disabled="!inCartQuantity"
           >
-            {{inCartQuantity ? "+ Cart" : "Out of stock"}}</button>
+            + Cart</button>
         </div>
       </div>
     </div>
 
-    <nuxt-link
+    <button
       class="card-footer mobile-only"
-      to="#"
       tag="button"
-      :class="inCartQuantity ? 'btn-success' :  'btn-danger'"
       @click.prevent="addToCart(product.id)"
       :disabled="!inCartQuantity"
     >
-      {{inCartQuantity ? "Add to Cart" : "Out of stock"}}</nuxt-link>
+      + Cart</button>
   </div>
-  <!-- <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">Price: <b>{{product.price | currency}}</b></p>
-        <button
-          class="btn mt-3"
-          :class="inCartQuantity ? 'btn-success' :  'btn-danger'"
-          @click="addToCart(product.id)"
-          :disabled="!inCartQuantity"
-        >
-          {{inCartQuantity ? "Add to Cart" : "Out of stock"}}
-        </button>
-      </div>
-    </div> -->
 
 </template>
 
 <script>
 export default {
-  props: {
-    name: {
-      type: String,
-      required: false,
-      default: "Koch Chemie Fresh UP"
-    },
-    summary: {
-      type: String,
-      required: false,
-      default: "Розпилюючий засіб для видалення небажаних запахів"
-    },
-    price: {
-      type: String,
-      required: false,
-      default: "2900"
-    },
-    image: {
-      type: String,
-      required: false,
-      default: require("~/assets/img/86.jpg")
-    },
-    link: {
-      type: String,
-      required: false,
-      default: "/Магазин"
-    },
-    filterData: {
-      type: String,
-      required: false,
-      default: "all"
-    },
-    stock: {
-      type: Boolean,
-      default: true,
-      required: false
-    },
 
-  },
   props: ["product"],
   computed: {
     inCartQuantity () {

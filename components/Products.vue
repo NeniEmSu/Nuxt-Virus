@@ -5,18 +5,18 @@
       src="https://i.imgur.com/JfPpwOA.gif"
       alt="Loading gif"
     />
+
     <div
       class="row"
       v-show="!loading"
     >
-
-      <div
+      <single-product
         v-for="product in products"
         :key="product.id"
-        class="col-sm-6 col-md-4 p-2"
-      >
-        <single-product :product="product"></single-product>
-      </div>
+        class="mx-auto mb-4"
+        :product="product"
+      ></single-product>
+
     </div>
   </div>
 </template>

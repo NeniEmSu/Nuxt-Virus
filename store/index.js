@@ -61,6 +61,7 @@ export const actions = { //methods
       commit("addToCart", productId);
       commit("showToast", "Додано з кошика");
     });
+    commit('saveCart');
   },
 
   removeFromCart: ({
@@ -70,6 +71,7 @@ export const actions = { //methods
       commit("removeFromCart", productId);
       commit("showToast", "Видалено з кошика");
     });
+    commit('saveCart');
   },
 
   deleteFromCart: ({
@@ -79,7 +81,7 @@ export const actions = { //methods
       commit("deleteFromCart", productId);
       commit("showToast", "Видалено з кошика");
     });
-
+    commit('saveCart');
   },
 
   checkout({
@@ -128,7 +130,7 @@ export const mutations = {
     }
     //reduce the quantity in products list by 1
     product.quantity--;
-    commit('saveCart');
+
   },
 
   removeFromCart: (state, productId) => {
@@ -140,7 +142,7 @@ export const mutations = {
     cartProduct.quantity--;
     //Add back the quantity in products list by 1
     product.quantity++;
-    commit('saveCart');
+
   },
 
   deleteFromCart: (state, productId) => {
@@ -152,7 +154,7 @@ export const mutations = {
     product.quantity = state.cart[cartProductIndex].stock;
     // remove the product from the cart
     state.cart.splice(cartProductIndex, 1);
-    commit('saveCart');
+
   },
 
   showToast: (state, toastText) => {
@@ -172,7 +174,7 @@ export const mutations = {
   emptyCart(state) {
     state.cart = []
     state.cartCount = 0
-    commit('saveCart');
+
   },
 
   saveCart(state) {

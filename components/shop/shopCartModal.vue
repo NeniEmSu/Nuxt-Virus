@@ -22,7 +22,7 @@
         <span
           style="text-decoration: none;"
           id="item-count"
-          class="text-centersnipcart-total-items"
+          class="text-center"
         >{{cartSize}}</span>
       </div>
     </b-button>
