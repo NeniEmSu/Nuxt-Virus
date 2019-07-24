@@ -22,11 +22,11 @@
         </h1>
       </div>
     </div>
-    <toast
+    <ProductsToast
       :show="toast.show"
       :text="toast.text"
       @hide-toast="hideToast"
-    ></toast>
+    ></ProductsToast>
 
     <div id="app">
       <div class="container">
@@ -341,7 +341,7 @@
           </div>
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
-            <products></products>
+            <ProductsList />>
             <div
               class="row"
               id="store-items"
@@ -422,12 +422,12 @@
 
 <script>
 import axios from "axios";
-import Products from '@/components/ProductsList.vue'
+import ProductsList from '@/components/ProductsList.vue'
 import { mapMutations, mapGetters, mapState } from "vuex";
 
 export default {
   components: {
-    Products,
+    ProductsList,
   },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
