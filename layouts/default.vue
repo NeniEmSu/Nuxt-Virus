@@ -102,6 +102,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 50px;
   background-color: $backgroudColor;
@@ -115,6 +116,7 @@ button {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 50px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: rgb(149, 150, 150);
 }

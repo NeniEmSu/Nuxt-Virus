@@ -1,5 +1,5 @@
 export default [{
-    name: "Koch Chemie Fresh UP",
+    name: "Koch Chemie Fresh UP - 1",
     id: 1,
     price: 2900,
     quantity: 6,
@@ -8,7 +8,7 @@ export default [{
 
   },
   {
-    name: "Soft 99",
+    name: "Soft 99 - 1",
     id: 2,
     price: 2900,
     quantity: 5,
@@ -17,7 +17,7 @@ export default [{
     filterData: "ВіскSoft99"
   },
   {
-    name: "Rupes Coarse Zephir Gloss",
+    name: "Rupes Coarse Zephir Gloss - 1",
     id: 3,
     price: 2900,
     quantity: 8,
@@ -26,7 +26,7 @@ export default [{
     filterData: "Шампунь"
   },
   {
-    name: "Soft 99",
+    name: "Soft 99 - 2",
     id: 4,
     price: 2900,
     quantity: 5,
@@ -35,7 +35,7 @@ export default [{
     filterData: "ВіскSoft99"
   },
   {
-    name: "Rupes Coarse Zephir Gloss",
+    name: "Rupes Coarse Zephir Gloss - 2",
     id: 5,
     price: 2900,
     quantity: 12,
@@ -44,7 +44,7 @@ export default [{
     filterData: "Шампунь"
   },
   {
-    name: "Koch Chemie Fresh UP",
+    name: "Koch Chemie Fresh UP - 2",
     id: 6,
     price: 2900,
     quantity: 10,

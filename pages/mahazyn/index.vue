@@ -422,7 +422,7 @@
 
 <script>
 import axios from "axios";
-import Products from '@/components/Products.vue'
+import Products from '@/components/ProductsList.vue'
 import { mapMutations, mapGetters, mapState } from "vuex";
 
 export default {

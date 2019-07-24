@@ -4,10 +4,7 @@ const glob = require('glob-all');
 const path = require('path');
 const collect = require('collect.js');
 const perPage = Number(process.env.PER_PAGE);
-
 const axios = require('axios');
-
-
 import purgecss from '@fullhuman/postcss-purgecss';
 
 export default {
@@ -288,17 +285,8 @@ export default {
     productUrl: `${process.env.BASE_URL}/api/collections/get/Product?token=${process.env.PRODUCT_TOKEN}`,
     contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`,
     commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`
-
   },
 
-  // webfontloader: {
-  //   google: {
-  //     families: ['Roboto+Condensed:400,700:latin,cyrillic,cyrillic-ext', 'Roboto:400,500,700,900:latin,cyrillic,cyrillic-ext'],
-  //     display: 'swap',
-  //   }
-  // },
-
-  // Configure polyfills:
   polyfill: {
     features: [{
         require: 'url-polyfill'
@@ -323,12 +311,10 @@ export default {
   },
 
   plugins: [
-
     '~/plugins/vue-scrollto.js',
     '~/plugins/lightGallery.client.js',
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
-
     {
       src: '~/plugins/vue-lazyload',
       ssr: false
@@ -359,7 +345,6 @@ export default {
   ],
 
   modules: [
-
     'vue-currency-filter/nuxt',
     ['vue-currency-filter/nuxt', {
       name: 'currency',
@@ -384,17 +369,6 @@ export default {
         id: 'UA-62479125-9'
       }
     ],
-    // [
-    //   "nuxt-compress",
-    //   {
-    //     gzip: {
-    //       cache: true
-    //     },
-    //     brotli: {
-    //       threshold: 10240
-    //     }
-    //   }
-    // ],
     [
       'nuxt-fontawesome',
       {
@@ -412,7 +386,7 @@ export default {
   },
 
   purgeCSS: {
-
+    // purgecss
   },
 
   generate: {
@@ -477,7 +451,7 @@ export default {
       }
 
       return posts.concat(tags);
-    }
+    },
 
     // async () => {
     //   let {
@@ -505,11 +479,6 @@ export default {
     // }
 
   },
-
-
-
-
-
 
   sitemap: {
     path: '/sitemap.xml',
@@ -600,13 +569,13 @@ export default {
         isDev,
         isClient
       }) {
-        // adding the new loader as the first in the list
+
         config.module.rules.unshift({
           test: /\.(png|jpe?g|gif)$/,
           use: {
             loader: 'responsive-loader',
             options: {
-              // disable: isDev,
+
               placeholder: true,
               quality: 85,
               placeholderSize: 30,
@@ -614,12 +583,12 @@ export default {
             }
           }
         })
-        // remove old pattern from the older loader
+
         config.module.rules.forEach(value => {
           if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-            // reduce to svg and webp, as other images are handled above
+
             value.test = /\.(svg|webp)$/
-            // keep the configuration from image-webpack-loader here unchanged
+
           }
         })
       }
