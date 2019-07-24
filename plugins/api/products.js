@@ -1,14 +1,14 @@
 export default [{
-    name: "Koch Chemie Fresh UP - 1",
+    name: "Dummy Product Koch Fresh UP - 1",
     id: 1,
     price: 2900,
     quantity: 6,
     image: 86,
     summary: "Розпилюючий засіб для видалення небажаних запахів",
-
+    filterData: "Фібри"
   },
   {
-    name: "Soft 99 - 1",
+    name: "Dummy Product Soft 99 - 1",
     id: 2,
     price: 2900,
     quantity: 5,
@@ -17,7 +17,7 @@ export default [{
     filterData: "ВіскSoft99"
   },
   {
-    name: "Rupes Coarse Zephir Gloss - 1",
+    name: "Dummy Product Rupes - 1",
     id: 3,
     price: 2900,
     quantity: 8,
@@ -26,7 +26,7 @@ export default [{
     filterData: "Шампунь"
   },
   {
-    name: "Soft 99 - 2",
+    name: "Dummy Product Soft - 2",
     id: 4,
     price: 2900,
     quantity: 5,
@@ -35,7 +35,7 @@ export default [{
     filterData: "ВіскSoft99"
   },
   {
-    name: "Rupes Coarse Zephir Gloss - 2",
+    name: "Rupes Gloss - 2",
     id: 5,
     price: 2900,
     quantity: 12,
@@ -44,7 +44,7 @@ export default [{
     filterData: "Шампунь"
   },
   {
-    name: "Koch Chemie Fresh UP - 2",
+    name: "Chemie Fresh UP - 2",
     id: 6,
     price: 2900,
     quantity: 10,
