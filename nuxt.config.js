@@ -452,30 +452,33 @@ export default {
       return posts.concat(tags);
     },
 
-    // async () => {
-    //   let {
-    //     data
-    //   } = await axios.get(process.env.PRODUCT_URL,
-    //     JSON.stringify({
-    //       filter: {
-    //         published: true
-    //       },
-    //       sort: {
-    //         _created: -1
-    //       },
-    //       populate: 1
-    //     }), {
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       }
-    //     })
-    //   return data.entries.map((product) => {
-    //     return {
-    //       route: `/mahazyn/${product.name_slug}`,
-    //       payload: product
-    //     }
-    //   })
-    // }
+   },
+
+  generate: {
+    routes:   async () => {
+      let {
+        data
+      } = await axios.get(process.env.PRODUCT_URL,
+        JSON.stringify({
+          filter: {
+            published: true
+          },
+          sort: {
+            _created: -1
+          },
+          populate: 1
+        }), {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+      return data.entries.map((product) => {
+        return {
+          route: `/mahazyn/${product.name_slug}`,
+          payload: product
+        }
+      })
+    }
 
   },
 
