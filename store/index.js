@@ -7,7 +7,7 @@ import {
   setData
 } from 'nuxt-storage/local-storage';
 
-import myApi from '~/plugins/api/myApi'
+import myApi from '~/plugins/api/myApi.js'
 
 let cart = getData('cart');
 
