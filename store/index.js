@@ -88,7 +88,7 @@ export const actions = { //methods
     state,
     commit
   }) {
-    shop.buyProducts(
+    myApi.buyProducts(
       state.cart,
       () => {
         commit('emptyCart')
