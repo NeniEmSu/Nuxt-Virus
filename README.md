@@ -1,6 +1,6 @@
 # nuxt-Virus
 
-> Virus project using Nuxt js for ssr, and proper seo integration.
+> Virus car detailing project with full blog connected to Cockpit cms via api, full shop consuming data from cockpit cms api and full range of services using Vuejs & Nuxt js for ssr, and proper seo integration.
 
 ## Links
 
@@ -26,6 +26,10 @@ Deployed automatically by netlify from npm run generate on netlify console:  htt
 
 ## Deployment Setup
 
+### Options
+1. Direct generated html files deploy from the gh-pages branch holding dist file content.
+2. Deploy main branch with npm run build or npm run generate as stated below.
+
 ### nginx
 
 - [Using nginx as a reverse proxy](https://nuxtjs.org/faq/nginx-proxy/)
@@ -38,7 +42,7 @@ Note:
 
 1. Server port points to
 
-```
+```bash
 server: {
     port: 8383,
     host: '0.0.0.0'
@@ -51,7 +55,7 @@ as updated in nuxt.config.js coment section out or update places it's needed on 
 
 The required configuration snippet copied from there is the following:
 
-```
+```bash
 location / {
   try_files $uri $uri/ /index.html;
 }
@@ -59,7 +63,7 @@ location / {
 
 Or if using nginx proxy, The documentation can be found [here](https://nuxtjs.org/faq/nginx-proxy/)
 
-```
+```bash
 map $sent_http_content_type $expires {
     "text/html"                 epoch;
     "text/html; charset=utf-8"  epoch;
@@ -84,7 +88,7 @@ server {
         proxy_set_header X-Forwarded-Proto  $scheme;
         proxy_read_timeout          1m;
         proxy_connect_timeout       1m;
-        proxy_pass                          http://127.0.0.1:3000; # set the adress of the Node.js instance here
+        proxy_pass                          http://127.0.0.1:8383; # to 3000 if port had been updated in nuxtconfig. # set the adress of the Node.js instance here
     }
 }
 ```
@@ -115,7 +119,16 @@ server {
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:8383 
+# To reset the local host to localhost:3000 change line 12 to 15 in nuxt config file
+
+server: {
+     port: 8383, # to 3000
+    host: '0.0.0.0'
+  },
+
+# or delete contents of above stated line.
+
 $ npm run dev
 
 # build for production and launch server on local device case server will listen to localhost 8383
