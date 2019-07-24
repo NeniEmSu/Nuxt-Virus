@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-6 pr-0">
             <p class="card-price">
-              {{product.price | currency({symbol: 'ГРН', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+              {{product.price | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
 
             </p>
           </div>

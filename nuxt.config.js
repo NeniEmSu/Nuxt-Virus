@@ -345,7 +345,6 @@ export default {
   ],
 
   modules: [
-    "vue-currency-filter/nuxt",
     ["vue-currency-filter/nuxt", {
       name: "currency",
       symbol: "₴",

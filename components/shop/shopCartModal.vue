@@ -76,7 +76,7 @@
               <p
                 id="cart-item-price"
                 class="cart-item-price card-text"
-              >{{ product.quantity* product.price | currency }}</p>
+              >{{product.quantity* product.price | currency}}</p>
             </div>
             <div class="remove-from-chart col-sm-1 m-auto text-center">
               <span
@@ -99,8 +99,8 @@
           <span id="cart-total">
             Всього:
             <span class="cart-items-value">
-              {{cartTotalAmount | currency}}
-              грн
+              {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+
             </span>
           </span>
         </div>
