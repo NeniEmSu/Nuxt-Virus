@@ -2,28 +2,47 @@
   <footer>
     <div class="bottom-contact container">
       <div class="logo">
-        <nuxt-link class="/navbar-brand logo" to="/" aria-label="Virus Logo">
-          <img v-lazy="require('~/assets/img/virus-logo.svg')" alt="virus logo" />
+        <nuxt-link
+          class="/navbar-brand logo"
+          to="/"
+          aria-label="Virus Logo"
+        >
+          <img
+            v-lazy="require('~/assets/img/virus-logo.svg')"
+            alt="virus logo"
+          />
         </nuxt-link>
       </div>
       <ul>
         <li>
           <a href="mailto:deteylingvirus@gmail.com">
             deteylingvirus@gmail.com
-            <font-awesome-icon :icon="['fa', 'envelope']" class="ml-2 fa-lg" />
+            <font-awesome-icon
+              :icon="['fa', 'envelope']"
+              class="ml-2 fa-lg"
+            />
           </a>
         </li>
         <li>
           <a href="tel:+380673334040">
             +38 (067) 333-40-40
-            <font-awesome-icon :icon="['fas', 'phone']" class="ml-2 fa-lg" />
+            <font-awesome-icon
+              :icon="['fas', 'phone']"
+              class="ml-2 fa-lg"
+            />
           </a>
         </li>
 
         <li>
-          <nuxt-link to="/kontakty" v-scroll-to="{el: '#map-top', duration: 500, offset: -60 }">
+          <nuxt-link
+            to="/kontakty"
+            v-scroll-to="{el: '#map-top', duration: 500, offset: -60 }"
+          >
             Україна, м. Тернопіль, вул. Приміська 15А
-            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="ml-2 fa-lg" />
+            <font-awesome-icon
+              :icon="['fas', 'map-marker-alt']"
+              class="ml-2 fa-lg"
+            />
           </nuxt-link>
         </li>
         <li>
@@ -34,7 +53,10 @@
             class="instagram"
           >
             <picture>
-              <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/icons8-instagram-filled-100.png')"
                 alt="icons instagram filled"
@@ -48,7 +70,10 @@
             class="facebook"
           >
             <picture>
-              <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/icons8-facebook-filled-100.png')"
                 alt="icons facebook filled"

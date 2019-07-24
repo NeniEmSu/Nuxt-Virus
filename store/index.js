@@ -5,23 +5,23 @@ import {
 import {
   getData,
   setData
-} from 'nuxt-storage/local-storage';
+} from "nuxt-storage/local-storage";
 
-import myApi from '~/plugins/api/myApi.js'
+import myApi from "~/plugins/api/myApi.js";
 
-let cart = getData('cart');
+let cart = getData("cart");
 
 
 
 export const state = () => ({ // = data
   products: null,
-  cart: cart ? JSON.parse(cart) : [],
+  cart: [],
   setCheckoutStatus: null,
   toast: {
     text: "",
     show: false
   }
-})
+});
 
 export const getters = { // = computed properties
 
@@ -38,7 +38,7 @@ export const getters = { // = computed properties
   toast: (state) => {
     return state.toast;
   }
-}
+};
 
 
 export const actions = { //methods
@@ -61,7 +61,6 @@ export const actions = { //methods
       commit("addToCart", productId);
       commit("showToast", "Додано з кошика");
     });
-    commit('saveCart');
   },
 
   removeFromCart: ({
@@ -71,7 +70,6 @@ export const actions = { //methods
       commit("removeFromCart", productId);
       commit("showToast", "Видалено з кошика");
     });
-    commit('saveCart');
   },
 
   deleteFromCart: ({
@@ -81,33 +79,30 @@ export const actions = { //methods
       commit("deleteFromCart", productId);
       commit("showToast", "Видалено з кошика");
     });
-    commit('saveCart');
   },
 
-  checkout({
+  checkout: ({
     state,
     commit
-  }) {
+  })  => {
     myApi.buyProducts(
       state.cart,
       () => {
-        commit('emptyCart')
-        commit('setCheckoutStatus', 'Successful')
+        commit("emptyCart");
+        commit("setCheckoutStatus", "Successful");
       },
       () => {
 
-        commit('setCheckoutStatus', 'Failled')
-      },
-
-    )
-    commit('saveCart');
+        commit("setCheckoutStatus", "Failled");
+      }
+    );
   }
-}
+};
 
 export const mutations = {
 
   setUpProducts: (state, productsPayload) => {
-    //sets the state's  products property to the products array recieved as payload
+    //sets the state"s  products property to the products array recieved as payload
     state.products = productsPayload;
   },
 
@@ -178,7 +173,6 @@ export const mutations = {
   },
 
   saveCart(state) {
-    setData('cart', JSON.stringify(state.cart));
-    setData('cartCount', state.cartCount);
+    setData("cart", JSON.stringify(state.cart));
   }
 }

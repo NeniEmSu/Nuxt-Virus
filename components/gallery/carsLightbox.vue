@@ -4,9 +4,18 @@
     style="width: 100%; max-width: 540px;"
   >
     <no-ssr>
-      <LightGallery :images="images" :index="index" :disable-scroll="true" @close="index = null" />
+      <LightGallery
+        :images="images"
+        :index="index"
+        :disable-scroll="true"
+        @close="index = null"
+      />
     </no-ssr>
-    <div @click="index = 0" v-b-tooltip.hover title="Переглянути більше зображень!">
+    <div
+      @click="index = 0"
+      v-b-tooltip.hover
+      title="Переглянути більше зображень!"
+    >
       <div class="row no-gutters">
         <div
           class="col-9 p-0"
@@ -15,7 +24,10 @@ clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
 "
         >
           <picture style="border-top-left-radius: 22px; border-bottom-left-radius: 22px;">
-            <source :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)" type="image/webp" />
+            <source
+              :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)"
+              type="image/webp"
+            />
             <img
               style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
               :src="require(`~/assets/img/${thumbnail + '.png'}`)"
@@ -25,9 +37,7 @@ clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
           </picture>
         </div>
         <div class="col-3">
-          <div
-            class="card-body h-100 d-flex flex-column justify-content-center text-center p-0 pr-2"
-          >
+          <div class="card-body h-100 d-flex flex-column justify-content-center text-center p-0 pr-2">
             <h4>
               {{title}}
               <span>{{subtitle}}</span>
@@ -59,7 +69,7 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       index: null
     };

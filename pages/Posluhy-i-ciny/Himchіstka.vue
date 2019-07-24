@@ -1,12 +1,18 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only" />
+      <sercivesBreadcrumbs
+        :heading="heading"
+        class="desktop-tablet-only"
+      />
       <div class="container text-left">
         <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img src="~assets/img/Хімчистка.jpg" :alt="heading" />
+            <img
+              src="~assets/img/Хімчистка.jpg"
+              :alt="heading"
+            />
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages desktop-only">{{ heading }}</h1>
@@ -14,7 +20,10 @@
             <p class>{{ secondParagraph }}</p>
             <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
             <ul class="ml-3">
-              <li v-for="(items, heading) in inclusiveInService" :key="heading">{{ items.services }}</li>
+              <li
+                v-for="(items, heading) in inclusiveInService"
+                :key="heading"
+              >{{ items.services }}</li>
             </ul>
           </div>
         </div>
@@ -33,7 +42,11 @@
 
         <servicesYoutubeVideo :videoUrl="videoUrl" />
 
-        <serviceCategories :category1="category1" :category2="category2" :category3="category3" />
+        <serviceCategories
+          :category1="category1"
+          :category2="category2"
+          :category3="category3"
+        />
       </div>
     </div>
 
@@ -55,7 +68,7 @@ export default {
     sercivesBreadcrumbs
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: this.heading + " - %s!",
@@ -69,7 +82,7 @@ export default {
       ]
     };
   },
-  data() {
+  data () {
     return {
       service: "4",
       heading: "Хімчистка",
@@ -128,7 +141,7 @@ export default {
       timeTaken: "Час виконання послуги до 12 годин"
     };
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

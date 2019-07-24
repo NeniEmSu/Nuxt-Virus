@@ -1,12 +1,18 @@
 <template>
   <div>
     <div class="contact-heading-image desktop-only">
-      <nav class="container mt-2" aria-label="breadcrumb">
+      <nav
+        class="container mt-2"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">контакти</li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+          >контакти</li>
         </ol>
       </nav>
     </div>
@@ -16,7 +22,11 @@
         <div class="row">
           <div class="col-4 mx-auto">
             <h4>Графік роботи</h4>
-            <img src="~/assets/img/contactPageClock.png" class="img-fluid" alt="image of a clock" />
+            <img
+              src="~/assets/img/contactPageClock.png"
+              class="img-fluid"
+              alt="image of a clock"
+            />
             <p>пн-пт 9:00 до 19:00 сб-нд Вихідний</p>
           </div>
 
@@ -47,7 +57,10 @@
       </div>
 
       <div class="container text-center">
-        <hr id="map-top" class="map-separator offset desktop-only" />
+        <hr
+          id="map-top"
+          class="map-separator offset desktop-only"
+        />
 
         <img
           src="~/assets/img/icons8-marker-100.png"
@@ -55,7 +68,12 @@
           alt="Location marker icon"
         />
 
-        <GmapMap id="map" :center="center" :zoom="16" map-type-id="terrain">
+        <GmapMap
+          id="map"
+          :center="center"
+          :zoom="16"
+          map-type-id="terrain"
+        >
           <GmapMarker
             :key="index"
             v-for="(m, index) in markers"
@@ -67,11 +85,25 @@
 
         <div class="contact-page-socials">
           <h4>Більше інформації тут:</h4>
-          <a target="_blank" rel="noopener" href="https://www.instagram.com/virusdetailing/">
-            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon" />
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.instagram.com/virusdetailing/"
+          >
+            <img
+              src="~/assets/img/contacPageIg.png"
+              alt="Instagram icon"
+            />
           </a>
-          <a target="_blank" rel="noopener" href="https://www.facebook.com/virus.te.ua/">
-            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon" />
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.facebook.com/virus.te.ua/"
+          >
+            <img
+              src="~/assets/img/contactPageFb.png"
+              alt="Facebook icon"
+            />
           </a>
         </div>
       </div>
@@ -92,7 +124,7 @@ export default {
     progressSection
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "контакти - %s!",
@@ -106,14 +138,14 @@ export default {
       ]
     };
   },
-  data() {
+  data () {
     return {
       center: { lat: 49.558033, lng: 25.56692 },
       markers: [{ position: { lat: 49.558033, lng: 25.56692 } }]
     };
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

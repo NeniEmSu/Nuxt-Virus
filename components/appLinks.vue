@@ -1,7 +1,13 @@
 <template>
   <div class="menu">
     <ul class="nav-list">
-      <nuxt-link v-for="(item, i) in items" :key="i" :to="item.to" tag="li" class="nav-item">
+      <nuxt-link
+        v-for="(item, i) in items"
+        :key="i"
+        :to="item.to"
+        tag="li"
+        class="nav-item"
+      >
         <a>{{ item.title }}</a>
       </nuxt-link>
     </ul>
@@ -10,7 +16,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isActive: false,
       items: [
@@ -46,7 +52,7 @@ export default {
     };
   },
   computed: {
-    toggleSidebar() {
+    toggleSidebar () {
       return this.$store.getters["nav/toggleSidebar"];
     }
   }

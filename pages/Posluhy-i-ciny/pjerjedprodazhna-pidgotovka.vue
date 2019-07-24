@@ -1,12 +1,18 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
+      <sercivesBreadcrumbs
+        :heading="heading"
+        class="desktop-tablet-only"
+      />
       <div class="container text-left">
         <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img src="~assets/img/Передпродажнапідготовка1.jpg" :alt="heading">
+            <img
+              src="~assets/img/Передпродажнапідготовка1.jpg"
+              :alt="heading"
+            >
           </div>
 
           <div class="col-xl-6">
@@ -17,31 +23,47 @@
             <p class>{{ fourthParagraph }}</p>
             <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
             <ul class="ml-3">
-              <li v-for="(items, heading) in inclusiveInService" :key="heading"> {{items.services}}</li>
+              <li
+                v-for="(items, heading) in inclusiveInService"
+                :key="heading"
+              > {{items.services}}</li>
             </ul>
           </div>
           <div class="col-xl-6 text-center side-image">
-            <img src="~assets/img/Передпродажнапідготовка2.jpg" :alt="heading">
+            <img
+              src="~assets/img/Передпродажнапідготовка2.jpg"
+              :alt="heading"
+            >
           </div>
           <div class="row mx-auto">
             <div class="col-xl-6 text-center mt-3">
-              <img src="~assets/img/Передпродажнапідготовка3.jpg" :alt="heading">
+              <img
+                src="~assets/img/Передпродажнапідготовка3.jpg"
+                :alt="heading"
+              >
             </div>
             <div class="col-xl-6 text-center mt-3">
-              <img src="~assets/img/Передпродажнапідготовка4.jpg" :alt="heading">
+              <img
+                src="~assets/img/Передпродажнапідготовка4.jpg"
+                :alt="heading"
+              >
             </div>
           </div>
         </div>
 
         <h2 class="red">{{ timeTaken }}</h2>
 
-        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
+        <serviceCategories
+          :category1="category1"
+          :category2="category2"
+          :category3="category3"
+        />
       </div>
     </div>
 
-    <ContactForm :service="service"/>
+    <ContactForm :service="service" />
 
-    <progressSection/>
+    <progressSection />
   </div>
 </template>
 
@@ -57,7 +79,7 @@ export default {
     sercivesBreadcrumbs
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: this.heading + " - %s!",
@@ -71,7 +93,7 @@ export default {
       ]
     };
   },
-  data() {
+  data () {
     return {
       service: "11",
       heading: "Передпродажна підготовка",
@@ -112,7 +134,7 @@ export default {
       timeTaken: "Час виконання послуги 1 день"
     };
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

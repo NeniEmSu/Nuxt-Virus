@@ -1,5 +1,8 @@
 <template>
-  <nav class="container mt-n3" aria-label="breadcrumb">
+  <nav
+    class="container mt-n3"
+    aria-label="breadcrumb"
+  >
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <nuxt-link to="/">Головна</nuxt-link>
@@ -7,7 +10,10 @@
       <li class="breadcrumb-item">
         <nuxt-link to="/Posluhy-i-ciny">Послуги і ціни</nuxt-link>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">{{ heading }}</li>
+      <li
+        class="breadcrumb-item active"
+        aria-current="page"
+      >{{ heading }}</li>
     </ol>
   </nav>
 </template>

@@ -4,7 +4,10 @@
       <div class="row">
         <div class="col-3">
           <picture>
-            <source srcset="~/assets/imgWebP/icons8-paint-palette-96.webp" type="image/webp">
+            <source
+              srcset="~/assets/imgWebP/icons8-paint-palette-96.webp"
+              type="image/webp"
+            >
             <img
               src="~/assets/img/icons8-paint-palette-96.png"
               class="img-fluid"
@@ -18,7 +21,10 @@
         </div>
         <div class="col-3">
           <picture>
-            <source srcset="~/assets/imgWebP/icons8-service-filled-100.webp" type="image/webp">
+            <source
+              srcset="~/assets/imgWebP/icons8-service-filled-100.webp"
+              type="image/webp"
+            >
             <img
               src="~/assets/img/icons8-service-filled-100.png"
               class="img-fluid"
@@ -32,7 +38,10 @@
         </div>
         <div class="col-3">
           <picture>
-            <source srcset="~/assets/imgWebP/icons8-discount-filled-100.webp" type="image/webp">
+            <source
+              srcset="~/assets/imgWebP/icons8-discount-filled-100.webp"
+              type="image/webp"
+            >
             <img
               src="~/assets/img/icons8-discount-filled-100.png"
               class="img-fluid"
@@ -46,7 +55,10 @@
         </div>
         <div class="col-3">
           <picture>
-            <source srcset="~/assets/imgWebP/icons8-gift-filled-100(1).webp" type="image/webp">
+            <source
+              srcset="~/assets/imgWebP/icons8-gift-filled-100(1).webp"
+              type="image/webp"
+            >
             <img
               src="~/assets/img/icons8-gift-filled-100(1).png"
               class="img-fluid"

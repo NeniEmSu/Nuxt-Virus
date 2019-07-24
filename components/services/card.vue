@@ -1,6 +1,10 @@
 <template>
   <div class="card bg-dark text-white">
-    <img class="card-img" src="~assets/img/services1.jpg" alt="Card image">
+    <img
+      class="card-img"
+      src="~assets/img/services1.jpg"
+      alt="Card image"
+    >
     <div class="card-img-overlay">
       <h5 class="card-title">Car polishing</h5>
       <div class="row">
@@ -12,7 +16,10 @@
           </p>
         </div>
         <div class="col-6">
-          <nuxt-link to="#" class="btn">Читати більше</nuxt-link>
+          <nuxt-link
+            to="#"
+            class="btn"
+          >Читати більше</nuxt-link>
         </div>
       </div>
       <p class="card-text"></p>

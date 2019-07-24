@@ -1,16 +1,25 @@
 <template>
   <div>
-    <nav class="container desktop-only" aria-label="breadcrumb">
+    <nav
+      class="container desktop-only"
+      aria-label="breadcrumb"
+    >
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">Головна</nuxt-link>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Послуги і ціни</li>
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >Послуги і ціни</li>
       </ol>
     </nav>
     <div class="container text-center desktop-big-tab-only p-0 pt-4">
       <picture>
-        <source :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)" type="image/webp">
+        <source
+          :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)"
+          type="image/webp"
+        >
         <img
           class="col-12 m-auto img-fluid"
           :src="require(`~/assets/img/${image + '.jpg'}`)"
@@ -20,7 +29,11 @@
 
       <div class="col-md-7 m-auto car-toggle">
         <div class="row text-center">
-          <div v-for="variant in variants" :key="variant.variantId" class="col-md-4 mx-auto">
+          <div
+            v-for="variant in variants"
+            :key="variant.variantId"
+            class="col-md-4 mx-auto"
+          >
             <a
               href="#"
               class="btn"
@@ -130,16 +143,38 @@
           <p class="col-12 choose-brand-desc">Введіть можель свого авто для визначення категорії</p>
 
           <div class="form-group mx-auto">
-            <label hidden for="brand">Марка</label>
-            <select id="brand" aria-describedby="brand" v-model="brandSelect" class="form-control brand">
-              <option value="null" disabled>Марка</option>
-              <option v-for="items in carBrandOptions" :key="items.name" :value="items.name">{{ items.name }}</option>
+            <label
+              hidden
+              for="brand"
+            >Марка</label>
+            <select
+              id="brand"
+              aria-describedby="brand"
+              v-model="brandSelect"
+              class="form-control brand"
+            >
+              <option
+                value="null"
+                disabled
+              >Марка</option>
+              <option
+                v-for="items in carBrandOptions"
+                :key="items.name"
+                :value="items.name"
+              >{{ items.name }}</option>
             </select>
           </div>
 
           <div class="form-group mx-auto">
-            <label hidden for="model">Модель</label>
-            <select id="model" aria-describedby="model" class="form-control model">
+            <label
+              hidden
+              for="model"
+            >Модель</label>
+            <select
+              id="model"
+              aria-describedby="model"
+              class="form-control model"
+            >
               <option>Модель</option>
               <option>Модель</option>
               <option>Модель</option>
@@ -147,12 +182,18 @@
             </select>
           </div>
 
-          <button type="submit" class="btn">Вибрати</button>
+          <button
+            type="submit"
+            class="btn"
+          >Вибрати</button>
         </form>
       </div>
     </div>
 
-    <div class :class="{ hideMe: selected == undefined }">
+    <div
+      class
+      :class="{ hideMe: selected == undefined }"
+    >
       <div class="jumbotron services">
         <div class="container services-container">
           <!-- Полірування -->
@@ -173,31 +214,41 @@
                 <h5 class="card-title crop">{{ polish.polishingTitle }}</h5>
                 <div class="row">
                   <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
+                    <p
+                      v-show="selected == 1"
+                      class
+                    >
                       <small>від</small>
                       {{ polish.polishingCost }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 2" class>
+                    <p
+                      v-show="selected == 2"
+                      class
+                    >
                       <small>від</small>
                       {{ polish.polishingCostVar1 }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 3" class>
+                    <p
+                      v-show="selected == 3"
+                      class
+                    >
                       <small>від</small>
                       {{ polish.polishingCostVar2 }}
                       <small>грн</small>
                     </p>
                   </div>
                   <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="polish.polishingLink" class="btn">Читати більше</nuxt-link>
+                    <nuxt-link
+                      :to="polish.polishingLink"
+                      class="btn"
+                    >Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-         
 
           <!-- Хімчистка -->
           <h2 class="text-center fab-header">Хімчистка</h2>
@@ -217,35 +268,44 @@
                 <h5 class="card-title crop">{{ cleaner.cleanersTitle }}</h5>
                 <div class="row">
                   <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
+                    <p
+                      v-show="selected == 1"
+                      class
+                    >
                       <small>від</small>
                       {{ cleaner.cleanersCost }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 2" class>
+                    <p
+                      v-show="selected == 2"
+                      class
+                    >
                       <small>від</small>
                       {{ cleaner.cleanersCostVar1 }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 3" class>
+                    <p
+                      v-show="selected == 3"
+                      class
+                    >
                       <small>від</small>
                       {{ cleaner.cleanersCostVar2 }}
                       <small>грн</small>
                     </p>
                   </div>
                   <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="cleaner.cleanersLink" class="btn">Читати більше</nuxt-link>
+                    <nuxt-link
+                      :to="cleaner.cleanersLink"
+                      class="btn"
+                    >Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-         
 
           <!-- Воскове покриття -->
           <h2 class="text-center fab-header">Воскове покриття</h2>
-
-          
 
           <div class="testing">
             <div class="row mx-auto">
@@ -254,30 +314,45 @@
                 :key="WaxCover.WaxCoversId"
                 class="col-6 mx-auto store-item p-0 p-lg-2"
               >
-                <div class="card two-cards" :class="WaxCover.WaxCoversClass">
+                <div
+                  class="card two-cards"
+                  :class="WaxCover.WaxCoversClass"
+                >
                   <div class="card-body"></div>
                   <div class="card-end">
                     <h5>{{ WaxCover.WaxCoversTitle }}</h5>
                     <div class="row">
                       <div class="col-6 pr-0">
-                        <p v-show="selected == 1" class>
+                        <p
+                          v-show="selected == 1"
+                          class
+                        >
                           <small>від</small>
                           {{ WaxCover.WaxCoversCost }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 2" class>
+                        <p
+                          v-show="selected == 2"
+                          class
+                        >
                           <small>від</small>
                           {{ WaxCover.WaxCoversCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 3" class>
+                        <p
+                          v-show="selected == 3"
+                          class
+                        >
                           <small>від</small>
                           {{ WaxCover.WaxCoversCostVar2 }}
                           <small>грн</small>
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <nuxt-link :to="WaxCover.WaxCoversLink" class="btn">Читати більше</nuxt-link>
+                        <nuxt-link
+                          :to="WaxCover.WaxCoversLink"
+                          class="btn"
+                        >Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -320,24 +395,36 @@
 
                     <div class="row">
                       <div class="col-6 col-md-8 text-lg-right pr-0">
-                        <p v-show="selected == 1" class>
+                        <p
+                          v-show="selected == 1"
+                          class
+                        >
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCost }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 2" class>
+                        <p
+                          v-show="selected == 2"
+                          class
+                        >
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 3" class>
+                        <p
+                          v-show="selected == 3"
+                          class
+                        >
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCostVar2 }}
                           <small>грн</small>
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <nuxt-link :to="ceramicCoat.ceramicCoatingLink" class="btn">Читати більше</nuxt-link>
+                        <nuxt-link
+                          :to="ceramicCoat.ceramicCoatingLink"
+                          class="btn"
+                        >Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -374,17 +461,26 @@
 
                     <div class="row">
                       <div class="col-6 col-md-8 text-lg-right pr-0">
-                        <p v-show="selected == 1" class>
+                        <p
+                          v-show="selected == 1"
+                          class
+                        >
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCost }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 2" class>
+                        <p
+                          v-show="selected == 2"
+                          class
+                        >
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 3" class>
+                        <p
+                          v-show="selected == 3"
+                          class
+                        >
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCostVar2 }}
                           <small>грн</small>
@@ -419,13 +515,14 @@
               <div class="card-img-overlay">
                 <h5 class="card-title crop">{{ addition.additionalTitle }}</h5>
                 <div class="row">
-                  <div v-show="selected == 1" class="col-6 pr-0">
+                  <div
+                    v-show="selected == 1"
+                    class="col-6 pr-0"
+                  >
                     <p v-show="!addition.fixedRange">
                       <small v-show="!addition.perItem">від</small>
                       {{ addition.additionalCost }}
-                      <small
-                        v-if="addition.dollar"
-                      >$</small>
+                      <small v-if="addition.dollar">$</small>
                       <small v-else-if="addition.perItem">грн / шт</small>
                       <small v-else>грн</small>
                     </p>
@@ -434,21 +531,20 @@
                       {{ addition.additionalCost }}
                       <small>До</small>
                       {{ addition.additionalCostHigh }}
-                      <small
-                        v-if="addition.dollar"
-                      >$</small>
+                      <small v-if="addition.dollar">$</small>
 
                       <small v-else-if="addition.perItem">грн / шт</small>
                       <small v-else>грн</small>
                     </p>
                   </div>
-                  <div v-show="selected == 2" class="col-6 pr-0">
+                  <div
+                    v-show="selected == 2"
+                    class="col-6 pr-0"
+                  >
                     <p v-show="!addition.fixedRange">
                       <small v-show="!addition.perItem">від</small>
                       {{ addition.additionalCostVar1 }}
-                      <small
-                        v-if="addition.dollar"
-                      >$</small>
+                      <small v-if="addition.dollar">$</small>
                       <small v-else-if="addition.perItem">грн / шт</small>
                       <small v-else>грн</small>
                     </p>
@@ -457,21 +553,20 @@
                       {{ addition.additionalCost }}
                       <small>До</small>
                       {{ addition.additionalCostHigh }}
-                      <small
-                        v-if="addition.dollar"
-                      >$</small>
+                      <small v-if="addition.dollar">$</small>
 
                       <small v-else-if="addition.perItem">грн / шт</small>
                       <small v-else>грн</small>
                     </p>
                   </div>
-                  <div v-show="selected == 3" class="col-6 pr-0">
+                  <div
+                    v-show="selected == 3"
+                    class="col-6 pr-0"
+                  >
                     <p v-show="!addition.fixedRange">
                       <small v-show="!addition.perItem">від</small>
                       {{ addition.additionalCostVar2 }}
-                      <small
-                        v-if="addition.dollar"
-                      >$</small>
+                      <small v-if="addition.dollar">$</small>
                       <small v-else-if="addition.perItem">грн / шт</small>
                       <small v-else>грн</small>
                     </p>
@@ -480,16 +575,17 @@
                       {{ addition.additionalCost }}
                       <small>До</small>
                       {{ addition.additionalCostHigh }}
-                      <small
-                        v-if="addition.dollar"
-                      >$</small>
+                      <small v-if="addition.dollar">$</small>
 
                       <small v-else-if="addition.perItem">грн / шт</small>
                       <small v-else>грн</small>
                     </p>
                   </div>
                   <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="addition.additionalLink" class="btn">Читати більше</nuxt-link>
+                    <nuxt-link
+                      :to="addition.additionalLink"
+                      class="btn"
+                    >Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -588,9 +684,9 @@
         </div>
       </div>
 
-      <ContactForm :service="service"/>
+      <ContactForm :service="service" />
 
-      <progressSection/>
+      <progressSection />
     </div>
   </div>
 </template>
@@ -599,7 +695,7 @@
 export default {
   components: {},
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "контакти - %s!",
@@ -613,7 +709,7 @@ export default {
       ]
     };
   },
-  data() {
+  data () {
     return {
       brandSelect: null,
       service: null,
@@ -892,562 +988,562 @@ export default {
           additionalImg: "services24"
         }
       ],
-       carBrandOptions: 
-       [
-        {
-	"name": "AC"
-}, {
-	"name": "AC PROPULSION"
-}, {
-	"name": "ACURA"
-}, {
-	"name": "A.D. TRAMONTANA"
-}, {
-	"name": "ALFA ROMEO"
-}, {
-	"name": "ALMAC"
-}, {
-	"name": "ALTERNATIVE CARS"
-}, {
-	"name": "AMUZA"
-}, {
-	"name": "ANTEROS"
-}, {
-	"name": "ARASH"
-}, {
-	"name": "ARIEL"
-}, {
-	"name": "ARRINERA"
-}, {
-	"name": "ASL"
-}, {
-	"name": "ASTERIO"
-}, {
-	"name": "ASTON MARTIN"
-}, {
-	"name": "AUDI"
-}, {
-	"name": "BAC"
-}, {
-	"name": "BAJAJ"
-}, {
-	"name": "BEIJING AUTOMOBILE WORKS"
-}, {
-	"name": "BENTLEY"
-}, {
-	"name": "BMW"
-}, {
-	"name": "BOLLORÉ"
-}, {
-	"name": "BOLWELL"
-}, {
-	"name": "BRILLIANCE / HUACHEN"
-}, {
-	"name": "BRISTOL"
-}, {
-	"name": "BRITISH LEYLAND"
-}, {
-	"name": "BRM BUGGY"
-}, {
-	"name": "BROOKE"
-}, {
-	"name": "BUDDY"
-}, {
-	"name": "BUFORI"
-}, {
-	"name": "BUGATTI"
-}, {
-	"name": "BUICK"
-}, {
-	"name": "BYD"
-}, {
-	"name": "CADILLAC"
-}, {
-	"name": "CAPARO"
-}, {
-	"name": "CARBONTECH"
-}, {
-	"name": "CARICE"
-}, {
-	"name": "CHANG'AN"
-}, {
-	"name": "CHANGHE"
-}, {
-	"name": "CHERY"
-}, {
-	"name": "CHEVROLET"
-}, {
-	"name": "CHEVRON"
-}, {
-	"name": "CITROËN"
-}, {
-	"name": "CHRYSLER"
-}, {
-	"name": "COMMUTER CARS"
-}, {
-	"name": "CONNAUGHT"
-}, {
-	"name": "COVINI"
-}, {
-	"name": "DACIA"
-}, {
-	"name": "DAIHATSU"
-}, {
-	"name": "DATSUN"
-}, {
-	"name": "DE LA CHAPELLE"
-}, {
-	"name": "DMC"
-}, {
-	"name": "DIARDI"
-}, {
-	"name": "DODGE"
-}, {
-	"name": "DONKERVOORT"
-}, {
-	"name": "DONGFENG"
-}, {
-	"name": "DONTO"
-}, {
-	"name": "DS AUTOMOBILES"
-}, {
-	"name": "DYNASTI ELECTRIC CAR CORP."
-}, {
-	"name": "E-VADE"
-}, {
-	"name": "EFFEDI"
-}, {
-	"name": "EGY-TECH ENGINEERING"
-}, {
-	"name": "ELECTRIC RACEABOUT"
-}, {
-	"name": "ELFIN"
-}, {
-	"name": "EMGRAND"
-}, {
-	"name": "ENGLON"
-}, {
-	"name": "ETERNITI"
-}, {
-	"name": "ETOX"
-}, {
-	"name": "EQUUS"
-}, {
-	"name": "EXAGON"
-}, {
-	"name": "FARALLI & MAZZANTI"
-}, {
-	"name": "FAW"
-}, {
-	"name": "FERRARI"
-}, {
-	"name": "FIAT"
-}, {
-	"name": "FISKER"
-}, {
-	"name": "FODAY"
-}, {
-	"name": "FORCE"
-}, {
-	"name": "FORD"
-}, {
-	"name": "FORD AUSTRALIA"
-}, {
-	"name": "FORD GERMANY"
-}, {
-	"name": "FORNASARI"
-}, {
-	"name": "FRASER"
-}, {
-	"name": "GAC GROUP"
-}, {
-	"name": "GALPIN"
-}, {
-	"name": "GEELY"
-}, {
-	"name": "GENESIS"
-}, {
-	"name": "GIBBS"
-}, {
-	"name": "GILLET"
-}, {
-	"name": "GINETTA"
-}, {
-	"name": "GMC"
-}, {
-	"name": "GONOW"
-}, {
-	"name": "GREAT WALL / CHANGCHENG"
-}, {
-	"name": "GREENTECH AUTOMOTIVE"
-}, {
-	"name": "GRINNALL"
-}, {
-	"name": "GTA MOTOR"
-}, {
-	"name": "GUMPERT"
-}, {
-	"name": "GURGEL"
-}, {
-	"name": "HENNESSEY"
-}, {
-	"name": "HINDUSTAN"
-}, {
-	"name": "HOLDEN"
-}, {
-	"name": "HONDA"
-}, {
-	"name": "HONGQI"
-}, {
-	"name": "HRADYESH"
-}, {
-	"name": "HTT TECHNOLOGIES"
-}, {
-	"name": "HULME"
-}, {
-	"name": "HYUNDAI"
-}, {
-	"name": "ICML"
-}, {
-	"name": "IFR"
-}, {
-	"name": "IRAN KHODRO"
-}, {
-	"name": "IKCO"
-}, {
-	"name": "IMPERIA"
-}, {
-	"name": "INFINITI"
-}, {
-	"name": "IVM"
-}, {
-	"name": "INVICTA"
-}, {
-	"name": "ISDERA"
-}, {
-	"name": "ISUZU"
-}, {
-	"name": "JAC"
-}, {
-	"name": "JAGUAR"
-}, {
-	"name": "JEEP"
-}, {
-	"name": "JENSEN MOTORS"
-}, {
-	"name": "JETCAR"
-}, {
-	"name": "JONWAY"
-}, {
-	"name": "JOSS"
-}, {
-	"name": "KAIPAN"
-}, {
-	"name": "KANTANKA"
-}, {
-	"name": "KARMA"
-}, {
-	"name": "KOENIGSEGG"
-}, {
-	"name": "KORRES"
-}, {
-	"name": "KIA"
-}, {
-	"name": "KIAT"
-}, {
-	"name": "KISH KHODRO"
-}, {
-	"name": "KTM"
-}, {
-	"name": "LADA"
-}, {
-	"name": "LAMBORGHINI"
-}, {
-	"name": "LANCIA"
-}, {
-	"name": "LAND ROVER"
-}, {
-	"name": "LANDWIND"
-}, {
-	"name": "LARAKI"
-}, {
-	"name": "LEBLANC"
-}, {
-	"name": "LEITCH"
-}, {
-	"name": "LEOPARD"
-}, {
-	"name": "LEXUS"
-}, {
-	"name": "LI-ION"
-}, {
-	"name": "LIFAN"
-}, {
-	"name": "LIGHTNING"
-}, {
-	"name": "LINCOLN"
-}, {
-	"name": "LISTER"
-}, {
-	"name": "LOCAL MOTORS"
-}, {
-	"name": "LOBINI"
-}, {
-	"name": "LOTEC"
-}, {
-	"name": "LOTUS CARS"
-}, {
-	"name": "LUCRA CARS"
-}, {
-	"name": "LUXGEN"
-}, {
-	"name": "MAHINDRA"
-}, {
-	"name": "MARUSSIA"
-}, {
-	"name": "MARUTI SUZUKI"
-}, {
-	"name": "MASERATI"
-}, {
-	"name": "MASTRETTA"
-}, {
-	"name": "MAZDA"
-}, {
-	"name": "MCLAREN"
-}, {
-	"name": "MERCEDES-BENZ"
-}, {
-	"name": "MG"
-}, {
-	"name": "MICRO"
-}, {
-	"name": "MINI"
-}, {
-	"name": "MITSUBISHI"
-}, {
-	"name": "MITSUOKA"
-}, {
-	"name": "MORGAN"
-}, {
-	"name": "MULLEN"
-}, {
-	"name": "MYCAR"
-}, {
-	"name": "MYVI-PERODUA"
-}, {
-	"name": "NISSAN"
-}, {
-	"name": "NOBLE"
-}, {
-	"name": "NOTA"
-}, {
-	"name": "OLDSMOBILE"
-}, {
-	"name": "OPEL"
-}, {
-	"name": "OPTIMAL ENERGY"
-}, {
-	"name": "ORCA"
-}, {
-	"name": "OLTCIT"
-}, {
-	"name": "PAGANI"
-}, {
-	"name": "PANHARD"
-}, {
-	"name": "PANOZ"
-}, {
-	"name": "PERANA"
-}, {
-	"name": "PERODUA"
-}, {
-	"name": "PEUGEOT"
-}, {
-	"name": "P.G.O."
-}, {
-	"name": "POLARSUN"
-}, {
-	"name": "PLYMOUTH"
-}, {
-	"name": "PORSCHE"
-}, {
-	"name": "PROTO"
-}, {
-	"name": "OULLIM"
-}, {
-	"name": "PROTON"
-}, {
-	"name": "PURITALIA"
-}, {
-	"name": "QOROS"
-}, {
-	"name": "QVALE"
-}, {
-	"name": "RADICAL"
-}, {
-	"name": "RELIANT"
-}, {
-	"name": "RENAULT"
-}, {
-	"name": "REVA"
-}, {
-	"name": "RIMAC"
-}, {
-	"name": "RINSPEED"
-}, {
-	"name": "RODING"
-}, {
-	"name": "ROEWE"
-}, {
-	"name": "ROLLS-ROYCE"
-}, {
-	"name": "ROSSIN-BERTIN"
-}, {
-	"name": "ROSSION"
-}, {
-	"name": "ROVER"
-}, {
-	"name": "SAAB"
-}, {
-	"name": "SALEEN"
-}, {
-	"name": "SAIC-GM-WULING"
-}, {
-	"name": "SAIPA"
-}, {
-	"name": "SAKER"
-}, {
-	"name": "SAMSUNG"
-}, {
-	"name": "SAN"
-}, {
-	"name": "SBARRO"
-}, {
-	"name": "SCION"
-}, {
-	"name": "SEAT"
-}, {
-	"name": "SHANGHAI MAPLE"
-}, {
-	"name": "SIN"
-}, {
-	"name": "ŠKODA"
-}, {
-	"name": "SMART"
-}, {
-	"name": "SPADA VETTURE SPORT"
-}, {
-	"name": "SPYKER"
-}, {
-	"name": "SSANGYONG"
-}, {
-	"name": "SSC NORTH AMERICA"
-}, {
-	"name": "STREET & RACING TECHNOLOGY"
-}, {
-	"name": "SUBARU"
-}, {
-	"name": "SUZUKI"
-}, {
-	"name": "TANOM"
-}, {
-	"name": "TATA"
-}, {
-	"name": "TAURO"
-}, {
-	"name": "TAWON CAR"
-}, {
-	"name": "TD CARS"
-}, {
-	"name": "TESLA"
-}, {
-	"name": "THAI RUNG"
-}, {
-	"name": "TOYOTA"
-}, {
-	"name": "TREKKA"
-}, {
-	"name": "TRIDENT"
-}, {
-	"name": "TRIUMPH"
-}, {
-	"name": "TROLLER"
-}, {
-	"name": "TRUMPCHI"
-}, {
-	"name": "TUSHEK"
-}, {
-	"name": "TVR"
-}, {
-	"name": "TVS"
-}, {
-	"name": "ULTIMA"
-}, {
-	"name": "UMM"
-}, {
-	"name": "UEV"
-}, {
-	"name": "URI"
-}, {
-	"name": "UAZ"
-}, {
-	"name": "VAUXHALL MOTORS"
-}, {
-	"name": "VECTOR"
-}, {
-	"name": "VENCER"
-}, {
-	"name": "VENIRAUTO"
-}, {
-	"name": "VENTURI"
-}, {
-	"name": "VEPR"
-}, {
-	"name": "VOLKSWAGEN"
-}, {
-	"name": "VOLVO"
-}, {
-	"name": "VINFAST"
-}, {
-	"name": "W MOTORS"
-}, {
-	"name": "WALLYSCAR"
-}, {
-	"name": "WESTFIELD"
-}, {
-	"name": "WHEEGO"
-}, {
-	"name": "WIESMANN"
-}, {
-	"name": "XENIA"
-}, {
-	"name": "YES!"
-}, {
-	"name": "YOUABIAN PUMA"
-}, {
-	"name": "ZASTAVA AUTOMOBILES"
-}, {
-	"name": "ZENDER CARS"
-}, {
-	"name": "ZENOS CARS"
-}, {
-	"name": "ZENVO"
-}, {
-	"name": "ZIL"
-}, {
-	"name": "ZX AUTO"
-}]
-    
+      carBrandOptions:
+        [
+          {
+            "name": "AC"
+          }, {
+            "name": "AC PROPULSION"
+          }, {
+            "name": "ACURA"
+          }, {
+            "name": "A.D. TRAMONTANA"
+          }, {
+            "name": "ALFA ROMEO"
+          }, {
+            "name": "ALMAC"
+          }, {
+            "name": "ALTERNATIVE CARS"
+          }, {
+            "name": "AMUZA"
+          }, {
+            "name": "ANTEROS"
+          }, {
+            "name": "ARASH"
+          }, {
+            "name": "ARIEL"
+          }, {
+            "name": "ARRINERA"
+          }, {
+            "name": "ASL"
+          }, {
+            "name": "ASTERIO"
+          }, {
+            "name": "ASTON MARTIN"
+          }, {
+            "name": "AUDI"
+          }, {
+            "name": "BAC"
+          }, {
+            "name": "BAJAJ"
+          }, {
+            "name": "BEIJING AUTOMOBILE WORKS"
+          }, {
+            "name": "BENTLEY"
+          }, {
+            "name": "BMW"
+          }, {
+            "name": "BOLLORÉ"
+          }, {
+            "name": "BOLWELL"
+          }, {
+            "name": "BRILLIANCE / HUACHEN"
+          }, {
+            "name": "BRISTOL"
+          }, {
+            "name": "BRITISH LEYLAND"
+          }, {
+            "name": "BRM BUGGY"
+          }, {
+            "name": "BROOKE"
+          }, {
+            "name": "BUDDY"
+          }, {
+            "name": "BUFORI"
+          }, {
+            "name": "BUGATTI"
+          }, {
+            "name": "BUICK"
+          }, {
+            "name": "BYD"
+          }, {
+            "name": "CADILLAC"
+          }, {
+            "name": "CAPARO"
+          }, {
+            "name": "CARBONTECH"
+          }, {
+            "name": "CARICE"
+          }, {
+            "name": "CHANG'AN"
+          }, {
+            "name": "CHANGHE"
+          }, {
+            "name": "CHERY"
+          }, {
+            "name": "CHEVROLET"
+          }, {
+            "name": "CHEVRON"
+          }, {
+            "name": "CITROËN"
+          }, {
+            "name": "CHRYSLER"
+          }, {
+            "name": "COMMUTER CARS"
+          }, {
+            "name": "CONNAUGHT"
+          }, {
+            "name": "COVINI"
+          }, {
+            "name": "DACIA"
+          }, {
+            "name": "DAIHATSU"
+          }, {
+            "name": "DATSUN"
+          }, {
+            "name": "DE LA CHAPELLE"
+          }, {
+            "name": "DMC"
+          }, {
+            "name": "DIARDI"
+          }, {
+            "name": "DODGE"
+          }, {
+            "name": "DONKERVOORT"
+          }, {
+            "name": "DONGFENG"
+          }, {
+            "name": "DONTO"
+          }, {
+            "name": "DS AUTOMOBILES"
+          }, {
+            "name": "DYNASTI ELECTRIC CAR CORP."
+          }, {
+            "name": "E-VADE"
+          }, {
+            "name": "EFFEDI"
+          }, {
+            "name": "EGY-TECH ENGINEERING"
+          }, {
+            "name": "ELECTRIC RACEABOUT"
+          }, {
+            "name": "ELFIN"
+          }, {
+            "name": "EMGRAND"
+          }, {
+            "name": "ENGLON"
+          }, {
+            "name": "ETERNITI"
+          }, {
+            "name": "ETOX"
+          }, {
+            "name": "EQUUS"
+          }, {
+            "name": "EXAGON"
+          }, {
+            "name": "FARALLI & MAZZANTI"
+          }, {
+            "name": "FAW"
+          }, {
+            "name": "FERRARI"
+          }, {
+            "name": "FIAT"
+          }, {
+            "name": "FISKER"
+          }, {
+            "name": "FODAY"
+          }, {
+            "name": "FORCE"
+          }, {
+            "name": "FORD"
+          }, {
+            "name": "FORD AUSTRALIA"
+          }, {
+            "name": "FORD GERMANY"
+          }, {
+            "name": "FORNASARI"
+          }, {
+            "name": "FRASER"
+          }, {
+            "name": "GAC GROUP"
+          }, {
+            "name": "GALPIN"
+          }, {
+            "name": "GEELY"
+          }, {
+            "name": "GENESIS"
+          }, {
+            "name": "GIBBS"
+          }, {
+            "name": "GILLET"
+          }, {
+            "name": "GINETTA"
+          }, {
+            "name": "GMC"
+          }, {
+            "name": "GONOW"
+          }, {
+            "name": "GREAT WALL / CHANGCHENG"
+          }, {
+            "name": "GREENTECH AUTOMOTIVE"
+          }, {
+            "name": "GRINNALL"
+          }, {
+            "name": "GTA MOTOR"
+          }, {
+            "name": "GUMPERT"
+          }, {
+            "name": "GURGEL"
+          }, {
+            "name": "HENNESSEY"
+          }, {
+            "name": "HINDUSTAN"
+          }, {
+            "name": "HOLDEN"
+          }, {
+            "name": "HONDA"
+          }, {
+            "name": "HONGQI"
+          }, {
+            "name": "HRADYESH"
+          }, {
+            "name": "HTT TECHNOLOGIES"
+          }, {
+            "name": "HULME"
+          }, {
+            "name": "HYUNDAI"
+          }, {
+            "name": "ICML"
+          }, {
+            "name": "IFR"
+          }, {
+            "name": "IRAN KHODRO"
+          }, {
+            "name": "IKCO"
+          }, {
+            "name": "IMPERIA"
+          }, {
+            "name": "INFINITI"
+          }, {
+            "name": "IVM"
+          }, {
+            "name": "INVICTA"
+          }, {
+            "name": "ISDERA"
+          }, {
+            "name": "ISUZU"
+          }, {
+            "name": "JAC"
+          }, {
+            "name": "JAGUAR"
+          }, {
+            "name": "JEEP"
+          }, {
+            "name": "JENSEN MOTORS"
+          }, {
+            "name": "JETCAR"
+          }, {
+            "name": "JONWAY"
+          }, {
+            "name": "JOSS"
+          }, {
+            "name": "KAIPAN"
+          }, {
+            "name": "KANTANKA"
+          }, {
+            "name": "KARMA"
+          }, {
+            "name": "KOENIGSEGG"
+          }, {
+            "name": "KORRES"
+          }, {
+            "name": "KIA"
+          }, {
+            "name": "KIAT"
+          }, {
+            "name": "KISH KHODRO"
+          }, {
+            "name": "KTM"
+          }, {
+            "name": "LADA"
+          }, {
+            "name": "LAMBORGHINI"
+          }, {
+            "name": "LANCIA"
+          }, {
+            "name": "LAND ROVER"
+          }, {
+            "name": "LANDWIND"
+          }, {
+            "name": "LARAKI"
+          }, {
+            "name": "LEBLANC"
+          }, {
+            "name": "LEITCH"
+          }, {
+            "name": "LEOPARD"
+          }, {
+            "name": "LEXUS"
+          }, {
+            "name": "LI-ION"
+          }, {
+            "name": "LIFAN"
+          }, {
+            "name": "LIGHTNING"
+          }, {
+            "name": "LINCOLN"
+          }, {
+            "name": "LISTER"
+          }, {
+            "name": "LOCAL MOTORS"
+          }, {
+            "name": "LOBINI"
+          }, {
+            "name": "LOTEC"
+          }, {
+            "name": "LOTUS CARS"
+          }, {
+            "name": "LUCRA CARS"
+          }, {
+            "name": "LUXGEN"
+          }, {
+            "name": "MAHINDRA"
+          }, {
+            "name": "MARUSSIA"
+          }, {
+            "name": "MARUTI SUZUKI"
+          }, {
+            "name": "MASERATI"
+          }, {
+            "name": "MASTRETTA"
+          }, {
+            "name": "MAZDA"
+          }, {
+            "name": "MCLAREN"
+          }, {
+            "name": "MERCEDES-BENZ"
+          }, {
+            "name": "MG"
+          }, {
+            "name": "MICRO"
+          }, {
+            "name": "MINI"
+          }, {
+            "name": "MITSUBISHI"
+          }, {
+            "name": "MITSUOKA"
+          }, {
+            "name": "MORGAN"
+          }, {
+            "name": "MULLEN"
+          }, {
+            "name": "MYCAR"
+          }, {
+            "name": "MYVI-PERODUA"
+          }, {
+            "name": "NISSAN"
+          }, {
+            "name": "NOBLE"
+          }, {
+            "name": "NOTA"
+          }, {
+            "name": "OLDSMOBILE"
+          }, {
+            "name": "OPEL"
+          }, {
+            "name": "OPTIMAL ENERGY"
+          }, {
+            "name": "ORCA"
+          }, {
+            "name": "OLTCIT"
+          }, {
+            "name": "PAGANI"
+          }, {
+            "name": "PANHARD"
+          }, {
+            "name": "PANOZ"
+          }, {
+            "name": "PERANA"
+          }, {
+            "name": "PERODUA"
+          }, {
+            "name": "PEUGEOT"
+          }, {
+            "name": "P.G.O."
+          }, {
+            "name": "POLARSUN"
+          }, {
+            "name": "PLYMOUTH"
+          }, {
+            "name": "PORSCHE"
+          }, {
+            "name": "PROTO"
+          }, {
+            "name": "OULLIM"
+          }, {
+            "name": "PROTON"
+          }, {
+            "name": "PURITALIA"
+          }, {
+            "name": "QOROS"
+          }, {
+            "name": "QVALE"
+          }, {
+            "name": "RADICAL"
+          }, {
+            "name": "RELIANT"
+          }, {
+            "name": "RENAULT"
+          }, {
+            "name": "REVA"
+          }, {
+            "name": "RIMAC"
+          }, {
+            "name": "RINSPEED"
+          }, {
+            "name": "RODING"
+          }, {
+            "name": "ROEWE"
+          }, {
+            "name": "ROLLS-ROYCE"
+          }, {
+            "name": "ROSSIN-BERTIN"
+          }, {
+            "name": "ROSSION"
+          }, {
+            "name": "ROVER"
+          }, {
+            "name": "SAAB"
+          }, {
+            "name": "SALEEN"
+          }, {
+            "name": "SAIC-GM-WULING"
+          }, {
+            "name": "SAIPA"
+          }, {
+            "name": "SAKER"
+          }, {
+            "name": "SAMSUNG"
+          }, {
+            "name": "SAN"
+          }, {
+            "name": "SBARRO"
+          }, {
+            "name": "SCION"
+          }, {
+            "name": "SEAT"
+          }, {
+            "name": "SHANGHAI MAPLE"
+          }, {
+            "name": "SIN"
+          }, {
+            "name": "ŠKODA"
+          }, {
+            "name": "SMART"
+          }, {
+            "name": "SPADA VETTURE SPORT"
+          }, {
+            "name": "SPYKER"
+          }, {
+            "name": "SSANGYONG"
+          }, {
+            "name": "SSC NORTH AMERICA"
+          }, {
+            "name": "STREET & RACING TECHNOLOGY"
+          }, {
+            "name": "SUBARU"
+          }, {
+            "name": "SUZUKI"
+          }, {
+            "name": "TANOM"
+          }, {
+            "name": "TATA"
+          }, {
+            "name": "TAURO"
+          }, {
+            "name": "TAWON CAR"
+          }, {
+            "name": "TD CARS"
+          }, {
+            "name": "TESLA"
+          }, {
+            "name": "THAI RUNG"
+          }, {
+            "name": "TOYOTA"
+          }, {
+            "name": "TREKKA"
+          }, {
+            "name": "TRIDENT"
+          }, {
+            "name": "TRIUMPH"
+          }, {
+            "name": "TROLLER"
+          }, {
+            "name": "TRUMPCHI"
+          }, {
+            "name": "TUSHEK"
+          }, {
+            "name": "TVR"
+          }, {
+            "name": "TVS"
+          }, {
+            "name": "ULTIMA"
+          }, {
+            "name": "UMM"
+          }, {
+            "name": "UEV"
+          }, {
+            "name": "URI"
+          }, {
+            "name": "UAZ"
+          }, {
+            "name": "VAUXHALL MOTORS"
+          }, {
+            "name": "VECTOR"
+          }, {
+            "name": "VENCER"
+          }, {
+            "name": "VENIRAUTO"
+          }, {
+            "name": "VENTURI"
+          }, {
+            "name": "VEPR"
+          }, {
+            "name": "VOLKSWAGEN"
+          }, {
+            "name": "VOLVO"
+          }, {
+            "name": "VINFAST"
+          }, {
+            "name": "W MOTORS"
+          }, {
+            "name": "WALLYSCAR"
+          }, {
+            "name": "WESTFIELD"
+          }, {
+            "name": "WHEEGO"
+          }, {
+            "name": "WIESMANN"
+          }, {
+            "name": "XENIA"
+          }, {
+            "name": "YES!"
+          }, {
+            "name": "YOUABIAN PUMA"
+          }, {
+            "name": "ZASTAVA AUTOMOBILES"
+          }, {
+            "name": "ZENDER CARS"
+          }, {
+            "name": "ZENOS CARS"
+          }, {
+            "name": "ZENVO"
+          }, {
+            "name": "ZIL"
+          }, {
+            "name": "ZX AUTO"
+          }]
+
     };
-    
+
   },
   methods: {
-    changeCars(variantImage) {
+    changeCars (variantImage) {
       this.image = variantImage;
     }
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

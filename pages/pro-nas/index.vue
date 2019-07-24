@@ -1,11 +1,17 @@
 <template>
   <div>
-    <nav class="container desktop-only" aria-label="breadcrumb">
+    <nav
+      class="container desktop-only"
+      aria-label="breadcrumb"
+    >
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">Головна</nuxt-link>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Про нас</li>
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >Про нас</li>
       </ol>
     </nav>
 
@@ -59,9 +65,9 @@
       </div>
     </div>
 
-    <ContactForm/>
+    <ContactForm />
 
-    <progressSection/>
+    <progressSection />
   </div>
 </template>
 
@@ -74,7 +80,7 @@ export default {
     progressSection
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "пронас - %s!",
@@ -89,7 +95,7 @@ export default {
     };
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

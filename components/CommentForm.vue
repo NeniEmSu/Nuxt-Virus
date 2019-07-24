@@ -1,12 +1,25 @@
 <template>
-  <form @submit="checkForm" method="post" :id="parent_id ? `reply-${parent_id}` : ''">
-    <div v-if="errors.length" class="mb-4 text-danger">
+  <form
+    @submit="checkForm"
+    method="post"
+    :id="parent_id ? `reply-${parent_id}` : ''"
+  >
+    <div
+      v-if="errors.length"
+      class="mb-4 text-danger"
+    >
       <b>Виправте такі помилки:</b>
       <ul>
-        <li v-for="error in errors" :key="error">{{ error }}</li>
+        <li
+          v-for="error in errors"
+          :key="error"
+        >{{ error }}</li>
       </ul>
     </div>
-    <div v-if="success" class="text-success mb-4">
+    <div
+      v-if="success"
+      class="text-success mb-4"
+    >
       <b>Ваш коментар зараз очікує модерації</b>
     </div>
     <div class="row">
@@ -49,7 +62,10 @@
     </div>
     <div class>
       <div class="form-group text-left">
-        <input v-model="notify_replies" type="checkbox" />
+        <input
+          v-model="notify_replies"
+          type="checkbox"
+        />
         <span class="text-center">Повідомляти мене, коли хто-небудь відповість</span>
       </div>
     </div>
@@ -83,7 +99,10 @@
           class="btn-loading"
         >
           Вантаження
-          <font-awesome-icon :icon="['fas', 'spinner']" class="fa-spin" />
+          <font-awesome-icon
+            :icon="['fas', 'spinner']"
+            class="fa-spin"
+          />
         </button>
       </div>
     </div>
@@ -100,7 +119,7 @@ export default {
     parent_name: String
   },
 
-  data: function() {
+  data: function () {
     return {
       errors: [],
       name: null,
@@ -114,7 +133,7 @@ export default {
   },
 
   methods: {
-    checkForm: function(e) {
+    checkForm: function (e) {
       this.errors = [];
       this.success = false;
 
@@ -137,7 +156,7 @@ export default {
       e.preventDefault();
     },
 
-    submitForm: function() {
+    submitForm: function () {
       this.loading = true;
 
       axios
@@ -175,7 +194,7 @@ export default {
         });
     },
 
-    validEmail: function(email) {
+    validEmail: function (email) {
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     }

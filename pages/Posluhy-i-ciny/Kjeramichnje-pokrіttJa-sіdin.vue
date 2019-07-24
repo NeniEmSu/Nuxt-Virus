@@ -1,12 +1,18 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only"/>
+      <sercivesBreadcrumbs
+        :heading="heading"
+        class="desktop-tablet-only"
+      />
       <div class="container text-left">
         <h1 class="info-pages mobile-only">{{ heading }}</h1>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img src="~assets/img/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ.jpg" :alt="heading">
+            <img
+              src="~assets/img/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ.jpg"
+              :alt="heading"
+            >
           </div>
           <div class="col-xl-6">
             <h1 class="info-pages desktop-only">{{ heading }}</h1>
@@ -30,13 +36,17 @@
           </div>
         </div>
 
-        <serviceCategories :category1="category1" :category2="category2" :category3="category3"/>
+        <serviceCategories
+          :category1="category1"
+          :category2="category2"
+          :category3="category3"
+        />
       </div>
     </div>
 
-    <ContactForm :service="service"/>
+    <ContactForm :service="service" />
 
-    <progressSection/>
+    <progressSection />
   </div>
 </template>
 
@@ -52,7 +62,7 @@ export default {
     sercivesBreadcrumbs
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: this.heading + " - %s!",
@@ -66,7 +76,7 @@ export default {
       ]
     };
   },
-  data() {
+  data () {
     return {
       service: "22",
       heading: "КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ",
@@ -95,7 +105,7 @@ export default {
       timeTaken: "Час виконання послуги 1 день"
     };
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

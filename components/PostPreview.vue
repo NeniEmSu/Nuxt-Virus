@@ -1,12 +1,18 @@
 <template>
   <div>
-    <div class="card display block p-5" :style="{ backgroundImage: 'url(' + thumbnail + ') ' }">
+    <div
+      class="card display block p-5"
+      :style="{ backgroundImage: 'url(' + thumbnail + ') ' }"
+    >
       <div class="row m-auto display-inner">
         <div class="col-md-9 m-auto">
           <h2>{{ title }}</h2>
         </div>
         <div class="col-lg-3 m-auto text-center">
-          <nuxt-link class="btn mx-auto mb-3" :to="id">ЧИТАТИ</nuxt-link>
+          <nuxt-link
+            class="btn mx-auto mb-3"
+            :to="id"
+          >ЧИТАТИ</nuxt-link>
         </div>
       </div>
     </div>
@@ -35,7 +41,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 h1 {
   font-family: $mainFont;
   font-style: normal;

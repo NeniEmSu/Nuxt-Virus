@@ -3,7 +3,11 @@
     <div class="card mb-3 none p-1 mx-auto">
       <div class="row no-gutters">
         <div class="col-6">
-          <img src="~/assets/img/mercedes-png-white-m.png" class="card-img img-fluid" alt="...">
+          <img
+            src="~/assets/img/mercedes-png-white-m.png"
+            class="card-img img-fluid"
+            alt="..."
+          >
         </div>
         <div class="col-6">
           <div class="card-body p-0 pl-1">

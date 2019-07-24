@@ -1,207 +1,207 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const glob = require('glob-all');
-const path = require('path');
-const collect = require('collect.js');
+const glob = require("glob-all");
+const path = require("path");
+const collect = require("collect.js");
 const perPage = Number(process.env.PER_PAGE);
-const axios = require('axios');
-import purgecss from '@fullhuman/postcss-purgecss';
+const axios = require("axios");
+import purgecss from "@fullhuman/postcss-purgecss";
 
 export default {
-  mode: 'universal',
+  mode: "universal",
   server: {
     port: 8383,
-    host: '0.0.0.0'
+    host: "0.0.0.0"
   },
   head: {
-    title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
+    title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
     htmlAttrs: {
-      class: 'has-navbar-fixed-top',
-      lang: 'uk',
+      class: "has-navbar-fixed-top",
+      lang: "uk",
       amp: true
     },
     meta: [{
-        charset: 'utf-8'
+        charset: "utf-8"
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        name: "viewport",
+        content: "width=device-width, initial-scale=1"
       },
       {
-        hid: 'description',
-        name: 'description',
-        content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+        hid: "description",
+        name: "description",
+        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
       },
       {
-        hid: 'keywords',
-        name: 'keywords',
-        content: 'детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди'
+        hid: "keywords",
+        name: "keywords",
+        content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
       },
       {
-        hid: 'apple-mobile-web-app-title',
-        name: 'apple-mobile-web-app-title',
-        content: 'Virus detailing'
+        hid: "apple-mobile-web-app-title",
+        name: "apple-mobile-web-app-title",
+        content: "Virus detailing"
       },
       {
-        hid: 'application-name',
-        name: 'application-name',
-        content: 'Virus detailing'
+        hid: "application-name",
+        name: "application-name",
+        content: "Virus detailing"
       },
       {
-        hid: 'msapplication-TileColor',
-        name: 'msapplication-TileColor',
-        content: '#da532c'
+        hid: "msapplication-TileColor",
+        name: "msapplication-TileColor",
+        content: "#da532c"
       },
       {
-        hid: 'msapplication-config',
-        name: 'msapplication-config',
-        content: '/browserconfig.xml'
+        hid: "msapplication-config",
+        name: "msapplication-config",
+        content: "/browserconfig.xml"
       },
       {
-        hid: 'theme-color',
-        name: 'theme-color',
-        content: '#E32124'
+        hid: "theme-color",
+        name: "theme-color",
+        content: "#E32124"
       },
       {
-        hid: 'og:title',
-        name: 'og:title',
-        property: 'og:title',
-        content: 'Virus детейлінг'
+        hid: "og:title",
+        name: "og:title",
+        property: "og:title",
+        content: "Virus детейлінг"
       },
       {
-        hid: 'og:site_name',
-        name: 'og:site_name',
-        property: 'og:site_name',
-        content: 'Virus детейлінг'
+        hid: "og:site_name",
+        name: "og:site_name",
+        property: "og:site_name",
+        content: "Virus детейлінг"
       },
       {
-        hid: 'og:url',
-        name: 'og:url',
-        property: 'og:url',
-        content: 'https://virus.te.ua/'
+        hid: "og:url",
+        name: "og:url",
+        property: "og:url",
+        content: "https://virus.te.ua/"
       },
       {
-        hid: 'og:type',
-        name: 'og:type',
-        property: 'og:type',
-        content: 'website'
+        hid: "og:type",
+        name: "og:type",
+        property: "og:type",
+        content: "website"
       },
       {
-        hid: 'og:locale',
-        name: 'og:locale',
-        property: 'og:locale',
-        content: 'uk_UA'
+        hid: "og:locale",
+        name: "og:locale",
+        property: "og:locale",
+        content: "uk_UA"
       },
       {
-        hid: 'og:description',
-        name: 'og:description',
-        property: 'og:description',
-        content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри'
+        hid: "og:description",
+        name: "og:description",
+        property: "og:description",
+        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
       },
       {
-        hid: 'og:image',
-        name: 'og:image',
-        property: 'og:image',
-        content: '/virus_og.jpg'
+        hid: "og:image",
+        name: "og:image",
+        property: "og:image",
+        content: "/virus_og.jpg"
       }
     ],
     link: [{
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
       },
       {
-        rel: 'apple-touch-icon',
-        type: 'image/png',
-        size: '180x180',
-        href: '/apple-touch-icon.png'
+        rel: "apple-touch-icon",
+        type: "image/png",
+        size: "180x180",
+        href: "/apple-touch-icon.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '128x128',
-        href: '/icon-128x128.png'
+        rel: "icon",
+        type: "image/png",
+        size: "128x128",
+        href: "/icon-128x128.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '96x96',
-        href: '/icon-96x96.png'
+        rel: "icon",
+        type: "image/png",
+        size: "96x96",
+        href: "/icon-96x96.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '144x144',
-        href: '/icon-144x144.png'
+        rel: "icon",
+        type: "image/png",
+        size: "144x144",
+        href: "/icon-144x144.png"
       }, {
-        rel: 'icon',
-        type: 'image/png',
-        size: '512x512',
-        href: '/icon-512x512.png'
+        rel: "icon",
+        type: "image/png",
+        size: "512x512",
+        href: "/icon-512x512.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '384x384',
-        href: '/icon-384x384.png'
+        rel: "icon",
+        type: "image/png",
+        size: "384x384",
+        href: "/icon-384x384.png"
       }, {
-        rel: 'icon',
-        type: 'image/png',
-        size: '192x192',
-        href: '/icon-192x192.png'
+        rel: "icon",
+        type: "image/png",
+        size: "192x192",
+        href: "/icon-192x192.png"
       }, {
-        rel: 'icon',
-        type: 'image/png',
-        size: '152x152',
-        href: '/icon-152x152.png'
+        rel: "icon",
+        type: "image/png",
+        size: "152x152",
+        href: "/icon-152x152.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '72x72',
-        href: '/icon-72x72.png'
+        rel: "icon",
+        type: "image/png",
+        size: "72x72",
+        href: "/icon-72x72.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '32x32',
-        href: '/favicon-32x32.png'
+        rel: "icon",
+        type: "image/png",
+        size: "32x32",
+        href: "/favicon-32x32.png"
       },
       {
-        rel: 'icon',
-        type: 'image/png',
-        size: '16x16',
-        href: '/favicon-16x16.png'
+        rel: "icon",
+        type: "image/png",
+        size: "16x16",
+        href: "/favicon-16x16.png"
       },
       {
-        rel: 'mask-icon',
-        href: 'https://virus.te.ua/assets/icons/safari-pinned-tab.svg',
-        color: '#e32124'
+        rel: "mask-icon",
+        href: "https://virus.te.ua/assets/icons/safari-pinned-tab.svg",
+        color: "#e32124"
       },
       {
-        rel: 'shortcut icon',
-        href: '/favicon.ico'
+        rel: "shortcut icon",
+        href: "/favicon.ico"
       },
       {
         rel: "stylesheet",
         type: "text/css",
-        href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
+        href: "https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css"
       }
     ],
     script: [{
-        rel: 'prefetch',
-        src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
+        rel: "prefetch",
+        src: "https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js",
         "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
         defer: true
       },
       {
-        rel: 'prefetch',
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'
+        rel: "prefetch",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 
       },
       {
-        rel: 'prefetch',
-        src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
+        rel: "prefetch",
+        src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 
       }
     ]
@@ -216,16 +216,16 @@ export default {
     display: "standalone",
     start_url: "/",
     dir: "auto",
-    lang: 'uk',
+    lang: "uk",
     icons: [{
-        type: 'image/png',
-        size: '32x32',
-        src: '/favicon-32x32.png'
+        type: "image/png",
+        size: "32x32",
+        src: "/favicon-32x32.png"
       },
       {
-        type: 'image/png',
-        size: '16x16',
-        src: '/favicon-16x16.png'
+        type: "image/png",
+        size: "16x16",
+        src: "/favicon-16x16.png"
       },
       {
         src: "/icon-72x72.png",
@@ -272,13 +272,13 @@ export default {
   },
 
   loading: {
-    color: '#e32124'
+    color: "#e32124"
   },
 
   css: [
-    '~/assets/scss/config.scss',
-    '~/assets/fonts/fonts.css',
-    'highlight.js/styles/dracula.css'
+    "~/assets/scss/config.scss",
+    "~/assets/fonts/fonts.css",
+    "highlight.js/styles/dracula.css"
   ],
 
   env: {
@@ -289,20 +289,20 @@ export default {
 
   polyfill: {
     features: [{
-        require: 'url-polyfill'
+        require: "url-polyfill"
       },
 
       {
-        require: 'intersection-observer',
-        detect: () => 'IntersectionObserver' in window,
+        require: "intersection-observer",
+        detect: () => "IntersectionObserver" in window,
       },
 
 
       {
-        require: 'smoothscroll-polyfill',
+        require: "smoothscroll-polyfill",
 
 
-        detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
+        detect: () => "scrollBehavior" in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
 
 
         install: (smoothscroll) => smoothscroll.polyfill()
@@ -311,24 +311,24 @@ export default {
   },
 
   plugins: [
-    '~/plugins/vue-scrollto.js',
-    '~/plugins/lightGallery.client.js',
-    '~/plugins/Axios.js',
-    '~/plugins/filters.js',
+    "~/plugins/vue-scrollto.js",
+    "~/plugins/lightGallery.client.js",
+    "~/plugins/Axios.js",
+    "~/plugins/filters.js",
     {
-      src: '~/plugins/vue-lazyload',
+      src: "~/plugins/vue-lazyload",
       ssr: false
     },
     {
-      src: '~/plugins/v-owl-carousel',
+      src: "~/plugins/v-owl-carousel",
       ssr: false
     },
     {
       ssr: false,
-      src: '~/plugins/JivoChat'
+      src: "~/plugins/JivoChat"
     },
     {
-      src: '~/plugins/ga',
+      src: "~/plugins/ga",
       ssr: false
     },
     {
@@ -345,40 +345,40 @@ export default {
   ],
 
   modules: [
-    'vue-currency-filter/nuxt',
-    ['vue-currency-filter/nuxt', {
-      name: 'currency',
-      symbol: '₴',
-      thousandsSeparator: ',',
+    "vue-currency-filter/nuxt",
+    ["vue-currency-filter/nuxt", {
+      name: "currency",
+      symbol: "₴",
+      thousandsSeparator: ",",
       fractionCount: 2,
-      fractionSeparator: '.',
-      symbolPosition: 'front',
+      fractionSeparator: ".",
+      symbolPosition: "front",
       symbolSpacing: true
     }],
-    'nuxt-polyfill',
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    '@nuxtjs/style-resources',
-    'bootstrap-vue/nuxt',
-    'vue-scrollto/nuxt',
-    '@nuxtjs/robots',
-    '@nuxtjs/dotenv',
+    "nuxt-polyfill",
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
+    "@nuxtjs/style-resources",
+    "bootstrap-vue/nuxt",
+    "vue-scrollto/nuxt",
+    "@nuxtjs/robots",
+    "@nuxtjs/dotenv",
     [
-      '@nuxtjs/google-analytics',
+      "@nuxtjs/google-analytics",
       {
-        id: 'UA-62479125-9'
+        id: "UA-62479125-9"
       }
     ],
     [
-      'nuxt-fontawesome',
+      "nuxt-fontawesome",
       {
         imports: [{
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fas']
+          set: "@fortawesome/free-solid-svg-icons",
+          icons: ["fas"]
         }]
       }
     ],
-    '@nuxtjs/sitemap'
+    "@nuxtjs/sitemap"
   ],
 
   axios: {
@@ -404,7 +404,7 @@ export default {
           populate: 1
         }), {
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
           }
         });
 
@@ -467,7 +467,7 @@ export default {
     //       populate: 1
     //     }), {
     //       headers: {
-    //         'Content-Type': 'application/json'
+    //         "Content-Type": "application/json"
     //       }
     //     })
     //   return data.entries.map((product) => {
@@ -481,7 +481,7 @@ export default {
   },
 
   sitemap: {
-    path: '/sitemap.xml',
+    path: "/sitemap.xml",
     hostname: process.env.URL,
     cacheTime: 1000 * 60 * 15,
 
@@ -499,7 +499,7 @@ export default {
           populate: 1
         }), {
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
           }
         });
 
@@ -529,7 +529,7 @@ export default {
 
   styleResources: {
     scss: [
-      'assets/scss/config.scss'
+      "assets/scss/config.scss"
     ]
   },
 
@@ -545,7 +545,7 @@ export default {
         if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
 
           rule.use.push({
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               svgo: {
                 plugins: [
@@ -573,13 +573,13 @@ export default {
         config.module.rules.unshift({
           test: /\.(png|jpe?g|gif)$/,
           use: {
-            loader: 'responsive-loader',
+            loader: "responsive-loader",
             options: {
 
               placeholder: true,
               quality: 85,
               placeholderSize: 30,
-              name: 'img/[name].[hash:hex:7].[width].[ext]'
+              name: "img/[name].[hash:hex:7].[width].[ext]"
             }
           }
         })
@@ -597,8 +597,8 @@ export default {
       postcss: {
         plugins: [
           purgecss({
-            content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './content/**/*.md', './content/**/*.json'],
-            whitelist: ['html', 'body', 'has-navbar-fixed-top', 'nuxt-link-exact-active', 'nuxt-progress', 'hidden', 'opacity-0'],
+            content: ["./pages/**/*.vue", "./layouts/**/*.vue", "./components/**/*.vue", "./content/**/*.md", "./content/**/*.json"],
+            whitelist: ["html", "body", "has-navbar-fixed-top", "nuxt-link-exact-active", "nuxt-progress", "hidden", "opacity-0"],
             whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/],
           })
         ]

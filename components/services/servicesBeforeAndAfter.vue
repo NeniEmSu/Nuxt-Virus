@@ -1,7 +1,7 @@
 <template>
   <div class="row mx-auto">
     <div class="col-6 mx-auto p-0 before img-fluid">
-      <!-- :style="{ backgroundImage: `url(~assets/img/${image})` }" 
+      <!-- :style="{ backgroundImage: `url(~assets/img/${image})` }"
       :style="{ backgroundImage: 'url(' + require(@/assets/img/${page.image}) + ')' }"
       -->
       <font class="before-image-text">До</font>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       image: "beforeAfter1_001.jpg"
     };

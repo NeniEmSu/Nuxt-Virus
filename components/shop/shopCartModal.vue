@@ -40,7 +40,7 @@
         style="border-radius: 20px; border: none;"
       >
         <div
-          v-for="(product, index) in cart"
+          v-for="product in cart"
           :key="product.id"
           class="basket-content col-12"
           style="border-radius: 20px; border: none;"

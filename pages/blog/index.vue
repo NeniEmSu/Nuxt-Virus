@@ -1,12 +1,18 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav class="container mb-n4 desktop-only" aria-label="breadcrumb">
+      <nav
+        class="container mb-n4 desktop-only"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">Блог</li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+          >Блог</li>
         </ol>
       </nav>
       <h1>Блог</h1>
@@ -18,7 +24,11 @@
       :key="`${post.title} ${post._created}`"
     >
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="post.image.path" :alt="post.title" />
+        <img
+          class="card-img img-fliud"
+          :src="post.image.path"
+          :alt="post.title"
+        />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -39,9 +49,7 @@
                   preserveAspectRatio="xMinYMin"
                   class="text-light fill-current"
                 >
-                  <path
-                    d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
-                  />
+                  <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
                 </svg>
               </span>
             </div>
@@ -51,15 +59,24 @@
             <p class="card-text">Дата створення {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/blog/'+post.title_slug">ЧИТАТИ</nuxt-link>
+            <nuxt-link
+              class="btn"
+              :to="'/blog/'+post.title_slug"
+            >ЧИТАТИ</nuxt-link>
           </div>
         </div>
       </div>
       <hr class="separator" />
     </div>
     <div class="container">
-      <div v-if="hasNext" class="text-center my-3">
-        <nuxt-link to="/blog/pages/2" class="text-info">Наступна сторінка</nuxt-link>
+      <div
+        v-if="hasNext"
+        class="text-center my-3"
+      >
+        <nuxt-link
+          to="/blog/pages/2"
+          class="text-info"
+        >Наступна сторінка</nuxt-link>
       </div>
     </div>
 
@@ -70,7 +87,7 @@
 
 <script>
 export default {
-  async asyncData({ app, error }) {
+  async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.POSTS_URL,
       JSON.stringify({
@@ -90,7 +107,7 @@ export default {
 
     return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total };
   },
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "блог - %s!",

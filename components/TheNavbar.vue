@@ -9,20 +9,39 @@
     <TheTopContact />
     <div class="container p-md-0">
       <div class="logo">
-        <nuxt-link class="navbar-brand logo" to="/" aria-label="Virus Logo">
-          <img src="~/assets/img/virus-logo.svg" alt="virus logo" />
+        <nuxt-link
+          class="navbar-brand logo"
+          to="/"
+          aria-label="Virus Logo"
+        >
+          <img
+            src="~/assets/img/virus-logo.svg"
+            alt="virus logo"
+          />
         </nuxt-link>
       </div>
 
-      <div class="btn-hamburger" @click="mobileNavOpen = !mobileNavOpen">
-        <img src="~/assets/img/menu.svg" alt="menu Icon" />
+      <div
+        class="btn-hamburger"
+        @click="mobileNavOpen = !mobileNavOpen"
+      >
+        <img
+          src="~/assets/img/menu.svg"
+          alt="menu Icon"
+        />
       </div>
 
       <div>
-        <shopCartModal :cart="cart" style="float: right;" />
+        <shopCartModal
+          :cart="cart"
+          style="float: right;"
+        />
       </div>
 
-      <nav class="navbar pr-0" :class="{'navbar-open': mobileNavOpen}">
+      <nav
+        class="navbar pr-0"
+        :class="{'navbar-open': mobileNavOpen}"
+      >
         <app-links></app-links>
         <div
           class="close-hamburger text-right text-black p-2"
@@ -45,7 +64,7 @@ export default {
     clickOutside,
     handleScroll
   },
-  data() {
+  data () {
     return {
       userDropdownOpen: false,
       mobileNavOpen: false,
@@ -56,16 +75,16 @@ export default {
   },
   computed: {},
   methods: {
-    closeUserDropdown() {
+    closeUserDropdown () {
       this.userDropdownOpen = false;
     },
-    closeMobileNavbar() {
+    closeMobileNavbar () {
       this.mobileNavOpen = false;
     },
-    hide() {
+    hide () {
       this.mobileNavOpen = false;
     },
-    onScroll() {
+    onScroll () {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
       if (currentScrollPosition < 0) {
@@ -80,14 +99,14 @@ export default {
       this.lastScrollPosition = currentScrollPosition;
     }
   },
-  mounted() {
+  mounted () {
     window.addEventListener("scroll", this.onScroll);
   },
-  beforeDestroy() {
+  beforeDestroy () {
     window.removeEventListener("scroll", this.onScroll);
   },
   watch: {
-    $route() {
+    $route () {
       this.mobileNavOpen = false;
     }
   }

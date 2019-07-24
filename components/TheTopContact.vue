@@ -1,17 +1,29 @@
 <template>
-  <div class="top-contacts" id="top-contact">
+  <div
+    class="top-contacts"
+    id="top-contact"
+  >
     <div class="container p-0">
       <ul>
         <li>
-          <nuxt-link to="/kontakty" v-scroll-to="{el: '#map-top', duration: 500, offset: -5 }">
+          <nuxt-link
+            to="/kontakty"
+            v-scroll-to="{el: '#map-top', duration: 500, offset: -5 }"
+          >
             <span>Україна, м. Тернопіль, вул. Приміська 15А</span>
-            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="bounce mx-1 fa-lg" />
+            <font-awesome-icon
+              :icon="['fas', 'map-marker-alt']"
+              class="bounce mx-1 fa-lg"
+            />
           </nuxt-link>
         </li>
         <li>
           <a href="tel:+380673334040">
             <span>+38 (067) 333-40-40</span>
-            <font-awesome-icon :icon="['fas', 'phone']" class="faa-ring animated mx-1 fa-lg" />
+            <font-awesome-icon
+              :icon="['fas', 'phone']"
+              class="faa-ring animated mx-1 fa-lg"
+            />
           </a>
         </li>
         <li>
@@ -25,19 +37,39 @@
         </li>
 
         <li class="facebook">
-          <a href="https://www.facebook.com/virus.te.ua/" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/virus.te.ua/"
+            target="_blank"
+            rel="noopener"
+          >
             <picture>
-              <source srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp" type="image/webp" />
-              <img src="~/assets/img/icons8-facebook-filled-100.png" alt="icons facebook filled" />
+              <source
+                srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
+                type="image/webp"
+              />
+              <img
+                src="~/assets/img/icons8-facebook-filled-100.png"
+                alt="icons facebook filled"
+              />
             </picture>
           </a>
         </li>
 
         <li class="instagram">
-          <a href="https://www.instagram.com/virusdetailing/" target="_blank" rel="noopener">
+          <a
+            href="https://www.instagram.com/virusdetailing/"
+            target="_blank"
+            rel="noopener"
+          >
             <picture>
-              <source srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp" type="image/webp" />
-              <img src="~/assets/img/icons8-instagram-filled-100.png" alt="icons instagram filled" />
+              <source
+                srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
+                type="image/webp"
+              />
+              <img
+                src="~/assets/img/icons8-instagram-filled-100.png"
+                alt="icons instagram filled"
+              />
             </picture>
           </a>
         </li>

@@ -1,11 +1,24 @@
 <template>
   <div>
     <div class="cart-icon">
-      <b-button variant="link" class="snipcart-checkout">
-        <img id="cart" src="~/assets/img/cart.png" alt="Cart icon">
+      <b-button
+        variant="link"
+        class="snipcart-checkout"
+      >
+        <img
+          id="cart"
+          src="~/assets/img/cart.png"
+          alt="Cart icon"
+        >
       </b-button>
-      <div id="show-total" class="text-center justify-center snipcart-summary">
-        <span id="item-count" class="text-center m-auto p-0 snipcart-total-items">0</span>
+      <div
+        id="show-total"
+        class="text-center justify-center snipcart-summary"
+      >
+        <span
+          id="item-count"
+          class="text-center m-auto p-0 snipcart-total-items"
+        >0</span>
       </div>
     </div>
     <!-- <div class="cart-icon">
@@ -33,7 +46,10 @@
               alt="Koch Chemie Fresh UP"
               class="col-sm-1 m-auto"
             >
-            <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">
+            <h5
+              id="cart-item-title"
+              class="col-sm-6 m-auto text-sm-left"
+            >
               Koch
               Chemie Fresh
               UP
@@ -44,7 +60,10 @@
               <a href="#">&plus;</a>
             </div>
             <div class="cost col-sm-2 m-auto">
-              <p id="cart-item-price" class="cart-item-price card-text">2900 грн</p>
+              <p
+                id="cart-item-price"
+                class="cart-item-price card-text"
+              >2900 грн</p>
             </div>
             <div class="remove-from-chart col-sm-1 m-auto text-center">
               <a href="#">
@@ -62,14 +81,20 @@
               alt="Soft 99"
               class="col-sm-1 m-auto"
             >
-            <h5 id="cart-item-title" class="col-sm-6 m-auto text-sm-left">Soft 99</h5>
+            <h5
+              id="cart-item-title"
+              class="col-sm-6 m-auto text-sm-left"
+            >Soft 99</h5>
             <div class="toggle-quantity col-sm-2 m-auto">
               <a href="#">&minus;</a>
               <p>1</p>
               <a href="#">&plus;</a>
             </div>
             <div class="cost col-sm-2 m-auto">
-              <p id="cart-item-price" class="cart-item-price card-text">2900 грн</p>
+              <p
+                id="cart-item-price"
+                class="cart-item-price card-text"
+              >2900 грн</p>
             </div>
             <div class="remove-from-chart col-sm-1 m-auto">
               <a href="#">
@@ -88,10 +113,17 @@
           </span>
         </div>
 
-        <form action="#" method="POST" class="checkOut">
+        <form
+          action="#"
+          method="POST"
+          class="checkOut"
+        >
           <div class="row">
             <div class="form-group col-lg-6">
-              <label hidden for="name">Ім’я</label>
+              <label
+                hidden
+                for="name"
+              >Ім’я</label>
               <input
                 id="name"
                 type="text"
@@ -102,7 +134,10 @@
               >
             </div>
             <div class="form-group col-lg-6">
-              <label hidden for="phone">Телефон</label>
+              <label
+                hidden
+                for="phone"
+              >Телефон</label>
               <input
                 id="phone"
                 type="number"
@@ -115,10 +150,17 @@
           </div>
           <div class="row">
             <div class="col-md-6 mx-auto mt-2 text-md-left">
-              <a id="clear-cart" href="#" class="btn go-back">Повернутися</a>
+              <a
+                id="clear-cart"
+                href="#"
+                class="btn go-back"
+              >Повернутися</a>
             </div>
             <div class="col-md-6 mx-auto mt-2 text-md-right">
-              <button type="submit" class="btn order">Замовити</button>
+              <button
+                type="submit"
+                class="btn order"
+              >Замовити</button>
             </div>
           </div>
         </form>
@@ -135,13 +177,13 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       modalShow: false
     };
   },
   methods: {
-    addToCart() {
+    addToCart () {
       this.cart += 1;
     }
   }

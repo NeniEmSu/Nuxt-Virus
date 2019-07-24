@@ -2,7 +2,10 @@
   <div class="__nuxt-error-page">
     <div class="error">
       <picture>
-        <source srcset="~/assets/imgWebP/404.webp" type="image/webp" />
+        <source
+          srcset="~/assets/imgWebP/404.webp"
+          type="image/webp"
+        />
         <img
           src="~assets/img/404.png"
           alt="404 imgage in a house"
@@ -12,9 +15,10 @@
 
       <div class="title">Ой, щось пішло не так!</div>
       <p class="description">
-        <nuxt-link to="/" class="error-link nuxt-link-active"
-          >Повернутися назад</nuxt-link
-        >
+        <nuxt-link
+          to="/"
+          class="error-link nuxt-link-active"
+        >Повернутися назад</nuxt-link>
       </p>
     </div>
   </div>
@@ -29,7 +33,7 @@ export default {
       default: null
     }
   },
-  head() {
+  head () {
     return {
       title: this.message,
       meta: [
@@ -42,10 +46,10 @@ export default {
     }
   },
   computed: {
-    statusCode() {
+    statusCode () {
       return (this.error && this.error.statusCode) || 500
     },
-    message() {
+    message () {
       return this.error.message || `<%= messages.client_error %>`
     }
   }
@@ -77,7 +81,7 @@ export default {
   max-width: 450px;
 }
 .__nuxt-error-page .title {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -96,7 +100,7 @@ export default {
   margin-top: 40px;
 }
 .__nuxt-error-page a {
-  font-family: 'Roboto Condensed';
+  font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: bold;
   font-size: 20px;

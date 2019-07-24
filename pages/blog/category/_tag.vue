@@ -1,7 +1,10 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav class="container mb-n4 desktop-only" aria-label="breadcrumb">
+      <nav
+        class="container mb-n4 desktop-only"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
@@ -24,7 +27,11 @@
       :key="`${post.title} ${post._created}`"
     >
       <div class="card mx-auto">
-        <img class="card-img img-fliud" :src="post.image.path" alt="Card image" />
+        <img
+          class="card-img img-fliud"
+          :src="post.image.path"
+          alt="Card image"
+        />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -45,9 +52,7 @@
                   preserveAspectRatio="xMinYMin"
                   class="text-light fill-current"
                 >
-                  <path
-                    d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
-                  />
+                  <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
                 </svg>
               </span>
             </div>
@@ -57,7 +62,10 @@
             <p class="card-text">Date Created {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/blog/'+post.title_slug">ЧИТАТИ</nuxt-link>
+            <nuxt-link
+              class="btn"
+              :to="'/blog/'+post.title_slug"
+            >ЧИТАТИ</nuxt-link>
           </div>
         </div>
       </div>
@@ -74,7 +82,7 @@
 <script>
 export default {
   scrollToTop: true,
-  async asyncData({ app, params, error, payload }) {
+  async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return { posts: payload, category: params.tag };
     } else {
@@ -97,12 +105,12 @@ export default {
       return { posts: data.entries, category: params.tag };
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }
   },
-  head() {
+  head () {
     return {
       title: `Повідомлення з тегами ${this.category}`,
       meta: [

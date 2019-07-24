@@ -1,12 +1,18 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav class="container mb-n4 mobile-only" aria-label="breadcrumb">
+      <nav
+        class="container mb-n4 mobile-only"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">Головна</nuxt-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">Акції</li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+          >Акції</li>
         </ol>
       </nav>
       <h1>Акції</h1>
@@ -30,7 +36,10 @@
             <p class="card-text">{{ promotion.promotionTimeLimit }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/mahazyn/'+promotion.name_slug">ЗАМОВИТИ</nuxt-link>
+            <nuxt-link
+              class="btn"
+              :to="'/mahazyn/'+promotion.name_slug"
+            >ЗАМОВИТИ</nuxt-link>
           </div>
         </div>
       </div>
@@ -44,12 +53,12 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       imageApiUrl: process.env.IMAGE_URL
     };
   },
-  async asyncData({ app }) {
+  async asyncData ({ app }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
@@ -65,7 +74,7 @@ export default {
 
     return { promotions: data.entries };
   },
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "Акції - %s!",
@@ -80,7 +89,7 @@ export default {
     };
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true });
     }

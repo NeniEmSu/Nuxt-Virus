@@ -1,5 +1,8 @@
 <template>
-  <li class="mb-4" :class="!parent ? 'border-b-2' : ''">
+  <li
+    class="mb-4"
+    :class="!parent ? 'border-b-2' : ''"
+  >
     <div ref="parent">
       <div class="text-grey-dark text-sm mb-2">
         <span class="text-grey-darkest font-semibold">{{comment.name}}</span>
@@ -14,9 +17,7 @@
             preserveAspectRatio="xMinYMin"
             class="text-grey-dark fill-current"
           >
-            <path
-              d="M10.586 5.657l-3.95-3.95A1 1 0 0 1 8.05.293l5.657 5.657a.997.997 0 0 1 0 1.414L8.05 13.021a1 1 0 1 1-1.414-1.414l3.95-3.95H1a1 1 0 1 1 0-2h9.586z"
-            ></path>
+            <path d="M10.586 5.657l-3.95-3.95A1 1 0 0 1 8.05.293l5.657 5.657a.997.997 0 0 1 0 1.414L8.05 13.021a1 1 0 1 1-1.414-1.414l3.95-3.95H1a1 1 0 1 1 0-2h9.586z"></path>
           </svg>
           {{ parent.name }}
         </span>
@@ -27,13 +28,19 @@
         v-html="$options.filters.parseMd(comment.body)"
       ></div>
 
-      <div class="text-grey-dark text-sm mt-2 mb-4 cursor-pointer" @click="toggleReply">
+      <div
+        class="text-grey-dark text-sm mt-2 mb-4 cursor-pointer"
+        @click="toggleReply"
+      >
         <span v-if="replyOpen">Cancel</span>
         <span v-else>Reply</span>
       </div>
     </div>
 
-    <ul class="ml-10 list-reset comment-list" v-if="children(comment._id).length">
+    <ul
+      class="ml-10 list-reset comment-list"
+      v-if="children(comment._id).length"
+    >
       <comment
         v-for="child in children(comment._id)"
         :key="child._id"
@@ -58,18 +65,18 @@ export default {
     parent: Object
   },
 
-  data: function() {
+  data: function () {
     return {
       replyOpen: false
     };
   },
 
   methods: {
-    children: function(parent_id) {
+    children: function (parent_id) {
       return this.all.filter(comment => comment.parent_id === parent_id);
     },
 
-    toggleReply: function() {
+    toggleReply: function () {
       if (!this.replyOpen) {
         let ComponentClass = Vue.extend(CommentForm);
         let instance = new ComponentClass({
