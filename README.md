@@ -2,6 +2,12 @@
 
 > Virus project using Nuxt js for ssr, and proper seo integration.
 
+## Links
+
+Deployed from the branch after runing npn run generate && npm run deploy: https://virus-car-detailing-branched.netlify.com/
+
+Deployed automatically by netlify from npm run generate on netlify console:  https://virus-car-detailing.netlify.com/
+
 ## Technologies
 
 1. Vue js
