@@ -1,5 +1,5 @@
 export default [{
-    name: "Dummy Product Koch Fresh UP - 1",
+    name: "Dummy Product Koch - 1",
     id: 1,
     price: 2900,
     quantity: 6,
