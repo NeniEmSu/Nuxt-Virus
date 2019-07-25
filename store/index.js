@@ -2,15 +2,7 @@ import {
   strictEqual
 } from "assert";
 
-import {
-  getData,
-  setData
-} from "nuxt-storage/local-storage";
-
 import myApi from "~/plugins/api/myApi.js";
-
-let cart = getData("cart");
-
 
 
 export const state = () => ({ // = data
@@ -25,17 +17,17 @@ export const state = () => ({ // = data
 
 export const getters = { // = computed properties
 
-  cartSize: (state) => {
+  cartSize(state) {
     return state.cart.length;
   },
 
-  cartTotalAmount: (state) => {
+  cartTotalAmount(state) {
     return state.cart.reduce((total, product) => {
       return total + (product.price * product.quantity);
     }, 0);
   },
 
-  toast: (state) => {
+  toast(state) {
     return state.toast;
   }
 };
@@ -43,9 +35,9 @@ export const getters = { // = computed properties
 
 export const actions = { //methods
 
-  fetchProducts: ({
+  fetchProducts({
     commit
-  }) => {
+  }) {
     //simulating a fake ajax request to fetch products from database
     myApi.getProducts().then((products) => {
       //passing the products recieved from response as a payload to the mutation
@@ -54,27 +46,27 @@ export const actions = { //methods
     });
   },
 
-  addToCart: ({
+  addToCart({
     commit
-  }, productId) => {
+  }, productId) {
     myApi.products("add", productId).then((productId) => {
       commit("addToCart", productId);
       commit("showToast", "Додано з кошика");
     });
   },
 
-  removeFromCart: ({
+  removeFromCart({
     commit
-  }, productId) => {
+  }, productId) {
     myApi.products("remove", productId).then((productId) => {
       commit("removeFromCart", productId);
       commit("showToast", "Видалено з кошика");
     });
   },
 
-  deleteFromCart: ({
+  deleteFromCart({
     commit
-  }, productId) => {
+  }, productId) {
     myApi.products("delete", productId).then((productId) => {
       commit("deleteFromCart", productId);
       commit("showToast", "Видалено з кошика");
@@ -84,7 +76,7 @@ export const actions = { //methods
   checkout: ({
     state,
     commit
-  })  => {
+  }) => {
     myApi.buyProducts(
       state.cart,
       () => {
@@ -101,12 +93,12 @@ export const actions = { //methods
 
 export const mutations = {
 
-  setUpProducts: (state, productsPayload) => {
+  setUpProducts(state, productsPayload) {
     //sets the state"s  products property to the products array recieved as payload
     state.products = productsPayload;
   },
 
-  addToCart: (state, productId) => {
+  addToCart(state, productId) {
     //find the product in the products list
     let product = state.products.find((product) => product.id === productId);
     //find the product in the cart list
@@ -125,10 +117,9 @@ export const mutations = {
     }
     //reduce the quantity in products list by 1
     product.quantity--;
-
   },
 
-  removeFromCart: (state, productId) => {
+  removeFromCart(state, productId) {
     //find the product in the products list
     let product = state.products.find((product) => product.id === productId);
     //find the product in the cart list
@@ -137,10 +128,9 @@ export const mutations = {
     cartProduct.quantity--;
     //Add back the quantity in products list by 1
     product.quantity++;
-
   },
 
-  deleteFromCart: (state, productId) => {
+  deleteFromCart(state, productId) {
     //find the product in the products list
     let product = state.products.find((product) => product.id === productId);
     //find the product index in the cart list
@@ -149,15 +139,14 @@ export const mutations = {
     product.quantity = state.cart[cartProductIndex].stock;
     // remove the product from the cart
     state.cart.splice(cartProductIndex, 1);
-
   },
 
-  showToast: (state, toastText) => {
+  showToast(state, toastText) {
     state.toast.show = true;
     state.toast.text = toastText;
   },
 
-  hideToast: (state) => {
+  hideToast(state) {
     state.toast.show = false;
     state.toast.text = "";
   },
@@ -169,10 +158,5 @@ export const mutations = {
   emptyCart(state) {
     state.cart = []
     state.cartCount = 0
-
-  },
-
-  saveCart(state) {
-    setData("cart", JSON.stringify(state.cart));
   }
 }

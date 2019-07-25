@@ -1,11 +1,5 @@
 <template>
   <div class="desktop-only">
-    <!-- <b-button variant="link" class="snipcart-checkout">
-      <img src="~/assets/img/icons8-shopping-bag-filled-100.png" alt="Cart Icon">
-      <div id="show-total" class="text-center mt-n3 ml-n3 snipcart-summary">
-        <span id="item-count" class="text-center snipcart-total-items">0</span>
-      </div>
-    </b-button>-->
     <b-button
       v-b-modal.modal-xl-mobile
       variant="link"
@@ -26,6 +20,29 @@
         >{{cartSize}}</span>
       </div>
     </b-button>
+    <style>
+    .modal-content {
+      border-radius: 20px;
+    }
+
+    .modal-title {
+      margin-bottom: 0;
+      line-height: 1.5;
+      margin: auto 0 auto auto;
+    }
+
+    @media (max-width: 991px) {
+      .modal-dialog {
+        max-width: 95%;
+      }
+    }
+
+    @media (max-width: 577px) {
+      .modal-dialog {
+        max-width: 100%;
+      }
+    }
+    </style>
     <b-modal
       v-model="mobileModalShow"
       id="modal-xl-mobile"
@@ -208,12 +225,6 @@
  <script>
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 export default {
-  // props: {
-  //   cart: {
-  //     type: Number,
-  //     required: true
-  //   }
-  // },
   data () {
     return {
       mobileModalShow: false,
@@ -243,23 +254,7 @@ export default {
       this.$store.dispatch("deleteFromCart", id);
     }
   }
-  //   methods: {
-  //     addProductToCart (product) {
-  //       this.$store.dispatch("addProductToCart", product);
-  //     },
-  //     removeFromCart (product) {
-  //       this.$store.commit('removeFromCart', product);
-  //     }
-  //   },
-  //   computed: {
-  //     products () {
-  //       return this.$store.getters.cartProducts;
-  //     },
 
-  //     total () {
-  //       return this.$store.getters.cartTotal;
-  //     }
-  //   }
 };
 </script>
 
@@ -286,8 +281,9 @@ export default {
     font-family: $mainFont;
     font-style: normal;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 12px;
+    text-decoration: none !important;
 
     color: $lightColor;
     text-align: center;
@@ -300,8 +296,6 @@ export default {
   border-radius: 25px;
 
   .basket {
-    // margin-top: 140px;
-
     h3 {
       font-family: $mainFont;
       font-style: normal;
@@ -473,6 +467,13 @@ export default {
         margin-right: 10px;
       }
     }
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 90% !important;
+    margin: 1.75rem auto;
   }
 }
 

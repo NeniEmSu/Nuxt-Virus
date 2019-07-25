@@ -341,7 +341,7 @@
           </div>
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
-            <ProductsList />>
+            <ProductsList />
             <div
               class="row"
               id="store-items"
