@@ -182,6 +182,17 @@ main {
 
     color: #8b8b8b;
   }
+  h1 {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: -20px;
+    margin-left: 10px;
+
+    color: #8b8b8b;
+  }
 
   a {
     font-family: $mainFont;

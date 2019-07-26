@@ -116,7 +116,7 @@
                     class="form-control mx-auto"
                     aria-describedby="name"
                     placeholder="Ім’я*"
-                    v-model="name"
+                    v-model.trim="name"
                   ></label>
               </div>
               <div class="form-group">

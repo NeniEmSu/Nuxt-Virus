@@ -26,7 +26,7 @@ export default {
         },
         {
           title: "Послуги і ціни",
-          to: "/Posluhy-i-ciny"
+          to: "/posluhy-i-ciny"
         },
         {
           title: "Акції",

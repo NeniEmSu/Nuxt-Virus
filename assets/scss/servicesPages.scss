@@ -1,4 +1,4 @@
-h1.info-pages {
+h2.info-pages {
   font-family: $mainFont;
   font-style: normal;
   font-weight: 900;
@@ -208,7 +208,7 @@ img {
     margin-right: auto;
   }
 
-  h1.info-pages {
+  h2.info-pages {
 
     font-size: 30px;
     line-height: 36px;
@@ -597,7 +597,7 @@ img {
 
 
 @include mediaXXSm {
-  h1.info-pages {
+  h2.info-pages {
     font-size: 18px;
     line-height: 21px;
     text-align: center;

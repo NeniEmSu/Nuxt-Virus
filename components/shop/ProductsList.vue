@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import SingleProduct from "@/components/SingleProduct.vue"
+import SingleProduct from "@/components/shop/SingleProduct.vue"
 export default {
   data () {
     return {

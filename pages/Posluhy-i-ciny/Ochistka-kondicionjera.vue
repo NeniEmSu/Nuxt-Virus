@@ -6,7 +6,7 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h1 class="info-pages text-center mobile-only">{{ heading }}</h1>
+        <h2 class="info-pages text-center mobile-only">{{ heading }}</h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <img
@@ -15,7 +15,7 @@
             >
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages desktop-only">{{ heading }}</h1>
+            <h2 class="info-pages desktop-only">{{ heading }}</h2>
             <p>
               {{ question }}{{ firstParagraph }}
               <br>
@@ -63,16 +63,9 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
-import sercivesBreadcrumbs from "@/components/breadcrumbs/sercivesBreadcrumbs.vue";
+
 export default {
-  layout: "Services",
-  components: {
-    ContactForm,
-    progressSection,
-    sercivesBreadcrumbs
-  },
+
 
   head () {
     return {

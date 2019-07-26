@@ -56,7 +56,7 @@
 <script>
 import clickOutside from "@/directives/click-outside";
 import handleScroll from "@/directives/handle-scroll";
-import AppLinks from "~/components/appLinks";
+import AppLinks from "~/components/TheAppLinks";
 import TheTopContact from "~/components/TheTopContact";
 export default {
   components: { TheTopContact, AppLinks },

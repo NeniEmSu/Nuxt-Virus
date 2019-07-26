@@ -11,7 +11,9 @@
         <li
           class="breadcrumb-item active"
           aria-current="page"
-        >Послуги і ціни</li>
+        >
+          <h1>Послуги і ціни</h1>
+        </li>
       </ol>
     </nav>
     <div class="container text-center desktop-big-tab-only p-0 pt-4">
@@ -698,7 +700,7 @@ export default {
   head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "контакти - %s!",
+      titleTemplate: "Послуги і ціни - %s!",
       meta: [
         {
           hid: "description",
@@ -747,7 +749,7 @@ export default {
           polishingCost: "5999",
           polishingCostVar1: "6999",
           polishingCostVar2: "8499",
-          polishingLink: "/Posluhy-i-ciny/PoliruvannJa-avtomobilJa",
+          polishingLink: "/posluhy-i-ciny/poliruvannja-avtomobilja",
 
           polishingImg: "services1"
         },
@@ -757,7 +759,7 @@ export default {
           polishingCost: "600",
           polishingCostVar1: "700",
           polishingCostVar2: "800",
-          polishingLink: "/Posluhy-i-ciny/poliruvannja-far",
+          polishingLink: "/posluhy-i-ciny/poliruvannja-far",
 
           polishingImg: "services2"
         },
@@ -767,7 +769,7 @@ export default {
           polishingCost: "500",
           polishingCostVar1: "600",
           polishingCostVar2: "700",
-          polishingLink: "/Posluhy-i-ciny/poliruvannja-vstavok-salonu",
+          polishingLink: "/posluhy-i-ciny/poliruvannja-vstavok-salonu",
 
           polishingImg: "services3"
         },
@@ -777,7 +779,7 @@ export default {
           polishingCost: "800",
           polishingCostVar1: "900",
           polishingCostVar2: "1000",
-          polishingLink: "/Posluhy-i-ciny/poliruvannja-cjentralnіh-stijok",
+          polishingLink: "/posluhy-i-ciny/poliruvannja-cjentralnіh-stijok",
 
           polishingImg: "services4"
         }
@@ -789,7 +791,7 @@ export default {
           cleanersCost: "1999",
           cleanersCostVar1: "2499",
           cleanersCostVar2: "3199",
-          cleanersLink: "/Posluhy-i-ciny/Himchіstka",
+          cleanersLink: "/posluhy-i-ciny/himchіstka",
 
           cleanersImg: "services5"
         },
@@ -799,7 +801,7 @@ export default {
           cleanersCost: "800",
           cleanersCostVar1: "0",
           cleanersCostVar2: "0",
-          cleanersLink: "/Posluhy-i-ciny/Himchіstka-koljesnіh-arok-pidviskі-dіskiv",
+          cleanersLink: "/posluhy-i-ciny/himchіstka-koljesnіh-arok-pidviskі-dіskiv",
 
           cleanersImg: "services6"
         },
@@ -809,7 +811,7 @@ export default {
           cleanersCost: "275",
           cleanersCostVar1: "330",
           cleanersCostVar2: "385",
-          cleanersLink: "/Posluhy-i-ciny/Himchіstka-pjerjednih-sіdin",
+          cleanersLink: "/posluhy-i-ciny/himchіstka-pjerjednih-sіdin",
 
           cleanersImg: "services7"
         },
@@ -819,7 +821,7 @@ export default {
           cleanersCost: "495",
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
-          cleanersLink: "/Posluhy-i-ciny/Himchіstka-zadnih-sіdin",
+          cleanersLink: "/posluhy-i-ciny/himchіstka-zadnih-sіdin",
 
           cleanersImg: "services8"
         }
@@ -831,7 +833,7 @@ export default {
           WaxCoversCost: "1200",
           WaxCoversCostVar1: "1300",
           WaxCoversCostVar2: "1400",
-          WaxCoversLink: "/Posluhy-i-ciny/PokrittJa-tvjerdиm-univjersalnіm-voskom-Soft-99",
+          WaxCoversLink: "/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnіm-voskom-soft-99",
           WaxCoversClass: "service-nine"
         },
         {
@@ -840,7 +842,7 @@ export default {
           WaxCoversCost: "3000",
           WaxCoversCostVar1: "0",
           WaxCoversCostVar2: "0",
-          WaxCoversLink: "/Posluhy-i-ciny/ridkje-sklo",
+          WaxCoversLink: "/posluhy-i-ciny/ridkje-sklo",
           WaxCoversClass: "service-ten"
         }
       ],
@@ -850,7 +852,7 @@ export default {
           ceramicCoatingCost: "12999",
           ceramicCoatingCostVar1: "14499",
           ceramicCoatingCostVar2: "15999",
-          ceramicCoatingLink: "/Posluhy-i-ciny/Kjeramichnje-pokrіttJa-kuzova"
+          ceramicCoatingLink: "/posluhy-i-ciny/kjeramichnje-pokrіttja-kuzova"
         }
       ],
       PreSalePreparations: [
@@ -859,7 +861,7 @@ export default {
           PreSalePreparationsCost: "1100",
           PreSalePreparationsCostVar1: "1200",
           PreSalePreparationsCostVar2: "1300",
-          PreSalePreparationsLink: "/Posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
+          PreSalePreparationsLink: "/posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
         }
       ],
 
@@ -870,7 +872,7 @@ export default {
           additionalCost: "130",
           additionalCostHigh: "250",
           fixedRange: true,
-          additionalLink: "/Posluhy-i-ciny/rjestavnacija-podrjapіn-na-kuzovi",
+          additionalLink: "/posluhy-i-ciny/rjestavnacija-podrjapіn-na-kuzovi",
 
           additionalImg: "services13"
         },
@@ -880,7 +882,7 @@ export default {
           additionalCost: "500",
           additionalCostHigh: "3000",
           fixedRange: true,
-          additionalLink: "/Posluhy-i-ciny/PjerjeshіttJa-shkirJanіh-djetaljej-salonu",
+          additionalLink: "/posluhy-i-ciny/pjerjeshіttja-shkirjanіh-djetaljej-salonu",
 
           additionalImg: "services14"
         },
@@ -890,7 +892,7 @@ export default {
           additionalCost: "600",
           additionalCostHigh: "1200",
           fixedRange: true,
-          additionalLink: "/Posluhy-i-ciny/antidosh",
+          additionalLink: "/posluhy-i-ciny/antidosh",
 
           additionalImg: "services15"
         },
@@ -900,7 +902,7 @@ export default {
           additionalCost: "500",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/Posluhy-i-ciny/Mіjka-motoru-paroju",
+          additionalLink: "/posluhy-i-ciny/mіjka-motoru-paroju",
 
           additionalImg: "services16"
         },
@@ -911,7 +913,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           dollar: true,
-          additionalLink: "/Posluhy-i-ciny/shumoizoljacija",
+          additionalLink: "/posluhy-i-ciny/shumoizoljacija",
 
           additionalImg: "services17"
         },
@@ -921,7 +923,7 @@ export default {
           additionalCost: "500",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/Posluhy-i-ciny/vиdaljennJa-zapahiv-baktjerjecиdna-obrobka",
+          additionalLink: "/posluhy-i-ciny/vidaljennja-zapahiv-baktjerjecidna-obrobka",
 
           additionalImg: "services18"
         },
@@ -931,7 +933,7 @@ export default {
           additionalCost: "0",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/Posluhy-i-ciny/vіdaljennJa-vmJatіn-bjez-pokraskі-pdr",
+          additionalLink: "/posluhy-i-ciny/vіdaljennja-vmjatіn-bjez-pokraskі-pdr",
 
           additionalImg: "services19"
         },
@@ -941,7 +943,7 @@ export default {
           additionalCost: "1000",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/Posluhy-i-ciny/Pokljejka-antиgravijnoї-plivkи",
+          additionalLink: "/posluhy-i-ciny/pokljejka-antigravijnoi-plivki",
 
           additionalImg: "services20"
         },
@@ -951,7 +953,7 @@ export default {
           additionalCost: "1200",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/Posluhy-i-ciny/Ochistka-kondicionjera",
+          additionalLink: "/posluhy-i-ciny/ochistka-kondicionjera",
 
           additionalImg: "services21"
         },
@@ -962,7 +964,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "/Posluhy-i-ciny/Chіstka-dіskiv",
+          additionalLink: "/posluhy-i-ciny/chіstka-dіskiv",
 
           additionalImg: "services22"
         },
@@ -973,7 +975,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "/Posluhy-i-ciny/Kjeramichnje-pokrіttJa-sіdin",
+          additionalLink: "/posluhy-i-ciny/kjeramichnje-pokrіttja-sіdin",
 
           additionalImg: "services23"
         },
@@ -983,7 +985,7 @@ export default {
           additionalCost: "1000",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/Posluhy-i-ciny/ozonacija",
+          additionalLink: "/posluhy-i-ciny/ozonacija",
 
           additionalImg: "services24"
         }

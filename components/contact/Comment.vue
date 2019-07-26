@@ -54,7 +54,7 @@
 </template>
 <script>
 import Vue from "vue";
-import CommentForm from "~/components/CommentForm.vue";
+import CommentForm from "~/components/contact/CommentForm.vue";
 
 export default {
   name: "comment",

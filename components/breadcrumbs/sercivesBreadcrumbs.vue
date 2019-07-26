@@ -8,12 +8,14 @@
         <nuxt-link to="/">Головна</nuxt-link>
       </li>
       <li class="breadcrumb-item">
-        <nuxt-link to="/Posluhy-i-ciny">Послуги і ціни</nuxt-link>
+        <nuxt-link to="/posluhy-i-ciny">Послуги і ціни</nuxt-link>
       </li>
       <li
         class="breadcrumb-item active"
         aria-current="page"
-      >{{ heading }}</li>
+      >
+        <h1>{{ heading }}</h1>
+      </li>
     </ol>
   </nav>
 </template>

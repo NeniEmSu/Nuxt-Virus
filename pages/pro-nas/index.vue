@@ -11,7 +11,9 @@
         <li
           class="breadcrumb-item active"
           aria-current="page"
-        >Про нас</li>
+        >
+          <h1>Про нас</h1>
+        </li>
       </ol>
     </nav>
 
@@ -72,13 +74,9 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
+
 export default {
-  components: {
-    ContactForm,
-    progressSection
-  },
+
 
   head () {
     return {

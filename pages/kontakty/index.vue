@@ -12,7 +12,9 @@
           <li
             class="breadcrumb-item active"
             aria-current="page"
-          >контакти</li>
+          >
+            <h1>контакти</h1>
+          </li>
         </ol>
       </nav>
     </div>
@@ -116,14 +118,7 @@
 </template>
 
 <script>
-import ContactForm from "@/components/contactForm.vue";
-import progressSection from "@/components/progressSection.vue";
 export default {
-  components: {
-    ContactForm,
-    progressSection
-  },
-
   head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",

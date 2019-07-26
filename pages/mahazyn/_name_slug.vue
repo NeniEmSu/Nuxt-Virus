@@ -260,7 +260,6 @@
         </div>
         <div class="col-lg-1 mt-2 desktop-only">
           <div class="cart-icon text-center mx-auto">
-            <!-- <modalComponent :cart="cart" /> -->
             <div class="cart-icon">
               <b-button
                 v-b-modal.modal-xl-mobile
@@ -377,17 +376,10 @@ export default {
 
   data () {
     return {
-
       mobileModalShow: false,
       imageApiUrl: process.env.IMAGE_URL
     };
   },
-
-  // computed: {
-  //   products() {
-  //     return this.$store.state.Products.products;
-  //   }
-  // },
 
   head () {
     return {
@@ -397,7 +389,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.product.Overview
+          content: this.product.Description
         }
       ]
     };

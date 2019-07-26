@@ -84,8 +84,8 @@
 </template>
 
 <script>
-import CommentForm from "~/components/CommentForm.vue";
-import Comment from "~/components/Comment.vue";
+import CommentForm from "~/components/contact/CommentForm.vue";
+import Comment from "~/components/contact/Comment.vue";
 
 export default {
   async asyncData ({ app, params, error, payload }) {

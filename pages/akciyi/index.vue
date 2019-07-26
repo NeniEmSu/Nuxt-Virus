@@ -27,6 +27,7 @@
         <img
           class="card-img img-fliud"
           :src="`${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`"
+          :alt='`${promotion.promotionTitle} background image `'
         />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">

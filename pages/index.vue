@@ -5,7 +5,7 @@
 пропонуємо</h1></pre>
       <div class="row">
         <nuxt-link
-          to="/Posluhy-i-ciny/PoliruvannJa-avtomobilJa"
+          to="/posluhy-i-ciny/poliruvannja-avtomobilja"
           class="col-4 p-0 one"
         >
           <div class="card bg-inverse">
@@ -27,7 +27,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/Posluhy-i-ciny/PokrittJa-tvjerdиm-univjersalnіm-voskom-Soft-99"
+          to="/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnіm-voskom-soft-99"
           class="col-8 p-0 two"
         >
           <div class="card bg-inverse">
@@ -54,7 +54,7 @@
       </div>
       <div class="row">
         <nuxt-link
-          to="/Posluhy-i-ciny/Mіjka-motoru-paroju"
+          to="/posluhy-i-ciny/mіjka-motoru-paroju"
           class="col-4 p-0 three"
         >
           <div class="card bg-inverse">
@@ -79,7 +79,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/Posluhy-i-ciny/Himchіstka"
+          to="/posluhy-i-ciny/himchіstka"
           class="col-5 p-0 four"
         >
           <div class="card bg-inverse">
@@ -101,7 +101,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/Posluhy-i-ciny/RjestavnaciJa-podrJapіn-na-kuzovi"
+          to="/posluhy-i-ciny/RjestavnaciJa-podrJapіn-na-kuzovi"
           class="col-3 p-0 five"
         >
           <div class="card bg-inverse">
@@ -126,7 +126,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/Posluhy-i-ciny/Kjeramichnje-pokrіttJa-sіdin"
+          to="/posluhy-i-ciny/kjeramichnje-pokrіttja-sіdin"
           class="col-md-8 offset-4 p-0 six"
         >
           <div class="card bg-inverse">
@@ -150,7 +150,7 @@
       </div>
       <div class="row">
         <nuxt-link
-          to="/Posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
+          to="/posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
           class="col-12 p-0 seven"
         >
           <div class="card bg-inverse">

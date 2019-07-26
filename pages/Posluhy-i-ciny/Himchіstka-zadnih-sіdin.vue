@@ -6,7 +6,7 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h1 class="info-pages mobile-only">{{ heading }}</h1>
+        <h2 class="info-pages mobile-only">{{ heading }}</h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <img
@@ -15,7 +15,7 @@
             >
           </div>
           <div class="col-xl-6">
-            <h1 class="info-pages desktop-only">{{ heading }}</h1>
+            <h2 class="info-pages desktop-only">{{ heading }}</h2>
             <p class>
               {{ firstParagraph }}
               <br>
