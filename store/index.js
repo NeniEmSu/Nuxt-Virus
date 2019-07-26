@@ -12,7 +12,8 @@ export const state = () => ({ // = data
   toast: {
     text: "",
     show: false
-  }
+  },
+  animation: 'fade-in-up'
 });
 
 export const getters = { // = computed properties
@@ -158,5 +159,9 @@ export const mutations = {
   emptyCart(state) {
     state.cart = []
     state.cartCount = 0
+  },
+
+  SET_ANIMATION(state, animation) {
+    state.animation = animation
   }
 }

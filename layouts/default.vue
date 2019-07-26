@@ -3,12 +3,14 @@
     <TheNavbar />
 
     <main>
-      <transition
+      <!-- <transition
         name="fade"
         mode="out-in"
-      >
+      > -->
+      <vue-page-transition :name="$store.state.animation">
         <nuxt />
-      </transition>
+      </vue-page-transition>
+      <!-- </transition> -->
     </main>
 
     <TheFooter />

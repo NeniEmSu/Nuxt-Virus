@@ -593,96 +593,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="row cards-grouppings-3">
-            <div
-              v-for="addition in additional"
-              :key="addition.additionalId"
-              class="col-10 col-sm-12 col-md-5 col-lg-4 mx-auto p-0 p-lg-2"
-            >
-              <div class="card three-cards" :class="addition.additionalClass">
-                <div class="card-body"></div>
-                <div class="card-end">
-                  <h5>{{ addition.additionalTitle }}</h5>
-                  <div class="row">
-                    <div v-show="selected == 1" class="col-6">
-                      <p v-show="!addition.fixedRange">
-                        <small v-show="!addition.perItem">від</small>
-                        {{ addition.additionalCost }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
-                        <small v-else-if="addition.perItem">грн / шт</small>
-                        <small v-else>грн</small>
-                      </p>
-                      <p v-show="addition.fixedRange">
-                        <small v-show="!addition.perItem">від</small>
-                        {{ addition.additionalCost }}
-                        <small>До</small>
-                        {{ addition.additionalCostHigh }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
-
-                        <small v-else-if="addition.perItem">грн / шт</small>
-                        <small v-else>грн</small>
-                      </p>
-                    </div>
-                    <div v-show="selected == 2" class="col-6">
-                      <p v-show="!addition.fixedRange">
-                        <small v-show="!addition.perItem">від</small>
-                        {{ addition.additionalCostVar1 }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
-                        <small v-else-if="addition.perItem">грн / шт</small>
-                        <small v-else>грн</small>
-                      </p>
-                      <p v-show="addition.fixedRange">
-                        <small v-show="!addition.perItem">від</small>
-                        {{ addition.additionalCost }}
-                        <small>До</small>
-                        {{ addition.additionalCostHigh }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
-
-                        <small v-else-if="addition.perItem">грн / шт</small>
-                        <small v-else>грн</small>
-                      </p>
-                    </div>
-                    <div v-show="selected == 3" class="col-6">
-                      <p v-show="!addition.fixedRange">
-                        <small v-show="!addition.perItem">від</small>
-                        {{ addition.additionalCostVar2 }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
-                        <small v-else-if="addition.perItem">грн / шт</small>
-                        <small v-else>грн</small>
-                      </p>
-                      <p v-show="addition.fixedRange">
-                        <small v-show="!addition.perItem">від</small>
-                        {{ addition.additionalCost }}
-                        <small>До</small>
-                        {{ addition.additionalCostHigh }}
-                        <small
-                          v-if="addition.dollar"
-                        >$</small>
-
-                        <small v-else-if="addition.perItem">грн / шт</small>
-                        <small v-else>грн</small>
-                      </p>
-                    </div>
-
-                    <div class="col-6 text-right pl-0">
-                      <nuxt-link :to="addition.additionalLink" class="btn">Читати більше</nuxt-link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>-->
         </div>
       </div>
 
@@ -695,7 +605,9 @@
 
 <script>
 export default {
-  components: {},
+  meta: {
+    animation: 'fade-in-right'
+  },
 
   head () {
     return {

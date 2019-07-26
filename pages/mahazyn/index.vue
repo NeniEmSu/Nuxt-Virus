@@ -429,6 +429,9 @@ export default {
   components: {
     ProductsList,
   },
+  meta: {
+    animation: 'fade-in-right'
+  },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,

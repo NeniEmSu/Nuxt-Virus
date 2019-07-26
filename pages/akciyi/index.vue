@@ -54,6 +54,9 @@
 
 <script>
 export default {
+  meta: {
+    animation: 'fade-in-right'
+  },
   data () {
     return {
       imageApiUrl: process.env.IMAGE_URL

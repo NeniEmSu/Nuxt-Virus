@@ -305,6 +305,10 @@ export default {
       ssr: false
     },
     {
+      src: "~/plugins/vue-page-transition",
+      ssr: true
+    },
+    {
       src: "~/plugins/v-owl-carousel",
       ssr: false
     },
@@ -333,6 +337,10 @@ export default {
     }
 
   ],
+
+  router: {
+    middleware: ['animation']
+  },
 
   modules: [
     ["vue-currency-filter/nuxt", {

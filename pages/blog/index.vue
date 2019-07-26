@@ -87,6 +87,9 @@
 
 <script>
 export default {
+  meta: {
+    animation: 'fade-in-right'
+  },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.POSTS_URL,
