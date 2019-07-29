@@ -257,7 +257,7 @@ export default {
   },
 
   loading: {
-    color: "#e32124"
+    color: "#FFFFFF"
   },
 
   css: [
