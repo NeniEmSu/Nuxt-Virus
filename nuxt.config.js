@@ -360,6 +360,9 @@ export default {
     "vue-scrollto/nuxt",
     "@nuxtjs/robots",
     "@nuxtjs/dotenv",
+    ['@nuxtjs/component-cache', {
+      maxAge: 1000 * 60 * 60
+    }],
     [
       "@nuxtjs/google-analytics",
       {
