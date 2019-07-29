@@ -798,13 +798,6 @@ export default {
           this.errors.push("Сталася помилка. Повторіть спробу пізніше");
         });
     },
-    makeToast (variant = null) {
-      this.$bvToast.toast("Повідомлення було надіслано успішно", {
-        title: `Message ${variant || "default"}`,
-        variant: variant,
-        solid: true
-      });
-    }
   }
 };
 </script>
