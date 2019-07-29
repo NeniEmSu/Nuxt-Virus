@@ -248,8 +248,8 @@ export default {
   head () {
     return {
       title:
-        "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
-      titleTemplate: "Virus - %s!",
+        "Хімчистка, полірування, реставрація авто",
+      titleTemplate: "Детейлінг центр Virus - %s!",
       meta: [
         {
           hid: "description",

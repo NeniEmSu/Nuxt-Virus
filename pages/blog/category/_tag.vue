@@ -117,7 +117,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: `Усі публікації в блогах класифікуються як ${this.category}.`
+          content: `Усі публікації в блогах класифікуються як ${this.category}. - Детейлінг студія Virus`
         }
       ]
     };

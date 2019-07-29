@@ -13,7 +13,7 @@
           <li
             class="breadcrumb-item active"
             aria-current="page"
-          >контакти</li>
+          >магазин</li>
         </ol>
       </nav>
       <div class="container text-center">
@@ -431,6 +431,20 @@ export default {
   },
   meta: {
     animation: 'fade-in-right'
+  },
+  head () {
+    return {
+      title: "Детейлінг центр Virus Тернопіль.",
+      titleTemplate: "магазин - %s!",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "магазин - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+        }
+      ]
+    };
   },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(

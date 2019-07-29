@@ -50,13 +50,11 @@
 
 <script>
 export default {
-  layout: "default",
-  components: {},
+
 
   head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: this.heading,
       meta: [
         {
           hid: "description",

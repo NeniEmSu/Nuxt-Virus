@@ -83,7 +83,7 @@ export default {
   head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "пронас - %s!",
+      titleTemplate: "про Нас - %s!",
       meta: [
         {
           hid: "description",

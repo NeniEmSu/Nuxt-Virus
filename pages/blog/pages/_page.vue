@@ -132,7 +132,14 @@ export default {
   },
   head () {
     return {
-      title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`
+      title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `Усі повідомлення в блозі в номері сторінки ${this.page}.`
+        }
+      ]
     };
   }
 };

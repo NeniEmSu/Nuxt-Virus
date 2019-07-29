@@ -63,9 +63,6 @@
 
 <script>
 export default {
-  layout: "Services",
-  components: {},
-
   head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",

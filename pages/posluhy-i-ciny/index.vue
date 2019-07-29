@@ -612,7 +612,7 @@ export default {
   head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "Послуги і ціни - %s!",
+      titleTemplate: "Послуги і Ціни - %s!",
       meta: [
         {
           hid: "description",
