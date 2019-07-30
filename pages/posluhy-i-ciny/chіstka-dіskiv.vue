@@ -1,50 +1,64 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs
-        :heading="heading"
-        class="desktop-tablet-only"
-      />
+      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only" />
       <div class="container text-left">
-        <h2 class="info-pages text-center mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages text-center mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img
-              src="~/assets/img/ЧИСТКАДИСКІВ.jpg"
-              :alt="heading"
-            >
+            <img src="~/assets/img/ЧИСТКАДИСКІВ.jpg" :alt="heading" />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
-            <p class>{{ firstParagraph }}</p>
-            <p class>{{ secondParagraph }}</p>
-            <p class>{{ thirdParagraph }}</p>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
+            <p class>
+              {{ firstParagraph }}
+            </p>
+            <p class>
+              {{ secondParagraph }}
+            </p>
+            <p class>
+              {{ thirdParagraph }}
+            </p>
 
-            <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
+            <h2 class="pt-2">
+              ЩО ВХОДИТЬ В ПОСЛУГУ?
+            </h2>
             <ul class="ml-3">
               <li
                 v-for="(items, heading) in inclusiveInService"
                 :key="heading"
                 class="list-unstyled"
                 style="margin-left: -16px;"
-              >{{ items.services }}</li>
+              >
+                {{ items.services }}
+              </li>
             </ul>
           </div>
         </div>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
         <div class="row mx-auto">
           <div class="col-6 mx-auto p-0 before img-fluid">
-            <font class="before-image-text">До</font>
+            <font class="before-image-text">
+              До
+            </font>
           </div>
 
           <div class="col-6 mx-auto p-0 after img-fluid">
-            <font class="after-image-text">Після</font>
+            <font class="after-image-text">
+              Після
+            </font>
           </div>
         </div>
 
-        <servicesYoutubeVideo :videoUrl="videoUrl" />
+        <servicesYoutubeVideo :video-url="videoUrl" />
 
         <serviceCategories
           :category1="category1"
@@ -61,9 +75,8 @@
 </template>
 
 <script>
-
 export default {
-  head () {
+  head() {
     return {
       title: this.heading,
       meta: [
@@ -74,9 +87,9 @@ export default {
             "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    };
+    }
   },
-  data () {
+  data() {
     return {
       service: "21",
       heading: "ЧИСТКА ДИСКІВ",
@@ -97,14 +110,14 @@ export default {
         }
       ],
       timeTaken: "Час виконання послуги 1 день"
-    };
+    }
   },
-  mounted () {
+  mounted() {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

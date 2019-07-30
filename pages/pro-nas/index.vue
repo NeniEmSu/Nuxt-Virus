@@ -78,7 +78,7 @@
 export default {
 
   meta: {
-    animation: 'fade-in-right'
+    animation: "fade-in-right"
   },
   head () {
     return {
@@ -97,7 +97,7 @@ export default {
 
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
 };

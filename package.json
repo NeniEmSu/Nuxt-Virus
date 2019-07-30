@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-Virus",
+  "name": "Virus",
   "version": "1.0.0",
   "description": "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.",
   "author": "W-Start",
@@ -9,12 +9,14 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/free-brands-svg-icons": "^5.9.0",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.20",
+    "@fortawesome/free-brands-svg-icons": "^5.10.0",
+    "@fortawesome/free-solid-svg-icons": "^5.10.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/component-cache": "^1.1.5",
@@ -51,10 +53,16 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@nuxtjs/sitemap": "^1.2.0",
     "autoprefixer": "^9.6.1",
-    "collect.js": "^4.15.0",
+    "babel-eslint": "^10.0.2",
+    "collect.js": "^4.16.0",
     "cross-env": "^5.2.0",
     "dayjs": "^1.8.15",
     "dotenv": "^8.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "glob-all": "^3.1.0",
     "highlight.js": "^9.15.8",
@@ -63,11 +71,12 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "nuxt-purgecss": "^0.2.1",
+    "prettier": "^1.18.2",
     "push-dir": "^0.4.1",
     "responsive-loader": "^1.2.0",
     "sanitize-html": "^1.20.1",
     "sass-loader": "^7.1.0",
-    "sharp": "^0.22.1",
+    "sharp": "^0.23.0",
     "vue-lazyload": "^1.3.1"
   }
 }

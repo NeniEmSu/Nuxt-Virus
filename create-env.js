@@ -1,5 +1,7 @@
-const fs = require('fs')
-fs.writeFileSync('./.env', `
+const fs = require("fs")
+fs.writeFileSync(
+  "./.env",
+  `
 BASE_URL=${process.env.BASE_URL}\n
 POSTS_URL=${process.env.POSTS_URL}\n
 PRODUCT_URL=${process.env.PRODUCT_URL}\n
@@ -18,4 +20,5 @@ SITE_URL=${process.env.SITE_URL}\n
 PRODUCT_TOKEN=${process.env.PRODUCT_TOKEN}\n
 FRONTEND_URL=${process.env.FRONTEND_URL}\n
 IMAGE_URL=${process.env.IMAGE_URL}
-`)
+`
+)

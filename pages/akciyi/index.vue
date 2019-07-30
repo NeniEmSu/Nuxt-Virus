@@ -1,46 +1,49 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav
-        class="container mb-n4 mobile-only"
-        aria-label="breadcrumb"
-      >
+      <nav class="container mb-n4 mobile-only" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <nuxt-link to="/">Головна</nuxt-link>
+            <nuxt-link to="/">
+              Головна
+            </nuxt-link>
           </li>
-          <li
-            class="breadcrumb-item active"
-            aria-current="page"
-          >Акції</li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Акції
+          </li>
         </ol>
       </nav>
       <h1>Акції</h1>
     </div>
     <hr class="top-separator" />
     <div
-      class="card-container container"
       v-for="promotion in promotions"
       :key="promotion.promotionTitle"
+      class="card-container container"
     >
       <div class="card mx-auto">
         <img
           class="card-img img-fliud"
-          :src="`${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`"
-          :alt='`${promotion.promotionTitle} background image `'
+          :src="
+            `${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
+          "
+          :alt="`${promotion.promotionTitle} background image `"
         />
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
-            <nuxt-link :to="'/mahazyn/'+promotion.name_slug">
-              <h2 class="card-title text-white">{{ promotion.promotionTitle }}</h2>
+            <nuxt-link :to="'/mahazyn/' + promotion.name_slug">
+              <h2 class="card-title text-white">
+                {{ promotion.promotionTitle }}
+              </h2>
             </nuxt-link>
-            <p class="card-text">{{ promotion.promotionTimeLimit }}</p>
+            <p class="card-text">
+              {{ promotion.promotionTimeLimit }}
+            </p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link
-              class="btn"
-              :to="'/mahazyn/'+promotion.name_slug"
-            >ЗАМОВИТИ</nuxt-link>
+            <nuxt-link class="btn" :to="'/mahazyn/' + promotion.name_slug">
+              ЗАМОВИТИ
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -55,30 +58,29 @@
 <script>
 export default {
   meta: {
-    animation: 'fade-in-right'
+    animation: "fade-in-right"
   },
-  data () {
+  data() {
     return {
       imageApiUrl: process.env.IMAGE_URL
-    };
+    }
   },
-  async asyncData ({ app }) {
+  async asyncData({ app }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
-        filter: { Published: true },
-        filter: { promotion: true },
+        filter: { Published: true, promotion: true },
         sort: { _created: -1 },
         populate: 1
       }),
       {
         headers: { "Content-Type": "application/json" }
       }
-    );
+    )
 
-    return { promotions: data.entries };
+    return { promotions: data.entries }
   },
-  head () {
+  head() {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "Акції - %s!",
@@ -90,15 +92,15 @@ export default {
             "Акції Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    };
+    }
   },
 
-  mounted () {
+  mounted() {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

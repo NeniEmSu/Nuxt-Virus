@@ -1,12 +1,11 @@
-require("dotenv").config();
+require("dotenv").config()
 
-
-const glob = require("glob-all");
-const path = require("path");
-const collect = require("collect.js");
-const perPage = Number(process.env.PER_PAGE);
-const axios = require("axios");
-import purgecss from "@fullhuman/postcss-purgecss";
+const glob = require("glob-all")
+const path = require("path")
+const collect = require("collect.js")
+const perPage = Number(process.env.PER_PAGE)
+const axios = require("axios")
+import purgecss from "@fullhuman/postcss-purgecss"
 
 export default {
   mode: "universal",
@@ -15,13 +14,15 @@ export default {
     host: "0.0.0.0"
   },
   head: {
-    title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
+    title:
+      "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
     htmlAttrs: {
       class: "has-navbar-fixed-top",
       lang: "uk",
       amp: true
     },
-    meta: [{
+    meta: [
+      {
         charset: "utf-8"
       },
       {
@@ -31,12 +32,14 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+        content:
+          "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
       },
       {
         hid: "keywords",
         name: "keywords",
-        content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
+        content:
+          "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
       },
       {
         hid: "apple-mobile-web-app-title",
@@ -97,7 +100,8 @@ export default {
         hid: "og:description",
         name: "og:description",
         property: "og:description",
-        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
+        content:
+          "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
       },
       {
         hid: "og:image",
@@ -106,7 +110,8 @@ export default {
         content: "/virus_og.jpg"
       }
     ],
-    link: [{
+    link: [
+      {
         rel: "icon",
         type: "image/x-icon",
         href: "/favicon.ico"
@@ -134,7 +139,8 @@ export default {
         type: "image/png",
         size: "144x144",
         href: "/icon-144x144.png"
-      }, {
+      },
+      {
         rel: "icon",
         type: "image/png",
         size: "512x512",
@@ -145,12 +151,14 @@ export default {
         type: "image/png",
         size: "384x384",
         href: "/icon-384x384.png"
-      }, {
+      },
+      {
         rel: "icon",
         type: "image/png",
         size: "192x192",
         href: "/icon-192x192.png"
-      }, {
+      },
+      {
         rel: "icon",
         type: "image/png",
         size: "152x152",
@@ -184,25 +192,30 @@ export default {
         href: "/favicon.ico"
       }
     ],
-    script: [{
-      rel: "prefetch",
-      src: "https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js",
-      "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
-      defer: true
-    }]
+    script: [
+      {
+        rel: "prefetch",
+        src:
+          "https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js",
+        "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
+        defer: true
+      }
+    ]
   },
 
   manifest: {
     name: "Детейлінг центр Virus",
     short_name: "Virus Детейлінг",
-    description: "Детейлінг студія Virus Тернопіль - комплексний догляд за Вашим авто.",
+    description:
+      "Детейлінг студія Virus Тернопіль - комплексний догляд за Вашим авто.",
     theme_color: "#e32124",
     background_color: "#ffffff",
     display: "standalone",
     start_url: "/",
     dir: "auto",
     lang: "uk",
-    icons: [{
+    icons: [
+      {
         type: "image/png",
         size: "32x32",
         src: "/favicon-32x32.png"
@@ -273,24 +286,24 @@ export default {
   },
 
   polyfill: {
-    features: [{
+    features: [
+      {
         require: "url-polyfill"
       },
 
       {
         require: "intersection-observer",
-        detect: () => "IntersectionObserver" in window,
+        detect: () => "IntersectionObserver" in window
       },
-
 
       {
         require: "smoothscroll-polyfill",
 
+        detect: () =>
+          "scrollBehavior" in document.documentElement.style &&
+          window.__forceSmoothScrollPolyfill__ !== true,
 
-        detect: () => "scrollBehavior" in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
-
-
-        install: (smoothscroll) => smoothscroll.polyfill()
+        install: smoothscroll => smoothscroll.polyfill()
       }
     ]
   },
@@ -317,10 +330,6 @@ export default {
       src: "~/plugins/JivoChat"
     },
     {
-      src: "~/plugins/ga",
-      ssr: false
-    },
-    {
       src: "~/plugins/google-maps",
       ssr: true
     },
@@ -332,26 +341,28 @@ export default {
       src: "~/plugins/vuemask"
     },
     {
-      src: '~/plugins/vuex-persist',
+      src: "~/plugins/vuex-persist",
       ssr: false
     }
-
   ],
 
   router: {
-    middleware: ['animation']
+    middleware: ["animation"]
   },
 
   modules: [
-    ["vue-currency-filter/nuxt", {
-      name: "currency",
-      symbol: "₴",
-      thousandsSeparator: ",",
-      fractionCount: 2,
-      fractionSeparator: ".",
-      symbolPosition: "front",
-      symbolSpacing: true
-    }],
+    [
+      "vue-currency-filter/nuxt",
+      {
+        name: "currency",
+        symbol: "₴",
+        thousandsSeparator: ",",
+        fractionCount: 2,
+        fractionSeparator: ".",
+        symbolPosition: "front",
+        symbolSpacing: true
+      }
+    ],
     "nuxt-polyfill",
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
@@ -360,9 +371,12 @@ export default {
     "vue-scrollto/nuxt",
     "@nuxtjs/robots",
     "@nuxtjs/dotenv",
-    ['@nuxtjs/component-cache', {
-      maxAge: 1000 * 60 * 60
-    }],
+    [
+      "@nuxtjs/component-cache",
+      {
+        maxAge: 1000 * 60 * 60
+      }
+    ],
     [
       "@nuxtjs/google-analytics",
       {
@@ -372,10 +386,12 @@ export default {
     [
       "nuxt-fontawesome",
       {
-        imports: [{
-          set: "@fortawesome/free-solid-svg-icons",
-          icons: ["fas"]
-        }]
+        imports: [
+          {
+            set: "@fortawesome/free-solid-svg-icons",
+            icons: ["fas"]
+          }
+        ]
       }
     ],
     "@nuxtjs/sitemap"
@@ -391,9 +407,8 @@ export default {
 
   generate: {
     routes: async () => {
-      let {
-        data
-      } = await axios.post(process.env.POSTS_URL,
+      let { data } = await axios.post(
+        process.env.POSTS_URL,
         JSON.stringify({
           filter: {
             published: true
@@ -402,40 +417,48 @@ export default {
             _created: -1
           },
           populate: 1
-        }), {
+        }),
+        {
           headers: {
             "Content-Type": "application/json"
           }
-        });
+        }
+      )
 
-      const collection = collect(data.entries);
+      const collection = collect(data.entries)
 
-      let tags = collection.map(post => post.tags)
+      let tags = collection
+        .map(post => post.tags)
         .flatten()
         .unique()
         .map(tag => {
-          let payload = collection.filter(item => {
-            return collect(item.tags).contains(tag);
-          }).all();
+          let payload = collection
+            .filter(item => {
+              return collect(item.tags).contains(tag)
+            })
+            .all()
 
           return {
             route: `/blog/category/${tag}`,
             payload: payload
-          };
-        }).all();
+          }
+        })
+        .all()
 
-      let posts = collection.map(post => {
-        return {
-          route: `/blog/${post.title_slug}`,
-          payload: post
-        };
-      }).all();
+      let posts = collection
+        .map(post => {
+          return {
+            route: `/blog/${post.title_slug}`,
+            payload: post
+          }
+        })
+        .all()
       if (perPage < data.total) {
         let pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
           .map((items, key) => {
-            let currentPage = key + 2;
+            let currentPage = key + 2
 
             return {
               route: `/blog/pages/${currentPage}`,
@@ -443,15 +466,14 @@ export default {
                 posts: items.all(),
                 hasNext: data.total > currentPage * perPage
               }
-            };
-          }).all();
+            }
+          })
+          .all()
 
-        return posts.concat(tags, pages);
+        return posts.concat(tags, pages)
       }
-      return posts.concat(tags);
-
-    },
-
+      return posts.concat(tags)
+    }
   },
 
   // generate: {
@@ -488,9 +510,8 @@ export default {
     cacheTime: 1000 * 60 * 15,
 
     async routes() {
-      let {
-        data
-      } = await axios.post(process.env.POSTS_URL,
+      let { data } = await axios.post(
+        process.env.POSTS_URL,
         JSON.stringify({
           filter: {
             published: true
@@ -499,59 +520,55 @@ export default {
             _created: -1
           },
           populate: 1
-        }), {
+        }),
+        {
           headers: {
             "Content-Type": "application/json"
           }
-        });
+        }
+      )
 
-      const collection = collect(data.entries);
+      const collection = collect(data.entries)
 
-      let tags = collection.map(post => post.tags)
+      let tags = collection
+        .map(post => post.tags)
         .flatten()
         .unique()
         .map(tag => `blog/category/${tag}`)
-        .all();
+        .all()
 
-      let posts = collection.map(post => post.title_slug).all();
+      let posts = collection.map(post => post.title_slug).all()
 
       if (perPage < data.total) {
         let pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
-          .map((items, key) => `blog/pages/${key+2}`)
-          .all();
+          .map((items, key) => `blog/pages/${key + 2}`)
+          .all()
 
-        return posts.concat(tags, pages);
+        return posts.concat(tags, pages)
       }
 
-      return posts.concat(tags);
+      return posts.concat(tags)
     }
   },
 
   styleResources: {
-    scss: [
-      "assets/scss/config.scss"
-    ]
+    scss: ["assets/scss/config.scss"]
   },
 
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
 
-    extend(config, {
-      isDev,
-      isClient
-    }) {
+    extend(config, { isDev, isClient }) {
       config.module.rules.forEach(rule => {
         if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-
           rule.use.push({
             loader: "image-webpack-loader",
             options: {
               svgo: {
                 plugins: [
-
                   {
                     removeViewBox: false
                   },
@@ -561,23 +578,18 @@ export default {
                 ]
               }
             }
-          });
+          })
         }
-      });
+      })
     },
 
     build: {
-      extend(config, {
-        isDev,
-        isClient
-      }) {
-
+      extend(config, { isDev, isClient }) {
         config.module.rules.unshift({
           test: /\.(png|jpe?g|gif)$/,
           use: {
             loader: "responsive-loader",
             options: {
-
               placeholder: true,
               quality: 85,
               placeholderSize: 30,
@@ -588,24 +600,34 @@ export default {
 
         config.module.rules.forEach(value => {
           if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-
             value.test = /\.(svg|webp)$/
-
           }
         })
-      }
-    },
-    build: {
+      },
+
       postcss: {
         plugins: [
           purgecss({
-            content: ["./pages/**/*.vue", "./layouts/**/*.vue", "./components/**/*.vue", "./content/**/*.md", "./content/**/*.json"],
-            whitelist: ["html", "body", "has-navbar-fixed-top", "nuxt-link-exact-active", "nuxt-progress", "hidden", "opacity-0"],
-            whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/],
+            content: [
+              "./pages/**/*.vue",
+              "./layouts/**/*.vue",
+              "./components/**/*.vue",
+              "./content/**/*.md",
+              "./content/**/*.json"
+            ],
+            whitelist: [
+              "html",
+              "body",
+              "has-navbar-fixed-top",
+              "nuxt-link-exact-active",
+              "nuxt-progress",
+              "hidden",
+              "opacity-0"
+            ],
+            whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/]
           })
         ]
-      },
+      }
     }
-
   }
 }

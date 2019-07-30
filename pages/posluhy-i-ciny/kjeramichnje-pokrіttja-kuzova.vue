@@ -6,22 +6,25 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h2 class="info-pages mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <img
               src="~assets/img/Керамічнепокриття.jpg"
               :alt="heading"
-            >
+            />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
             <p>{{ firstParagraph }}</p>
             <p>
               {{ secondParagraph }}
-              <br>• твердістю (яка в деяких випадках поступається лише алмазу)
-              <br>• хімічною стійкістю
-              <br>• гідрофобністю
+              <br />• твердістю (яка в деяких випадках поступається лише алмазу)
+              <br />• хімічною стійкістю <br />• гідрофобністю
             </p>
             <p>{{ thirdParagraph }}</p>
             <p>{{ fourthParagraph }}</p>
@@ -31,17 +34,23 @@
             </p>
           </div>
         </div>
-        <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
+        <h2 class="pt-2">
+          ЩО ВХОДИТЬ В ПОСЛУГУ?
+        </h2>
         <ul class="ml-3">
           <li
             v-for="(items, heading) in inclusiveInService"
             :key="heading"
-          > {{items.services}}</li>
+          >
+            {{ items.services }}
+          </li>
         </ul>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
-        <servicesYoutubeVideo :videoUrl="videoUrl" />
+        <servicesYoutubeVideo :video-url="videoUrl" />
 
         <serviceCategories
           :category1="category1"
@@ -59,7 +68,6 @@
 
 <script>
 export default {
-
   head () {
     return {
       title: this.heading,
@@ -71,7 +79,7 @@ export default {
             "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
         }
       ]
-    };
+    }
   },
   data () {
     return {
@@ -119,14 +127,14 @@ export default {
         }
       ],
       timeTaken: "Час виконання послуги 1-2 дні"
-    };
+    }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

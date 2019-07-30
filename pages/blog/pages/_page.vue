@@ -1,27 +1,25 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav
-        class="container mb-n4 desktop-only"
-        aria-label="breadcrumb"
-      >
+      <nav class="container mb-n4 desktop-only" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <nuxt-link to="/">Головна</nuxt-link>
+            <nuxt-link to="/">
+              Головна
+            </nuxt-link>
           </li>
-          <li
-            class="breadcrumb-item active"
-            aria-current="page"
-          >Блог</li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Блог
+          </li>
         </ol>
       </nav>
       <h1>Блог Сторінка {{ page }}</h1>
     </div>
     <hr class="top-separator" />
     <div
-      class="card-container container"
       v-for="post in posts"
       :key="`${post.title} ${post._created}`"
+      class="card-container container"
     >
       <div class="card mx-auto">
         <img
@@ -35,9 +33,10 @@
               <nuxt-link
                 v-for="tag in post.tags"
                 :key="tag"
-                :to="'/blog/category/'+tag"
+                :to="'/blog/category/' + tag"
                 class="desktop-tablet-only"
-              >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+                >{{ tag }}&nbsp;|&nbsp;</nuxt-link
+              >
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
@@ -49,20 +48,23 @@
                   preserveAspectRatio="xMinYMin"
                   class="text-light fill-current"
                 >
-                  <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
+                  <path
+                    d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
+                  />
                 </svg>
               </span>
             </div>
-            <nuxt-link :to="'/blog/'+post.title_slug">
-              <h2 class="card-title text-white">{{ post.title }}</h2>
+            <nuxt-link :to="'/blog/' + post.title_slug">
+              <h2 class="card-title text-white">
+                {{ post.title }}
+              </h2>
             </nuxt-link>
             <p class="card-text">Date Created {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link
-              class="btn"
-              :to="'/blog/'+post.title_slug"
-            >ЧИТАТИ</nuxt-link>
+            <nuxt-link class="btn" :to="'/blog/' + post.title_slug"
+              >ЧИТАТИ</nuxt-link
+            >
           </div>
         </div>
       </div>
@@ -71,14 +73,16 @@
     <div class="container">
       <div class="text-center my-3">
         <nuxt-link
-          :to="page === '2' ? '/blog' : `/blog/pages/${Number(page)-1}`"
+          :to="page === '2' ? '/blog' : `/blog/pages/${Number(page) - 1}`"
           class="text-info pr-2"
-        >Попередня сторінка</nuxt-link>
+          >Попередня сторінка</nuxt-link
+        >
         <nuxt-link
           v-if="hasNext"
-          :to="`/blog/pages/${Number(page)+1}`"
+          :to="`/blog/pages/${Number(page) + 1}`"
           class="text-info pl-2"
-        >Наступна сторінка</nuxt-link>
+          >Наступна сторінка</nuxt-link
+        >
       </div>
     </div>
     <contactForm />
@@ -86,16 +90,15 @@
   </section>
 </template>
 
-
 <script>
 export default {
-  async asyncData ({ app, params, error, payload }) {
+  async asyncData({ app, params, error, payload }) {
     if (payload) {
       return {
         posts: payload.posts,
         page: params.page,
         hasNext: payload.hasNext
-      };
+      }
     } else {
       let { data } = await app.$axios.post(
         process.env.POSTS_URL,
@@ -109,10 +112,10 @@ export default {
         {
           headers: { "Content-Type": "application/json" }
         }
-      );
+      )
 
       if (!data.entries[0]) {
-        return error({ message: "404 Page not found", statusCode: 404 });
+        return error({ message: "404 Page not found", statusCode: 404 })
       }
 
       return {
@@ -120,17 +123,17 @@ export default {
         page: params.page,
         hasNext:
           Number((params.page - 1) * process.env.PER_PAGE) +
-          Number(process.env.PER_PAGE) <
+            Number(process.env.PER_PAGE) <
           data.total
-      };
+      }
     }
   },
-  mounted () {
+  mounted() {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   },
-  head () {
+  head() {
     return {
       title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`,
       meta: [
@@ -140,11 +143,10 @@ export default {
           content: `Усі повідомлення в блозі в номері сторінки ${this.page}.`
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
-
 
 <style lang="scss" scoped>
 h1 {

@@ -1,30 +1,27 @@
 <template>
   <section class="container">
-    <nav
-      class="container mb-n4 p-0 desktop-only"
-      aria-label="breadcrumb"
-    >
+    <nav class="container mb-n4 p-0 desktop-only" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <nuxt-link to="/">Головна</nuxt-link>
+          <nuxt-link to="/">
+            Головна
+          </nuxt-link>
         </li>
         <li class="breadcrumb-item">
-          <nuxt-link to="/mahazyn">магазин</nuxt-link>
+          <nuxt-link to="/mahazyn">
+            магазин
+          </nuxt-link>
         </li>
-        <li
-          class="breadcrumb-item active"
-          aria-current="page"
-        >{{ product.name }}</li>
+        <li class="breadcrumb-item active" aria-current="page">
+          {{ product.name }}
+        </li>
       </ol>
     </nav>
     <div class="container pt-5">
       <div class="row mx-auto">
         <div class="col-lg-1 mb-3 desktop-only">
           <nuxt-link to="/mahazyn">
-            <img
-              src="~assets/img/chevron-right.png"
-              alt="chevron-right"
-            />
+            <img src="~assets/img/chevron-right.png" alt="chevron-right" />
           </nuxt-link>
         </div>
         <div class="col-12 col-xl-10">
@@ -36,24 +33,30 @@
                     :autoplay="false"
                     :nav="false"
                     :items="1"
-                    :lazyLoad="true"
+                    :lazy-load="true"
                     :v-lazy="true"
                     :loop="true"
-                    :mouseDrag="true"
-                    :touchDrag="true"
+                    :mouse-drag="true"
+                    :touch-drag="true"
                   >
                     <img
-                      :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
+                      :src="
+                        `${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`
+                      "
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[0].meta.title"
                     />
                     <img
-                      :src="`${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`"
+                      :src="
+                        `${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`
+                      "
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[1].meta.title"
                     />
                     <img
-                      :src="`${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`"
+                      :src="
+                        `${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`
+                      "
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[2].meta.title"
                     />
@@ -61,48 +64,48 @@
                 </no-ssr>
               </div>
               <style>
-              .small-more-images {
-                margin-top: -20px;
-              }
+                  .small-more-images {
+                  margin-top: -20px;
+                  }
 
-              .main-image .owl-theme .owl-dots .owl-dot span {
-                width: 73px !important;
-                height: 73px !important;
-                margin-bottom: -60px;
-                background-color: transparent;
+                  .main-image .owl-theme .owl-dots .owl-dot span {
+                  width: 73px !important;
+                  height: 73px !important;
+                  margin-bottom: -60px;
+                  background-color: transparent;
 
-                margin-right: 12.5px;
-                margin-left: 12.5px;
-                display: abslolute;
-              }
+                  margin-right: 12.5px;
+                  margin-left: 12.5px;
+                  display: abslolute;
+                  }
 
-              .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                background-color: transparent;
-              }
+                  .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                  background-color: transparent;
+                  }
 
-              .main-image .owl-theme .owl-dots .owl-dot.active span {
-                background-color: transparent;
-              }
+                  .main-image .owl-theme .owl-dots .owl-dot.active span {
+                  background-color: transparent;
+                }
 
-              .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                background-color: transparent;
-              }
+                  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                  background-color: transparent;
+                  }
 
-              @media only screen and (min-width: 992px) and (max-width: 1199px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
+                  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                  .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 73px !important;
                   height: 73px !important;
                   margin-bottom: -55px;
-                  background-color: transparent;
+                    background-color: transparent;
 
                   margin-right: 12px;
-                  margin-left: 12px;
+                    margin-left: 12px;
                   display: abslolute;
-                }
-              }
+                  }
+                  }
 
-              @media only screen and (min-width: 768px) and (max-width: 992px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
+                  @media only screen and (min-width: 768px) and (max-width: 992px) {
+                  .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 60px !important;
                   height: 60px !important;
                   margin-bottom: -48px;
@@ -110,92 +113,98 @@
 
                   margin-right: 5.5px;
                   margin-left: 5.6px;
-                  display: abslolute;
+                    display: abslolute;
+                  }
                 }
-              }
 
-              @media only screen and (min-width: 500px) and (max-width: 767.9px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
+                  @media only screen and (min-width: 500px) and (max-width: 767.9px) {
+                  .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 10px !important;
                   height: 10px !important;
                   margin-top: -25px;
                   background-color: grey;
 
-                  margin-right: 5px;
+                    margin-right: 5px;
                   margin-left: 5px;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                  .main-image .owl-theme .owl-dots .owl-dot:hover span {
                   background-color: #d41f26;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots {
+                  .main-image .owl-theme .owl-dots {
                   margin-bottom: -30px;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active span {
+                  .main-image .owl-theme .owl-dots .owl-dot.active span {
                   background-color: #d41f26;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
                   background-color: red;
-                }
+                  }
 
-                .small-more-images {
+                  .small-more-images {
                   margin-top: 0px;
                   display: none;
-                }
-              }
+                  }
+                  }
 
-              @media only screen and (max-width: 499.9px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
+                  @media only screen and (max-width: 499.9px) {
+                  .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 5px !important;
-                  height: 5px !important;
+                    height: 5px !important;
                   margin-top: -29px;
-                  background-color: grey;
+                background-color: grey;
 
                   margin-right: 5px;
                   margin-left: 5px;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                  .main-image .owl-theme .owl-dots .owl-dot:hover span {
                   background-color: #d41f26;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots {
+                  .main-image .owl-theme .owl-dots {
                   margin-bottom: -30px;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active span {
+                  .main-image .owl-theme .owl-dots .owl-dot.active span {
                   background-color: #d41f26;
-                }
+                  }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
                   background-color: red;
-                }
+                  }
 
-                .small-more-images {
+                  .small-more-images {
                   margin-top: 0px;
-                  display: none;
-                }
-              }
+                display: none;
+                  }
+                  }
               </style>
               <div class="small-more-images">
                 <div class="row mx-auto">
                   <img
-                    :src="`${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :src="
+                      `${imageApiUrl}&src=${product.Gallery[0].path}&w=200&h=200&f[brighten]=0&o=true`
+                    "
                     :alt="product.Gallery[0].meta.title"
                     :title="product.Gallery[0].meta.title"
                     class="col-4 mx-auto mt-n4 more-images"
                   />
                   <img
-                    :src="`${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :src="
+                      `${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`
+                    "
                     :alt="product.Gallery[1].meta.title"
                     :title="product.Gallery[1].meta.title"
                     class="col-4 mx-auto mt-n4 more-images"
                   />
                   <img
-                    :src="`${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :src="
+                      `${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`
+                    "
                     :alt="product.Gallery[2].meta.title"
                     :title="product.Gallery[2].meta.title"
                     class="col-4 mx-auto mt-n4 more-images"
@@ -205,53 +214,52 @@
             </div>
 
             <div class="main-text col-8 text-center text-md-left">
-              <h1 class="details-page-header">{{product.name}}</h1>
-              <p class="my-lg-5 desktop-tablet-only">{{ product.Description }}</p>
+              <h1 class="details-page-header">
+                {{ product.name }}
+              </h1>
+              <p class="my-lg-5 desktop-tablet-only">
+                {{ product.Description }}
+              </p>
               <div class="row">
                 <div class="col-6 text-center text-md-left my-auto pr-0">
                   <small class="mb-2 detail-discount-cost">
                     <s>2975 грн</s>
                   </small>
-                  <p
-                    id="store-item-price"
-                    class="detail-cost"
-                  >
-                    {{product.Price}}
+                  <p id="store-item-price" class="detail-cost">
+                    {{ product.Price }}
                     <span>ГРН</span>
                   </p>
                 </div>
                 <div class="col-6 text-center mt-lg-n3 p-0">
-                  <small
-                    v-show="product.Stock === true"
-                    class="inStock"
-                  >В наявності</small>
-                  <small
-                    v-show="product.Stock === false"
-                    class="notInStock"
-                  >Не в наявності</small>
+                  <small v-show="product.Stock === true" class="inStock"
+                    >В наявності</small
+                  >
+                  <small v-show="product.Stock === false" class="notInStock"
+                    >Не в наявності</small
+                  >
                   <br />
                   <button
-                    :disableda="product.Stock === false"
                     v-show="product.Stock === true"
+                    :disableda="product.Stock === false"
                     class="btn add-to-cart snipcart-add-item card-footer-item"
                     data-item-url="/"
                     :data-item-id="product._id"
                     :data-item-name="product.name"
                     :data-item-price="product.Price"
-                    :data-item-image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
+                    :data-item-image="
+                      `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                    "
                     :data-item-description="product.Overview"
                     :data-item-shippable="false"
                   >
-                    Додати
-                    до корзини +
+                    Додати до корзини +
                   </button>
                   <button
                     v-show="product.Stock === false"
                     class="btn add-to-cart card-footer-item"
                     style="cursor: not-allowed;"
                   >
-                    Додати
-                    до корзини +
+                    Додати до корзини +
                   </button>
                 </div>
               </div>
@@ -266,78 +274,89 @@
                 variant="link"
                 @click="mobileModalShow = !mobileModalShow"
               >
-                <img
-                  id="cart"
-                  src="~/assets/img/cart.png"
-                  alt="Cart icon"
-                >
+                <img id="cart" src="~/assets/img/cart.png" alt="Cart icon" />
               </b-button>
-              <div
-                id="show-total"
-                class="text-center justify-center"
-              >
+              <div id="show-total" class="text-center justify-center">
                 <span
                   id="item-count"
                   class="text-center m-auto p-0 snipcart-total-items"
-                >{{cartSize}}</span>
+                  >{{ cartSize }}</span
+                >
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
-      <p class="mt-3 sm-xsm-xxsm-only">{{ product.Description }}</p>
+      <p class="mt-3 sm-xsm-xxsm-only">
+        {{ product.Description }}
+      </p>
 
       <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;" />
 
-      <h2 class="text-center my-2 relatedProducts">Схожі товари та пропозиції</h2>
+      <h2 class="text-center my-2 relatedProducts">
+        Схожі товари та пропозиції
+      </h2>
 
       <no-ssr>
         <carousel
           :autoplay="true"
           :nav="false"
           :items="4"
-          :lazyLoad="true"
+          :lazy-load="true"
           :v-lazy="true"
           :loop="true"
-          :mouseDrag="true"
-          :touchDrag="true"
-          :autoplayHoverPause="true"
-          :responsive="{0:{items:1,nav:false},350:{items:2,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
+          :mouse-drag="true"
+          :touch-drag="true"
+          :autoplay-hover-pause="true"
+          :responsive="{
+            0: { items: 1, nav: false },
+            350: { items: 2, nav: false },
+            767: { items: 2, nav: false },
+            992: { items: 3, nav: false },
+            1200: { items: 4, nav: false }
+          }"
         >
           <card
-            class="mb-5 mx-auto"
             v-for="product in products"
             :key="product._id"
+            class="mb-5 mx-auto"
             :name="product.name"
             :summary="product.Overview"
             :price="product.Price"
-            :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-            :link="'/mahazyn/'+product.name_slug"
+            :image="
+              `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+            "
+            :link="'/mahazyn/' + product.name_slug"
             :stock="product.Stock"
           />
         </carousel>
       </no-ssr>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" />
       <script
         id="snipcart"
         src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
         data-api-key="ZThkMTZkM2EtNzBlNC00ZjQ2LWI2YTEtMjE0ZTE4YTk0OTkwNjM2OTYwNjIxMDU5MDExMDc4"
-      ></script>
+      />
     </div>
   </section>
 </template>
 
 <script>
-import axios from "axios";
-import { mapState, mapGetters } from 'vuex'
+import axios from "axios"
+import { mapState, mapGetters } from "vuex"
 
 export default {
-  async asyncData ({ app, params, error, payload }) {
+  data() {
+    return {
+      mobileModalShow: false,
+      imageApiUrl: process.env.IMAGE_URL
+    }
+  },
+  async asyncData({ params, error, payload }) {
     if (payload) {
-      return { product: payload };
+      return { product: payload }
     } else {
       const product = await axios.post(
         process.env.PRODUCT_URL,
@@ -349,7 +368,7 @@ export default {
         {
           headers: { "Content-Type": "application/json" }
         }
-      );
+      )
       const products = await axios.get(
         process.env.PRODUCT_URL,
         JSON.stringify({
@@ -361,27 +380,20 @@ export default {
         {
           headers: { "Content-Type": "application/json" }
         }
-      );
+      )
 
       if (!product.data.entries || !products.data.entries) {
-        return error({ message: "404 Page not found", statusCode: 404 });
+        return error({ message: "404 Page not found", statusCode: 404 })
       }
 
       return {
         product: product.data.entries[0],
         products: products.data.entries
-      };
+      }
     }
   },
 
-  data () {
-    return {
-      mobileModalShow: false,
-      imageApiUrl: process.env.IMAGE_URL
-    };
-  },
-
-  head () {
+  head() {
     return {
       title: this.product.name,
       titleTemplate: "%s! - Virus",
@@ -392,23 +404,18 @@ export default {
           content: this.product.Description
         }
       ]
-    };
+    }
   },
   computed: {
-    ...mapState([
-      "cart"
-    ]),
-    ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
-    ])
+    ...mapState(["cart"]),
+    ...mapGetters(["cartSize", "cartTotalAmount"])
   },
-  mounted () {
+  mounted() {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -982,4 +989,3 @@ h1.details-page-header {
   }
 }
 </style>
-
