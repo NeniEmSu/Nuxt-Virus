@@ -1,6 +1,9 @@
 <template>
   <section class="container">
-    <nav class="container mb-n4 p-0 desktop-only" aria-label="breadcrumb">
+    <nav
+      class="container mb-n4 p-0 desktop-only"
+      aria-label="breadcrumb"
+    >
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">
@@ -12,7 +15,10 @@
             Блог
           </nuxt-link>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
           {{ post.title }}
         </li>
       </ol>
@@ -26,10 +32,13 @@
             v-for="tag in post.tags"
             :key="tag"
             :to="'/blog/category/' + tag"
-            >{{ tag }}&nbsp;|&nbsp;</nuxt-link
-          >
+          >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
           <span class="mx-1 text-xs">•</span>
-          <a href="#" v-scroll-to="'#comments'" class="text-dark">
+          <a
+            href="#"
+            v-scroll-to="'#comments'"
+            class="text-dark"
+          >
             {{ post.comments ? post.comments.length : 0 }}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,9 +48,7 @@
               preserveAspectRatio="xMinYMin"
               class="text-grey-dark fill-current"
             >
-              <path
-                d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
-              />
+              <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
             </svg>
           </a>
         </p>
@@ -54,15 +61,22 @@
         v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
       />
       <div class="mt-5 text-center">
-        <nuxt-link to="/blog" class="pr-2 text-secondary"
-          >Знайти більше повідомлень у блогах!</nuxt-link
-        >
+        <nuxt-link
+          to="/blog"
+          class="pr-2 text-secondary"
+        >Знайти більше повідомлень у блогах!</nuxt-link>
       </div>
-      <div id="comments" class="mt-8 mb-4 pt-3 border-t-2">
+      <div
+        id="comments"
+        class="mt-8 mb-4 pt-3 border-t-2"
+      >
         <h2 class="mb-2">
           Коментарі
         </h2>
-        <comment-form class="border-b-2" :post_id="post._id" />
+        <comment-form
+          class="border-b-2"
+          :post_id="post._id"
+        />
       </div>
 
       <ul class="list-reset">
@@ -89,13 +103,13 @@ export default {
   },
 
   computed: {
-    comments: function() {
+    comments: function () {
       return this.post.comments
         ? this.post.comments.filter(comment => !comment.parent_id)
         : []
     }
   },
-  async asyncData({ app, params, error, payload }) {
+  async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return { post: payload }
     } else {
@@ -119,16 +133,15 @@ export default {
     }
   },
 
-  head() {
+  head () {
     return {
       title: this.post.title,
-      titleTemplate: "%s! - Virus",
       meta: [
         { hid: "description", name: "description", content: this.post.excerpt }
       ]
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }

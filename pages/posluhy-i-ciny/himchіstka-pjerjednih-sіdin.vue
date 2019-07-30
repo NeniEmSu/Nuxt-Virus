@@ -1,14 +1,20 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only" />
+      <sercivesBreadcrumbs
+        :heading="heading"
+        class="desktop-tablet-only"
+      />
       <div class="container text-left">
         <h2 class="info-pages mobile-only">
           {{ heading }}
         </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img src="~assets/img/передніхсидінь.jpg" :alt="heading" />
+            <img
+              src="~assets/img/передніхсидінь.jpg"
+              :alt="heading"
+            />
           </div>
           <div class="col-xl-6">
             <h2 class="info-pages desktop-only">
@@ -66,21 +72,20 @@
 
 <script>
 export default {
-  head() {
+  head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: this.heading + " - %s!",
+      title: this.heading,
+
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+          content: this.firstParagraph
         }
       ]
     }
   },
-  data() {
+  data () {
     return {
       service: "6",
       heading: "ХІМЧИСТКА передніх сидінь (тканина, шкіра)",
@@ -96,7 +101,7 @@ export default {
       timeTaken: "Час виконання послуги 5 годин"
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }

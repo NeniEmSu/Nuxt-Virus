@@ -1,14 +1,20 @@
 <template>
   <div>
     <div class="jumbotron">
-      <sercivesBreadcrumbs :heading="heading" class="desktop-tablet-only" />
+      <sercivesBreadcrumbs
+        :heading="heading"
+        class="desktop-tablet-only"
+      />
       <div class="container text-left">
         <h2 class="info-pages text-center mobile-only">
           {{ heading }}
         </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img src="~assets/img/Колісніарки.jpg" :alt="heading" />
+            <img
+              src="~assets/img/Колісніарки.jpg"
+              :alt="heading"
+            />
           </div>
           <div class="col-xl-6">
             <h2 class="info-pages desktop-only">
@@ -28,7 +34,10 @@
               ЩО ВХОДИТЬ В ПОСЛУГУ?
             </h2>
             <ul class="ml-3">
-              <li v-for="(items, heading) in inclusiveInService" :key="heading">
+              <li
+                v-for="(items, heading) in inclusiveInService"
+                :key="heading"
+              >
                 {{ items.services }}
               </li>
             </ul>
@@ -69,20 +78,19 @@
 
 <script>
 export default {
-  head() {
+  head () {
     return {
       title: this.heading,
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+          content: this.firstParagraph
         }
       ]
     }
   },
-  data() {
+  data () {
     return {
       service: "3",
       heading: "ХІМЧИСТКА колісних арок підвіски та дисків",
@@ -112,7 +120,7 @@ export default {
       timeTaken: "Час виконання послуги 1 день"
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }
