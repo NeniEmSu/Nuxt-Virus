@@ -358,13 +358,7 @@ export default {
     "bootstrap-vue/nuxt",
     "vue-scrollto/nuxt",
     "@nuxtjs/dotenv",
-    ['@nuxtjs/robots', {
-      robots: {
-        UserAgent: '*',
-        Disallow: ''
-      },
-      Sitemap: '/sitemap.xml'
-    }],
+    '@nuxtjs/robots',
     [
       "@nuxtjs/component-cache",
       {
@@ -401,8 +395,7 @@ export default {
     routes: async () => {
       let {
         data
-      } = await axios.post(
-        process.env.POSTS_URL,
+      } = await axios.post(process.env.POSTS_URL,
         JSON.stringify({
           filter: {
             published: true
@@ -446,6 +439,7 @@ export default {
           }
         })
         .all()
+
       if (perPage < data.total) {
         let pages = collection
           .take(perPage - data.total)
@@ -471,7 +465,7 @@ export default {
 
   // generate: {
   //   routes: async () => {
-  //     var {
+  //     let {
   //       data
   //     } = await axios.get(process.env.PRODUCT_URL,
   //       JSON.stringify({
@@ -554,6 +548,13 @@ export default {
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
+    devServer: {
+      headers: {
+        'X-Frame-Options': 'DENY',
+        'X-XSS-Protection': 1,
+        'X-Content-Type-Options': 'nosniff'
+      }
+    },
 
     extend(config, {
       isDev,

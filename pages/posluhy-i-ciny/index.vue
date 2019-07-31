@@ -732,7 +732,7 @@ export default {
           cleanersCost: "495",
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
-          cleanersLink: "/posluhy-i-ciny/himchistka-zadnih-sidin",
+          cleanersLink: "/posluhy-i-ciny/himchistka-zadnih-sіdin",
 
           cleanersImg: "services8"
         }
@@ -848,7 +848,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink:
-            "/posluhy-i-ciny/vidaljennja-vmjatіn-bjez-pokraski-pdr",
+            "/posluhy-i-ciny/vidaljennja-vmjatin-bjez-pokraski-pdr",
 
           additionalImg: "services19"
         },
@@ -890,7 +890,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "/posluhy-i-ciny/kjeramichnje-pokrittja-sіdin",
+          additionalLink: "/posluhy-i-ciny/kjeramichnje-pokrittja-sidin",
 
           additionalImg: "services23"
         },
