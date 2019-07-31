@@ -165,29 +165,48 @@
             <div class="form-group col-lg-6">
               <label
                 class="m-0 p-0"
-                for="newMail"
-              ><input
-                  id="newMail"
-                  type="text"
-                  name="newMail"
+                for="Місто"
+              ><select
+                  aria-label="Місто"
+                  id="Місто"
+                  aria-describedby="Місто"
                   class="form-control mx-auto"
-                  aria-describedby="newMail"
-                  placeholder="Нова пошта*"
-                /></label>
+                  v-model="city"
+                  name="Місто"
+                >
+                  <option
+                    value="null"
+                    disabled
+                  >Місто*</option>
+                  <option value="0">Місто</option>
+                  <option value="1">Місто</option>
+                </select>
+
+              </label>
 
             </div>
             <div class="form-group col-lg-6">
               <label
                 class="m-0 p-0"
-                for="Новапоштаdidistrict"
-              ><input
-                  id="Новапоштаdidistrict"
-                  type="number"
-                  aria-describedby="Новапоштаdidistrict"
-                  name="Новапоштаdidistrict"
+                for="Відділеня-пошти"
+              >
+                <select
+                  aria-label="Відділеня-пошти"
+                  id="Відділеня-пошти"
+                  type="text"
+                  aria-describedby="Відділеня-пошти"
                   class="form-control mx-auto"
-                  placeholder="Нова пошта district*"
-                /></label>
+                  v-model="postBranch"
+                  name="Відділеня-пошти"
+                >
+                  <option
+                    value="null"
+                    disabled
+                  >Відділення пошти*</option>
+                  <option value="0">Відділення пошти</option>
+                  <option value="1">Відділення пошти</option>
+                </select>
+              </label>
 
             </div>
           </div>
@@ -229,6 +248,8 @@ export default {
     return {
       mobileModalShow: false,
       cartName: null,
+      postBranch: null,
+      city: null,
       models: {
         cartphoneNumber: null
       },
@@ -412,6 +433,30 @@ export default {
         border: 2px solid #e5e5e5;
         box-sizing: border-box;
         border-radius: 50px;
+      }
+      select {
+        -webkit-appearance: none;
+        -o-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+
+        background-image: url(~assets/img/servicesSelect.png);
+        background-position: 95% center;
+        background-repeat: no-repeat;
+
+        cursor: pointer;
+
+        height: 48px;
+        margin: 10px auto 0 auto;
+        border: 2px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 50px;
+
+        &.active,
+        &:focus {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+        }
       }
 
       .btn {

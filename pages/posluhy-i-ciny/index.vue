@@ -689,7 +689,7 @@ export default {
           polishingCost: "800",
           polishingCostVar1: "900",
           polishingCostVar2: "1000",
-          polishingLink: "/posluhy-i-ciny/poliruvannja-cjentralnіh-stijok",
+          polishingLink: "/posluhy-i-ciny/poliruvannja-cjentralnih-stijok",
 
           polishingImg: "services4"
         }
@@ -701,7 +701,7 @@ export default {
           cleanersCost: "1999",
           cleanersCostVar1: "2499",
           cleanersCostVar2: "3199",
-          cleanersLink: "/posluhy-i-ciny/himchіstka",
+          cleanersLink: "/posluhy-i-ciny/himchistka",
 
           cleanersImg: "services5"
         },
@@ -712,7 +712,7 @@ export default {
           cleanersCostVar1: "0",
           cleanersCostVar2: "0",
           cleanersLink:
-            "/posluhy-i-ciny/himchіstka-koljesnіh-arok-pidviskі-dіskiv",
+            "/posluhy-i-ciny/himchistka-koljesnih-arok-pidviski-diskiv",
 
           cleanersImg: "services6"
         },
@@ -722,7 +722,7 @@ export default {
           cleanersCost: "275",
           cleanersCostVar1: "330",
           cleanersCostVar2: "385",
-          cleanersLink: "/posluhy-i-ciny/himchіstka-pjerjednih-sіdin",
+          cleanersLink: "/posluhy-i-ciny/himchistka-pjerjednih-sidin",
 
           cleanersImg: "services7"
         },
@@ -732,7 +732,7 @@ export default {
           cleanersCost: "495",
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
-          cleanersLink: "/posluhy-i-ciny/himchіstka-zadnih-sіdin",
+          cleanersLink: "/posluhy-i-ciny/himchistka-zadnih-sidin",
 
           cleanersImg: "services8"
         }
@@ -745,7 +745,7 @@ export default {
           WaxCoversCostVar1: "1300",
           WaxCoversCostVar2: "1400",
           WaxCoversLink:
-            "/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnіm-voskom-soft-99",
+            "/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99",
           WaxCoversClass: "service-nine"
         },
         {
@@ -764,7 +764,7 @@ export default {
           ceramicCoatingCost: "12999",
           ceramicCoatingCostVar1: "14499",
           ceramicCoatingCostVar2: "15999",
-          ceramicCoatingLink: "/posluhy-i-ciny/kjeramichnje-pokrіttja-kuzova"
+          ceramicCoatingLink: "/posluhy-i-ciny/kjeramichnje-pokrittja-kuzova"
         }
       ],
       PreSalePreparations: [
@@ -784,7 +784,7 @@ export default {
           additionalCost: "130",
           additionalCostHigh: "250",
           fixedRange: true,
-          additionalLink: "/posluhy-i-ciny/rjestavnacija-podrjapіn-na-kuzovi",
+          additionalLink: "/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi",
 
           additionalImg: "services13"
         },
@@ -795,7 +795,7 @@ export default {
           additionalCostHigh: "3000",
           fixedRange: true,
           additionalLink:
-            "/posluhy-i-ciny/pjerjeshіttja-shkirjanіh-djetaljej-salonu",
+            "/posluhy-i-ciny/pjerjeshittja-shkirjanih-djetaljej-salonu",
 
           additionalImg: "services14"
         },
@@ -815,7 +815,7 @@ export default {
           additionalCost: "500",
           additionalCostVar1: "0",
           additionalCostVar2: "0",
-          additionalLink: "/posluhy-i-ciny/mіjka-motoru-paroju",
+          additionalLink: "/posluhy-i-ciny/mijka-motoru-paroju",
 
           additionalImg: "services16"
         },
@@ -848,7 +848,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           additionalLink:
-            "/posluhy-i-ciny/vіdaljennja-vmjatіn-bjez-pokraskі-pdr",
+            "/posluhy-i-ciny/vidaljennja-vmjatіn-bjez-pokraski-pdr",
 
           additionalImg: "services19"
         },
@@ -879,7 +879,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "/posluhy-i-ciny/chіstka-dіskiv",
+          additionalLink: "/posluhy-i-ciny/chistka-diskiv",
 
           additionalImg: "services22"
         },
@@ -890,7 +890,7 @@ export default {
           additionalCostVar1: "0",
           additionalCostVar2: "0",
           perItem: true,
-          additionalLink: "/posluhy-i-ciny/kjeramichnje-pokrіttja-sіdin",
+          additionalLink: "/posluhy-i-ciny/kjeramichnje-pokrittja-sіdin",
 
           additionalImg: "services23"
         },

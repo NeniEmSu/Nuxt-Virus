@@ -27,7 +27,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnіm-voskom-soft-99"
+          to="/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99"
           class="col-8 p-0 two"
         >
           <div class="card bg-inverse">
@@ -54,7 +54,7 @@
       </div>
       <div class="row">
         <nuxt-link
-          to="/posluhy-i-ciny/mіjka-motoru-paroju"
+          to="/posluhy-i-ciny/mijka-motoru-paroju"
           class="col-4 p-0 three"
         >
           <div class="card bg-inverse">
@@ -79,7 +79,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/posluhy-i-ciny/himchіstka"
+          to="/posluhy-i-ciny/himchistka"
           class="col-5 p-0 four"
         >
           <div class="card bg-inverse">
@@ -101,7 +101,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/posluhy-i-ciny/RjestavnaciJa-podrJapіn-na-kuzovi"
+          to="/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi"
           class="col-3 p-0 five"
         >
           <div class="card bg-inverse">
@@ -126,7 +126,7 @@
           </div>
         </nuxt-link>
         <nuxt-link
-          to="/posluhy-i-ciny/kjeramichnje-pokrіttja-sіdin"
+          to="/posluhy-i-ciny/kjeramichnje-pokrittja-sidin"
           class="col-md-8 offset-4 p-0 six"
         >
           <div class="card bg-inverse">
@@ -247,8 +247,8 @@ export default {
 
   head () {
     return {
-      title: "Хімчистка, полірування, реставрація авто",
-      titleTemplate: ("Детейлінг центр Virus - %s!").slice(0, 60),
+      title:
+        ("Детейлінг центр Virus - Хімчистка, полірування, реставрація авто").slice(0, 60),
       meta: [
         {
           hid: "description",

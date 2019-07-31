@@ -65,7 +65,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.firstParagraph.slice(0, 30)
+          content: this.firstParagraph.slice(0, 320)
         }
       ]
     };
