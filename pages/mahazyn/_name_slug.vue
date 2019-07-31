@@ -1,6 +1,9 @@
 <template>
   <section class="container">
-    <nav class="container mb-n4 p-0 desktop-only" aria-label="breadcrumb">
+    <nav
+      class="container mb-n4 p-0 desktop-only"
+      aria-label="breadcrumb"
+    >
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">
@@ -12,7 +15,10 @@
             магазин
           </nuxt-link>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
           {{ product.name }}
         </li>
       </ol>
@@ -21,7 +27,10 @@
       <div class="row mx-auto">
         <div class="col-lg-1 mb-3 desktop-only">
           <nuxt-link to="/mahazyn">
-            <img src="~assets/img/chevron-right.png" alt="chevron-right" />
+            <img
+              src="~assets/img/chevron-right.png"
+              alt="chevron-right"
+            />
           </nuxt-link>
         </div>
         <div class="col-12 col-xl-10">
@@ -64,48 +73,48 @@
                 </no-ssr>
               </div>
               <style>
-                  .small-more-images {
-                  margin-top: -20px;
-                  }
+              .small-more-images {
+                margin-top: -20px;
+              }
 
-                  .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 73px !important;
-                  height: 73px !important;
-                  margin-bottom: -60px;
-                  background-color: transparent;
+              .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 73px !important;
+                height: 73px !important;
+                margin-bottom: -60px;
+                background-color: transparent;
 
-                  margin-right: 12.5px;
-                  margin-left: 12.5px;
-                  display: abslolute;
-                  }
+                margin-right: 12.5px;
+                margin-left: 12.5px;
+                display: abslolute;
+              }
 
-                  .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                  background-color: transparent;
-                  }
+              .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                background-color: transparent;
+              }
 
-                  .main-image .owl-theme .owl-dots .owl-dot.active span {
-                  background-color: transparent;
-                }
+              .main-image .owl-theme .owl-dots .owl-dot.active span {
+                background-color: transparent;
+              }
 
-                  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                  background-color: transparent;
-                  }
+              .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                background-color: transparent;
+              }
 
-                  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-                  .main-image .owl-theme .owl-dots .owl-dot span {
+              @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 73px !important;
                   height: 73px !important;
                   margin-bottom: -55px;
-                    background-color: transparent;
+                  background-color: transparent;
 
                   margin-right: 12px;
-                    margin-left: 12px;
+                  margin-left: 12px;
                   display: abslolute;
-                  }
-                  }
+                }
+              }
 
-                  @media only screen and (min-width: 768px) and (max-width: 992px) {
-                  .main-image .owl-theme .owl-dots .owl-dot span {
+              @media only screen and (min-width: 768px) and (max-width: 992px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 60px !important;
                   height: 60px !important;
                   margin-bottom: -48px;
@@ -113,75 +122,75 @@
 
                   margin-right: 5.5px;
                   margin-left: 5.6px;
-                    display: abslolute;
-                  }
+                  display: abslolute;
                 }
+              }
 
-                  @media only screen and (min-width: 500px) and (max-width: 767.9px) {
-                  .main-image .owl-theme .owl-dots .owl-dot span {
+              @media only screen and (min-width: 500px) and (max-width: 767.9px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 10px !important;
                   height: 10px !important;
                   margin-top: -25px;
                   background-color: grey;
 
-                    margin-right: 5px;
+                  margin-right: 5px;
                   margin-left: 5px;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot:hover span {
                   background-color: #d41f26;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots {
+                .main-image .owl-theme .owl-dots {
                   margin-bottom: -30px;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots .owl-dot.active span {
+                .main-image .owl-theme .owl-dots .owl-dot.active span {
                   background-color: #d41f26;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
                   background-color: red;
-                  }
+                }
 
-                  .small-more-images {
+                .small-more-images {
                   margin-top: 0px;
                   display: none;
-                  }
-                  }
+                }
+              }
 
-                  @media only screen and (max-width: 499.9px) {
-                  .main-image .owl-theme .owl-dots .owl-dot span {
+              @media only screen and (max-width: 499.9px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
                   width: 5px !important;
-                    height: 5px !important;
+                  height: 5px !important;
                   margin-top: -29px;
-                background-color: grey;
+                  background-color: grey;
 
                   margin-right: 5px;
                   margin-left: 5px;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot:hover span {
                   background-color: #d41f26;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots {
+                .main-image .owl-theme .owl-dots {
                   margin-bottom: -30px;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots .owl-dot.active span {
+                .main-image .owl-theme .owl-dots .owl-dot.active span {
                   background-color: #d41f26;
-                  }
+                }
 
-                  .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
                   background-color: red;
-                  }
+                }
 
-                  .small-more-images {
+                .small-more-images {
                   margin-top: 0px;
-                display: none;
-                  }
-                  }
+                  display: none;
+                }
+              }
               </style>
               <div class="small-more-images">
                 <div class="row mx-auto">
@@ -225,18 +234,23 @@
                   <small class="mb-2 detail-discount-cost">
                     <s>2975 грн</s>
                   </small>
-                  <p id="store-item-price" class="detail-cost">
+                  <p
+                    id="store-item-price"
+                    class="detail-cost"
+                  >
                     {{ product.Price }}
                     <span>ГРН</span>
                   </p>
                 </div>
                 <div class="col-6 text-center mt-lg-n3 p-0">
-                  <small v-show="product.Stock === true" class="inStock"
-                    >В наявності</small
-                  >
-                  <small v-show="product.Stock === false" class="notInStock"
-                    >Не в наявності</small
-                  >
+                  <small
+                    v-show="product.Stock === true"
+                    class="inStock"
+                  >В наявності</small>
+                  <small
+                    v-show="product.Stock === false"
+                    class="notInStock"
+                  >Не в наявності</small>
                   <br />
                   <button
                     v-show="product.Stock === true"
@@ -274,14 +288,20 @@
                 variant="link"
                 @click="mobileModalShow = !mobileModalShow"
               >
-                <img id="cart" src="~/assets/img/cart.png" alt="Cart icon" />
+                <img
+                  id="cart"
+                  src="~/assets/img/cart.png"
+                  alt="Cart icon"
+                />
               </b-button>
-              <div id="show-total" class="text-center justify-center">
+              <div
+                id="show-total"
+                class="text-center justify-center"
+              >
                 <span
                   id="item-count"
                   class="text-center m-auto p-0 snipcart-total-items"
-                  >{{ cartSize }}</span
-                >
+                >{{ cartSize }}</span>
               </div>
             </div>
           </div>
@@ -348,13 +368,13 @@ import axios from "axios"
 import { mapState, mapGetters } from "vuex"
 
 export default {
-  data() {
+  data () {
     return {
       mobileModalShow: false,
       imageApiUrl: process.env.IMAGE_URL
     }
   },
-  async asyncData({ params, error, payload }) {
+  async asyncData ({ params, error, payload }) {
     if (payload) {
       return { product: payload }
     } else {
@@ -393,7 +413,7 @@ export default {
     }
   },
 
-  head() {
+  head () {
     return {
       title: this.product.name,
       titleTemplate: "%s! - Virus",
@@ -401,7 +421,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.product.Description
+          content: `${this.product.name} - ${this.product.Description}`.slice(0, 320)
         }
       ]
     }
@@ -410,7 +430,7 @@ export default {
     ...mapState(["cart"]),
     ...mapGetters(["cartSize", "cartTotalAmount"])
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }

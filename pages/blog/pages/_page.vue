@@ -1,14 +1,20 @@
 <template>
   <section>
     <div class="container text-center heading p-0 mt-xl-n1">
-      <nav class="container mb-n4 desktop-only" aria-label="breadcrumb">
+      <nav
+        class="container mb-n4 desktop-only"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">
               Головна
             </nuxt-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+          >
             Блог
           </li>
         </ol>
@@ -35,8 +41,7 @@
                 :key="tag"
                 :to="'/blog/category/' + tag"
                 class="desktop-tablet-only"
-                >{{ tag }}&nbsp;|&nbsp;</nuxt-link
-              >
+              >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
@@ -48,9 +53,7 @@
                   preserveAspectRatio="xMinYMin"
                   class="text-light fill-current"
                 >
-                  <path
-                    d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"
-                  />
+                  <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
                 </svg>
               </span>
             </div>
@@ -62,9 +65,10 @@
             <p class="card-text">Date Created {{ post._created | toDate }}</p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link class="btn" :to="'/blog/' + post.title_slug"
-              >ЧИТАТИ</nuxt-link
-            >
+            <nuxt-link
+              class="btn"
+              :to="'/blog/' + post.title_slug"
+            >ЧИТАТИ</nuxt-link>
           </div>
         </div>
       </div>
@@ -75,14 +79,12 @@
         <nuxt-link
           :to="page === '2' ? '/blog' : `/blog/pages/${Number(page) - 1}`"
           class="text-info pr-2"
-          >Попередня сторінка</nuxt-link
-        >
+        >Попередня сторінка</nuxt-link>
         <nuxt-link
           v-if="hasNext"
           :to="`/blog/pages/${Number(page) + 1}`"
           class="text-info pl-2"
-          >Наступна сторінка</nuxt-link
-        >
+        >Наступна сторінка</nuxt-link>
       </div>
     </div>
     <contactForm />
@@ -92,7 +94,7 @@
 
 <script>
 export default {
-  async asyncData({ app, params, error, payload }) {
+  async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return {
         posts: payload.posts,
@@ -123,24 +125,24 @@ export default {
         page: params.page,
         hasNext:
           Number((params.page - 1) * process.env.PER_PAGE) +
-            Number(process.env.PER_PAGE) <
+          Number(process.env.PER_PAGE) <
           data.total
       }
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }
   },
-  head() {
+  head () {
     return {
       title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `Усі повідомлення в блозі в номері сторінки ${this.page}.`
+          content: `Усі повідомлення в блозі в номері сторінки ${this.page}, Детейлінг центр Virus Тернопіль.`
         }
       ]
     }

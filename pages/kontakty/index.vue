@@ -1,14 +1,20 @@
 <template>
   <div>
     <div class="contact-heading-image desktop-only">
-      <nav class="container mt-2" aria-label="breadcrumb">
+      <nav
+        class="container mt-2"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">
               Головна
             </nuxt-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+          >
             <h1>контакти</h1>
           </li>
         </ol>
@@ -57,7 +63,10 @@
       </div>
 
       <div class="container text-center">
-        <hr id="map-top" class="map-separator offset desktop-only" />
+        <hr
+          id="map-top"
+          class="map-separator offset desktop-only"
+        />
 
         <img
           src="~/assets/img/icons8-marker-100.png"
@@ -65,7 +74,12 @@
           alt="Location marker icon"
         />
 
-        <GmapMap id="map" :center="center" :zoom="16" map-type-id="terrain">
+        <GmapMap
+          id="map"
+          :center="center"
+          :zoom="16"
+          map-type-id="terrain"
+        >
           <GmapMarker
             v-for="(m, index) in markers"
             :key="index"
@@ -82,14 +96,20 @@
             rel="noopener"
             href="https://www.instagram.com/virusdetailing/"
           >
-            <img src="~/assets/img/contacPageIg.png" alt="Instagram icon" />
+            <img
+              src="~/assets/img/contacPageIg.png"
+              alt="Instagram icon"
+            />
           </a>
           <a
             target="_blank"
             rel="noopener"
             href="https://www.facebook.com/virus.te.ua/"
           >
-            <img src="~/assets/img/contactPageFb.png" alt="Facebook icon" />
+            <img
+              src="~/assets/img/contactPageFb.png"
+              alt="Facebook icon"
+            />
           </a>
         </div>
       </div>
@@ -106,7 +126,7 @@ export default {
   meta: {
     animation: "fade-in-right"
   },
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "контакти - %s!",
@@ -120,14 +140,14 @@ export default {
       ]
     }
   },
-  data() {
+  data () {
     return {
       center: { lat: 49.558033, lng: 25.56692 },
       markers: [{ position: { lat: 49.558033, lng: 25.56692 } }]
     }
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }

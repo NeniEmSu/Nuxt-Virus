@@ -58,8 +58,6 @@
 
 <script>
 export default {
-  components: {},
-
   head () {
     return {
       title: this.heading,
@@ -67,7 +65,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.firstParagraph
+          content: this.firstParagraph.slice(0, 30)
         }
       ]
     };
@@ -111,7 +109,7 @@ export default {
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 100, { force: true });
     }
   }
 };

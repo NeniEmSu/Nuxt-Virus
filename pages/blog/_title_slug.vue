@@ -135,9 +135,9 @@ export default {
 
   head () {
     return {
-      title: this.post.title,
+      title: this.post.title.slice(0, 60),
       meta: [
-        { hid: "description", name: "description", content: this.post.excerpt }
+        { hid: "description", name: "description", content: `${this.post.title} - ${this.post.excerpt}`.slice(0, 320) }
       ]
     }
   },

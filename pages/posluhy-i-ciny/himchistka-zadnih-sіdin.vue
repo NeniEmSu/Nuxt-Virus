@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-xl-6 text-center">
             <img
-              src="~assets/img/передніхсидінь.jpg"
+              src="~assets/img/задніхсидінь.jpg"
               :alt="heading"
             />
           </div>
@@ -72,26 +72,27 @@
 
 <script>
 export default {
+  components: {},
+
   head () {
     return {
-      title: this.heading,
-
+      title: this.heading.slice(0, 60),
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.firstParagraph
+          content: `${this.heading} - ${this.firstParagraph}`.slice(0, 320)
         }
       ]
     }
   },
   data () {
     return {
-      service: "6",
-      heading: "ХІМЧИСТКА передніх сидінь (тканина, шкіра)",
-      category1: "275 грн",
-      category2: "330 грн",
-      category3: "385 грн",
+      service: "7",
+      heading: "ХІМЧИСТКА задніх сидінь (тканина, шкіра)",
+      category1: "495 грн",
+      category2: "605 грн",
+      category3: "660 грн",
       videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
       question: "Для чого полірувати стійки?",
       firstParagraph:
@@ -103,7 +104,7 @@ export default {
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
+      this.$scrollTo("#top-contact", 100, { force: true })
     }
   }
 }
@@ -113,10 +114,10 @@ export default {
 @import "~assets/scss/servicesPages.scss";
 
 .before {
-  background-image: url("~assets/img/beforeAfter7_001.jpg");
+  background-image: url("~assets/img/beforeAfter8_001.jpg");
 }
 
 .after {
-  background-image: url("~assets/img/beforeAfter7_002.jpg");
+  background-image: url("~assets/img/beforeAfter8_002.jpg");
 }
 </style>

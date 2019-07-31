@@ -70,12 +70,12 @@
 export default {
   head () {
     return {
-      title: this.heading,
+      title: this.heading.slice(0, 60),
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.firstParagraph
+          content: this.firstParagraph.slice(0, 320)
         }
       ]
     }
@@ -130,7 +130,7 @@ export default {
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
+      this.$scrollTo("#top-contact", 100, { force: true })
     }
   }
 }

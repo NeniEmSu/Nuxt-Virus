@@ -150,7 +150,7 @@ export default {
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
+      this.$scrollTo("#top-contact", 100, { force: true })
     }
   }
 }
