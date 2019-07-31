@@ -556,10 +556,24 @@ export default {
       }
     },
 
+
     extend(config, {
       isDev,
       isClient
     }) {
+      config.module.rules.unshift({
+        test: /\.(png|jpe?g|gif)$/,
+        use: {
+          loader: "responsive-loader",
+          options: {
+            placeholder: true,
+            quality: 85,
+            placeholderSize: 30,
+            name: "img/[name].[hash:hex:7].[width].[ext]"
+          }
+        }
+      })
+
       config.module.rules.forEach(rule => {
         if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
           rule.use.push({
@@ -578,56 +592,37 @@ export default {
           })
         }
       })
+
+      config.module.rules.forEach(value => {
+        if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+          value.test = /\.(svg|webp)$/
+        }
+      })
     },
 
-    build: {
-      extend(config, {
-        isDev,
-        isClient
-      }) {
-        config.module.rules.unshift({
-          test: /\.(png|jpe?g|gif)$/,
-          use: {
-            loader: "responsive-loader",
-            options: {
-              placeholder: true,
-              quality: 85,
-              placeholderSize: 30,
-              name: "img/[name].[hash:hex:7].[width].[ext]"
-            }
-          }
+    postcss: {
+      plugins: [
+        purgecss({
+          content: [
+            "./pages/**/*.vue",
+            "./layouts/**/*.vue",
+            "./components/**/*.vue",
+            "./content/**/*.md",
+            "./content/**/*.json"
+          ],
+          whitelist: [
+            "html",
+            "body",
+            "has-navbar-fixed-top",
+            "nuxt-link-exact-active",
+            "nuxt-progress",
+            "hidden",
+            "opacity-0"
+          ],
+          whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/]
         })
-
-        config.module.rules.forEach(value => {
-          if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-            value.test = /\.(svg|webp)$/
-          }
-        })
-      },
-
-      postcss: {
-        plugins: [
-          purgecss({
-            content: [
-              "./pages/**/*.vue",
-              "./layouts/**/*.vue",
-              "./components/**/*.vue",
-              "./content/**/*.md",
-              "./content/**/*.json"
-            ],
-            whitelist: [
-              "html",
-              "body",
-              "has-navbar-fixed-top",
-              "nuxt-link-exact-active",
-              "nuxt-progress",
-              "hidden",
-              "opacity-0"
-            ],
-            whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/]
-          })
-        ]
-      }
+      ]
     }
+
   }
 }

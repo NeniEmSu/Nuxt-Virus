@@ -1,13 +1,19 @@
 <template>
   <div>
-    <nav class="container desktop-only" aria-label="breadcrumb">
+    <nav
+      class="container desktop-only"
+      aria-label="breadcrumb"
+    >
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <nuxt-link to="/">
-Головна
-</nuxt-link>
+            Головна
+          </nuxt-link>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
           <h1>Послуги і ціни</h1>
         </li>
       </ol>
@@ -39,11 +45,10 @@
               @click.prevent="
                 changeCars(variant.variantImage), (selected = variant.variantId)
               "
-              >{{ variant.variantTitle }}</a
-            >
+            >{{ variant.variantTitle }}</a>
             <p class="mt-2 mb-0">
-{{ variant.variantDescription }}
-</p>
+              {{ variant.variantDescription }}
+            </p>
           </div>
         </div>
       </div>
@@ -68,22 +73,22 @@
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
-Ⅰ категорія
-</h5>
+                  Ⅰ категорія
+                </h5>
                 <hr />
                 <div class="row">
                   <div class="col-6">
                     <p class="card-text text-left">
-•середній
-</p>
+                      •середній
+                    </p>
                     <p class="card-text text-left">
-•бізнес
-</p>
+                      •бізнес
+                    </p>
                   </div>
                   <div class="col-6">
                     <p class="card-text text-left">
-•спорт купе
-</p>
+                      •спорт купе
+                    </p>
                   </div>
                 </div>
               </div>
@@ -108,15 +113,15 @@
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
-ⅠⅠ категорія
-</h5>
+                  ⅠⅠ категорія
+                </h5>
                 <hr />
                 <p class="card-text text-left">
-•середній кросовер
-</p>
+                  •середній кросовер
+                </p>
                 <p class="card-text text-left">
-•позашляховик
-</p>
+                  •позашляховик
+                </p>
               </div>
             </div>
           </div>
@@ -139,15 +144,15 @@
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
-ⅠⅠⅠ категорія
-</h5>
+                  ⅠⅠⅠ категорія
+                </h5>
                 <hr />
                 <p class="card-text text-left">
-•позашляховик
-</p>
+                  •позашляховик
+                </p>
                 <p class="card-text text-left">
-•повнорозмірний кросовер
-</p>
+                  •повнорозмірний кросовер
+                </p>
               </div>
             </div>
           </div>
@@ -161,36 +166,44 @@
       <div class="container text-center">
         <form class="choose-brand">
           <h3 class="col-12 red">
-Оберіть категорію автомобіля
-</h3>
+            Оберіть категорію автомобіля
+          </h3>
           <p class="col-12 choose-brand-desc">
 
             Введіть можель свого авто для визначення категорії
-          
-</p>
+
+          </p>
 
           <div class="form-group mx-auto">
-            <label hidden for="brand">Марка</label>
+            <label
+              hidden
+              for="brand"
+            >Марка</label>
             <select
               id="brand"
               v-model="brandSelect"
               aria-describedby="brand"
               class="form-control brand"
             >
-              <option value="null" disabled>
-Марка
-</option>
+              <option
+                value="null"
+                disabled
+              >
+                Марка
+              </option>
               <option
                 v-for="items in carBrandOptions"
                 :key="items.name"
                 :value="items.name"
-                >{{ items.name }}</option
-              >
+              >{{ items.name }}</option>
             </select>
           </div>
 
           <div class="form-group mx-auto">
-            <label hidden for="model">Модель</label>
+            <label
+              hidden
+              for="model"
+            >Модель</label>
             <select
               id="model"
               aria-describedby="model"
@@ -203,20 +216,26 @@
             </select>
           </div>
 
-          <button type="submit" class="btn">
-Вибрати
-</button>
+          <button
+            type="submit"
+            class="btn"
+          >
+            Вибрати
+          </button>
         </form>
       </div>
     </div>
 
-    <div class :class="{ hideMe: selected == undefined }">
+    <div
+      class
+      :class="{ hideMe: selected == undefined }"
+    >
       <div class="jumbotron services">
         <div class="container services-container">
           <!-- Полірування -->
           <h2 class="text-center fab-header">
-Полірування
-</h2>
+            Полірування
+          </h2>
 
           <div class="row mx-auto">
             <div
@@ -231,30 +250,40 @@
               />
               <div class="card-img-overlay">
                 <h5 class="card-title crop">
-{{ polish.polishingTitle }}
-</h5>
+                  {{ polish.polishingTitle }}
+                </h5>
                 <div class="row">
                   <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
+                    <p
+                      v-show="selected == 1"
+                      class
+                    >
                       <small>від</small>
                       {{ polish.polishingCost }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 2" class>
+                    <p
+                      v-show="selected == 2"
+                      class
+                    >
                       <small>від</small>
                       {{ polish.polishingCostVar1 }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 3" class>
+                    <p
+                      v-show="selected == 3"
+                      class
+                    >
                       <small>від</small>
                       {{ polish.polishingCostVar2 }}
                       <small>грн</small>
                     </p>
                   </div>
                   <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="polish.polishingLink" class="btn"
-                      >Читати більше</nuxt-link
-                    >
+                    <nuxt-link
+                      :to="polish.polishingLink"
+                      class="btn"
+                    >Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -263,8 +292,8 @@
 
           <!-- Хімчистка -->
           <h2 class="text-center fab-header">
-Хімчистка
-</h2>
+            Хімчистка
+          </h2>
 
           <div class="row mx-auto">
             <div
@@ -279,30 +308,40 @@
               />
               <div class="card-img-overlay cleaning">
                 <h5 class="card-title crop">
-{{ cleaner.cleanersTitle }}
-</h5>
+                  {{ cleaner.cleanersTitle }}
+                </h5>
                 <div class="row">
                   <div class="col-6 pr-0">
-                    <p v-show="selected == 1" class>
+                    <p
+                      v-show="selected == 1"
+                      class
+                    >
                       <small>від</small>
                       {{ cleaner.cleanersCost }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 2" class>
+                    <p
+                      v-show="selected == 2"
+                      class
+                    >
                       <small>від</small>
                       {{ cleaner.cleanersCostVar1 }}
                       <small>грн</small>
                     </p>
-                    <p v-show="selected == 3" class>
+                    <p
+                      v-show="selected == 3"
+                      class
+                    >
                       <small>від</small>
                       {{ cleaner.cleanersCostVar2 }}
                       <small>грн</small>
                     </p>
                   </div>
                   <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="cleaner.cleanersLink" class="btn"
-                      >Читати більше</nuxt-link
-                    >
+                    <nuxt-link
+                      :to="cleaner.cleanersLink"
+                      class="btn"
+                    >Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -311,8 +350,8 @@
 
           <!-- Воскове покриття -->
           <h2 class="text-center fab-header">
-Воскове покриття
-</h2>
+            Воскове покриття
+          </h2>
 
           <div class="testing">
             <div class="row mx-auto">
@@ -321,32 +360,45 @@
                 :key="WaxCover.WaxCoversId"
                 class="col-6 mx-auto store-item p-0 p-lg-2"
               >
-                <div class="card two-cards" :class="WaxCover.WaxCoversClass">
-                  <div class="card-body"/>
+                <div
+                  class="card two-cards"
+                  :class="WaxCover.WaxCoversClass"
+                >
+                  <div class="card-body" />
                   <div class="card-end">
                     <h5>{{ WaxCover.WaxCoversTitle }}</h5>
                     <div class="row">
                       <div class="col-6 pr-0">
-                        <p v-show="selected == 1" class>
+                        <p
+                          v-show="selected == 1"
+                          class
+                        >
                           <small>від</small>
                           {{ WaxCover.WaxCoversCost }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 2" class>
+                        <p
+                          v-show="selected == 2"
+                          class
+                        >
                           <small>від</small>
                           {{ WaxCover.WaxCoversCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 3" class>
+                        <p
+                          v-show="selected == 3"
+                          class
+                        >
                           <small>від</small>
                           {{ WaxCover.WaxCoversCostVar2 }}
                           <small>грн</small>
                         </p>
                       </div>
                       <div class="col-6 col-md-4 text-right">
-                        <nuxt-link :to="WaxCover.WaxCoversLink" class="btn"
-                          >Читати більше</nuxt-link
-                        >
+                        <nuxt-link
+                          :to="WaxCover.WaxCoversLink"
+                          class="btn"
+                        >Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -363,31 +415,31 @@
                 class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto p-0 p-lg-2"
               >
                 <h2 class="text-center card-heading">
-Керамічне покриття
-</h2>
+                  Керамічне покриття
+                </h2>
                 <div class="card two-cards-seprate-titles service-eleven">
-                  <div class="card-body"/>
+                  <div class="card-body" />
 
                   <div class="card-end">
                     <h5 class="col-12 px-0">
-Керамічне покриття кузова
-</h5>
+                      Керамічне покриття кузова
+                    </h5>
                     <hr />
                     <div class="row">
                       <div class="col-3 mt-2 text-left mx-md-auto pr-0">
                         <p class="subtext">
-Двухфазна мийка
-</p>
+                          Двухфазна мийка
+                        </p>
                       </div>
                       <div class="col-3 mt-2 text-left mx-md-auto p-0">
                         <p class="subtext">
-Очищення кузова від бітуму
-</p>
+                          Очищення кузова від бітуму
+                        </p>
                       </div>
                       <div class="col-3 mt-2 text-left mx-md-auto p-0">
                         <p class="subtext">
-Легке вілновлююче полірування
-</p>
+                          Легке вілновлююче полірування
+                        </p>
                       </div>
                       <div
                         class="col-3 mt-2 text-left mx-md-auto pl-0"
@@ -396,24 +448,33 @@
                         <p class="subtext">
 
                           Керамічне покриття окремих деталей
-                        
-</p>
+
+                        </p>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-6 col-md-8 text-lg-right pr-0">
-                        <p v-show="selected == 1" class>
+                        <p
+                          v-show="selected == 1"
+                          class
+                        >
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCost }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 2" class>
+                        <p
+                          v-show="selected == 2"
+                          class
+                        >
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 3" class>
+                        <p
+                          v-show="selected == 3"
+                          class
+                        >
                           <small>від</small>
                           {{ ceramicCoat.ceramicCoatingCostVar2 }}
                           <small>грн</small>
@@ -423,8 +484,7 @@
                         <nuxt-link
                           :to="ceramicCoat.ceramicCoatingLink"
                           class="btn"
-                          >Читати більше</nuxt-link
-                        >
+                        >Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -440,30 +500,30 @@
                 <h2 class="text-center card-heading">
 
                   Передпродажна підготовка
-                
-</h2>
+
+                </h2>
                 <div class="card two-cards-seprate-titles service-twelve">
-                  <div class="card-body"/>
+                  <div class="card-body" />
 
                   <div class="card-end">
                     <h5 class="col-12 px-0">
-Комплекс
-</h5>
+                      Комплекс
+                    </h5>
                     <hr style="width: 100%;" />
                     <div class="row">
                       <div class="col-4 mt-2 text-left mx-md-auto pr-1">
                         <p class="subtext">
 
                           Трьохфазна мийка авто + Чистка ковроліну підлоги
-                        
-</p>
+
+                        </p>
                       </div>
                       <div class="col-4 mt-2 text-left mx-md-auto p-1">
                         <p class="subtext">
 
                           Чистка дверних карт + Чистка панелі
-                        
-</p>
+
+                        </p>
                       </div>
                       <div class="col-4 mt-2 text-left mx-md-auto pl-0 pr-2">
                         <p class="subtext">
@@ -475,17 +535,26 @@
 
                     <div class="row">
                       <div class="col-6 col-md-8 text-lg-right pr-0">
-                        <p v-show="selected == 1" class>
+                        <p
+                          v-show="selected == 1"
+                          class
+                        >
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCost }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 2" class>
+                        <p
+                          v-show="selected == 2"
+                          class
+                        >
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCostVar1 }}
                           <small>грн</small>
                         </p>
-                        <p v-show="selected == 3" class>
+                        <p
+                          v-show="selected == 3"
+                          class
+                        >
                           <small>від</small>
                           {{ PreSalePrep.PreSalePreparationsCostVar2 }}
                           <small>грн</small>
@@ -495,8 +564,7 @@
                         <nuxt-link
                           :to="PreSalePrep.PreSalePreparationsLink"
                           class="btn"
-                          >Читати більше</nuxt-link
-                        >
+                        >Читати більше</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -506,7 +574,7 @@
           </div>
 
           <h2 class="text-center fab-header">
-             Додаткові послуги
+            Додаткові послуги
           </h2>
           <div class="row mx-auto">
             <div
@@ -523,10 +591,13 @@
               />
               <div class="card-img-overlay">
                 <h5 class="card-title crop">
-{{ addition.additionalTitle }}
-</h5>
+                  {{ addition.additionalTitle }}
+                </h5>
                 <div class="row">
-                  <div v-show="selected == 1" class="col-6 pr-0">
+                  <div
+                    v-show="selected == 1"
+                    class="col-6 pr-0"
+                  >
                     <p v-show="!addition.fixedRange">
                       <small v-show="!addition.perItem">від</small>
                       {{ addition.additionalCost }}
@@ -545,7 +616,10 @@
                       <small v-else>грн</small>
                     </p>
                   </div>
-                  <div v-show="selected == 2" class="col-6 pr-0">
+                  <div
+                    v-show="selected == 2"
+                    class="col-6 pr-0"
+                  >
                     <p v-show="!addition.fixedRange">
                       <small v-show="!addition.perItem">від</small>
                       {{ addition.additionalCostVar1 }}
@@ -564,7 +638,10 @@
                       <small v-else>грн</small>
                     </p>
                   </div>
-                  <div v-show="selected == 3" class="col-6 pr-0">
+                  <div
+                    v-show="selected == 3"
+                    class="col-6 pr-0"
+                  >
                     <p v-show="!addition.fixedRange">
                       <small v-show="!addition.perItem">від</small>
                       {{ addition.additionalCostVar2 }}
@@ -584,9 +661,10 @@
                     </p>
                   </div>
                   <div class="col-6 text-right pl-0">
-                    <nuxt-link :to="addition.additionalLink" class="btn"
-                      >Читати більше</nuxt-link
-                    >
+                    <nuxt-link
+                      :to="addition.additionalLink"
+                      class="btn"
+                    >Читати більше</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -608,7 +686,7 @@ export default {
     animation: "fade-in-right"
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "Послуги і Ціни - %s!",
@@ -621,7 +699,7 @@ export default {
       ]
     }
   },
-  data() {
+  data () {
     return {
       brandSelect: null,
       service: null,
@@ -732,7 +810,7 @@ export default {
           cleanersCost: "495",
           cleanersCostVar1: "605",
           cleanersCostVar2: "660",
-          cleanersLink: "/posluhy-i-ciny/himchistka-zadnih-sіdin",
+          cleanersLink: "/posluhy-i-ciny/himchistka-zadnih-sidin",
 
           cleanersImg: "services8"
         }
@@ -1723,13 +1801,13 @@ export default {
     }
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }
   },
   methods: {
-    changeCars(variantImage) {
+    changeCars (variantImage) {
       this.image = variantImage
     }
   }
