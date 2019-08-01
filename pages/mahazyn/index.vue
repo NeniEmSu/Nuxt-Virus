@@ -1,14 +1,20 @@
 <template>
   <div>
     <div class="shop-heading-image">
-      <nav class="container mt-2 mb-n5" aria-label="breadcrumb">
+      <nav
+        class="container mt-2 mb-n5"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">
               Головна
             </nuxt-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+          >
             магазин
           </li>
         </ol>
@@ -30,42 +36,49 @@
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
-              <button class="accordion" @click.prevent="active1 = !active1">
+              <button
+                class="accordion"
+                @click.prevent="active1 = !active1"
+              >
                 Засоби догляду
-                <span class="down-Arrow" v-show="!active1">&#9660;</span>
-                <span class="up-Arrow" v-show="active1">&#9650;</span>
+                <span
+                  class="down-Arrow"
+                  v-show="!active1"
+                >&#9660;</span>
+                <span
+                  class="up-Arrow"
+                  v-show="active1"
+                >&#9650;</span>
               </button>
-              <div class="panel" v-show="active1">
+              <div
+                class="panel"
+                v-show="active1"
+              >
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn all"
                   data-filter="all"
-                  >-Все</a
-                >
+                >-Все</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn Фібри"
                   data-filter="Фібри"
-                  >-Фібри</a
-                >
+                >-Фібри</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Шампунь"
-                  >-Шампунь</a
-                >
+                >-Шампунь</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Віск"
-                  >-Віск</a
-                >
+                >-Віск</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Пахнючки"
-                  >-Пахнючки</a
-                >
+                >-Пахнючки</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
@@ -75,18 +88,29 @@
                 </a>
               </div>
 
-              <button class="accordion" @click.prevent="active2 = !active2">
+              <button
+                class="accordion"
+                @click.prevent="active2 = !active2"
+              >
                 Захисні покриття
-                <span class="down-Arrow" v-show="!active2">&#9660;</span>
-                <span class="up-Arrow" v-show="active2">&#9650;</span>
+                <span
+                  class="down-Arrow"
+                  v-show="!active2"
+                >&#9660;</span>
+                <span
+                  class="up-Arrow"
+                  v-show="active2"
+                >&#9650;</span>
               </button>
-              <div class="panel" v-show="active2">
+              <div
+                class="panel"
+                v-show="active2"
+              >
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Кераміка"
-                  >-Кераміка</a
-                >
+                >-Кераміка</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
@@ -131,38 +155,59 @@
                 </a>
               </div>
 
-              <button class="accordion" @click.prevent="active3 = !active3">
+              <button
+                class="accordion"
+                @click.prevent="active3 = !active3"
+              >
                 Хімія
-                <span class="down-Arrow" v-show="!active3">&#9660;</span>
-                <span class="up-Arrow" v-show="active3">&#9650;</span>
+                <span
+                  class="down-Arrow"
+                  v-show="!active3"
+                >&#9660;</span>
+                <span
+                  class="up-Arrow"
+                  v-show="active3"
+                >&#9650;</span>
               </button>
-              <div class="panel" v-show="active3">
+              <div
+                class="panel"
+                v-show="active3"
+              >
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Хімія"
-                  >-Хімія</a
-                >
+                >-Хімія</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Хімія"
-                  >-Хімія</a
-                >
+                >-Хімія</a>
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
                   data-filter="Хімія"
-                  >-Хімія</a
-                >
+                >-Хімія</a>
               </div>
 
-              <button class="accordion" @click.prevent="active4 = !active4">
+              <button
+                class="accordion"
+                @click.prevent="active4 = !active4"
+              >
                 Подарункові набори
-                <span class="down-Arrow" v-show="!active4">&#9660;</span>
-                <span class="up-Arrow" v-show="active4">&#9650;</span>
+                <span
+                  class="down-Arrow"
+                  v-show="!active4"
+                >&#9660;</span>
+                <span
+                  class="up-Arrow"
+                  v-show="active4"
+                >&#9650;</span>
               </button>
-              <div class="panel" v-show="active4">
+              <div
+                class="panel"
+                v-show="active4"
+              >
                 <a
                   tag="button"
                   class="btn text-uppercase filter-btn"
@@ -192,12 +237,16 @@
             class="filter-sidebar-mobile col-xl-2 text-center mb-5 mobile-only"
             style
           >
-            <form method="post" name="filter">
+            <form
+              method="post"
+              name="filter"
+            >
               <div class="row">
                 <div class="form-group col-8 text-left m-auto">
-                  <label class="sr-only" for="filter"
-                    >від дорогих до дешевих</label
-                  >
+                  <label
+                    class="sr-only"
+                    for="filter"
+                  >від дорогих до дешевих</label>
                   <select
                     id="filter"
                     v-model="filter"
@@ -206,24 +255,25 @@
                     class="form-control"
                     name="filter"
                   >
-                    <option value="null" class="filter-btn"
-                      >від дорогих до дешевих</option
-                    >
-                    <option value="all" class="filter-btn all" data-filter="all"
-                      >Все</option
-                    >
+                    <option
+                      value="null"
+                      class="filter-btn"
+                    >від дорогих до дешевих</option>
+                    <option
+                      value="all"
+                      class="filter-btn all"
+                      data-filter="all"
+                    >Все</option>
                     <option
                       value="Фібри"
                       class="filter-btn Фібри"
                       data-filter="Фібри"
-                      >Фібри</option
-                    >
+                    >Фібри</option>
                     <option
                       value="Шампунь"
                       class="filter-btn Шампунь"
                       data-filter="Шампунь"
-                      >Шампунь</option
-                    >
+                    >Шампунь</option>
                     <option value="Віск">
                       Віск
                     </option>
@@ -284,7 +334,10 @@
 
           <div class="sales-cards col-xl-9 text-center mx-auto p-0">
             <ProductsList />
-            <div class="row" id="store-items">
+            <div
+              class="row"
+              id="store-items"
+            >
               <card
                 v-for="product in products"
                 :key="product._id"
@@ -311,14 +364,25 @@
                   variant="link"
                   @click="mobileModalShow = !mobileModalShow"
                 >
-                  <img id="cart" src="~/assets/img/cart.png" alt="Cart icon" />
+                  <img
+                    id="cart"
+                    src="~/assets/img/cart.png"
+                    alt="Cart icon"
+                  />
                 </b-button>
-                <div id="show-total" class="text-center justify-center">
-                  <span id="item-count" class="text-center m-auto p-0">{{
+                <div
+                  id="show-total"
+                  class="text-center justify-center"
+                >
+                  <span
+                    id="item-count"
+                    class="text-center m-auto p-0"
+                  >{{
                     cartSize
                   }}</span>
                 </div>
               </div>
+              <checkoutSucess />
             </div>
           </div>
         </div>
@@ -326,28 +390,29 @@
     </div>
 
     <script>
-        ;(function() {
-        const filterBtn = document.querySelectorAll(".filter-btn")
-        filterBtn.forEach(function(btn) {
-          btn.addEventListener("click", function(event) {
-        event.preventDefault()
-      this.classList.add("active");
-      const value = event.target.dataset.filter;
-        const items = document.querySelectorAll(".store-item")
-        items.forEach(function(items) {
-        if (value === "all") {
-      items.style.display = "block";
+    ;
+    (function() {
+      const filterBtn = document.querySelectorAll(".filter-btn")
+      filterBtn.forEach(function(btn) {
+        btn.addEventListener("click", function(event) {
+          event.preventDefault()
+          this.classList.add("active");
+          const value = event.target.dataset.filter;
+          const items = document.querySelectorAll(".store-item")
+          items.forEach(function(items) {
+            if (value === "all") {
+              items.style.display = "block";
+            } else {
+              if (items.classList.contains(value)) {
+                items.style.display = "block"
               } else {
-        if (items.classList.contains(value)) {
-        items.style.display = "block"
-                } else {
-      items.style.display = "none";
-        }
-        }
-      });
-      });
-        })
-        })()
+                items.style.display = "none";
+              }
+            }
+          });
+        });
+      })
+    })()
     </script>
   </div>
 </template>
@@ -363,7 +428,7 @@ export default {
   meta: {
     animation: "fade-in-right"
   },
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "магазин - %s!",
@@ -377,7 +442,7 @@ export default {
       ]
     }
   },
-  data() {
+  data () {
     return {
       filter: null,
       active1: false,
@@ -388,7 +453,7 @@ export default {
       imageApiUrl: process.env.IMAGE_URL
     }
   },
-  async asyncData({ app, error }) {
+  async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
@@ -410,18 +475,18 @@ export default {
   computed: {
     ...mapState(["cart"]),
     ...mapGetters(["cartSize", "cartTotalAmount"]),
-    toast() {
+    toast () {
       return this.$store.getters.toast
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }
   },
 
   methods: {
-    hideToast() {
+    hideToast () {
       this.$store.commit("hideToast")
     }
   }

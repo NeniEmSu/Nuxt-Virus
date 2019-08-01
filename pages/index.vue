@@ -1,5 +1,6 @@
 <template>
   <section>
+
     <div class="container text-center top-grid pt-4 pb-5">
       <pre><h1 class="text-left">Ми
 пропонуємо</h1></pre>

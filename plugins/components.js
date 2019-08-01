@@ -8,10 +8,12 @@ import progressSection from "@/components/progressSection.vue"
 import card from "@/components/shop/ProductsCard.vue"
 import serviceCard from "@/components/services/card.vue"
 import shopCartModal from "@/components/shop/shopCartModal.vue"
+import checkoutSucess from "@/components/shop/checkoutSucess.vue"
 import ProductsToast from "@/components/shop/ProductsToast.vue"
 
 Vue.component("ProductsToast", ProductsToast)
 Vue.component("shopCartModal", shopCartModal)
+Vue.component("checkoutSucess", checkoutSucess)
 Vue.component("card", card)
 Vue.component("serviceCard", serviceCard)
 Vue.component("ContactForm", ContactForm)

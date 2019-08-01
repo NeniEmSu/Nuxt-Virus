@@ -112,7 +112,7 @@ button {
 
 ::-webkit-scrollbar {
   border-radius: 50px;
-  width: 10px;
+  width: 6px;
   background-color: $backgroudColor;
 }
 
@@ -232,6 +232,10 @@ main {
 }
 
 @include mediaXSm {
+  .scrollable-element {
+    scrollbar-width: none;
+  }
+
   .breadcrumb {
     padding: 12px 0;
 

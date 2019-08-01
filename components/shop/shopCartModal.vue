@@ -21,6 +21,10 @@
       </div>
     </b-button>
     <style>
+    #modal-xl-mobile {
+      padding-left: 0px !important;
+    }
+
     .modal-content {
       border-radius: 20px;
     }
@@ -39,7 +43,20 @@
 
     @media (max-width: 577px) {
       .modal-dialog {
-        max-width: 100%;
+        margin-top: 50px;
+        width: 100vw;
+        min-width: 100vw;
+        margin: 50px auto 0;
+      }
+
+      .modal-body {
+        padding: 5px;
+
+      }
+
+      .modal-content {
+        border-radius: 0px;
+        padding: 0;
       }
     }
     </style>
@@ -50,57 +67,65 @@
       title="Корзина"
       class="modal-content text-center"
       hide-footer
-      style="border-radius: 20px; border: none;"
+      style="padding-left: 0 !important;"
     >
-      <div
-        class="modal-body basket text-center"
-        style="border-radius: 20px; border: none;"
-      >
+      <div class="modal-body basket text-center">
         <div
           v-for="product in cart"
           :key="product.id"
-          class="basket-content col-12"
-          style="border-radius: 20px; border: none;"
+          class="basket-content col-12 p-0"
         >
-          <div class="cart-item row col-12 m-auto p-0">
+          <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
             <img
               id="item-img"
               :src="require(`~/assets/img/${product.image + '.jpg'}`)"
               alt="Koch Chemie Fresh UP"
-              class="col-sm-1 p-0 m-auto"
+              class="col-2 p-0 m-auto"
             />
-            <h5
-              id="cart-item-title"
-              class="col-sm-5 m-auto text-sm-left"
-            >{{product.name}}</h5>
-            <div class="toggle-quantity col-sm-2 m-auto">
-              <button
-                @click="removeFromCart(product.id)"
-                :disabled="product.quantity === 1"
-              >
-                &minus;
-              </button>
-              <p>{{product.quantity}}</p>
-              <button
-                @click="addToCart(product.id)"
-                :disabled="product.quantity === product.stock"
-              >
-                &plus;
-              </button>
+            <div class="col-6 p-0">
+              <div class="col-12 p-0 m-auto">
+                <div class="row m-auto">
+                  <h5
+                    id="cart-item-title"
+                    class="col-sm-8 m-auto text-center py-2 crop"
+                  >{{product.name}}</h5>
+                  <div class="toggle-quantity col-sm-4 m-auto ">
+                    <button
+                      @click="removeFromCart(product.id)"
+                      :disabled="product.quantity === 1"
+                    >
+                      &minus;
+                    </button>
+                    <p>{{product.quantity}}</p>
+                    <button
+                      @click="addToCart(product.id)"
+                      :disabled="product.quantity === product.stock"
+                    >
+                      &plus;
+                    </button>
 
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="cost col-sm-3 m-auto">
-              <p
-                id="cart-item-price"
-                class="cart-item-price card-text"
-              >{{product.quantity* product.price | currency}}</p>
-            </div>
-            <div class="remove-from-chart col-sm-1 m-auto text-center">
-              <span
-                @click="deleteFromCart(product.id)"
-                class="close text-center"
-              >&times;
-              </span>
+            <div class="col-4 p-0">
+              <div class="col-12 m-auto p-0">
+                <div class="row m-auto">
+                  <div class="cost col-sm-7 m-auto ">
+                    <p
+                      id="cart-item-price"
+                      class="cart-item-price text-right py-2 card-text"
+                    >{{product.quantity* product.price | currency}}</p>
+                  </div>
+                  <div class="remove-from-chart col-sm-5 m-auto text-right">
+                    <span
+                      @click="deleteFromCart(product.id)"
+                      class="close text-right"
+                    >&times;
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -112,8 +137,8 @@
 
           <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
         </div>
-        <div class="sum-total col-12 text-right">
-          <span id="cart-total">
+        <div class="sum-total col-12 mt-3 text-right">
+          <span id="cart-total ">
             Всього:
             <span class="cart-items-value">
               {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
@@ -162,7 +187,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="form-group col-lg-6">
+            <div class="form-group col-6">
               <label
                 class="m-0 p-0"
                 for="Місто"
@@ -185,7 +210,7 @@
               </label>
 
             </div>
-            <div class="form-group col-lg-6">
+            <div class="form-group col-6">
               <label
                 class="m-0 p-0"
                 for="Відділеня-пошти"
@@ -211,7 +236,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-auto mr-auto my-2">
+            <div class="col-6 text-left my-2">
               <b-button
                 id="clear-cart"
                 to="/mahazyn"
@@ -220,7 +245,7 @@
               >
                 Повернутися</b-button>
             </div>
-            <div class="col-auto my-2">
+            <div class="col-6 text-right my-2">
               <button
                 :disabled="!cartSize"
                 @click.prevent="$store.dispatch('checkout')"
@@ -229,12 +254,16 @@
               >Замовити</button>
             </div>
           </div>
-          <p
+
+          <p class="text-center w-md-50 mt-3 mx-auto">Оформіть замовлення, і наш менеджер
+            зв’яжеться з вами найближчим часом</p>
+          <!-- <p
             class="text-success"
             v-show="$store.state.checkoutStatus"
           >Checkout
             {{ $store.state.checkoutStatus }}.
-          </p>
+          </p> -->
+
         </form>
       </div>
     </b-modal>
@@ -290,7 +319,6 @@ export default {
 #show-total {
   span {
     padding: 4px 6px;
-
     background-color: $redColor;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -312,12 +340,8 @@ export default {
 }
 
 .modal-content {
-  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-  border: 0;
-  border-radius: 25px;
-
   .basket {
-    h3 {
+    h5 {
       font-family: $mainFont;
       font-style: normal;
       font-weight: bold;
@@ -344,8 +368,8 @@ export default {
         font-family: $mainFont;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: normal;
+        font-size: 20px;
+        line-height: 93.75%;
 
         color: $darkColor;
 
@@ -356,6 +380,7 @@ export default {
         border: 1px solid #e5e5e5;
         box-sizing: border-box;
         border-radius: 50px;
+        width: 50%;
 
         display: flex;
         justify-content: space-between;
@@ -515,16 +540,130 @@ export default {
   }
 }
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 90% !important;
-    margin: 1.75rem auto;
-  }
-}
-
 @include mediaMenu {
   .desktop-only {
     display: inline;
+  }
+}
+
+@include mediaSm {
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+
+  .modal-content {
+    .basket {
+      h5 {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: $darkColor;
+      }
+
+      .basket-content {
+        display: flex;
+
+        .cart-item {
+          background: #ffffff;
+          box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+          margin: 0 auto 10px auto;
+        }
+
+        .cost p {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 93.75%;
+
+          align-items: center;
+          letter-spacing: -0.05em;
+
+          color: #8b8b8b;
+        }
+
+        .toggle-quantity {
+          border: 1px solid #e5e5e5;
+          box-sizing: border-box;
+          border-radius: 50px;
+          width: 100px;
+
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            border: 0;
+            background-color: transparent;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 28px;
+            cursor: pointer;
+            margin: auto;
+            color: $darkColor;
+            text-decoration: none;
+          }
+
+          p,
+          button {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 26px;
+
+            color: $darkColor;
+
+            margin: auto 2px;
+            text-decoration: none;
+          }
+        }
+
+        .remove-from-chart {
+          span {
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 28px;
+            cursor: pointer;
+            margin: auto;
+            color: $darkColor;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .sum-total span {
+        font-family: $mainFont;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 93.75%;
+
+        align-items: center;
+        letter-spacing: -0.05em;
+
+        color: #8b8b8b;
+
+        .cart-items-value {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 93.75%;
+          align-items: center;
+          letter-spacing: -0.05em;
+
+          color: #d41f26;
+        }
+      }
+    }
   }
 }
 </style>
