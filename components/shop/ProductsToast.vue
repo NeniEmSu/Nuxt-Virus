@@ -46,15 +46,16 @@ export default {
 
 <style scoped>
 .alert {
-  width: 30%;
-  background-color: #5cb85c;
+  width: auto;
+  background-color: #25d41f;
   text-align: center;
   font-weight: bold;
-  color: white;
-  position: absolute;
-  z-index: 100000;
+  color: #ffffff;
+  position: fixed;
+  z-index: 1041;
   border-radius: 20px;
   left: 50%;
   transform: translateX(-50%);
+  top: 0vh;
 }
 </style>

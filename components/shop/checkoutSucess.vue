@@ -148,7 +148,7 @@ export default {
   stroke-width: 5;
   stroke: #d41f26;
   stroke-miterlimit: 10;
-  margin: 10% auto;
+  margin: 0 auto 20px auto;
   box-shadow: inset 0px 0px 0px transparent;
   animation: fill 0.4s ease-in-out 0.4s forwards,
     scale 0.3s ease-in-out 0.9s both;
@@ -272,7 +272,7 @@ export default {
     stroke-width: 5;
     stroke: #d41f26;
     stroke-miterlimit: 10;
-    margin: 10% auto;
+    margin: 0 auto 20px auto;
     box-shadow: inset 0px 0px 0px transparent;
     animation: fill 0.4s ease-in-out 0.4s forwards,
       scale 0.3s ease-in-out 0.9s both;
@@ -288,7 +288,7 @@ export default {
     stroke-width: 5;
     stroke: #d41f26;
     stroke-miterlimit: 10;
-    margin: 10% auto;
+    margin: 0 auto 20px auto;
     box-shadow: inset 0px 0px 0px transparent;
     animation: fill 0.4s ease-in-out 0.4s forwards,
       scale 0.3s ease-in-out 0.9s both;

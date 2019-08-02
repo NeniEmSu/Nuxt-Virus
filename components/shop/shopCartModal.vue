@@ -203,8 +203,25 @@
                     value="null"
                     disabled
                   >Місто*</option>
-                  <option value="0">Місто</option>
-                  <option value="1">Місто</option>
+                  <optgroup
+                    :value="city.name"
+                    v-for="city in cities"
+                    :key="city.id"
+                    :label="city.name"
+                  >
+                    <option
+                      v-for="area in city.areas"
+                      :key="area.id"
+                      :label="area.name"
+                      :value="area.name"
+                    >{{area.name}}</option>
+
+                  </optgroup>
+                  <!-- <option
+                    :value="city.areas.name"
+                    v-for="city in cities"
+                    :key="city.id"
+                  >{{city.areas.name}}</option> -->
                 </select>
 
               </label>
@@ -272,9 +289,11 @@
 
  <script>
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+import cities from '~/plugins/api/ua.json'
 export default {
   data () {
     return {
+      cities,
       mobileModalShow: false,
       cartName: null,
       postBranch: null,
@@ -661,6 +680,89 @@ export default {
           letter-spacing: -0.05em;
 
           color: #d41f26;
+        }
+      }
+
+      .checkOut {
+        margin-bottom: 60px;
+
+        input {
+          height: 48px;
+          margin-top: 10px;
+          border: 2px solid #e5e5e5;
+          box-sizing: border-box;
+          border-radius: 50px;
+        }
+        select {
+          -webkit-appearance: none;
+          -o-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+
+          background-image: url(~assets/img/servicesSelect.png);
+          background-position: 95% center;
+          background-repeat: no-repeat;
+
+          cursor: pointer;
+
+          height: 48px;
+          margin: 10px auto 0 auto;
+          border: 2px solid #e5e5e5;
+          box-sizing: border-box;
+          border-radius: 50px;
+
+          &.active,
+          &:focus {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+          }
+        }
+
+        .btn {
+          padding: 10px 33px;
+          background: $redColor;
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+          border-radius: 50px;
+          font-family: $secondaryFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 20px;
+          text-align: center;
+          color: $lightColor;
+          border: 0;
+          text-decoration: none;
+
+          &.go-back {
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+            background: #e5e5e5;
+            padding: 10px 33px;
+            font-family: $secondaryFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 0;
+
+            color: $darkColor;
+          }
+        }
+
+        .order.btn:after {
+          display: none;
+          float: none;
+          content: "";
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+
+        .go-back.btn:before {
+          display: none;
+          float: none;
+          content: "";
+          margin-left: -0px;
+          margin-right: 0px;
         }
       }
     }

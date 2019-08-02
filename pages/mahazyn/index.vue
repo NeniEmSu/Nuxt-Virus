@@ -332,26 +332,28 @@
             </form>
           </div>
 
-          <div class="sales-cards col-xl-9 text-center mx-auto p-0">
+          <div class="container sales-cards col-xl-9 text-center p-0">
             <ProductsList />
-            <div
-              class="row"
-              id="store-items"
-            >
-              <card
-                v-for="product in products"
-                :key="product._id"
-                class="mb-5 mx-auto"
-                :name="product.name"
-                :summary="product.Overview"
-                :price="product.Price"
-                :image="
+            <div class="container mt-2 pb-3">
+              <div
+                class="row"
+                id="store-items"
+              >
+                <card
+                  v-for="product in products"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :image="
                   `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
                 "
-                :link="'/mahazyn/' + product.name_slug"
-                :filter-data="product.Filter"
-                :stock="product.Stock"
-              />
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                />
+              </div>
             </div>
           </div>
 
