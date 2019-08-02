@@ -331,6 +331,10 @@ export default {
     {
       src: "~/plugins/vuex-persist",
       ssr: false
+    },
+    {
+      src: "~/plugins/vue-select",
+      ssr: true
     }
   ],
 

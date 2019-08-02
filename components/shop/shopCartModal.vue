@@ -217,11 +217,7 @@
                     >{{area.name}}</option>
 
                   </optgroup>
-                  <!-- <option
-                    :value="city.areas.name"
-                    v-for="city in cities"
-                    :key="city.id"
-                  >{{city.areas.name}}</option> -->
+
                 </select>
 
               </label>
