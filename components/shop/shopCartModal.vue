@@ -69,236 +69,97 @@
       hide-footer
       style="padding-left: 0 !important;"
     >
-      <div class="modal-body basket text-center">
-        <div
-          v-for="product in cart"
-          :key="product.id"
-          class="basket-content col-12 p-0"
-        >
-          <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
-            <img
-              id="item-img"
-              :src="require(`~/assets/img/${product.image + '.jpg'}`)"
-              alt="Koch Chemie Fresh UP"
-              class="col-2 p-0 m-auto"
-            />
-            <div class="col-6 p-0">
-              <div class="col-12 p-0 m-auto">
-                <div class="row m-auto">
-                  <h5
-                    id="cart-item-title"
-                    class="col-sm-8 m-auto text-center py-2 crop"
-                  >{{product.name}}</h5>
-                  <div class="toggle-quantity col-sm-4 m-auto ">
-                    <button
-                      @click="removeFromCart(product.id)"
-                      :disabled="product.quantity === 1"
-                    >
-                      &minus;
-                    </button>
-                    <p>{{product.quantity}}</p>
-                    <button
-                      @click="addToCart(product.id)"
-                      :disabled="product.quantity === product.stock"
-                    >
-                      &plus;
-                    </button>
 
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 p-0">
-              <div class="col-12 m-auto p-0">
-                <div class="row m-auto">
-                  <div class="cost col-sm-7 m-auto ">
-                    <p
-                      id="cart-item-price"
-                      class="cart-item-price text-right py-2 card-text"
-                    >{{product.quantity* product.price | currency}}</p>
-                  </div>
-                  <div class="remove-from-chart col-sm-5 m-auto text-right">
-                    <span
-                      @click="deleteFromCart(product.id)"
-                      class="close text-right"
-                    >&times;
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <shopCartPurchaseDetails
+        v-if="currentStepNumber === 1"
+        @update='processstep '
+      />
+      <shopCartReviewOrder
+        v-if="currentStepNumber === 2"
+        :cartFormData="form"
+      />
+      <shopCartSuccessPage v-if="currentStepNumber === 3" />
+
+      <div class="row">
+        <div class="col-6 text-left my-2">
+          <b-button
+            id="clear-cart"
+            to="/mahazyn"
+            @click="$bvModal.hide('modal-xl-mobile')"
+            class="btn cart-navigarion go-back"
+            v-if="currentStepNumber === 1"
+          >
+            Повернутися</b-button>
+          <b-button
+            @click="goBack"
+            v-if="currentStepNumber == 2"
+            class="btn cart-navigarion go-back"
+          >
+            Редагувати кошик</b-button>
         </div>
+        <div class="col-6 text-right my-2">
+          <button
+            v-if="currentStepNumber === 2 "
+            :disabled="!cartSize"
+            @click.prevent="ConfirmCheckout"
+            type="submit"
+            class="btn cart-navigarion order"
+          >підтвердити Замовити</button>
+          <button
+            v-if="currentStepNumber === 1"
+            :disabled="!cartSize || !canGoNext"
+            @click="goNext"
+            type="submit"
+            class="btn cart-navigarion order"
+          >Замовити</button>
 
-        <div
-          class="col-12"
-          v-if="!cartSize"
-        >
-
-          <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
         </div>
-        <div class="sum-total col-12 mt-3 text-right">
-          <span id="cart-total ">
-            Всього:
-            <span class="cart-items-value">
-              {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+        <p
+          class="text-center w-md-50 mt-3 mx-auto"
+          v-if="currentStepNumber < 3 "
+        >Оформіть замовлення, і наш менеджер
+          зв’яжеться з вами найближчим часом</p>
+      </div>
 
-            </span>
-          </span>
-        </div>
-
-        <form
-          action="#"
-          method="POST"
-          class="checkOut"
-        >
-          <div class="row">
-            <div class="form-group col-lg-6">
-              <label
-                class="m-0 p-0"
-                for="name"
-              ><input
-                  id="name"
-                  type="text"
-                  name="name"
-                  class="form-control mx-auto"
-                  aria-describedby="name"
-                  placeholder="Ім’я*"
-                  v-model="cartName"
-                /></label>
-
-            </div>
-            <div class="form-group col-lg-6">
-              <label
-                class="m-0 p-0"
-                for="cartPhone"
-              ><input
-                  aria-describedby="cartPhone"
-                  aria-label="cartPhone"
-                  name="cartPhone"
-                  type="text"
-                  class="form-control mx-auto"
-                  id="cartPhone"
-                  placeholder="Телефон*"
-                  v-mask="'+38(0##) ###-####'"
-                  v-model="models.cartphoneNumber"
-                /></label>
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-6">
-              <label
-                class="m-0 p-0"
-                for="Місто"
-              ><select
-                  aria-label="Місто"
-                  id="Місто"
-                  aria-describedby="Місто"
-                  class="form-control mx-auto"
-                  v-model="city"
-                  name="Місто"
-                >
-                  <option
-                    value="null"
-                    disabled
-                  >Місто*</option>
-                  <optgroup
-                    :value="city.name"
-                    v-for="city in cities"
-                    :key="city.id"
-                    :label="city.name"
-                  >
-                    <option
-                      v-for="area in city.areas"
-                      :key="area.id"
-                      :label="area.name"
-                      :value="area.name"
-                    >{{area.name}}</option>
-
-                  </optgroup>
-
-                </select>
-
-              </label>
-
-            </div>
-            <div class="form-group col-6">
-              <label
-                class="m-0 p-0"
-                for="Відділеня-пошти"
-              >
-                <select
-                  aria-label="Відділеня-пошти"
-                  id="Відділеня-пошти"
-                  type="text"
-                  aria-describedby="Відділеня-пошти"
-                  class="form-control mx-auto"
-                  v-model="postBranch"
-                  name="Відділеня-пошти"
-                >
-                  <option
-                    value="null"
-                    disabled
-                  >Відділення пошти*</option>
-                  <option value="0">Відділення пошти</option>
-                  <option value="1">Відділення пошти</option>
-                </select>
-              </label>
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 text-left my-2">
-              <b-button
-                id="clear-cart"
-                to="/mahazyn"
-                @click="$bvModal.hide('modal-xl-mobile')"
-                class="btn go-back"
-              >
-                Повернутися</b-button>
-            </div>
-            <div class="col-6 text-right my-2">
-              <button
-                :disabled="!cartSize"
-                @click.prevent="$store.dispatch('checkout')"
-                type="submit"
-                class="btn order"
-              >Замовити</button>
-            </div>
-          </div>
-
-          <p class="text-center w-md-50 mt-3 mx-auto">Оформіть замовлення, і наш менеджер
-            зв’яжеться з вами найближчим часом</p>
-          <!-- <p
-            class="text-success"
-            v-show="$store.state.checkoutStatus"
-          >Checkout
-            {{ $store.state.checkoutStatus }}.
-          </p> -->
-
-        </form>
+      <div class="progress-bar">
+        <div :style="`width: ${progress}%;`"></div>
       </div>
     </b-modal>
   </div>
 </template>
 
- <script>
+<script>
+import { required, minLength, email } from "vuelidate/lib/validators";
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 import cities from '~/plugins/api/ua.json'
+import shopCartPurchaseDetails from '~/components/shop/shopCartPurchaseDetails'
+import shopCartReviewOrder from '~/components/shop/shopCartReviewOrder'
+import shopCartSuccessPage from '~/components/shop/shopCartSuccessPage'
 export default {
+  name: 'shopCart',
+
+  components: {
+    shopCartPurchaseDetails,
+    shopCartReviewOrder,
+    shopCartSuccessPage
+  },
   data () {
     return {
-      cities,
+      currentStepNumber: 1,
+      canGoNext: false,
+      length: 3,
       mobileModalShow: false,
-      cartName: null,
-      postBranch: null,
-      city: null,
-      models: {
+      cities,
+      form: {
+        name: null,
+        postBranch: null,
+        city: null,
         cartphoneNumber: null
-      },
+      }
+
     };
   },
+
   computed: {
     ...mapState([
       "cart"
@@ -306,9 +167,31 @@ export default {
     ...mapGetters([
       "cartSize",
       "cartTotalAmount"
-    ])
+    ]),
+    progress () {
+      return this.currentStepNumber / this.length * 100
+    }
+
   },
   methods: {
+    processstep (stepData) {
+      Object.assign(this.form, stepData)
+      this.canGoNext = true
+    },
+
+    ConfirmCheckout () {
+      this.$store.dispatch('checkout')
+      this.currentStepNumber++
+      setInterval(function () { currentStepNumber === 1; }, 3000);
+    },
+
+    goBack () {
+      this.currentStepNumber--
+    },
+    goNext () {
+      this.currentStepNumber++
+      this.canGoNext = false
+    },
     addToCart (id) {
       this.$store.dispatch("addToCart", id);
     },
@@ -324,6 +207,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.progress-bar {
+  width: 100%;
+  border-radius: 9999px;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 12px;
+  background: #c6c6c6;
+}
+
+.progress-bar > div {
+  border-radius: 9999px;
+  position: absolute;
+  height: 100%;
+  background-color: $redColor;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .modal-title {
   text-align: center;
 }
@@ -331,6 +233,7 @@ export default {
 .desktop-only {
   display: none;
 }
+
 #show-total {
   span {
     padding: 4px 6px;
@@ -354,205 +257,57 @@ export default {
   }
 }
 
-.modal-content {
-  .basket {
-    h5 {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: normal;
+.cart-navigarion {
+  padding: 10px 33px;
+  background: $redColor;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 50px;
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: $lightColor;
+  border: 0;
+  text-decoration: none;
 
-      color: $darkColor;
-    }
+  &.go-back {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    background: #e5e5e5;
+    padding: 10px 20px;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 0;
 
-    .basket-content {
-      display: flex;
-
-      .cart-item {
-        border-top: 1px solid #e5e5e5;
-      }
-
-      img {
-        width: 60px;
-        height: 60px;
-        object-fit: scale-down;
-      }
-
-      .cost p {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 93.75%;
-
-        color: $darkColor;
-
-        margin: auto;
-      }
-
-      .toggle-quantity {
-        border: 1px solid #e5e5e5;
-        box-sizing: border-box;
-        border-radius: 50px;
-        width: 50%;
-
-        display: flex;
-        justify-content: space-between;
-
-        button {
-          border: 0;
-          background-color: transparent;
-          font-weight: bold;
-          font-size: 28px;
-          line-height: 28px;
-          cursor: pointer;
-          margin: auto;
-          color: $darkColor;
-          text-decoration: none;
-        }
-
-        p,
-        button {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 18px;
-          line-height: 26px;
-
-          color: $darkColor;
-
-          margin: auto 2px;
-          text-decoration: none;
-        }
-      }
-
-      .remove-from-chart {
-        span {
-          font-weight: bold;
-          font-size: 28px;
-          line-height: 28px;
-          cursor: pointer;
-          margin: auto;
-          color: $darkColor;
-          text-decoration: none;
-        }
-      }
-    }
-
-    .sum-total span {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: normal;
-
-      color: $darkColor;
-
-      .cart-items-value {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: normal;
-
-        color: #000000;
-      }
-    }
-
-    label {
-      width: 100%;
-    }
-
-    .checkOut {
-      margin-bottom: 60px;
-
-      input {
-        height: 48px;
-        margin-top: 10px;
-        border: 2px solid #e5e5e5;
-        box-sizing: border-box;
-        border-radius: 50px;
-      }
-      select {
-        -webkit-appearance: none;
-        -o-appearance: none;
-        -moz-appearance: none;
-        -ms-appearance: none;
-        appearance: none;
-
-        background-image: url(~assets/img/servicesSelect.png);
-        background-position: 95% center;
-        background-repeat: no-repeat;
-
-        cursor: pointer;
-
-        height: 48px;
-        margin: 10px auto 0 auto;
-        border: 2px solid #e5e5e5;
-        box-sizing: border-box;
-        border-radius: 50px;
-
-        &.active,
-        &:focus {
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-        }
-      }
-
-      .btn {
-        padding: 10px 33px;
-        background: $redColor;
-        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
-        border-radius: 50px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 20px;
-        text-align: center;
-        color: $lightColor;
-        border: 0;
-        text-decoration: none;
-
-        &.go-back {
-          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-          background: #e5e5e5;
-          padding: 10px 20px;
-          font-family: $secondaryFont;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 20px;
-          line-height: 20px;
-          text-align: center;
-          border: 0;
-
-          color: $darkColor;
-        }
-      }
-
-      .order.btn:after {
-        color: $lightColor;
-        float: right;
-        font-size: 20px;
-
-        font-weight: 900;
-        content: "\0203A";
-        margin-left: 20px;
-        margin-right: -20px;
-      }
-
-      .go-back.btn:before {
-        color: $darkColor;
-        float: left;
-        font-size: 20px;
-
-        font-weight: normal;
-        content: "\02039";
-        margin-left: -10px;
-        margin-right: 10px;
-      }
-    }
+    color: $darkColor;
   }
+}
+
+.order.btn:after {
+  color: $lightColor;
+  float: right;
+  font-size: 20px;
+
+  font-weight: 900;
+  content: "\0203A";
+  margin-left: 20px;
+  margin-right: -20px;
+}
+
+.go-back.btn:before {
+  color: $darkColor;
+  float: left;
+  font-size: 20px;
+
+  font-weight: normal;
+  content: "\02039";
+  margin-left: -10px;
+  margin-right: 10px;
 }
 
 @include mediaMenu {
@@ -569,199 +324,51 @@ export default {
     width: 200px;
   }
 
-  .modal-content {
-    .basket {
-      h5 {
-        font-family: $mainFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 16px;
+  .cart-navigarion {
+    padding: 10px 33px;
+    background: $redColor;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 50px;
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: $lightColor;
+    border: 0;
+    text-decoration: none;
 
-        color: $darkColor;
-      }
+    &.go-back {
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+      background: #e5e5e5;
+      padding: 10px 33px;
+      font-family: $secondaryFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: center;
+      border: 0;
 
-      .basket-content {
-        display: flex;
-
-        .cart-item {
-          background: #ffffff;
-          box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
-          border-radius: 10px;
-          margin: 0 auto 10px auto;
-        }
-
-        .cost p {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 93.75%;
-
-          align-items: center;
-          letter-spacing: -0.05em;
-
-          color: #8b8b8b;
-        }
-
-        .toggle-quantity {
-          border: 1px solid #e5e5e5;
-          box-sizing: border-box;
-          border-radius: 50px;
-          width: 100px;
-
-          display: flex;
-          justify-content: space-between;
-
-          button {
-            border: 0;
-            background-color: transparent;
-            font-weight: bold;
-            font-size: 28px;
-            line-height: 28px;
-            cursor: pointer;
-            margin: auto;
-            color: $darkColor;
-            text-decoration: none;
-          }
-
-          p,
-          button {
-            font-family: $mainFont;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 26px;
-
-            color: $darkColor;
-
-            margin: auto 2px;
-            text-decoration: none;
-          }
-        }
-
-        .remove-from-chart {
-          span {
-            font-weight: bold;
-            font-size: 28px;
-            line-height: 28px;
-            cursor: pointer;
-            margin: auto;
-            color: $darkColor;
-            text-decoration: none;
-          }
-        }
-      }
-
-      .sum-total span {
-        font-family: $mainFont;
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 93.75%;
-
-        align-items: center;
-        letter-spacing: -0.05em;
-
-        color: #8b8b8b;
-
-        .cart-items-value {
-          font-family: $mainFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 20px;
-          line-height: 93.75%;
-          align-items: center;
-          letter-spacing: -0.05em;
-
-          color: #d41f26;
-        }
-      }
-
-      .checkOut {
-        margin-bottom: 60px;
-
-        input {
-          height: 48px;
-          margin-top: 10px;
-          border: 2px solid #e5e5e5;
-          box-sizing: border-box;
-          border-radius: 50px;
-        }
-        select {
-          -webkit-appearance: none;
-          -o-appearance: none;
-          -moz-appearance: none;
-          -ms-appearance: none;
-          appearance: none;
-
-          background-image: url(~assets/img/servicesSelect.png);
-          background-position: 95% center;
-          background-repeat: no-repeat;
-
-          cursor: pointer;
-
-          height: 48px;
-          margin: 10px auto 0 auto;
-          border: 2px solid #e5e5e5;
-          box-sizing: border-box;
-          border-radius: 50px;
-
-          &.active,
-          &:focus {
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-          }
-        }
-
-        .btn {
-          padding: 10px 33px;
-          background: $redColor;
-          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
-          border-radius: 50px;
-          font-family: $secondaryFont;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 20px;
-          line-height: 20px;
-          text-align: center;
-          color: $lightColor;
-          border: 0;
-          text-decoration: none;
-
-          &.go-back {
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-            background: #e5e5e5;
-            padding: 10px 33px;
-            font-family: $secondaryFont;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 20px;
-            line-height: 20px;
-            text-align: center;
-            border: 0;
-
-            color: $darkColor;
-          }
-        }
-
-        .order.btn:after {
-          display: none;
-          float: none;
-          content: "";
-          margin-left: 0px;
-          margin-right: 0px;
-        }
-
-        .go-back.btn:before {
-          display: none;
-          float: none;
-          content: "";
-          margin-left: -0px;
-          margin-right: 0px;
-        }
-      }
+      color: $darkColor;
     }
+  }
+
+  .order.btn:after {
+    display: none;
+    float: none;
+    content: "";
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .go-back.btn:before {
+    display: none;
+    float: none;
+    content: "";
+    margin-left: -0px;
+    margin-right: 0px;
   }
 }
 </style>

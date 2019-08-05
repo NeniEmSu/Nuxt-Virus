@@ -1,0 +1,730 @@
+<template>
+  <div class="modal-body basket text-center">
+    <div
+      v-for="product in cart"
+      :key="product.id"
+      class="basket-content col-12 p-0"
+    >
+      <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
+        <img
+          id="item-img"
+          :src="require(`~/assets/img/${product.image + '.jpg'}`)"
+          alt="Koch Chemie Fresh UP"
+          class="col-2 p-0 m-auto"
+        />
+        <div class="col-6 p-0">
+          <div class="col-12 p-0 m-auto">
+            <div class="row m-auto">
+              <h5
+                id="cart-item-title"
+                class="col-sm-8 m-auto text-center py-2 crop"
+              >{{product.name}}</h5>
+              <div class="toggle-quantity col-sm-4 m-auto ">
+                <button
+                  @click="removeFromCart(product.id)"
+                  :disabled="product.quantity === 1"
+                >
+                  &minus;
+                </button>
+                <p>{{product.quantity}}</p>
+                <button
+                  @click="addToCart(product.id)"
+                  :disabled="product.quantity === product.stock"
+                >
+                  &plus;
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 p-0">
+          <div class="col-12 m-auto p-0">
+            <div class="row m-auto">
+              <div class="cost col-sm-7 m-auto ">
+                <p
+                  id="cart-item-price"
+                  class="cart-item-price text-right py-2 card-text"
+                >{{product.quantity* product.price | currency}}</p>
+              </div>
+              <div class="remove-from-chart col-sm-5 m-auto text-right">
+                <span
+                  @click="deleteFromCart(product.id)"
+                  class="close text-right"
+                >&times;
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="col-12"
+      v-if="!cartSize"
+    >
+
+      <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
+    </div>
+    <div class="sum-total col-12 mt-3 text-right">
+      <span id="cart-total ">
+        Всього:
+        <span class="cart-items-value">
+          {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+
+        </span>
+      </span>
+    </div>
+
+    <form
+      class="checkOut"
+      @input="submit"
+    >
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <label
+            class="m-0 p-0"
+            for="name"
+          ><input
+              id="name"
+              type="text"
+              name="name"
+              class="form-control mx-auto"
+              aria-describedby="name"
+              placeholder="Ім’я*"
+              v-model="$v.form.name.$model"
+            /></label>
+          <div
+            v-if="$v.form.name.$error"
+            class="error"
+          >Ім'я обов'язково</div>
+
+        </div>
+        <div class="form-group col-lg-6">
+          <label
+            class="m-0 p-0"
+            for="cartPhone"
+          ><input
+              aria-describedby="cartPhone"
+              aria-label="cartPhone"
+              name="cartPhone"
+              class="form-control mx-auto"
+              id="cartPhone"
+              placeholder="Телефон*"
+              v-mask="'+38(0##) ###-####'"
+              v-model="$v.form.models.cartphoneNumber.$model"
+            /></label>
+          <div
+            v-if="$v.form.models.cartphoneNumber.$error"
+            class="error"
+          >Телефон обов'язково</div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-6">
+          <label
+            class="m-0 p-0"
+            for="Місто"
+          ><select
+              aria-label="Місто"
+              id="Місто"
+              aria-describedby="Місто"
+              class="form-control mx-auto"
+              v-model="$v.form.city.$model"
+              name="Місто"
+            >
+              <option
+                value="null"
+                disabled
+              >Місто*</option>
+              <optgroup
+                :value="city.name"
+                v-for="city in cities"
+                :key="city.id"
+                :label="city.name"
+              >
+                <option
+                  v-for="area in city.areas"
+                  :key="area.id"
+                  :label="area.name"
+                  :value="area.name"
+                >{{area.name}}</option>
+
+              </optgroup>
+
+            </select>
+
+          </label>
+          <div
+            v-if="$v.form.city.$error"
+            class="error"
+          >Місто обов'язково</div>
+
+        </div>
+        <div class="form-group col-6">
+          <label
+            class="m-0 p-0"
+            for="Відділеня-пошти"
+          ><input
+              aria-label="Відділеня-пошти"
+              id="Відділеня-пошти"
+              type="text"
+              aria-describedby="Відділеня-пошти"
+              class="form-control mx-auto"
+              v-model="$v.form.postBranch.$model"
+              name="Відділеня-пошти"
+              placeholder="Відділення пошти*"
+            /></label>
+          <div
+            v-if="$v.form.postBranch.$error"
+            class="error"
+          >Відділення пошти обов'язково</div>
+
+        </div>
+        <!-- <div class="form-group col-6">
+          <label
+            class="m-0 p-0"
+            for="Відділеня-пошти"
+          >
+            <select
+              aria-label="Відділеня-пошти"
+              id="Відділеня-пошти"
+              type="text"
+              aria-describedby="Відділеня-пошти"
+              class="form-control mx-auto"
+              v-model="postBranch"
+              name="Відділеня-пошти"
+            >
+              <option
+                value="null"
+                disabled
+              >Відділення пошти*</option>
+              <option value="0">Відділення пошти</option>
+              <option value="1">Відділення пошти</option>
+            </select>
+          </label>
+
+        </div> -->
+      </div>
+
+    </form>
+  </div>
+</template>
+
+<script>
+import { required, minLength, email } from "vuelidate/lib/validators";
+import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+import cities from '~/plugins/api/ua.json'
+export default {
+  data () {
+    return {
+      cities,
+      mobileModalShow: false,
+      form: {
+        name: null,
+        postBranch: null,
+        city: null,
+        models: {
+          cartphoneNumber: null
+        }
+      }
+
+    };
+  },
+  validations: {
+    form: {
+      postBranch: {
+        required
+      },
+      city: {
+        required
+      },
+      name: {
+        required
+      },
+      models: {
+        cartphoneNumber: {
+          required
+        }
+      }
+    }
+  },
+  computed: {
+    ...mapState([
+      "cart"
+    ]),
+    ...mapGetters([
+      "cartSize",
+      "cartTotalAmount"
+    ])
+  },
+  methods: {
+    submit () {
+      if (!this.$v.$invalid) {
+        this.$emit('update', {
+          name: this.form.name,
+          postBranch: this.form.postBranch,
+          city: this.form.city,
+          cartphoneNumber: this.form.models.cartphoneNumber
+        })
+      }
+
+    },
+    addToCart (id) {
+      this.$store.dispatch("addToCart", id);
+    },
+    removeFromCart (id) {
+      this.$store.dispatch("removeFromCart", id);
+    },
+    deleteFromCart (id) {
+      this.$store.dispatch("deleteFromCart", id);
+    }
+  }
+
+};
+</script>
+
+<style lang="scss" scoped>
+.modal-title {
+  text-align: center;
+}
+
+.desktop-only {
+  display: none;
+}
+#show-total {
+  span {
+    padding: 4px 6px;
+    background-color: $redColor;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    z-index: 3;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 12px;
+    text-decoration: none !important;
+
+    color: $lightColor;
+    text-align: center;
+  }
+}
+
+.modal-content {
+  .basket {
+    h5 {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: normal;
+
+      color: $darkColor;
+    }
+
+    .basket-content {
+      display: flex;
+
+      .cart-item {
+        border-top: 1px solid #e5e5e5;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: scale-down;
+      }
+
+      .cost p {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 93.75%;
+
+        color: $darkColor;
+
+        margin: auto;
+      }
+
+      .toggle-quantity {
+        border: 1px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 50px;
+        width: 50%;
+
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          border: 0;
+          background-color: transparent;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 28px;
+          cursor: pointer;
+          margin: auto;
+          color: $darkColor;
+          text-decoration: none;
+        }
+
+        p,
+        button {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 26px;
+
+          color: $darkColor;
+
+          margin: auto 2px;
+          text-decoration: none;
+        }
+      }
+
+      .remove-from-chart {
+        span {
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 28px;
+          cursor: pointer;
+          margin: auto;
+          color: $darkColor;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .sum-total span {
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: normal;
+
+      color: $darkColor;
+
+      .cart-items-value {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: normal;
+
+        color: #000000;
+      }
+    }
+
+    label {
+      width: 100%;
+    }
+
+    .checkOut {
+      margin-bottom: 60px;
+
+      input {
+        height: 48px;
+        margin-top: 10px;
+        border: 2px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 50px;
+      }
+      select {
+        -webkit-appearance: none;
+        -o-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+
+        background-image: url(~assets/img/servicesSelect.png);
+        background-position: 95% center;
+        background-repeat: no-repeat;
+
+        cursor: pointer;
+
+        height: 48px;
+        margin: 10px auto 0 auto;
+        border: 2px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 50px;
+
+        &.active,
+        &:focus {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+        }
+      }
+
+      .btn {
+        padding: 10px 33px;
+        background: $redColor;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+        border-radius: 50px;
+        font-family: $secondaryFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: $lightColor;
+        border: 0;
+        text-decoration: none;
+
+        &.go-back {
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+          background: #e5e5e5;
+          padding: 10px 20px;
+          font-family: $secondaryFont;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 20px;
+          text-align: center;
+          border: 0;
+
+          color: $darkColor;
+        }
+      }
+
+      .order.btn:after {
+        color: $lightColor;
+        float: right;
+        font-size: 20px;
+
+        font-weight: 900;
+        content: "\0203A";
+        margin-left: 20px;
+        margin-right: -20px;
+      }
+
+      .go-back.btn:before {
+        color: $darkColor;
+        float: left;
+        font-size: 20px;
+
+        font-weight: normal;
+        content: "\02039";
+        margin-left: -10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@include mediaMenu {
+  .desktop-only {
+    display: inline;
+  }
+}
+
+@include mediaSm {
+  .crop {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+
+  .modal-content {
+    .basket {
+      h5 {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: $darkColor;
+      }
+
+      .basket-content {
+        display: flex;
+
+        .cart-item {
+          background: #ffffff;
+          box-shadow: 0px 4px 13.3333px rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+          margin: 0 auto 10px auto;
+        }
+
+        .cost p {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 93.75%;
+
+          align-items: center;
+          letter-spacing: -0.05em;
+
+          color: #8b8b8b;
+        }
+
+        .toggle-quantity {
+          border: 1px solid #e5e5e5;
+          box-sizing: border-box;
+          border-radius: 50px;
+          width: 100px;
+
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            border: 0;
+            background-color: transparent;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 28px;
+            cursor: pointer;
+            margin: auto;
+            color: $darkColor;
+            text-decoration: none;
+          }
+
+          p,
+          button {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 26px;
+
+            color: $darkColor;
+
+            margin: auto 2px;
+            text-decoration: none;
+          }
+        }
+
+        .remove-from-chart {
+          span {
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 28px;
+            cursor: pointer;
+            margin: auto;
+            color: $darkColor;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .sum-total span {
+        font-family: $mainFont;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 93.75%;
+
+        align-items: center;
+        letter-spacing: -0.05em;
+
+        color: #8b8b8b;
+
+        .cart-items-value {
+          font-family: $mainFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 93.75%;
+          align-items: center;
+          letter-spacing: -0.05em;
+
+          color: #d41f26;
+        }
+      }
+
+      .checkOut {
+        margin-bottom: 60px;
+
+        input {
+          height: 48px;
+          margin-top: 10px;
+          border: 2px solid #e5e5e5;
+          box-sizing: border-box;
+          border-radius: 50px;
+        }
+        select {
+          -webkit-appearance: none;
+          -o-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+
+          background-image: url(~assets/img/servicesSelect.png);
+          background-position: 95% center;
+          background-repeat: no-repeat;
+
+          cursor: pointer;
+
+          height: 48px;
+          margin: 10px auto 0 auto;
+          border: 2px solid #e5e5e5;
+          box-sizing: border-box;
+          border-radius: 50px;
+
+          &.active,
+          &:focus {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+          }
+        }
+
+        .btn {
+          padding: 10px 33px;
+          background: $redColor;
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+          border-radius: 50px;
+          font-family: $secondaryFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 20px;
+          text-align: center;
+          color: $lightColor;
+          border: 0;
+          text-decoration: none;
+
+          &.go-back {
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+            background: #e5e5e5;
+            padding: 10px 33px;
+            font-family: $secondaryFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 0;
+
+            color: $darkColor;
+          }
+        }
+
+        .order.btn:after {
+          display: none;
+          float: none;
+          content: "";
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+
+        .go-back.btn:before {
+          display: none;
+          float: none;
+          content: "";
+          margin-left: -0px;
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+</style>

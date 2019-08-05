@@ -301,6 +301,7 @@ export default {
     "~/plugins/lightGallery.client.js",
     "~/plugins/Axios.js",
     "~/plugins/filters.js",
+    "~/plugins/vuelidate.js",
     {
       src: "~/plugins/vue-lazyload",
       ssr: false

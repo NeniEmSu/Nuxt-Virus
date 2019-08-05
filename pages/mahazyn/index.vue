@@ -359,7 +359,7 @@
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
             <div class="position-fixed col-0">
-              <!-- <modalComponent :cart="cart" /> -->
+
               <div class="cart-icon">
                 <b-button
                   v-b-modal.modal-xl-mobile
@@ -384,7 +384,7 @@
                   }}</span>
                 </div>
               </div>
-              <checkoutSucess />
+
             </div>
           </div>
         </div>
