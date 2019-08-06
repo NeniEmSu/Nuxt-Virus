@@ -173,6 +173,7 @@
               type="text"
               aria-describedby="Відділеня-пошти"
               class="form-control mx-auto"
+              v-mask="'Відділення №#####'"
               v-model="$v.form.postBranch.$model"
               name="Відділеня-пошти"
               placeholder="Відділення пошти*"
@@ -183,30 +184,7 @@
           >Відділення пошти обов'язково</div>
 
         </div>
-        <!-- <div class="form-group col-6">
-          <label
-            class="m-0 p-0"
-            for="Відділеня-пошти"
-          >
-            <select
-              aria-label="Відділеня-пошти"
-              id="Відділеня-пошти"
-              type="text"
-              aria-describedby="Відділеня-пошти"
-              class="form-control mx-auto"
-              v-model="postBranch"
-              name="Відділеня-пошти"
-            >
-              <option
-                value="null"
-                disabled
-              >Відділення пошти*</option>
-              <option value="0">Відділення пошти</option>
-              <option value="1">Відділення пошти</option>
-            </select>
-          </label>
 
-        </div> -->
       </div>
 
     </form>

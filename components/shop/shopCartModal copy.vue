@@ -309,9 +309,10 @@ export default {
       cities,
       mobileModalShow: false,
       cartName: null,
-      postBranch: null,
+
       city: null,
       models: {
+        postBranch: null,
         cartphoneNumber: null
       },
     };
