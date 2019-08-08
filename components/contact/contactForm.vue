@@ -16,7 +16,7 @@
             v-if="errors.length"
             class="text-left text-danger"
           >
-            <b>Please correct the following error(s):</b>
+            <b>Виправте такі помилку(и):</b>
             <ol>
               <li
                 class="ml-3"
@@ -29,7 +29,7 @@
             v-if="success && !errors.length"
             class="text-left text-success"
           >
-            <b>Your message has been sent succesfully</b>
+            <b>Ваше повідомлення надіслано успішно</b>
           </div>
 
           <div class="row">

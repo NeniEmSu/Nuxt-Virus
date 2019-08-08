@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-body basket text-center">
+  <div class=" basket text-center">
 
     <svg
       class="checkmark"
@@ -23,7 +23,7 @@
     <p>Очікуйте на дзвінок нашого менеджера</p>
 
     <b-button
-      href="/mahazyn"
+      to="/mahazyn"
       @click="$bvModal.hide('modal-xl-mobile')"
       class="btn go-back"
     >Назад в магазин</b-button>

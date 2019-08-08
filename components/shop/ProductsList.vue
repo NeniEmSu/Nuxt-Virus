@@ -2,8 +2,8 @@
   <div class="container mt-2 pb-3">
     <img
       v-show="loading"
-      src="https://i.imgur.com/JfPpwOA.gif"
-      alt="Loading gif"
+      src="~/assets/img/spinner.svg"
+      alt="Loading spinner"
     />
 
     <div

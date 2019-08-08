@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-body basket text-center">
+  <div class=" basket text-center">
     <div
       v-for="product in cart"
       :key="product.id"
@@ -91,14 +91,16 @@
               type="text"
               name="name"
               class="form-control mx-auto"
+              :class="!$v.form.name.$error ? 'is-valid' : 'is-invalid'"
               aria-describedby="name"
               placeholder="Ім’я*"
               v-model="$v.form.name.$model"
+              :state="$v.form.name.$dirty ? !$v.form.name.$error : null"
             /></label>
           <div
             v-if="$v.form.name.$error"
-            class="error"
-          >Ім'я обов'язково</div>
+            class="text-danger text-right"
+          >Ім'я обов'язково і має містити не менше 3 символів.</div>
 
         </div>
         <div class="form-group col-lg-6">
@@ -109,15 +111,17 @@
               aria-describedby="cartPhone"
               aria-label="cartPhone"
               name="cartPhone"
-              class="form-control mx-auto"
+              class="form-control mx-auto "
+              :class="!$v.form.models.cartphoneNumber.$error ? 'is-valid' : 'is-invalid'"
               id="cartPhone"
               placeholder="Телефон*"
-              v-mask="'+38(0##) ###-####'"
+              v-mask="'+38(###) ###-####'"
               v-model="$v.form.models.cartphoneNumber.$model"
+              :state="$v.form.models.cartphoneNumber.$dirty ? !$v.form.models.cartphoneNumber.$error : null"
             /></label>
           <div
             v-if="$v.form.models.cartphoneNumber.$error"
-            class="error"
+            class="text-danger text-right"
           >Телефон обов'язково</div>
 
         </div>
@@ -132,6 +136,7 @@
               id="Місто"
               aria-describedby="Місто"
               class="form-control mx-auto"
+              :class="!$v.form.city.$error ? 'is-valid' : 'is-invalid'"
               v-model="$v.form.city.$model"
               name="Місто"
             >
@@ -159,7 +164,7 @@
           </label>
           <div
             v-if="$v.form.city.$error"
-            class="error"
+            class="text-danger text-right"
           >Місто обов'язково</div>
 
         </div>
@@ -173,14 +178,16 @@
               type="text"
               aria-describedby="Відділеня-пошти"
               class="form-control mx-auto"
+              :class="!$v.form.postBranch.$error ? 'is-valid' : 'is-invalid'"
               v-mask="'Відділення №#####'"
               v-model="$v.form.postBranch.$model"
+              :state="$v.form.postBranch.$dirty ? !$v.form.postBranch.$error : null"
               name="Відділеня-пошти"
               placeholder="Відділення пошти*"
             /></label>
           <div
             v-if="$v.form.postBranch.$error"
-            class="error"
+            class="text-danger text-right"
           >Відділення пошти обов'язково</div>
 
         </div>
@@ -192,6 +199,7 @@
 </template>
 
 <script>
+import { validationMixin } from 'vuelidate'
 import { required, minLength, email } from "vuelidate/lib/validators";
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 import cities from '~/plugins/api/ua.json'
@@ -214,17 +222,20 @@ export default {
   validations: {
     form: {
       postBranch: {
-        required
+        required,
+        minLength: minLength(13)
       },
       city: {
         required
       },
       name: {
-        required
+        required,
+        minLength: minLength(3)
       },
       models: {
         cartphoneNumber: {
-          required
+          required,
+          minLength: minLength(17)
         }
       }
     }
@@ -240,22 +251,25 @@ export default {
   },
   methods: {
     submit () {
-      if (!this.$v.$invalid) {
-        this.$emit('update', {
+      this.$emit('update', {
+        data: {
           name: this.form.name,
           postBranch: this.form.postBranch,
           city: this.form.city,
           cartphoneNumber: this.form.models.cartphoneNumber
-        })
-      }
-
+        },
+        valid: !this.$v.$invalid
+      })
     },
+
     addToCart (id) {
       this.$store.dispatch("addToCart", id);
     },
+
     removeFromCart (id) {
       this.$store.dispatch("removeFromCart", id);
     },
+
     deleteFromCart (id) {
       this.$store.dispatch("deleteFromCart", id);
     }

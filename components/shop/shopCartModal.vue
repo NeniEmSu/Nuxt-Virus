@@ -25,6 +25,10 @@
       padding-left: 0px !important;
     }
 
+    .modal-body {
+      padding: 22px 85px 85px;
+    }
+
     .modal-content {
       border-radius: 20px;
     }
@@ -69,66 +73,97 @@
       hide-footer
       style="padding-left: 0 !important;"
     >
+      <div
+        v-if="cartInProgress"
+        v-show="asyncState !== 'pending'"
+      >
+        <keep-alive>
 
-      <shopCartPurchaseDetails
-        v-if="currentStepNumber === 1"
-        @update='processstep '
-      />
-      <shopCartReviewOrder
-        v-if="currentStepNumber === 2"
-        :cartFormData="form"
-      />
-      <shopCartSuccessPage v-if="currentStepNumber === 3" />
+          <component
+            ref="currentStep"
+            :is="currentStep"
+            @update='processstep'
+            :cartFormData="form"
+          ></component>
 
-      <div class="row">
-        <div class="col-6 text-left my-2">
-          <b-button
-            id="clear-cart"
-            to="/mahazyn"
-            @click="$bvModal.hide('modal-xl-mobile')"
-            class="btn cart-navigarion go-back"
-            v-if="currentStepNumber === 1"
-          >
-            Повернутися</b-button>
-          <b-button
-            @click="goBack"
-            v-if="currentStepNumber == 2"
-            class="btn cart-navigarion go-back"
-          >
-            Редагувати кошик</b-button>
+        </keep-alive>
+
+        <div
+          v-if="errors.length"
+          class="text-left text-danger"
+        >
+          <b>Виправте такі помилку(и):</b>
+          <ol>
+            <li
+              class="ml-3"
+              v-for="error in errors"
+              :key="error"
+            >{{ error }}</li>
+          </ol>
         </div>
-        <div class="col-6 text-right my-2">
-          <button
-            v-if="currentStepNumber === 2 "
-            :disabled="!cartSize"
-            @click.prevent="ConfirmCheckout"
-            type="submit"
-            class="btn cart-navigarion order"
-          >підтвердити Замовити</button>
-          <button
-            v-if="currentStepNumber === 1"
-            :disabled="!cartSize || !canGoNext"
-            @click="goNext"
-            type="submit"
-            class="btn cart-navigarion order"
-          >Замовити</button>
-
+        <div
+          v-if="success && !errors.length"
+          class="text-left text-success"
+        >
+          <b>Ваше повідомлення надіслано успішно</b>
         </div>
-        <p
-          class="text-center w-md-50 mt-3 mx-auto"
-          v-if="currentStepNumber < 3 "
-        >Оформіть замовлення, і наш менеджер
-          зв’яжеться з вами найближчим часом</p>
+
+        <div class="row">
+          <div class="col-6 text-left my-2">
+            <b-button
+              id="clear-cart"
+              to="/mahazyn"
+              @click="previousButtonAction"
+              class="btn cart-navigarion go-back"
+            >
+              {{!isLastStep ? 'Повернутися' : 'Редагувати деталі'}}
+
+            </b-button>
+
+          </div>
+          <div class="col-6 text-right my-2">
+            <button
+              :disabled="!cartSize || !canGoNext"
+              @click="nextButtonAction"
+              type="submit"
+              class="btn cart-navigarion order"
+            >{{isLastStep ? 'підтвердити Замовити' : 'Замовити'}} </button>
+
+          </div>
+          <p class="text-center w-md-50 mt-3 mx-auto">Оформіть замовлення, і наш менеджер
+            зв’яжеться з вами найближчим часом</p>
+        </div>
+
+        <div class="progress-bar">
+          <div :style="`width: ${progress}%;`"></div>
+        </div>
+
       </div>
 
-      <div class="progress-bar">
-        <div :style="`width: ${progress}%;`"></div>
+      <div v-else>
+        <shopCartSuccessPage />
       </div>
+
+      <div
+        class="loading-wrapper"
+        v-if="asyncState === 'pending'"
+      >
+        <div class="loader mx-auto">
+          <img
+            src="~/assets/img/spinner.svg"
+            alt="spinner"
+          >
+          <p class="mx-auto">Зачекайте Будь ласка... Ваше замовлення обробляється!</p>
+
+        </div>
+      </div>
+
     </b-modal>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import { required, minLength, email } from "vuelidate/lib/validators";
 import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
 import cities from '~/plugins/api/ua.json'
@@ -145,9 +180,15 @@ export default {
   },
   data () {
     return {
+      errors: [],
+      success: false,
       currentStepNumber: 1,
       canGoNext: false,
-      length: 3,
+      asyncState: null,
+      steps: [
+        'shopCartPurchaseDetails',
+        'shopCartReviewOrder'
+      ],
       mobileModalShow: false,
       cities,
       form: {
@@ -156,7 +197,6 @@ export default {
         city: null,
         cartphoneNumber: null
       }
-
     };
   },
 
@@ -170,27 +210,133 @@ export default {
     ]),
     progress () {
       return this.currentStepNumber / this.length * 100
+    },
+    length () {
+      return this.steps.length
+    },
+    currentStep () {
+      return this.steps[this.currentStepNumber - 1]
+    },
+    isLastStep () {
+      return this.currentStepNumber === this.length
+    },
+    cartInProgress () {
+      return this.currentStepNumber <= this.length
     }
-
   },
+
   methods: {
-    processstep (stepData) {
-      Object.assign(this.form, stepData)
-      this.canGoNext = true
+    processstep (step) {
+      Object.assign(this.form, step.data)
+      this.canGoNext = step.valid
     },
 
-    ConfirmCheckout () {
-      this.$store.dispatch('checkout')
-      this.currentStepNumber++
-      setInterval(function () { currentStepNumber === 1; }, 3000);
+    // submitOrder () {
+    //   this.asyncState = 'pending'
+    //   this.$store.dispatch('checkout')
+    //     .then(() => {
+    //       console.log('form submitted', this.form)
+    //       this.asyncState = 'success'
+    //       this.currentStepNumber++
+    //     })
+    // },
+
+    checkForm: function (e) {
+      this.errors = [];
+      this.success = false;
+
+      if (!this.form.name) {
+        this.errors.push("Ім’я вимагається");
+      }
+      if (!this.this.form.postBranch) {
+        this.errors.push("Post Branch вимагається");
+      }
+      if (!this.form.city) {
+        this.errors.push("City вимагається");
+      }
+      if (!this.form.cartphoneNumber) {
+        this.errors.push("Телефон вимагається");
+      }
+      if (!this.errors.length) {
+        this.submitForm();
+      }
+      e.preventDefault();
     },
 
+    submitOrder () {
+      this.asyncState = 'pending'
+
+      axios
+        .post(
+          process.env.contactUrl,
+          JSON.stringify({
+            form: {
+              cart: JSON.stringify(this.cart),
+              cartTotalAmount: this.cartTotalAmount,
+              itemsInCart: this.cartSize,
+              name: this.form.name,
+              postBranch: this.form.postBranch,
+              city: this.form.city,
+              cartphoneNumber: this.form.cartphoneNumber
+            }
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
+        )
+        .then(({ data }) => {
+          this.asyncState = 'success'
+
+          if (data.error) {
+            this.errors.push(data.error);
+          } else if (
+            data.form.name &&
+            data.form.postBranch &&
+            data.form.city &&
+            data.form.cartphoneNumber
+          ) {
+            this.form.name = this.form.postBranch = this.form.city = this.form.cartphoneNumber = null;
+            this.$store.dispatch('checkout')
+            this.success = true;
+            console.log('form submitted', this.form)
+            this.asyncState = 'success'
+            this.currentStepNumber++
+          }
+        })
+        .catch(error => {
+          this.asyncState = 'success'
+          this.errors.push("Сталася помилка. Повторіть спробу пізніше");
+        });
+    },
+
+    nextButtonAction () {
+      if (this.isLastStep) {
+        this.submitOrder()
+      } else {
+        this.goNext()
+      }
+    },
+
+    previousButtonAction () {
+      if (!this.isLastStep) {
+        this.$bvModal.hide('modal-xl-mobile')
+      } else {
+        this.goBack()
+      }
+    },
     goBack () {
       this.currentStepNumber--
+      this.canGoNext = true
     },
     goNext () {
       this.currentStepNumber++
-      this.canGoNext = false
+      // this.canGoNext = false
+      this.$nextTick(() => {
+        this.canGoNext = !this.$refs.currentStep.$v.$invalid
+      })
+
     },
     addToCart (id) {
       this.$store.dispatch("addToCart", id);
@@ -207,6 +353,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.loading-wrapper {
+  margin-top: 4rem;
+}
+
+.loading-wrapper,
+.loading-wrapper .loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loading-wrapper .loader {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2px solid $redColor;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  color: #5c6162;
+}
+
+.loading-wrapper .loader p {
+  margin-right: 1rem;
+  margin-bottom: 0px;
+}
+
 .progress-bar {
   width: 100%;
   border-radius: 9999px;
