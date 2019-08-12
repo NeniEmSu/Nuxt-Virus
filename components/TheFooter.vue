@@ -7,10 +7,13 @@
           to="/"
           aria-label="Virus Logo"
         >
-          <img
+          <b-img-lazy
+            src="~/assets/img/virus-logo.svg"
             v-lazy="require('~/assets/img/virus-logo.svg')"
-            alt="virus logo"
-          />
+            alt="virus Footer logo"
+          >
+          </b-img-lazy>
+
         </nuxt-link>
       </div>
       <ul>

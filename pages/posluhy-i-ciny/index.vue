@@ -24,11 +24,13 @@
           :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)"
           type="image/webp"
         />
-        <img
+        <b-img-lazy
           class="col-12 m-auto img-fluid"
           :src="require(`~/assets/img/${image + '.jpg'}`)"
           :alt="description"
-        />
+        >
+        </b-img-lazy>
+
       </picture>
 
       <div class="col-md-7 m-auto car-toggle">
@@ -63,12 +65,14 @@
         >
           <div class="row no-gutters">
             <div class="col-6">
-              <img
+              <b-img-lazy
                 src="~/assets/img/mercedes-png-white-m.png"
                 class="card-img img-fluid"
                 style="width: 290px;"
                 alt="mercedes-png-white"
-              />
+              >
+              </b-img-lazy>
+
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
@@ -103,12 +107,14 @@
         >
           <div class="row no-gutters">
             <div class="col-6">
-              <img
+              <b-img-lazy
                 src="~/assets/img/png-hd-of-car-jeep-grand-cherokee-srt-white-car-png-image-car-hd-png-1550.png"
                 class="card-img img-fluid"
                 style="width: 290px;"
                 alt="car-jeep-grand-cherokee-srt-white-car-png-image"
-              />
+              >
+              </b-img-lazy>
+
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
@@ -134,12 +140,14 @@
         >
           <div class="row no-gutters">
             <div class="col-6">
-              <img
+              <b-img-lazy
                 src="~/assets/img/PNGPIX-COM-Black-Range-Rover-Piano-Car-PNG-Image.png"
                 class="card-img img-fluid"
                 style="width: 290px;"
                 alt="Black-Range-Rover-Piano-Car"
-              />
+              >
+              </b-img-lazy>
+
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
@@ -243,11 +251,13 @@
               :key="polish.polishingId"
               class="card polishing card__hover mx-auto"
             >
-              <img
+              <b-img-lazy
                 class="card-img"
                 :src="require(`~/assets/img/${polish.polishingImg + '.jpg'}`)"
                 :alt="polish.polishingTitle"
-              />
+              >
+              </b-img-lazy>
+
               <div class="card-img-overlay">
                 <h5 class="card-title crop">
                   {{ polish.polishingTitle }}
@@ -301,11 +311,13 @@
               :key="cleaner.cleanersId"
               class="card cleaning card__hover mx-auto"
             >
-              <img
+              <b-img-lazy
                 class="card-img"
                 :src="require(`~/assets/img/${cleaner.cleanersImg + '.jpg'}`)"
                 :alt="cleaner.cleanersTitle"
-              />
+              >
+              </b-img-lazy>
+
               <div class="card-img-overlay cleaning">
                 <h5 class="card-title crop">
                   {{ cleaner.cleanersTitle }}
@@ -582,13 +594,15 @@
               :key="addition.additionalId"
               class="card additional card__hover mx-auto"
             >
-              <img
+              <b-img-lazy
                 class="card-img"
                 :src="
                   require(`~/assets/img/${addition.additionalImg + '.jpg'}`)
                 "
                 :alt="addition.additionalTitle"
-              />
+              >
+              </b-img-lazy>
+
               <div class="card-img-overlay">
                 <h5 class="card-title crop">
                   {{ addition.additionalTitle }}

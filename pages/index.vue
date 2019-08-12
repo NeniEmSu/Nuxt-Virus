@@ -14,11 +14,12 @@
                 srcset="~/assets/imgWebP/top1.webp"
                 type="image/webp"
               />
-              <img
-                v-lazy="require('~/assets/img/top1.jpg')"
+              <b-img-lazy
+                src="~/assets/img/top1.jpg"
                 class="card-img"
                 alt="ПОЛІРУВАННЯ"
-              />
+              >
+              </b-img-lazy>
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -38,11 +39,13 @@
                 srcset="~/assets/imgWebP/top2.webp"
                 type="image/webp"
               />
-              <img
-                v-lazy="require('~/assets/img/top2.jpg')"
+              <b-img-lazy
+                src="~/assets/img/top1.jpg"
                 class="card-img"
                 alt="ВОСКОВЕ ПОКРИТТЯ"
-              />
+              >
+              </b-img-lazy>
+
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
@@ -65,11 +68,14 @@
                 srcset="~/assets/imgWebP/top3.webp"
                 type="image/webp"
               />
-              <img
+              <b-img-lazy
+                src="~/assets/img/top3.jpg"
                 v-lazy="require('~/assets/img/top3.jpg')"
                 class="card-img"
                 alt="МИЙКА МОТОРУ"
-              />
+              >
+              </b-img-lazy>
+
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
@@ -90,11 +96,14 @@
                 srcset="~/assets/imgWebP/top4.webp"
                 type="image/webp"
               />
-              <img
+              <b-img-lazy
+                src="~/assets/img/top4.jpg"
                 v-lazy="require('~/assets/img/top4.jpg')"
                 class="card-img"
                 alt="ХІМЧИСТКА"
-              />
+              >
+              </b-img-lazy>
+
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center">
@@ -114,11 +123,14 @@
                 srcset="~/assets/imgWebP/top5.webp"
                 type="image/webp"
               />
-              <img
+              <b-img-lazy
+                src="~/assets/img/top5.jpg"
                 v-lazy="require('~/assets/img/top5.jpg')"
                 class="card-img"
                 alt="РЕСТАВРАЦІЯ СКОЛІВ"
-              />
+              >
+              </b-img-lazy>
+
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
@@ -139,11 +151,14 @@
                 srcset="~/assets/imgWebP/top6.webp"
                 type="image/webp"
               />
-              <img
+              <b-img-lazy
+                src="~/assets/img/top6.jpg"
                 v-lazy="require('~/assets/img/top6.jpg')"
                 class="card-img"
                 alt="КЕРАМІЧНЕ ПОКРИТТЯ"
-              />
+              >
+              </b-img-lazy>
+
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -165,11 +180,14 @@
                 srcset="~/assets/imgWebP/top7.webp"
                 type="image/webp"
               />
-              <img
+              <b-img-lazy
+                src="~/assets/img/top7.jpg"
                 v-lazy="require('~/assets/img/top7.jpg')"
                 class="card-img"
                 alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
-              />
+              >
+              </b-img-lazy>
+
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">

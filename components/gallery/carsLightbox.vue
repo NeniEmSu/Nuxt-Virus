@@ -28,12 +28,14 @@ clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
               :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)"
               type="image/webp"
             />
-            <img
-              style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
+            <b-img-lazy
+                style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
               :src="require(`~/assets/img/${thumbnail + '.png'}`)"
               class="img-fluid"
               :alt="title"
-            />
+              >
+              </b-img-lazy>
+            
           </picture>
         </div>
         <div class="col-3">

@@ -9,10 +9,13 @@
         <h2 class="info-pages mobile-only">{{ heading }}</h2>
         <div class="row">
           <div class="col-xl-6 text-center">
-            <img
+            <b-img-lazy
               src="~assets/img/Реставраціяподряпин.jpg"
               :alt="heading"
             >
+
+            </b-img-lazy>
+
           </div>
           <div class="col-xl-6">
             <h2 class="info-pages desktop-only">{{ heading }}</h2>
