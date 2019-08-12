@@ -1,6 +1,5 @@
 <template>
   <section>
-
     <div class="container text-center top-grid pt-4 pb-5">
       <pre><h1 class="text-left">Ми
 пропонуємо</h1></pre>
@@ -11,19 +10,20 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top1.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top1.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top1.jpg')"
+                class="card-img"
                 alt="ПОЛІРУВАННЯ"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
-              <h2 class="card-title">ПОЛІРУВАННЯ</h2>
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center"
+            >
+              <h2 class="card-title">
+                ПОЛІРУВАННЯ
+              </h2>
             </div>
           </div>
         </nuxt-link>
@@ -33,18 +33,17 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top2.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top2.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top2.jpg')"
+                class="card-img"
                 alt="ВОСКОВЕ ПОКРИТТЯ"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right"
+            >
               <pre><h2 class="card-title text-right">
                 ВОСКОВЕ
                 ПОКРИТТЯ
@@ -60,18 +59,17 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top3.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top3.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top3.jpg')"
+                class="card-img"
                 alt="МИЙКА МОТОРУ"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right"
+            >
               <h2 class="card-title">
                 МИЙКА
                 <br />МОТОРУ
@@ -79,25 +77,23 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link
-          to="/posluhy-i-ciny/himchistka"
-          class="col-5 p-0 four"
-        >
+        <nuxt-link to="/posluhy-i-ciny/himchistka" class="col-5 p-0 four">
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top4.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top4.jpg')"
+                class="card-img"
                 alt="ХІМЧИСТКА"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center">
-              <h2 class="card-title">ХІМЧИСТКА</h2>
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center"
+            >
+              <h2 class="card-title">
+                ХІМЧИСТКА
+              </h2>
             </div>
           </div>
         </nuxt-link>
@@ -107,18 +103,17 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top5.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top5.jpg')"
+                class="card-img"
                 alt="РЕСТАВРАЦІЯ СКОЛІВ"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right"
+            >
               <h2 class="card-title">
                 РЕСТАВРАЦІЯ
                 <br />СКОЛІВ
@@ -132,19 +127,20 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top6.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top6.jpg')"
+                class="card-img"
                 alt="КЕРАМІЧНЕ ПОКРИТТЯ"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
-              <h2 class="card-title">КЕРАМІЧНЕ ПОКРИТТЯ</h2>
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center"
+            >
+              <h2 class="card-title">
+                КЕРАМІЧНЕ ПОКРИТТЯ
+              </h2>
             </div>
           </div>
         </nuxt-link>
@@ -156,18 +152,17 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source
-                srcset="~/assets/imgWebP/top7.webp"
-                type="image/webp"
-              />
+              <source srcset="~/assets/imgWebP/top7.webp" type="image/webp" />
               <img
-                class="card-img"
                 v-lazy="require('~/assets/img/top7.jpg')"
+                class="card-img"
                 alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
               />
             </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
+            <div
+              class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left"
+            >
               <h2 class="card-title">
                 ПЕРЕДПРОДАЖНА
                 <br />ПІДГОТОВКА
@@ -180,7 +175,9 @@
 
     <div class="jumbotron recomendations">
       <div class="container text-center">
-        <h2 class="text-left">Рекомендуємо</h2>
+        <h2 class="text-left">
+          Рекомендуємо
+        </h2>
 
         <no-ssr>
           <!-- important to add no-ssr-->
@@ -189,32 +186,40 @@
             :autoplay="true"
             :nav="false"
             :items="4"
-            :lazyLoad="true"
+            :lazy-load="true"
             :v-lazy="true"
             :loop="true"
-            :mouseDrag="true"
-            :touchDrag="true"
-            :autoplayHoverPause="true"
-            :responsive="{0:{items:1,nav:false},350:{items:2,nav:false},550:{items:3,nav:false},767:{items:2,nav:false},992:{items:3,nav:false},1200:{items:4,nav:false}}"
+            :mouse-drag="true"
+            :touch-drag="true"
+            :autoplay-hover-pause="true"
+            :responsive="{
+              0: { items: 1, nav: false },
+              350: { items: 2, nav: false },
+              550: { items: 3, nav: false },
+              767: { items: 2, nav: false },
+              992: { items: 3, nav: false },
+              1200: { items: 4, nav: false }
+            }"
           >
             <card
-              class="mb-5 mx-auto"
               v-for="product in products"
               :key="product._id"
+              class="mb-5 mx-auto"
               :name="product.name"
               :summary="product.Overview"
               :price="product.Price"
-              :image="`${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`"
-              :link="'/mahazyn/'+product.name_slug"
+              :image="
+                `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+              "
+              :link="'/mahazyn/' + product.name_slug"
               :stock="product.Stock"
             />
           </carousel>
         </no-ssr>
 
-        <nuxt-link
-          to="/mahazyn"
-          class="btn"
-        >Показати більше</nuxt-link>
+        <nuxt-link to="/mahazyn" class="btn">
+          Показати більше
+        </nuxt-link>
       </div>
     </div>
 
@@ -231,36 +236,38 @@
 </template>
 
 <script>
-import worksGallery from "@/components/gallery/worksGallery.vue";
-
+import worksGallery from "@/components/gallery/worksGallery.vue"
 
 export default {
   components: {
-    worksGallery,
-
+    worksGallery
   },
 
-  data () {
+  data() {
     return {
       imageApiUrl: process.env.IMAGE_URL
-    };
+    }
   },
 
-  head () {
+  head() {
     return {
-      title:
-        ("Детейлінг центр Virus - Хімчистка, полірування, реставрація авто").slice(0, 60),
+      title: "Детейлінг центр Virus - Хімчистка, полірування, реставрація авто".slice(
+        0,
+        60
+      ),
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            ('Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.').slice(0, 320)
+          content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.".slice(
+            0,
+            320
+          )
         }
       ]
-    };
+    }
   },
-  async asyncData ({ app, error }) {
+  async asyncData({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
@@ -272,21 +279,21 @@ export default {
       {
         headers: { "Content-Type": "application/json" }
       }
-    );
+    )
 
     if (!data.entries[0]) {
-      return error({ message: "404 Page not found", statusCode: 404 });
+      return error({ message: "404 Page not found", statusCode: 404 })
     }
 
-    return { products: data.entries };
+    return { products: data.entries }
   },
 
-  mounted () {
+  mounted() {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
