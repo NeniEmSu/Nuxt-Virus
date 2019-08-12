@@ -1,5 +1,6 @@
 window.onNuxtReady(() => {
-  ;(function() {
+  ;
+  (function () {
     var widget_id = "j9oYCawnP2"
     var d = document
     var w = window

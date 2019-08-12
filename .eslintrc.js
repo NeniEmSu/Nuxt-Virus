@@ -1,28 +1,20 @@
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    node: true
-  },
   parserOptions: {
     parser: 'babel-eslint'
   },
   extends: [
-    "eslint:recommended",
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    '@nuxtjs'
   ],
-
-  plugins: [
-    'vue'
-  ],
-
   rules: {
-    "semi": [2, "never"],
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "prettier/prettier": ["error", {
-      "semi": false
+    'vue/multiline-html-element-content-newline': ['error', {
+      'ignoreWhenEmpty': true,
+      'ignores': ['pre', 'textarea', 'a']
+    }],
+    'vue/singleline-html-element-content-newline': ['error', {
+      'ignoreWhenNoAttributes': true,
+      'ignoreWhenEmpty': true,
+      'ignores': ['pre', 'textarea', 'a']
     }]
   }
 }

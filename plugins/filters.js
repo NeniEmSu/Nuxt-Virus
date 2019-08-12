@@ -1,6 +1,8 @@
 import Vue from "vue"
 import highlightjs from "highlight.js"
-import marked, { Renderer } from "marked"
+import marked, {
+  Renderer
+} from "marked"
 const dayjs = require("dayjs")
 import advancedFormat from "dayjs/plugin/advancedFormat"
 dayjs.extend(advancedFormat)
@@ -16,9 +18,9 @@ const renderer = new Renderer()
 renderer.code = (code, language) => {
   const validLang = !!(language && highlightjs.getLanguage(language))
 
-  const highlighted = validLang
-    ? highlightjs.highlight(language, code).value
-    : code
+  const highlighted = validLang ?
+    highlightjs.highlight(language, code).value :
+    code
 
   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
 }
@@ -27,12 +29,12 @@ marked.setOptions({
   renderer
 })
 
-Vue.filter("parseMd", function(content) {
+Vue.filter("parseMd", function (content) {
   let clean = sanitizeHtml(content)
 
   return marked(clean)
 })
 
-Vue.filter("toDate", function(timestamp) {
+Vue.filter("toDate", function (timestamp) {
   return dayjs(timestamp * 1000).format("Do - MM - YY")
 })

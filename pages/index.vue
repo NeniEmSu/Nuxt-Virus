@@ -10,7 +10,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top1.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top1.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top1.jpg')"
                 class="card-img"
@@ -18,9 +21,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
               <h2 class="card-title">
                 ПОЛІРУВАННЯ
               </h2>
@@ -33,7 +34,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top2.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top2.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top2.jpg')"
                 class="card-img"
@@ -41,9 +45,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
               <pre><h2 class="card-title text-right">
                 ВОСКОВЕ
                 ПОКРИТТЯ
@@ -59,7 +61,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top3.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top3.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top3.jpg')"
                 class="card-img"
@@ -67,9 +72,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 МИЙКА
                 <br />МОТОРУ
@@ -77,10 +80,16 @@
             </div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/posluhy-i-ciny/himchistka" class="col-5 p-0 four">
+        <nuxt-link
+          to="/posluhy-i-ciny/himchistka"
+          class="col-5 p-0 four"
+        >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top4.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top4.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top4.jpg')"
                 class="card-img"
@@ -88,9 +97,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center">
               <h2 class="card-title">
                 ХІМЧИСТКА
               </h2>
@@ -103,7 +110,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top5.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top5.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top5.jpg')"
                 class="card-img"
@@ -111,9 +121,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 РЕСТАВРАЦІЯ
                 <br />СКОЛІВ
@@ -127,7 +135,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top6.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top6.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top6.jpg')"
                 class="card-img"
@@ -135,9 +146,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
               <h2 class="card-title">
                 КЕРАМІЧНЕ ПОКРИТТЯ
               </h2>
@@ -152,7 +161,10 @@
         >
           <div class="card bg-inverse">
             <picture>
-              <source srcset="~/assets/imgWebP/top7.webp" type="image/webp" />
+              <source
+                srcset="~/assets/imgWebP/top7.webp"
+                type="image/webp"
+              />
               <img
                 v-lazy="require('~/assets/img/top7.jpg')"
                 class="card-img"
@@ -160,9 +172,7 @@
               />
             </picture>
 
-            <div
-              class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left"
-            >
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
               <h2 class="card-title">
                 ПЕРЕДПРОДАЖНА
                 <br />ПІДГОТОВКА
@@ -217,7 +227,10 @@
           </carousel>
         </no-ssr>
 
-        <nuxt-link to="/mahazyn" class="btn">
+        <nuxt-link
+          to="/mahazyn"
+          class="btn"
+        >
           Показати більше
         </nuxt-link>
       </div>
@@ -243,13 +256,13 @@ export default {
     worksGallery
   },
 
-  data() {
+  data () {
     return {
       imageApiUrl: process.env.IMAGE_URL
     }
   },
 
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus - Хімчистка, полірування, реставрація авто".slice(
         0,
@@ -267,7 +280,7 @@ export default {
       ]
     }
   },
-  async asyncData({ app, error }) {
+  async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       process.env.PRODUCT_URL,
       JSON.stringify({
@@ -288,7 +301,7 @@ export default {
     return { products: data.entries }
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }

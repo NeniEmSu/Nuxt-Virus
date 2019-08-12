@@ -1,13 +1,19 @@
 <template>
   <div>
-    <nav class="container desktop-only" aria-label="breadcrumb">
+    <nav
+      class="container desktop-only"
+      aria-label="breadcrumb"
+    >
       <ol class="breadcrumb">
-        <nuxt-link class="breadcrumb-item">
+        <li class="breadcrumb-item">
           <nuxt-link to="/">
             Головна
           </nuxt-link>
-        </nuxt-link>
-        <li class="breadcrumb-item active" aria-current="page">
+        </li>
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
           <h1>Про нас</h1>
         </li>
       </ol>
@@ -25,15 +31,15 @@
           хімічних реагентів, сколів і подряпин, збільшити блиск і глибину
           кольору покриття, захистити оптику від старіння, здійснити глибоку та
           делікатну хімчистку салону, відновити шкіру та багато іншого.
-          <br >
-          <br >В роботі ми використовуємо виключно професійні засоби від
+          <br />
+          <br />В роботі ми використовуємо виключно професійні засоби від
           провідних світових виробників. Кожен з них гарантує незмінно високу
           якість і чудову ефективність своєї продукції.
         </p>
         <div class="video-text row">
           <div class="col-xl-7">
             <video>
-              <source >
+              <source />
             </video>
           </div>
           <div class="col-xl-5">
@@ -74,7 +80,7 @@ export default {
   meta: {
     animation: "fade-in-right"
   },
-  head() {
+  head () {
     return {
       title: "Детейлінг центр Virus Тернопіль.",
       titleTemplate: "про Нас - %s!",
@@ -89,7 +95,7 @@ export default {
     }
   },
 
-  mounted() {
+  mounted () {
     if (process.client) {
       this.$scrollTo("#top-contact", 0, { force: true })
     }

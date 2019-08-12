@@ -1,5 +1,4 @@
-export default [
-  {
+export default [{
     name: "Dummy Product Koch - 1",
     id: 1,
     price: 2900,
