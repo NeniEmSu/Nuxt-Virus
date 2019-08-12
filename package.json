@@ -36,7 +36,6 @@
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-imagemin": "^1.0.0",
     "nuxt-polyfill": "^1.0.3",
-    "nuxt-webfontloader": "^1.1.0",
     "smoothscroll-polyfill": "^0.4.4",
     "url-polyfill": "^1.1.7",
     "v-mask": "^2.0.1",
@@ -50,7 +49,13 @@
     "vue2-google-maps": "^0.10.7",
     "vuelidate": "^0.7.4",
     "vuex": "^3.1.1",
-    "vuex-persist": "^2.0.1"
+    "vuex-persist": "^2.0.1",
+    "@nuxtjs/netlify-files": "^1.0.0",
+    "vue-analytics": "^5.17.0",
+    "vue-cookieconsent-component": "^1.2.0",
+    "vue-if-bot": "^1.2.0",
+    "vue-next-level-scroll": "^1.2.0",
+    "vue-scroll-reveal": "^1.0.11"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",

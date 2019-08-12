@@ -14,13 +14,15 @@ export default {
     host: "0.0.0.0"
   },
   head: {
-    title: "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
+    title:
+      "Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто",
     htmlAttrs: {
       class: "has-navbar-fixed-top",
       lang: "uk",
       amp: true
     },
-    meta: [{
+    meta: [
+      {
         charset: "utf-8"
       },
       {
@@ -30,12 +32,14 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+        content:
+          "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
       },
       {
         hid: "keywords",
         name: "keywords",
-        content: "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
+        content:
+          "детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди"
       },
       {
         hid: "apple-mobile-web-app-title",
@@ -96,7 +100,8 @@ export default {
         hid: "og:description",
         name: "og:description",
         property: "og:description",
-        content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
+        content:
+          "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри"
       },
       {
         hid: "og:image",
@@ -105,7 +110,8 @@ export default {
         content: "/virus_og.jpg"
       }
     ],
-    link: [{
+    link: [
+      {
         rel: "icon",
         type: "image/x-icon",
         href: "/favicon.ico"
@@ -186,25 +192,30 @@ export default {
         href: "/favicon.ico"
       }
     ],
-    script: [{
-      rel: "prefetch",
-      src: "https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js",
-      "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
-      defer: true
-    }]
+    script: [
+      {
+        rel: "prefetch",
+        src:
+          "https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js",
+        "data-cf-settings": "74bf624512b1c6414329bcb4-|49",
+        defer: true
+      }
+    ]
   },
 
   manifest: {
     name: "Детейлінг центр Virus",
     short_name: "Virus Детейлінг",
-    description: "Детейлінг студія Virus Тернопіль - комплексний догляд за Вашим авто.",
+    description:
+      "Детейлінг студія Virus Тернопіль - комплексний догляд за Вашим авто.",
     theme_color: "#e32124",
     background_color: "#ffffff",
     display: "standalone",
     start_url: "/",
     dir: "auto",
     lang: "uk",
-    icons: [{
+    icons: [
+      {
         type: "image/png",
         size: "32x32",
         src: "/favicon-32x32.png"
@@ -275,7 +286,8 @@ export default {
   },
 
   polyfill: {
-    features: [{
+    features: [
+      {
         require: "url-polyfill"
       },
 
@@ -336,6 +348,10 @@ export default {
     {
       src: "~/plugins/vue-select",
       ssr: true
+    },
+    {
+      src: "~/plugins/vue-scroll-reveal",
+      ssr: false
     }
   ],
 
@@ -363,7 +379,8 @@ export default {
     "bootstrap-vue/nuxt",
     "vue-scrollto/nuxt",
     "@nuxtjs/dotenv",
-    '@nuxtjs/robots',
+    "@nuxtjs/robots",
+    "@nuxtjs/netlify-files",
     [
       "@nuxtjs/component-cache",
       {
@@ -379,28 +396,39 @@ export default {
     [
       "nuxt-fontawesome",
       {
-        imports: [{
-          set: "@fortawesome/free-solid-svg-icons",
-          icons: ["fas"]
-        }]
+        imports: [
+          {
+            set: "@fortawesome/free-solid-svg-icons",
+            icons: ["fas"]
+          }
+        ]
       }
     ],
     "@nuxtjs/sitemap"
   ],
 
   axios: {
-    baseURL: process.env.apiUrl
+    baseURL: "/.netlify/functions/"
   },
 
   purgeCSS: {
     // purgecss
   },
 
+  proxy: {
+    "/.netlify/functions/": {
+      target: "http://localhost:8000"
+    }
+  },
+
+  netlifyFiles: {
+    existingFilesDirectory: "./netlify/"
+  },
+
   generate: {
     routes: async () => {
-      let {
-        data
-      } = await axios.post(process.env.POSTS_URL,
+      const { data } = await axios.post(
+        process.env.POSTS_URL,
         JSON.stringify({
           filter: {
             published: true
@@ -409,7 +437,8 @@ export default {
             _created: -1
           },
           populate: 1
-        }), {
+        }),
+        {
           headers: {
             "Content-Type": "application/json"
           }
@@ -418,39 +447,34 @@ export default {
 
       const collection = collect(data.entries)
 
-      let tags = collection
+      const tags = collection
         .map(post => post.tags)
         .flatten()
         .unique()
         .map(tag => {
-          let payload = collection
-            .filter(item => {
-              return collect(item.tags).contains(tag)
-            })
+          const payload = collection
+            .filter(item => collect(item.tags).contains(tag))
             .all()
 
           return {
             route: `/blog/category/${tag}`,
-            payload: payload
+            payload
           }
         })
         .all()
 
-      let posts = collection
-        .map(post => {
-          return {
-            route: `/blog/${post.title_slug}`,
-            payload: post
-          }
-        })
+      const posts = collection
+        .map(post => ({
+          route: `/blog/${post.title_slug}`,
+          payload: post
+        }))
         .all()
-
       if (perPage < data.total) {
-        let pages = collection
+        const pages = collection
           .take(perPage - data.total)
           .chunk(perPage)
           .map((items, key) => {
-            let currentPage = key + 2
+            const currentPage = key + 2
 
             return {
               route: `/blog/pages/${currentPage}`,
@@ -470,7 +494,7 @@ export default {
 
   // generate: {
   //   routes: async () => {
-  //     let {
+  //     var {
   //       data
   //     } = await axios.get(process.env.PRODUCT_URL,
   //       JSON.stringify({
@@ -502,9 +526,7 @@ export default {
     cacheTime: 1000 * 60 * 15,
 
     async routes() {
-      let {
-        data
-      } = await axios.post(
+      let { data } = await axios.post(
         process.env.POSTS_URL,
         JSON.stringify({
           filter: {
@@ -514,7 +536,8 @@ export default {
             _created: -1
           },
           populate: 1
-        }), {
+        }),
+        {
           headers: {
             "Content-Type": "application/json"
           }
@@ -554,17 +577,15 @@ export default {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
 
-    extend(config, {
-      isDev,
-      isClient
-    }) {
+    extend(config, { isDev, isClient }) {
       config.module.rules.forEach(rule => {
         if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
           rule.use.push({
             loader: "image-webpack-loader",
             options: {
               svgo: {
-                plugins: [{
+                plugins: [
+                  {
                     removeViewBox: false
                   },
                   {
@@ -578,55 +599,28 @@ export default {
       })
     },
 
-    build: {
-      extend(config, {
-        isDev,
-        isClient
-      }) {
-        config.module.rules.unshift({
-          test: /\.(png|jpe?g|gif)$/,
-          use: {
-            loader: "responsive-loader",
-            options: {
-              placeholder: true,
-              quality: 85,
-              placeholderSize: 30,
-              name: "img/[name].[hash:hex:7].[width].[ext]"
-            }
-          }
+    postcss: {
+      plugins: [
+        purgecss({
+          content: [
+            "./pages/**/*.vue",
+            "./layouts/**/*.vue",
+            "./components/**/*.vue",
+            "./content/**/*.md",
+            "./content/**/*.json"
+          ],
+          whitelist: [
+            "html",
+            "body",
+            "has-navbar-fixed-top",
+            "nuxt-link-exact-active",
+            "nuxt-progress",
+            "hidden",
+            "opacity-0"
+          ],
+          whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/]
         })
-
-        config.module.rules.forEach(value => {
-          if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-            value.test = /\.(svg|webp)$/
-          }
-        })
-      }
-    },
-    build: {
-      postcss: {
-        plugins: [
-          purgecss({
-            content: [
-              "./pages/**/*.vue",
-              "./layouts/**/*.vue",
-              "./components/**/*.vue",
-              "./content/**/*.md",
-              "./content/**/*.json"
-            ],
-            whitelist: [
-              "html",
-              "body",
-              "has-navbar-fixed-top",
-              "nuxt-link-exact-active",
-              "nuxt-progress",
-              "hidden",
-              "opacity-0"
-            ],
-            whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/],
-          })
-        ]
-      },
+      ]
     }
   }
 
@@ -640,7 +634,6 @@ export default {
   //       'X-Content-Type-Options': 'nosniff'
   //     }
   //   },
-
 
   //   extend(config, {
   //     isDev,

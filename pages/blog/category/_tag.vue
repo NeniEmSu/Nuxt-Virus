@@ -11,22 +11,28 @@
               Головна
             </nuxt-link>
           </li>
-          <nuxt-link class="breadcrumb-item">
+          <li class="breadcrumb-item">
             <nuxt-link to="/blog">
               Блог
             </nuxt-link>
-          </nuxt-link>
+          </li>
           <li
             class="breadcrumb-item active"
             aria-current="page"
-          >
-            Блог Повідомлення з тегами {{ category }}
-          </li>
+            Блог
+            Повідомлення
+            з
+            тегами
+            {{ category }}
+            </li
+          />
         </ol>
       </nav>
-      <h1 class="mb-3">Блог Повідомлення з тегами "{{ category }}"</h1>
+      <h1 class="mb-3">
+        Блог Повідомлення з тегами "{{ category }}"
+      </h1>
     </div>
-    <hr class="top-separator" />
+    <hr class="top-separator">
     <div
       v-for="post in posts"
       :key="`${post.title} ${post._created}`"
@@ -37,7 +43,7 @@
           class="card-img img-fliud"
           :src="post.image.path"
           alt="Card image"
-        />
+        >
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -46,7 +52,9 @@
                 :key="tag"
                 :to="'/blog/category/' + tag"
                 class="desktop-tablet-only"
-              >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+              >
+                {{ tag }}&nbsp;|&nbsp;
+              </nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
@@ -67,17 +75,21 @@
                 {{ post.title }}
               </h2>
             </nuxt-link>
-            <p class="card-text">Date Created {{ post._created | toDate }}</p>
+            <p class="card-text">
+              Date Created {{ post._created | toDate }}
+            </p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
             <nuxt-link
               class="btn"
-              :to="'/blog/' + post.title_slug"
-            >ЧИТАТИ</nuxt-link>
+              :to="'/blog/'+post.title_slug"
+            >
+              ЧИТАТИ
+            </nuxt-link>
           </div>
         </div>
       </div>
-      <hr class="separator" />
+      <hr class="separator">
     </div>
     <div class="container" />
 
@@ -86,35 +98,37 @@
   </section>
 </template>
 
+
 <script>
 export default {
-
-  async asyncData ({ app, params, error, payload }) {
+  scrollToTop: true,
+  async asyncData ({
+    app, params, error, payload,
+  }) {
     if (payload) {
       return { posts: payload, category: params.tag }
-    } else {
-      let { data } = await app.$axios.post(
-        process.env.POSTS_URL,
-        JSON.stringify({
-          filter: { published: true, tags: { $has: params.tag } },
-          sort: { _created: -1 },
-          populate: 1
-        }),
-        {
-          headers: { "Content-Type": "application/json" }
-        }
-      )
-
-      if (!data.entries[0]) {
-        return error({ message: "404 Page not found", statusCode: 404 })
-      }
-
-      return { posts: data.entries, category: params.tag }
     }
+    const { data } = await app.$axios.post(
+      process.env.POSTS_URL,
+      JSON.stringify({
+        filter: { published: true, tags: { $has: params.tag } },
+        sort: { _created: -1 },
+        populate: 1,
+      }),
+      {
+        headers: { 'Content-Type': 'application/json' },
+      },
+    )
+
+    if (!data.entries[0]) {
+      return error({ message: '404 Page not found', statusCode: 404 })
+    }
+
+    return { posts: data.entries, category: params.tag }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
+      this.$scrollTo('#top-contact', 0, { force: true })
     }
   },
   head () {
@@ -122,17 +136,17 @@ export default {
       title: `Повідомлення з тегами ${this.category}`,
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: `Усі публікації в блогах класифікуються як ${this.category}. - Детейлінг студія Virus`
-        }
-      ]
+          hid: 'description',
+          name: 'description',
+          content: `Усі публікації в блогах класифікуються як ${this.category}. - Детейлінг студія Virus`,
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
-<style lang="scss" scoped>
+<<style lang="scss" scoped>
 h1 {
   font-family: $mainFont;
   font-style: normal;
