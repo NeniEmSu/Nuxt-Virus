@@ -4,9 +4,9 @@
       <div class="card text-center">
         <form
           class="text-md-right"
-          @submit.prevent="checkForm"
           method="post"
           name="contact"
+          @submit.prevent="checkForm"
         >
           <h3 class="text-md-left px-0">
             <span class="red">ДІЗНАТИСЯ ВАРТІСТЬ ДЕТЕЙЛІНГА</span>
@@ -19,10 +19,12 @@
             <b>Виправте такі помилку(и):</b>
             <ol>
               <li
-                class="ml-3"
                 v-for="error in errors"
                 :key="error"
-              >{{ error }}</li>
+                class="ml-3"
+              >
+                {{ error }}
+              </li>
             </ol>
           </div>
           <div
@@ -40,11 +42,11 @@
                   for="typeOfWork"
                 >
                   <select
-                    aria-label="typeOfWork"
                     id="typeOfWork"
+                    v-model="service"
+                    aria-label="typeOfWork"
                     aria-describedby="typeOfWork"
                     class="form-control mx-auto"
-                    v-model="service"
                     name="typeOfWork"
                   >
                     <option
@@ -81,20 +83,20 @@
               <div class="form-group">
                 <label for="carModel">
                   <input
-                    aria-label="carModel"
                     id="carModel"
+                    v-model="carModel"
+                    aria-label="carModel"
                     type="text"
                     name="carModel"
                     list="models"
                     class="form-control mx-auto"
                     aria-describedby="carModel"
                     placeholder="Введіть модель авто"
-                    v-model="carModel"
                   >
 
                   <datalist id="models">
                     <option
-                      v-for="items  in carmodeloptions"
+                      v-for="items in carmodeloptions"
                       :key="items.name"
                     >{{ items.name }}</option>
                   </datalist>
@@ -109,14 +111,14 @@
                   for="name"
                 >
                   <input
-                    name="name"
                     id="name"
+                    v-model.trim="name"
+                    name="name"
                     aria-label="name"
                     type="text"
                     class="form-control mx-auto"
                     aria-describedby="name"
                     placeholder="Ім’я*"
-                    v-model.trim="name"
                   ></label>
               </div>
               <div class="form-group">
@@ -125,15 +127,15 @@
                   for="phone"
                 >
                   <input
+                    id="phone"
+                    v-model="models.phoneNumber"
+                    v-mask="'+38(0##) ###-####'"
                     aria-describedby="phone"
                     aria-label="phone"
                     name="phone"
                     type="text"
                     class="form-control mx-auto"
-                    id="phone"
                     placeholder="Телефон*"
-                    v-mask="'+38(0##) ###-####'"
-                    v-model="models.phoneNumber"
                   ></label>
               </div>
 
@@ -144,11 +146,13 @@
                 aria-label="loading"
                 name="loading"
                 class="contact-btn-loading"
-              >Вантаження
+              >
+                Вантаження
                 <font-awesome-icon
                   :icon="['fas', 'spinner']"
                   class="fa-spin"
-                /> </button>
+                />
+              </button>
 
               <button
                 v-show="loading === false"
@@ -157,11 +161,14 @@
                 name="submit"
                 class="contact-btn"
                 :disabled="loading === true"
-              >ВІДПРАВИТИ</button>
-
+              >
+                ВІДПРАВИТИ
+              </button>
             </div>
           </div>
-          <p class="text-left col-12 w-md-50 px-0">Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом</p>
+          <p class="text-left col-12 w-md-50 px-0">
+            Відправте запит, і наш менеджер зв’яжеться з вами найближчим часом
+          </p>
         </form>
       </div>
     </div>
@@ -169,7 +176,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 import carmodeloptions from '~/plugins/api/carModelOptions'
 
 export default {
@@ -191,32 +198,32 @@ export default {
       loading: false,
       success: false,
       carmodeloptions
-    };
+    }
   },
   methods: {
-    checkForm: function (e) {
-      this.errors = [];
-      this.success = false;
+    checkForm (e) {
+      this.errors = []
+      this.success = false
 
       if (!this.name) {
-        this.errors.push("Ім’я вимагається");
+        this.errors.push('Ім’я вимагається')
       }
       if (!this.carModel) {
-        this.errors.push("Введіть модель авто вимагається");
+        this.errors.push('Введіть модель авто вимагається')
       }
       if (!this.service) {
-        this.errors.push("тип робіт вимагається");
+        this.errors.push('тип робіт вимагається')
       }
       if (!this.models.phoneNumber) {
-        this.errors.push("Телефон вимагається");
+        this.errors.push('Телефон вимагається')
       }
       if (!this.errors.length) {
-        this.submitForm();
+        this.submitForm()
       }
-      e.preventDefault();
+      e.preventDefault()
     },
-    submitForm: function () {
-      this.loading = true;
+    submitForm () {
+      this.loading = true
 
       axios
         .post(
@@ -231,33 +238,33 @@ export default {
           }),
           {
             headers: {
-              "Content-Type": "application/json"
+              'Content-Type': 'application/json'
             }
           }
         )
         .then(({ data }) => {
-          this.loading = false;
+          this.loading = false
 
           if (data.error) {
-            this.errors.push(data.error);
+            this.errors.push(data.error)
           } else if (
             data.name &&
             data.carModel &&
             data.service &&
             data.models.phoneNumber
           ) {
-            this.name = this.carModel = this.service = this.models.phoneNumber = null;
-            this.success = true;
+            this.name = this.carModel = this.service = this.models.phoneNumber = null
+            this.success = true
           }
         })
-        .catch(error => {
-          this.loading = false;
+        .catch((error) => {
+          this.loading = false
 
-          this.errors.push("Сталася помилка. Повторіть спробу пізніше");
-        });
-    },
+          this.errors.push('Сталася помилка. Повторіть спробу пізніше')
+        })
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

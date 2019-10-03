@@ -21,7 +21,7 @@
       </nav>
       <h1>Акції</h1>
     </div>
-    <hr class="top-separator" />
+    <hr class="top-separator">
     <div
       v-for="promotion in promotions"
       :key="promotion.promotionTitle"
@@ -34,7 +34,7 @@
             `${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
           "
           :alt="`${promotion.promotionTitle} background image `"
-        />
+        >
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <nuxt-link :to="'/mahazyn/' + promotion.name_slug">
@@ -56,7 +56,7 @@
           </div>
         </div>
       </div>
-      <hr class="separator" />
+      <hr class="separator">
     </div>
 
     <contactForm />
@@ -67,7 +67,7 @@
 <script>
 export default {
   meta: {
-    animation: "fade-in-right"
+    animation: 'fade-in-right'
   },
   data () {
     return {
@@ -83,7 +83,7 @@ export default {
         populate: 1
       }),
       {
-        headers: { "Content-Type": "application/json" }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
 
@@ -91,24 +91,19 @@ export default {
   },
   head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "Акції - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'Акції - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Акції Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'Акції Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
     }
-  },
-
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
-    }
   }
+
 }
 </script>
 

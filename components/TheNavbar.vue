@@ -1,10 +1,10 @@
 <template>
   <header
-    class="header"
-    :class="{ 'header--hidden': !showHeader }"
     id="header"
     v-click-outside="closeMobileNavbar"
     v-handle-scroll="closeMobileNavbar"
+    class="header"
+    :class="{ 'header--hidden': !showHeader }"
   >
     <TheTopContact />
     <div class="container p-md-0">
@@ -17,7 +17,7 @@
           <img
             src="~/assets/img/virus-logo.svg"
             alt="virus logo"
-          />
+          >
         </nuxt-link>
       </div>
 
@@ -28,7 +28,7 @@
         <img
           src="~/assets/img/menu.svg"
           alt="menu Icon"
-        />
+        >
       </div>
 
       <div>
@@ -42,22 +42,24 @@
         class="navbar pr-0"
         :class="{'navbar-open': mobileNavOpen}"
       >
-        <app-links></app-links>
+        <app-links />
         <div
           class="close-hamburger text-right text-black p-2"
           style="font-size: 30px; cursor: pointer; color: black;  margin-top: -260px;"
           @click.stop="hide"
-        >&times;</div>
+        >
+          &times;
+        </div>
       </nav>
     </div>
   </header>
 </template>
 
 <script>
-import clickOutside from "@/directives/click-outside";
-import handleScroll from "@/directives/handle-scroll";
-import AppLinks from "~/components/TheAppLinks";
-import TheTopContact from "~/components/TheTopContact";
+import clickOutside from '@/directives/click-outside'
+import handleScroll from '@/directives/handle-scroll'
+import AppLinks from '~/components/TheAppLinks'
+import TheTopContact from '~/components/TheTopContact'
 export default {
   components: { TheTopContact, AppLinks },
   directives: {
@@ -71,46 +73,46 @@ export default {
       showHeader: true,
       lastScrollPosition: 0,
       cart: 0
-    };
+    }
   },
   computed: {},
+  watch: {
+    $route () {
+      this.mobileNavOpen = false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
   methods: {
     closeUserDropdown () {
-      this.userDropdownOpen = false;
+      this.userDropdownOpen = false
     },
     closeMobileNavbar () {
-      this.mobileNavOpen = false;
+      this.mobileNavOpen = false
     },
     hide () {
-      this.mobileNavOpen = false;
+      this.mobileNavOpen = false
     },
     onScroll () {
       const currentScrollPosition =
-        window.pageYOffset || document.documentElement.scrollTop;
+        window.pageYOffset || document.documentElement.scrollTop
       if (currentScrollPosition < 0) {
-        return;
+        return
       }
       // Stop executing this function if the difference between
       // current scroll position and last scroll position is less than some offset
       if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-        return;
+        return
       }
-      this.showHeader = currentScrollPosition < this.lastScrollPosition;
-      this.lastScrollPosition = currentScrollPosition;
-    }
-  },
-  mounted () {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy () {
-    window.removeEventListener("scroll", this.onScroll);
-  },
-  watch: {
-    $route () {
-      this.mobileNavOpen = false;
+      this.showHeader = currentScrollPosition < this.lastScrollPosition
+      this.lastScrollPosition = currentScrollPosition
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -245,5 +247,3 @@ header {
   }
 }
 </style>
-
-

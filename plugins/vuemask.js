@@ -1,4 +1,4 @@
-import Vue from "vue"
+import Vue from 'vue'
 
-import VueMask from "v-mask"
+import VueMask from 'v-mask'
 Vue.use(VueMask)

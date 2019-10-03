@@ -8,61 +8,61 @@
       <img
         src="~/assets/img/icons8-shopping-bag-filled-100.png"
         alt="Cart Icon"
-      />
+      >
       <div
         id="show-total"
         class="text-center mt-n3 ml-n3"
       >
         <span
-          style="text-decoration: none;"
           id="item-count"
+          style="text-decoration: none;"
           class="text-center"
-        >{{cartSize}}</span>
+        >{{ cartSize }}</span>
       </div>
     </b-button>
     <style>
-    #modal-xl-mobile {
+      #modal-xl-mobile {
       padding-left: 0px !important;
-    }
+      }
 
-    .modal-content {
+      .modal-content {
       border-radius: 20px;
-    }
+      }
 
-    .modal-title {
+      .modal-title {
       margin-bottom: 0;
       line-height: 1.5;
       margin: auto 0 auto auto;
-    }
-
-    @media (max-width: 991px) {
-      .modal-dialog {
-        max-width: 95%;
       }
-    }
 
-    @media (max-width: 577px) {
+      @media (max-width: 991px) {
       .modal-dialog {
-        margin-top: 50px;
-        width: 100vw;
-        min-width: 100vw;
-        margin: 50px auto 0;
+      max-width: 95%;
+      }
+      }
+
+      @media (max-width: 577px) {
+      .modal-dialog {
+      margin-top: 50px;
+      width: 100vw;
+      min-width: 100vw;
+      margin: 50px auto 0;
       }
 
       .modal-body {
-        padding: 5px;
+      padding: 5px;
 
       }
 
       .modal-content {
-        border-radius: 0px;
-        padding: 0;
+      border-radius: 0px;
+      padding: 0;
       }
-    }
+      }
     </style>
     <b-modal
-      v-model="mobileModalShow"
       id="modal-xl-mobile"
+      v-model="mobileModalShow"
       size="xl"
       title="Корзина"
       class="modal-content text-center"
@@ -81,29 +81,30 @@
               :src="require(`~/assets/img/${product.image + '.jpg'}`)"
               alt="Koch Chemie Fresh UP"
               class="col-2 p-0 m-auto"
-            />
+            >
             <div class="col-6 p-0">
               <div class="col-12 p-0 m-auto">
                 <div class="row m-auto">
                   <h5
                     id="cart-item-title"
                     class="col-sm-8 m-auto text-center py-2 crop"
-                  >{{product.name}}</h5>
+                  >
+                    {{ product.name }}
+                  </h5>
                   <div class="toggle-quantity col-sm-4 m-auto ">
                     <button
-                      @click="removeFromCart(product.id)"
                       :disabled="product.quantity === 1"
+                      @click="removeFromCart(product.id)"
                     >
                       &minus;
                     </button>
-                    <p>{{product.quantity}}</p>
+                    <p>{{ product.quantity }}</p>
                     <button
-                      @click="addToCart(product.id)"
                       :disabled="product.quantity === product.stock"
+                      @click="addToCart(product.id)"
                     >
                       &plus;
                     </button>
-
                   </div>
                 </div>
               </div>
@@ -115,12 +116,14 @@
                     <p
                       id="cart-item-price"
                       class="cart-item-price text-right py-2 card-text"
-                    >{{product.quantity* product.price | currency}}</p>
+                    >
+                      {{ product.quantity* product.price | currency }}
+                    </p>
                   </div>
                   <div class="remove-from-chart col-sm-5 m-auto text-right">
                     <span
-                      @click="deleteFromCart(product.id)"
                       class="close text-right"
+                      @click="deleteFromCart(product.id)"
                     >&times;
                     </span>
                   </div>
@@ -131,17 +134,16 @@
         </div>
 
         <div
-          class="col-12"
           v-if="!cartSize"
+          class="col-12"
         >
-
           <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
         </div>
         <div class="sum-total col-12 mt-3 text-right">
           <span id="cart-total ">
             Всього:
             <span class="cart-items-value">
-              {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+              {{ cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
 
             </span>
           </span>
@@ -158,32 +160,30 @@
                 class="m-0 p-0"
                 for="name"
               ><input
-                  id="name"
-                  type="text"
-                  name="name"
-                  class="form-control mx-auto"
-                  aria-describedby="name"
-                  placeholder="Ім’я*"
-                  v-model="cartName"
-                /></label>
-
+                id="name"
+                v-model="cartName"
+                type="text"
+                name="name"
+                class="form-control mx-auto"
+                aria-describedby="name"
+                placeholder="Ім’я*"
+              ></label>
             </div>
             <div class="form-group col-lg-6">
               <label
                 class="m-0 p-0"
                 for="cartPhone"
               ><input
-                  aria-describedby="cartPhone"
-                  aria-label="cartPhone"
-                  name="cartPhone"
-                  type="text"
-                  class="form-control mx-auto"
-                  id="cartPhone"
-                  placeholder="Телефон*"
-                  v-mask="'+38(0##) ###-####'"
-                  v-model="models.cartphoneNumber"
-                /></label>
-
+                id="cartPhone"
+                v-model="models.cartphoneNumber"
+                v-mask="'+38(0##) ###-####'"
+                aria-describedby="cartPhone"
+                aria-label="cartPhone"
+                name="cartPhone"
+                type="text"
+                class="form-control mx-auto"
+                placeholder="Телефон*"
+              ></label>
             </div>
           </div>
           <div class="row">
@@ -192,36 +192,35 @@
                 class="m-0 p-0"
                 for="Місто"
               ><select
-                  aria-label="Місто"
-                  id="Місто"
-                  aria-describedby="Місто"
-                  class="form-control mx-auto"
-                  v-model="city"
-                  name="Місто"
+                id="Місто"
+                v-model="city"
+                aria-label="Місто"
+                aria-describedby="Місто"
+                class="form-control mx-auto"
+                name="Місто"
+              >
+                <option
+                  value="null"
+                  disabled
+                >Місто*</option>
+                <optgroup
+                  v-for="city in cities"
+                  :key="city.id"
+                  :value="city.name"
+                  :label="city.name"
                 >
                   <option
-                    value="null"
-                    disabled
-                  >Місто*</option>
-                  <optgroup
-                    :value="city.name"
-                    v-for="city in cities"
-                    :key="city.id"
-                    :label="city.name"
-                  >
-                    <option
-                      v-for="area in city.areas"
-                      :key="area.id"
-                      :label="area.name"
-                      :value="area.name"
-                    >{{area.name}}</option>
+                    v-for="area in city.areas"
+                    :key="area.id"
+                    :label="area.name"
+                    :value="area.name"
+                  >{{ area.name }}</option>
 
-                  </optgroup>
+                </optgroup>
 
-                </select>
+              </select>
 
               </label>
-
             </div>
 
             <div class="form-group col-lg-6">
@@ -229,16 +228,15 @@
                 class="m-0 p-0"
                 for="Відділеня-пошти"
               ><input
-                  aria-label="Відділеня-пошти"
-                  id="Відділеня-пошти"
-                  type="text"
-                  aria-describedby="Відділеня-пошти"
-                  class="form-control mx-auto"
-                  v-model="postBranch"
-                  name="Відділеня-пошти"
-                  placeholder="Відділення пошти*"
-                /></label>
-
+                id="Відділеня-пошти"
+                v-model="postBranch"
+                aria-label="Відділеня-пошти"
+                type="text"
+                aria-describedby="Відділеня-пошти"
+                class="form-control mx-auto"
+                name="Відділеня-пошти"
+                placeholder="Відділення пошти*"
+              ></label>
             </div>
             <!-- <div class="form-group col-6">
               <label
@@ -270,30 +268,34 @@
               <b-button
                 id="clear-cart"
                 to="/mahazyn"
-                @click="$bvModal.hide('modal-xl-mobile')"
                 class="btn go-back"
+                @click="$bvModal.hide('modal-xl-mobile')"
               >
-                Повернутися</b-button>
+                Повернутися
+              </b-button>
             </div>
             <div class="col-6 text-right my-2">
               <button
                 :disabled="!cartSize"
-                @click.prevent="$store.dispatch('checkout')"
                 type="submit"
                 class="btn order"
-              >Замовити</button>
+                @click.prevent="$store.dispatch('checkout')"
+              >
+                Замовити
+              </button>
             </div>
           </div>
 
-          <p class="text-center w-md-50 mt-3 mx-auto">Оформіть замовлення, і наш менеджер
-            зв’яжеться з вами найближчим часом</p>
+          <p class="text-center w-md-50 mt-3 mx-auto">
+            Оформіть замовлення, і наш менеджер
+            зв’яжеться з вами найближчим часом
+          </p>
           <!-- <p
             class="text-success"
             v-show="$store.state.checkoutStatus"
           >Checkout
             {{ $store.state.checkoutStatus }}.
           </p> -->
-
         </form>
       </div>
     </b-modal>
@@ -301,7 +303,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 import cities from '~/plugins/api/ua.json'
 export default {
   data () {
@@ -314,31 +316,31 @@ export default {
       models: {
         postBranch: null,
         cartphoneNumber: null
-      },
-    };
+      }
+    }
   },
   computed: {
     ...mapState([
-      "cart"
+      'cart'
     ]),
     ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
+      'cartSize',
+      'cartTotalAmount'
     ])
   },
   methods: {
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     },
     removeFromCart (id) {
-      this.$store.dispatch("removeFromCart", id);
+      this.$store.dispatch('removeFromCart', id)
     },
     deleteFromCart (id) {
-      this.$store.dispatch("deleteFromCart", id);
+      this.$store.dispatch('deleteFromCart', id)
     }
   }
 
-};
+}
 </script>
 
 <style lang="scss" scoped>

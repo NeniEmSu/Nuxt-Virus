@@ -54,30 +54,30 @@
                       "
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[0].meta.title"
-                    />
+                    >
                     <img
                       :src="
                         `${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`
                       "
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[1].meta.title"
-                    />
+                    >
                     <img
                       :src="
                         `${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`
                       "
                       class="mx-auto img-fluid"
                       :alt="product.Gallery[2].meta.title"
-                    />
+                    >
                   </carousel>
                 </no-ssr>
               </div>
               <style>
-              .small-more-images {
+                .small-more-images {
                 margin-top: -20px;
-              }
+                }
 
-              .main-image .owl-theme .owl-dots .owl-dot span {
+                .main-image .owl-theme .owl-dots .owl-dot span {
                 width: 73px !important;
                 height: 73px !important;
                 margin-bottom: -60px;
@@ -86,111 +86,111 @@
                 margin-right: 12.5px;
                 margin-left: 12.5px;
                 display: abslolute;
-              }
-
-              .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                background-color: transparent;
-              }
-
-              .main-image .owl-theme .owl-dots .owl-dot.active span {
-                background-color: transparent;
-              }
-
-              .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                background-color: transparent;
-              }
-
-              @media only screen and (min-width: 992px) and (max-width: 1199px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 73px !important;
-                  height: 73px !important;
-                  margin-bottom: -55px;
-                  background-color: transparent;
-
-                  margin-right: 12px;
-                  margin-left: 12px;
-                  display: abslolute;
-                }
-              }
-
-              @media only screen and (min-width: 768px) and (max-width: 992px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 60px !important;
-                  height: 60px !important;
-                  margin-bottom: -48px;
-                  background-color: transparent;
-
-                  margin-right: 5.5px;
-                  margin-left: 5.6px;
-                  display: abslolute;
-                }
-              }
-
-              @media only screen and (min-width: 500px) and (max-width: 767.9px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 10px !important;
-                  height: 10px !important;
-                  margin-top: -25px;
-                  background-color: grey;
-
-                  margin-right: 5px;
-                  margin-left: 5px;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                  background-color: #d41f26;
-                }
-
-                .main-image .owl-theme .owl-dots {
-                  margin-bottom: -30px;
+                background-color: transparent;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active span {
-                  background-color: #d41f26;
+                background-color: transparent;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                  background-color: red;
+                background-color: transparent;
                 }
 
-                .small-more-images {
-                  margin-top: 0px;
-                  display: none;
-                }
-              }
-
-              @media only screen and (max-width: 499.9px) {
+                @media only screen and (min-width: 992px) and (max-width: 1199px) {
                 .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 5px !important;
-                  height: 5px !important;
-                  margin-top: -29px;
-                  background-color: grey;
+                width: 73px !important;
+                height: 73px !important;
+                margin-bottom: -55px;
+                background-color: transparent;
 
-                  margin-right: 5px;
-                  margin-left: 5px;
+                margin-right: 12px;
+                margin-left: 12px;
+                display: abslolute;
+                }
+                }
+
+                @media only screen and (min-width: 768px) and (max-width: 992px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 60px !important;
+                height: 60px !important;
+                margin-bottom: -48px;
+                background-color: transparent;
+
+                margin-right: 5.5px;
+                margin-left: 5.6px;
+                display: abslolute;
+                }
+                }
+
+                @media only screen and (min-width: 500px) and (max-width: 767.9px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 10px !important;
+                height: 10px !important;
+                margin-top: -25px;
+                background-color: grey;
+
+                margin-right: 5px;
+                margin-left: 5px;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                  background-color: #d41f26;
+                background-color: #d41f26;
                 }
 
                 .main-image .owl-theme .owl-dots {
-                  margin-bottom: -30px;
+                margin-bottom: -30px;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active span {
-                  background-color: #d41f26;
+                background-color: #d41f26;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                  background-color: red;
+                background-color: red;
                 }
 
                 .small-more-images {
-                  margin-top: 0px;
-                  display: none;
+                margin-top: 0px;
+                display: none;
                 }
-              }
+                }
+
+                @media only screen and (max-width: 499.9px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 5px !important;
+                height: 5px !important;
+                margin-top: -29px;
+                background-color: grey;
+
+                margin-right: 5px;
+                margin-left: 5px;
+                }
+
+                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                background-color: #d41f26;
+                }
+
+                .main-image .owl-theme .owl-dots {
+                margin-bottom: -30px;
+                }
+
+                .main-image .owl-theme .owl-dots .owl-dot.active span {
+                background-color: #d41f26;
+                }
+
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                background-color: red;
+                }
+
+                .small-more-images {
+                margin-top: 0px;
+                display: none;
+                }
+                }
               </style>
               <div class="small-more-images">
                 <div class="row mx-auto">
@@ -201,7 +201,7 @@
                     :alt="product.Gallery[0].meta.title"
                     :title="product.Gallery[0].meta.title"
                     class="col-4 mx-auto mt-n4 more-images"
-                  />
+                  >
                   <img
                     :src="
                       `${imageApiUrl}&src=${product.Gallery[1].path}&w=200&h=200&f[brighten]=0&o=true`
@@ -209,7 +209,7 @@
                     :alt="product.Gallery[1].meta.title"
                     :title="product.Gallery[1].meta.title"
                     class="col-4 mx-auto mt-n4 more-images"
-                  />
+                  >
                   <img
                     :src="
                       `${imageApiUrl}&src=${product.Gallery[2].path}&w=200&h=200&f[brighten]=0&o=true`
@@ -217,7 +217,7 @@
                     :alt="product.Gallery[2].meta.title"
                     :title="product.Gallery[2].meta.title"
                     class="col-4 mx-auto mt-n4 more-images"
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -358,8 +358,8 @@
 </template>
 
 <script>
-import axios from "axios"
-import { mapState, mapGetters } from "vuex"
+import axios from 'axios'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -367,6 +367,10 @@ export default {
       mobileModalShow: false,
       imageApiUrl: process.env.IMAGE_URL
     }
+  },
+  computed: {
+    ...mapState(['cart']),
+    ...mapGetters(['cartSize', 'cartTotalAmount'])
   },
   async asyncData ({ app, params, error, payload }) {
     if (payload) {
@@ -380,7 +384,7 @@ export default {
         populate: 1
       }),
       {
-        headers: { "Content-Type": "application/json" }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
     const products = await axios.get(
@@ -392,12 +396,12 @@ export default {
         populate: 1
       }),
       {
-        headers: { "Content-Type": "application/json" }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
 
     if (!product.data.entries || !products.data.entries) {
-      return error({ message: "404 Page not found", statusCode: 404 })
+      return error({ message: '404 Page not found', statusCode: 404 })
     }
 
     return {
@@ -409,23 +413,14 @@ export default {
   head () {
     return {
       title: this.product.name,
-      titleTemplate: "%s! - Virus",
+      titleTemplate: '%s! - Virus',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.product.Description
         }
       ]
-    }
-  },
-  computed: {
-    ...mapState(["cart"]),
-    ...mapGetters(["cartSize", "cartTotalAmount"])
-  },
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
     }
   }
 }

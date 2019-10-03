@@ -6,36 +6,51 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h2 class="info-pages text-center mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages text-center mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <b-img-lazy
               src="~assets/img/антигравійноїплівки.jpg"
               :alt="heading"
-            >
-
-            </b-img-lazy>
-
+            />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
-            <p class>{{ firstParagraph }}</p>
-            <p class>{{ secondParagraph }}</p>
-            <p class>{{ thirdParagraph }}</p>
-            <p class>{{ fourthParagraph }}</p>
-            <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
+            <p class>
+              {{ firstParagraph }}
+            </p>
+            <p class>
+              {{ secondParagraph }}
+            </p>
+            <p class>
+              {{ thirdParagraph }}
+            </p>
+            <p class>
+              {{ fourthParagraph }}
+            </p>
+            <h2 class="pt-2">
+              ЩО ВХОДИТЬ В ПОСЛУГУ?
+            </h2>
             <ul class="ml-3">
               В наші студії твердий віск наноситься в чистому закритому
               приміщенні в такій послідовності:
               <li
                 v-for="(items, heading) in inclusiveInService"
                 :key="heading"
-              > {{items.services}}</li>
+              >
+                {{ items.services }}
+              </li>
             </ul>
           </div>
         </div>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
         <serviceCategories
           :category1="category1"
@@ -58,8 +73,8 @@ export default {
       title: this.heading.slice(0, 60),
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: `${this.firstParagraph} ${this.secondParagraph}`.slice(0, 320)
         }
       ]
@@ -67,16 +82,16 @@ export default {
   },
   data () {
     return {
-      service: "19",
-      heading: "ПОКЛЕЙКА АНТИГРАВІЙНОЇ ПЛІВКИ",
-      category1: "1000 грн",
-      category2: "0 грн",
-      category3: "0 грн",
-      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
+      service: '19',
+      heading: 'ПОКЛЕЙКА АНТИГРАВІЙНОЇ ПЛІВКИ',
+      category1: '1000 грн',
+      category2: '0 грн',
+      category3: '0 грн',
+      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
       firstParagraph:
-        "Антигравійна плівка - це, мабуть, саме прогресивне на поточний момент захисне покриття.",
+        'Антигравійна плівка - це, мабуть, саме прогресивне на поточний момент захисне покриття.',
       secondParagraph:
-        "Вона захищає автомобіль від відколів і механічних пошкоджень, не жовтіє і зберігає свої захисні властивості до 5 років.",
+        'Вона захищає автомобіль від відколів і механічних пошкоджень, не жовтіє і зберігає свої захисні властивості до 5 років.',
       thirdParagraph:
         'Можливt обклеювання окремих деталей (фари, дзеркала), "зони ризику" (капот, бампер, передні крила та ін.) Або кузова цілком.',
       fourthParagraph:
@@ -84,25 +99,25 @@ export default {
       inclusiveInService: [
         {
           services:
-            "Мийка кузова, при необхідності очищення від слідів бітуму і дорожньої розмітки"
+            'Мийка кузова, при необхідності очищення від слідів бітуму і дорожньої розмітки'
         },
         {
           services:
-            "Підготовка поверхні до обклеювання плівкою: очищення абразивною глиною або автоскрабом"
+            'Підготовка поверхні до обклеювання плівкою: очищення абразивною глиною або автоскрабом'
         },
         {
-          services: "Обклеювання кузова плівкою"
+          services: 'Обклеювання кузова плівкою'
         }
       ],
-      timeTaken: "Час виконання послуги до 3 днів"
-    };
+      timeTaken: 'Час виконання послуги до 3 днів'
+    }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 100, { force: true });
+      this.$scrollTo('#top-contact', 100, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

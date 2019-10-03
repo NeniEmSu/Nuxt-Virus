@@ -11,29 +11,30 @@
           :src="require(`~/assets/img/${product.image + '.jpg'}`)"
           alt="Koch Chemie Fresh UP"
           class="col-2 p-0 m-auto"
-        />
+        >
         <div class="col-6 p-0">
           <div class="col-12 p-0 m-auto">
             <div class="row m-auto">
               <h5
                 id="cart-item-title"
                 class="col-sm-8 m-auto text-center py-2 crop"
-              >{{product.name}}</h5>
+              >
+                {{ product.name }}
+              </h5>
               <div class="toggle-quantity col-sm-4 m-auto ">
                 <button
-                  @click="removeFromCart(product.id)"
                   :disabled="product.quantity === 1"
+                  @click="removeFromCart(product.id)"
                 >
                   &minus;
                 </button>
-                <p>{{product.quantity}}</p>
+                <p>{{ product.quantity }}</p>
                 <button
-                  @click="addToCart(product.id)"
                   :disabled="product.quantity === product.stock"
+                  @click="addToCart(product.id)"
                 >
                   &plus;
                 </button>
-
               </div>
             </div>
           </div>
@@ -45,12 +46,14 @@
                 <p
                   id="cart-item-price"
                   class="cart-item-price text-right py-2 card-text"
-                >{{product.quantity* product.price | currency}}</p>
+                >
+                  {{ product.quantity* product.price | currency }}
+                </p>
               </div>
               <div class="remove-from-chart col-sm-5 m-auto text-right">
                 <span
-                  @click="deleteFromCart(product.id)"
                   class="close text-right"
+                  @click="deleteFromCart(product.id)"
                 >&times;
                 </span>
               </div>
@@ -61,17 +64,16 @@
     </div>
 
     <div
-      class="col-12"
       v-if="!cartSize"
+      class="col-12"
     >
-
       <h6>КОШИК НЕ ПОВТОРЕНО. ВИБРАТИ НЕКОТОВІ ПРОДУКТИ, ЩО КУПИТИ ДО ПЕРЕВАГУ.</h6>
     </div>
     <div class="sum-total col-12 mt-3 text-right">
       <span id="cart-total ">
         Всього:
         <span class="cart-items-value">
-          {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+          {{ cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
 
         </span>
       </span>
@@ -87,43 +89,45 @@
             class="m-0 p-0"
             for="name"
           ><input
-              id="name"
-              type="text"
-              name="name"
-              class="form-control mx-auto"
-              :class="!$v.form.name.$error ? 'is-valid' : 'is-invalid'"
-              aria-describedby="name"
-              placeholder="Ім’я*"
-              v-model="$v.form.name.$model"
-              :state="$v.form.name.$dirty ? !$v.form.name.$error : null"
-            /></label>
+            id="name"
+            v-model="$v.form.name.$model"
+            type="text"
+            name="name"
+            class="form-control mx-auto"
+            :class="!$v.form.name.$error ? 'is-valid' : 'is-invalid'"
+            aria-describedby="name"
+            placeholder="Ім’я*"
+            :state="$v.form.name.$dirty ? !$v.form.name.$error : null"
+          ></label>
           <div
             v-if="$v.form.name.$error"
             class="text-danger text-right"
-          >Ім'я обов'язково і має містити не менше 3 символів.</div>
-
+          >
+            Ім'я обов'язково і має містити не менше 3 символів.
+          </div>
         </div>
         <div class="form-group col-lg-6">
           <label
             class="m-0 p-0"
             for="cartPhone"
           ><input
-              aria-describedby="cartPhone"
-              aria-label="cartPhone"
-              name="cartPhone"
-              class="form-control mx-auto "
-              :class="!$v.form.models.cartphoneNumber.$error ? 'is-valid' : 'is-invalid'"
-              id="cartPhone"
-              placeholder="Телефон*"
-              v-mask="'+38(###) ###-####'"
-              v-model="$v.form.models.cartphoneNumber.$model"
-              :state="$v.form.models.cartphoneNumber.$dirty ? !$v.form.models.cartphoneNumber.$error : null"
-            /></label>
+            id="cartPhone"
+            v-model="$v.form.models.cartphoneNumber.$model"
+            v-mask="'+38(###) ###-####'"
+            aria-describedby="cartPhone"
+            aria-label="cartPhone"
+            name="cartPhone"
+            class="form-control mx-auto "
+            :class="!$v.form.models.cartphoneNumber.$error ? 'is-valid' : 'is-invalid'"
+            placeholder="Телефон*"
+            :state="$v.form.models.cartphoneNumber.$dirty ? !$v.form.models.cartphoneNumber.$error : null"
+          ></label>
           <div
             v-if="$v.form.models.cartphoneNumber.$error"
             class="text-danger text-right"
-          >Телефон обов'язково</div>
-
+          >
+            Телефон обов'язково
+          </div>
         </div>
       </div>
       <div class="row">
@@ -132,76 +136,76 @@
             class="m-0 p-0"
             for="Місто"
           ><select
-              aria-label="Місто"
-              id="Місто"
-              aria-describedby="Місто"
-              class="form-control mx-auto"
-              :class="!$v.form.city.$error ? 'is-valid' : 'is-invalid'"
-              v-model="$v.form.city.$model"
-              name="Місто"
+            id="Місто"
+            v-model="$v.form.city.$model"
+            aria-label="Місто"
+            aria-describedby="Місто"
+            class="form-control mx-auto"
+            :class="!$v.form.city.$error ? 'is-valid' : 'is-invalid'"
+            name="Місто"
+          >
+            <option
+              value="null"
+              disabled
+            >Місто*</option>
+            <optgroup
+              v-for="city in cities"
+              :key="city.id"
+              :value="city.name"
+              :label="city.name"
             >
               <option
-                value="null"
-                disabled
-              >Місто*</option>
-              <optgroup
-                :value="city.name"
-                v-for="city in cities"
-                :key="city.id"
-                :label="city.name"
-              >
-                <option
-                  v-for="area in city.areas"
-                  :key="area.id"
-                  :label="area.name"
-                  :value="area.name"
-                >{{area.name}}</option>
+                v-for="area in city.areas"
+                :key="area.id"
+                :label="area.name"
+                :value="area.name"
+              >{{ area.name }}</option>
 
-              </optgroup>
+            </optgroup>
 
-            </select>
+          </select>
 
           </label>
           <div
             v-if="$v.form.city.$error"
             class="text-danger text-right"
-          >Місто обов'язково</div>
-
+          >
+            Місто обов'язково
+          </div>
         </div>
         <div class="form-group col-6">
           <label
             class="m-0 p-0"
             for="Відділеня-пошти"
           ><input
-              aria-label="Відділеня-пошти"
-              id="Відділеня-пошти"
-              type="text"
-              aria-describedby="Відділеня-пошти"
-              class="form-control mx-auto"
-              :class="!$v.form.postBranch.$error ? 'is-valid' : 'is-invalid'"
-              v-mask="'Відділення №#####'"
-              v-model="$v.form.postBranch.$model"
-              :state="$v.form.postBranch.$dirty ? !$v.form.postBranch.$error : null"
-              name="Відділеня-пошти"
-              placeholder="Відділення пошти*"
-            /></label>
+            id="Відділеня-пошти"
+            v-model="$v.form.postBranch.$model"
+            v-mask="'Відділення №#####'"
+            aria-label="Відділеня-пошти"
+            type="text"
+            aria-describedby="Відділеня-пошти"
+            class="form-control mx-auto"
+            :class="!$v.form.postBranch.$error ? 'is-valid' : 'is-invalid'"
+            :state="$v.form.postBranch.$dirty ? !$v.form.postBranch.$error : null"
+            name="Відділеня-пошти"
+            placeholder="Відділення пошти*"
+          ></label>
           <div
             v-if="$v.form.postBranch.$error"
             class="text-danger text-right"
-          >Відділення пошти обов'язково</div>
-
+          >
+            Відділення пошти обов'язково
+          </div>
         </div>
-
       </div>
-
     </form>
   </div>
 </template>
 
 <script>
 import { validationMixin } from 'vuelidate'
-import { required, minLength, email } from "vuelidate/lib/validators";
-import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+import { required, minLength, email } from 'vuelidate/lib/validators'
+import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 import cities from '~/plugins/api/ua.json'
 export default {
   data () {
@@ -217,7 +221,7 @@ export default {
         }
       }
 
-    };
+    }
   },
   validations: {
     form: {
@@ -242,11 +246,11 @@ export default {
   },
   computed: {
     ...mapState([
-      "cart"
+      'cart'
     ]),
     ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
+      'cartSize',
+      'cartTotalAmount'
     ])
   },
   methods: {
@@ -263,19 +267,19 @@ export default {
     },
 
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     },
 
     removeFromCart (id) {
-      this.$store.dispatch("removeFromCart", id);
+      this.$store.dispatch('removeFromCart', id)
     },
 
     deleteFromCart (id) {
-      this.$store.dispatch("deleteFromCart", id);
+      this.$store.dispatch('deleteFromCart', id)
     }
   }
 
-};
+}
 </script>
 
 <style lang="scss" scoped>

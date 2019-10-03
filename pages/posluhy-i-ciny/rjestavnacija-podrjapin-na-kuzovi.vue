@@ -6,21 +6,26 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h2 class="info-pages mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <b-img-lazy
               src="~assets/img/Реставраціяподряпин.jpg"
               :alt="heading"
-            >
-
-            </b-img-lazy>
-
+            />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
-            <p class>{{ firstParagraph }}</p>
-            <p class>{{ secondParagraph }}</p>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
+            <p class>
+              {{ firstParagraph }}
+            </p>
+            <p class>
+              {{ secondParagraph }}
+            </p>
             <p class>
               {{ thirdParagraph }}
               <br>• можливість зберегти оригінальне заводське ЛКП;
@@ -32,25 +37,35 @@
               <b>{{ boldParagraph }}</b>
               {{ secondParagraph }}
             </p>
-            <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
+            <h2 class="pt-2">
+              ЩО ВХОДИТЬ В ПОСЛУГУ?
+            </h2>
             <ul class="ml-3">
               <li
                 v-for="(items, heading) in inclusiveInService"
                 :key="heading"
-              > {{items.services}}</li>
+              >
+                {{ items.services }}
+              </li>
             </ul>
           </div>
         </div>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
         <div class="row mx-auto">
           <div class="col-6 mx-auto p-0 before img-fluid">
-            <font class="before-image-text">До</font>
+            <font class="before-image-text">
+              До
+            </font>
           </div>
 
           <div class="col-6 mx-auto p-0 after img-fluid">
-            <font class="after-image-text">Після</font>
+            <font class="after-image-text">
+              Після
+            </font>
           </div>
         </div>
 
@@ -76,8 +91,8 @@ export default {
       title: this.heading.slice(0, 60),
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.firstParagraph.slice(0, 320)
         }
       ]
@@ -85,40 +100,40 @@ export default {
   },
   data () {
     return {
-      service: "12",
-      heading: "РЕСТАВРАЦІЯ ПОДРЯПИН (СКОЛІВ) НА КУЗОВІ",
-      category1: "130 грн",
-      category2: "0 грн",
-      category3: "250 грн",
+      service: '12',
+      heading: 'РЕСТАВРАЦІЯ ПОДРЯПИН (СКОЛІВ) НА КУЗОВІ',
+      category1: '130 грн',
+      category2: '0 грн',
+      category3: '250 грн',
       firstParagraph:
-        "Коли трапилася неприємність, і Ви помітили на своєму автомобілі подряпини, сколи й потертості - не турбуйтеся! Найпростіше рішення проблеми – реставрація подряпин.",
+        'Коли трапилася неприємність, і Ви помітили на своєму автомобілі подряпини, сколи й потертості - не турбуйтеся! Найпростіше рішення проблеми – реставрація подряпин.',
 
       secondParagraph:
-        "Фахівці студії відреставрують місце пошкодження локально, не залишаючи некрасивих переходів і сміття під лаком.",
-      thirdParagraph: "Переваги локального ремонту:",
+        'Фахівці студії відреставрують місце пошкодження локально, не залишаючи некрасивих переходів і сміття під лаком.',
+      thirdParagraph: 'Переваги локального ремонту:',
       boldParagraph:
-        "ТОЧНА ОЦІНКА ВАРТОСТІ РОБІТ МОЖЛИВА ЗА ФОТО АБО ПРИ БЕЗПОСЕРЕДНЬОМУ ОГЛЯДІ АВТОМОБІЛЯ В НАШІЙ СТУДІЇ.",
-      fourthParagraph: "Якщо мова іде про сколи – колір фарби необхідні.",
+        'ТОЧНА ОЦІНКА ВАРТОСТІ РОБІТ МОЖЛИВА ЗА ФОТО АБО ПРИ БЕЗПОСЕРЕДНЬОМУ ОГЛЯДІ АВТОМОБІЛЯ В НАШІЙ СТУДІЇ.',
+      fourthParagraph: 'Якщо мова іде про сколи – колір фарби необхідні.',
       inclusiveInService: [
         {
-          services: "Мийка кузова"
+          services: 'Мийка кузова'
         },
         {
-          services: "Реставрація сколів"
+          services: 'Реставрація сколів'
         },
         {
-          services: "Полірування за необхідності"
+          services: 'Полірування за необхідності'
         }
       ],
-      timeTaken: "Час виконання послуги від 2 до 5 годин"
-    };
+      timeTaken: 'Час виконання послуги від 2 до 5 годин'
+    }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo('#top-contact', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

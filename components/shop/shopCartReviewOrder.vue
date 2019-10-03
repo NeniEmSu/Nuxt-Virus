@@ -1,9 +1,9 @@
 <template>
-
   <div class=" basket text-left">
-
     <h2>Підтвердження замовлення</h2>
-    <p class="text-left">Перегляньте та підтвердьте своє замовлення та деталі нижче та не забудьте виправити будь-які помилки.</p>
+    <p class="text-left">
+      Перегляньте та підтвердьте своє замовлення та деталі нижче та не забудьте виправити будь-які помилки.
+    </p>
     <div class="my-2 ">
       <h3>деталі замовлення</h3>
       <div
@@ -12,43 +12,33 @@
         class="basket-content col-12 p-0"
       >
         <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
-
           <div class="col-8 p-0">
-
             <div class="col-12 p-0 m-auto">
-
               <div class="row m-auto">
-
                 <h5
                   id="cart-item-title"
                   class="col-8 m-auto  py-2 pl-0 crop"
-                >{{product.name}}</h5>
+                >
+                  {{ product.name }}
+                </h5>
 
                 <div class="toggle-quantity col-4 m-auto ">
-
-                  <p>{{product.quantity}}</p>
-
+                  <p>{{ product.quantity }}</p>
                 </div>
-
               </div>
-
             </div>
-
           </div>
           <div class="col-4 p-0">
-
             <div class="col-12 m-auto p-0">
-
               <div class="row m-auto">
-
                 <div class="cost col-sm-7 m-auto ">
-
                   <p
                     id="cart-item-price"
                     class="cart-item-price text-right py-2 card-text"
-                  >{{product.quantity* product.price | currency}}</p>
+                  >
+                    {{ product.quantity* product.price | currency }}
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -59,28 +49,33 @@
         <span id="cart-total ">
           Всього:
           <span class="cart-items-value">
-            {{cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
+            {{ cartTotalAmount | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
 
           </span>
         </span>
       </div>
-
     </div>
     <div class="my-2 details">
       <h3>Деталі поводження</h3>
-      <p class="text-left"> <span>Ім’я* :</span> {{ cartFormData.name }}</p>
-      <p class="text-left"> <span>Телефон*</span> : {{ cartFormData.cartphoneNumber }}</p>
-      <p class="text-left"> <span>Місто*</span> : {{ cartFormData.city }}</p>
-      <p class="text-left"> <span>Відділення пошти*</span> : {{ cartFormData.postBranch }}</p>
+      <p class="text-left">
+        <span>Ім’я* :</span> {{ cartFormData.name }}
+      </p>
+      <p class="text-left">
+        <span>Телефон*</span> : {{ cartFormData.cartphoneNumber }}
+      </p>
+      <p class="text-left">
+        <span>Місто*</span> : {{ cartFormData.city }}
+      </p>
+      <p class="text-left">
+        <span>Відділення пошти*</span> : {{ cartFormData.postBranch }}
+      </p>
     </div>
-
   </div>
-
 </template>
 
- <script>
+<script>
 
-import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 export default {
   props: {
     cartFormData: {
@@ -91,33 +86,33 @@ export default {
 
   data () {
     return {
-      checkoutModalShow: false,
+      checkoutModalShow: false
 
-    };
+    }
   },
   validations: {},
   computed: {
     ...mapState([
-      "cart"
+      'cart'
     ]),
     ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
+      'cartSize',
+      'cartTotalAmount'
     ])
   },
   methods: {
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     },
     removeFromCart (id) {
-      this.$store.dispatch("removeFromCart", id);
+      this.$store.dispatch('removeFromCart', id)
     },
     deleteFromCart (id) {
-      this.$store.dispatch("deleteFromCart", id);
+      this.$store.dispatch('deleteFromCart', id)
     }
   }
 
-};
+}
 </script>
 
 <style lang="scss" scoped>

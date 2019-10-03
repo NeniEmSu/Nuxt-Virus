@@ -4,42 +4,41 @@
       v-show="loading"
       src="~/assets/img/spinner.svg"
       alt="Loading spinner"
-    />
+    >
 
     <div
-      class="row"
       v-show="!loading"
+      class="row"
     >
       <single-product
         v-for="product in products"
         :key="product.id"
         class="mx-auto mb-4"
         :product="product"
-      ></single-product>
-
+      />
     </div>
   </div>
 </template>
 
 <script>
-import SingleProduct from "@/components/shop/SingleProduct.vue"
+import SingleProduct from '@/components/shop/SingleProduct.vue'
 export default {
-  data () {
-    return {
-      loading: false
-    };
-  },
   components: {
     SingleProduct
   },
+  data () {
+    return {
+      loading: false
+    }
+  },
   computed: {
     products () {
-      return this.$store.state.products;
+      return this.$store.state.products
     }
   },
   created () {
-    this.loading = true;
-    this.$store.dispatch("fetchProducts").then(() => (this.loading = false));
+    this.loading = true
+    this.$store.dispatch('fetchProducts').then(() => (this.loading = false))
   }
 }
 </script>

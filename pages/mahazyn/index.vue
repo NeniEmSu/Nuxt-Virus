@@ -42,17 +42,17 @@
               >
                 Засоби догляду
                 <span
-                  class="down-Arrow"
                   v-show="!active1"
+                  class="down-Arrow"
                 >&#9660;</span>
                 <span
-                  class="up-Arrow"
                   v-show="active1"
+                  class="up-Arrow"
                 >&#9650;</span>
               </button>
               <div
-                class="panel"
                 v-show="active1"
+                class="panel"
               >
                 <a
                   tag="button"
@@ -94,17 +94,17 @@
               >
                 Захисні покриття
                 <span
-                  class="down-Arrow"
                   v-show="!active2"
+                  class="down-Arrow"
                 >&#9660;</span>
                 <span
-                  class="up-Arrow"
                   v-show="active2"
+                  class="up-Arrow"
                 >&#9650;</span>
               </button>
               <div
-                class="panel"
                 v-show="active2"
+                class="panel"
               >
                 <a
                   tag="button"
@@ -161,17 +161,17 @@
               >
                 Хімія
                 <span
-                  class="down-Arrow"
                   v-show="!active3"
+                  class="down-Arrow"
                 >&#9660;</span>
                 <span
-                  class="up-Arrow"
                   v-show="active3"
+                  class="up-Arrow"
                 >&#9650;</span>
               </button>
               <div
-                class="panel"
                 v-show="active3"
+                class="panel"
               >
                 <a
                   tag="button"
@@ -196,17 +196,17 @@
               >
                 Подарункові набори
                 <span
-                  class="down-Arrow"
                   v-show="!active4"
+                  class="down-Arrow"
                 >&#9660;</span>
                 <span
-                  class="up-Arrow"
                   v-show="active4"
+                  class="up-Arrow"
                 >&#9650;</span>
               </button>
               <div
-                class="panel"
                 v-show="active4"
+                class="panel"
               >
                 <a
                   tag="button"
@@ -258,22 +258,30 @@
                     <option
                       value="null"
                       class="filter-btn"
-                    >від дорогих до дешевих</option>
+                    >
+                      від дорогих до дешевих
+                    </option>
                     <option
                       value="all"
                       class="filter-btn all"
                       data-filter="all"
-                    >Все</option>
+                    >
+                      Все
+                    </option>
                     <option
                       value="Фібри"
                       class="filter-btn Фібри"
                       data-filter="Фібри"
-                    >Фібри</option>
+                    >
+                      Фібри
+                    </option>
                     <option
                       value="Шампунь"
                       class="filter-btn Шампунь"
                       data-filter="Шампунь"
-                    >Шампунь</option>
+                    >
+                      Шампунь
+                    </option>
                     <option value="Віск">
                       Віск
                     </option>
@@ -325,7 +333,7 @@
                     <img
                       src="~assets/img/icons8-slider-filled-90.png"
                       alt="filter icon"
-                    />
+                    >
                   </p>
                 </div>
               </div>
@@ -336,8 +344,8 @@
             <ProductsList />
             <div class="container mt-2 pb-3">
               <div
-                class="row"
                 id="store-items"
+                class="row"
               >
                 <card
                   v-for="product in products"
@@ -347,8 +355,8 @@
                   :summary="product.Overview"
                   :price="product.Price"
                   :image="
-                  `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                "
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
                   :link="'/mahazyn/' + product.name_slug"
                   :filter-data="product.Filter"
                   :stock="product.Stock"
@@ -359,7 +367,6 @@
 
           <div class="cart-icon col-xl-1 desktop-only text-center">
             <div class="position-fixed col-0">
-
               <div class="cart-icon">
                 <b-button
                   v-b-modal.modal-xl-mobile
@@ -370,7 +377,7 @@
                     id="cart"
                     src="~/assets/img/cart.png"
                     alt="Cart icon"
-                  />
+                  >
                 </b-button>
                 <div
                   id="show-total"
@@ -384,7 +391,6 @@
                   }}</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -392,54 +398,54 @@
     </div>
 
     <script>
-    ;
-    (function() {
+      ;
+      (function() {
       const filterBtn = document.querySelectorAll(".filter-btn")
       filterBtn.forEach(function(btn) {
-        btn.addEventListener("click", function(event) {
-          event.preventDefault()
-          this.classList.add("active");
-          const value = event.target.dataset.filter;
-          const items = document.querySelectorAll(".store-item")
-          items.forEach(function(items) {
-            if (value === "all") {
-              items.style.display = "block";
-            } else {
-              if (items.classList.contains(value)) {
-                items.style.display = "block"
-              } else {
-                items.style.display = "none";
-              }
-            }
-          });
-        });
+      btn.addEventListener("click", function(event) {
+      event.preventDefault()
+      this.classList.add("active");
+      const value = event.target.dataset.filter;
+      const items = document.querySelectorAll(".store-item")
+      items.forEach(function(items) {
+      if (value === "all") {
+      items.style.display = "block";
+      } else {
+      if (items.classList.contains(value)) {
+      items.style.display = "block"
+      } else {
+      items.style.display = "none";
+      }
+      }
+      });
+      });
       })
-    })()
+      })()
     </script>
   </div>
 </template>
 
 <script>
-import ProductsList from "@/components/shop/ProductsList.vue"
-import { mapGetters, mapState } from "vuex"
+import { mapGetters, mapState } from 'vuex'
+import ProductsList from '@/components/shop/ProductsList.vue'
 
 export default {
   components: {
     ProductsList
   },
   meta: {
-    animation: "fade-in-right"
+    animation: 'fade-in-right'
   },
   head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "магазин - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'магазин - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "магазин - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'магазин - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
     }
@@ -464,32 +470,27 @@ export default {
         populate: 1
       }),
       {
-        headers: { "Content-Type": "application/json" }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
 
     if (!data.entries[0]) {
-      return error({ message: "404 Page not found", statusCode: 404 })
+      return error({ message: '404 Page not found', statusCode: 404 })
     }
 
     return { products: data.entries }
   },
   computed: {
-    ...mapState(["cart"]),
-    ...mapGetters(["cartSize", "cartTotalAmount"]),
+    ...mapState(['cart']),
+    ...mapGetters(['cartSize', 'cartTotalAmount']),
     toast () {
       return this.$store.getters.toast
-    }
-  },
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
     }
   },
 
   methods: {
     hideToast () {
-      this.$store.commit("hideToast")
+      this.$store.commit('hideToast')
     }
   }
 }

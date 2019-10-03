@@ -6,45 +6,60 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h2 class="info-pages text-center mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages text-center mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <b-img-lazy
               src="~assets/img/Вставкисалону.jpg"
               :alt="heading"
-            >
-
-            </b-img-lazy>
-
+            />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
-            <p class>{{ firstParagraph }}</p>
-            <p class>{{ secondParagraph }}</p>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
+            <p class>
+              {{ firstParagraph }}
+            </p>
+            <p class>
+              {{ secondParagraph }}
+            </p>
 
-            <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
+            <h2 class="pt-2">
+              ЩО ВХОДИТЬ В ПОСЛУГУ?
+            </h2>
             <ul class="ml-3">
               <li
                 v-for="(items, heading) in inclusiveInService"
                 :key="heading"
-              > {{items.services}}</li>
+              >
+                {{ items.services }}
+              </li>
             </ul>
           </div>
         </div>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
         <div class="row mx-auto">
           <div class="col-6 mx-auto p-0 before img-fluid">
-            <font class="before-image-text">До</font>
+            <font class="before-image-text">
+              До
+            </font>
           </div>
 
           <div class="col-6 mx-auto p-0 after img-fluid">
-            <font class="after-image-text">Після</font>
+            <font class="after-image-text">
+              Після
+            </font>
           </div>
         </div>
 
-        <servicesYoutubeVideo :videoUrl="videoUrl" />
+        <servicesYoutubeVideo :video-url="videoUrl" />
 
         <serviceCategories
           :category1="category1"
@@ -67,8 +82,8 @@ export default {
       title: this.heading.slice(0, 60),
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.firstParagraph.slice(0, 320)
         }
       ]
@@ -76,43 +91,43 @@ export default {
   },
   data () {
     return {
-      service: "2",
-      heading: "ПОЛІРУВАННЯ ВСТАВОК САЛОНУ",
-      category1: "500 грн",
-      category2: "600 грн",
-      category3: "700 грн",
+      service: '2',
+      heading: 'ПОЛІРУВАННЯ ВСТАВОК САЛОНУ',
+      category1: '500 грн',
+      category2: '600 грн',
+      category3: '700 грн',
       firstParagraph:
-        "Коли ти щиро любиш свій автомобіль, хочеться, щоб кожна його деталь була бездоганна. Чистий салон - це тільки половина справи. Важливо також повернути первісний блиск лакованим вставкам салону.",
+        'Коли ти щиро любиш свій автомобіль, хочеться, щоб кожна його деталь була бездоганна. Чистий салон - це тільки половина справи. Важливо також повернути первісний блиск лакованим вставкам салону.',
       secondParagraph:
-        "Детейлінг-полірування максимально дбайливо видалить дрібні подряпини і потертості, і вставки будуть як нові!",
+        'Детейлінг-полірування максимально дбайливо видалить дрібні подряпини і потертості, і вставки будуть як нові!',
       inclusiveInService: [
         {
           services:
-            "Підготовка до полірування, обклеювання пластикових деталей для захисту під час полірування"
+            'Підготовка до полірування, обклеювання пластикових деталей для захисту під час полірування'
         },
         {
-          services: "Абразивна поліровка для видалення подряпин"
+          services: 'Абразивна поліровка для видалення подряпин'
         },
         {
           services:
-            "Глибоке очищення фар абразивної глиною і підготовка до полірування"
+            'Глибоке очищення фар абразивної глиною і підготовка до полірування'
         },
         {
-          services: "Фінішна полірування для додання блиску"
+          services: 'Фінішна полірування для додання блиску'
         },
         {
-          services: "Очищення вставок від слідів пасти"
+          services: 'Очищення вставок від слідів пасти'
         }
       ],
-      timeTaken: "Час виконання послуги до 1 дня"
-    };
+      timeTaken: 'Час виконання послуги до 1 дня'
+    }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true });
+      this.$scrollTo('#top-contact', 0, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

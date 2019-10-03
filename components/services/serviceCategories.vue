@@ -6,24 +6,36 @@
           class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
           href="#"
         >Ⅰ категорія</a>
-        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">{{category1}}</p>
-        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2 text-center">середній бізнес спорт купе</p>
+        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">
+          {{ category1 }}
+        </p>
+        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2 text-center">
+          середній бізнес спорт купе
+        </p>
       </div>
       <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
         <a
           href="#"
           class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
         >ⅠⅠ категорія</a>
-        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">{{category2}}</p>
-        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2 text-center">середній кросовер позашляховик</p>
+        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">
+          {{ category2 }}
+        </p>
+        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2 text-center">
+          середній кросовер позашляховик
+        </p>
       </div>
       <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
         <a
           href="#"
           class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
         >ⅠⅠⅠ категорія</a>
-        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">{{category3}}</p>
-        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2 text-center">повнорозмірний кросовер позашляховик</p>
+        <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">
+          {{ category3 }}
+        </p>
+        <p class="mt-2 mb-0 col-md-4 col-xl-12 m-auto m-lg-2 text-center">
+          повнорозмірний кросовер позашляховик
+        </p>
       </div>
     </div>
   </div>
@@ -34,21 +46,21 @@ export default {
   props: {
     category1: {
       type: String,
-      default: "0",
+      default: '0',
       required: true
     },
     category2: {
       type: String,
-      default: "0",
+      default: '0',
       required: true
     },
     category3: {
       type: String,
-      default: "0",
+      default: '0',
       required: true
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -528,4 +540,3 @@ li {
   }
 }
 </style>
-

@@ -14,9 +14,7 @@
             <b-img-lazy
               src="~assets/img/Антидощ.jpg"
               :alt="heading"
-            >
-            </b-img-lazy>
-
+            />
           </div>
           <div class="col-xl-6">
             <h2 class="info-pages desktop-only">
@@ -64,11 +62,11 @@ export default {
   head () {
     return {
       title: this.heading,
-      titleTemplate: "%s! - Детейлінг центр Virus ",
+      titleTemplate: '%s! - Детейлінг центр Virus ',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.firstParagraph.slice(0, 320)
         }
       ]
@@ -76,28 +74,28 @@ export default {
   },
   data () {
     return {
-      service: "14",
-      heading: "Антидощ",
-      category1: "600 грн",
-      category2: "0 грн",
-      category3: "1200 грн",
-      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
+      service: '14',
+      heading: 'Антидощ',
+      category1: '600 грн',
+      category2: '0 грн',
+      category3: '1200 грн',
+      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
       firstParagraph:
-        "Гідрофобний ефект поліпшить видимість на дорозі і позбавить Вас від необхідності слухати монотонний шум працюючих двірників. Тепер лобове скло не буде затирається, а вода буде скочуватися з нього практично безслідно. Термін служби покриття до 4 місяців",
+        'Гідрофобний ефект поліпшить видимість на дорозі і позбавить Вас від необхідності слухати монотонний шум працюючих двірників. Тепер лобове скло не буде затирається, а вода буде скочуватися з нього практично безслідно. Термін служби покриття до 4 місяців',
       inclusiveInService: [
         {
-          services: "Глибоке очищення і усунення нерівностей на склі"
+          services: 'Глибоке очищення і усунення нерівностей на склі'
         },
         {
-          services: "Нанесення захисного покриття"
+          services: 'Нанесення захисного покриття'
         }
       ],
-      timeTaken: "Час виконання послуги 1 година"
+      timeTaken: 'Час виконання послуги 1 година'
     }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 100, { force: true })
+      this.$scrollTo('#top-contact', 100, { force: true })
     }
   }
 }

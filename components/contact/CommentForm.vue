@@ -1,8 +1,8 @@
 <template>
   <form
-    @submit="checkForm"
-    method="post"
     :id="parent_id ? `reply-${parent_id}` : ''"
+    method="post"
+    @submit="checkForm"
   >
     <div
       v-if="errors.length"
@@ -13,7 +13,9 @@
         <li
           v-for="error in errors"
           :key="error"
-        >{{ error }}</li>
+        >
+          {{ error }}
+        </li>
       </ul>
     </div>
     <div
@@ -32,7 +34,7 @@
             name="name"
             placeholder="Твоє ім'я"
             class="col-12 mx-auto p-2"
-          />
+          >
         </div>
       </div>
 
@@ -45,7 +47,7 @@
             name="email"
             placeholder="Ваша електронна адреса"
             class="col-12 mx-auto p-2"
-          />
+          >
         </div>
       </div>
     </div>
@@ -57,7 +59,7 @@
           rows="6"
           :placeholder="parent_id ? `Відповідати на ${parent_name}...` : 'Додати коментар'"
           class="col-12 mx-auto p-2"
-        ></textarea>
+        />
       </div>
     </div>
     <div class>
@@ -65,37 +67,37 @@
         <input
           v-model="notify_replies"
           type="checkbox"
-        />
+        >
         <span class="text-center">Повідомляти мене, коли хто-небудь відповість</span>
       </div>
     </div>
 
     <input
+      v-model="website"
       type="text"
       name="website"
-      v-model="website"
       class="hidden opacity-0 z-0"
       hidden
       tabindex="-1"
       autocomplete="off"
-    />
+    >
 
     <div class="mb-4">
       <div class="form-group">
         <input
           v-show="loading === false"
-          :disabled="loading === true"
           id="btn"
+          :disabled="loading === true"
           type="submit"
           value="Додати коментар"
-        />
+        >
         <button
           v-show="loading === true"
+          id="btn-loading"
           :disabled="loading === false"
           type="loading"
           aria-label="loading"
           name="loading"
-          id="btn-loading"
           class="btn-loading"
         >
           Вантаження
@@ -109,17 +111,17 @@
   </form>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios'
 
 export default {
-  name: "commentForm",
+  name: 'CommentForm',
   props: {
-    post_id: String,
-    parent_id: String,
-    parent_name: String
+    postId: String,
+    parentId: String,
+    parentName: String
   },
 
-  data: function () {
+  data () {
     return {
       errors: [],
       name: null,
@@ -129,35 +131,35 @@ export default {
       website: null,
       loading: false,
       success: false
-    };
+    }
   },
 
   methods: {
-    checkForm: function (e) {
-      this.errors = [];
-      this.success = false;
+    checkForm (e) {
+      this.errors = []
+      this.success = false
 
       if (!this.name) {
-        this.errors.push("Name required");
+        this.errors.push('Name required')
       }
       if (!this.email) {
-        this.errors.push("Email required");
+        this.errors.push('Email required')
       } else if (!this.validEmail(this.email)) {
-        this.errors.push("Valid email required");
+        this.errors.push('Valid email required')
       }
       if (!this.comment) {
-        this.errors.push("Comment required");
+        this.errors.push('Comment required')
       }
 
       if (!this.errors.length) {
-        this.submitForm();
+        this.submitForm()
       }
 
-      e.preventDefault();
+      e.preventDefault()
     },
 
-    submitForm: function () {
-      this.loading = true;
+    submitForm () {
+      this.loading = true
 
       axios
         .post(
@@ -170,36 +172,36 @@ export default {
               email: this.email,
               comment: this.comment,
               notify_replies: this.notify_replies,
-              website: this.website //honeypot field
+              website: this.website // honeypot field
             }
           }),
           {
-            headers: { "Content-Type": "application/json" }
+            headers: { 'Content-Type': 'application/json' }
           }
         )
         .then(({ data }) => {
-          this.loading = false;
+          this.loading = false
 
           if (data.error) {
-            this.errors.push(data.error);
+            this.errors.push(data.error)
           } else if (data.name && data.email && data.comment) {
-            this.name = this.email = this.comment = null;
-            this.success = true;
+            this.name = this.email = this.comment = null
+            this.success = true
           }
         })
-        .catch(error => {
-          this.loading = false;
+        .catch((error) => {
+          this.loading = false
 
-          this.errors.push("Сталася помилка. Повторіть спробу пізніше");
-        });
+          this.errors.push('Сталася помилка. Повторіть спробу пізніше')
+        })
     },
 
-    validEmail: function (email) {
-      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
+    validEmail (email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(email)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

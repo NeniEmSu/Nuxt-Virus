@@ -11,15 +11,23 @@
         </div>
         <div class="col-6">
           <div class="card-body p-0 pl-1">
-            <h5 class="card-title text-left">Ⅰ категорія</h5>
+            <h5 class="card-title text-left">
+              Ⅰ категорія
+            </h5>
             <hr>
             <div class="row">
               <div class="col-6">
-                <p class="card-text text-left">•середній</p>
-                <p class="card-text text-left">•бізнес</p>
+                <p class="card-text text-left">
+                  •середній
+                </p>
+                <p class="card-text text-left">
+                  •бізнес
+                </p>
               </div>
               <div class="col-6">
-                <p class="card-text text-left">•спорт купе</p>
+                <p class="card-text text-left">
+                  •спорт купе
+                </p>
               </div>
             </div>
           </div>
@@ -38,10 +46,16 @@
         </div>
         <div class="col-6">
           <div class="card-body p-0 pl-1">
-            <h5 class="card-title text-left">ⅠⅠ категорія</h5>
+            <h5 class="card-title text-left">
+              ⅠⅠ категорія
+            </h5>
             <hr>
-            <p class="card-text text-left">•середній кросовер</p>
-            <p class="card-text text-left">•позашляховик</p>
+            <p class="card-text text-left">
+              •середній кросовер
+            </p>
+            <p class="card-text text-left">
+              •позашляховик
+            </p>
           </div>
         </div>
       </div>
@@ -58,10 +72,16 @@
         </div>
         <div class="col-6">
           <div class="card-body p-0 pl-1">
-            <h5 class="card-title text-left">ⅠⅠⅠ категорія</h5>
+            <h5 class="card-title text-left">
+              ⅠⅠⅠ категорія
+            </h5>
             <hr>
-            <p class="card-text text-left">•позашляховик</p>
-            <p class="card-text text-left">•повнорозмірний кросовер</p>
+            <p class="card-text text-left">
+              •позашляховик
+            </p>
+            <p class="card-text text-left">
+              •повнорозмірний кросовер
+            </p>
           </div>
         </div>
       </div>
@@ -70,7 +90,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -124,4 +144,3 @@ export default {};
   margin: 0 0 5px 0;
 }
 </style>
-

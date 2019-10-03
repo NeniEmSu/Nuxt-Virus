@@ -6,7 +6,9 @@
       alt="Card image"
     >
     <div class="card-img-overlay">
-      <h5 class="card-title">Car polishing</h5>
+      <h5 class="card-title">
+        Car polishing
+      </h5>
       <div class="row">
         <div class="col-6">
           <p class="card-text">
@@ -19,16 +21,18 @@
           <nuxt-link
             to="#"
             class="btn"
-          >Читати більше</nuxt-link>
+          >
+            Читати більше
+          </nuxt-link>
         </div>
       </div>
-      <p class="card-text"></p>
+      <p class="card-text" />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="scss" scoped>

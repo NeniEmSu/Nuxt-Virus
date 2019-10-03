@@ -6,48 +6,59 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h2 class="info-pages text-center mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages text-center mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <b-img-lazy
               src="~/assets/img/Центральністійки.jpg"
               :alt="heading"
-            >
-
-            </b-img-lazy>
-
+            />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
             <p class>
               {{ question }}
               <br>
               {{ firstParagraph }}
             </p>
 
-            <h2 class="pt-2">ЩО ВХОДИТЬ В ПОСЛУГУ?</h2>
+            <h2 class="pt-2">
+              ЩО ВХОДИТЬ В ПОСЛУГУ?
+            </h2>
             <ul class="ml-3">
               <li
                 v-for="(items, heading) in inclusiveInService"
                 :key="heading"
-              > {{items.services}}</li>
+              >
+                {{ items.services }}
+              </li>
             </ul>
           </div>
         </div>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
         <div class="row mx-auto">
           <div class="col-6 mx-auto p-0 before img-fluid">
-            <font class="before-image-text">До</font>
+            <font class="before-image-text">
+              До
+            </font>
           </div>
 
           <div class="col-6 mx-auto p-0 after img-fluid">
-            <font class="after-image-text">Після</font>
+            <font class="after-image-text">
+              Після
+            </font>
           </div>
         </div>
 
-        <servicesYoutubeVideo :videoUrl="videoUrl" />
+        <servicesYoutubeVideo :video-url="videoUrl" />
 
         <serviceCategories
           :category1="category1"
@@ -71,8 +82,8 @@ export default {
       title: this.heading.slice(0, 60),
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.firstParagraph.slice(0, 320)
         }
       ]
@@ -80,46 +91,46 @@ export default {
   },
   data () {
     return {
-      service: "3",
-      heading: "ПОЛІРУВАННЯ центральних стійок",
-      category1: "800 грн",
-      category2: "900 грн",
-      category3: "1000 грн",
-      videoUrl: "https://www.youtube.com/embed/NpEaa2P7qZI",
-      question: "Для чого полірувати стійки?",
+      service: '3',
+      heading: 'ПОЛІРУВАННЯ центральних стійок',
+      category1: '800 грн',
+      category2: '900 грн',
+      category3: '1000 грн',
+      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      question: 'Для чого полірувати стійки?',
       firstParagraph:
-        "Згодом пластик затирається та мутніє. Крім того, це красиво. Коли весь автомобіль блискучий, центральні стійки виглядають несолідно, якщо їх упустити. Втім, навпаки теж не дуже)) Тому полірування їх важливо робити в комплексі з поліруванням автомобіля.",
+        'Згодом пластик затирається та мутніє. Крім того, це красиво. Коли весь автомобіль блискучий, центральні стійки виглядають несолідно, якщо їх упустити. Втім, навпаки теж не дуже)) Тому полірування їх важливо робити в комплексі з поліруванням автомобіля.',
       inclusiveInService: [
         {
-          services: "Мийка кузова"
+          services: 'Мийка кузова'
         },
         {
           services:
-            "Підготовка до полірування: очищення автоскрабом / глиною, захист пластикових і гумових елементів"
+            'Підготовка до полірування: очищення автоскрабом / глиною, захист пластикових і гумових елементів'
         },
         {
           services:
-            "Глибоке очищення абразивної глиною і підготовка до полірування"
+            'Глибоке очищення абразивної глиною і підготовка до полірування'
         },
         {
-          services: "Абразивне поліровання"
+          services: 'Абразивне поліровання'
         },
         {
-          services: "Фінішне полірування"
+          services: 'Фінішне полірування'
         },
         {
-          services: "Очищення від слідів пасти після полірування"
+          services: 'Очищення від слідів пасти після полірування'
         }
       ],
-      timeTaken: "Час виконання послуги 4 години"
-    };
+      timeTaken: 'Час виконання послуги 4 години'
+    }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 100, { force: true });
+      this.$scrollTo('#top-contact', 100, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

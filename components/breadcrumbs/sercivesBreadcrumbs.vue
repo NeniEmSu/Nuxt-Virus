@@ -5,10 +5,14 @@
   >
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <nuxt-link to="/">Головна</nuxt-link>
+        <nuxt-link to="/">
+          Головна
+        </nuxt-link>
       </li>
       <li class="breadcrumb-item">
-        <nuxt-link to="/posluhy-i-ciny">Послуги і ціни</nuxt-link>
+        <nuxt-link to="/posluhy-i-ciny">
+          Послуги і ціни
+        </nuxt-link>
       </li>
       <li
         class="breadcrumb-item active"
@@ -28,7 +32,7 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 <style>

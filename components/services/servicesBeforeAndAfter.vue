@@ -4,11 +4,15 @@
       <!-- :style="{ backgroundImage: `url(~assets/img/${image})` }"
       :style="{ backgroundImage: 'url(' + require(@/assets/img/${page.image}) + ')' }"
       -->
-      <font class="before-image-text">До</font>
+      <font class="before-image-text">
+        До
+      </font>
     </div>
 
     <div class="col-6 mx-auto p-0 after img-fluid">
-      <font class="after-image-text">Після</font>
+      <font class="after-image-text">
+        Після
+      </font>
     </div>
   </div>
 </template>
@@ -17,10 +21,10 @@
 export default {
   data () {
     return {
-      image: "beforeAfter1_001.jpg"
-    };
+      image: 'beforeAfter1_001.jpg'
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -227,4 +231,3 @@ export default {
   }
 }
 </style>
-

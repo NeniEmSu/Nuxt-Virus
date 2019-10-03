@@ -32,11 +32,13 @@
             v-for="tag in post.tags"
             :key="tag"
             :to="'/blog/category/' + tag"
-          >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+          >
+            {{ tag }}&nbsp;|&nbsp;
+          </nuxt-link>
           <span class="mx-1 text-xs">•</span>
           <a
-            href="#"
             v-scroll-to="'#comments'"
+            href="#"
             class="text-dark"
           >
             {{ post.comments ? post.comments.length : 0 }}
@@ -64,7 +66,9 @@
         <nuxt-link
           to="/blog"
           class="pr-2 text-secondary"
-        >Знайти більше повідомлень у блогах!</nuxt-link>
+        >
+          Знайти більше повідомлень у блогах!
+        </nuxt-link>
       </div>
       <div
         id="comments"
@@ -93,8 +97,8 @@
 </template>
 
 <script>
-import CommentForm from "~/components/contact/CommentForm.vue"
-import Comment from "~/components/contact/Comment.vue"
+import CommentForm from '~/components/contact/CommentForm.vue'
+import Comment from '~/components/contact/Comment.vue'
 
 export default {
   components: {
@@ -103,7 +107,7 @@ export default {
   },
 
   computed: {
-    comments: function () {
+    comments () {
       return this.post.comments
         ? this.post.comments.filter(comment => !comment.parent_id)
         : []
@@ -113,7 +117,7 @@ export default {
     if (payload) {
       return { post: payload }
     } else {
-      let { data } = await app.$axios.post(
+      const { data } = await app.$axios.post(
         process.env.POSTS_URL,
         JSON.stringify({
           filter: { published: true, title_slug: params.title_slug },
@@ -121,12 +125,12 @@ export default {
           populate: 1
         }),
         {
-          headers: { "Content-Type": "application/json" }
+          headers: { 'Content-Type': 'application/json' }
         }
       )
 
       if (!data.entries) {
-        return error({ message: "404 Page not found", statusCode: 404 })
+        return error({ message: '404 Page not found', statusCode: 404 })
       }
 
       return { post: data.entries[0] }
@@ -137,15 +141,11 @@ export default {
     return {
       title: this.post.title.slice(0, 60),
       meta: [
-        { hid: "description", name: "description", content: `${this.post.title} - ${this.post.excerpt}`.slice(0, 320) }
+        { hid: 'description', name: 'description', content: `${this.post.title} - ${this.post.excerpt}`.slice(0, 320) }
       ]
     }
-  },
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
-    }
   }
+
 }
 </script>
 

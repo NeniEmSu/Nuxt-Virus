@@ -5,7 +5,7 @@
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-    ></iframe>
+    />
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
   props: {
     videoUrl: {
       type: String,
-      default: "https://www.youtube.com/embed/NpEaa2P7qZI",
+      default: 'https://www.youtube.com/embed/NpEaa2P7qZI',
       required: true
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

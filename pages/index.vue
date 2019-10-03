@@ -13,13 +13,12 @@
               <source
                 srcset="~/assets/imgWebP/top1.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
                 src="~/assets/img/top1.jpg"
                 class="card-img"
                 alt="ПОЛІРУВАННЯ"
-              >
-              </b-img-lazy>
+              />
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -38,13 +37,12 @@
               <source
                 srcset="~/assets/imgWebP/top2.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
                 src="~/assets/img/top1.jpg"
                 class="card-img"
                 alt="ВОСКОВЕ ПОКРИТТЯ"
-              >
-              </b-img-lazy>
+              />
 
             </picture>
 
@@ -67,21 +65,20 @@
               <source
                 srcset="~/assets/imgWebP/top3.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
-                src="~/assets/img/top3.jpg"
                 v-lazy="require('~/assets/img/top3.jpg')"
+                src="~/assets/img/top3.jpg"
                 class="card-img"
                 alt="МИЙКА МОТОРУ"
-              >
-              </b-img-lazy>
+              />
 
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 МИЙКА
-                <br />МОТОРУ
+                <br>МОТОРУ
               </h2>
             </div>
           </div>
@@ -95,14 +92,13 @@
               <source
                 srcset="~/assets/imgWebP/top4.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
-                src="~/assets/img/top4.jpg"
                 v-lazy="require('~/assets/img/top4.jpg')"
+                src="~/assets/img/top4.jpg"
                 class="card-img"
                 alt="ХІМЧИСТКА"
-              >
-              </b-img-lazy>
+              />
 
             </picture>
 
@@ -122,21 +118,20 @@
               <source
                 srcset="~/assets/imgWebP/top5.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
-                src="~/assets/img/top5.jpg"
                 v-lazy="require('~/assets/img/top5.jpg')"
+                src="~/assets/img/top5.jpg"
                 class="card-img"
                 alt="РЕСТАВРАЦІЯ СКОЛІВ"
-              >
-              </b-img-lazy>
+              />
 
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
               <h2 class="card-title">
                 РЕСТАВРАЦІЯ
-                <br />СКОЛІВ
+                <br>СКОЛІВ
               </h2>
             </div>
           </div>
@@ -150,14 +145,13 @@
               <source
                 srcset="~/assets/imgWebP/top6.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
-                src="~/assets/img/top6.jpg"
                 v-lazy="require('~/assets/img/top6.jpg')"
+                src="~/assets/img/top6.jpg"
                 class="card-img"
                 alt="КЕРАМІЧНЕ ПОКРИТТЯ"
-              >
-              </b-img-lazy>
+              />
 
             </picture>
 
@@ -179,21 +173,20 @@
               <source
                 srcset="~/assets/imgWebP/top7.webp"
                 type="image/webp"
-              />
+              >
               <b-img-lazy
-                src="~/assets/img/top7.jpg"
                 v-lazy="require('~/assets/img/top7.jpg')"
+                src="~/assets/img/top7.jpg"
                 class="card-img"
                 alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
-              >
-              </b-img-lazy>
+              />
 
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
               <h2 class="card-title">
                 ПЕРЕДПРОДАЖНА
-                <br />ПІДГОТОВКА
+                <br>ПІДГОТОВКА
               </h2>
             </div>
           </div>
@@ -267,7 +260,7 @@
 </template>
 
 <script>
-import worksGallery from "@/components/gallery/worksGallery.vue"
+import worksGallery from '@/components/gallery/worksGallery.vue'
 
 export default {
   components: {
@@ -282,15 +275,15 @@ export default {
 
   head () {
     return {
-      title: "Детейлінг центр Virus - Хімчистка, полірування, реставрація авто".slice(
+      title: 'Детейлінг центр Virus - Хімчистка, полірування, реставрація авто'.slice(
         0,
         60
       ),
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: "Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.".slice(
+          hid: 'description',
+          name: 'description',
+          content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'.slice(
             0,
             320
           )
@@ -308,22 +301,17 @@ export default {
         populate: 1
       }),
       {
-        headers: { "Content-Type": "application/json" }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
 
     if (!data.entries[0]) {
-      return error({ message: "404 Page not found", statusCode: 404 })
+      return error({ message: '404 Page not found', statusCode: 404 })
     }
 
     return { products: data.entries }
-  },
-
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
-    }
   }
+
 }
 </script>
 

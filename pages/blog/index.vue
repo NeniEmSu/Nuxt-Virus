@@ -21,7 +21,7 @@
       </nav>
       <h1>Блог</h1>
     </div>
-    <hr class="top-separator" />
+    <hr class="top-separator">
     <div
       v-for="post in posts"
       :key="`${post.title} ${post._created}`"
@@ -32,7 +32,7 @@
           class="card-img img-fliud"
           :src="post.image.path"
           :alt="post.title"
-        />
+        >
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -41,7 +41,9 @@
                 :key="tag"
                 :to="'/blog/category/' + tag"
                 class="desktop-tablet-only"
-              >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+              >
+                {{ tag }}&nbsp;|&nbsp;
+              </nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
@@ -62,17 +64,21 @@
                 {{ post.title }}
               </h2>
             </nuxt-link>
-            <p class="card-text">Дата створення {{ post._created | toDate }}</p>
+            <p class="card-text">
+              Дата створення {{ post._created | toDate }}
+            </p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
             <nuxt-link
               class="btn"
               :to="'/blog/' + post.title_slug"
-            >ЧИТАТИ</nuxt-link>
+            >
+              ЧИТАТИ
+            </nuxt-link>
           </div>
         </div>
       </div>
-      <hr class="separator" />
+      <hr class="separator">
     </div>
     <div class="container">
       <div
@@ -82,7 +88,9 @@
         <nuxt-link
           to="/blog/pages/2"
           class="text-info"
-        >Наступна сторінка</nuxt-link>
+        >
+          Наступна сторінка
+        </nuxt-link>
       </div>
     </div>
 
@@ -94,7 +102,7 @@
 <script>
 export default {
   meta: {
-    animation: "fade-in-right"
+    animation: 'fade-in-right'
   },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
@@ -106,24 +114,24 @@ export default {
         populate: 1
       }),
       {
-        headers: { "Content-Type": "application/json" }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
 
     if (!data.entries[0]) {
-      return error({ message: "404 Page not found", statusCode: 404 })
+      return error({ message: '404 Page not found', statusCode: 404 })
     }
 
     return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total }
   },
   head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "блог - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'блог - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: `Повідомлення в блозі - Усі пізні повідомлення в блозі на номері сторінці 1 від Детейлінг центр Virus Тернопіль.`
         }
       ]
@@ -138,7 +146,7 @@ export default {
 
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 100, { force: true });
+      this.$scrollTo('#top-contact', 100, { force: true })
     }
   }
 }

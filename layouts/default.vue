@@ -14,12 +14,11 @@
     </main>
 
     <TheFooter />
-
   </div>
 </template>
 <script>
-import TheNavbar from "@/components/TheNavbar.vue";
-import TheFooter from "@/components/TheFooter.vue";
+import TheNavbar from '@/components/TheNavbar.vue'
+import TheFooter from '@/components/TheFooter.vue'
 
 export default {
   components: {
@@ -31,14 +30,14 @@ export default {
     return {
       link: [
         {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "/favicon.ico"
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">

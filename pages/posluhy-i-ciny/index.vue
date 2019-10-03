@@ -23,13 +23,12 @@
         <source
           :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)"
           type="image/webp"
-        />
+        >
         <b-img-lazy
           class="col-12 m-auto img-fluid"
           :src="require(`~/assets/img/${image + '.jpg'}`)"
           :alt="description"
-        >
-        </b-img-lazy>
+        />
 
       </picture>
 
@@ -70,16 +69,14 @@
                 class="card-img img-fluid"
                 style="width: 290px;"
                 alt="mercedes-png-white"
-              >
-              </b-img-lazy>
-
+              />
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
                   Ⅰ категорія
                 </h5>
-                <hr />
+                <hr>
                 <div class="row">
                   <div class="col-6">
                     <p class="card-text text-left">
@@ -112,16 +109,14 @@
                 class="card-img img-fluid"
                 style="width: 290px;"
                 alt="car-jeep-grand-cherokee-srt-white-car-png-image"
-              >
-              </b-img-lazy>
-
+              />
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
                   ⅠⅠ категорія
                 </h5>
-                <hr />
+                <hr>
                 <p class="card-text text-left">
                   •середній кросовер
                 </p>
@@ -145,16 +140,14 @@
                 class="card-img img-fluid"
                 style="width: 290px;"
                 alt="Black-Range-Rover-Piano-Car"
-              >
-              </b-img-lazy>
-
+              />
             </div>
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
                   ⅠⅠⅠ категорія
                 </h5>
-                <hr />
+                <hr>
                 <p class="card-text text-left">
                   •позашляховик
                 </p>
@@ -177,9 +170,7 @@
             Оберіть категорію автомобіля
           </h3>
           <p class="col-12 choose-brand-desc">
-
             Введіть можель свого авто для визначення категорії
-
           </p>
 
           <div class="form-group mx-auto">
@@ -203,7 +194,9 @@
                 v-for="items in carBrandOptions"
                 :key="items.name"
                 :value="items.name"
-              >{{ items.name }}</option>
+              >
+                {{ items.name }}
+              </option>
             </select>
           </div>
 
@@ -255,8 +248,7 @@
                 class="card-img"
                 :src="require(`~/assets/img/${polish.polishingImg + '.jpg'}`)"
                 :alt="polish.polishingTitle"
-              >
-              </b-img-lazy>
+              />
 
               <div class="card-img-overlay">
                 <h5 class="card-title crop">
@@ -293,7 +285,9 @@
                     <nuxt-link
                       :to="polish.polishingLink"
                       class="btn"
-                    >Читати більше</nuxt-link>
+                    >
+                      Читати більше
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
@@ -315,8 +309,7 @@
                 class="card-img"
                 :src="require(`~/assets/img/${cleaner.cleanersImg + '.jpg'}`)"
                 :alt="cleaner.cleanersTitle"
-              >
-              </b-img-lazy>
+              />
 
               <div class="card-img-overlay cleaning">
                 <h5 class="card-title crop">
@@ -353,7 +346,9 @@
                     <nuxt-link
                       :to="cleaner.cleanersLink"
                       class="btn"
-                    >Читати більше</nuxt-link>
+                    >
+                      Читати більше
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
@@ -410,7 +405,9 @@
                         <nuxt-link
                           :to="WaxCover.WaxCoversLink"
                           class="btn"
-                        >Читати більше</nuxt-link>
+                        >
+                          Читати більше
+                        </nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -436,7 +433,7 @@
                     <h5 class="col-12 px-0">
                       Керамічне покриття кузова
                     </h5>
-                    <hr />
+                    <hr>
                     <div class="row">
                       <div class="col-3 mt-2 text-left mx-md-auto pr-0">
                         <p class="subtext">
@@ -458,9 +455,7 @@
                         style="padding-right: 13px !important;"
                       >
                         <p class="subtext">
-
                           Керамічне покриття окремих деталей
-
                         </p>
                       </div>
                     </div>
@@ -496,7 +491,9 @@
                         <nuxt-link
                           :to="ceramicCoat.ceramicCoatingLink"
                           class="btn"
-                        >Читати більше</nuxt-link>
+                        >
+                          Читати більше
+                        </nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -510,9 +507,7 @@
                 class="col-10 col-sm-12 col-md-9 col-lg-6 mx-auto p-0 p-lg-2"
               >
                 <h2 class="text-center card-heading">
-
                   Передпродажна підготовка
-
                 </h2>
                 <div class="card two-cards-seprate-titles service-twelve">
                   <div class="card-body" />
@@ -521,20 +516,16 @@
                     <h5 class="col-12 px-0">
                       Комплекс
                     </h5>
-                    <hr style="width: 100%;" />
+                    <hr style="width: 100%;">
                     <div class="row">
                       <div class="col-4 mt-2 text-left mx-md-auto pr-1">
                         <p class="subtext">
-
                           Трьохфазна мийка авто + Чистка ковроліну підлоги
-
                         </p>
                       </div>
                       <div class="col-4 mt-2 text-left mx-md-auto p-1">
                         <p class="subtext">
-
                           Чистка дверних карт + Чистка панелі
-
                         </p>
                       </div>
                       <div class="col-4 mt-2 text-left mx-md-auto pl-0 pr-2">
@@ -576,7 +567,9 @@
                         <nuxt-link
                           :to="PreSalePrep.PreSalePreparationsLink"
                           class="btn"
-                        >Читати більше</nuxt-link>
+                        >
+                          Читати більше
+                        </nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -600,8 +593,7 @@
                   require(`~/assets/img/${addition.additionalImg + '.jpg'}`)
                 "
                 :alt="addition.additionalTitle"
-              >
-              </b-img-lazy>
+              />
 
               <div class="card-img-overlay">
                 <h5 class="card-title crop">
@@ -678,7 +670,9 @@
                     <nuxt-link
                       :to="addition.additionalLink"
                       class="btn"
-                    >Читати більше</nuxt-link>
+                    >
+                      Читати більше
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
@@ -698,316 +692,310 @@
 import carBrandOptions from '~/plugins/api/carModelOptions'
 export default {
   meta: {
-    animation: "fade-in-right"
+    animation: 'fade-in-right'
   },
 
   head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "Послуги і Ціни - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'Послуги і Ціни - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: "Послуги і Ціни - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри. "
+          hid: 'description',
+          name: 'description',
+          content: 'Послуги і Ціни - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри. '
         }
       ]
     }
   },
   data () {
-
     return {
       brandSelect: null,
       service: null,
-      image: "services-car-goup-all",
+      image: 'services-car-goup-all',
       description:
-        " white mercedes , jeep grand cherokee srt white & Black Range Rover Piano",
+        ' white mercedes , jeep grand cherokee srt white & Black Range Rover Piano',
       isActive: false,
       selectedVariant: 0,
-      polishingClass: "service-one",
+      polishingClass: 'service-one',
       selected: undefined,
       variants: [
         {
           variantId: 1,
-          variantTitle: "Ⅰ категорія",
-          variantDescription: "середній бізнес спорт купе",
-          variantImage: "services-car-goup-var-1"
+          variantTitle: 'Ⅰ категорія',
+          variantDescription: 'середній бізнес спорт купе',
+          variantImage: 'services-car-goup-var-1'
         },
         {
           variantId: 2,
-          variantTitle: "ⅠⅠ категорія",
-          variantDescription: "середній кросовер позашляховик",
-          variantImage: "services-car-goup-var-2"
+          variantTitle: 'ⅠⅠ категорія',
+          variantDescription: 'середній кросовер позашляховик',
+          variantImage: 'services-car-goup-var-2'
         },
         {
           variantId: 3,
-          variantTitle: "ⅠⅠⅠ категорія",
-          variantDescription: "повнорозмірний кросовер позашляховик",
-          variantImage: "services-car-goup-var-3"
+          variantTitle: 'ⅠⅠⅠ категорія',
+          variantDescription: 'повнорозмірний кросовер позашляховик',
+          variantImage: 'services-car-goup-var-3'
         }
       ],
       polishing: [
         {
-          polishingId: "01",
-          polishingTitle: "Полірування автомобіля",
-          polishingCost: "5999",
-          polishingCostVar1: "6999",
-          polishingCostVar2: "8499",
-          polishingLink: "/posluhy-i-ciny/poliruvannja-avtomobilja",
+          polishingId: '01',
+          polishingTitle: 'Полірування автомобіля',
+          polishingCost: '5999',
+          polishingCostVar1: '6999',
+          polishingCostVar2: '8499',
+          polishingLink: '/posluhy-i-ciny/poliruvannja-avtomobilja',
 
-          polishingImg: "services1"
+          polishingImg: 'services1'
         },
         {
-          polishingId: "02",
-          polishingTitle: "Полірування фар",
-          polishingCost: "600",
-          polishingCostVar1: "700",
-          polishingCostVar2: "800",
-          polishingLink: "/posluhy-i-ciny/poliruvannja-far",
+          polishingId: '02',
+          polishingTitle: 'Полірування фар',
+          polishingCost: '600',
+          polishingCostVar1: '700',
+          polishingCostVar2: '800',
+          polishingLink: '/posluhy-i-ciny/poliruvannja-far',
 
-          polishingImg: "services2"
+          polishingImg: 'services2'
         },
         {
-          polishingId: "03",
-          polishingTitle: "Полірування вставок салону",
-          polishingCost: "500",
-          polishingCostVar1: "600",
-          polishingCostVar2: "700",
-          polishingLink: "/posluhy-i-ciny/poliruvannja-vstavok-salonu",
+          polishingId: '03',
+          polishingTitle: 'Полірування вставок салону',
+          polishingCost: '500',
+          polishingCostVar1: '600',
+          polishingCostVar2: '700',
+          polishingLink: '/posluhy-i-ciny/poliruvannja-vstavok-salonu',
 
-          polishingImg: "services3"
+          polishingImg: 'services3'
         },
         {
-          polishingId: "04",
-          polishingTitle: "Полірування центральних стійок",
-          polishingCost: "800",
-          polishingCostVar1: "900",
-          polishingCostVar2: "1000",
-          polishingLink: "/posluhy-i-ciny/poliruvannja-cjentralnih-stijok",
+          polishingId: '04',
+          polishingTitle: 'Полірування центральних стійок',
+          polishingCost: '800',
+          polishingCostVar1: '900',
+          polishingCostVar2: '1000',
+          polishingLink: '/posluhy-i-ciny/poliruvannja-cjentralnih-stijok',
 
-          polishingImg: "services4"
+          polishingImg: 'services4'
         }
       ],
       cleaners: [
         {
-          cleanersId: "05",
-          cleanersTitle: "Хімчистка",
-          cleanersCost: "1999",
-          cleanersCostVar1: "2499",
-          cleanersCostVar2: "3199",
-          cleanersLink: "/posluhy-i-ciny/himchistka",
+          cleanersId: '05',
+          cleanersTitle: 'Хімчистка',
+          cleanersCost: '1999',
+          cleanersCostVar1: '2499',
+          cleanersCostVar2: '3199',
+          cleanersLink: '/posluhy-i-ciny/himchistka',
 
-          cleanersImg: "services5"
+          cleanersImg: 'services5'
         },
         {
-          cleanersId: "06",
-          cleanersTitle: "Хімчистка колесних арок, підвіски, дисків",
-          cleanersCost: "800",
-          cleanersCostVar1: "0",
-          cleanersCostVar2: "0",
+          cleanersId: '06',
+          cleanersTitle: 'Хімчистка колесних арок, підвіски, дисків',
+          cleanersCost: '800',
+          cleanersCostVar1: '0',
+          cleanersCostVar2: '0',
           cleanersLink:
-            "/posluhy-i-ciny/himchistka-koljesnih-arok-pidviski-diskiv",
+            '/posluhy-i-ciny/himchistka-koljesnih-arok-pidviski-diskiv',
 
-          cleanersImg: "services6"
+          cleanersImg: 'services6'
         },
         {
-          cleanersId: "07",
-          cleanersTitle: "Хімчистка передніх сидінь",
-          cleanersCost: "275",
-          cleanersCostVar1: "330",
-          cleanersCostVar2: "385",
-          cleanersLink: "/posluhy-i-ciny/himchistka-pjerjednih-sidin",
+          cleanersId: '07',
+          cleanersTitle: 'Хімчистка передніх сидінь',
+          cleanersCost: '275',
+          cleanersCostVar1: '330',
+          cleanersCostVar2: '385',
+          cleanersLink: '/posluhy-i-ciny/himchistka-pjerjednih-sidin',
 
-          cleanersImg: "services7"
+          cleanersImg: 'services7'
         },
         {
-          cleanersId: "08",
-          cleanersTitle: "Хімчистка задніх сидінь",
-          cleanersCost: "495",
-          cleanersCostVar1: "605",
-          cleanersCostVar2: "660",
-          cleanersLink: "/posluhy-i-ciny/himchistka-zadnih-sidin",
+          cleanersId: '08',
+          cleanersTitle: 'Хімчистка задніх сидінь',
+          cleanersCost: '495',
+          cleanersCostVar1: '605',
+          cleanersCostVar2: '660',
+          cleanersLink: '/posluhy-i-ciny/himchistka-zadnih-sidin',
 
-          cleanersImg: "services8"
+          cleanersImg: 'services8'
         }
       ],
       WaxCovers: [
         {
-          WaxCoversId: "09",
-          WaxCoversTitle: "Покриття твердим універсальним воском Soft 99",
-          WaxCoversCost: "1200",
-          WaxCoversCostVar1: "1300",
-          WaxCoversCostVar2: "1400",
+          WaxCoversId: '09',
+          WaxCoversTitle: 'Покриття твердим універсальним воском Soft 99',
+          WaxCoversCost: '1200',
+          WaxCoversCostVar1: '1300',
+          WaxCoversCostVar2: '1400',
           WaxCoversLink:
-            "/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99",
-          WaxCoversClass: "service-nine"
+            '/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99',
+          WaxCoversClass: 'service-nine'
         },
         {
-          WaxCoversId: "10",
-          WaxCoversTitle: "Рідке скло",
-          WaxCoversCost: "3000",
-          WaxCoversCostVar1: "0",
-          WaxCoversCostVar2: "0",
-          WaxCoversLink: "/posluhy-i-ciny/ridkje-sklo",
-          WaxCoversClass: "service-ten"
+          WaxCoversId: '10',
+          WaxCoversTitle: 'Рідке скло',
+          WaxCoversCost: '3000',
+          WaxCoversCostVar1: '0',
+          WaxCoversCostVar2: '0',
+          WaxCoversLink: '/posluhy-i-ciny/ridkje-sklo',
+          WaxCoversClass: 'service-ten'
         }
       ],
       ceramicCoating: [
         {
-          ceramicCoatingId: "11",
-          ceramicCoatingCost: "12999",
-          ceramicCoatingCostVar1: "14499",
-          ceramicCoatingCostVar2: "15999",
-          ceramicCoatingLink: "/posluhy-i-ciny/kjeramichnje-pokrittja-kuzova"
+          ceramicCoatingId: '11',
+          ceramicCoatingCost: '12999',
+          ceramicCoatingCostVar1: '14499',
+          ceramicCoatingCostVar2: '15999',
+          ceramicCoatingLink: '/posluhy-i-ciny/kjeramichnje-pokrittja-kuzova'
         }
       ],
       PreSalePreparations: [
         {
-          PreSalePreparationsId: "12",
-          PreSalePreparationsCost: "1100",
-          PreSalePreparationsCostVar1: "1200",
-          PreSalePreparationsCostVar2: "1300",
-          PreSalePreparationsLink: "/posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
+          PreSalePreparationsId: '12',
+          PreSalePreparationsCost: '1100',
+          PreSalePreparationsCostVar1: '1200',
+          PreSalePreparationsCostVar2: '1300',
+          PreSalePreparationsLink: '/posluhy-i-ciny/pjerjedprodazhna-pidgotovka'
         }
       ],
 
       additional: [
         {
-          additionalId: "13",
-          additionalTitle: "Реставнація подряпин на кузові",
-          additionalCost: "130",
-          additionalCostHigh: "250",
+          additionalId: '13',
+          additionalTitle: 'Реставнація подряпин на кузові',
+          additionalCost: '130',
+          additionalCostHigh: '250',
           fixedRange: true,
-          additionalLink: "/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi",
+          additionalLink: '/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi',
 
-          additionalImg: "services13"
+          additionalImg: 'services13'
         },
         {
-          additionalId: "14",
-          additionalTitle: "Перешиття шкіряних деталей салону",
-          additionalCost: "500",
-          additionalCostHigh: "3000",
+          additionalId: '14',
+          additionalTitle: 'Перешиття шкіряних деталей салону',
+          additionalCost: '500',
+          additionalCostHigh: '3000',
           fixedRange: true,
           additionalLink:
-            "/posluhy-i-ciny/pjerjeshittja-shkirjanih-djetaljej-salonu",
+            '/posluhy-i-ciny/pjerjeshittja-shkirjanih-djetaljej-salonu',
 
-          additionalImg: "services14"
+          additionalImg: 'services14'
         },
         {
-          additionalId: "15",
-          additionalTitle: "Антидощ",
-          additionalCost: "600",
-          additionalCostHigh: "1200",
+          additionalId: '15',
+          additionalTitle: 'Антидощ',
+          additionalCost: '600',
+          additionalCostHigh: '1200',
           fixedRange: true,
-          additionalLink: "/posluhy-i-ciny/antidosh",
+          additionalLink: '/posluhy-i-ciny/antidosh',
 
-          additionalImg: "services15"
+          additionalImg: 'services15'
         },
         {
-          additionalId: "16",
-          additionalTitle: "Мийка мотору парою",
-          additionalCost: "500",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "/posluhy-i-ciny/mijka-motoru-paroju",
+          additionalId: '16',
+          additionalTitle: 'Мийка мотору парою',
+          additionalCost: '500',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: '/posluhy-i-ciny/mijka-motoru-paroju',
 
-          additionalImg: "services16"
+          additionalImg: 'services16'
         },
         {
-          additionalId: "17",
-          additionalTitle: "Шумоізоляція",
-          additionalCost: "330",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '17',
+          additionalTitle: 'Шумоізоляція',
+          additionalCost: '330',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           dollar: true,
-          additionalLink: "/posluhy-i-ciny/shumoizoljacija",
+          additionalLink: '/posluhy-i-ciny/shumoizoljacija',
 
-          additionalImg: "services17"
+          additionalImg: 'services17'
         },
         {
-          additionalId: "18",
-          additionalTitle: "Видалення запахів Бактерецидна обробка",
-          additionalCost: "500",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '18',
+          additionalTitle: 'Видалення запахів Бактерецидна обробка',
+          additionalCost: '500',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           additionalLink:
-            "/posluhy-i-ciny/vidaljennja-zapahiv-baktjerjecidna-obrobka",
+            '/posluhy-i-ciny/vidaljennja-zapahiv-baktjerjecidna-obrobka',
 
-          additionalImg: "services18"
+          additionalImg: 'services18'
         },
         {
-          additionalId: "19",
-          additionalTitle: "Видалення вмятин без покраски PDR",
-          additionalCost: "0",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '19',
+          additionalTitle: 'Видалення вмятин без покраски PDR',
+          additionalCost: '0',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           additionalLink:
-            "/posluhy-i-ciny/vidaljennja-vmjatin-bjez-pokraski-pdr",
+            '/posluhy-i-ciny/vidaljennja-vmjatin-bjez-pokraski-pdr',
 
-          additionalImg: "services19"
+          additionalImg: 'services19'
         },
         {
-          additionalId: "20",
-          additionalTitle: "Поклейка антигравійної плівки",
-          additionalCost: "1000",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "/posluhy-i-ciny/pokljejka-antigravijnoi-plivki",
+          additionalId: '20',
+          additionalTitle: 'Поклейка антигравійної плівки',
+          additionalCost: '1000',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: '/posluhy-i-ciny/pokljejka-antigravijnoi-plivki',
 
-          additionalImg: "services20"
+          additionalImg: 'services20'
         },
         {
-          additionalId: "21",
-          additionalTitle: "Очистка кондиціонера",
-          additionalCost: "1200",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "/posluhy-i-ciny/ochistka-kondicionjera",
+          additionalId: '21',
+          additionalTitle: 'Очистка кондиціонера',
+          additionalCost: '1200',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: '/posluhy-i-ciny/ochistka-kondicionjera',
 
-          additionalImg: "services21"
+          additionalImg: 'services21'
         },
         {
-          additionalId: "22",
-          additionalTitle: "Чистка дисків",
-          additionalCost: "250",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '22',
+          additionalTitle: 'Чистка дисків',
+          additionalCost: '250',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           perItem: true,
-          additionalLink: "/posluhy-i-ciny/chistka-diskiv",
+          additionalLink: '/posluhy-i-ciny/chistka-diskiv',
 
-          additionalImg: "services22"
+          additionalImg: 'services22'
         },
         {
-          additionalId: "23",
-          additionalTitle: "Керамічне покриття сидінь",
-          additionalCost: "500",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
+          additionalId: '23',
+          additionalTitle: 'Керамічне покриття сидінь',
+          additionalCost: '500',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
           perItem: true,
-          additionalLink: "/posluhy-i-ciny/kjeramichnje-pokrittja-sidin",
+          additionalLink: '/posluhy-i-ciny/kjeramichnje-pokrittja-sidin',
 
-          additionalImg: "services23"
+          additionalImg: 'services23'
         },
         {
-          additionalId: "24",
-          additionalTitle: "Озонація",
-          additionalCost: "1000",
-          additionalCostVar1: "0",
-          additionalCostVar2: "0",
-          additionalLink: "/posluhy-i-ciny/ozonacija",
+          additionalId: '24',
+          additionalTitle: 'Озонація',
+          additionalCost: '1000',
+          additionalCostVar1: '0',
+          additionalCostVar2: '0',
+          additionalLink: '/posluhy-i-ciny/ozonacija',
 
-          additionalImg: "services24"
+          additionalImg: 'services24'
         }
       ],
       carBrandOptions
     }
   },
 
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
-    }
-  },
   methods: {
     changeCars (variantImage) {
       this.image = variantImage

@@ -8,65 +8,65 @@
       <img
         src="~/assets/img/icons8-shopping-bag-filled-100.png"
         alt="Cart Icon"
-      />
+      >
       <div
         id="show-total"
         class="text-center mt-n3 ml-n3"
       >
         <span
-          style="text-decoration: none;"
           id="item-count"
+          style="text-decoration: none;"
           class="text-center"
-        >{{cartSize}}</span>
+        >{{ cartSize }}</span>
       </div>
     </b-button>
     <style>
-    #modal-xl-mobile {
+      #modal-xl-mobile {
       padding-left: 0px !important;
-    }
-
-    .modal-body {
-      padding: 22px 85px 85px;
-    }
-
-    .modal-content {
-      border-radius: 20px;
-    }
-
-    .modal-title {
-      margin-bottom: 0;
-      line-height: 1.5;
-      margin: auto 0 auto auto;
-    }
-
-    @media (max-width: 991px) {
-      .modal-dialog {
-        max-width: 95%;
-      }
-    }
-
-    @media (max-width: 577px) {
-      .modal-dialog {
-        margin-top: 50px;
-        width: 100vw;
-        min-width: 100vw;
-        margin: 50px auto 0;
       }
 
       .modal-body {
-        padding: 5px;
+      padding: 22px 85px 85px;
+      }
+
+      .modal-content {
+      border-radius: 20px;
+      }
+
+      .modal-title {
+      margin-bottom: 0;
+      line-height: 1.5;
+      margin: auto 0 auto auto;
+      }
+
+      @media (max-width: 991px) {
+      .modal-dialog {
+      max-width: 95%;
+      }
+      }
+
+      @media (max-width: 577px) {
+      .modal-dialog {
+      margin-top: 50px;
+      width: 100vw;
+      min-width: 100vw;
+      margin: 50px auto 0;
+      }
+
+      .modal-body {
+      padding: 5px;
 
       }
 
       .modal-content {
-        border-radius: 0px;
-        padding: 0;
+      border-radius: 0px;
+      padding: 0;
       }
-    }
+      }
     </style>
     <b-modal
-      v-model="mobileModalShow"
       id="modal-xl-mobile"
+      v-model="mobileModalShow"
       size="xl"
       title="Корзина"
       class="modal-content text-center"
@@ -78,14 +78,12 @@
         v-show="asyncState !== 'pending'"
       >
         <keep-alive>
-
           <component
-            ref="currentStep"
             :is="currentStep"
-            @update='processstep'
-            :cartFormData="form"
-          ></component>
-
+            ref="currentStep"
+            :cart-form-data="form"
+            @update="processstep"
+          />
         </keep-alive>
 
         <div
@@ -95,10 +93,12 @@
           <b>Виправте такі помилку(и):</b>
           <ol>
             <li
-              class="ml-3"
               v-for="error in errors"
               :key="error"
-            >{{ error }}</li>
+              class="ml-3"
+            >
+              {{ error }}
+            </li>
           </ol>
         </div>
         <div
@@ -113,31 +113,31 @@
             <b-button
               id="clear-cart"
               to="/mahazyn"
-              @click="previousButtonAction"
               class="btn cart-navigarion go-back"
+              @click="previousButtonAction"
             >
-              {{!isLastStep ? 'Повернутися' : 'Редагувати деталі'}}
-
+              {{ !isLastStep ? 'Повернутися' : 'Редагувати деталі' }}
             </b-button>
-
           </div>
           <div class="col-6 text-right my-2">
             <button
               :disabled="!cartSize || !canGoNext"
-              @click="nextButtonAction"
               type="submit"
               class="btn cart-navigarion order"
-            >{{isLastStep ? 'підтвердити Замовити' : 'Замовити'}} </button>
-
+              @click="nextButtonAction"
+            >
+              {{ isLastStep ? 'підтвердити Замовити' : 'Замовити' }}
+            </button>
           </div>
-          <p class="text-center w-md-50 mt-3 mx-auto">Оформіть замовлення, і наш менеджер
-            зв’яжеться з вами найближчим часом</p>
+          <p class="text-center w-md-50 mt-3 mx-auto">
+            Оформіть замовлення, і наш менеджер
+            зв’яжеться з вами найближчим часом
+          </p>
         </div>
 
         <div class="progress-bar">
-          <div :style="`width: ${progress}%;`"></div>
+          <div :style="`width: ${progress}%;`" />
         </div>
-
       </div>
 
       <div v-else>
@@ -145,33 +145,33 @@
       </div>
 
       <div
-        class="loading-wrapper"
         v-if="asyncState === 'pending'"
+        class="loading-wrapper"
       >
         <div class="loader mx-auto">
           <img
             src="~/assets/img/spinner.svg"
             alt="spinner"
           >
-          <p class="mx-auto">Зачекайте Будь ласка... Ваше замовлення обробляється!</p>
-
+          <p class="mx-auto">
+            Зачекайте Будь ласка... Ваше замовлення обробляється!
+          </p>
         </div>
       </div>
-
     </b-modal>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import { required, minLength, email } from "vuelidate/lib/validators";
-import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+import axios from 'axios'
+import { required, minLength, email } from 'vuelidate/lib/validators'
+import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 import cities from '~/plugins/api/ua.json'
 import shopCartPurchaseDetails from '~/components/shop/shopCartPurchaseDetails'
 import shopCartReviewOrder from '~/components/shop/shopCartReviewOrder'
 import shopCartSuccessPage from '~/components/shop/shopCartSuccessPage'
 export default {
-  name: 'shopCart',
+  name: 'ShopCart',
 
   components: {
     shopCartPurchaseDetails,
@@ -197,16 +197,16 @@ export default {
         city: null,
         cartphoneNumber: null
       }
-    };
+    }
   },
 
   computed: {
     ...mapState([
-      "cart"
+      'cart'
     ]),
     ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
+      'cartSize',
+      'cartTotalAmount'
     ]),
     progress () {
       return this.currentStepNumber / this.length * 100
@@ -241,26 +241,26 @@ export default {
     //     })
     // },
 
-    checkForm: function (e) {
-      this.errors = [];
-      this.success = false;
+    checkForm (e) {
+      this.errors = []
+      this.success = false
 
       if (!this.form.name) {
-        this.errors.push("Ім’я вимагається");
+        this.errors.push('Ім’я вимагається')
       }
       if (!this.this.form.postBranch) {
-        this.errors.push("Post Branch вимагається");
+        this.errors.push('Post Branch вимагається')
       }
       if (!this.form.city) {
-        this.errors.push("City вимагається");
+        this.errors.push('City вимагається')
       }
       if (!this.form.cartphoneNumber) {
-        this.errors.push("Телефон вимагається");
+        this.errors.push('Телефон вимагається')
       }
       if (!this.errors.length) {
-        this.submitForm();
+        this.submitForm()
       }
-      e.preventDefault();
+      e.preventDefault()
     },
 
     submitOrder () {
@@ -282,7 +282,7 @@ export default {
           }),
           {
             headers: {
-              "Content-Type": "application/json"
+              'Content-Type': 'application/json'
             }
           }
         )
@@ -290,25 +290,25 @@ export default {
           this.asyncState = 'success'
 
           if (data.error) {
-            this.errors.push(data.error);
+            this.errors.push(data.error)
           } else if (
             data.form.name &&
             data.form.postBranch &&
             data.form.city &&
             data.form.cartphoneNumber
           ) {
-            this.form.name = this.form.postBranch = this.form.city = this.form.cartphoneNumber = null;
+            this.form.name = this.form.postBranch = this.form.city = this.form.cartphoneNumber = null
             this.$store.dispatch('checkout')
-            this.success = true;
+            this.success = true
             console.log('form submitted', this.form)
             this.asyncState = 'success'
             this.currentStepNumber++
           }
         })
-        .catch(error => {
+        .catch((error) => {
           this.asyncState = 'success'
-          this.errors.push("Сталася помилка. Повторіть спробу пізніше");
-        });
+          this.errors.push('Сталася помилка. Повторіть спробу пізніше')
+        })
     },
 
     nextButtonAction () {
@@ -336,20 +336,19 @@ export default {
       this.$nextTick(() => {
         this.canGoNext = !this.$refs.currentStep.$v.$invalid
       })
-
     },
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     },
     removeFromCart (id) {
-      this.$store.dispatch("removeFromCart", id);
+      this.$store.dispatch('removeFromCart', id)
     },
     deleteFromCart (id) {
-      this.$store.dispatch("deleteFromCart", id);
+      this.$store.dispatch('deleteFromCart', id)
     }
   }
 
-};
+}
 </script>
 
 <style lang="scss" scoped>

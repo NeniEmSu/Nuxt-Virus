@@ -8,12 +8,10 @@
           aria-label="Virus Logo"
         >
           <b-img-lazy
-            src="~/assets/img/virus-logo.svg"
             v-lazy="require('~/assets/img/virus-logo.svg')"
+            src="~/assets/img/virus-logo.svg"
             alt="virus Footer logo"
-          >
-          </b-img-lazy>
-
+          />
         </nuxt-link>
       </div>
       <ul>
@@ -38,8 +36,8 @@
 
         <li>
           <nuxt-link
-            to="/kontakty"
             v-scroll-to="{el: '#map-top', duration: 500, offset: -60 }"
+            to="/kontakty"
           >
             Україна, м. Тернопіль, вул. Приміська 15А
             <font-awesome-icon
@@ -59,11 +57,11 @@
               <source
                 srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
                 type="image/webp"
-              />
+              >
               <img
                 v-lazy="require('~/assets/img/icons8-instagram-filled-100.png')"
                 alt="icons instagram filled"
-              />
+              >
             </picture>
           </a>
           <a
@@ -76,11 +74,11 @@
               <source
                 srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
                 type="image/webp"
-              />
+              >
               <img
                 v-lazy="require('~/assets/img/icons8-facebook-filled-100.png')"
                 alt="icons facebook filled"
-              />
+              >
             </picture>
           </a>
         </li>
@@ -90,7 +88,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 <style lang="scss" scoped>
 footer {

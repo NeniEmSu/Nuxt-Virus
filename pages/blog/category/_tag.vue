@@ -23,8 +23,11 @@
             Повідомлення
             з
             тегами
-            {{ category }}
-            </li
+            {{
+            category
+            }}
+            <
+            li
           />
         </ol>
       </nav>
@@ -98,12 +101,11 @@
   </section>
 </template>
 
-
 <script>
 export default {
   scrollToTop: true,
   async asyncData ({
-    app, params, error, payload,
+    app, params, error, payload
   }) {
     if (payload) {
       return { posts: payload, category: params.tag }
@@ -113,11 +115,11 @@ export default {
       JSON.stringify({
         filter: { published: true, tags: { $has: params.tag } },
         sort: { _created: -1 },
-        populate: 1,
+        populate: 1
       }),
       {
-        headers: { 'Content-Type': 'application/json' },
-      },
+        headers: { 'Content-Type': 'application/json' }
+      }
     )
 
     if (!data.entries[0]) {
@@ -138,11 +140,11 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Усі публікації в блогах класифікуються як ${this.category}. - Детейлінг студія Virus`,
-        },
-      ],
+          content: `Усі публікації в блогах класифікуються як ${this.category}. - Детейлінг студія Virus`
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 

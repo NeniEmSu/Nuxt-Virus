@@ -12,58 +12,57 @@
       <img
         src="~/assets/img/cart.png"
         alt="Cart Icon"
-      />
+      >
       <div
         id="show-total"
         class="text-center mt-n3 ml-n3"
       >
         <span
-          style="text-decoration: none;"
           id="item-count"
+          style="text-decoration: none;"
           class="text-center"
-        >{{cartSize}}</span>
+        >{{ cartSize }}</span>
       </div>
     </b-button>
     <style>
-    .modal-content {
+      .modal-content {
       border-radius: 20px;
-    }
+      }
 
-    .modal-title {
+      .modal-title {
       margin-bottom: 0;
       line-height: 1.5;
       margin: auto 0 auto auto;
-    }
-
-    @media (max-width: 991px) {
-      .modal-dialog {
-        max-width: 95%;
       }
-    }
 
-    @media (max-width: 577px) {
+      @media (max-width: 991px) {
       .modal-dialog {
-        margin-top: 50px;
-        width: 100vw;
-        min-width: 100vw;
-        margin: 50px auto 0;
+      max-width: 95%;
+      }
+      }
+
+      @media (max-width: 577px) {
+      .modal-dialog {
+      margin-top: 50px;
+      width: 100vw;
+      min-width: 100vw;
+      margin: 50px auto 0;
       }
 
       .modal-content {
-        border-radius: 0px;
+      border-radius: 0px;
       }
-    }
+      }
     </style>
     <b-modal
-      v-model="checkoutModalShow"
       id="modal-xl-checkout"
+      v-model="checkoutModalShow"
       size="xl"
       title="Корзина"
       class="modal-content text-center"
       hide-footer
     >
       <div class="modal-body basket text-center">
-
         <svg
           class="checkmark"
           xmlns="http://www.w3.org/2000/svg"
@@ -87,46 +86,47 @@
 
         <b-button
           to="/mahazyn"
-          @click="$bvModal.hide('modal-xl-checkout')"
           class="btn go-back"
-        >Назад в магазин</b-button>
-
+          @click="$bvModal.hide('modal-xl-checkout')"
+        >
+          Назад в магазин
+        </b-button>
       </div>
     </b-modal>
   </div>
 </template>
 
- <script>
-import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+<script>
+import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      checkoutModalShow: false,
+      checkoutModalShow: false
 
-    };
+    }
   },
   computed: {
     ...mapState([
-      "cart"
+      'cart'
     ]),
     ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
+      'cartSize',
+      'cartTotalAmount'
     ])
   },
   methods: {
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     },
     removeFromCart (id) {
-      this.$store.dispatch("removeFromCart", id);
+      this.$store.dispatch('removeFromCart', id)
     },
     deleteFromCart (id) {
-      this.$store.dispatch("deleteFromCart", id);
+      this.$store.dispatch('deleteFromCart', id)
     }
   }
 
-};
+}
 </script>
 
 <style lang="scss" scoped>

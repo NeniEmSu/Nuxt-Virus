@@ -6,35 +6,53 @@
         class="desktop-tablet-only"
       />
       <div class="container text-left">
-        <h2 class="info-pages mobile-only">{{ heading }}</h2>
+        <h2 class="info-pages mobile-only">
+          {{ heading }}
+        </h2>
         <div class="row">
           <div class="col-xl-6 text-center">
             <b-img-lazy
               src="~assets/img/КЕРАМІЧНЕПОКРИТТЯСИДІНЬ.jpg"
               :alt="heading"
-            >
-            </b-img-lazy>
-
+            />
           </div>
           <div class="col-xl-6">
-            <h2 class="info-pages desktop-only">{{ heading }}</h2>
-            <p class>{{ firstParagraph }}</p>
-            <p class>{{ secondParagraph }}</p>
-            <p class>{{ thirdParagraph }}</p>
-            <p class>{{ fourthParagraph }}</p>
-            <p class>{{ fifthParagraph }}</p>
+            <h2 class="info-pages desktop-only">
+              {{ heading }}
+            </h2>
+            <p class>
+              {{ firstParagraph }}
+            </p>
+            <p class>
+              {{ secondParagraph }}
+            </p>
+            <p class>
+              {{ thirdParagraph }}
+            </p>
+            <p class>
+              {{ fourthParagraph }}
+            </p>
+            <p class>
+              {{ fifthParagraph }}
+            </p>
           </div>
         </div>
 
-        <h2 class="red">{{ timeTaken }}</h2>
+        <h2 class="red">
+          {{ timeTaken }}
+        </h2>
 
         <div class="row mx-auto">
           <div class="col-6 mx-auto p-0 before img-fluid">
-            <font class="before-image-text">До</font>
+            <font class="before-image-text">
+              До
+            </font>
           </div>
 
           <div class="col-6 mx-auto p-0 after img-fluid">
-            <font class="after-image-text">Після</font>
+            <font class="after-image-text">
+              Після
+            </font>
           </div>
         </div>
 
@@ -56,14 +74,13 @@
 
 export default {
 
-
   head () {
     return {
       title: this.heading.slice(0, 60),
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.firstParagraph.slice(0, 320)
         }
       ]
@@ -71,39 +88,39 @@ export default {
   },
   data () {
     return {
-      service: "22",
-      heading: "КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ",
-      category1: "500 грн",
-      category2: "500 грн",
-      category3: "500 грн",
+      service: '22',
+      heading: 'КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ',
+      category1: '500 грн',
+      category2: '500 грн',
+      category3: '500 грн',
       firstParagraph:
-        "Як зберегти салон нового автомобіля чистим надовго? Як продовжити ефект від детейлінг-хімчистки салону? Як уникнути появи плям на текстилі і шкірі?",
+        'Як зберегти салон нового автомобіля чистим надовго? Як продовжити ефект від детейлінг-хімчистки салону? Як уникнути появи плям на текстилі і шкірі?',
       secondParagraph:
         'Спеціально для цих цілей існує послуга "керамічне покриття салону". Захисне покриття створює гідрофобний ефект, і бруд при попаданні в салон не вбирається в матеріал, а залишається на його поверхні - і її легко видалити за допомогою вологої фібри. Варіанти захисту можуть бути різні:',
       thirdParagraph:
-        "Можна захистити тільки водійське сидіння, або тільки всі шкіряні лементи салону, або тільки текстиль, або ж весь салон цілком.",
+        'Можна захистити тільки водійське сидіння, або тільки всі шкіряні лементи салону, або тільки текстиль, або ж весь салон цілком.',
       fourthParagraph:
-        "Якщо захист нанесено правильно, то шкіра і пластик в салоні залишаться матовими, вони не повинні блистіти.",
+        'Якщо захист нанесено правильно, то шкіра і пластик в салоні залишаться матовими, вони не повинні блистіти.',
       fifthParagraph:
-        "Термін служби такого покриття близько 4 місяців (залежить від умов експлуатації) - саме те проїздити від хімчистки до хімчистки!",
+        'Термін служби такого покриття близько 4 місяців (залежить від умов експлуатації) - саме те проїздити від хімчистки до хімчистки!',
       inclusiveInService: [
         {
           services:
-            "Підготовка поверхні до нанесення захисного покриття (знежирення)"
+            'Підготовка поверхні до нанесення захисного покриття (знежирення)'
         },
         {
-          services: "Нанесення захисного покриття"
+          services: 'Нанесення захисного покриття'
         }
       ],
-      timeTaken: "Час виконання послуги 1 день"
-    };
+      timeTaken: 'Час виконання послуги 1 день'
+    }
   },
   mounted () {
     if (process.client) {
-      this.$scrollTo("#top-contact", 100, { force: true });
+      this.$scrollTo('#top-contact', 100, { force: true })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -5,20 +5,24 @@
         <source
           srcset="~/assets/imgWebP/404.webp"
           type="image/webp"
-        />
+        >
         <img
           src="~assets/img/404.png"
           alt="404 imgage in a house"
           class="img-fluid"
-        />
+        >
       </picture>
 
-      <div class="title">Ой, щось пішло не так!</div>
+      <div class="title">
+        Ой, щось пішло не так!
+      </div>
       <p class="description">
         <nuxt-link
           to="/"
           class="error-link nuxt-link-active"
-        >Повернутися назад</nuxt-link>
+        >
+          Повернутися назад
+        </nuxt-link>
       </p>
     </div>
   </div>

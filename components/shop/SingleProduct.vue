@@ -1,10 +1,9 @@
 <template>
-
   <div
+    v-b-tooltip.hover
     class="card card__hover store-item"
     :class="product.filterData"
     :data-item="product.filterData"
-    v-b-tooltip.hover
     :title="product.name"
     style="width: 18rem;"
   >
@@ -12,23 +11,25 @@
       :src="require(`~/assets/img/${product.image + '.jpg'}`)"
       class="card-img-top img-fluid store-img"
       :alt="product.name"
-    />
-    <hr class="desktop-only" />
+    >
+    <hr class="desktop-only">
     <div class="card-body">
+      <h5 class="card-title crop">
+        {{ product.name }}
+      </h5>
 
-      <h5 class="card-title crop">{{product.name}}</h5>
-
-      <p class="card-text desktop-only">{{ product.summary }}</p>
+      <p class="card-text desktop-only">
+        {{ product.summary }}
+      </p>
       <div class="mobile-only">
         <div class="row">
           <div class="col-6 pr-0">
             <p class="card-price">
-              {{product.price | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
-
+              {{ product.price | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
             </p>
           </div>
           <div class="col-6 pl-0">
-            <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{inCartQuantity ? "В наявності" : "Не в наявності"}}</small>
+            <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{ inCartQuantity ? "В наявності" : "Не в наявності" }}</small>
           </div>
         </div>
       </div>
@@ -40,21 +41,21 @@
             <s class="discount-price">2975 грн</s>
           </small>
           <p class="card-price">
-            {{product.price | currency({symbol: 'ГРН', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.',  symbolPosition: 'back',  symbolSpacing: true})}}
-
+            {{ product.price | currency({symbol: 'ГРН', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
           </p>
         </div>
         <div class="col-6 bg-transparent btn-container">
-          <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{inCartQuantity ? "В наявності" : "Не в наявності"}}</small>
+          <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{ inCartQuantity ? "В наявності" : "Не в наявності" }}</small>
 
-          <br />
+          <br>
 
           <button
             class="btn"
-            @click.prevent="addToCart(product.id)"
             :disabled="!inCartQuantity"
+            @click.prevent="addToCart(product.id)"
           >
-            + Cart</button>
+            + Cart
+          </button>
         </div>
       </div>
     </div>
@@ -62,26 +63,26 @@
     <button
       class="card-footer mobile-only"
       tag="button"
-      @click.prevent="addToCart(product.id)"
       :disabled="!inCartQuantity"
+      @click.prevent="addToCart(product.id)"
     >
-      + Cart</button>
+      + Cart
+    </button>
   </div>
-
 </template>
 
 <script>
 export default {
 
-  props: ["product"],
+  props: ['product'],
   computed: {
     inCartQuantity () {
-      return this.product.quantity;
+      return this.product.quantity
     }
   },
   methods: {
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     }
   }
 }

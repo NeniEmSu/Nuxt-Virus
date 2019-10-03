@@ -21,7 +21,7 @@
       </nav>
       <h1>Блог Сторінка {{ page }}</h1>
     </div>
-    <hr class="top-separator" />
+    <hr class="top-separator">
     <div
       v-for="post in posts"
       :key="`${post.title} ${post._created}`"
@@ -32,7 +32,7 @@
           class="card-img img-fliud"
           :src="post.image.path"
           alt="Card image"
-        />
+        >
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
             <div>
@@ -41,7 +41,9 @@
                 :key="tag"
                 :to="'/blog/category/' + tag"
                 class="desktop-tablet-only"
-              >{{ tag }}&nbsp;|&nbsp;</nuxt-link>
+              >
+                {{ tag }}&nbsp;|&nbsp;
+              </nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
@@ -62,29 +64,37 @@
                 {{ post.title }}
               </h2>
             </nuxt-link>
-            <p class="card-text">Date Created {{ post._created | toDate }}</p>
+            <p class="card-text">
+              Date Created {{ post._created | toDate }}
+            </p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
             <nuxt-link
               class="btn"
               :to="'/blog/' + post.title_slug"
-            >ЧИТАТИ</nuxt-link>
+            >
+              ЧИТАТИ
+            </nuxt-link>
           </div>
         </div>
       </div>
-      <hr class="separator" />
+      <hr class="separator">
     </div>
     <div class="container">
       <div class="text-center my-3">
         <nuxt-link
           :to="page === '2' ? '/blog' : `/blog/pages/${Number(page) - 1}`"
           class="text-info pr-2"
-        >Попередня сторінка</nuxt-link>
+        >
+          Попередня сторінка
+        </nuxt-link>
         <nuxt-link
           v-if="hasNext"
           :to="`/blog/pages/${Number(page) + 1}`"
           class="text-info pl-2"
-        >Наступна сторінка</nuxt-link>
+        >
+          Наступна сторінка
+        </nuxt-link>
       </div>
     </div>
     <contactForm />
@@ -102,7 +112,7 @@ export default {
         hasNext: payload.hasNext
       }
     } else {
-      let { data } = await app.$axios.post(
+      const { data } = await app.$axios.post(
         process.env.POSTS_URL,
         JSON.stringify({
           filter: { published: true },
@@ -112,12 +122,12 @@ export default {
           populate: 1
         }),
         {
-          headers: { "Content-Type": "application/json" }
+          headers: { 'Content-Type': 'application/json' }
         }
       )
 
       if (!data.entries[0]) {
-        return error({ message: "404 Page not found", statusCode: 404 })
+        return error({ message: '404 Page not found', statusCode: 404 })
       }
 
       return {
@@ -130,18 +140,14 @@ export default {
       }
     }
   },
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
-    }
-  },
+
   head () {
     return {
       title: `Блог - Детейлінг центр Virus Тернопіль - Сторінка ${this.page}`,
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: `Усі повідомлення в блозі в номері сторінки ${this.page}, Детейлінг центр Virus Тернопіль.`
         }
       ]

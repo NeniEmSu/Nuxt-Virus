@@ -1,6 +1,5 @@
 <template>
   <div class=" basket text-center">
-
     <svg
       class="checkmark"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,21 +23,22 @@
 
     <b-button
       to="/mahazyn"
-      @click="$bvModal.hide('modal-xl-mobile')"
       class="btn go-back"
-    >Назад в магазин</b-button>
-
+      @click="$bvModal.hide('modal-xl-mobile')"
+    >
+      Назад в магазин
+    </b-button>
   </div>
 </template>
 
- <script>
-import { mapGetters, mapState, mapMutations, mapActions } from "vuex";
+<script>
+import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 import cities from '~/plugins/api/ua.json'
 import shopCartPurchaseDetails from '~/components/shop/shopCartPurchaseDetails'
 import shopCartReviewOrder from '~/components/shop/shopCartReviewOrder'
 import shopCartSuccessPage from '~/components/shop/shopCartSuccessPage'
 export default {
-  name: 'shopCart',
+  name: 'ShopCart',
   components: {
     shopCartPurchaseDetails,
     shopCartReviewOrder,
@@ -56,16 +56,16 @@ export default {
       city: null,
       models: {
         cartphoneNumber: null
-      },
-    };
+      }
+    }
   },
   computed: {
     ...mapState([
-      "cart"
+      'cart'
     ]),
     ...mapGetters([
-      "cartSize",
-      "cartTotalAmount"
+      'cartSize',
+      'cartTotalAmount'
     ]),
     progress () {
       return this.currentStepNumber / this.length * 100
@@ -88,19 +88,18 @@ export default {
       this.currentStepNumber++
     },
     addToCart (id) {
-      this.$store.dispatch("addToCart", id);
+      this.$store.dispatch('addToCart', id)
     },
     removeFromCart (id) {
-      this.$store.dispatch("removeFromCart", id);
+      this.$store.dispatch('removeFromCart', id)
     },
     deleteFromCart (id) {
-      this.$store.dispatch("deleteFromCart", id);
+      this.$store.dispatch('deleteFromCart', id)
     }
   }
 
-};
+}
 </script>
-
 
 <style lang="scss" scoped>
 .checkmark__circle {

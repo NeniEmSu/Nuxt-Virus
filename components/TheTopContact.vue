@@ -1,14 +1,14 @@
 <template>
   <div
-    class="top-contacts"
     id="top-contact"
+    class="top-contacts"
   >
     <div class="container p-0">
       <ul>
         <li>
           <nuxt-link
-            to="/kontakty"
             v-scroll-to="{el: '#map-top', duration: 500, offset: -5 }"
+            to="/kontakty"
           >
             <span>Україна, м. Тернопіль, вул. Приміська 15А</span>
             <font-awesome-icon
@@ -46,11 +46,11 @@
               <source
                 srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
                 type="image/webp"
-              />
+              >
               <img
                 src="~/assets/img/icons8-facebook-filled-100.png"
                 alt="icons facebook filled"
-              />
+              >
             </picture>
           </a>
         </li>
@@ -65,11 +65,11 @@
               <source
                 srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
                 type="image/webp"
-              />
+              >
               <img
                 src="~/assets/img/icons8-instagram-filled-100.png"
                 alt="icons instagram filled"
-              />
+              >
             </picture>
           </a>
         </li>
@@ -79,7 +79,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="scss" scoped>

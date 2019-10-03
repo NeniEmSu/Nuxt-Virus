@@ -12,9 +12,9 @@
       />
     </no-ssr>
     <div
-      @click="index = 0"
       v-b-tooltip.hover
       title="Переглянути більше зображень!"
+      @click="index = 0"
     >
       <div class="row no-gutters">
         <div
@@ -27,22 +27,21 @@ clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
             <source
               :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)"
               type="image/webp"
-            />
+            >
             <b-img-lazy
-                style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
+              style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
               :src="require(`~/assets/img/${thumbnail + '.png'}`)"
               class="img-fluid"
               :alt="title"
-              >
-              </b-img-lazy>
-            
+            />
+
           </picture>
         </div>
         <div class="col-3">
           <div class="card-body h-100 d-flex flex-column justify-content-center text-center p-0 pr-2">
             <h4>
-              {{title}}
-              <span>{{subtitle}}</span>
+              {{ title }}
+              <span>{{ subtitle }}</span>
             </h4>
           </div>
         </div>
@@ -74,9 +73,9 @@ export default {
   data () {
     return {
       index: null
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

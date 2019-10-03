@@ -21,42 +21,42 @@ export default {
       isActive: false,
       items: [
         {
-          title: "Головна",
-          to: "/"
+          title: 'Головна',
+          to: '/'
         },
         {
-          title: "Послуги і ціни",
-          to: "/posluhy-i-ciny"
+          title: 'Послуги і ціни',
+          to: '/posluhy-i-ciny'
         },
         {
-          title: "Акції",
-          to: "/akciyi"
+          title: 'Акції',
+          to: '/akciyi'
         },
         {
-          title: "Магазин",
-          to: "/mahazyn"
+          title: 'Магазин',
+          to: '/mahazyn'
         },
         {
-          title: "Блог",
-          to: "/blog"
+          title: 'Блог',
+          to: '/blog'
         },
         {
-          title: "Про нас",
-          to: "/pro-nas"
+          title: 'Про нас',
+          to: '/pro-nas'
         },
         {
-          title: "Контакти",
-          to: "/kontakty"
+          title: 'Контакти',
+          to: '/kontakty'
         }
       ]
-    };
+    }
   },
   computed: {
     toggleSidebar () {
-      return this.$store.getters["nav/toggleSidebar"];
+      return this.$store.getters['nav/toggleSidebar']
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

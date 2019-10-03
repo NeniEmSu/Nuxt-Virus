@@ -30,7 +30,7 @@
               src="~/assets/img/contactPageClock.png"
               class="img-fluid"
               alt="image of a clock"
-            />
+            >
             <p>пн-пт 9:00 до 19:00 сб-нд Вихідний</p>
           </div>
 
@@ -41,7 +41,7 @@
                 src="~/assets/img/contactPageMail.png"
                 class="img-fluid"
                 alt="image of a mail icon"
-              />
+              >
             </a>
             <p class="text-center">
               deteylingvirus@gmail.com
@@ -55,7 +55,7 @@
                 src="~/assets/img/contactPagePhone.png"
                 class="img-fluid"
                 alt=" image of a phone icon"
-              />
+              >
             </a>
             <p>+38 (067) 333-40-40</p>
           </div>
@@ -66,13 +66,13 @@
         <hr
           id="map-top"
           class="map-separator offset desktop-only"
-        />
+        >
 
         <img
           src="~/assets/img/icons8-marker-100.png"
           class="desktop-only"
           alt="Location marker icon"
-        />
+        >
 
         <GmapMap
           id="map"
@@ -99,7 +99,7 @@
             <img
               src="~/assets/img/contacPageIg.png"
               alt="Instagram icon"
-            />
+            >
           </a>
           <a
             target="_blank"
@@ -109,7 +109,7 @@
             <img
               src="~/assets/img/contactPageFb.png"
               alt="Facebook icon"
-            />
+            >
           </a>
         </div>
       </div>
@@ -124,18 +124,18 @@
 <script>
 export default {
   meta: {
-    animation: "fade-in-right"
+    animation: 'fade-in-right'
   },
   head () {
     return {
-      title: "Детейлінг центр Virus Тернопіль.",
-      titleTemplate: "контакти - %s!",
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'контакти - %s!',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "контакти - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри."
+            'контакти - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
     }
@@ -145,13 +145,8 @@ export default {
       center: { lat: 49.558033, lng: 25.56692 },
       markers: [{ position: { lat: 49.558033, lng: 25.56692 } }]
     }
-  },
-
-  mounted () {
-    if (process.client) {
-      this.$scrollTo("#top-contact", 0, { force: true })
-    }
   }
+
 }
 </script>
 

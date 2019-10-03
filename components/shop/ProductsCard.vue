@@ -1,9 +1,9 @@
 <template>
   <div
+    v-b-tooltip.hover
     class="card card__hover store-item"
     :class="filterData"
     :data-item="filterData"
-    v-b-tooltip.hover
     :title="name"
     style="width: 18rem;"
   >
@@ -11,13 +11,17 @@
       :src="image"
       class="card-img-top img-fluid store-img"
       :alt="name"
-    />
-    <hr class="desktop-only" />
+    >
+    <hr class="desktop-only">
     <div class="card-body">
       <nuxt-link :to="link">
-        <h5 class="card-title crop">{{ name }}</h5>
+        <h5 class="card-title crop">
+          {{ name }}
+        </h5>
       </nuxt-link>
-      <p class="card-text desktop-only">{{ summary }}</p>
+      <p class="card-text desktop-only">
+        {{ summary }}
+      </p>
       <div class="mobile-only">
         <div class="row">
           <div class="col-6 pr-0">
@@ -46,7 +50,7 @@
             <s class="discount-price">2975 грн</s>
           </small>
           <p class="card-price">
-            {{price}}
+            {{ price }}
             <span>ГРН</span>
           </p>
         </div>
@@ -59,13 +63,15 @@
             v-show="stock === false"
             class="notInStock"
           >Не в наявності</small>
-          <br />
+          <br>
 
           <nuxt-link
             :to="link"
             tag="button"
             class="btn"
-          >Купити</nuxt-link>
+          >
+            Купити
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -74,7 +80,9 @@
       :to="link"
       tag="button"
       class="card-footer mobile-only"
-    >Купити</nuxt-link>
+    >
+      Купити
+    </nuxt-link>
   </div>
 </template>
 
@@ -84,32 +92,32 @@ export default {
     name: {
       type: String,
       required: false,
-      default: "Koch Chemie Fresh UP"
+      default: 'Koch Chemie Fresh UP'
     },
     summary: {
       type: String,
       required: false,
-      default: "Розпилюючий засіб для видалення небажаних запахів"
+      default: 'Розпилюючий засіб для видалення небажаних запахів'
     },
     price: {
       type: String,
       required: false,
-      default: "2900"
+      default: '2900'
     },
     image: {
       type: String,
       required: false,
-      default: require("~/assets/img/86.jpg")
+      default: require('~/assets/img/86.jpg')
     },
     link: {
       type: String,
       required: false,
-      default: "/Магазин"
+      default: '/Магазин'
     },
     filterData: {
       type: String,
       required: false,
-      default: "all"
+      default: 'all'
     },
     stock: {
       type: Boolean,
@@ -117,7 +125,7 @@ export default {
       required: false
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
