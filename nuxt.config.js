@@ -9,10 +9,10 @@ const axios = require('axios')
 
 export default {
   mode: 'universal',
-  server: {
-    port: 8383,
-    host: '0.0.0.0'
-  },
+  // server: {
+  //   port: 8383,
+  //   host: '0.0.0.0'
+  // },
   head: {
     title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
     htmlAttrs: {
@@ -607,9 +607,8 @@ export default {
             value.test = /\.(svg|webp)$/
           }
         })
-      }
-    },
-    build: {
+      },
+
       postcss: {
         plugins: [
           purgecss({
