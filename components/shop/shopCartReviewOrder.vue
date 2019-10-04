@@ -75,7 +75,7 @@
 
 <script>
 
-import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 export default {
   props: {
     cartFormData: {

@@ -200,10 +200,8 @@
           Рекомендуємо
         </h2>
 
-        <no-ssr>
-          <!-- important to add no-ssr-->
-
-          <carousel
+        <client-only>
+<carousel
             :autoplay="true"
             :nav="false"
             :items="4"
@@ -236,7 +234,7 @@
               :stock="product.Stock"
             />
           </carousel>
-        </no-ssr>
+        </client-only>
 
         <nuxt-link
           to="/mahazyn"
@@ -269,7 +267,7 @@ export default {
 
   data () {
     return {
-      imageApiUrl: process.env.IMAGE_URL
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4'
     }
   },
 
@@ -293,7 +291,7 @@ export default {
   },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
-      process.env.PRODUCT_URL,
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
       JSON.stringify({
         filter: { Published: true },
         limit: 6,

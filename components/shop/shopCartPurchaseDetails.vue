@@ -203,9 +203,9 @@
 </template>
 
 <script>
-import { validationMixin } from 'vuelidate'
-import { required, minLength, email } from 'vuelidate/lib/validators'
-import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
+// import { validationMixin } from 'vuelidate'
+import { required, minLength } from 'vuelidate/lib/validators'
+import { mapGetters, mapState } from 'vuex'
 import cities from '~/plugins/api/ua.json'
 export default {
   data () {

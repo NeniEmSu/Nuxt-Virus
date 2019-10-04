@@ -227,7 +227,7 @@ export default {
 
       axios
         .post(
-          process.env.contactUrl,
+          'https://admin.virus.te.ua/api/forms/submit/contact?token=00c9e43284a689ed7bf9a7fc972e81',
           JSON.stringify({
             form: {
               name: this.name,
@@ -259,8 +259,7 @@ export default {
         })
         .catch((error) => {
           this.loading = false
-
-          this.errors.push('Сталася помилка. Повторіть спробу пізніше')
+          this.errors.push(`Сталася помилка. Повторіть спробу пізніше ${error}`)
         })
     }
   }

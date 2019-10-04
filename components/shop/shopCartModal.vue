@@ -164,8 +164,8 @@
 
 <script>
 import axios from 'axios'
-import { required, minLength, email } from 'vuelidate/lib/validators'
-import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
+// import { required, minLength, email } from 'vuelidate/lib/validators'
+import { mapGetters, mapState } from 'vuex'
 import cities from '~/plugins/api/ua.json'
 import shopCartPurchaseDetails from '~/components/shop/shopCartPurchaseDetails'
 import shopCartReviewOrder from '~/components/shop/shopCartReviewOrder'
@@ -268,7 +268,7 @@ export default {
 
       axios
         .post(
-          process.env.contactUrl,
+          'https://admin.virus.te.ua/api/forms/submit/contact?token=00c9e43284a689ed7bf9a7fc972e81',
           JSON.stringify({
             form: {
               cart: JSON.stringify(this.cart),
@@ -307,7 +307,7 @@ export default {
         })
         .catch((error) => {
           this.asyncState = 'success'
-          this.errors.push('Сталася помилка. Повторіть спробу пізніше')
+          this.errors.push(`Сталася помилка. Повторіть спробу пізніше ${error}`)
         })
     },
 

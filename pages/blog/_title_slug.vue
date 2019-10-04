@@ -36,7 +36,7 @@
             {{ tag }}&nbsp;|&nbsp;
           </nuxt-link>
           <span class="mx-1 text-xs">•</span>
-          <a
+          <!-- <a
             v-scroll-to="'#comments'"
             href="#"
             class="text-dark"
@@ -52,7 +52,7 @@
             >
               <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
             </svg>
-          </a>
+          </a> -->
         </p>
       </div>
       <h1 class="mt-2">
@@ -62,7 +62,7 @@
         class="mt-4 markdown"
         v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
       />
-      <div class="mt-5 text-center">
+      <div class="mt-5 text-center pb-5">
         <nuxt-link
           to="/blog"
           class="pr-2 text-secondary"
@@ -70,7 +70,7 @@
           Знайти більше повідомлень у блогах!
         </nuxt-link>
       </div>
-      <div
+      <!-- <div
         id="comments"
         class="mt-8 mb-4 pt-3 border-t-2"
       >
@@ -91,19 +91,19 @@
           :all="post.comments"
           :comment="comment"
         />
-      </ul>
+      </ul> -->
     </article>
   </section>
 </template>
 
 <script>
-import CommentForm from '~/components/contact/CommentForm.vue'
-import Comment from '~/components/contact/Comment.vue'
+// import CommentForm from '~/components/contact/CommentForm.vue'
+// import Comment from '~/components/contact/Comment.vue'
 
 export default {
   components: {
-    CommentForm,
-    Comment
+    // CommentForm,
+    // Comment
   },
 
   computed: {
@@ -118,7 +118,7 @@ export default {
       return { post: payload }
     } else {
       const { data } = await app.$axios.post(
-        process.env.POSTS_URL,
+        'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4',
         JSON.stringify({
           filter: { published: true, title_slug: params.title_slug },
           sort: { _created: -1 },

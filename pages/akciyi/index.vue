@@ -22,8 +22,14 @@
       <h1>Акції</h1>
     </div>
     <hr class="top-separator">
+
+    <div v-if="!promotions">
+      <h1>Sorry we do Not have any promotions atm.</h1>
+    </div>
+
     <div
       v-for="promotion in promotions"
+      v-else
       :key="promotion.promotionTitle"
       class="card-container container"
     >
@@ -71,12 +77,12 @@ export default {
   },
   data () {
     return {
-      imageApiUrl: process.env.IMAGE_URL
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4'
     }
   },
   async asyncData ({ app }) {
     const { data } = await app.$axios.post(
-      process.env.PRODUCT_URL,
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
       JSON.stringify({
         filter: { Published: true, promotion: true },
         sort: { _created: -1 },

@@ -37,7 +37,7 @@
           <div class="row">
             <div class="main-image col-4 p-0">
               <div class="image-showcase col-12 text-center p-0">
-                <no-ssr>
+                <client-only>
                   <carousel
                     :autoplay="false"
                     :nav="false"
@@ -70,7 +70,7 @@
                       :alt="product.Gallery[2].meta.title"
                     >
                   </carousel>
-                </no-ssr>
+                </client-only>
               </div>
               <style>
                 .small-more-images {
@@ -319,7 +319,7 @@
         Схожі товари та пропозиції
       </h2>
 
-      <no-ssr>
+      <client-only>
         <carousel
           :autoplay="true"
           :nav="false"
@@ -352,7 +352,7 @@
             :stock="product.Stock"
           />
         </carousel>
-      </no-ssr>
+      </client-only>
     </div>
   </section>
 </template>
@@ -365,7 +365,7 @@ export default {
   data () {
     return {
       mobileModalShow: false,
-      imageApiUrl: process.env.IMAGE_URL
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4'
     }
   },
   computed: {
@@ -377,7 +377,7 @@ export default {
       return { product: payload }
     }
     const product = await axios.post(
-      process.env.PRODUCT_URL,
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
       JSON.stringify({
         filter: { Published: true, name_slug: params.name_slug },
         sort: { _created: -1 },
@@ -388,7 +388,7 @@ export default {
       }
     )
     const products = await axios.get(
-      process.env.PRODUCT_URL,
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
       JSON.stringify({
         filter: { Published: true },
         limit: 4,

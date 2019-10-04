@@ -113,7 +113,7 @@ export default {
       }
     } else {
       const { data } = await app.$axios.post(
-        process.env.POSTS_URL,
+        'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4',
         JSON.stringify({
           filter: { published: true },
           limit: process.env.PER_PAGE,

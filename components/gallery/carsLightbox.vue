@@ -3,14 +3,14 @@
     class="card mb-3 mx-auto card__hover_two work-card img-fluid"
     style="width: 100%; max-width: 540px;"
   >
-    <no-ssr>
+    <client-only>
       <LightGallery
         :images="images"
         :index="index"
         :disable-scroll="true"
         @close="index = null"
       />
-    </no-ssr>
+    </client-only>
     <div
       v-b-tooltip.hover
       title="Переглянути більше зображень!"

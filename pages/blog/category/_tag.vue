@@ -59,7 +59,7 @@
                 {{ tag }}&nbsp;|&nbsp;
               </nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
-              <span class="text-light">
+              <!-- <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@
                 >
                   <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
                 </svg>
-              </span>
+              </span> -->
             </div>
             <nuxt-link :to="'/blog/' + post.title_slug">
               <h2 class="card-title text-white">
@@ -111,7 +111,7 @@ export default {
       return { posts: payload, category: params.tag }
     }
     const { data } = await app.$axios.post(
-      process.env.POSTS_URL,
+      'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4',
       JSON.stringify({
         filter: { published: true, tags: { $has: params.tag } },
         sort: { _created: -1 },

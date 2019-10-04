@@ -1,8 +1,8 @@
 import purgecss from '@fullhuman/postcss-purgecss'
 require('dotenv').config()
 
-const path = require('path')
-const glob = require('glob-all')
+// const path = require('path')
+// const glob = require('glob-all')
 const collect = require('collect.js')
 const perPage = Number(process.env.PER_PAGE)
 const axios = require('axios')
@@ -376,6 +376,9 @@ export default {
         maxAge: 1000 * 60 * 60 * 24
       }
     ],
+    ['@nuxtjs/google-tag-manager', {
+      id: 'GTM-62479125-9'
+    }],
     [
       '@nuxtjs/google-analytics',
       {
