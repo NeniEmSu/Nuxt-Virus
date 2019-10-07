@@ -1,3 +1,4 @@
+/* eslint-disable vue/require-default-prop */
 <template>
   <li
     class="mb-4"
@@ -59,9 +60,13 @@ import CommentForm from '~/components/contact/CommentForm.vue'
 export default {
   name: 'Comment',
   props: {
-    postId: String,
+    // eslint-disable-next-line vue/prop-name-casing
+    post_id: String,
+    // eslint-disable-next-line vue/require-default-prop
     all: Array,
+    // eslint-disable-next-line vue/require-default-prop
     comment: Object,
+    // eslint-disable-next-line vue/require-default-prop
     parent: Object
   },
 
@@ -72,7 +77,9 @@ export default {
   },
 
   methods: {
+    // eslint-disable-next-line camelcase
     children (parent_id) {
+      // eslint-disable-next-line camelcase
       return this.all.filter(comment => comment.parent_id === parent_id)
     },
 

@@ -268,7 +268,7 @@ export default {
 
       axios
         .post(
-          'https://admin.virus.te.ua/api/forms/submit/contact?token=00c9e43284a689ed7bf9a7fc972e81',
+          'https://admin.virus.te.ua/api/forms/submit/cart?token=742af3741fa4ff80bd0db4c22496ba',
           JSON.stringify({
             form: {
               cart: JSON.stringify(this.cart),
@@ -292,17 +292,21 @@ export default {
           if (data.error) {
             this.errors.push(data.error)
           } else if (
-            data.form.name &&
-            data.form.postBranch &&
-            data.form.city &&
-            data.form.cartphoneNumber
+            data.name &&
+            data.postBranch &&
+            data.city &&
+            data.cartphoneNumber
           ) {
             this.form.name = this.form.postBranch = this.form.city = this.form.cartphoneNumber = null
-            this.$store.dispatch('checkout')
+            this.$store.commit('emptyCart')
             this.success = true
             console.log('form submitted', this.form)
             this.asyncState = 'success'
             this.currentStepNumber++
+            const self = this
+            setTimeout(function () {
+              self.currentStepNumber = 1
+            }, 5000)
           }
         })
         .catch((error) => {

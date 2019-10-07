@@ -77,12 +77,12 @@ export default {
   },
   data () {
     return {
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4'
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
     }
   },
   async asyncData ({ app }) {
     const { data } = await app.$axios.post(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { Published: true, promotion: true },
         sort: { _created: -1 },

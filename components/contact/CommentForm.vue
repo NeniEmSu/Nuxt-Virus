@@ -1,3 +1,5 @@
+/* eslint-disable vue/prop-name-casing */
+/* eslint-disable vue/prop-name-casing */
 <template>
   <form
     :id="parent_id ? `reply-${parent_id}` : ''"
@@ -116,9 +118,12 @@ import axios from 'axios'
 export default {
   name: 'CommentForm',
   props: {
-    postId: String,
-    parentId: String,
-    parentName: String
+    // eslint-disable-next-line vue/prop-name-casing
+    post_id: String,
+    // eslint-disable-next-line vue/prop-name-casing
+    parent_id: String,
+    // eslint-disable-next-line vue/prop-name-casing
+    parent_name: String
   },
 
   data () {
@@ -163,7 +168,7 @@ export default {
 
       axios
         .post(
-          process.env.commentUrl,
+          'https://admin.virus.te.ua/api/forms/submit/comments?token=00c9e43284a689ed7bf9a7fc972e81',
           JSON.stringify({
             form: {
               post_id: this.post_id,

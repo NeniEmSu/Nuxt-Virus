@@ -201,7 +201,7 @@
         </h2>
 
         <client-only>
-<carousel
+          <carousel
             :autoplay="true"
             :nav="false"
             :items="4"
@@ -291,7 +291,7 @@ export default {
   },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { Published: true },
         limit: 6,

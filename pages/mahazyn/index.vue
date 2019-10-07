@@ -433,11 +433,6 @@ export default {
   components: {
     ProductsList
   },
-  data () {
-    return {
-
-    }
-  },
   meta: {
     animation: 'fade-in-right'
   },
@@ -463,12 +458,21 @@ export default {
       active3: false,
       active4: false,
       mobileModalShow: false,
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4'
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
     }
   },
+
+  computed: {
+    ...mapState(['cart']),
+    ...mapGetters(['cartSize', 'cartTotalAmount']),
+    toast () {
+      return this.$store.getters.toast
+    }
+  },
+
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.get(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { Published: true },
         sort: { _created: -1 },
@@ -485,13 +489,7 @@ export default {
 
     return { products: data.entries }
   },
-  computed: {
-    ...mapState(['cart']),
-    ...mapGetters(['cartSize', 'cartTotalAmount']),
-    toast () {
-      return this.$store.getters.toast
-    }
-  },
+
   methods: {
     hideToast () {
       this.$store.commit('hideToast')

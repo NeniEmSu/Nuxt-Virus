@@ -111,7 +111,7 @@ export default {
       return { posts: payload, category: params.tag }
     }
     const { data } = await app.$axios.post(
-      'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4',
+      'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { published: true, tags: { $has: params.tag } },
         sort: { _created: -1 },

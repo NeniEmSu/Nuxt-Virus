@@ -129,7 +129,7 @@
                   <input
                     id="phone"
                     v-model="models.phoneNumber"
-                    v-mask="'+38(0##) ###-####'"
+                    v-mask="'+38(###) ###-####'"
                     aria-describedby="phone"
                     aria-label="phone"
                     name="phone"
@@ -251,7 +251,7 @@ export default {
             data.name &&
             data.carModel &&
             data.service &&
-            data.models.phoneNumber
+            data.phoneNumber
           ) {
             this.name = this.carModel = this.service = this.models.phoneNumber = null
             this.success = true

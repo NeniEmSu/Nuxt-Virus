@@ -377,7 +377,7 @@ export default {
       return { product: payload }
     }
     const product = await axios.post(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { Published: true, name_slug: params.name_slug },
         sort: { _created: -1 },
@@ -388,7 +388,7 @@ export default {
       }
     )
     const products = await axios.get(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4',
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { Published: true },
         limit: 4,
