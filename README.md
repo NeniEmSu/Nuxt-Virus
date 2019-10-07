@@ -94,7 +94,7 @@ npm install -g pm2
 pm2 startup
 
 # start process
-pm2 start npm --name "laravel-nuxt" -- run start
+pm2 start npm --name "virus" -- run start
 
 # save process list
 pm2 save
@@ -106,7 +106,7 @@ pm2 l
 After each deploy you'll need to restart the process:
 
 ```bash
-pm2 restart laravel-nuxt 
+pm2 restart virus 
 ```
 
 Make sure to read the [Nuxt docs](https://nuxtjs.org/).
