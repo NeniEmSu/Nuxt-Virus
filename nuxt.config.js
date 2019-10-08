@@ -377,7 +377,7 @@ export default {
       }
     ],
     ['@nuxtjs/google-tag-manager', {
-      id: 'GTM-62479125-9'
+      id: 'GTM-WT77NZ5'
     }],
     [
       '@nuxtjs/google-analytics',
@@ -396,6 +396,10 @@ export default {
     ],
     '@nuxtjs/sitemap'
   ],
+  
+  robots: {
+    /sitemap.xml
+  }
 
   axios: {
     baseURL: process.env.BASE_URL
