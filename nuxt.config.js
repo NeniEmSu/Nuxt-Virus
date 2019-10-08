@@ -396,10 +396,10 @@ export default {
     ],
     '@nuxtjs/sitemap'
   ],
-  
+
   robots: {
-    /sitemap.xml
-  }
+    Sitemap: '/sitemap.xml'
+  },
 
   axios: {
     baseURL: process.env.BASE_URL
@@ -641,55 +641,4 @@ export default {
       }
     }
   }
-
-  // build: {
-  //   transpile: [/^vue2-google-maps($|\/)/],
-  //   extractCSS: true,
-
-  //   extend(config, { isDev, isClient }) {
-  //     config.module.rules.forEach(rule => {
-  //       if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-  //         rule.use.push({
-  //           loader: "image-webpack-loader",
-  //           options: {
-  //             svgo: {
-  //               plugins: [
-  //                 {
-  //                   removeViewBox: false
-  //                 },
-  //                 {
-  //                   removeDimensions: true
-  //                 }
-  //               ]
-  //             }
-  //           }
-  //         })
-  //       }
-  //     })
-  //   },
-
-  //   postcss: {
-  //     plugins: [
-  //       purgecss({
-  //         content: [
-  //           "./pages/**/*.vue",
-  //           "./layouts/**/*.vue",
-  //           "./components/**/*.vue",
-  //           "./content/**/*.md",
-  //           "./content/**/*.json"
-  //         ],
-  //         whitelist: [
-  //           "html",
-  //           "body",
-  //           "has-navbar-fixed-top",
-  //           "nuxt-link-exact-active",
-  //           "nuxt-progress",
-  //           "hidden",
-  //           "opacity-0"
-  //         ],
-  //         whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/]
-  //       })
-  //     ]
-  //   }
-  // }
 }
