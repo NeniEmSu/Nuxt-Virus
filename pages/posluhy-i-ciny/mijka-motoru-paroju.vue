@@ -89,7 +89,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `${this.heading} - ${this.firstParagraph}`.slice(0, 320)
+          content: `${this.heading} - ${this.firstParagraph} ${this.secondParagraph}`.slice(0, 320)
         }
       ]
     }

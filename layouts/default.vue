@@ -33,6 +33,10 @@ export default {
           rel: 'icon',
           type: 'image/x-icon',
           href: '/favicon.ico'
+        },
+        {
+          rel: 'canonical',
+          href: 'https://beta.virus.te.ua' + this.$route.path
         }
       ]
     }
