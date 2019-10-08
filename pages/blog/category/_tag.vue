@@ -26,9 +26,8 @@
             {{
             category
             }}
-            <
-            li
           />
+          <li />
         </ol>
       </nav>
       <h1 class="mb-3">
@@ -148,7 +147,7 @@ export default {
 }
 </script>
 
-<<style lang="scss" scoped>
+<style lang="scss" scoped>
 h1 {
   font-family: $mainFont;
   font-style: normal;

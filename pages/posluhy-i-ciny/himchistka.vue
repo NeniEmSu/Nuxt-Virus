@@ -31,8 +31,8 @@
             </h2>
             <ul class="ml-3">
               <li
-                v-for="(items, heading) in inclusiveInService"
-                :key="heading"
+                v-for="(items, index) in inclusiveInService"
+                :key="index"
               >
                 {{ items.services }}
               </li>

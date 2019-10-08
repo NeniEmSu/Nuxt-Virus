@@ -300,7 +300,6 @@ export default {
             this.form.name = this.form.postBranch = this.form.city = this.form.cartphoneNumber = null
             this.$store.commit('emptyCart')
             this.success = true
-            console.log('form submitted', this.form)
             this.asyncState = 'success'
             this.currentStepNumber++
             const self = this

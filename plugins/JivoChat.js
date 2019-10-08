@@ -12,7 +12,7 @@ window.onNuxtReady(() => {
       const ss = document.getElementsByTagName('script')[0]
       ss.parentNode.insertBefore(s, ss)
     }
-    if (d.readyState == 'complete') {
+    if (d.readyState === 'complete') {
       l()
     } else if (w.attachEvent) {
       w.attachEvent('onload', l)

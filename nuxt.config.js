@@ -1,7 +1,7 @@
 import purgecss from '@fullhuman/postcss-purgecss'
 require('dotenv').config()
 
-const path = require('path')
+// const path = require('path')
 // const glob = require('glob-all')
 const collect = require('collect.js')
 const perPage = Number(process.env.PER_PAGE)

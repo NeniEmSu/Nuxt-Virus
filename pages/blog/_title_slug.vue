@@ -36,7 +36,7 @@
             {{ tag }}&nbsp;|&nbsp;
           </nuxt-link>
           <span class="mx-1 text-xs">•</span>
-          <a
+          <!-- <a
             v-scroll-to="'#comments'"
             href="#"
             class="text-dark"
@@ -52,7 +52,7 @@
             >
               <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
             </svg>
-          </a>
+          </a> -->
         </p>
       </div>
       <h1 class="mt-2">
@@ -70,7 +70,7 @@
           Знайти більше повідомлень у блогах!
         </nuxt-link>
       </div>
-      <div
+      <!-- <div
         id="comments"
         class="mt-8 mb-4 pt-3 border-t-2"
       >
@@ -81,9 +81,9 @@
           class="border-b-2"
           :post_id="post._id"
         />
-      </div>
+      </div> -->
 
-      <ul class="list-reset">
+      <!-- <ul class="list-reset">
         <comment
           v-for="comment in comments"
           :key="comment._id"
@@ -91,19 +91,19 @@
           :all="post.comments"
           :comment="comment"
         />
-      </ul>
+      </ul> -->
     </article>
   </section>
 </template>
 
 <script>
-import CommentForm from '~/components/contact/CommentForm.vue'
-import Comment from '~/components/contact/Comment.vue'
+// import CommentForm from '~/components/contact/CommentForm.vue'
+// import Comment from '~/components/contact/Comment.vue'
 
 export default {
   components: {
-    CommentForm,
-    Comment
+    // CommentForm,
+    // Comment
   },
 
   computed: {

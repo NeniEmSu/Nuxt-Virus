@@ -39,8 +39,8 @@
               В наші студії твердий віск наноситься в чистому закритому
               приміщенні в такій послідовності:
               <li
-                v-for="(items, heading) in inclusiveInService"
-                :key="heading"
+                v-for="(items, index) in inclusiveInService"
+                :key="index"
               >
                 {{ items.services }}
               </li>

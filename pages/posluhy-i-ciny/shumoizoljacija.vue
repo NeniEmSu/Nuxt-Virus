@@ -40,8 +40,8 @@
                 ВСТАНОВЛЕННЯ ШУМОІЗОЛЯЦІЇ
               </li>
               <li
-                v-for="(items, heading) in inclusiveInService"
-                :key="heading"
+                v-for="(items, index) in inclusiveInService"
+                :key="index"
               >
                 {{ items.services }}
               </li>

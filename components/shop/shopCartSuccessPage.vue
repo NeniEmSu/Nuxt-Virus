@@ -32,17 +32,13 @@
 </template>
 
 <script>
-import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import cities from '~/plugins/api/ua.json'
-import shopCartPurchaseDetails from '~/components/shop/shopCartPurchaseDetails'
-import shopCartReviewOrder from '~/components/shop/shopCartReviewOrder'
-import shopCartSuccessPage from '~/components/shop/shopCartSuccessPage'
+
 export default {
   name: 'ShopCart',
   components: {
-    shopCartPurchaseDetails,
-    shopCartReviewOrder,
-    shopCartSuccessPage
+
   },
   data () {
     return {
