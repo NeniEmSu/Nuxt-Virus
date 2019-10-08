@@ -97,7 +97,7 @@
           v-show="loading === true"
           id="btn-loading"
           :disabled="loading === false"
-          type="loading"
+          type="button"
           aria-label="loading"
           name="loading"
           class="btn-loading"

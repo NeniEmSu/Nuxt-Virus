@@ -1,8 +1,10 @@
 <template>
   <section>
     <div class="container text-center top-grid pt-4 pb-5">
-      <pre><h1 class="text-left">Ми
-пропонуємо</h1></pre>
+      <h1 class="text-left">
+        Ми
+        пропонуємо
+      </h1>
       <div class="row">
         <nuxt-link
           to="/posluhy-i-ciny/poliruvannja-avtomobilja"
@@ -47,10 +49,10 @@
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
-              <pre><h2 class="card-title text-right">
-                ВОСКОВЕ
+              <h2 class="card-title text-right">
+                ВОСКОВЕ <br>
                 ПОКРИТТЯ
-              </h2></pre>
+              </h2>
             </div>
           </div>
         </nuxt-link>
@@ -67,7 +69,6 @@
                 type="image/webp"
               >
               <b-img-lazy
-                v-lazy="require('~/assets/img/top3.jpg')"
                 src="~/assets/img/top3.jpg"
                 class="card-img"
                 alt="МИЙКА МОТОРУ"
@@ -94,7 +95,6 @@
                 type="image/webp"
               >
               <b-img-lazy
-                v-lazy="require('~/assets/img/top4.jpg')"
                 src="~/assets/img/top4.jpg"
                 class="card-img"
                 alt="ХІМЧИСТКА"
@@ -120,7 +120,6 @@
                 type="image/webp"
               >
               <b-img-lazy
-                v-lazy="require('~/assets/img/top5.jpg')"
                 src="~/assets/img/top5.jpg"
                 class="card-img"
                 alt="РЕСТАВРАЦІЯ СКОЛІВ"
@@ -147,7 +146,6 @@
                 type="image/webp"
               >
               <b-img-lazy
-                v-lazy="require('~/assets/img/top6.jpg')"
                 src="~/assets/img/top6.jpg"
                 class="card-img"
                 alt="КЕРАМІЧНЕ ПОКРИТТЯ"
@@ -175,7 +173,6 @@
                 type="image/webp"
               >
               <b-img-lazy
-                v-lazy="require('~/assets/img/top7.jpg')"
                 src="~/assets/img/top7.jpg"
                 class="card-img"
                 alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
@@ -206,7 +203,6 @@
             :nav="false"
             :items="4"
             :lazy-load="true"
-            :v-lazy="true"
             :loop="true"
             :mouse-drag="true"
             :touch-drag="true"

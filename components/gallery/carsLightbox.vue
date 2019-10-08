@@ -19,9 +19,7 @@
       <div class="row no-gutters">
         <div
           class="col-9 p-0"
-          style="-webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
-"
+          style="-webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);"
         >
           <picture style="border-top-left-radius: 22px; border-bottom-left-radius: 22px;">
             <source

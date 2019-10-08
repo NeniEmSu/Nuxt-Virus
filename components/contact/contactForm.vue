@@ -142,7 +142,7 @@
               <button
                 v-show="loading === true"
                 :disabled="loading === false"
-                type="loading"
+                type="button"
                 aria-label="loading"
                 name="loading"
                 class="contact-btn-loading"

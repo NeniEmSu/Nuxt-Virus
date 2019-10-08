@@ -17,8 +17,7 @@ export default {
     title: 'Детейлінг центр Virus Тернопіль. Хімчистка, полірування, реставрація авто',
     htmlAttrs: {
       class: 'has-navbar-fixed-top',
-      lang: 'uk',
-      amp: true
+      lang: 'uk'
     },
     meta: [{
       charset: 'utf-8'
@@ -113,67 +112,56 @@ export default {
     {
       rel: 'apple-touch-icon',
       type: 'image/png',
-      size: '180x180',
       href: '/apple-touch-icon.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '128x128',
       href: '/icon-128x128.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '96x96',
       href: '/icon-96x96.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '144x144',
       href: '/icon-144x144.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '512x512',
       href: '/icon-512x512.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '384x384',
       href: '/icon-384x384.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '192x192',
       href: '/icon-192x192.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '152x152',
       href: '/icon-152x152.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '72x72',
       href: '/icon-72x72.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '32x32',
       href: '/favicon-32x32.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
-      size: '16x16',
       href: '/favicon-16x16.png'
     },
     {

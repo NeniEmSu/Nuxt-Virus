@@ -8,7 +8,6 @@
           aria-label="Virus Logo"
         >
           <b-img-lazy
-            v-lazy="require('~/assets/img/virus-logo.svg')"
             src="~/assets/img/virus-logo.svg"
             alt="virus Footer logo"
           />
@@ -58,11 +57,10 @@
                 srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
                 type="image/webp"
               >
-              <img
-                v-lazy="require('~/assets/img/icons8-instagram-filled-100.png')"
+              <b-img-lazy
+                src="~/assets/img/icons8-instagram-filled-100.png"
                 alt="icons instagram filled"
-              >
-            </picture>
+              /></b-img-lazy></picture>
           </a>
           <a
             href="https://www.facebook.com/virus.te.ua/"
@@ -75,11 +73,10 @@
                 srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
                 type="image/webp"
               >
-              <img
-                v-lazy="require('~/assets/img/icons8-facebook-filled-100.png')"
+              <b-img-lazy
+                src="~/assets/img/icons8-facebook-filled-100.png"
                 alt="icons facebook filled"
-              >
-            </picture>
+              /></b-img-lazy></picture>
           </a>
         </li>
       </ul>
