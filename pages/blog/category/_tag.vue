@@ -43,8 +43,10 @@
       <div class="card mx-auto">
         <img
           class="card-img img-fliud"
-          :src="post.image.path"
-          alt="Card image"
+          :src="
+            `${imageApiUrl}&src=${post.image.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
+          "
+          :alt="`${post.title} background image `"
         >
         <div class="card-img-overlay pl-2 py-0 row">
           <div class="col-8 m-auto py-0 post-detail">
@@ -102,7 +104,11 @@
 
 <script>
 export default {
-  scrollToTop: true,
+  data () {
+    return {
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+    }
+  },
   async asyncData ({
     app, params, error, payload
   }) {
