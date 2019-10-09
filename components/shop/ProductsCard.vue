@@ -47,7 +47,14 @@
       <div class="row bg-transparent">
         <div class="col-6 bg-transparent cost">
           <small>
-            <s class="discount-price">2975 грн</s>
+            <s
+              v-show="sales === true"
+              class="discount-price"
+            >{{ discountPrice }} грн</s>
+            <s
+              v-show="sales === false"
+              class="discount-price"
+            >{{ price }} грн</s>
           </small>
           <p class="card-price">
             {{ price }}
@@ -104,6 +111,11 @@ export default {
       required: false,
       default: '2900'
     },
+    discountPrice: {
+      type: String,
+      required: false,
+      default: '2975'
+    },
     image: {
       type: String,
       required: false,
@@ -120,6 +132,11 @@ export default {
       default: 'all'
     },
     stock: {
+      type: Boolean,
+      default: true,
+      required: false
+    },
+    sales: {
       type: Boolean,
       default: true,
       required: false
@@ -175,6 +192,13 @@ hr {
   color: #000000;
   text-align: left;
   margin-bottom: 5px;
+}
+
+.crop {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 205px;
 }
 
 .card-text {

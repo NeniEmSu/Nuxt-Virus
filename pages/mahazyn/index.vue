@@ -33,6 +33,7 @@
 
     <div id="app">
       <div class="container">
+        <ProductsCategories />
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
@@ -354,12 +355,14 @@
                   :name="product.name"
                   :summary="product.Overview"
                   :price="product.Price"
+                  :discount-price="product.discountPrice"
                   :image="
                     `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
                   "
                   :link="'/mahazyn/' + product.name_slug"
                   :filter-data="product.Filter"
                   :stock="product.Stock"
+                  :sales="product.Sales"
                 />
               </div>
             </div>
@@ -398,7 +401,6 @@
     </div>
 
     <script>
-      ;
       (function() {
       const filterBtn = document.querySelectorAll(".filter-btn")
       filterBtn.forEach(function(btn) {
@@ -428,10 +430,12 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 import ProductsList from '@/components/shop/ProductsList.vue'
+import ProductsCategories from '@/components/shop/ProductsCategories.vue'
 
 export default {
   components: {
-    ProductsList
+    ProductsList,
+    ProductsCategories
   },
   meta: {
     animation: 'fade-in-right'
@@ -548,7 +552,7 @@ export default {
 
 .shop-heading-image {
   margin-top: -10px;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
   background: $darkColor;
   background-image: url(~assets/img/shopPageHeadImg.jpg);
   background-repeat: no-repeat;

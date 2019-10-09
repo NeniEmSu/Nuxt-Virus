@@ -226,9 +226,14 @@
               <h1 class="details-page-header">
                 {{ product.name }}
               </h1>
-              <p class="my-lg-5 desktop-tablet-only">
-                {{ product.Description }}
+              <p
+                class="my-lg-5 desktop-tablet-only markdown"
+                v-html="$options.filters.parseMd(product.Description + '\n' + product.volume)"
+              >
+                <!-- {{ product.Description }} <br>
+                {{ product.volume }} -->
               </p>
+
               <div class="row">
                 <div class="col-6 text-center text-md-left my-auto pr-0">
                   <small class="mb-2 detail-discount-cost">
@@ -247,7 +252,6 @@
                     v-show="product.Stock === true"
                     class="inStock"
                   >В наявності</small>
-                  >
                   <small
                     v-show="product.Stock === false"
                     class="notInStock"
