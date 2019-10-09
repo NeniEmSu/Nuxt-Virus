@@ -326,10 +326,6 @@ export default {
     {
       src: '~/plugins/vue-select',
       ssr: true
-    },
-    {
-      src: '~/plugins/vue-scroll-reveal',
-      ssr: false
     }
   ],
 
