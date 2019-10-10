@@ -101,12 +101,12 @@
             </li>
           </ol>
         </div>
-        <div
+        <!-- <div
           v-if="success && !errors.length"
           class="text-left text-success"
         >
           <b>Ваше повідомлення надіслано успішно</b>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-6 text-left my-2">
@@ -304,8 +304,9 @@ export default {
             this.currentStepNumber++
             const self = this
             setTimeout(function () {
+              self.mobileModalShow = false
               self.currentStepNumber = 1
-            }, 5000)
+            }, 10000)
           }
         })
         .catch((error) => {
