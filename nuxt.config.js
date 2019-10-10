@@ -309,6 +309,10 @@ export default {
       src: '~/plugins/JivoChat'
     },
     {
+      ssr: false,
+      src: '~/plugins/filterItems'
+    },
+    {
       src: '~/plugins/google-maps',
       ssr: true
     },

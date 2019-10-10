@@ -41,7 +41,7 @@
                 class="accordion"
                 @click.prevent="active1 = !active1"
               >
-                Засоби догляду
+                Бренд
                 <span
                   v-show="!active1"
                   class="down-Arrow"
@@ -55,45 +55,96 @@
                 v-show="active1"
                 class="panel"
               >
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn all"
-                  data-filter="all"
-                >-Все</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn Фібри"
-                  data-filter="Фібри"
-                >-Фібри</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Шампунь"
-                >-Шампунь</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Віск"
-                >-Віск</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Пахнючки"
-                >-Пахнючки</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="чорніннярезини"
-                >
-                  -Засіб для чорніння резини
-                </a>
+                <label
+                  class="holder"
+                  for="all"
+                >Auto Finesse
+                  <input
+                    id="all"
+                    type="checkbox"
+                    name="all"
+                    class="filter-btn all"
+                    data-filter="all"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Фібри"
+                >Auto Finesse
+                  <input
+                    id="Фібри"
+                    type="checkbox"
+                    name="Фібри"
+                    class="filter-btn Фібри"
+                    data-filter="Фібри"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Шампунь"
+                >Auto Finesse
+                  <input
+                    id="Шампунь"
+                    type="checkbox"
+                    name="Шампунь"
+                    class="filter-btn Шампунь"
+                    data-filter="Шампунь"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Віск"
+                >Auto Finesse
+                  <input
+                    id="Віск"
+                    type="checkbox"
+                    name="Віск"
+                    class="filter-btn Віск"
+                    data-filter="Віск"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Пахнючки"
+                >Auto Finesse
+                  <input
+                    id="Пахнючки"
+                    type="checkbox"
+                    name="Пахнючки"
+                    class="filter-btn Пахнючки"
+                    data-filter="Пахнючки"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="чорніннярезини"
+                >Auto Finesse
+                  <input
+                    id="чорніннярезини"
+                    type="checkbox"
+                    name="чорніннярезини"
+                    class="filter-btn чорніннярезини"
+                    data-filter="чорніннярезини"
+                  >
+                  <span class="checkmark" />
+                </label>
               </div>
 
               <button
                 class="accordion"
                 @click.prevent="active2 = !active2"
               >
-                Захисні покриття
+                Тип
                 <span
                   v-show="!active2"
                   class="down-Arrow"
@@ -107,60 +158,110 @@
                 v-show="active2"
                 class="panel"
               >
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Кераміка"
-                >-Кераміка</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Рідкескло"
-                >
-                  -Рідке скло
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="тканини"
-                >
-                  -Кераміка для тканини
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="шкіри"
-                >
-                  -Кераміка для шкіри
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="диски"
-                >
-                  -Кераміка диски
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="резина"
-                >
-                  -Кераміка резина
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn ВіскSoft99"
-                  data-filter="ВіскSoft99"
-                >
-                  -Віск Soft 99
-                </a>
+                <label
+                  class="holder"
+                  for="Кераміка"
+                >Auto Finesse
+                  <input
+                    id="Кераміка"
+                    type="checkbox"
+                    name="Кераміка"
+                    class="filter-btn Кераміка"
+                    data-filter="Кераміка"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Рідкескло"
+                >Auto Finesse
+                  <input
+                    id="Рідкескло"
+                    type="checkbox"
+                    name="Рідкескло"
+                    class="filter-btn Рідкескло"
+                    data-filter="Рідкескло"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="тканини"
+                >Auto Finesse
+                  <input
+                    id="тканини"
+                    type="checkbox"
+                    name="тканини"
+                    class="filter-btn тканини"
+                    data-filter="тканини"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="шкіри"
+                >Auto Finesse
+                  <input
+                    id="шкіри"
+                    type="checkbox"
+                    name="шкіри"
+                    class="filter-btn шкіри"
+                    data-filter="шкіри"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="диски"
+                >Auto Finesse
+                  <input
+                    id="диски"
+                    type="checkbox"
+                    name="диски"
+                    class="filter-btn диски"
+                    data-filter="диски"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="резина"
+                >Auto Finesse
+                  <input
+                    id="резина"
+                    type="checkbox"
+                    name="резина"
+                    class="filter-btn резина"
+                    data-filter="резина"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="ВіскSoft99"
+                >Auto Finesse
+                  <input
+                    id="ВіскSoft99"
+                    type="checkbox"
+                    name="ВіскSoft99"
+                    class="filter-btn ВіскSoft99"
+                    data-filter="ВіскSoft99"
+                  >
+                  <span class="checkmark" />
+                </label>
               </div>
 
               <button
                 class="accordion"
                 @click.prevent="active3 = !active3"
               >
-                Хімія
+                Тип
                 <span
                   v-show="!active3"
                   class="down-Arrow"
@@ -174,28 +275,96 @@
                 v-show="active3"
                 class="panel"
               >
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Хімія"
-                >-Хімія</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Хімія"
-                >-Хімія</a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Хімія"
-                >-Хімія</a>
+                <label
+                  class="holder"
+                  for="all"
+                >Auto Finesse
+                  <input
+                    id="all"
+                    type="checkbox"
+                    name="all"
+                    class="filter-btn all"
+                    data-filter="all"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Фібри"
+                >Auto Finesse
+                  <input
+                    id="Фібри"
+                    type="checkbox"
+                    name="Фібри"
+                    class="filter-btn Фібри"
+                    data-filter="Фібри"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Шампунь"
+                >Auto Finesse
+                  <input
+                    id="Шампунь"
+                    type="checkbox"
+                    name="Шампунь"
+                    class="filter-btn Шампунь"
+                    data-filter="Шампунь"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Віск"
+                >Auto Finesse
+                  <input
+                    id="Віск"
+                    type="checkbox"
+                    name="Віск"
+                    class="filter-btn Віск"
+                    data-filter="Віск"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Пахнючки"
+                >Auto Finesse
+                  <input
+                    id="Пахнючки"
+                    type="checkbox"
+                    name="Пахнючки"
+                    class="filter-btn Пахнючки"
+                    data-filter="Пахнючки"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="чорніннярезини"
+                >Auto Finesse
+                  <input
+                    id="чорніннярезини"
+                    type="checkbox"
+                    name="чорніннярезини"
+                    class="filter-btn чорніннярезини"
+                    data-filter="чорніннярезини"
+                  >
+                  <span class="checkmark" />
+                </label>
               </div>
 
               <button
                 class="accordion"
                 @click.prevent="active4 = !active4"
               >
-                Подарункові набори
+                Тип
                 <span
                   v-show="!active4"
                   class="down-Arrow"
@@ -205,140 +374,96 @@
                   class="up-Arrow"
                 >&#9650;</span>
               </button>
+
               <div
                 v-show="active4"
                 class="panel"
               >
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Подарунковінабори"
-                >
-                  -Подарункові набори
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Подарунковінабори"
-                >
-                  -Подарункові набори
-                </a>
-                <a
-                  tag="button"
-                  class="btn text-uppercase filter-btn"
-                  data-filter="Подарунковінабори"
-                >
-                  -Подарункові набори
-                </a>
+                <label
+                  class="holder"
+                  for="all"
+                >Auto Finesse
+                  <input
+                    id="all"
+                    type="checkbox"
+                    name="all"
+                    class="filter-btn all"
+                    data-filter="all"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Фібри"
+                >Auto Finesse
+                  <input
+                    id="Фібри"
+                    type="checkbox"
+                    name="Фібри"
+                    class="filter-btn Фібри"
+                    data-filter="Фібри"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Шампунь"
+                >Auto Finesse
+                  <input
+                    id="Шампунь"
+                    type="checkbox"
+                    name="Шампунь"
+                    class="filter-btn Шампунь"
+                    data-filter="Шампунь"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Віск"
+                >Auto Finesse
+                  <input
+                    id="Віск"
+                    type="checkbox"
+                    name="Віск"
+                    class="filter-btn Віск"
+                    data-filter="Віск"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="Пахнючки"
+                >Auto Finesse
+                  <input
+                    id="Пахнючки"
+                    type="checkbox"
+                    name="Пахнючки"
+                    class="filter-btn Пахнючки"
+                    data-filter="Пахнючки"
+                  >
+                  <span class="checkmark" />
+                </label>
+
+                <label
+                  class="holder"
+                  for="чорніннярезини"
+                >Auto Finesse
+                  <input
+                    id="чорніннярезини"
+                    type="checkbox"
+                    name="чорніннярезини"
+                    class="filter-btn чорніннярезини"
+                    data-filter="чорніннярезини"
+                  >
+                  <span class="checkmark" />
+                </label>
               </div>
             </div>
-          </div>
-
-          <div
-            class="filter-sidebar-mobile col-xl-2 text-center mb-5 mobile-only"
-            style
-          >
-            <form
-              method="post"
-              name="filter"
-            >
-              <div class="row">
-                <div class="form-group col-8 text-left m-auto">
-                  <label
-                    class="sr-only"
-                    for="filter"
-                  >від дорогих до дешевих</label>
-                  <select
-                    id="filter"
-                    v-model="filter"
-                    aria-label="filter"
-                    aria-describedby="filter"
-                    class="form-control"
-                    name="filter"
-                  >
-                    <option
-                      value="null"
-                      class="filter-btn"
-                    >
-                      від дорогих до дешевих
-                    </option>
-                    <option
-                      value="all"
-                      class="filter-btn all"
-                      data-filter="all"
-                    >
-                      Все
-                    </option>
-                    <option
-                      value="Фібри"
-                      class="filter-btn Фібри"
-                      data-filter="Фібри"
-                    >
-                      Фібри
-                    </option>
-                    <option
-                      value="Шампунь"
-                      class="filter-btn Шампунь"
-                      data-filter="Шампунь"
-                    >
-                      Шампунь
-                    </option>
-                    <option value="Віск">
-                      Віск
-                    </option>
-                    <option value="Пахнючки">
-                      Пахнючки
-                    </option>
-                    <option value="чорніннярезини">
-                      Засіб для чорніння резини
-                    </option>
-                    <option value="резина">
-                      Хімчистка передніх сидінь
-                    </option>
-                    <option value="Кераміка">
-                      Кераміка
-                    </option>
-                    <option value="тканини">
-                      Кераміка для тканини
-                    </option>
-                    <option value="Рідкескло">
-                      Рідке скло
-                    </option>
-                    <option value="шкіри">
-                      Кераміка для шкіри
-                    </option>
-                    <option value="диски">
-                      Кераміка диски
-                    </option>
-                    <option value="резина">
-                      Кераміка резина
-                    </option>
-                    <option
-                      value="ВіскSoft99"
-                      class="filter-btn ВіскSoft99"
-                      data-filter="ВіскSoft99"
-                    >
-                      Віск Soft 99
-                    </option>
-                    <option value="Хімія">
-                      Хімія
-                    </option>
-                    <option value="Подарунковінабори">
-                      Подарункові набори
-                    </option>
-                  </select>
-                </div>
-                <div class="col-4 text-right m-auto">
-                  <p class="m-auto">
-                    Фільтр
-                    <img
-                      src="~assets/img/icons8-slider-filled-90.png"
-                      alt="filter icon"
-                    >
-                  </p>
-                </div>
-              </div>
-            </form>
           </div>
 
           <div class="container sales-cards col-xl-9 text-center p-0">
@@ -399,31 +524,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      (function() {
-      const filterBtn = document.querySelectorAll(".filter-btn")
-      filterBtn.forEach(function(btn) {
-      btn.addEventListener("click", function(event) {
-      event.preventDefault()
-      this.classList.add("active");
-      const value = event.target.dataset.filter;
-      const items = document.querySelectorAll(".store-item")
-      items.forEach(function(items) {
-      if (value === "all") {
-      items.style.display = "block";
-      } else {
-      if (items.classList.contains(value)) {
-      items.style.display = "block"
-      } else {
-      items.style.display = "none";
-      }
-      }
-      });
-      });
-      })
-      })()
-    </script>
   </div>
 </template>
 
@@ -598,21 +698,22 @@ export default {
 
   .accordion {
     display: block;
-    border: 1.48094px solid #c4c4c4;
+    border: none;
     box-sizing: border-box;
-    border-radius: 50px;
-    margin: 10px auto;
+    // border-radius: 50px;
+    // margin: 10px auto;
     background-color: $lightColor;
 
-    width: 90%;
+    width: 100%;
     height: 38px;
 
     font-family: $mainFont;
     font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: normal;
-    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: left;
 
     color: $darkColor;
 
@@ -622,7 +723,6 @@ export default {
 
   .open,
   .accordion:hover {
-    background-color: #e5e5e5;
     outline: none;
   }
 
@@ -636,45 +736,84 @@ export default {
   }
 
   .panel {
-    font-family: $mainFont;
+    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
-    width: 90%;
+    font-size: 16px;
+    line-height: 19px;
 
-    color: #8b8b8b;
+    text-align: left;
+
+    color: #000000;
 
     overflow: hidden;
     outline: none;
 
-    .filter-btn {
-      font-family: $mainFont;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 20px;
-
-      color: #8b8b8b;
-
+    .holder {
       display: block;
-      text-decoration: none;
-      text-align: left;
-
-      padding: 3px 0px 3px 10px;
-      margin: 5px 0 5px 20px;
-      outline: none;
-      box-shadow: none;
-      border-radius: 20px;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      color: $darkColor;
-      background: #e5e5e5;
-      border-radius: 20px;
-      padding: 3px 0px 3px 10px;
-      margin: 5px 0 5px 20px;
+    /* Hide the browser's default checkbox */
+    .holder input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border: 2px solid #c4c4c4;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .holder:hover input ~ .checkmark {
+      background-color: transparent;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .holder input:checked ~ .checkmark {
+      border: 2px solid $redColor;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .holder input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .holder .checkmark:after {
+      left: 2px;
+      top: 1.5px;
+      width: 12px;
+      height: 12px;
+      background: $redColor;
+      border-radius: 2px;
     }
   }
 }

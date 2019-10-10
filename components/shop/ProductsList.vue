@@ -5,18 +5,19 @@
       src="~/assets/img/spinner.svg"
       alt="Loading spinner"
     >
-
-    <div
-      v-show="!loading"
-      class="row"
-    >
-      <single-product
-        v-for="product in products"
-        :key="product.id"
-        class="mx-auto mb-4"
-        :product="product"
-      />
-    </div>
+    <vue-page-transition name="fade-in">
+      <div
+        v-show="!loading"
+        class="row"
+      >
+        <single-product
+          v-for="product in products"
+          :key="product.id"
+          class="mx-auto mb-4"
+          :product="product"
+        />
+      </div>
+    </vue-page-transition>
   </div>
 </template>
 
