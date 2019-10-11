@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-v-html */
 <template>
   <section class="container">
     <nav
@@ -226,13 +227,13 @@
               <h1 class="details-page-header">
                 {{ product.name }}
               </h1>
-              <p
+              <div
                 class="my-lg-5 desktop-tablet-only markdown"
                 v-html="$options.filters.parseMd(product.Description + '\n' + product.volume)"
               >
                 <!-- {{ product.Description }} <br>
                 {{ product.volume }} -->
-              </p>
+              </div>
 
               <div class="row">
                 <div class="col-6 text-center text-md-left my-auto pr-0">
@@ -261,15 +262,7 @@
                     v-show="product.Stock === true"
                     :disableda="product.Stock === false"
                     class="btn add-to-cart snipcart-add-item card-footer-item"
-                    data-item-url="/"
-                    :data-item-id="product._id"
-                    :data-item-name="product.name"
-                    :data-item-price="product.Price"
-                    :data-item-image="
-                      `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                    "
-                    :data-item-description="product.Overview"
-                    :data-item-shippable="false"
+                    @click.prevent="addToCart(product._id)"
                   >
                     Додати до корзини +
                   </button>
@@ -411,6 +404,12 @@ export default {
     return {
       product: product.data.entries[0],
       products: products.data.entries
+    }
+  },
+
+  methods: {
+    addToCart (id) {
+      this.$store.dispatch('addToCart', id)
     }
   },
 
@@ -768,7 +767,7 @@ h1.details-page-header {
     border-radius: 5px;
   }
 
-  p {
+  .markdown {
     font-family: $mainFont;
     font-style: normal;
     font-weight: normal;
@@ -929,7 +928,7 @@ h1.details-page-header {
     margin-bottom: -10px;
   }
 
-  p {
+  .markdown {
     font-family: $mainFont;
     font-style: normal;
     font-weight: normal;

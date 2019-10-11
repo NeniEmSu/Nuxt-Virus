@@ -2,6 +2,7 @@ import myApi from '~/plugins/api/myApi.js'
 
 export const state = () => ({
   products: null,
+  loading: false,
   cart: [],
   setCheckoutStatus: null,
   toast: {
@@ -18,7 +19,7 @@ export const getters = {
 
   cartTotalAmount (state) {
     return state.cart.reduce((total, product) => {
-      return total + product.price * product.quantity
+      return total + product.Price * product.quantity
     }, 0)
   },
 
@@ -28,40 +29,68 @@ export const getters = {
 }
 
 export const actions = {
-  fetchProducts ({
+  async nuxtServerInit ({
     commit
+  }, {
+    app,
+    error
   }) {
-    myApi.getProducts().then((products) => {
-      commit('setUpProducts', products)
-      commit('showToast', 'Продукти завантажені')
-    })
+    const response = await app.$axios.get(
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&sort[_created]=-1&rspc=1',
+      JSON.stringify({
+        filter: {
+          Published: true
+        },
+        sort: {
+          _created: -1
+        },
+        populate: 1
+      }), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+
+    if (!response.data.entries[0]) {
+      return error({
+        message: '404 Page not found',
+        statusCode: 404
+      })
+    }
+
+    commit('setUpProducts', response.data.entries)
+    commit('showToast', 'Продукти завантажені')
   },
+
+  // fetchProducts ({
+  //   commit
+  // }) {
+  //   myApi.getProducts().then((products) => {
+  //     commit('setUpProducts', products)
+  //     commit('showToast', 'Продукти завантажені')
+  //   })
+  // },
 
   addToCart ({
     commit
   }, productId) {
-    myApi.products('add', productId).then((productId) => {
-      commit('addToCart', productId)
-      commit('showToast', 'Додано з кошика')
-    })
+    commit('addToCart', productId)
+    commit('showToast', 'Додано з кошика')
   },
 
   removeFromCart ({
     commit
   }, productId) {
-    myApi.products('remove', productId).then((productId) => {
-      commit('removeFromCart', productId)
-      commit('showToast', 'Видалено з кошика')
-    })
+    commit('removeFromCart', productId)
+    commit('showToast', 'Видалено з кошика')
   },
 
   deleteFromCart ({
     commit
   }, productId) {
-    myApi.products('delete', productId).then((productId) => {
-      commit('deleteFromCart', productId)
-      commit('showToast', 'Видалено з кошика')
-    })
+    commit('deleteFromCart', productId)
+    commit('showToast', 'Видалено з кошика')
   },
 
   checkout: ({
@@ -86,10 +115,14 @@ export const mutations = {
     state.products = productsPayload
   },
 
-  addToCart (state, productId) {
-    const product = state.products.find(product => product.id === productId)
+  // SET_DATA (state, dataPayload) {
+  //   state.data = dataPayload
+  // },
 
-    const cartProduct = state.cart.find(product => product.id === productId)
+  addToCart (state, productId) {
+    const product = state.products.find(product => product._id === productId)
+
+    const cartProduct = state.cart.find(product => product._id === productId)
 
     if (cartProduct) {
       cartProduct.quantity++
@@ -105,9 +138,9 @@ export const mutations = {
   },
 
   removeFromCart (state, productId) {
-    const product = state.products.find(product => product.id === productId)
+    const product = state.products.find(product => product._id === productId)
 
-    const cartProduct = state.cart.find(product => product.id === productId)
+    const cartProduct = state.cart.find(product => product._id === productId)
 
     cartProduct.quantity--
 
@@ -115,10 +148,10 @@ export const mutations = {
   },
 
   deleteFromCart (state, productId) {
-    const product = state.products.find(product => product.id === productId)
+    const product = state.products.find(product => product._id === productId)
 
     const cartProductIndex = state.cart.findIndex(
-      product => product.id === productId
+      product => product._id === productId
     )
 
     product.quantity = state.cart[cartProductIndex].stock

@@ -58,10 +58,11 @@
       <h1 class="mt-2">
         {{ post.title }}
       </h1>
-      <div
+      <!-- <div
         class="mt-4 markdown"
         v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
-      />
+      /> -->
+      <div v-html="post.excerpt + '\n\n' + post.content" />
       <div class="mt-5 text-center pb-5">
         <nuxt-link
           to="/blog"

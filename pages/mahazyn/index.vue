@@ -467,9 +467,15 @@
           </div>
 
           <div class="container sales-cards col-xl-9 text-center p-0">
-            <ProductsList />
+            <!-- <ProductsList /> -->
             <div class="container mt-2 pb-3">
+              <img
+                v-show="loading"
+                src="~/assets/img/spinner.svg"
+                alt="Loading spinner"
+              >
               <div
+                v-show="!loading"
                 id="store-items"
                 class="row"
               >
@@ -529,12 +535,12 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-import ProductsList from '@/components/shop/ProductsList.vue'
+// import ProductsList from '@/components/shop/ProductsList.vue'
 import ProductsCategories from '@/components/shop/ProductsCategories.vue'
 
 export default {
   components: {
-    ProductsList,
+    // ProductsList,
     ProductsCategories
   },
   meta: {
@@ -562,37 +568,38 @@ export default {
       active3: false,
       active4: false,
       mobileModalShow: false,
+      loading: false,
       imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
     }
   },
 
   computed: {
-    ...mapState(['cart']),
+    ...mapState(['cart', 'products']),
     ...mapGetters(['cartSize', 'cartTotalAmount']),
     toast () {
       return this.$store.getters.toast
     }
   },
 
-  async asyncData ({ app, error }) {
-    const { data } = await app.$axios.get(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
-      JSON.stringify({
-        filter: { Published: true },
-        sort: { _created: 1 },
-        populate: 1
-      }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      }
-    )
+  // async asyncData ({ app, error }) {
+  //   const { data } = await app.$axios.get(
+  //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
+  //     JSON.stringify({
+  //       filter: { Published: true },
+  //       sort: { _created: 1 },
+  //       populate: 1
+  //     }),
+  //     {
+  //       headers: { 'Content-Type': 'application/json' }
+  //     }
+  //   )
 
-    if (!data.entries[0]) {
-      return error({ message: '404 Page not found', statusCode: 404 })
-    }
+  //   if (!data.entries[0]) {
+  //     return error({ message: '404 Page not found', statusCode: 404 })
+  //   }
 
-    return { products: data.entries }
-  },
+  //   return { products: data.entries }
+  // },
 
   methods: {
     hideToast () {
@@ -736,7 +743,7 @@ export default {
   }
 
   .panel {
-    font-family: Roboto;
+    font-family: $mainFont;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -768,6 +775,17 @@ export default {
       cursor: pointer;
       height: 0;
       width: 0;
+
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      /* identical to box height */
+      display: flex;
+      align-items: center;
+
+      color: #000000;
     }
 
     /* Create a custom checkbox */

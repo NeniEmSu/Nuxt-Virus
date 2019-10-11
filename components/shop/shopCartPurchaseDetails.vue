@@ -2,13 +2,15 @@
   <div class=" basket text-center">
     <div
       v-for="product in cart"
-      :key="product.id"
+      :key="product._id"
       class="basket-content col-12 p-0"
     >
       <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
         <img
           id="item-img"
-          :src="require(`~/assets/img/${product.image + '.jpg'}`)"
+          :src="
+            `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+          "
           alt="Koch Chemie Fresh UP"
           class="col-2 p-0 m-auto"
         >
@@ -24,14 +26,14 @@
               <div class="toggle-quantity col-sm-4 m-auto ">
                 <button
                   :disabled="product.quantity === 1"
-                  @click="removeFromCart(product.id)"
+                  @click="removeFromCart(product._id)"
                 >
                   &minus;
                 </button>
                 <p>{{ product.quantity }}</p>
                 <button
                   :disabled="product.quantity === product.stock"
-                  @click="addToCart(product.id)"
+                  @click="addToCart(product._id)"
                 >
                   &plus;
                 </button>
@@ -47,13 +49,13 @@
                   id="cart-item-price"
                   class="cart-item-price text-right py-2 card-text"
                 >
-                  {{ product.quantity* product.price | currency }}
+                  {{ product.quantity* product.Price | currency }}
                 </p>
               </div>
               <div class="remove-from-chart col-sm-5 m-auto text-right">
                 <span
                   class="close text-right"
-                  @click="deleteFromCart(product.id)"
+                  @click="deleteFromCart(product._id)"
                 >&times;
                 </span>
               </div>
@@ -210,6 +212,7 @@ import cities from '~/plugins/api/ua.json'
 export default {
   data () {
     return {
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4',
       cities,
       mobileModalShow: false,
       form: {

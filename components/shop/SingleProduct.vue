@@ -7,11 +7,11 @@
     :title="product.name"
     style="width: 18rem;"
   >
-    <img
+    <!-- <img
       :src="require(`~/assets/img/${product.image + '.jpg'}`)"
       class="card-img-top img-fluid store-img"
       :alt="product.name"
-    >
+    > -->
     <hr class="desktop-only">
     <div class="card-body">
       <h5 class="card-title crop">
@@ -45,14 +45,14 @@
           </p>
         </div>
         <div class="col-6 bg-transparent btn-container">
-          <small :class="inCartQuantity ? 'inStock' : 'notInStock'">{{ inCartQuantity ? "В наявності" : "Не в наявності" }}</small>
+          <small :class="product.Stock ? 'inStock' : 'notInStock'">{{ product.Stock ? "В наявності" : "Не в наявності" }}</small>
 
           <br>
 
           <button
             class="btn"
-            :disabled="!inCartQuantity"
-            @click.prevent="addToCart(product.id)"
+            :disabled="!product.Stock"
+            @click.prevent="addToCart(product._id)"
           >
             + Cart
           </button>
@@ -63,8 +63,8 @@
     <button
       class="card-footer mobile-only"
       tag="button"
-      :disabled="!inCartQuantity"
-      @click.prevent="addToCart(product.id)"
+      :disabled="!product.Stock"
+      @click.prevent="addToCart(product._id)"
     >
       + Cart
     </button>

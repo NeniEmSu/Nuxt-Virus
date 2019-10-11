@@ -8,7 +8,7 @@
       <h3>деталі замовлення</h3>
       <div
         v-for="product in cart"
-        :key="product.id"
+        :key="product._id"
         class="basket-content col-12 p-0"
       >
         <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
@@ -36,7 +36,7 @@
                     id="cart-item-price"
                     class="cart-item-price text-right py-2 card-text"
                   >
-                    {{ product.quantity* product.price | currency }}
+                    {{ product.quantity* product.Price | currency }}
                   </p>
                 </div>
               </div>

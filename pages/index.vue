@@ -289,7 +289,7 @@ export default {
     const { data } = await app.$axios.post(
       'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
-        filter: { Published: true },
+        filter: { Published: true, featured: true },
         limit: 6,
         sort: { _created: -1 },
         populate: 1

@@ -12,7 +12,7 @@
       >
         <single-product
           v-for="product in products"
-          :key="product.id"
+          :key="product._id"
           class="mx-auto mb-4"
           :product="product"
         />
@@ -36,10 +36,10 @@ export default {
     products () {
       return this.$store.state.products
     }
-  },
-  created () {
-    this.loading = true
-    this.$store.dispatch('fetchProducts').then(() => (this.loading = false))
   }
+  // created () {
+  //   this.loading = true
+  //   this.$store.dispatch('fetchProducts').then(() => (this.loading = false))
+  // }
 }
 </script>
