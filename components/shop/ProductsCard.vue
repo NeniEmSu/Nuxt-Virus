@@ -50,14 +50,14 @@
             <s
               v-show="sales === true"
               class="discount-price"
-            >{{ discountPrice }} грн</s>
+            >{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
             <s
               v-show="sales === false"
               class="discount-price"
-            >{{ price }} грн</s>
+            >{{ price | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
           </small>
           <p class="card-price">
-            {{ price }}
+            {{ price | currency({symbol: '', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
             <span>ГРН</span>
           </p>
         </div>

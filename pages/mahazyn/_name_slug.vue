@@ -238,13 +238,14 @@
               <div class="row">
                 <div class="col-6 text-center text-md-left my-auto pr-0">
                   <small class="mb-2 detail-discount-cost">
-                    <s>2975 грн</s>
+                    <s>{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
                   </small>
                   <p
                     id="store-item-price"
                     class="detail-cost"
                   >
-                    {{ product.Price }}
+                    {{ product.Price | currency({symbol: '', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
+
                     <span>ГРН</span>
                   </p>
                 </div>
@@ -306,9 +307,10 @@
         </div>
       </div>
 
-      <p class="mt-3 sm-xsm-xxsm-only">
-        {{ product.Description }}
-      </p>
+      <div
+        class="mt-3 sm-xsm-xxsm-only"
+        v-html="$options.filters.parseMd(product.Description + '\n' + product.volume)"
+      />
 
       <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;">
 

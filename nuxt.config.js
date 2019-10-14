@@ -166,7 +166,7 @@ export default {
     },
     {
       rel: 'mask-icon',
-      href: 'https://virus.te.ua/assets/icons/safari-pinned-tab.svg',
+      href: '/safari-pinned-tab.svg',
       color: '#e32124'
     },
     {
