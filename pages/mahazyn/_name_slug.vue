@@ -227,9 +227,13 @@
               <h1 class="details-page-header">
                 {{ product.name }}
               </h1>
+              <!-- <div
+                class="my-lg-5 desktop-tablet-only markdown"
+                v-html="$options.filters.parseMd(product.Description + '\n' + 'Об\'єм:' + product.volume)"
+              > -->
               <div
                 class="my-lg-5 desktop-tablet-only markdown"
-                v-html="$options.filters.parseMd(product.Description + '\n' + product.volume)"
+                v-html="(product.Description + '\n' + 'Об\'єм:&nbsp;' + product.volume)"
               >
                 <!-- {{ product.Description }} <br>
                 {{ product.volume }} -->
@@ -238,7 +242,8 @@
               <div class="row">
                 <div class="col-6 text-center text-md-left my-auto pr-0">
                   <small class="mb-2 detail-discount-cost">
-                    <s>{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
+                    <s>{{ product.discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
+
                   </small>
                   <p
                     id="store-item-price"
@@ -307,9 +312,14 @@
         </div>
       </div>
 
+      <!-- <div
+        class="mt-3 sm-xsm-xxsm-only"
+        v-html="$options.filters.parseMd(product.Description + '\n' + 'Об\'єм:' + product.volume)"
+      /> -->
+
       <div
         class="mt-3 sm-xsm-xxsm-only"
-        v-html="$options.filters.parseMd(product.Description + '\n' + product.volume)"
+        v-html="(product.Description + '\n' + 'Об\'єм:&nbsp;' + product.volume)"
       />
 
       <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;">
@@ -405,7 +415,7 @@ export default {
 
     return {
       product: product.data.entries[0],
-      products: products.data.entries
+      products: products.data.entries.filter(el => el.category === product.data.entries[0].category)
     }
   },
 

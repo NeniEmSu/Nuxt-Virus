@@ -49,7 +49,7 @@
               </h2>
             </nuxt-link>
             <p class="card-text">
-              {{ promotion.promotionTimeLimit }}
+              {{ `Акція діє з ${promotion.promotionTimeStart} до ${promotion.promotionTimeEnd}` }}
             </p>
           </div>
           <div class="col-4 m-auto px-0 text-right">

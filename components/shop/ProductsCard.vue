@@ -47,14 +47,8 @@
       <div class="row bg-transparent">
         <div class="col-6 bg-transparent cost">
           <small>
-            <s
-              v-show="sales === true"
-              class="discount-price"
-            >{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
-            <s
-              v-show="sales === false"
-              class="discount-price"
-            >{{ price | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
+            <s class="discount-price">{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
+
           </small>
           <p class="card-price">
             {{ price | currency({symbol: '', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}

@@ -23,19 +23,25 @@
         </li>
       </ol>
     </nav>
-    <article class="my-5">
+    <article class="py-5">
       <div class="text-grey-dark font-bold text-sm tracking-wide">
-        <p>
-          {{ post._created | toDate }}
-          <span class="ml-1 text-xs">•</span>
-          <nuxt-link
-            v-for="tag in post.tags"
-            :key="tag"
-            :to="'/blog/category/' + tag"
-          >
-            {{ tag }}&nbsp;|&nbsp;
-          </nuxt-link>
-          <span class="mx-1 text-xs">•</span>
+        <p class="row">
+          <span class="mx-auto  col-md-3">Опубліковано: {{ post._created | toDate }}</span> <br>
+          <span
+            v-show="post._modified !== post._created"
+            class="mx-auto col-md-3"
+          >Оновлено: {{ post._modified | toDate }}</span> <br>
+          <span class=" mx-auto col-md-3 ">Теги:
+            <nuxt-link
+              v-for="tag in post.tags"
+              :key="tag"
+              :to="'/blog/category/' + tag"
+              class="text-capitalize text-link"
+            >
+              {{ `${tag}` }}&nbsp;&nbsp;
+            </nuxt-link>
+          </span>
+          <!-- <span class="mx-1 text-xs">•</span> -->
           <!-- <a
             v-scroll-to="'#comments'"
             href="#"
@@ -58,15 +64,19 @@
       <h1 class="mt-2">
         {{ post.title }}
       </h1>
+
+      <div class="">
+        {{ post.excerpt }}
+      </div>
       <!-- <div
         class="mt-4 markdown"
         v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
       /> -->
-      <div v-html="post.excerpt + '\n\n' + post.content" />
-      <div class="mt-5 text-center pb-5">
+      <div v-html="post.content" />
+      <div class="mt-5 text-center">
         <nuxt-link
           to="/blog"
-          class="pr-2 text-secondary"
+          class="pr-2 text-link"
         >
           Знайти більше повідомлень у блогах!
         </nuxt-link>
@@ -151,6 +161,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// a {
+//   color: $redColor;
+// }
+
 @include mediaMenu {
   .desktop-only {
     display: none;
