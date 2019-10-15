@@ -2,7 +2,7 @@ import myApi from '~/plugins/api/myApi.js'
 
 export const state = () => ({
   products: null,
-  loading: false,
+  loading: true,
   cart: [],
   setCheckoutStatus: null,
   toast: {
@@ -112,7 +112,9 @@ export const actions = {
 
 export const mutations = {
   setUpProducts (state, productsPayload) {
+    state.loading = true
     state.products = productsPayload
+    state.loading = false
   },
 
   // SET_DATA (state, dataPayload) {

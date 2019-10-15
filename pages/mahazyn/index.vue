@@ -33,7 +33,18 @@
 
     <div id="app">
       <div class="container">
-        <ProductsCategories />
+        <ProductsCategories
+          :current-products-displayed="currentProductsDisplayed"
+          @changedView="updateView($event)"
+        />
+        <vue-page-transition name="fade">
+          <ExteriorSink v-if="currentProductsDisplayed === 1" />
+          <Exterior v-if="currentProductsDisplayed === 2" />
+          <Interior v-if="currentProductsDisplayed === 3" />
+          <Polishing v-if="currentProductsDisplayed === 4" />
+          <Protection v-if="currentProductsDisplayed === 5" />
+          <Acessories v-if="currentProductsDisplayed === 6" />
+        </vue-page-transition>
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
@@ -257,7 +268,7 @@
                 </label>
               </div>
 
-              <button
+              <!--<button
                 class="accordion"
                 @click.prevent="active3 = !active3"
               >
@@ -271,7 +282,7 @@
                   class="up-Arrow"
                 >&#9650;</span>
               </button>
-              <div
+               <div
                 v-show="active3"
                 class="panel"
               >
@@ -462,7 +473,7 @@
                   >
                   <span class="checkmark" />
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -537,11 +548,22 @@
 import { mapGetters, mapState } from 'vuex'
 // import ProductsList from '@/components/shop/ProductsList.vue'
 import ProductsCategories from '@/components/shop/ProductsCategories.vue'
-
+import ExteriorSink from '@/components/shop/subcategoris/ExteriorSink'
+import Exterior from '@/components/shop/subcategoris/Exterior'
+import Interior from '@/components/shop/subcategoris/Interior'
+import Polishing from '@/components/shop/subcategoris/Polishing'
+import Protection from '@/components/shop/subcategoris/Protection'
+import Acessories from '@/components/shop/subcategoris/Acessories'
 export default {
   components: {
     // ProductsList,
-    ProductsCategories
+    ProductsCategories,
+    ExteriorSink,
+    Exterior,
+    Interior,
+    Polishing,
+    Protection,
+    Acessories
   },
   meta: {
     animation: 'fade-in-right'
@@ -568,8 +590,9 @@ export default {
       active3: false,
       active4: false,
       mobileModalShow: false,
-      loading: false,
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
+      currentProductsDisplayed: Math.floor((Math.random() * 6) + 1),
+      loading: this.$store.state.loading
     }
   },
 
@@ -604,6 +627,9 @@ export default {
   methods: {
     hideToast () {
       this.$store.commit('hideToast')
+    },
+    updateView (updatedView) {
+      this.currentProductsDisplayed = updatedView
     }
   }
 }

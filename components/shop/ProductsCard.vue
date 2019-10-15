@@ -1,10 +1,8 @@
 <template>
   <div
-    v-b-tooltip.hover
     class="card card__hover store-item"
     :class="filterData"
     :data-item="filterData"
-    :title="name"
     style="width: 18rem;"
   >
     <img
