@@ -485,13 +485,128 @@
                 src="~/assets/img/spinner.svg"
                 alt="Loading spinner"
               >
+
               <div
-                v-show="!loading"
+                v-if="currentProductsDisplayed === 2"
                 id="store-items"
                 class="row"
               >
                 <card
-                  v-for="product in products"
+                  v-for="product in exProducts"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                />
+              </div>
+
+              <div
+                v-if="currentProductsDisplayed === 1"
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in exSiProducts"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                />
+              </div>
+
+              <div
+                v-if="currentProductsDisplayed === 3"
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in inProducts"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                />
+              </div>
+
+              <div
+                v-if="currentProductsDisplayed === 4"
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in polProducts"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                />
+              </div>
+              <div
+                v-if="currentProductsDisplayed === 5"
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in proProducts"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                />
+              </div>
+
+              <div
+                v-if="currentProductsDisplayed === 6"
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in acProducts"
                   :key="product._id"
                   class="mb-5 mx-auto"
                   :name="product.name"
@@ -601,6 +716,24 @@ export default {
     ...mapGetters(['cartSize', 'cartTotalAmount']),
     toast () {
       return this.$store.getters.toast
+    },
+    exProducts () {
+      return this.products.filter(el => el.category === 'Екстер’єр')
+    },
+    inProducts () {
+      return this.products.filter(el => el.category === 'Інтер’єр')
+    },
+    exSiProducts () {
+      return this.products.filter(el => el.category === 'Зовнішня мийка')
+    },
+    acProducts () {
+      return this.products.filter(el => el.category === 'Аксесуари')
+    },
+    polProducts () {
+      return this.products.filter(el => el.category === 'Полірування')
+    },
+    proProducts () {
+      return this.products.filter(el => el.category === 'Захист')
     }
   },
 
@@ -621,7 +754,7 @@ export default {
   //     return error({ message: '404 Page not found', statusCode: 404 })
   //   }
 
-  //   return { products: data.entries }
+  //   return { exProducts: data.entries.filter(el => el.category === data.entries[0].category) }
   // },
 
   methods: {
