@@ -45,6 +45,29 @@
           <Protection v-if="currentProductsDisplayed === 5" />
           <Acessories v-if="currentProductsDisplayed === 6" />
         </vue-page-transition>
+
+        <!-- the search bar form -->
+        <form @submit="getfilteredData">
+          <div class="form-row">
+            <div class="col-10">
+              <input
+                v-model="search"
+                type="text"
+                class="form-control"
+                placeholder="Enter key word  ..."
+                @keyup="getfilteredData"
+              >
+            </div>
+            <div class="col-2">
+              <button
+                type="submit"
+                class="btn"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
@@ -66,21 +89,31 @@
                 v-show="active1"
                 class="panel"
               >
-                <label
-                  class="holder"
-                  for="all"
-                >Auto Finesse
-                  <input
-                    id="all"
-                    type="checkbox"
-                    name="all"
-                    class="filter-btn all"
-                    data-filter="all"
-                  >
-                  <span class="checkmark" />
-                </label>
+                <div
+                  v-for="(brand,index) in brands"
+                  :key="index"
+                >
+                  <label
+                    class="holder"
+                    :for="brand.value"
+                  >{{ brand.text }} <sup
+                      v-if="brand.power"
+                      class="text-small"
+                    > <small>{{ brand.power }}</small> </sup>
+                    <input
+                      :id="brand.value"
+                      v-model="brand.checked"
+                      type="checkbox"
+                      :name="brand.value"
+                      :class="`'filter-btn' ${brand.value}`"
+                      :data-filter="brand.value"
+                      @change="getfilteredData"
+                    >
+                    <span class="checkmark" />
+                  </label>
+                </div>
 
-                <label
+                <!-- <label
                   class="holder"
                   for="Фібри"
                 >Auto Finesse
@@ -148,7 +181,7 @@
                     data-filter="чорніннярезини"
                   >
                   <span class="checkmark" />
-                </label>
+                </label> -->
               </div>
 
               <button
@@ -487,6 +520,28 @@
               >
 
               <div
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in filteredData"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="product.name"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                />
+              </div>
+
+              <!-- <div
                 v-if="currentProductsDisplayed === 2"
                 id="store-items"
                 class="row"
@@ -577,6 +632,7 @@
                   :sales="product.Sales"
                 />
               </div>
+
               <div
                 v-if="currentProductsDisplayed === 5"
                 id="store-items"
@@ -621,7 +677,8 @@
                   :stock="product.Stock"
                   :sales="product.Sales"
                 />
-              </div>
+              </div> -->
+
             </div>
           </div>
 
@@ -661,6 +718,7 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
+import data from '~/data/data'
 // import ProductsList from '@/components/shop/ProductsList.vue'
 import ProductsCategories from '@/components/shop/ProductsCategories.vue'
 import ExteriorSink from '@/components/shop/subcategoris/ExteriorSink'
@@ -707,7 +765,38 @@ export default {
       mobileModalShow: false,
       imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       currentProductsDisplayed: Math.floor((Math.random() * 6) + 1),
-      loading: this.$store.state.loading
+      loading: this.$store.state.loading,
+      filteredData: [],
+      search: '',
+      brands: [
+        {
+          checked: false,
+          value: 'KRYTEX',
+          text: 'KRYTEX',
+          power: 'TM'
+        },
+        {
+          checked: false,
+          value: 'CHEMICAL GUYS',
+          text: 'CHEMICAL GUYS'
+        },
+        {
+          checked: false,
+          value: 'GREEN WAVE',
+          text: 'GREEN WAVE'
+        },
+        {
+          checked: false,
+          value: 'Kosh Chemie',
+          text: 'Kosh Chemie',
+          power: '🌚'
+        },
+        {
+          checked: false,
+          value: 'SOFT 99',
+          text: 'SOFT 99'
+        }
+      ]
     }
   },
 
@@ -716,6 +805,14 @@ export default {
     ...mapGetters(['cartSize', 'cartTotalAmount']),
     toast () {
       return this.$store.getters.toast
+    },
+    selectedFilters () {
+      const filters = []
+      const checkedFiters = this.brands.filter(obj => obj.checked)
+      checkedFiters.forEach((element) => {
+        filters.push(element.value)
+      })
+      return filters
     },
     exProducts () {
       return this.products.filter(el => el.category === 'Екстер’єр')
@@ -735,6 +832,10 @@ export default {
     proProducts () {
       return this.products.filter(el => el.category === 'Захист')
     }
+  },
+
+  mounted () {
+    this.getfilteredData()
   },
 
   // async asyncData ({ app, error }) {
@@ -763,6 +864,21 @@ export default {
     },
     updateView (updatedView) {
       this.currentProductsDisplayed = updatedView
+    },
+    getfilteredData () {
+      this.filteredData = this.products
+      let filteredDataByfilters = []
+      let filteredDataBySearch = []
+      // first check if filters where selected
+      if (this.selectedFilters.length > 0) {
+        filteredDataByfilters = this.filteredData.filter(obj => this.selectedFilters.every(val => obj.brand.includes(val)))
+        this.filteredData = filteredDataByfilters
+      }
+      // then filter according to keyword, for now this only affects the name attribute of each data
+      if (this.search !== '') {
+        filteredDataBySearch = this.filteredData.filter(obj => obj.name.includes(this.search))
+        this.filteredData = filteredDataBySearch
+      }
     }
   }
 }
