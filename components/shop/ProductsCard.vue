@@ -14,7 +14,7 @@
     <div class="card-body">
       <nuxt-link :to="link">
         <h5 class="card-title crop">
-          {{ name }}
+          {{ name | capitalize }} {{ brand }}
         </h5>
       </nuxt-link>
       <p class="card-text desktop-only">
@@ -93,6 +93,11 @@ export default {
       required: false,
       default: 'Koch Chemie Fresh UP'
     },
+    brand: {
+      type: String,
+      required: false,
+      default: ''
+    },
     summary: {
       type: String,
       required: false,
@@ -132,6 +137,12 @@ export default {
       type: Boolean,
       default: true,
       required: false
+    }
+  },
+  filters: {
+    // this filter will can be used to capitalise words
+    capitalize: (item) => {
+      return item.toUpperCase()
     }
   }
 }

@@ -97,9 +97,9 @@
                     class="holder"
                     :for="brand.value"
                   >{{ brand.text }} <sup
-                      v-if="brand.power"
-                      class="text-small"
-                    > <small>{{ brand.power }}</small> </sup>
+                    v-if="brand.power"
+                    class="text-small"
+                  > <small>{{ brand.power }}</small> </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"
@@ -527,7 +527,7 @@
                   v-for="product in filteredData"
                   :key="product._id"
                   class="mb-5 mx-auto"
-                  :name="product.name"
+                  :name="`${product.name}`"
                   :summary="product.Overview"
                   :price="product.Price"
                   :discount-price="product.discountPrice"
@@ -538,6 +538,7 @@
                   :filter-data="product.Filter"
                   :stock="product.Stock"
                   :sales="product.Sales"
+                  :brand="product.brand"
                 />
               </div>
 
@@ -678,7 +679,6 @@
                   :sales="product.Sales"
                 />
               </div> -->
-
             </div>
           </div>
 
@@ -718,7 +718,7 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-import data from '~/data/data'
+// import data from '~/data/data'
 // import ProductsList from '@/components/shop/ProductsList.vue'
 import ProductsCategories from '@/components/shop/ProductsCategories.vue'
 import ExteriorSink from '@/components/shop/subcategoris/ExteriorSink'
@@ -865,18 +865,48 @@ export default {
     updateView (updatedView) {
       this.currentProductsDisplayed = updatedView
     },
+    sanitize (s) {
+      return s.replace(/ /g, '-')
+    },
     getfilteredData () {
       this.filteredData = this.products
       let filteredDataByfilters = []
       let filteredDataBySearch = []
+      let filteredDataByCategory = []
       // first check if filters where selected
       if (this.selectedFilters.length > 0) {
         filteredDataByfilters = this.filteredData.filter(obj => this.selectedFilters.every(val => obj.brand.includes(val)))
         this.filteredData = filteredDataByfilters
       }
+
+      if (this.currentProductsDisplayed === 1) {
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Зовнішня мийка')
+        this.filteredData = filteredDataByCategory
+      }
+      if (this.currentProductsDisplayed === 2) {
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Екстер’єр')
+        this.filteredData = filteredDataByCategory
+      }
+      if (this.currentProductsDisplayed === 3) {
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Інтер’єр')
+        this.filteredData = filteredDataByCategory
+      }
+      if (this.currentProductsDisplayed === 4) {
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Полірування')
+        this.filteredData = filteredDataByCategory
+      }
+
+      if (this.currentProductsDisplayed === 5) {
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Захист')
+        this.filteredData = filteredDataByCategory
+      }
+      if (this.currentProductsDisplayed === 6) {
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Аксесуари')
+        this.filteredData = filteredDataByCategory
+      }
       // then filter according to keyword, for now this only affects the name attribute of each data
       if (this.search !== '') {
-        filteredDataBySearch = this.filteredData.filter(obj => obj.name.includes(this.search))
+        filteredDataBySearch = this.filteredData.filter(obj => obj.name.includes(this.search.toUpperCase()))
         this.filteredData = filteredDataBySearch
       }
     }
