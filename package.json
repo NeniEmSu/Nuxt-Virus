@@ -11,7 +11,8 @@
     "generate": "nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "update": "git pull && npm i && npm run generate && pm2 restart virus"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",

@@ -4,9 +4,9 @@
 
 ## Links
 
-Deployed from the branch after runing npn run generate && npm run deploy: https://virus-car-detailing-branched.netlify.com/
+Deployed from the branch after runing npn run generate && npm run deploy: <https://virus-car-detailing-branched.netlify.com/>
 
-Deployed automatically by netlify from npm run generate on netlify console:  https://virus-car-detailing.netlify.com/
+Deployed automatically by netlify from npm run generate on netlify console:  <https://virus-car-detailing.netlify.com/>
 
 ## Technologies
 
@@ -23,10 +23,13 @@ Deployed automatically by netlify from npm run generate on netlify console:  htt
 11. JivoChat
 12. Vuemask
 13. Lazyload
+14. RestApi
+15. GraphQl
 
 ## Deployment Setup
 
 ### Options
+
 1. Direct generated html files deploy from the gh-pages branch holding dist file content.
 2. Deploy main branch with npm run build or npm run generate as stated below.
 
@@ -37,8 +40,6 @@ Deployed automatically by netlify from npm run generate on netlify console:  htt
 - [Deploy nuxt app (Vue.js) with Pm2 and Nginx](https://kenyaappexperts.com/blog/deploy-vue-js%E2%80%8A-with-pm2-and-nginx/)
 
 <!-- Given the .env page is populated with relevant data -->
-
-
 
 Note:
 
@@ -52,7 +53,6 @@ server: {
 ```
 
 as updated in nuxt.config.js coment section out or update places it's needed on nginx deployment.
-
 2. Your webserver is not aware of the routing inside your Vue application, so you'll need to have Nginx point all requests to the application to the index.html and after that Vue routing will take over. The documentation can be found [here](https://router.vuejs.org/guide/essentials/history-mode.html).
 
 The required configuration snippet copied from there is the following:
@@ -69,7 +69,7 @@ Or if using nginx proxy, The documentation can be found [here](https://nuxtjs.or
 
 For Nginx you can add a proxy using the follwing location block:
 
-```
+```yaml
 server {
     location / {
         proxy_pass http://http://127.0.0.1:8383;
@@ -106,13 +106,18 @@ pm2 l
 After each deploy you'll need to restart the process:
 
 ```bash
-pm2 restart virus 
+pm2 restart virus
+```
+
+To update, install, generate and restart server with all new changes from github use the bellow command
+
+```bash
+npm run update
 ```
 
 Make sure to read the [Nuxt docs](https://nuxtjs.org/).
 
 More Information on deploying to Nginx
-
 
 ```bash
 map $sent_http_content_type $expires {
@@ -145,32 +150,26 @@ server {
 ```
 
 1. Deploy command
-
    Build command:
 
 ```bash
-   $ npm run generate
-
-
+   npm run generate
   #  If not all data is available then
-
-
-   $ node ./create-env.js && npm run generate
+   node ./create-env.js && npm run generate
 ```
 
+also add the necessary environment variables
 2. If the ./create-env.js command is used make sure to add env variables to the site server.
-
 3. Deployed dirctory: dist
-
 4. Build for production shoukd be ready.
 
 ## Build Setup
 
 ```bash
 # install dependencies
-$ npm install
+npm install
 
-# serve with hot reload at localhost:8383 
+# serve with hot reload at localhost:8383
 # To reset the local host to localhost:3000 change line 12 to 15 in nuxt config file
 
 server: {
@@ -180,14 +179,14 @@ server: {
 
 # or delete contents of above stated line.
 
-$ npm run dev
+npm run dev
 
 # build for production and launch server on local device case server will listen to localhost 8383
-$ npm run build
-$ npm start
+npm run build
+npm start
 
 # generate static project
-$ npm run generate
+npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
