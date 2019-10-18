@@ -47,23 +47,31 @@
         </vue-page-transition>
 
         <!-- the search bar form -->
-        <form @submit="getfilteredData">
+        <form
+          class="mb-3"
+          @submit="getfilteredData"
+        >
           <div class="form-row">
-            <div class="col-10">
+            <label
+              for="search"
+              class="col-8"
+            >
               <input
+                id="search"
                 v-model="search"
                 type="text"
-                class="form-control"
-                placeholder="Enter key word  ..."
+                class="form-control mx-auto"
+                placeholder="Пошук за назвою продукту ..."
                 @keyup="getfilteredData"
               >
-            </div>
-            <div class="col-2">
+            </label>
+
+            <div class="col-4">
               <button
                 type="submit"
-                class="btn"
+                class="btn search-btn"
               >
-                Search
+                Пошук
               </button>
             </div>
           </div>
@@ -97,9 +105,9 @@
                     class="holder"
                     :for="brand.value"
                   >{{ brand.text }} <sup
-                    v-if="brand.power"
-                    class="text-small"
-                  > <small>{{ brand.power }}</small> </sup>
+                      v-if="brand.power"
+                      class="text-small"
+                    > <small>{{ brand.power }}</small> </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"
@@ -999,6 +1007,56 @@ export default {
       margin: auto;
       justify-self: center !important;
     }
+  }
+}
+
+input#search {
+  height: 48px;
+  border: 2px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  color: $headingsFontColor;
+  outline: none;
+
+  &:focus {
+    border: 2px solid $redColor;
+    // box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+    box-shadow: none;
+  }
+}
+
+.search-btn {
+  padding: 12px 45px;
+  background: $redColor;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 50px;
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  color: $lightColor;
+  border: 0;
+  transition: ease-in-out 300ms;
+  -webkit-transition: ease-in-out 300ms;
+  -moz-transition: ease-in-out 300ms;
+  -ms-transition: ease-in-out 300ms;
+  -o-transition: ease-in-out 300ms;
+
+  &:hover {
+    color: $redColor;
+    background: $lightColor;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
   }
 }
 
