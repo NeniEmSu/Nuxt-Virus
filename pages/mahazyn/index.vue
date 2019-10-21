@@ -70,6 +70,7 @@
               <button
                 type="submit"
                 class="btn search-btn"
+                @click.stop.prevent
               >
                 Пошук
               </button>
@@ -105,9 +106,9 @@
                     class="holder"
                     :for="brand.value"
                   >{{ brand.text }} <sup
-                      v-if="brand.power"
-                      class="text-small"
-                    > <small>{{ brand.power }}</small> </sup>
+                    v-if="brand.power"
+                    class="text-small"
+                  > <small>{{ brand.power }}</small> </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"

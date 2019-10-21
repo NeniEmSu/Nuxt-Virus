@@ -135,9 +135,9 @@
           </p>
         </div>
 
-        <div class="progress-bar">
+        <!-- <div class="progress-bar">
           <div :style="`width: ${progress}%;`" />
-        </div>
+        </div> -->
       </div>
 
       <div v-else>
@@ -230,16 +230,6 @@ export default {
       Object.assign(this.form, step.data)
       this.canGoNext = step.valid
     },
-
-    // submitOrder () {
-    //   this.asyncState = 'pending'
-    //   this.$store.dispatch('checkout')
-    //     .then(() => {
-    //       console.log('form submitted', this.form)
-    //       this.asyncState = 'success'
-    //       this.currentStepNumber++
-    //     })
-    // },
 
     checkForm (e) {
       this.errors = []

@@ -1,10 +1,25 @@
 <template>
   <div class=" basket text-left">
-    <h2>Підтвердження замовлення</h2>
+    <h3>Підтвердження замовлення</h3>
     <p class="text-left">
       Перегляньте та підтвердьте своє замовлення та деталі нижче та не забудьте виправити будь-які помилки.
     </p>
-    <div class="my-2 ">
+    <div class="my-3 details text-capitalize">
+      <h3>Деталі поводження</h3>
+      <p class="text-left">
+        <span>Ім’я*</span> : {{ cartFormData.name }}
+      </p>
+      <p class="text-left">
+        <span>Телефон*</span> : {{ cartFormData.cartphoneNumber }}
+      </p>
+      <p class="text-left">
+        <span>Місто*</span> : {{ cartFormData.city }}
+      </p>
+      <p class="text-left">
+        <span>Відділення пошти*</span> : {{ cartFormData.postBranch }}
+      </p>
+    </div>
+    <div class="my-3">
       <h3>деталі замовлення</h3>
       <div
         v-for="product in cart"
@@ -15,12 +30,12 @@
           <div class="col-8 p-0">
             <div class="col-12 p-0 m-auto">
               <div class="row m-auto">
-                <h5
-                  id="cart-item-title"
+                <p
+                  id="cart-item-title text-left"
                   class="col-8 m-auto  py-2 pl-0 crop"
                 >
                   {{ product.name }}
-                </h5>
+                </p>
 
                 <div class="toggle-quantity col-4 m-auto ">
                   <p>{{ product.quantity }}</p>
@@ -54,21 +69,6 @@
           </span>
         </span>
       </div>
-    </div>
-    <div class="my-2 details">
-      <h3>Деталі поводження</h3>
-      <p class="text-left">
-        <span>Ім’я* :</span> {{ cartFormData.name }}
-      </p>
-      <p class="text-left">
-        <span>Телефон*</span> : {{ cartFormData.cartphoneNumber }}
-      </p>
-      <p class="text-left">
-        <span>Місто*</span> : {{ cartFormData.city }}
-      </p>
-      <p class="text-left">
-        <span>Відділення пошти*</span> : {{ cartFormData.postBranch }}
-      </p>
     </div>
   </div>
 </template>
@@ -203,10 +203,8 @@ export default {
     font-family: $mainFont;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: normal;
-
-    color: #8b8b8b;
+    // font-size: 20px;
+    // line-height: normal;
   }
 
   p {

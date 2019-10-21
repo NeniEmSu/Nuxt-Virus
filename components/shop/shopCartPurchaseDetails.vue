@@ -41,13 +41,13 @@
             </div>
           </div>
         </div>
-        <div class="col-4 p-0">
+        <div class="col-4 p-0 my-auto">
           <div class="col-12 m-auto p-0">
             <div class="row m-auto">
               <div class="cost col-sm-7 m-auto ">
                 <p
                   id="cart-item-price"
-                  class="cart-item-price text-right py-2 card-text"
+                  class="cart-item-price text-right py-2 card-text "
                 >
                   {{ product.quantity* product.Price | currency }}
                 </p>
@@ -96,7 +96,7 @@
             type="text"
             name="name"
             class="form-control mx-auto"
-            :class="!$v.form.name.$error ? 'is-valid' : 'is-invalid'"
+            :class="[!$v.form.name.$error && $v.form.name.$model ? 'is-valid' : '', $v.form.name.$error ? 'is-invalid' : '']"
             aria-describedby="name"
             placeholder="Ім’я*"
             :state="$v.form.name.$dirty ? !$v.form.name.$error : null"
@@ -120,7 +120,7 @@
             aria-label="cartPhone"
             name="cartPhone"
             class="form-control mx-auto "
-            :class="!$v.form.models.cartphoneNumber.$error ? 'is-valid' : 'is-invalid'"
+            :class="[!$v.form.models.cartphoneNumber.$error && $v.form.models.cartphoneNumber.$model ? 'is-valid' : '', $v.form.models.cartphoneNumber.$error ? 'is-invalid' : '']"
             placeholder="Телефон*"
             :state="$v.form.models.cartphoneNumber.$dirty ? !$v.form.models.cartphoneNumber.$error : null"
           ></label>
@@ -143,7 +143,6 @@
             aria-label="Місто"
             aria-describedby="Місто"
             class="form-control mx-auto"
-            :class="!$v.form.city.$error ? 'is-valid' : 'is-invalid'"
             name="Місто"
           >
             <option
@@ -187,7 +186,7 @@
             type="text"
             aria-describedby="Відділеня-пошти"
             class="form-control mx-auto"
-            :class="!$v.form.postBranch.$error ? 'is-valid' : 'is-invalid'"
+            :class="[!$v.form.postBranch.$error && $v.form.postBranch.$model ? 'is-valid' : '', $v.form.postBranch.$error ? 'is-invalid' : '']"
             :state="$v.form.postBranch.$dirty ? !$v.form.postBranch.$error : null"
             name="Відділеня-пошти"
             placeholder="Відділення пошти*"
