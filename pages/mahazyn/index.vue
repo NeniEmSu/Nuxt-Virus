@@ -37,14 +37,13 @@
           :current-products-displayed="currentProductsDisplayed"
           @changedView="updateView($event)"
         />
-        <vue-page-transition name="fade">
-          <ExteriorSink v-if="currentProductsDisplayed === 1" />
-          <Exterior v-if="currentProductsDisplayed === 2" />
-          <Interior v-if="currentProductsDisplayed === 3" />
-          <Polishing v-if="currentProductsDisplayed === 4" />
-          <Protection v-if="currentProductsDisplayed === 5" />
-          <Acessories v-if="currentProductsDisplayed === 6" />
-        </vue-page-transition>
+
+        <ExteriorSink v-if="currentProductsDisplayed === 1" />
+        <Exterior v-if="currentProductsDisplayed === 2" />
+        <Interior v-if="currentProductsDisplayed === 3" />
+        <Polishing v-if="currentProductsDisplayed === 4" />
+        <Protection v-if="currentProductsDisplayed === 5" />
+        <Acessories v-if="currentProductsDisplayed === 6" />
 
         <!-- the search bar form -->
         <form
@@ -121,76 +120,6 @@
                     <span class="checkmark" />
                   </label>
                 </div>
-
-                <!-- <label
-                  class="holder"
-                  for="Фібри"
-                >Auto Finesse
-                  <input
-                    id="Фібри"
-                    type="checkbox"
-                    name="Фібри"
-                    class="filter-btn Фібри"
-                    data-filter="Фібри"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Шампунь"
-                >Auto Finesse
-                  <input
-                    id="Шампунь"
-                    type="checkbox"
-                    name="Шампунь"
-                    class="filter-btn Шампунь"
-                    data-filter="Шампунь"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Віск"
-                >Auto Finesse
-                  <input
-                    id="Віск"
-                    type="checkbox"
-                    name="Віск"
-                    class="filter-btn Віск"
-                    data-filter="Віск"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Пахнючки"
-                >Auto Finesse
-                  <input
-                    id="Пахнючки"
-                    type="checkbox"
-                    name="Пахнючки"
-                    class="filter-btn Пахнючки"
-                    data-filter="Пахнючки"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="чорніннярезини"
-                >Auto Finesse
-                  <input
-                    id="чорніннярезини"
-                    type="checkbox"
-                    name="чорніннярезини"
-                    class="filter-btn чорніннярезини"
-                    data-filter="чорніннярезини"
-                  >
-                  <span class="checkmark" />
-                </label> -->
               </div>
 
               <button
@@ -211,103 +140,29 @@
                 v-show="active2"
                 class="panel"
               >
-                <label
-                  class="holder"
-                  for="Кераміка"
-                >Auto Finesse
-                  <input
-                    id="Кераміка"
-                    type="checkbox"
-                    name="Кераміка"
-                    class="filter-btn Кераміка"
-                    data-filter="Кераміка"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Рідкескло"
-                >Auto Finesse
-                  <input
-                    id="Рідкескло"
-                    type="checkbox"
-                    name="Рідкескло"
-                    class="filter-btn Рідкескло"
-                    data-filter="Рідкескло"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="тканини"
-                >Auto Finesse
-                  <input
-                    id="тканини"
-                    type="checkbox"
-                    name="тканини"
-                    class="filter-btn тканини"
-                    data-filter="тканини"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="шкіри"
-                >Auto Finesse
-                  <input
-                    id="шкіри"
-                    type="checkbox"
-                    name="шкіри"
-                    class="filter-btn шкіри"
-                    data-filter="шкіри"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="диски"
-                >Auto Finesse
-                  <input
-                    id="диски"
-                    type="checkbox"
-                    name="диски"
-                    class="filter-btn диски"
-                    data-filter="диски"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="резина"
-                >Auto Finesse
-                  <input
-                    id="резина"
-                    type="checkbox"
-                    name="резина"
-                    class="filter-btn резина"
-                    data-filter="резина"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="ВіскSoft99"
-                >Auto Finesse
-                  <input
-                    id="ВіскSoft99"
-                    type="checkbox"
-                    name="ВіскSoft99"
-                    class="filter-btn ВіскSoft99"
-                    data-filter="ВіскSoft99"
-                  >
-                  <span class="checkmark" />
-                </label>
+                <div
+                  v-for="(type) in types"
+                  :key="type.id"
+                >
+                  <label
+                    class="holder"
+                    :for="type.value"
+                  >{{ type.text }} <sup
+                    v-if="type.power"
+                    class="text-small"
+                  > <small>{{ type.power }}</small> </sup>
+                    <input
+                      :id="type.value"
+                      v-model="type.checked"
+                      type="checkbox"
+                      :name="type.value"
+                      :class="`'filter-btn' ${type.value}`"
+                      :data-filter="type.value"
+                      @change="getfilteredData"
+                    >
+                    <span class="checkmark" />
+                  </label>
+                </div>
               </div>
 
               <!--<button
@@ -528,28 +383,35 @@
                 alt="Loading spinner"
               >
 
-              <div
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in filteredData"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="`${product.name}`"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                  :brand="product.brand"
-                />
-              </div>
+              <vue-page-transition name="fade-in">
+                <div v-if="filteredData == 0">
+                  <p>Вибачте, продукти не відповідають вашим встановленим параметрам</p>
+                </div>
+
+                <div
+                  id="store-items"
+                  class="row"
+                >
+                  <card
+                    v-for="product in filteredData"
+                    :key="product._id"
+                    class="mb-5 mx-auto"
+                    :name="`${product.name}`"
+                    :summary="product.Overview"
+                    :price="product.Price"
+                    :discount-price="product.discountPrice"
+                    :image="
+                      `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                    "
+                    :link="'/mahazyn/' + product.name_slug"
+                    :filter-data="product.Filter"
+                    :stock="product.Stock"
+                    :sales="product.Sales"
+                    :brand="product.brand"
+                    :type="product.type"
+                  />
+                </div>
+              </vue-page-transition>
 
               <!-- <div
                 v-if="currentProductsDisplayed === 2"
@@ -805,6 +667,39 @@ export default {
           value: 'SOFT 99',
           text: 'SOFT 99'
         }
+      ],
+
+      types: [
+        {
+          id: 'tupe1',
+          checked: false,
+          value: 'soap',
+          text: 'soap'
+        },
+        {
+          id: 'tupe2',
+          checked: false,
+          value: 'sponge',
+          text: 'sponge'
+        },
+        {
+          id: 'tupe3',
+          checked: false,
+          value: 'covers',
+          text: 'covers'
+        },
+        {
+          id: 'tupe4',
+          checked: false,
+          value: 'Dryer',
+          text: 'Dryer'
+        },
+        {
+          id: 'tupe5',
+          checked: false,
+          value: 'antidust',
+          text: 'antidust'
+        }
       ]
     }
   },
@@ -823,6 +718,16 @@ export default {
       })
       return filters
     },
+
+    selectedTypeFilters () {
+      const typeFilters = []
+      const checkedFiters = this.types.filter(obj => obj.checked)
+      checkedFiters.forEach((element) => {
+        typeFilters.push(element.value)
+      })
+      return typeFilters
+    },
+
     exProducts () {
       return this.products.filter(el => el.category === 'Екстер’єр')
     },
@@ -874,12 +779,10 @@ export default {
     updateView (updatedView) {
       this.currentProductsDisplayed = updatedView
     },
-    sanitize (s) {
-      return s.replace(/ /g, '-')
-    },
     getfilteredData () {
       this.filteredData = this.products
       let filteredDataByfilters = []
+      let filteredDataByTypefilters = []
       let filteredDataBySearch = []
       let filteredDataByCategory = []
       // first check if filters where selected
@@ -887,30 +790,34 @@ export default {
         filteredDataByfilters = this.filteredData.filter(obj => this.selectedFilters.every(val => obj.brand.includes(val)))
         this.filteredData = filteredDataByfilters
       }
+      if (this.selectedTypeFilters.length > 0) {
+        filteredDataByTypefilters = this.filteredData.filter(obj => this.selectedTypeFilters.every(val => obj.type.includes(val)))
+        this.filteredData = filteredDataByTypefilters
+      }
 
       if (this.currentProductsDisplayed === 1) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Зовнішня мийка')
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Зовнішня мийка'))
         this.filteredData = filteredDataByCategory
       }
       if (this.currentProductsDisplayed === 2) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Екстер’єр')
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Екстер’єр'))
         this.filteredData = filteredDataByCategory
       }
       if (this.currentProductsDisplayed === 3) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Інтер’єр')
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Інтер’єр'))
         this.filteredData = filteredDataByCategory
       }
       if (this.currentProductsDisplayed === 4) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Полірування')
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Полірування'))
         this.filteredData = filteredDataByCategory
       }
 
       if (this.currentProductsDisplayed === 5) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Захист')
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Захист'))
         this.filteredData = filteredDataByCategory
       }
       if (this.currentProductsDisplayed === 6) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category === 'Аксесуари')
+        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Аксесуари'))
         this.filteredData = filteredDataByCategory
       }
       // then filter according to keyword, for now this only affects the name attribute of each data

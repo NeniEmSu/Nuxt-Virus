@@ -14,7 +14,7 @@
     <div class="card-body">
       <nuxt-link :to="link">
         <h5 class="card-title crop">
-          {{ name | capitalize }} {{ brand }}
+          {{ name | capitalize }}
         </h5>
       </nuxt-link>
       <p class="card-text desktop-only">
@@ -94,6 +94,11 @@ export default {
       default: 'Koch Chemie Fresh UP'
     },
     brand: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    type: {
       type: String,
       required: false,
       default: ''
