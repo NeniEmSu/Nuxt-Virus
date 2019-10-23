@@ -383,35 +383,33 @@
                 alt="Loading spinner"
               >
 
-              <vue-page-transition name="fade-in">
-                <div v-if="filteredData == 0">
-                  <p>Вибачте, продукти не відповідають вашим встановленим параметрам</p>
-                </div>
+              <div v-if="filteredData == 0">
+                <p>Вибачте, продукти не відповідають вашим встановленим параметрам</p>
+              </div>
 
-                <div
-                  id="store-items"
-                  class="row"
-                >
-                  <card
-                    v-for="product in filteredData"
-                    :key="product._id"
-                    class="mb-5 mx-auto"
-                    :name="`${product.name}`"
-                    :summary="product.Overview"
-                    :price="product.Price"
-                    :discount-price="product.discountPrice"
-                    :image="
-                      `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                    "
-                    :link="'/mahazyn/' + product.name_slug"
-                    :filter-data="product.Filter"
-                    :stock="product.Stock"
-                    :sales="product.Sales"
-                    :brand="product.brand"
-                    :type="product.type"
-                  />
-                </div>
-              </vue-page-transition>
+              <div
+                id="store-items"
+                class="row"
+              >
+                <card
+                  v-for="product in filteredData"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="`${product.name}`"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                  "
+                  :link="'/mahazyn/' + product.name_slug"
+                  :filter-data="product.Filter"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                  :brand="product.brand"
+                  :type="product.type"
+                />
+              </div>
 
               <!-- <div
                 v-if="currentProductsDisplayed === 2"

@@ -431,7 +431,7 @@ export default {
 
     return {
       product: product.data.entries[0],
-      products: products.data.entries.filter(el => el.category === product.data.entries[0].category)
+      products: products.data.entries.filter(el => el.category.includes(product.data.entries[0].category[0]))
     }
   },
 
