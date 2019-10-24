@@ -80,7 +80,7 @@ export default {
   // },
   data () {
     return {
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
     }
   },
   async asyncData ({ app }) {

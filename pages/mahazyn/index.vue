@@ -33,10 +33,32 @@
 
     <div id="app">
       <div class="container">
-        <ProductsCategories
+        <!-- <ProductsCategories
           :current-products-displayed="currentProductsDisplayed"
           @changedView="updateView($event)"
-        />
+        /> -->
+
+        <div class="categories row">
+          <label
+            v-for="(category,index) in categories"
+            :key="index"
+            :class="{ active: category.checked === true}"
+            class="col-2 button"
+            :for="category.value"
+          >{{ category.text }}
+            <input
+              :id="category.value"
+              v-model="category.checked"
+              type="checkbox"
+              :name="category.value"
+              :class="`'filter-btn' 'mx-auto' ${category.value}`"
+              style="display: none;"
+              :data-filter="category.value"
+              @change="getfilteredData"
+              @click="currentProductsDisplayed = index+1"
+            >
+          </label>
+        </div>
 
         <ExteriorSink v-if="currentProductsDisplayed === 1" />
         <Exterior v-if="currentProductsDisplayed === 2" />
@@ -105,9 +127,9 @@
                     class="holder"
                     :for="brand.value"
                   >{{ brand.text }} <sup
-                    v-if="brand.power"
-                    class="text-small"
-                  > <small>{{ brand.power }}</small> </sup>
+                      v-if="brand.power"
+                      class="text-small"
+                    > <small>{{ brand.power }}</small> </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"
@@ -148,9 +170,9 @@
                     class="holder"
                     :for="type.value"
                   >{{ type.text }} <sup
-                    v-if="type.power"
-                    class="text-small"
-                  > <small>{{ type.power }}</small> </sup>
+                      v-if="type.power"
+                      class="text-small"
+                    > <small>{{ type.power }}</small> </sup>
                     <input
                       :id="type.value"
                       v-model="type.checked"
@@ -400,8 +422,8 @@
                   :price="product.Price"
                   :discount-price="product.discountPrice"
                   :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
+                      `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                    "
                   :link="'/mahazyn/' + product.name_slug"
                   :filter-data="product.Filter"
                   :stock="product.Stock"
@@ -573,8 +595,8 @@
                     id="item-count"
                     class="text-center m-auto p-0"
                   >{{
-                    cartSize
-                  }}</span>
+                      cartSize
+                    }}</span>
                 </div>
               </div>
             </div>
@@ -582,6 +604,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -629,11 +652,43 @@ export default {
       active3: false,
       active4: false,
       mobileModalShow: false,
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1',
       currentProductsDisplayed: Math.floor((Math.random() * 6) + 1),
       loading: this.$store.state.loading,
       filteredData: [],
       search: '',
+      categories: [
+        {
+          checked: false,
+          value: 'Зовнішня мийка',
+          text: 'Зовнішня мийка'
+        },
+        {
+          checked: false,
+          value: 'Екстер’єр',
+          text: 'Екстер’єр'
+        },
+        {
+          checked: false,
+          value: 'Інтер’єр',
+          text: 'Інтер’єр'
+        },
+        {
+          checked: false,
+          value: 'Полірування',
+          text: 'Полірування'
+        },
+        {
+          checked: false,
+          value: 'Захист',
+          text: 'Захист'
+        },
+        {
+          checked: false,
+          value: 'Аксесуари',
+          text: 'Аксесуари'
+        }
+      ],
       brands: [
         {
           checked: false,
@@ -723,6 +778,15 @@ export default {
       return typeFilters
     },
 
+    selectedCategoryFilters () {
+      const categoryFilters = []
+      const checkedFiters = this.categories.filter(obj => obj.checked)
+      checkedFiters.forEach((element) => {
+        categoryFilters.push(element.value)
+      })
+      return categoryFilters
+    },
+
     exProducts () {
       return this.products.filter(el => el.category === 'Екстер’єр')
     },
@@ -747,26 +811,6 @@ export default {
     this.getfilteredData()
   },
 
-  // async asyncData ({ app, error }) {
-  //   const { data } = await app.$axios.get(
-  //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       sort: { _created: 1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { 'Content-Type': 'application/json' }
-  //     }
-  //   )
-
-  //   if (!data.entries[0]) {
-  //     return error({ message: '404 Page not found', statusCode: 404 })
-  //   }
-
-  //   return { exProducts: data.entries.filter(el => el.category === data.entries[0].category) }
-  // },
-
   methods: {
     hideToast () {
       this.$store.commit('hideToast')
@@ -776,10 +820,17 @@ export default {
     },
     getfilteredData () {
       this.filteredData = this.products
+      let filteredDataByCategoryfilters = []
       let filteredDataByfilters = []
       let filteredDataByTypefilters = []
       let filteredDataBySearch = []
-      let filteredDataByCategory = []
+      const filteredDataByCategory = []
+
+      if (this.selectedCategoryFilters.length > 0) {
+        filteredDataByCategoryfilters = this.filteredData.filter(obj => this.selectedCategoryFilters.every(val => obj.category.includes(val)))
+        this.filteredData = filteredDataByCategoryfilters
+      }
+
       // first check if filters where selected
       if (this.selectedFilters.length > 0) {
         filteredDataByfilters = this.filteredData.filter(obj => this.selectedFilters.every(val => obj.brand.includes(val)))
@@ -790,31 +841,31 @@ export default {
         this.filteredData = filteredDataByTypefilters
       }
 
-      if (this.currentProductsDisplayed === 1) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Зовнішня мийка'))
-        this.filteredData = filteredDataByCategory
-      }
-      if (this.currentProductsDisplayed === 2) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Екстер’єр'))
-        this.filteredData = filteredDataByCategory
-      }
-      if (this.currentProductsDisplayed === 3) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Інтер’єр'))
-        this.filteredData = filteredDataByCategory
-      }
-      if (this.currentProductsDisplayed === 4) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Полірування'))
-        this.filteredData = filteredDataByCategory
-      }
+      // if (this.currentProductsDisplayed === 1) {
+      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Зовнішня мийка'))
+      //   this.filteredData = filteredDataByCategory
+      // }
+      // if (this.currentProductsDisplayed === 2) {
+      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Екстер’єр'))
+      //   this.filteredData = filteredDataByCategory
+      // }
+      // if (this.currentProductsDisplayed === 3) {
+      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Інтер’єр'))
+      //   this.filteredData = filteredDataByCategory
+      // }
+      // if (this.currentProductsDisplayed === 4) {
+      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Полірування'))
+      //   this.filteredData = filteredDataByCategory
+      // }
 
-      if (this.currentProductsDisplayed === 5) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Захист'))
-        this.filteredData = filteredDataByCategory
-      }
-      if (this.currentProductsDisplayed === 6) {
-        filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Аксесуари'))
-        this.filteredData = filteredDataByCategory
-      }
+      // if (this.currentProductsDisplayed === 5) {
+      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Захист'))
+      //   this.filteredData = filteredDataByCategory
+      // }
+      // if (this.currentProductsDisplayed === 6) {
+      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Аксесуари'))
+      //   this.filteredData = filteredDataByCategory
+      // }
       // then filter according to keyword, for now this only affects the name attribute of each data
       if (this.search !== '') {
         filteredDataBySearch = this.filteredData.filter(obj => obj.name.includes(this.search.toUpperCase()))
@@ -826,6 +877,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.categories {
+  margin-bottom: 30px;
+
+  .button {
+    padding: 32px 10px;
+    background: $lightColor;
+    border: none;
+    outline: none;
+
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+
+    color: $darkColor;
+
+    &:hover {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+      color: $redColor;
+    }
+
+    &.active {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+      color: $redColor;
+    }
+  }
+}
+
+.sub-categories {
+  margin-bottom: 15px;
+
+  .button {
+    padding: 11px 6px;
+    background: #e5e5e5;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    margin: auto 0 15px 15px;
+
+    &:hover {
+      color: $redColor;
+    }
+  }
+}
+
 .cart-icon {
   #show-total {
     width: 35px;
