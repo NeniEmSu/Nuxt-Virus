@@ -1,6 +1,7 @@
 <template>
   <div class="youtube-video-container">
     <iframe
+      loading="lazy"
       :src="videoUrl"
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

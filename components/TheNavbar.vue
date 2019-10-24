@@ -15,6 +15,7 @@
           aria-label="Virus Logo"
         >
           <img
+            loading="eager"
             src="~/assets/img/virus-logo.svg"
             alt="virus logo"
           >

@@ -24,11 +24,14 @@
           :srcset="require(`~/assets/imgWebP/${image + '.webp'}`)"
           type="image/webp"
         >
-        <b-img-lazy
+        <img
+          loading="lazy"
+          width="1140px"
+          height="310px"
           class="col-12 m-auto img-fluid"
           :src="require(`~/assets/img/${image + '.jpg'}`)"
           :alt="description"
-        />
+        >
 
       </picture>
 
@@ -74,7 +77,7 @@
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
-                  Ⅰ категорія
+                  &#8544; категорія
                 </h5>
                 <hr>
                 <div class="row">
@@ -114,7 +117,7 @@
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
-                  ⅠⅠ категорія
+                  &#8545; категорія
                 </h5>
                 <hr>
                 <p class="card-text text-left">
@@ -145,7 +148,7 @@
             <div class="col-6">
               <div class="card-body p-0 pl-1">
                 <h5 class="card-title text-left">
-                  ⅠⅠⅠ категорія
+                  &#8546; категорія
                 </h5>
                 <hr>
                 <p class="card-text text-left">
@@ -691,9 +694,9 @@
 <script>
 import carBrandOptions from '~/plugins/api/carModelOptions'
 export default {
-  meta: {
-    animation: 'fade-in-right'
-  },
+  // meta: {
+  //   animation: 'fade-in-right'
+  // },
 
   head () {
     return {

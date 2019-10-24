@@ -2,7 +2,7 @@
   <section>
     <div class="container text-center top-grid pt-4 pb-5">
       <h1 class="text-left">
-        Ми
+        Ми <br>
         пропонуємо
       </h1>
       <div class="row">
@@ -16,11 +16,14 @@
                 srcset="~/assets/imgWebP/top1.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
+                loading="eager"
+                width="200"
+                height="200"
                 src="~/assets/img/top1.jpg"
                 class="card-img"
                 alt="ПОЛІРУВАННЯ"
-              />
+              >
             </picture>
 
             <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
@@ -40,11 +43,14 @@
                 srcset="~/assets/imgWebP/top2.webp"
                 type="image/webp"
               >
-              <b-img-lazy
-                src="~/assets/img/top1.jpg"
+              <img
+                loading="eager"
+                width="200"
+                height="200"
+                src="~/assets/img/top2.jpg"
                 class="card-img"
                 alt="ВОСКОВЕ ПОКРИТТЯ"
-              />
+              >
 
             </picture>
 
@@ -68,11 +74,14 @@
                 srcset="~/assets/imgWebP/top3.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
+                loading="lazy"
+                width="200"
+                height="200"
                 src="~/assets/img/top3.jpg"
                 class="card-img"
                 alt="МИЙКА МОТОРУ"
-              />
+              >
 
             </picture>
 
@@ -94,11 +103,14 @@
                 srcset="~/assets/imgWebP/top4.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
+                loading="lazy"
+                width="200"
+                height="200"
                 src="~/assets/img/top4.jpg"
                 class="card-img"
                 alt="ХІМЧИСТКА"
-              />
+              >
 
             </picture>
 
@@ -119,11 +131,14 @@
                 srcset="~/assets/imgWebP/top5.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
+                loading="lazy"
+                width="200"
+                height="200"
                 src="~/assets/img/top5.jpg"
                 class="card-img"
                 alt="РЕСТАВРАЦІЯ СКОЛІВ"
-              />
+              >
 
             </picture>
 
@@ -145,11 +160,14 @@
                 srcset="~/assets/imgWebP/top6.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
+                loading="lazy"
+                width="200"
+                height="200"
                 src="~/assets/img/top6.jpg"
                 class="card-img"
                 alt="КЕРАМІЧНЕ ПОКРИТТЯ"
-              />
+              >
 
             </picture>
 
@@ -172,11 +190,14 @@
                 srcset="~/assets/imgWebP/top7.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
+                loading="lazy"
+                width="200"
+                height="200"
                 src="~/assets/img/top7.jpg"
                 class="card-img"
                 alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
-              />
+              >
 
             </picture>
 

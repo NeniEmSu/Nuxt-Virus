@@ -587,8 +587,6 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-// import data from '~/data/data'
-// import ProductsList from '@/components/shop/ProductsList.vue'
 import ProductsCategories from '@/components/shop/ProductsCategories.vue'
 import ExteriorSink from '@/components/shop/subcategoris/ExteriorSink'
 import Exterior from '@/components/shop/subcategoris/Exterior'
@@ -598,7 +596,6 @@ import Protection from '@/components/shop/subcategoris/Protection'
 import Acessories from '@/components/shop/subcategoris/Acessories'
 export default {
   components: {
-    // ProductsList,
     ProductsCategories,
     ExteriorSink,
     Exterior,
@@ -607,9 +604,9 @@ export default {
     Protection,
     Acessories
   },
-  meta: {
-    animation: 'fade-in-right'
-  },
+  // meta: {
+  //   animation: 'fade-in-right'
+  // },
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',

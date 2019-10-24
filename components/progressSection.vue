@@ -9,6 +9,9 @@
               type="image/webp"
             >
             <img
+              loading="lazy"
+              width="48px"
+              height="48px"
               src="~/assets/img/icons8-paint-palette-96.png"
               class="img-fluid"
               alt="icons paint palette"
@@ -26,6 +29,9 @@
               type="image/webp"
             >
             <img
+              loading="lazy"
+              width="48px"
+              height="48px"
               src="~/assets/img/icons8-service-filled-100.png"
               class="img-fluid"
               alt="icons service filled"
@@ -43,6 +49,9 @@
               type="image/webp"
             >
             <img
+              loading="lazy"
+              width="48px"
+              height="48px"
               src="~/assets/img/icons8-discount-filled-100.png"
               class="img-fluid"
               alt="icons discount filled"
@@ -60,6 +69,9 @@
               type="image/webp"
             >
             <img
+              loading="lazy"
+              width="48px"
+              height="48px"
               src="~/assets/img/icons8-gift-filled-100(1).png"
               class="img-fluid"
               alt="icons gift filled"

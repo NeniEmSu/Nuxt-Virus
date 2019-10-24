@@ -35,6 +35,9 @@
     >
       <div class="card mx-auto">
         <img
+          loading="lazy"
+          width="1130"
+          height="320"
           class="card-img img-fliud"
           :src="
             `${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
@@ -72,9 +75,9 @@
 
 <script>
 export default {
-  meta: {
-    animation: 'fade-in-right'
-  },
+  // meta: {
+  //   animation: 'fade-in-right'
+  // },
   data () {
     return {
       imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'

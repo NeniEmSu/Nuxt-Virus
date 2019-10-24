@@ -38,9 +38,14 @@
         </p>
         <div class="video-text row">
           <div class="col-xl-7">
-            <video>
-              <source>
-            </video>
+            <iframe
+              class="video"
+              loading="lazy"
+              :src="videoUrl"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
           </div>
           <div class="col-xl-5">
             <p class="pt-3">
@@ -77,9 +82,9 @@
 
 <script>
 export default {
-  meta: {
-    animation: 'fade-in-right'
-  },
+  // meta: {
+  //   animation: 'fade-in-right'
+  // },
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',
@@ -92,6 +97,11 @@ export default {
             'про Нас - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
+    }
+  },
+  data () {
+    return {
+      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI'
     }
   }
 
@@ -112,7 +122,7 @@ export default {
   border-bottom: 3px solid #000000;
 }
 
-video {
+.video {
   width: 100%;
   max-width: 585px;
   height: 100%;

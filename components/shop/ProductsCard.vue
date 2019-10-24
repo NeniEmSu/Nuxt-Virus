@@ -6,6 +6,9 @@
     style="width: 18rem;"
   >
     <img
+      loading="lazy"
+      width="250px"
+      height="135px"
       :src="image"
       class="card-img-top img-fluid store-img"
       :alt="name"
@@ -87,6 +90,11 @@
 
 <script>
 export default {
+  filters: {
+    capitalize: (item) => {
+      return item.toUpperCase()
+    }
+  },
   props: {
     name: {
       type: String,
@@ -143,13 +151,8 @@ export default {
       default: true,
       required: false
     }
-  },
-  filters: {
-    // this filter will can be used to capitalise words
-    capitalize: (item) => {
-      return item.toUpperCase()
-    }
   }
+
 }
 </script>
 

@@ -188,6 +188,9 @@ export default {
       defer: true
     },
     {
+      src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver'
+    },
+    {
       src: `https://polyfill.io/v3/polyfill.min.js?features=${features}`,
       body: true
     }

@@ -26,12 +26,15 @@
               :srcset="require(`~/assets/imgWebP/${thumbnail + '.webp'}`)"
               type="image/webp"
             >
-            <b-img-lazy
+            <img
+              loading="lazy"
+              width="405px"
+              height="168px"
               style=" border-top-left-radius: 22px; border-bottom-left-radius: 22px;"
               :src="require(`~/assets/img/${thumbnail + '.png'}`)"
               class="img-fluid"
               :alt="title"
-            />
+            >
 
           </picture>
         </div>
