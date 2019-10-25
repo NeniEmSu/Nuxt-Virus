@@ -1,14 +1,13 @@
 <template>
   <div
+    v-b-tooltip.hover
     class="card card__hover store-item"
     :class="filterData"
     :data-item="filterData"
     style="width: 18rem;"
+    :title="name"
   >
     <img
-      loading="lazy"
-      width="250px"
-      height="135px"
       :src="image"
       class="card-img-top img-fluid store-img"
       :alt="name"
@@ -17,7 +16,8 @@
     <div class="card-body">
       <nuxt-link :to="link">
         <h5 class="card-title crop">
-          {{ name | capitalize }}
+          <!-- {{ name | capitalize }} -->
+          {{ name }}
         </h5>
       </nuxt-link>
       <p class="card-text desktop-only">

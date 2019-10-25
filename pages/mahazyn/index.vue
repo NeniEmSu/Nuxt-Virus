@@ -33,12 +33,7 @@
 
     <div id="app">
       <div class="container">
-        <!-- <ProductsCategories
-          :current-products-displayed="currentProductsDisplayed"
-          @changedView="updateView($event)"
-        /> -->
-
-        <div class="categories row">
+        <!-- <div class="categories row">
           <label
             v-for="(category,index) in categories"
             :key="index"
@@ -58,24 +53,24 @@
               @click="currentProductsDisplayed = index+1"
             >
           </label>
-        </div>
+        </div> -->
 
-        <ExteriorSink v-if="currentProductsDisplayed === 1" />
+        <!-- <ExteriorSink v-if="currentProductsDisplayed === 1" />
         <Exterior v-if="currentProductsDisplayed === 2" />
         <Interior v-if="currentProductsDisplayed === 3" />
         <Polishing v-if="currentProductsDisplayed === 4" />
         <Protection v-if="currentProductsDisplayed === 5" />
-        <Acessories v-if="currentProductsDisplayed === 6" />
+        <Acessories v-if="currentProductsDisplayed === 6" /> -->
 
         <!-- the search bar form -->
         <form
-          class="mb-3"
+          class="my-3 mx-auto text-center"
           @submit="getfilteredData"
         >
-          <div class="form-row">
+          <div class="form-row text-center mx-auto">
             <label
               for="search"
-              class="col-8"
+              class="col-10"
             >
               <input
                 id="search"
@@ -87,7 +82,7 @@
               >
             </label>
 
-            <div class="col-4">
+            <div class="col-2">
               <button
                 type="submit"
                 class="btn search-btn"
@@ -101,6 +96,49 @@
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
+              <button
+                class="accordion"
+                @click.prevent="active3 = !active3"
+              >
+                Категорії
+                <span
+                  v-show="!active3"
+                  class="down-Arrow"
+                >&#9660;</span>
+                <span
+                  v-show="active3"
+                  class="up-Arrow"
+                >&#9650;</span>
+              </button>
+              <div
+                v-show="active3"
+                class="panel"
+              >
+                <div
+                  v-for="(category,index) in categories"
+                  :key="index"
+                >
+                  <label
+                    class="holder"
+                    :for="category.value"
+                  >{{ category.text }} <sup
+                    v-if="category.power"
+                    class="text-small"
+                  > <small>{{ category.power }}</small> </sup>
+                    <input
+                      :id="category.value"
+                      v-model="category.checked"
+                      type="checkbox"
+                      :name="category.value"
+                      :class="`'filter-btn' ${category.value}`"
+                      :data-filter="category.value"
+                      @change="getfilteredData"
+                    >
+                    <span class="checkmark" />
+                  </label>
+                </div>
+              </div>
+
               <button
                 class="accordion"
                 @click.prevent="active1 = !active1"
@@ -127,9 +165,9 @@
                     class="holder"
                     :for="brand.value"
                   >{{ brand.text }} <sup
-                      v-if="brand.power"
-                      class="text-small"
-                    > <small>{{ brand.power }}</small> </sup>
+                    v-if="brand.power"
+                    class="text-small"
+                  > <small>{{ brand.power }}</small> </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"
@@ -170,9 +208,9 @@
                     class="holder"
                     :for="type.value"
                   >{{ type.text }} <sup
-                      v-if="type.power"
-                      class="text-small"
-                    > <small>{{ type.power }}</small> </sup>
+                    v-if="type.power"
+                    class="text-small"
+                  > <small>{{ type.power }}</small> </sup>
                     <input
                       :id="type.value"
                       v-model="type.checked"
@@ -188,109 +226,6 @@
               </div>
 
               <!--<button
-                class="accordion"
-                @click.prevent="active3 = !active3"
-              >
-                Тип
-                <span
-                  v-show="!active3"
-                  class="down-Arrow"
-                >&#9660;</span>
-                <span
-                  v-show="active3"
-                  class="up-Arrow"
-                >&#9650;</span>
-              </button>
-               <div
-                v-show="active3"
-                class="panel"
-              >
-                <label
-                  class="holder"
-                  for="all"
-                >Auto Finesse
-                  <input
-                    id="all"
-                    type="checkbox"
-                    name="all"
-                    class="filter-btn all"
-                    data-filter="all"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Фібри"
-                >Auto Finesse
-                  <input
-                    id="Фібри"
-                    type="checkbox"
-                    name="Фібри"
-                    class="filter-btn Фібри"
-                    data-filter="Фібри"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Шампунь"
-                >Auto Finesse
-                  <input
-                    id="Шампунь"
-                    type="checkbox"
-                    name="Шампунь"
-                    class="filter-btn Шампунь"
-                    data-filter="Шампунь"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Віск"
-                >Auto Finesse
-                  <input
-                    id="Віск"
-                    type="checkbox"
-                    name="Віск"
-                    class="filter-btn Віск"
-                    data-filter="Віск"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Пахнючки"
-                >Auto Finesse
-                  <input
-                    id="Пахнючки"
-                    type="checkbox"
-                    name="Пахнючки"
-                    class="filter-btn Пахнючки"
-                    data-filter="Пахнючки"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="чорніннярезини"
-                >Auto Finesse
-                  <input
-                    id="чорніннярезини"
-                    type="checkbox"
-                    name="чорніннярезини"
-                    class="filter-btn чорніннярезини"
-                    data-filter="чорніннярезини"
-                  >
-                  <span class="checkmark" />
-                </label>
-              </div>
-
-              <button
                 class="accordion"
                 @click.prevent="active4 = !active4"
               >
@@ -422,8 +357,8 @@
                   :price="product.Price"
                   :discount-price="product.discountPrice"
                   :image="
-                      `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                    "
+                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true&bcolor=%23ffffff`
+                  "
                   :link="'/mahazyn/' + product.name_slug"
                   :filter-data="product.Filter"
                   :stock="product.Stock"
@@ -595,8 +530,8 @@
                     id="item-count"
                     class="text-center m-auto p-0"
                   >{{
-                      cartSize
-                    }}</span>
+                    cartSize
+                  }}</span>
                 </div>
               </div>
             </div>
@@ -657,35 +592,42 @@ export default {
       loading: this.$store.state.loading,
       filteredData: [],
       search: '',
+      selectedCategory: '',
       categories: [
         {
           checked: false,
           value: 'Зовнішня мийка',
+          id: 1,
           text: 'Зовнішня мийка'
         },
         {
           checked: false,
           value: 'Екстер’єр',
+          id: 2,
           text: 'Екстер’єр'
         },
         {
           checked: false,
           value: 'Інтер’єр',
+          id: 3,
           text: 'Інтер’єр'
         },
         {
           checked: false,
           value: 'Полірування',
+          id: 4,
           text: 'Полірування'
         },
         {
           checked: false,
           value: 'Захист',
+          id: 5,
           text: 'Захист'
         },
         {
           checked: false,
           value: 'Аксесуари',
+          id: 6,
           text: 'Аксесуари'
         }
       ],
@@ -812,6 +754,10 @@ export default {
   },
 
   methods: {
+    // setCatergory (id, index) {
+    //   this.selectedCategory = this.categories[index].value
+    // },
+
     hideToast () {
       this.$store.commit('hideToast')
     },
@@ -820,55 +766,39 @@ export default {
     },
     getfilteredData () {
       this.filteredData = this.products
+      let filteredDataByselectedCategory = []
       let filteredDataByCategoryfilters = []
       let filteredDataByfilters = []
       let filteredDataByTypefilters = []
       let filteredDataBySearch = []
-      const filteredDataByCategory = []
 
+      // if category is selected
       if (this.selectedCategoryFilters.length > 0) {
         filteredDataByCategoryfilters = this.filteredData.filter(obj => this.selectedCategoryFilters.every(val => obj.category.includes(val)))
         this.filteredData = filteredDataByCategoryfilters
       }
 
-      // first check if filters where selected
+      // if filters were selected
       if (this.selectedFilters.length > 0) {
         filteredDataByfilters = this.filteredData.filter(obj => this.selectedFilters.every(val => obj.brand.includes(val)))
         this.filteredData = filteredDataByfilters
       }
+
+      // if types were selected
       if (this.selectedTypeFilters.length > 0) {
         filteredDataByTypefilters = this.filteredData.filter(obj => this.selectedTypeFilters.every(val => obj.type.includes(val)))
         this.filteredData = filteredDataByTypefilters
       }
 
-      // if (this.currentProductsDisplayed === 1) {
-      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Зовнішня мийка'))
-      //   this.filteredData = filteredDataByCategory
-      // }
-      // if (this.currentProductsDisplayed === 2) {
-      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Екстер’єр'))
-      //   this.filteredData = filteredDataByCategory
-      // }
-      // if (this.currentProductsDisplayed === 3) {
-      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Інтер’єр'))
-      //   this.filteredData = filteredDataByCategory
-      // }
-      // if (this.currentProductsDisplayed === 4) {
-      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Полірування'))
-      //   this.filteredData = filteredDataByCategory
-      // }
+      // filter according to name
+      if (this.selectedCategory !== '') {
+        filteredDataByselectedCategory = this.filteredData.filter(obj => this.selectedCategory === obj.category)
+        this.filteredData = filteredDataByselectedCategory
+      }
 
-      // if (this.currentProductsDisplayed === 5) {
-      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Захист'))
-      //   this.filteredData = filteredDataByCategory
-      // }
-      // if (this.currentProductsDisplayed === 6) {
-      //   filteredDataByCategory = this.filteredData.filter(obj => obj.category.includes('Аксесуари'))
-      //   this.filteredData = filteredDataByCategory
-      // }
-      // then filter according to keyword, for now this only affects the name attribute of each data
+      // filter according to name
       if (this.search !== '') {
-        filteredDataBySearch = this.filteredData.filter(obj => obj.name.includes(this.search.toUpperCase()))
+        filteredDataBySearch = this.filteredData.filter(obj => obj.name.toUpperCase().match(this.search.toUpperCase()))
         this.filteredData = filteredDataBySearch
       }
     }
