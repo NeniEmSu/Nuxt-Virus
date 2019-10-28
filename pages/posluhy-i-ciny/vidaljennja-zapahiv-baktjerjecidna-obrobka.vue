@@ -60,7 +60,7 @@ export default {
   },
   data () {
     return {
-      service: '17',
+      service: 'Видалення запахів Бактерецидна обробка',
       heading: 'БАКТЕРЕЦИДНА ОБРОБКА',
       category1: '500 грн',
       category2: '0 грн',

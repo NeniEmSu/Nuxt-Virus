@@ -82,8 +82,8 @@ export default {
   },
   data () {
     return {
-      service: '10',
-      heading: 'Керамічне покриття',
+      service: 'Керамічне покриття кузова',
+      heading: 'Керамічне покриття кузова',
       category1: '12999 грн',
       category2: '14499 грн',
       category3: '15999 грн',

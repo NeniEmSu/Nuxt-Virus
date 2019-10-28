@@ -90,8 +90,8 @@ export default {
   },
   data () {
     return {
-      service: '0',
-      heading: 'ПОЛІРУВАННЯ',
+      service: 'Полірування автомобіля',
+      heading: 'Полірування автомобіля',
       category1: '5999 грн',
       category2: '6999 грн',
       category3: '8499 грн',

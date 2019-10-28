@@ -91,7 +91,7 @@ export default {
   },
   data () {
     return {
-      service: '4',
+      service: 'Хімчистка',
       heading: 'Хімчистка',
       category1: '1999 грн',
       category2: '2499 грн',

@@ -78,8 +78,8 @@ export default {
   },
   data () {
     return {
-      service: '18',
-      heading: 'ВИДАЛЕННЯ ВМЯТИН БЕЗ ФАРБУВАННЯ ',
+      service: 'Видалення вмятин без покраски PDR',
+      heading: 'ВИДАЛЕННЯ ВМЯТИН БЕЗ ФАРБУВАННЯ',
       category1: '0 грн',
       category2: '0 грн',
       category3: '0 грн',

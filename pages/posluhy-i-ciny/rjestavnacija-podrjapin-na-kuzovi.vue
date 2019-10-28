@@ -100,7 +100,7 @@ export default {
   },
   data () {
     return {
-      service: '12',
+      service: 'Реставрація подряпин на кузові',
       heading: 'РЕСТАВРАЦІЯ ПОДРЯПИН (СКОЛІВ) НА КУЗОВІ',
       category1: '130 грн',
       category2: '0 грн',

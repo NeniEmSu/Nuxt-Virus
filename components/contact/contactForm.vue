@@ -53,30 +53,30 @@
                       value="null"
                       disabled
                     >Оберіть тип робіт</option>
-                    <option value="0">Полірування автомобіля</option>
-                    <option value="1">Полірування фар</option>
-                    <option value="2">Полірування вставок салону</option>
-                    <option value="3">Полірування центральних стійок</option>
-                    <option value="4">Хімчистка</option>
-                    <option value="5">Хімчистка колесних арок, підвіски, дисків</option>
-                    <option value="6">Хімчистка передніх сидінь</option>
-                    <option value="7">Хімчистка задніх сидінь</option>
-                    <option value="8">Покриття твердим універсальним воском Soft 99</option>
-                    <option value="9">Рідке скло</option>
-                    <option value="10">Керамічне покриття кузова</option>
-                    <option value="11">Передпродажна підготовка Комплекс</option>
-                    <option value="12">Реставрація подряпин на кузові</option>
-                    <option value="13">Перешиття шкіряних деталей салону</option>
-                    <option value="14">Антидощ</option>
-                    <option value="15">Мийка мотору парою</option>
-                    <option value="16">Шумоізоляція</option>
-                    <option value="17">Видалення запахів Бактерецидна обробка</option>
-                    <option value="18">Видалення вмятин без покраски PDR</option>
-                    <option value="19">Поклейка антигравійної плівки</option>
-                    <option value="20">Очистка кондиціонера</option>
-                    <option value="21">Чистка дисків</option>
-                    <option value="22">Керамічне покриття сидінь</option>
-                    <option value="23">Озонація</option>
+                    <option value="Полірування автомобіля">Полірування автомобіля</option>
+                    <option value="Полірування фар">Полірування фар</option>
+                    <option value="Полірування вставок салону">Полірування вставок салону</option>
+                    <option value="Полірування центральних стійок">Полірування центральних стійок</option>
+                    <option value="Хімчистка">Хімчистка</option>
+                    <option value="Хімчистка колесних арок, підвіски, дисків">Хімчистка колесних арок, підвіски, дисків</option>
+                    <option value="Хімчистка передніх сидінь">Хімчистка передніх сидінь</option>
+                    <option value="Хімчистка задніх сидінь">Хімчистка задніх сидінь</option>
+                    <option value="Покриття твердим універсальним воском Soft 99">Покриття твердим універсальним воском Soft 99</option>
+                    <option value="Рідке скло">Рідке скло</option>
+                    <option value="Керамічне покриття кузова">Керамічне покриття кузова</option>
+                    <option value="Передпродажна підготовка Комплекс">Передпродажна підготовка Комплекс</option>
+                    <option value="Реставрація подряпин на кузові">Реставрація подряпин на кузові</option>
+                    <option value="Перешиття шкіряних деталей салону">Перешиття шкіряних деталей салону</option>
+                    <option value="Антидощ">Антидощ</option>
+                    <option value="Мийка мотору парою">Мийка мотору парою</option>
+                    <option value="Шумоізоляція">Шумоізоляція</option>
+                    <option value="Видалення запахів Бактерецидна обробка">Видалення запахів Бактерецидна обробка</option>
+                    <option value="Видалення вмятин без покраски PDR">Видалення вмятин без покраски PDR</option>
+                    <option value="Поклейка антигравійної плівки">Поклейка антигравійної плівки</option>
+                    <option value="Очистка кондиціонера">Очистка кондиціонера</option>
+                    <option value="Чистка дисків">Чистка дисків</option>
+                    <option value="Керамічне покриття сидінь">Керамічне покриття сидінь</option>
+                    <option value="Озонація">Озонація</option>
                   </select>
                 </label>
               </div>
@@ -224,24 +224,24 @@ export default {
     },
     submitForm () {
       this.loading = true
-
       axios
-        .post(
-          'https://admin.virus.te.ua/api/forms/submit/contact?token=00c9e43284a689ed7bf9a7fc972e81',
-          JSON.stringify({
-            form: {
-              name: this.name,
-              carModel: this.carModel,
-              service: this.service,
-              phoneNumber: this.models.phoneNumber
-            }
-          }),
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            }
+        .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=Name: ${this.name}, Number: ${this.models.phoneNumber}, Car Model: ${this.carModel}, Service: ${this.service}`)
+      axios.post(
+        'https://admin.virus.te.ua/api/forms/submit/contact?token=00c9e43284a689ed7bf9a7fc972e81',
+        JSON.stringify({
+          form: {
+            name: this.name,
+            carModel: this.carModel,
+            service: this.service,
+            phoneNumber: this.models.phoneNumber
           }
-        )
+        }),
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      )
         .then(({ data }) => {
           this.loading = false
 

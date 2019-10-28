@@ -255,6 +255,18 @@ export default {
 
     submitOrder () {
       this.asyncState = 'pending'
+      const cartItems = JSON.stringify(this.cart)
+      const text = JSON.stringify({
+        cart: cartItems,
+        cartTotalAmount: this.cartTotalAmount,
+        itemsInCart: this.cartSize,
+        name: this.form.name,
+        postBranch: this.form.postBranch,
+        city: this.form.city,
+        cartphoneNumber: this.form.cartphoneNumber
+      })
+      axios
+        .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=${text}`)
 
       axios
         .post(

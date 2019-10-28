@@ -82,7 +82,7 @@ export default {
   },
   data () {
     return {
-      service: '8',
+      service: 'Покриття твердим універсальним воском Soft 99',
       heading: 'Покриття твердим воском',
       category1: '1200 грн',
       category2: '1300 грн',

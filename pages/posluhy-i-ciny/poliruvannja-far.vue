@@ -92,7 +92,7 @@ export default {
   },
   data () {
     return {
-      service: '1',
+      service: 'Полірування фар',
       heading: 'ПОЛІРУВАННЯ Фар',
       category1: '600 грн',
       category2: '700 грн',

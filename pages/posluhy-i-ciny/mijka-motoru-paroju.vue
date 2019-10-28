@@ -96,7 +96,7 @@ export default {
   },
   data () {
     return {
-      service: '15',
+      service: 'Мийка мотору парою',
       heading: 'МИЙКА МОТОРУ ПАРОЮ',
       category1: '5999 грн',
       category2: '6999 грн',

@@ -96,7 +96,7 @@ export default {
   },
   data () {
     return {
-      service: '21',
+      service: 'Чистка дисків',
       heading: 'ЧИСТКА ДИСКІВ',
       category1: '250 грн',
       category2: '250 грн',

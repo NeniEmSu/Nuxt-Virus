@@ -82,7 +82,7 @@ export default {
   },
   data () {
     return {
-      service: '19',
+      service: 'Поклейка антигравійної плівки',
       heading: 'ПОКЛЕЙКА АНТИГРАВІЙНОЇ ПЛІВКИ',
       category1: '1000 грн',
       category2: '0 грн',

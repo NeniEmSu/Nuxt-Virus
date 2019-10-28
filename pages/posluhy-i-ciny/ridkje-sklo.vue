@@ -83,7 +83,7 @@ export default {
   },
   data () {
     return {
-      service: '9',
+      service: 'Рідке скло',
       heading: 'Рідке скло',
       category1: '3000 грн',
       category2: '3000 грн',

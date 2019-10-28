@@ -74,12 +74,12 @@ export default {
   },
   data () {
     return {
-      service: '14',
+      service: 'Антидощ',
       heading: 'Антидощ',
       category1: '600 грн',
       category2: '0 грн',
       category3: '1200 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/ViywYguacSY',
       firstParagraph:
         'Гідрофобний ефект поліпшить видимість на дорозі і позбавить Вас від необхідності слухати монотонний шум працюючих двірників. Тепер лобове скло не буде затирається, а вода буде скочуватися з нього практично безслідно. Термін служби покриття до 4 місяців',
       inclusiveInService: [

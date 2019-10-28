@@ -88,7 +88,7 @@ export default {
   },
   data () {
     return {
-      service: '22',
+      service: 'Керамічне покриття сидінь',
       heading: 'КЕРАМІЧНЕ ПОКРИТТЯ СИДІНЬ',
       category1: '500 грн',
       category2: '500 грн',

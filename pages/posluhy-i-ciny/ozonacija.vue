@@ -69,7 +69,7 @@ export default {
   },
   data () {
     return {
-      service: '23',
+      service: 'Озонація',
       heading: 'ОЗОНУВАННЯ',
       category1: '1000 грн',
       category2: '1000 грн',

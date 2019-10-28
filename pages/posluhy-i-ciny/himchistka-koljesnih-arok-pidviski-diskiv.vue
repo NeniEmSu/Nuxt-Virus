@@ -92,7 +92,7 @@ export default {
   },
   data () {
     return {
-      service: '3',
+      service: 'Хімчистка колесних арок, підвіски, дисків',
       heading: 'ХІМЧИСТКА колісних арок підвіски та дисків',
       category1: '800 грн',
       category2: '800 грн',

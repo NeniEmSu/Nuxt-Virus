@@ -102,7 +102,7 @@ export default {
   },
   data () {
     return {
-      service: '11',
+      service: 'Передпродажна підготовка Комплекс',
       heading: 'Передпродажна підготовка',
       category1: '1100 грн',
       category2: '1200 грн',

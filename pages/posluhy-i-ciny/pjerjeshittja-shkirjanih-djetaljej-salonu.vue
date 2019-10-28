@@ -92,7 +92,7 @@ export default {
   },
   data () {
     return {
-      service: '13',
+      service: 'Перешиття шкіряних деталей салону',
       heading: 'Перешиття шкіряних деталей салону',
       category1: '500 грн',
       category2: '0 грн',

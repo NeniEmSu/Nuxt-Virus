@@ -86,7 +86,7 @@ export default {
   },
   data () {
     return {
-      service: '6',
+      service: 'Хімчистка передніх сидінь',
       heading: 'ХІМЧИСТКА передніх сидінь (тканина, шкіра)',
       category1: '275 грн',
       category2: '330 грн',

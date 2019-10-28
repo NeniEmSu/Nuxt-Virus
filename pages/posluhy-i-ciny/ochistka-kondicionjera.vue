@@ -90,7 +90,7 @@ export default {
   },
   data () {
     return {
-      service: '20',
+      service: 'Очистка кондиціонера',
       heading: 'ОЧИСТКА КОНДИЦІОНЕРА',
       category1: '1200 грн',
       category2: '1200 грн',

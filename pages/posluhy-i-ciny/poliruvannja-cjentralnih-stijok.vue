@@ -91,7 +91,7 @@ export default {
   },
   data () {
     return {
-      service: '3',
+      service: 'Полірування центральних стійок',
       heading: 'ПОЛІРУВАННЯ центральних стійок',
       category1: '800 грн',
       category2: '900 грн',

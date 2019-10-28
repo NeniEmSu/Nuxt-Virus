@@ -86,7 +86,7 @@ export default {
   },
   data () {
     return {
-      service: '16',
+      service: 'Шумоізоляція',
       heading: 'ШУМОІЗОЛЯЦІЯ',
       category1: '330 $',
       category2: '330 $',

@@ -91,7 +91,7 @@ export default {
   },
   data () {
     return {
-      service: '2',
+      service: 'Полірування вставок салону',
       heading: 'ПОЛІРУВАННЯ ВСТАВОК САЛОНУ',
       category1: '500 грн',
       category2: '600 грн',
