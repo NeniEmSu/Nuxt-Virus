@@ -799,8 +799,8 @@ export default {
           cleanersId: '06',
           cleanersTitle: 'Хімчистка колесних арок, підвіски, дисків',
           cleanersCost: '800',
-          cleanersCostVar1: '0',
-          cleanersCostVar2: '0',
+          cleanersCostVar1: '800',
+          cleanersCostVar2: '800',
           cleanersLink:
             '/posluhy-i-ciny/himchistka-koljesnih-arok-pidviski-diskiv',
 
@@ -842,8 +842,8 @@ export default {
           WaxCoversId: '10',
           WaxCoversTitle: 'Рідке скло',
           WaxCoversCost: '3000',
-          WaxCoversCostVar1: '0',
-          WaxCoversCostVar2: '0',
+          WaxCoversCostVar1: '4000',
+          WaxCoversCostVar2: '4500',
           WaxCoversLink: '/posluhy-i-ciny/ridkje-sklo',
           WaxCoversClass: 'service-ten'
         }
@@ -903,8 +903,8 @@ export default {
           additionalId: '16',
           additionalTitle: 'Мийка мотору парою',
           additionalCost: '500',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '800',
+          additionalCostVar2: '900',
           additionalLink: '/posluhy-i-ciny/mijka-motoru-paroju',
 
           additionalImg: 'services16'
@@ -913,8 +913,8 @@ export default {
           additionalId: '17',
           additionalTitle: 'Шумоізоляція',
           additionalCost: '330',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '450',
+          additionalCostVar2: '450',
           dollar: true,
           additionalLink: '/posluhy-i-ciny/shumoizoljacija',
 
@@ -924,40 +924,40 @@ export default {
           additionalId: '18',
           additionalTitle: 'Видалення запахів Бактерецидна обробка',
           additionalCost: '500',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '1200',
+          additionalCostVar2: '1500',
           additionalLink:
             '/posluhy-i-ciny/vidaljennja-zapahiv-baktjerjecidna-obrobka',
 
           additionalImg: 'services18'
         },
-        {
-          additionalId: '19',
-          additionalTitle: 'Видалення вмятин без покраски PDR',
-          additionalCost: '0',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
-          additionalLink:
-            '/posluhy-i-ciny/vidaljennja-vmjatin-bjez-pokraski-pdr',
+        // {
+        //   additionalId: '19',
+        //   additionalTitle: 'Видалення вмятин без покраски PDR',
+        //   additionalCost: '0',
+        //   additionalCostVar1: '0',
+        //   additionalCostVar2: '0',
+        //   additionalLink:
+        //     '/posluhy-i-ciny/vidaljennja-vmjatin-bjez-pokraski-pdr',
 
-          additionalImg: 'services19'
-        },
-        {
-          additionalId: '20',
-          additionalTitle: 'Поклейка антигравійної плівки',
-          additionalCost: '1000',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
-          additionalLink: '/posluhy-i-ciny/pokljejka-antigravijnoi-plivki',
+        //   additionalImg: 'services19'
+        // },
+        // {
+        //   additionalId: '20',
+        //   additionalTitle: 'Поклейка антигравійної плівки',
+        //   additionalCost: '1000',
+        //   additionalCostVar1: '0',
+        //   additionalCostVar2: '0',
+        //   additionalLink: '/posluhy-i-ciny/pokljejka-antigravijnoi-plivki',
 
-          additionalImg: 'services20'
-        },
+        //   additionalImg: 'services20'
+        // },
         {
           additionalId: '21',
           additionalTitle: 'Очистка кондиціонера',
           additionalCost: '1200',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '1200',
+          additionalCostVar2: '1800',
           additionalLink: '/posluhy-i-ciny/ochistka-kondicionjera',
 
           additionalImg: 'services21'
@@ -966,8 +966,8 @@ export default {
           additionalId: '22',
           additionalTitle: 'Чистка дисків',
           additionalCost: '250',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '300',
+          additionalCostVar2: '300',
           perItem: true,
           additionalLink: '/posluhy-i-ciny/chistka-diskiv',
 
@@ -977,8 +977,8 @@ export default {
           additionalId: '23',
           additionalTitle: 'Керамічне покриття сидінь',
           additionalCost: '500',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '1500',
+          additionalCostVar2: '1500',
           perItem: true,
           additionalLink: '/posluhy-i-ciny/kjeramichnje-pokrittja-sidin',
 
@@ -988,8 +988,8 @@ export default {
           additionalId: '24',
           additionalTitle: 'Озонація',
           additionalCost: '1000',
-          additionalCostVar1: '0',
-          additionalCostVar2: '0',
+          additionalCostVar1: '1200',
+          additionalCostVar2: '1200',
           additionalLink: '/posluhy-i-ciny/ozonacija',
 
           additionalImg: 'services24'

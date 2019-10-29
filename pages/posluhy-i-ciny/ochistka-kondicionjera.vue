@@ -94,7 +94,7 @@ export default {
       heading: 'ОЧИСТКА КОНДИЦІОНЕРА',
       category1: '1200 грн',
       category2: '1200 грн',
-      category3: '1200 грн',
+      category3: '1800 грн',
       question:
         ' Навіщо взагалі потрібна антибактеріальна чистка кондиціонера?',
       firstParagraph:

@@ -31,37 +31,104 @@
       @hide-toast="hideToast"
     />
 
+    <div
+      class="filter-sidebar-mobile col-xl-2 text-center mb-3 mobile-only"
+      style
+    >
+      <form
+        method="post"
+        name="filter"
+      >
+        <div class="row px-0 py-2 container">
+          <div class="form-group col-9 text-left my-auto">
+            <button
+              class="accordion ml-2 ml-sm-3"
+              style="outline: none; border: none; background: transparent;"
+              @click.prevent="active4 = !active4"
+            >
+              від дорогих до дешевих
+              <span
+                v-show="!active4"
+                class="down-Arrow ml-0 ml-sm-2"
+              >&#9660;</span>
+              <span
+                v-show="active4"
+                class="up-Arrow ml-0 ml-sm-2"
+              >&#9650;</span>
+            </button>
+            <div
+              v-show="active4"
+              class="panel pl-2"
+              style="background-color: white; position: absolute; z-index: 3; width: 80%; box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.35); border-bottom-right-radius: 20px;"
+            >
+              <h3>Категорії</h3>
+              <div
+                v-for="category in categories"
+                :key="category.value"
+              >
+                <label
+                  class="holder"
+                  :for="category.value"
+                >{{ category.text }} <sup
+                  v-if="category.power"
+                  class="text-small"
+                > <small>{{ category.power }}</small> </sup>
+                  <input
+                    :id="category.value"
+                    v-model="category.checked"
+                    type="checkbox"
+                    :name="category.value"
+                    :class="`'filter-btn' ${category.value}`"
+                    :data-filter="category.value"
+                    @change="getfilteredData"
+                  >
+                  <span class="checkmark" />
+                </label>
+              </div>
+
+              <h3>Бренд</h3>
+              <div
+                v-for="brand in brands"
+                :key="brand.value"
+              >
+                <label
+                  class="holder"
+                  :for="brand.value"
+                >{{ brand.text }} <sup
+                  v-if="brand.power"
+                  class="text-small"
+                > <small>{{ brand.power }}</small> </sup>
+                  <input
+                    :id="brand.value"
+                    v-model="brand.checked"
+                    type="checkbox"
+                    :name="brand.value"
+                    :class="`'filter-btn' ${brand.value}`"
+                    :data-filter="brand.value"
+                    @change="getfilteredData"
+                  >
+                  <span class="checkmark" />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-3 px-0 text-right my-auto"
+            @click.prevent="active4 = !active4"
+          >
+            <p class="m-auto d-none d-sm-inline">
+              Фільтр
+            </p> <img
+              src="~assets/img/icons8-slider-filled-90.png"
+              alt="filter icon"
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+
     <div id="app">
       <div class="container">
-        <!-- <div class="categories row">
-          <label
-            v-for="(category,index) in categories"
-            :key="index"
-            :class="{ active: category.checked === true}"
-            class="col-2 button"
-            :for="category.value"
-          >{{ category.text }}
-            <input
-              :id="category.value"
-              v-model="category.checked"
-              type="checkbox"
-              :name="category.value"
-              :class="`'filter-btn' 'mx-auto' ${category.value}`"
-              style="display: none;"
-              :data-filter="category.value"
-              @change="getfilteredData"
-              @click="currentProductsDisplayed = index+1"
-            >
-          </label>
-        </div> -->
-
-        <!-- <ExteriorSink v-if="currentProductsDisplayed === 1" />
-        <Exterior v-if="currentProductsDisplayed === 2" />
-        <Interior v-if="currentProductsDisplayed === 3" />
-        <Polishing v-if="currentProductsDisplayed === 4" />
-        <Protection v-if="currentProductsDisplayed === 5" />
-        <Acessories v-if="currentProductsDisplayed === 6" /> -->
-
         <!-- the search bar form -->
         <form
           class="my-3 mx-auto text-center"
@@ -70,7 +137,7 @@
           <div class="form-row text-center mx-auto">
             <label
               for="search"
-              class="col-10"
+              class="col-sm-10"
             >
               <input
                 id="search"
@@ -82,7 +149,7 @@
               >
             </label>
 
-            <div class="col-2">
+            <div class="col-sm-2">
               <button
                 type="submit"
                 class="btn search-btn"
@@ -96,6 +163,12 @@
         <div class="row">
           <div class="filter-sidebar desktop-only col-xl-2 text-center p-0">
             <div class="col-0">
+              <h6 class="d-inline">
+                Фільтр
+              </h6> <img
+                src="~assets/img/icons8-slider-filled-90.png"
+                alt="filter icon"
+              >
               <button
                 class="accordion"
                 @click.prevent="active3 = !active3"
@@ -182,7 +255,7 @@
                 </div>
               </div>
 
-              <button
+              <!-- <button
                 class="accordion"
                 @click.prevent="active2 = !active2"
               >
@@ -223,7 +296,7 @@
                     <span class="checkmark" />
                   </label>
                 </div>
-              </div>
+              </div> -->
 
               <!--<button
                 class="accordion"
@@ -357,7 +430,7 @@
                   :price="product.Price"
                   :discount-price="product.discountPrice"
                   :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true&bcolor=%23ffffff`
+                    `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true&bcolor=%23ffffff`
                   "
                   :link="'/mahazyn/' + product.name_slug"
                   :filter-data="product.Filter"
@@ -545,22 +618,9 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-import ProductsCategories from '@/components/shop/ProductsCategories.vue'
-import ExteriorSink from '@/components/shop/subcategoris/ExteriorSink'
-import Exterior from '@/components/shop/subcategoris/Exterior'
-import Interior from '@/components/shop/subcategoris/Interior'
-import Polishing from '@/components/shop/subcategoris/Polishing'
-import Protection from '@/components/shop/subcategoris/Protection'
-import Acessories from '@/components/shop/subcategoris/Acessories'
 export default {
   components: {
-    ProductsCategories,
-    ExteriorSink,
-    Exterior,
-    Interior,
-    Polishing,
-    Protection,
-    Acessories
+
   },
   // meta: {
   //   animation: 'fade-in-right'
@@ -807,54 +867,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.categories {
-  margin-bottom: 30px;
-
-  .button {
-    padding: 32px 10px;
-    background: $lightColor;
-    border: none;
-    outline: none;
-
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    align-items: center;
-    text-align: center;
-
-    color: $darkColor;
-
-    &:hover {
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-      color: $redColor;
-    }
-
-    &.active {
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-      color: $redColor;
-    }
-  }
-}
-
-.sub-categories {
-  margin-bottom: 15px;
-
-  .button {
-    padding: 11px 6px;
-    background: #e5e5e5;
-    border-radius: 50px;
-    border: none;
-    outline: none;
-    margin: auto 0 15px 15px;
-
-    &:hover {
-      color: $redColor;
-    }
-  }
-}
-
 .cart-icon {
   #show-total {
     width: 35px;
@@ -1195,6 +1207,20 @@ input#search {
         color: $redColor;
       }
     }
+  }
+
+  input#search {
+    height: 40px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: #e9ecef;
+  }
+
+  .search-btn {
+    padding: 6px 22.5px;
+
+    font-size: 16px;
   }
 }
 

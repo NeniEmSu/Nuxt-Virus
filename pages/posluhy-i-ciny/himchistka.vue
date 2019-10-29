@@ -96,7 +96,7 @@ export default {
       category1: '1999 грн',
       category2: '2499 грн',
       category3: '3199 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/1TkHas2OYso',
       question: 'Для чого полірувати стійки?',
       firstParagraph:
         'Дбайливо і ретельно очистимо кожну деталь салону, включаючи багажник. Використовуємо тільки безпечні матеріали преміум-класу і сучасне обладнання.',

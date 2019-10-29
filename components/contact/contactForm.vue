@@ -616,7 +616,7 @@ export default {
       border-radius: 50px;
       font-family: $mainFont;
       font-style: normal;
-      font-weight: 500l;
+      font-weight: 500;
       font-size: 12px;
       line-height: normal;
       color: $headingsFontColor;

@@ -98,9 +98,9 @@ export default {
     return {
       service: 'Мийка мотору парою',
       heading: 'МИЙКА МОТОРУ ПАРОЮ',
-      category1: '5999 грн',
-      category2: '6999 грн',
-      category3: '8499 грн',
+      category1: '500 грн',
+      category2: '800 грн',
+      category3: '900 грн',
       videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
       firstParagraph:
         'Детейлінг моторного відсіку - важливий штрих в догляді за автомобілем.',
