@@ -366,7 +366,6 @@ export default {
         symbolSpacing: true
       }
     ],
-    '@bazzite/nuxt-optimized-images',
     'nuxt-polyfill',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -405,10 +404,6 @@ export default {
 
   robots: {
     Sitemap: '/sitemap.xml'
-  },
-
-  optimizedImages: {
-    optimizeImages: true
   },
 
   axios: {
