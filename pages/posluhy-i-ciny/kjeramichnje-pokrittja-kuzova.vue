@@ -87,7 +87,7 @@ export default {
       category1: '12999 грн',
       category2: '14499 грн',
       category3: '15999 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/z8fG5P_YFss',
       firstParagraph:
         'Керамічне покриття автомобіля - це тонка плівка на поверхні ЛКП кузова, утворена зернами оксиду титану, діоксиду кремнію, карбідів та інших неорганічних сполук. Йдеться про зерна розміром до 100 нанометрів (мільярдна частина метра!)',
       secondParagraph:

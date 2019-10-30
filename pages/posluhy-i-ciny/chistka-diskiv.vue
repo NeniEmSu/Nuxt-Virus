@@ -101,7 +101,7 @@ export default {
       category1: '250 грн',
       category2: '300 грн',
       category3: '300 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/__BVWfgMeC4',
       firstParagraph:
         'Унікальна методика мийки, використовувана в нашій компанії для дбайливого догляду за колісними дисками, передбачає комплексний підхід. Досвідчені фахівці проводять дбайливе усунення забруднень з дисків авто, застосовуючи якісні засоби. ',
       secondParagraph:

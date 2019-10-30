@@ -101,7 +101,7 @@ export default {
   },
   data () {
     return {
-      videoUrl: 'https://www.youtube.com/embed/1TkHas2OYso'
+      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI'
     }
   }
 

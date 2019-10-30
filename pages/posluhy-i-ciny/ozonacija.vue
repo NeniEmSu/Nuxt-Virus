@@ -74,7 +74,7 @@ export default {
       category1: '1000 грн',
       category2: '1200 грн',
       category3: '1200 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/eDtDT7qkOMo',
       firstParagraph:
         'За допомогою озонатора можна не тільки швидко і ефективно вбити бактерії, віруси, грибки та інші шкідливі мікроорганізми, що знаходяться в повітрі і воді, але і усунути неприємні запахи: вогкості, сигаретного диму, після горіння приміщення.',
       secondParagraph:

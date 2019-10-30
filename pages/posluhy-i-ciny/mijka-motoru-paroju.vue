@@ -101,7 +101,7 @@ export default {
       category1: '500 грн',
       category2: '800 грн',
       category3: '900 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/EXqq3LcZi8A',
       firstParagraph:
         'Детейлінг моторного відсіку - важливий штрих в догляді за автомобілем.',
       question: 'Важливо: це не "мийка двигуна"! В чому різниця? ',

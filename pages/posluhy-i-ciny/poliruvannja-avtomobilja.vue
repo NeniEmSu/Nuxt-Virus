@@ -95,7 +95,7 @@ export default {
       category1: '5999 грн',
       category2: '6999 грн',
       category3: '8499 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      videoUrl: 'https://www.youtube.com/embed/DJDtpwLithw',
       firstParagraph:
         'Якщо ви не знаєте, яке полірування вибрати – абразивне, відновлююче, захисне - нічого страшного, не ламайте голову! Суть детейлінг-полірування в студії VIRUS - це індивідуальний підхід до кожного автомобіля, в залежності від його стану.',
       secondParagraph:
