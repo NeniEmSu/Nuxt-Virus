@@ -371,7 +371,7 @@
                 class="col-6 mx-auto store-item p-0 p-lg-2"
               >
                 <div
-                  class="card two-cards"
+                  class="card two-cards card__hover"
                   :class="WaxCover.WaxCoversClass"
                 >
                   <div class="card-body" />
@@ -429,7 +429,7 @@
                 <h2 class="text-center card-heading">
                   Керамічне покриття
                 </h2>
-                <div class="card two-cards-seprate-titles service-eleven">
+                <div class="card two-cards-seprate-titles card__hover service-eleven">
                   <div class="card-body" />
 
                   <div class="card-end">
@@ -512,7 +512,7 @@
                 <h2 class="text-center card-heading">
                   Передпродажна підготовка
                 </h2>
-                <div class="card two-cards-seprate-titles service-twelve">
+                <div class="card two-cards-seprate-titles service-twelve card__hover">
                   <div class="card-body" />
 
                   <div class="card-end">

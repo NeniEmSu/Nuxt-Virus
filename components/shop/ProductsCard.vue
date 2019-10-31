@@ -16,8 +16,7 @@
     <div class="card-body">
       <nuxt-link :to="link">
         <h5 class="card-title crop">
-          <!-- {{ name | capitalize }} -->
-          {{ name }}
+          {{ name | capitalize }}
         </h5>
       </nuxt-link>
       <p class="card-text desktop-only">

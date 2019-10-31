@@ -278,7 +278,7 @@
                   :key="type.id"
                 >
                   <label
-                    class="holder"
+                    class="holder text-capitalize"
                     :for="type.value"
                   >{{ type.text }} <sup
                     v-if="type.power"
@@ -396,7 +396,8 @@ const customStyles = {
   a: {
     color: 'white',
     backgroundColor: '#D41F26',
-    outline: 'none'
+    outline: 'none',
+    borderRadius: '20px'
   }
 }
 
@@ -522,42 +523,62 @@ export default {
         {
           id: 'tupe2',
           checked: false,
-          value: 'Устранитель запахов',
-          text: 'Устранитель запахов'
+          value: 'устранітель запахів',
+          text: 'устранітель запахів'
         },
         {
           id: 'tupe3',
           checked: false,
-          value: 'антидождь',
-          text: 'антидождь'
+          value: 'антидощ',
+          text: 'антидощ'
         },
         {
           id: 'tupe4',
           checked: false,
-          value: 'антизапотеватель',
-          text: 'антизапотеватель'
+          value: 'антизапрівач',
+          text: 'антизапрівач'
         },
         {
           id: 'tupe5',
           checked: false,
-          value: 'Для общей химчистки',
-          text: 'Для общей химчистки'
+          value: 'Для загальної хімчистки',
+          text: 'Для загальної хімчистки'
         },
         {
           id: 'tupe6',
           checked: false,
-          value: 'очиститель стекол',
-          text: 'очиститель стекол'
+          value: 'очищувач стекол',
+          text: 'очищувач стекол'
         }, {
           id: 'tupe7',
           checked: false,
-          value: 'Абразивная',
-          text: 'Абразивная'
+          value: 'Абразивна',
+          text: 'Абразивна'
         }, {
-          id: 'tupe7',
+          id: 'tupe8',
           checked: false,
-          value: 'Антиголограммная',
-          text: 'Антиголограммная'
+          value: 'Антіголограммная',
+          text: 'Антіголограммная'
+        }, {
+          id: 'tupe9',
+          checked: false,
+          value: 'Аплікатори',
+          text: 'Аплікатори'
+        }, {
+          id: 'tupe10',
+          checked: false,
+          value: 'ємності',
+          text: 'ємності'
+        }, {
+          id: 'tupe11',
+          checked: false,
+          value: 'універсальний',
+          text: 'універсальний'
+        }, {
+          id: 'tupe12',
+          checked: false,
+          value: 'Для миття коліс',
+          text: 'Для миття коліс'
         }
       ]
     }
@@ -594,25 +615,6 @@ export default {
         categoryFilters.push(element.value)
       })
       return categoryFilters
-    },
-
-    exProducts () {
-      return this.products.filter(el => el.category === 'Екстер’єр')
-    },
-    inProducts () {
-      return this.products.filter(el => el.category === 'Інтер’єр')
-    },
-    exSiProducts () {
-      return this.products.filter(el => el.category === 'Зовнішня мийка')
-    },
-    acProducts () {
-      return this.products.filter(el => el.category === 'Аксесуари')
-    },
-    polProducts () {
-      return this.products.filter(el => el.category === 'Полірування')
-    },
-    proProducts () {
-      return this.products.filter(el => el.category === 'Захист')
     }
   },
 
@@ -638,7 +640,7 @@ export default {
     },
     getfilteredData () {
       this.filteredData = this.products
-      let filteredDataByselectedCategory = []
+      const filteredDataByselectedCategory = []
       let filteredDataByCategoryfilters = []
       let filteredDataByfilters = []
       let filteredDataByTypefilters = []
@@ -660,12 +662,6 @@ export default {
       if (this.selectedTypeFilters.length > 0) {
         filteredDataByTypefilters = this.filteredData.filter(obj => this.selectedTypeFilters.every(val => obj.type.includes(val)))
         this.filteredData = filteredDataByTypefilters
-      }
-
-      // filter according to name
-      if (this.selectedCategory !== '') {
-        filteredDataByselectedCategory = this.filteredData.filter(obj => this.selectedCategory === obj.category)
-        this.filteredData = filteredDataByselectedCategory
       }
 
       // filter according to name
