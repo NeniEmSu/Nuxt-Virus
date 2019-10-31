@@ -38,6 +38,7 @@
     "intersection-observer": "^0.7.0",
     "jimp": "^0.8.5",
     "jquery": "^3.4.1",
+    "jw-vue-pagination": "^1.0.3",
     "lqip-loader": "^2.2.0",
     "node-fetch": "^2.6.0",
     "nuxt": "^2.10.2",

@@ -255,7 +255,7 @@
                 </div>
               </div>
 
-              <!-- <button
+              <button
                 class="accordion"
                 @click.prevent="active2 = !active2"
               >
@@ -296,116 +296,11 @@
                     <span class="checkmark" />
                   </label>
                 </div>
-              </div> -->
-
-              <!--<button
-                class="accordion"
-                @click.prevent="active4 = !active4"
-              >
-                Тип
-                <span
-                  v-show="!active4"
-                  class="down-Arrow"
-                >&#9660;</span>
-                <span
-                  v-show="active4"
-                  class="up-Arrow"
-                >&#9650;</span>
-              </button>
-
-              <div
-                v-show="active4"
-                class="panel"
-              >
-                <label
-                  class="holder"
-                  for="all"
-                >Auto Finesse
-                  <input
-                    id="all"
-                    type="checkbox"
-                    name="all"
-                    class="filter-btn all"
-                    data-filter="all"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Фібри"
-                >Auto Finesse
-                  <input
-                    id="Фібри"
-                    type="checkbox"
-                    name="Фібри"
-                    class="filter-btn Фібри"
-                    data-filter="Фібри"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Шампунь"
-                >Auto Finesse
-                  <input
-                    id="Шампунь"
-                    type="checkbox"
-                    name="Шампунь"
-                    class="filter-btn Шампунь"
-                    data-filter="Шампунь"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Віск"
-                >Auto Finesse
-                  <input
-                    id="Віск"
-                    type="checkbox"
-                    name="Віск"
-                    class="filter-btn Віск"
-                    data-filter="Віск"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="Пахнючки"
-                >Auto Finesse
-                  <input
-                    id="Пахнючки"
-                    type="checkbox"
-                    name="Пахнючки"
-                    class="filter-btn Пахнючки"
-                    data-filter="Пахнючки"
-                  >
-                  <span class="checkmark" />
-                </label>
-
-                <label
-                  class="holder"
-                  for="чорніннярезини"
-                >Auto Finesse
-                  <input
-                    id="чорніннярезини"
-                    type="checkbox"
-                    name="чорніннярезини"
-                    class="filter-btn чорніннярезини"
-                    data-filter="чорніннярезини"
-                  >
-                  <span class="checkmark" />
-                </label>
-              </div> -->
+              </div>
             </div>
           </div>
 
           <div class="container sales-cards col-xl-9 text-center p-0">
-            <!-- <ProductsList /> -->
             <div class="container mt-2 pb-3">
               <img
                 v-show="loading"
@@ -422,7 +317,7 @@
                 class="row"
               >
                 <card
-                  v-for="product in filteredData"
+                  v-for="product in pageOfItems"
                   :key="product._id"
                   class="mb-5 mx-auto"
                   :name="`${product.name}`"
@@ -441,143 +336,15 @@
                 />
               </div>
 
-              <!-- <div
-                v-if="currentProductsDisplayed === 2"
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in exProducts"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="product.name"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                />
-              </div>
-
-              <div
-                v-if="currentProductsDisplayed === 1"
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in exSiProducts"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="product.name"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                />
-              </div>
-
-              <div
-                v-if="currentProductsDisplayed === 3"
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in inProducts"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="product.name"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                />
-              </div>
-
-              <div
-                v-if="currentProductsDisplayed === 4"
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in polProducts"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="product.name"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                />
-              </div>
-
-              <div
-                v-if="currentProductsDisplayed === 5"
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in proProducts"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="product.name"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                />
-              </div>
-
-              <div
-                v-if="currentProductsDisplayed === 6"
-                id="store-items"
-                class="row"
-              >
-                <card
-                  v-for="product in acProducts"
-                  :key="product._id"
-                  class="mb-5 mx-auto"
-                  :name="product.name"
-                  :summary="product.Overview"
-                  :price="product.Price"
-                  :discount-price="product.discountPrice"
-                  :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
-                  "
-                  :link="'/mahazyn/' + product.name_slug"
-                  :filter-data="product.Filter"
-                  :stock="product.Stock"
-                  :sales="product.Sales"
-                />
-              </div> -->
+              <jw-pagination
+                :page-size="9"
+                :max-pages="10"
+                :initial-page="1"
+                :items="filteredData"
+                :styles="customStyles"
+                :labels="customLabels"
+                @changePage="onChangePage"
+              />
             </div>
           </div>
 
@@ -613,11 +380,32 @@
       </div>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from 'vuex'
+
+const customStyles = {
+  ul: {
+    border: 'none'
+  },
+  li: {
+    display: 'inline-block',
+    border: 'none'
+  },
+  a: {
+    color: 'white',
+    backgroundColor: '#D41F26',
+    outline: 'none'
+  }
+}
+
+const customLabels = {
+  first: '<<',
+  last: '>>',
+  previous: '<',
+  next: '>'
+}
 export default {
   components: {
 
@@ -641,6 +429,9 @@ export default {
   },
   data () {
     return {
+      customStyles,
+      customLabels,
+      pageOfItems: [],
       filter: null,
       active1: false,
       active2: false,
@@ -725,32 +516,48 @@ export default {
         {
           id: 'tupe1',
           checked: false,
-          value: 'soap',
-          text: 'soap'
+          value: 'Ароматизатор',
+          text: 'Ароматизатор'
         },
         {
           id: 'tupe2',
           checked: false,
-          value: 'sponge',
-          text: 'sponge'
+          value: 'Устранитель запахов',
+          text: 'Устранитель запахов'
         },
         {
           id: 'tupe3',
           checked: false,
-          value: 'covers',
-          text: 'covers'
+          value: 'антидождь',
+          text: 'антидождь'
         },
         {
           id: 'tupe4',
           checked: false,
-          value: 'Dryer',
-          text: 'Dryer'
+          value: 'антизапотеватель',
+          text: 'антизапотеватель'
         },
         {
           id: 'tupe5',
           checked: false,
-          value: 'antidust',
-          text: 'antidust'
+          value: 'Для общей химчистки',
+          text: 'Для общей химчистки'
+        },
+        {
+          id: 'tupe6',
+          checked: false,
+          value: 'очиститель стекол',
+          text: 'очиститель стекол'
+        }, {
+          id: 'tupe7',
+          checked: false,
+          value: 'Абразивная',
+          text: 'Абразивная'
+        }, {
+          id: 'tupe7',
+          checked: false,
+          value: 'Антиголограммная',
+          text: 'Антиголограммная'
         }
       ]
     }
@@ -817,6 +624,11 @@ export default {
     // setCatergory (id, index) {
     //   this.selectedCategory = this.categories[index].value
     // },
+
+    onChangePage (pageOfItems) {
+      // update page of items
+      this.pageOfItems = pageOfItems
+    },
 
     hideToast () {
       this.$store.commit('hideToast')

@@ -305,6 +305,9 @@ export default {
     '~/plugins/filters.js',
     '~/plugins/vuelidate.js',
     {
+      src: '~/plugins/paginate'
+    },
+    {
       src: '~/plugins/polyfills',
       mode: 'client'
     },
