@@ -337,7 +337,7 @@
               </div>
 
               <jw-pagination
-                :page-size="9"
+                :page-size="12"
                 :max-pages="10"
                 :initial-page="1"
                 :items="filteredData"
