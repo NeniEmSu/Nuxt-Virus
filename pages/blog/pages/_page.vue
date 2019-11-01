@@ -23,7 +23,7 @@
     </div>
     <hr class="top-separator">
     <div
-      v-for="post in posts"
+      v-for="(post, index) in posts"
       :key="`${post.title} ${post._created}`"
       class="card-container container"
     >
@@ -42,7 +42,7 @@
                 :to="'/blog/category/' + tag"
                 class="desktop-tablet-only"
               >
-                {{ tag }}&nbsp;|&nbsp;
+                {{ tag }}&nbsp;<span>|</span>&nbsp;
               </nuxt-link>
               <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <!-- <span class="text-light">
@@ -78,7 +78,10 @@
           </div>
         </div>
       </div>
-      <hr class="separator">
+      <hr
+        v-if="index !== posts.length - 1"
+        class="separator"
+      >
     </div>
     <div class="container">
       <div class="text-center my-3">

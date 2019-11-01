@@ -325,7 +325,7 @@
                   :price="product.Price"
                   :discount-price="product.discountPrice"
                   :image="
-                    `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true&bcolor=%23ffffff`
+                    `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
                   "
                   :link="'/mahazyn/' + product.name_slug"
                   :filter-data="product.Filter"
@@ -640,7 +640,7 @@ export default {
     },
     getfilteredData () {
       this.filteredData = this.products
-      const filteredDataByselectedCategory = []
+      // const filteredDataByselectedCategory = []
       let filteredDataByCategoryfilters = []
       let filteredDataByfilters = []
       let filteredDataByTypefilters = []

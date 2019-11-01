@@ -63,15 +63,6 @@ export const actions = {
     commit('showToast', 'Продукти завантажені')
   },
 
-  // fetchProducts ({
-  //   commit
-  // }) {
-  //   myApi.getProducts().then((products) => {
-  //     commit('setUpProducts', products)
-  //     commit('showToast', 'Продукти завантажені')
-  //   })
-  // },
-
   addToCart ({
     commit
   }, productId) {

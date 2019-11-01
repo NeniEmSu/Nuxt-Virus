@@ -28,7 +28,7 @@
     </div>
 
     <div
-      v-for="promotion in promotions"
+      v-for="(promotion, index) in pageOfItems"
       v-else
       :key="promotion.promotionTitle"
       class="card-container container"
@@ -65,7 +65,21 @@
           </div>
         </div>
       </div>
-      <hr class="separator">
+      <hr
+        v-if="index !== pageOfItems.length - 1"
+        class="separator"
+      >
+    </div>
+    <div class="text-center">
+      <jw-pagination
+        :page-size="5"
+        :max-pages="10"
+        :initial-page="1"
+        :items="promotions"
+        :styles="customStyles"
+        :labels="customLabels"
+        @changePage="onChangePage"
+      />
     </div>
 
     <contactForm />
@@ -74,12 +88,38 @@
 </template>
 
 <script>
+
+const customStyles = {
+  ul: {
+    border: 'none'
+  },
+  li: {
+    display: 'inline-block',
+    border: 'none'
+  },
+  a: {
+    color: 'white',
+    backgroundColor: '#D41F26',
+    outline: 'none',
+    borderRadius: '20px'
+  }
+}
+
+const customLabels = {
+  first: '<<',
+  last: '>>',
+  previous: '<',
+  next: '>'
+}
 export default {
   // meta: {
   //   animation: 'fade-in-right'
   // },
   data () {
     return {
+      customStyles,
+      customLabels,
+      pageOfItems: [],
       imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
     }
   },
@@ -111,6 +151,12 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    onChangePage (pageOfItems) {
+      this.pageOfItems = pageOfItems
+    }
+
   }
 
 }

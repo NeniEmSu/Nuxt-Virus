@@ -241,14 +241,19 @@
               v-for="product in products"
               :key="product._id"
               class="mb-5 mx-auto"
-              :name="product.name"
+              :name="`${product.name}`"
               :summary="product.Overview"
               :price="product.Price"
+              :discount-price="product.discountPrice"
               :image="
-                `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+                `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
               "
               :link="'/mahazyn/' + product.name_slug"
+              :filter-data="product.Filter"
               :stock="product.Stock"
+              :sales="product.Sales"
+              :brand="product.brand"
+              :type="product.type"
             />
           </carousel>
         </client-only>

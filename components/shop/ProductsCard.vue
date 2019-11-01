@@ -47,8 +47,14 @@
       <div class="row bg-transparent">
         <div class="col-6 bg-transparent cost">
           <small>
-            <s class="discount-price">{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
-
+            <s
+              v-if="discountPrice>0"
+              class="discount-price"
+            >{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
+            <s
+              v-else
+              style="color: transparent;"
+            >{{ discountPrice | currency({symbol: 'грн', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}</s>
           </small>
           <p class="card-price">
             {{ price | currency({symbol: '', thousandsSeparator: ',', fractionCount: '0', fractionSeparator: '.', symbolPosition: 'back', symbolSpacing: true}) }}
