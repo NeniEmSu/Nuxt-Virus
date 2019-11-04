@@ -155,6 +155,10 @@ export default {
   methods: {
     onChangePage (pageOfItems) {
       this.pageOfItems = pageOfItems
+      if (process.client) {
+        // window.scrollTo({ top: 0, behavior: 'smooth' })
+        document.body.scrollTop = document.documentElement.scrollTop = 0
+      }
     }
 
   }

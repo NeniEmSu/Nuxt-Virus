@@ -47,6 +47,10 @@ export default {
 <style lang="scss">
 @charset "UTF-8";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $backgroudColor;
   color: $darkColor;
@@ -55,6 +59,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   margin-top: 150px;
+  scroll-behavior: smooth;
 
   font-family: $mainFont;
   line-height: 1.5;

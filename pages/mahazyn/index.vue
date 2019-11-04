@@ -630,6 +630,10 @@ export default {
     onChangePage (pageOfItems) {
       // update page of items
       this.pageOfItems = pageOfItems
+      if (process.client) {
+        // document.body.scrollTop = document.documentElement.scrollTop = 0
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
     },
 
     hideToast () {
