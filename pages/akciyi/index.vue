@@ -72,7 +72,8 @@
     </div>
     <div class="text-center">
       <jw-pagination
-        :page-size="5"
+        v-show="promotions.length > 3"
+        :page-size="3"
         :max-pages="10"
         :initial-page="1"
         :items="promotions"

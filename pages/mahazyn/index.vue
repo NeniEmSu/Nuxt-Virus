@@ -337,6 +337,7 @@
               </div>
 
               <jw-pagination
+                v-show="filteredData.length > 12"
                 :page-size="12"
                 :max-pages="10"
                 :initial-page="1"
