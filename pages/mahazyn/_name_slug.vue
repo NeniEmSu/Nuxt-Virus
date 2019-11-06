@@ -252,8 +252,34 @@
                 }
               </style>
               <section class="my-lg-5 desktop-tablet-only markdown">
-                <strong>{{ `Бренд: ${product.brand}` }}</strong>
-                <div v-html="(product.Description + '\n' + 'Об\'єм:&nbsp;' + product.volume)" />
+                <div
+                  class="mb-2"
+                  v-html="(product.Description + '\n' + '<strong>Об\'єм: </strong>&nbsp;' + product.volume)"
+                />
+                <div class="mb-2">
+                  <strong>Бренд: </strong>{{ `${product.brand}` }}
+                </div>
+
+                <ul>
+                  <strong>Категорія(й):</strong>
+                  <li
+                    v-for="(category, index) in product.category"
+                    :key="category[index]"
+                    class="text-capitalize"
+                  >
+                    {{ category }}
+                  </li>
+                </ul>
+                <ul>
+                  <strong>Підкатегорія(й):</strong>
+                  <li
+                    v-for="(subcategory, index) in product.subCategories"
+                    :key="subcategory[index]"
+                    class="text-capitalize"
+                  >
+                    {{ subcategory | capitalize }}
+                  </li>
+                </ul>
               </section>
 
               <div class="row">
@@ -328,11 +354,36 @@
           </div>
         </div>
       </div>
+      <section class="sm-xsm-xxsm-only">
+        <div
+          class="mt-3 "
+          v-html="(product.Description + '\n' + '<strong>Об\'єм: </strong>&nbsp;' + product.volume)"
+        />
+        <div class="mb-2">
+          <strong>Бренд: </strong>{{ `${product.brand}` }}
+        </div>
 
-      <div
-        class="mt-3 sm-xsm-xxsm-only"
-        v-html="(product.Description + '\n' + 'Об\'єм:&nbsp;' + product.volume)"
-      />
+        <ul>
+          <strong>Категорія(й):</strong>
+          <li
+            v-for="(category, index) in product.category"
+            :key="category[index]"
+            class="text-capitalize"
+          >
+            {{ category }}
+          </li>
+        </ul>
+        <ul>
+          <strong>Підкатегорія(й):</strong>
+          <li
+            v-for="(subcategory, index) in product.subCategories"
+            :key="subcategory[index]"
+            class="text-capitalize"
+          >
+            {{ subcategory | capitalize }}
+          </li>
+        </ul>
+      </section>
 
       <hr style="border: 1px solid #C4C4C4; margin: 40px 0; width: 100%;">
 
@@ -371,7 +422,6 @@
               `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
             "
             :link="'/mahazyn/' + product.name_slug"
-            :filter-data="product.Filter"
             :stock="product.Stock"
             :sales="product.Sales"
             :brand="product.brand"
@@ -388,6 +438,11 @@ import axios from 'axios'
 import { mapState, mapGetters } from 'vuex'
 
 export default {
+  filters: {
+    capitalize: (item) => {
+      return item.toLowerCase()
+    }
+  },
   data () {
     return {
       mobileModalShow: false,

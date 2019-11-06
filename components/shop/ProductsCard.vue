@@ -2,8 +2,6 @@
   <div
     v-b-tooltip.hover
     class="card card__hover store-item"
-    :class="filterData"
-    :data-item="filterData"
     style="width: 18rem;"
     :title="name"
   >
@@ -112,9 +110,9 @@ export default {
       default: ''
     },
     type: {
-      type: String,
+      type: Array,
       required: false,
-      default: ''
+      default: [] | (() => [])
     },
     summary: {
       type: String,
@@ -140,11 +138,6 @@ export default {
       type: String,
       required: false,
       default: '/Магазин'
-    },
-    filterData: {
-      type: String,
-      required: false,
-      default: 'all'
     },
     stock: {
       type: Boolean,

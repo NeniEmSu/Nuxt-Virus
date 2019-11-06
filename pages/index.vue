@@ -249,7 +249,6 @@
                 `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
               "
               :link="'/mahazyn/' + product.name_slug"
-              :filter-data="product.Filter"
               :stock="product.Stock"
               :sales="product.Sales"
               :brand="product.brand"
