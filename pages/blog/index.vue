@@ -106,9 +106,9 @@
 
 <script>
 export default {
-  // meta: {
-  //   animation: 'fade-in-right'
-  // },
+  meta: {
+    animation: 'fade-in-down'
+  },
   data () {
     return {
       imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'

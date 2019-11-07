@@ -9,7 +9,7 @@ export const state = () => ({
     text: '',
     show: false
   },
-  animation: 'fade-in-up'
+  animation: 'fade-in-down'
 })
 
 export const getters = {

@@ -1,7 +1,11 @@
 <template>
   <section>
     <div class="container text-center top-grid pt-4 pb-5">
-      <h1 class="text-left">
+      <h1
+        class="text-left"
+        data-aos="fade-left"
+        data-aos-duration="750"
+      >
         Ми <br>
         пропонуємо
       </h1>
@@ -9,6 +13,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/poliruvannja-avtomobilja"
           class="col-4 p-0 one"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="100"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -36,6 +44,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99"
           class="col-8 p-0 two"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="200"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -67,6 +79,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/mijka-motoru-paroju"
           class="col-4 p-0 three"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="300"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -96,6 +112,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/himchistka"
           class="col-5 p-0 four"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="400"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -124,6 +144,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi"
           class="col-3 p-0 five"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="500"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -153,6 +177,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/kjeramichnje-pokrittja-sidin"
           class="col-md-8 offset-4 p-0 six"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="600"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -183,6 +211,10 @@
         <nuxt-link
           to="/posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
           class="col-12 p-0 seven"
+          data-aos="fade"
+          data-aos-easing="ease"
+          data-aos-delay="500"
+          data-aos-duration="750"
         >
           <div class="card bg-inverse">
             <picture>
@@ -267,7 +299,9 @@
     </div>
 
     <div class="container cars-card">
-      <h2>Наші роботи</h2>
+      <h2>
+        Наші роботи
+      </h2>
 
       <worksGallery />
     </div>

@@ -411,9 +411,9 @@ export default {
   components: {
 
   },
-  // meta: {
-  //   animation: 'fade-in-right'
-  // },
+  meta: {
+    animation: 'fade-in-down'
+  },
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',

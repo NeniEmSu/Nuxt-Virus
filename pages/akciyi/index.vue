@@ -23,8 +23,10 @@
     </div>
     <hr class="top-separator">
 
-    <div v-if="!promotions">
-      <h1>Sorry we do Not have any promotions atm.</h1>
+    <div v-if="promotions.length < 1">
+      <h4 class="text-center my-5">
+        Вибачте, але на даний момент у нас немає ніяких акцій. Поверніться пізніше.
+      </h4>
     </div>
 
     <div
@@ -113,9 +115,9 @@ const customLabels = {
   next: '>'
 }
 export default {
-  // meta: {
-  //   animation: 'fade-in-right'
-  // },
+  meta: {
+    animation: 'fade-in-down'
+  },
   data () {
     return {
       customStyles,

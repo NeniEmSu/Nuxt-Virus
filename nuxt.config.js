@@ -262,7 +262,8 @@ export default {
   },
 
   loading: {
-    color: '#25d41f',
+    // color: '#25d41f',
+    color: 'white',
     failedColor: 'red'
   },
 
@@ -304,6 +305,10 @@ export default {
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     '~/plugins/vuelidate.js',
+    {
+      src: '@/plugins/aos',
+      mode: 'client'
+    },
     {
       src: '~/plugins/paginate'
     },
@@ -421,12 +426,79 @@ export default {
     existingFilesDirectory: './netlify/'
   },
 
+  // generate: {
+  //   routes: async () => {
+  //     const {
+  //       data
+  //     } = await axios.post(
+  //       process.env.POSTS_URL,
+  //       JSON.stringify({
+  //         filter: {
+  //           published: true
+  //         },
+  //         sort: {
+  //           _created: -1
+  //         },
+  //         populate: 1
+  //       }), {
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       }
+  //     )
+
+  //     const collection = collect(data.entries)
+
+  //     const tags = collection
+  //       .map(post => post.tags)
+  //       .flatten()
+  //       .unique()
+  //       .map((tag) => {
+  //         const payload = collection
+  //           .filter(item => collect(item.tags).contains(tag))
+  //           .all()
+
+  //         return {
+  //           route: `/blog/category/${tag}`,
+  //           payload
+  //         }
+  //       })
+  //       .all()
+
+  //     const posts = collection
+  //       .map(post => ({
+  //         route: `/blog/${post.title_slug}`,
+  //         payload: post
+  //       }))
+  //       .all()
+  //     if (perPage < data.total) {
+  //       const pages = collection
+  //         .take(perPage - data.total)
+  //         .chunk(perPage)
+  //         .map((items, key) => {
+  //           const currentPage = key + 2
+
+  //           return {
+  //             route: `/blog/pages/${currentPage}`,
+  //             payload: {
+  //               posts: items.all(),
+  //               hasNext: data.total > currentPage * perPage
+  //             }
+  //           }
+  //         })
+  //         .all()
+
+  //       return posts.concat(tags, pages)
+  //     }
+  //     return posts.concat(tags)
+  //   }
+  // },
+
   generate: {
     routes: async () => {
       const {
         data
-      } = await axios.post(
-        process.env.POSTS_URL,
+      } = await axios.get(process.env.PRODUCT_URL,
         JSON.stringify({
           filter: {
             published: true
@@ -439,83 +511,16 @@ export default {
           headers: {
             'Content-Type': 'application/json'
           }
-        }
-      )
-
-      const collection = collect(data.entries)
-
-      const tags = collection
-        .map(post => post.tags)
-        .flatten()
-        .unique()
-        .map((tag) => {
-          const payload = collection
-            .filter(item => collect(item.tags).contains(tag))
-            .all()
-
-          return {
-            route: `/blog/category/${tag}`,
-            payload
-          }
         })
-        .all()
-
-      const posts = collection
-        .map(post => ({
-          route: `/blog/${post.title_slug}`,
-          payload: post
-        }))
-        .all()
-      if (perPage < data.total) {
-        const pages = collection
-          .take(perPage - data.total)
-          .chunk(perPage)
-          .map((items, key) => {
-            const currentPage = key + 2
-
-            return {
-              route: `/blog/pages/${currentPage}`,
-              payload: {
-                posts: items.all(),
-                hasNext: data.total > currentPage * perPage
-              }
-            }
-          })
-          .all()
-
-        return posts.concat(tags, pages)
-      }
-      return posts.concat(tags)
+      return data.entries.map((product) => {
+        return {
+          route: `/mahazyn/${product.name_slug}`,
+          payload: product
+        }
+      })
     }
+
   },
-
-  // generate: {
-  //   routes: async () => {
-  //     var {
-  //       data
-  //     } = await axios.get(process.env.PRODUCT_URL,
-  //       JSON.stringify({
-  //         filter: {
-  //           published: true
-  //         },
-  //         sort: {
-  //           _created: -1
-  //         },
-  //         populate: 1
-  //       }), {
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       })
-  //     return data.entries.map((product) => {
-  //       return {
-  //         route: `/mahazyn/${product.name_slug}`,
-  //         payload: product
-  //       }
-  //     })
-  //   }
-
-  // },
 
   sitemap: {
     path: '/sitemap.xml',

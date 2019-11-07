@@ -102,7 +102,7 @@ export default {
     name: {
       type: String,
       required: false,
-      default: 'Koch Chemie Fresh UP'
+      default: ''
     },
     brand: {
       type: String,
@@ -110,34 +110,34 @@ export default {
       default: ''
     },
     type: {
-      type: Array,
+      type: Array || String,
       required: false,
       default: [] | (() => [])
     },
     summary: {
       type: String,
       required: false,
-      default: 'Розпилюючий засіб для видалення небажаних запахів'
+      default: ''
     },
     price: {
       type: String,
       required: false,
-      default: '2900'
+      default: ''
     },
     discountPrice: {
       type: String,
       required: false,
-      default: '2975'
+      default: ''
     },
     image: {
       type: String,
       required: false,
-      default: require('~/assets/img/86.jpg')
+      default: ''
     },
     link: {
       type: String,
       required: false,
-      default: '/Магазин'
+      default: ''
     },
     stock: {
       type: Boolean,

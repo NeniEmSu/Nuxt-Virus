@@ -123,9 +123,9 @@
 
 <script>
 export default {
-  // meta: {
-  //   animation: 'fade-in-right'
-  // },
+  meta: {
+    animation: 'fade-in-down'
+  },
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',
