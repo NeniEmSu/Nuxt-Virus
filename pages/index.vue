@@ -381,35 +381,28 @@ export default {
     margin-bottom: 20px;
   }
 
-  h2 {
-    color: $lightColor;
-    font-family: $mainFont;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    color: $lightColor;
-  }
-
   a {
     opacity: 1;
-    transition: all ease-in-out 300ms;
-    -webkit-transition: all ease-in-out 300ms;
-    -moz-transition: all ease-in-out 300ms;
-    -ms-transition: all ease-in-out 300ms;
-    -o-transition: all ease-in-out 300ms;
+    h2 {
+      color: $lightColor;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0.1em;
+      color: $lightColor;
+      transition: all ease-in-out 500ms;
+      -webkit-transition: all ease-in-out 500ms;
+      -moz-transition: all ease-in-out 500ms;
+      -ms-transition: all ease-in-out 500ms;
+      -o-transition: all ease-in-out 500ms;
+    }
 
     &:hover {
-      opacity: 0.99;
-      text-decoration: none;
-      color: $redColor;
-      transform: scale(1.01);
-      -webkit-transform: scale(1.01);
-      -moz-transform: scale(1.01);
-      -ms-transform: scale(1.01);
-      -o-transform: scale(1.01);
-      color: $redColor;
+      h2 {
+        color: $redColor;
+      }
     }
   }
 
@@ -502,11 +495,11 @@ export default {
     color: $lightColor;
     border: 0;
     text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
+    -webkit-transition: all ease-in-out 500ms;
+    -moz-transition: all ease-in-out 500ms;
+    -ms-transition: all ease-in-out 500ms;
+    -o-transition: all ease-in-out 500ms;
 
     &:hover {
       color: $redColor;

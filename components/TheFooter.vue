@@ -57,10 +57,11 @@
                 srcset="~/assets/imgWebP/icons8-instagram-filled-100.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
                 src="~/assets/img/icons8-instagram-filled-100.png"
                 alt="icons instagram filled"
-              /></b-img-lazy></picture>
+              >
+            </picture>
           </a>
           <a
             href="https://www.facebook.com/virus.te.ua/"
@@ -73,10 +74,11 @@
                 srcset="~/assets/imgWebP/icons8-facebook-filled-100.webp"
                 type="image/webp"
               >
-              <b-img-lazy
+              <img
                 src="~/assets/img/icons8-facebook-filled-100.png"
                 alt="icons facebook filled"
-              /></b-img-lazy></picture>
+              >
+            </picture>
           </a>
         </li>
       </ul>
@@ -96,11 +98,11 @@ footer {
   a,
   img {
     text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
+    -webkit-transition: all ease-in-out 500ms;
+    -moz-transition: all ease-in-out 500ms;
+    -ms-transition: all ease-in-out 500ms;
+    -o-transition: all ease-in-out 500ms;
 
     &:hover {
       transform: scale(1.1);
@@ -154,11 +156,11 @@ footer {
       font-size: 14px;
       line-height: normal;
       text-align: center;
-      transition: all ease-in-out 300ms;
-      -webkit-transition: all ease-in-out 300ms;
-      -moz-transition: all ease-in-out 300ms;
-      -ms-transition: all ease-in-out 300ms;
-      -o-transition: all ease-in-out 300ms;
+      transition: all ease-in-out 500ms;
+      -webkit-transition: all ease-in-out 500ms;
+      -moz-transition: all ease-in-out 500ms;
+      -ms-transition: all ease-in-out 500ms;
+      -o-transition: all ease-in-out 500ms;
 
       &:hover {
         text-decoration: none;
@@ -186,11 +188,11 @@ footer {
 
     a {
       text-decoration: none;
-      transition: ease-in-out 300ms;
-      -webkit-transition: ease-in-out 300ms;
-      -moz-transition: ease-in-out 300ms;
-      -ms-transition: ease-in-out 300ms;
-      -o-transition: ease-in-out 300ms;
+      transition: all ease-in-out 500ms;
+      -webkit-transition: all ease-in-out 500ms;
+      -moz-transition: all ease-in-out 500ms;
+      -ms-transition: all ease-in-out 500ms;
+      -o-transition: all ease-in-out 500ms;
 
       &:hover {
         transform: scale(1.1);
@@ -234,11 +236,11 @@ footer {
         font-size: 14px;
         line-height: normal;
         text-align: center;
-        transition: all ease-in-out 300ms;
-        -webkit-transition: all ease-in-out 300ms;
-        -moz-transition: all ease-in-out 300ms;
-        -ms-transition: all ease-in-out 300ms;
-        -o-transition: all ease-in-out 300ms;
+        transition: all ease-in-out 500ms;
+        -webkit-transition: all ease-in-out 500ms;
+        -moz-transition: all ease-in-out 500ms;
+        -ms-transition: all ease-in-out 500ms;
+        -o-transition: all ease-in-out 500ms;
 
         &:hover {
           text-decoration: none;

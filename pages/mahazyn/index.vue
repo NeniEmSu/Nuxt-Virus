@@ -135,21 +135,24 @@
           @submit="getfilteredData"
         >
           <div class="form-row text-center mx-auto">
+            <div class="offset-lg-2" />
             <label
               for="search"
-              class="col-sm-10"
+              class="col-lg-9"
             >
               <input
                 id="search"
                 v-model="search"
                 type="text"
+                autofocus
                 class="form-control mx-auto"
                 placeholder="Пошук за назвою продукту ..."
                 @keyup="getfilteredData"
               >
             </label>
+            <div class="offset-lg-1" />
 
-            <div class="col-sm-2">
+            <!-- <div class="col-sm-2">
               <button
                 type="submit"
                 class="btn search-btn"
@@ -157,7 +160,7 @@
               >
                 Пошук
               </button>
-            </div>
+            </div> -->
           </div>
         </form>
         <div class="row">
@@ -799,11 +802,11 @@ input#search {
   text-align: center;
   color: $lightColor;
   border: 0;
-  transition: ease-in-out 300ms;
-  -webkit-transition: ease-in-out 300ms;
-  -moz-transition: ease-in-out 300ms;
-  -ms-transition: ease-in-out 300ms;
-  -o-transition: ease-in-out 300ms;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -ms-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
 
   &:hover {
     color: $redColor;

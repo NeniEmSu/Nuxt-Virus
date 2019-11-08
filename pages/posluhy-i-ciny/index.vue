@@ -1698,11 +1698,11 @@ export default {
   box-sizing: border-box;
   border-radius: 50px;
   text-decoration: none;
-  transition: ease-in-out 300ms;
-  -webkit-transition: ease-in-out 300ms;
-  -moz-transition: ease-in-out 300ms;
-  -ms-transition: ease-in-out 300ms;
-  -o-transition: ease-in-out 300ms;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -ms-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
 }
 
 .btn:hover {
@@ -1758,11 +1758,11 @@ export default {
   text-align: center;
   color: $lightColor;
   text-decoration: none;
-  transition: ease-in-out 300ms;
-  -webkit-transition: ease-in-out 300ms;
-  -moz-transition: ease-in-out 300ms;
-  -ms-transition: ease-in-out 300ms;
-  -o-transition: ease-in-out 300ms;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -ms-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
 }
 
 .choose-brand button.btn:hover {
@@ -1791,11 +1791,11 @@ export default {
   line-height: 32px;
   margin-left: 20px;
   margin-right: -20px;
-  transition: ease-in-out 300ms;
-  -webkit-transition: ease-in-out 300ms;
-  -moz-transition: ease-in-out 300ms;
-  -ms-transition: ease-in-out 300ms;
-  -o-transition: ease-in-out 300ms;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -ms-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
 }
 
 select.brand,

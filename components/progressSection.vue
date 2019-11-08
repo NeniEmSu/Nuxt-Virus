@@ -102,11 +102,11 @@ export default {}
 
   img {
     text-decoration: none;
-    transition: ease-in-out 350ms;
-    -webkit-transition: ease-in-out 350ms;
-    -moz-transition: ease-in-out 350ms;
-    -ms-transition: ease-in-out 350ms;
-    -o-transition: ease-in-out 350ms;
+    transition: all ease-in-out 350ms;
+    -webkit-transition: all ease-in-out 350ms;
+    -moz-transition: all ease-in-out 350ms;
+    -ms-transition: all ease-in-out 350ms;
+    -o-transition: all ease-in-out 350ms;
 
     &:hover {
       transform: scale(1.2);

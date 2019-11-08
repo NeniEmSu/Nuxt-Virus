@@ -134,11 +134,11 @@ export default {}
     font-size: 16px;
     line-height: normal;
     text-align: center;
-    transition: all ease-in-out 300ms;
-    -webkit-transition: all ease-in-out 300ms;
-    -moz-transition: all ease-in-out 300ms;
-    -ms-transition: all ease-in-out 300ms;
-    -o-transition: all ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
+    -webkit-transition: all ease-in-out 500ms;
+    -moz-transition: all ease-in-out 500ms;
+    -ms-transition: all ease-in-out 500ms;
+    -o-transition: all ease-in-out 500ms;
 
     &:hover {
       text-decoration: none;

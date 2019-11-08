@@ -648,11 +648,11 @@ h1.details-page-header {
   text-align: center;
   color: #ffffff;
   text-decoration: none;
-  transition: ease-in-out 300ms;
-  -webkit-transition: ease-in-out 300ms;
-  -moz-transition: ease-in-out 300ms;
-  -ms-transition: ease-in-out 300ms;
-  -o-transition: ease-in-out 300ms;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -ms-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
   margin-top: 5px;
@@ -804,11 +804,11 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
+    -webkit-transition: all ease-in-out 500ms;
+    -moz-transition: all ease-in-out 500ms;
+    -ms-transition: all ease-in-out 500ms;
+    -o-transition: all ease-in-out 500ms;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
@@ -925,11 +925,11 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
+    -webkit-transition: all ease-in-out 500ms;
+    -moz-transition: all ease-in-out 500ms;
+    -ms-transition: all ease-in-out 500ms;
+    -o-transition: all ease-in-out 500ms;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
@@ -1070,11 +1070,11 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: ease-in-out 300ms;
-    -webkit-transition: ease-in-out 300ms;
-    -moz-transition: ease-in-out 300ms;
-    -ms-transition: ease-in-out 300ms;
-    -o-transition: ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
+    -webkit-transition: all ease-in-out 500ms;
+    -moz-transition: all ease-in-out 500ms;
+    -ms-transition: all ease-in-out 500ms;
+    -o-transition: all ease-in-out 500ms;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
