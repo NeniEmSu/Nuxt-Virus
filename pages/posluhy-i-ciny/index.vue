@@ -186,6 +186,7 @@
               v-model="brandSelect"
               aria-describedby="brand"
               class="form-control brand"
+              disabled
             >
               <option
                 value="null"
@@ -212,6 +213,7 @@
               id="model"
               aria-describedby="model"
               class="form-control model"
+              disabled
             >
               <option>Модель</option>
               <option>Модель</option>

@@ -469,7 +469,7 @@ export default {
       }
     )
     const products = await axios.get(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
+      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&limit=12',
       JSON.stringify({
         filter: { Published: true },
         limit: 4,

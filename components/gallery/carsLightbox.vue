@@ -4,8 +4,7 @@
     style="width: 100%; max-width: 540px;"
     data-aos="fade-left"
     data-aos-easing="ease"
-    data-aos-delay="0"
-    data-aos-duration="750"
+    data-aos-duration="500"
   >
     <client-only>
       <LightGallery

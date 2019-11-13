@@ -89,6 +89,12 @@ figcaption {
   font-family: $mainFont;
 }
 
+*:disabled,
+select:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}
+
 figure {
   margin: 0;
 }
