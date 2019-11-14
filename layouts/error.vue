@@ -7,7 +7,7 @@
           type="image/webp"
         >
         <img
-          src="~assets/img/404.png"
+          src="~/assets/img/404.png"
           alt="404 imgage in a house"
           class="img-fluid"
         >

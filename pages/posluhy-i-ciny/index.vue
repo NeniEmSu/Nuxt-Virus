@@ -225,6 +225,7 @@
           <button
             type="submit"
             class="btn"
+            disabled
           >
             Вибрати
           </button>
