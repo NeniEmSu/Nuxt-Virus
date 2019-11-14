@@ -1,6 +1,7 @@
-/* eslint-disable vue/prop-name-casing */
-/* eslint-disable vue/prop-name-casing */
+
 <template>
+  <!-- eslint-disable vue/prop-name-casing  -->
+  <!-- eslint-disable vue/require-default-prop -->
   <form
     :id="parent_id ? `reply-${parent_id}` : ''"
     method="post"
@@ -118,12 +119,12 @@ import axios from 'axios'
 export default {
   name: 'CommentForm',
   props: {
-    // eslint-disable-next-line vue/prop-name-casing
-    post_id: String,
-    // eslint-disable-next-line vue/prop-name-casing
-    parent_id: String,
-    // eslint-disable-next-line vue/prop-name-casing
-    parent_name: String
+    // eslint-disable-next-line vue/require-default-prop
+    postId: String,
+    // eslint-disable-next-line vue/require-default-prop
+    parentId: String,
+    // eslint-disable-next-line vue/require-default-prop
+    parentName: String
   },
 
   data () {
@@ -196,13 +197,12 @@ export default {
         })
         .catch((error) => {
           this.loading = false
-
-          this.errors.push('Сталася помилка. Повторіть спробу пізніше')
+          this.errors.push(`Сталася помилка. Повторіть спробу пізніше ${error}`)
         })
     },
 
     validEmail (email) {
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      const re = /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.test(email)
     }
   }

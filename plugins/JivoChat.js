@@ -1,5 +1,6 @@
 window.onNuxtReady(() => {
   (function () {
+    // eslint-disable-next-line camelcase
     const widget_id = 'j9oYCawnP2'
     const d = document
     const w = window
@@ -8,6 +9,7 @@ window.onNuxtReady(() => {
       const s = document.createElement('script')
       s.type = 'text/javascript'
       s.async = true
+      // eslint-disable-next-line camelcase
       s.src = '//code.jivosite.com/script/widget/' + widget_id
       const ss = document.getElementsByTagName('script')[0]
       ss.parentNode.insertBefore(s, ss)

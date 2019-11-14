@@ -1,5 +1,8 @@
-/* eslint-disable vue/require-default-prop */
+
 <template>
+  <!-- eslint-disable vue/prop-name-casing  -->
+  <!-- eslint-disable vue/require-default-prop  -->
+  <!-- eslint-disable vue/no-v-html  -->
   <li
     class="mb-4"
     :class="!parent ? 'border-b-2' : ''"
@@ -60,8 +63,8 @@ import CommentForm from '~/components/contact/CommentForm.vue'
 export default {
   name: 'Comment',
   props: {
-    // eslint-disable-next-line vue/prop-name-casing
-    post_id: String,
+    // eslint-disable-next-line vue/require-default-prop
+    postId: String,
     // eslint-disable-next-line vue/require-default-prop
     all: Array,
     // eslint-disable-next-line vue/require-default-prop

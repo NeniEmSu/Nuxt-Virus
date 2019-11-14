@@ -68,10 +68,7 @@
       <div class="">
         {{ post.excerpt }}
       </div>
-      <!-- <div
-        class="mt-4 markdown"
-        v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)"
-      /> -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="post.content" />
       <div class="mt-5 text-center">
         <nuxt-link

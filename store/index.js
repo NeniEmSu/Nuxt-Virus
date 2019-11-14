@@ -1,5 +1,3 @@
-import myApi from '~/plugins/api/myApi.js'
-
 export const state = () => ({
   products: null,
   loading: true,
@@ -82,22 +80,6 @@ export const actions = {
   }, productId) {
     commit('deleteFromCart', productId)
     commit('showToast', 'Видалено з кошика')
-  },
-
-  checkout: ({
-    state,
-    commit
-  }) => {
-    myApi.buyProducts(
-      state.cart,
-      () => {
-        commit('emptyCart')
-        commit('setCheckoutStatus', 'Successful')
-      },
-      () => {
-        commit('setCheckoutStatus', 'Failled')
-      }
-    )
   }
 }
 
