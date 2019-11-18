@@ -21,48 +21,48 @@
       </div>
     </b-button>
     <style>
-    #modal-xl-mobile {
+      #modal-xl-mobile {
       padding-left: 0px !important;
-    }
-
-    .modal-body {
-      padding: 22px 85px 85px;
-    }
-
-    .modal-content {
-      border-radius: 20px;
-    }
-
-    .modal-title {
-      margin-bottom: 0;
-      line-height: 1.5;
-      margin: auto 0 auto auto;
-    }
-
-    @media (max-width: 991px) {
-      .modal-dialog {
-        max-width: 95%;
-      }
-    }
-
-    @media (max-width: 577px) {
-      .modal-dialog {
-        margin-top: 50px;
-        width: 100vw;
-        min-width: 100vw;
-        margin: 50px auto 0;
       }
 
       .modal-body {
-        padding: 5px;
+      padding: 22px 85px 85px;
+      }
+
+      .modal-content {
+      border-radius: 20px;
+      }
+
+      .modal-title {
+      margin-bottom: 0;
+      line-height: 1.5;
+      margin: auto 0 auto auto;
+      }
+
+      @media (max-width: 991px) {
+      .modal-dialog {
+      max-width: 95%;
+      }
+      }
+
+      @media (max-width: 577px) {
+      .modal-dialog {
+      margin-top: 50px;
+      width: 100vw;
+      min-width: 100vw;
+      margin: 50px auto 0;
+      }
+
+      .modal-body {
+      padding: 5px;
 
       }
 
       .modal-content {
-        border-radius: 0px;
-        padding: 0;
+      border-radius: 0px;
+      padding: 0;
       }
-    }
+      }
     </style>
     <b-modal
       id="modal-xl-mobile"
@@ -255,10 +255,11 @@ export default {
 
     submitOrder () {
       this.asyncState = 'pending'
-      const cartItems = this.cart.reduce((prev, current) => { prev[current._id] = current; return prev }, {})
+
+      let data = this.cart.map(item => ({ [item.name]: item.quantity }))
+      data = Object.assign({}, ...data)
 
       const text = JSON.stringify({
-        cart: cartItems,
         cartTotalAmount: this.cartTotalAmount,
         itemsInCart: this.cartSize,
         name: this.form.name,
@@ -267,7 +268,7 @@ export default {
         cartphoneNumber: this.form.cartphoneNumber
       })
       const parseText = JSON.parse(text)
-      const output = `Name/Ім'я: ${parseText.name}, \n\n City/Місто: ${parseText.city}, \n Phone Number/Номер телефону: ${parseText.cartphoneNumber}, \n Number In Cart/Номер у кошику: ${parseText.itemsInCart}, \n Post Branch/Поштове відділення: ${parseText.postBranch}, \n Total Purchase/Загальна покупка: ${parseText.cartTotalAmount}, \n Items In CartЕлементи в кошику: ${JSON.stringify(this.cart)}`
+      const output = `Ім'я: ${parseText.name}, \n Місто: ${parseText.city}, \n Номер телефону: ${parseText.cartphoneNumber}, \n Номер у кошику: ${parseText.itemsInCart}, \n Поштове відділення: ${parseText.postBranch}, \n Загальна покупка: ${parseText.cartTotalAmount}, \n Елементи в кошику: ${JSON.stringify(data)}`
       axios
         .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=${output}`)
 
