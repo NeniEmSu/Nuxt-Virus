@@ -31,8 +31,8 @@
             <div class="col-12 p-0 m-auto">
               <div class="row m-auto">
                 <p
-                  id="cart-item-title text-left"
-                  class="col-8 m-auto  py-2 pl-0 crop"
+                  id="cart-item-title"
+                  class="col-8 m-auto text-left py-2 pl-0 crop"
                 >
                   {{ product.name }}
                 </p>

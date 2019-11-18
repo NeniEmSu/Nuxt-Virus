@@ -9,7 +9,7 @@
         <img
           id="item-img"
           :src="
-            `${imageApiUrl}&src=${product.Image.path}&w=200&h=200&f[brighten]=0&o=true`
+            `${imageApiUrl}&src=${product.path}&w=200&h=200&f[brighten]=0&o=true`
           "
           alt="Koch Chemie Fresh UP"
           class="col-2 p-0 m-auto"

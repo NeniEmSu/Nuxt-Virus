@@ -103,7 +103,11 @@ export const mutations = {
       cartProduct.quantity++
     } else {
       state.cart.push({
-        ...product,
+        // ...product,
+        _id: product._id,
+        name: product.name,
+        Price: product.Price,
+        path: product.Image.path,
         stock: product.quantity,
         quantity: 1
       })
