@@ -45,6 +45,7 @@
     "vue-analytics": "^5.17.2",
     "vue-cookieconsent-component": "^1.2.0",
     "vue-currency-filter": "^3.4.3",
+    "vue-disqus": "^3.0.5",
     "vue-if-bot": "^1.2.0",
     "vue-light-gallery": "^1.0.1",
     "vue-page-transition": "^0.2.2",

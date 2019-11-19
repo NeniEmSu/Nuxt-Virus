@@ -383,6 +383,16 @@ export default {
 
   a {
     opacity: 1;
+    filter: grayscale(100%);
+    // transition: all ease-in-out 500ms;
+    // -webkit-transition: all ease-in-out 500ms;
+    // -moz-transition: all ease-in-out 500ms;
+    // -ms-transition: all ease-in-out 500ms;
+    // -o-transition: all ease-in-out 500ms;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
     h2 {
       color: $lightColor;
       font-family: $mainFont;
@@ -392,16 +402,17 @@ export default {
       line-height: normal;
       letter-spacing: 0.1em;
       color: $lightColor;
-      transition: all ease-in-out 500ms;
-      -webkit-transition: all ease-in-out 500ms;
-      -moz-transition: all ease-in-out 500ms;
-      -ms-transition: all ease-in-out 500ms;
-      -o-transition: all ease-in-out 500ms;
+      // transition: all ease-in-out 500ms;
+      // -webkit-transition: all ease-in-out 500ms;
+      // -moz-transition: all ease-in-out 500ms;
+      // -ms-transition: all ease-in-out 500ms;
+      // -o-transition: all ease-in-out 500ms;
     }
 
     &:hover {
       h2 {
         color: $redColor;
+        filter: grayscale(0%);
       }
     }
   }

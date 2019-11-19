@@ -41,24 +41,6 @@
               {{ `${tag}` }}&nbsp;&nbsp;
             </nuxt-link>
           </span>
-          <!-- <span class="mx-1 text-xs">•</span> -->
-          <!-- <a
-            v-scroll-to="'#comments'"
-            href="#"
-            class="text-dark"
-          >
-            {{ post.comments ? post.comments.length : 0 }}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="-2 -2 24 24"
-              width="12"
-              height="12"
-              preserveAspectRatio="xMinYMin"
-              class="text-grey-dark fill-current"
-            >
-              <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
-            </svg>
-          </a> -->
         </p>
       </div>
       <h1 class="mt-2">
@@ -68,50 +50,40 @@
       <div class="">
         {{ post.excerpt }}
       </div>
+      <style>
+        li {
+        margin-left: 20px;
+        }
+
+        ol {
+        margin-left: 0px;
+        }
+      </style>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="post.content" />
       <div class="mt-5 text-center">
         <nuxt-link
           to="/blog"
-          class="pr-2 text-link"
+          class="more-blogs"
         >
           Знайти більше повідомлень у блогах!
         </nuxt-link>
       </div>
-      <!-- <div
-        id="comments"
-        class="mt-8 mb-4 pt-3 border-t-2"
-      >
-        <h2 class="mb-2">
-          Коментарі
-        </h2>
-        <comment-form
-          class="border-b-2"
-          :post_id="post._id"
-        />
-      </div> -->
 
-      <!-- <ul class="list-reset">
-        <comment
-          v-for="comment in comments"
-          :key="comment._id"
-          :post_id="post._id"
-          :all="post.comments"
-          :comment="comment"
+      <div class="comments mt-5">
+        <vue-disqus
+          shortname="https-beta-virus-te-ua"
+          :identifier="post._id"
         />
-      </ul> -->
+      </div>
     </article>
   </section>
 </template>
 
 <script>
-// import CommentForm from '~/components/contact/CommentForm.vue'
-// import Comment from '~/components/contact/Comment.vue'
 
 export default {
   components: {
-    // CommentForm,
-    // Comment
   },
 
   computed: {
@@ -158,9 +130,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// a {
-//   color: $redColor;
-// }
+.more-blogs {
+  display: block;
+  max-width: 450px;
+  padding: 10px 32px;
+  margin: auto;
+  background: $redColor;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 50px;
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  color: $lightColor;
+  border: 0;
+  text-decoration: none;
+  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 500ms;
+  -moz-transition: all ease-in-out 500ms;
+  -ms-transition: all ease-in-out 500ms;
+  -o-transition: all ease-in-out 500ms;
+
+  &:hover {
+    color: $redColor;
+    background: $lightColor;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+}
 
 @include mediaMenu {
   .desktop-only {

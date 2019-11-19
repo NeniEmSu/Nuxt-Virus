@@ -305,6 +305,7 @@ export default {
     '~/plugins/Axios.js',
     '~/plugins/filters.js',
     '~/plugins/vuelidate.js',
+    '~/plugins/disqus',
     {
       src: '@/plugins/aos',
       mode: 'client'

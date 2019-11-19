@@ -36,17 +36,18 @@
           :alt="`${post.title} background image `"
         >
         <div class="card-img-overlay pl-2 py-0 row">
-          <div class="col-8 m-auto py-0 post-detail">
-            <div>
-              <nuxt-link
-                v-for="tag in post.tags"
-                :key="tag"
-                :to="'/blog/category/' + tag"
-                class="desktop-tablet-only"
-              >
-                {{ tag }}&nbsp;<span>|</span>&nbsp;
-              </nuxt-link>
-              <!-- <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
+          <div class="col-8 m-auto py-0 post-detail h-100 d-flex flex-column justify-content-center text-left">
+            <div class="inner">
+              <div>
+                <nuxt-link
+                  v-for="(tag, i) in post.tags"
+                  :key="tag"
+                  :to="'/blog/category/' + tag"
+                  class="desktop-tablet-only"
+                >
+                  {{ tag }}&nbsp;<span v-if="i !== post.tags.length - 1">|</span>&nbsp;
+                </nuxt-link>
+                <!-- <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
               <span class="text-light">
                 {{ post.comments ? post.comments.length : 0 }}
                 <svg
@@ -60,15 +61,16 @@
                   <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
                 </svg>
               </span> -->
+              </div>
+              <nuxt-link :to="'/blog/' + post.title_slug">
+                <h2 class="card-title text-white">
+                  {{ post.title }}
+                </h2>
+              </nuxt-link>
+              <p class="card-text">
+                Дата створення {{ post._created | toDate }}
+              </p>
             </div>
-            <nuxt-link :to="'/blog/' + post.title_slug">
-              <h2 class="card-title text-white">
-                {{ post.title }}
-              </h2>
-            </nuxt-link>
-            <p class="card-text">
-              Дата створення {{ post._created | toDate }}
-            </p>
           </div>
           <div class="col-4 m-auto px-0 text-right">
             <nuxt-link
@@ -216,10 +218,21 @@ h1:after {
     object-position: center;
     width: auto;
     height: 320px;
+    clear: both;
   }
 
   .post-detail {
-    padding-left: 75px;
+    float: right;
+    left: 5px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    .inner {
+      padding-left: 75px;
+    }
   }
 
   h2 {
@@ -392,7 +405,9 @@ li {
     }
 
     .post-detail {
-      padding-left: 20px;
+      .inner {
+        padding-left: 20px;
+      }
     }
 
     h2 {
