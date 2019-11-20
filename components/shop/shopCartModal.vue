@@ -268,7 +268,7 @@ export default {
         cartphoneNumber: this.form.cartphoneNumber
       })
       const parseText = JSON.parse(text)
-      const output = `Ім'я: ${parseText.name}, %0AМісто: ${parseText.city}, %0AНомер телефону: ${parseText.cartphoneNumber}, %0AНомер у кошику: ${parseText.itemsInCart}пункт(и), %0AПоштове відділення: ${parseText.postBranch}, %0AЗагальна покупка: ${parseText.cartTotalAmount}₴, %0AЕлементи в кошику: %0A${JSON.stringify(data)}`
+      const output = `Корзина %0A%0AІм'я: ${parseText.name}, %0AМісто: ${parseText.city}, %0AНомер телефону: ${parseText.cartphoneNumber}, %0AНомер у кошику: ${parseText.itemsInCart}пункт(и), %0AПоштове відділення: ${parseText.postBranch}, %0AЗагальна покупка: ${parseText.cartTotalAmount}₴, %0AЕлементи в кошику: %0A${JSON.stringify(data)}`
       axios
         .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=${output}`)
 
