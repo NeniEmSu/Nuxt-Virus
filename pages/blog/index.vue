@@ -111,11 +111,6 @@ export default {
   meta: {
     animation: 'fade-in-down'
   },
-  data () {
-    return {
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
-    }
-  },
   async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(
       'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
@@ -136,17 +131,9 @@ export default {
 
     return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total }
   },
-  head () {
+  data () {
     return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: 'блог - %s!',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `Повідомлення в блозі - Усі пізні повідомлення в блозі на номері сторінці 1 від Детейлінг центр Virus Тернопіль.`
-        }
-      ]
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
     }
   },
 
@@ -159,6 +146,19 @@ export default {
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 100, { force: true })
+    }
+  },
+  head () {
+    return {
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'блог - %s!',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Повідомлення в блозі - Усі пізні повідомлення в блозі на номері сторінці 1 від Детейлінг центр Virus Тернопіль.`
+        }
+      ]
     }
   }
 }

@@ -85,14 +85,6 @@
 export default {
   components: {
   },
-
-  computed: {
-    comments () {
-      return this.post.comments
-        ? this.post.comments.filter(comment => !comment.parent_id)
-        : []
-    }
-  },
   async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return { post: payload }
@@ -114,6 +106,14 @@ export default {
       }
 
       return { post: data.entries[0] }
+    }
+  },
+
+  computed: {
+    comments () {
+      return this.post.comments
+        ? this.post.comments.filter(comment => !comment.parent_id)
+        : []
     }
   },
 

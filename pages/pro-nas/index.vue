@@ -85,6 +85,11 @@ export default {
   meta: {
     animation: 'fade-in-down'
   },
+  data () {
+    return {
+      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI'
+    }
+  },
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',
@@ -97,11 +102,6 @@ export default {
             'про Нас - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
         }
       ]
-    }
-  },
-  data () {
-    return {
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI'
     }
   }
 

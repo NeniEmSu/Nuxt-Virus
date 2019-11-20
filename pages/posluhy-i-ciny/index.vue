@@ -700,19 +700,6 @@ export default {
   meta: {
     animation: 'fade-in-down'
   },
-  head () {
-    return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: 'Послуги і Ціни - %s!',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Послуги і Ціни - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри. '
-        }
-      ]
-    }
-  },
   data () {
     return {
       brandSelect: null,
@@ -1004,6 +991,19 @@ export default {
   methods: {
     changeCars (variantImage) {
       this.image = variantImage
+    }
+  },
+  head () {
+    return {
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'Послуги і Ціни - %s!',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Послуги і Ціни - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри. '
+        }
+      ]
     }
   }
 }

@@ -49,7 +49,7 @@
           {{ timeTaken }}
         </h2>
 
-        <servicesYoutubeVideo :video-url="videoUrl" />
+        <!-- <servicesYoutubeVideo :video-url="videoUrl" /> -->
 
         <serviceCategories
           :category1="category1"
@@ -68,18 +68,6 @@
 <script>
 
 export default {
-  head () {
-    return {
-      title: this.heading.slice(0, 60),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.firstParagraph.slice(0, 320)
-        }
-      ]
-    }
-  },
   data () {
     return {
       service: 'Покриття твердим універсальним воском Soft 99',
@@ -87,7 +75,7 @@ export default {
       category1: '1200 грн',
       category2: '1300 грн',
       category3: '1400 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      // videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
       firstParagraph:
         'Воскове покриття авто - це додатковий захист вашого автомобіля від подряпин, пилу, дрібних відколів, що неодмінно відбувається з машиною при її щоденній експлуатації.',
       secondParagraph:
@@ -121,6 +109,18 @@ export default {
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 100, { force: true })
+    }
+  },
+  head () {
+    return {
+      title: this.heading.slice(0, 60),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.firstParagraph.slice(0, 320)
+        }
+      ]
     }
   }
 }

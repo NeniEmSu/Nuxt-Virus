@@ -54,7 +54,7 @@
           </div>
         </div>
 
-        <servicesYoutubeVideo :video-url="videoUrl" />
+        <!-- <servicesYoutubeVideo :video-url="videoUrl" /> -->
 
         <serviceCategories
           :category1="category1"
@@ -72,18 +72,6 @@
 
 <script>
 export default {
-  head () {
-    return {
-      title: this.heading.slice(0, 60),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `${this.heading} - ${this.firstParagraph}`.slice(0, 320)
-        }
-      ]
-    }
-  },
   data () {
     return {
       service: 'Хімчистка передніх сидінь',
@@ -91,7 +79,7 @@ export default {
       category1: '275 грн',
       category2: '330 грн',
       category3: '385 грн',
-      videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      // videoUrl: 'https://www.youtube.com/embed/NpEaa2P7qZI',
       question: 'Для чого полірувати стійки?',
       firstParagraph:
         "Хімчистка шкіряних сидінь авто передбачає очищення їх від пилу, бруду і нашарувань. Подальша обробка шкіряних деталей захисними засобами надає їм м'якість і еластичність, яка зберігається надовго. У багатьох випадках потрібне розбирання обшивки автомобіля, демонтаж сидінь, або часткове розбирання панелей, для забезпечення доступу до найскладнішим ділянкам, яким необхідне очищення і обробка.",
@@ -103,6 +91,18 @@ export default {
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 100, { force: true })
+    }
+  },
+  head () {
+    return {
+      title: this.heading.slice(0, 60),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.heading} - ${this.firstParagraph}`.slice(0, 320)
+        }
+      ]
     }
   }
 }

@@ -37,6 +37,14 @@ export default {
       default: null
     }
   },
+  computed: {
+    statusCode () {
+      return (this.error && this.error.statusCode) || 500
+    },
+    message () {
+      return this.error.message || `<%= messages.client_error %>`
+    }
+  },
   head () {
     return {
       title: this.message,
@@ -47,14 +55,6 @@ export default {
             'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
         }
       ]
-    }
-  },
-  computed: {
-    statusCode () {
-      return (this.error && this.error.statusCode) || 500
-    },
-    message () {
-      return this.error.message || `<%= messages.client_error %>`
     }
   }
 }

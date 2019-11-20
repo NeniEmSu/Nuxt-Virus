@@ -118,14 +118,6 @@ export default {
   meta: {
     animation: 'fade-in-down'
   },
-  data () {
-    return {
-      customStyles,
-      customLabels,
-      pageOfItems: [],
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
-    }
-  },
   async asyncData ({ app }) {
     const { data } = await app.$axios.post(
       'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
@@ -141,6 +133,24 @@ export default {
 
     return { promotions: data.entries }
   },
+  data () {
+    return {
+      customStyles,
+      customLabels,
+      pageOfItems: [],
+      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
+    }
+  },
+  methods: {
+    onChangePage (pageOfItems) {
+      this.pageOfItems = pageOfItems
+      if (process.client) {
+        // window.scrollTo({ top: 0, behavior: 'smooth' })
+        document.body.scrollTop = document.documentElement.scrollTop = 0
+      }
+    }
+
+  },
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',
@@ -154,16 +164,6 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    onChangePage (pageOfItems) {
-      this.pageOfItems = pageOfItems
-      if (process.client) {
-        // window.scrollTo({ top: 0, behavior: 'smooth' })
-        document.body.scrollTop = document.documentElement.scrollTop = 0
-      }
-    }
-
   }
 
 }

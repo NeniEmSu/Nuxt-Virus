@@ -256,7 +256,7 @@ export default {
     submitOrder () {
       this.asyncState = 'pending'
 
-      let data = this.cart.map(item => ({ [item.name]: item.quantity }))
+      let data = this.cart.map(item => ({ [item.name]: [`${item.quantity}шт, ${item.Price}₴`] }))
       data = Object.assign({}, ...data)
 
       const text = JSON.stringify({
@@ -268,7 +268,7 @@ export default {
         cartphoneNumber: this.form.cartphoneNumber
       })
       const parseText = JSON.parse(text)
-      const output = `Ім'я: ${parseText.name}, \n Місто: ${parseText.city}, \n Номер телефону: ${parseText.cartphoneNumber}, \n Номер у кошику: ${parseText.itemsInCart}, \n Поштове відділення: ${parseText.postBranch}, \n Загальна покупка: ${parseText.cartTotalAmount}, \n Елементи в кошику: ${JSON.stringify(data)}`
+      const output = `Ім'я: ${parseText.name}, %0AМісто: ${parseText.city}, %0AНомер телефону: ${parseText.cartphoneNumber}, %0AНомер у кошику: ${parseText.itemsInCart}пункт(и), %0AПоштове відділення: ${parseText.postBranch}, %0AЗагальна покупка: ${parseText.cartTotalAmount}₴, %0AЕлементи в кошику: %0A${JSON.stringify(data)}`
       axios
         .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=${output}`)
 
@@ -277,7 +277,7 @@ export default {
           'https://admin.virus.te.ua/api/forms/submit/cart?token=742af3741fa4ff80bd0db4c22496ba',
           JSON.stringify({
             form: {
-              cart: JSON.stringify(this.cart),
+              cart: this.cart.map(item => ({ [item.name]: [`${item._id}шт, ${item.Price}₴, ${item.quantity}`] })),
               cartTotalAmount: this.cartTotalAmount,
               itemsInCart: this.cartSize,
               name: this.form.name,

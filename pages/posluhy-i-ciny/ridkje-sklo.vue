@@ -69,18 +69,6 @@
 <script>
 
 export default {
-  head () {
-    return {
-      title: this.heading.slice(0, 60),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.firstParagraph.slice(0, 320)
-        }
-      ]
-    }
-  },
   data () {
     return {
       service: 'Рідке скло',
@@ -124,6 +112,18 @@ export default {
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 0, { force: true })
+    }
+  },
+  head () {
+    return {
+      title: this.heading.slice(0, 60),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.firstParagraph.slice(0, 320)
+        }
+      ]
     }
   }
 }

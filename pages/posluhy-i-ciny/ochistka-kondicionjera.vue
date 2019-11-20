@@ -75,19 +75,6 @@
 <script>
 
 export default {
-
-  head () {
-    return {
-      title: this.heading.slice(0, 60),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `${this.firstParagraph} ${this.secondParagraph}`.slice(0, 320)
-        }
-      ]
-    }
-  },
   data () {
     return {
       service: 'Очистка кондиціонера',
@@ -123,6 +110,19 @@ export default {
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 100, { force: true })
+    }
+  },
+
+  head () {
+    return {
+      title: this.heading.slice(0, 60),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.firstParagraph} ${this.secondParagraph}`.slice(0, 320)
+        }
+      ]
     }
   }
 }

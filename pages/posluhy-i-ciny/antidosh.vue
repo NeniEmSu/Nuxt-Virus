@@ -59,19 +59,6 @@
 
 <script>
 export default {
-  head () {
-    return {
-      title: this.heading,
-      titleTemplate: '%s! - Детейлінг центр Virus ',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.firstParagraph.slice(0, 320)
-        }
-      ]
-    }
-  },
   data () {
     return {
       service: 'Антидощ',
@@ -96,6 +83,19 @@ export default {
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 100, { force: true })
+    }
+  },
+  head () {
+    return {
+      title: this.heading,
+      titleTemplate: '%s! - Детейлінг центр Virus ',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.firstParagraph.slice(0, 320)
+        }
+      ]
     }
   }
 }
