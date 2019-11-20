@@ -225,7 +225,7 @@ export default {
     submitForm () {
       this.loading = true
       axios
-        .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=Name: ${this.name}, Number: ${this.models.phoneNumber}, Car Model: ${this.carModel}, Service: ${this.service}`)
+        .post(`https://api.telegram.org/bot873984949:AAG5ewEh19eCk6mqMsC0z7EiOd_3cEBjyDg/sendMessage?chat_id=-1001453596452&text=Name: ${this.name}, %0ANumber: ${this.models.phoneNumber}, %0ACar Model: ${this.carModel}, %0AService: ${this.service}`)
       axios.post(
         'https://admin.virus.te.ua/api/forms/submit/contact?token=00c9e43284a689ed7bf9a7fc972e81',
         JSON.stringify({
