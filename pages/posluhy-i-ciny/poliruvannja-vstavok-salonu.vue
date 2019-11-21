@@ -59,7 +59,10 @@
           </div>
         </div>
 
-        <servicesYoutubeVideo :video-url="videoUrl" />
+        <servicesYoutubeVideo
+          :video-url="videoUrl"
+          :title="`${heading} Video`"
+        />
 
         <serviceCategories
           :category1="category1"

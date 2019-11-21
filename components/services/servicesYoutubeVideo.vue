@@ -3,6 +3,7 @@
     <iframe
       loading="lazy"
       :src="videoUrl"
+      :title="title"
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
@@ -16,6 +17,11 @@ export default {
     videoUrl: {
       type: String,
       default: 'https://www.youtube.com/embed/NpEaa2P7qZI',
+      required: true
+    },
+    title: {
+      type: String,
+      default: '',
       required: true
     }
   }
