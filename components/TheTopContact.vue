@@ -140,7 +140,7 @@ export default {}
     -ms-transition: all ease-in-out 500ms;
     -o-transition: all ease-in-out 500ms;
 
-    &:hover:enabled {
+    &:hover {
       text-decoration: none;
       color: $redColor;
       transform: scale(1.1);
@@ -385,8 +385,8 @@ export default {}
   }
 
   .faa-ring.animated,
-  .faa-ring.animated-hover:hover:enabled,
-  .faa-parent.animated-hover:hover:enabled > .faa-ring {
+  .faa-ring.animated-hover:hover,
+  .faa-parent.animated-hover:hover > .faa-ring {
     -webkit-animation: ring 2s ease infinite;
     animation: ring 2s ease infinite;
     transform-origin: 50% 0px none;
@@ -474,8 +474,8 @@ export default {}
   }
 
   .faa-horizontal.animated,
-  .faa-horizontal.animated-hover:hover:enabled,
-  .faa-parent.animated-hover:hover:enabled > .faa-horizontal {
+  .faa-horizontal.animated-hover:hover,
+  .faa-parent.animated-hover:hover > .faa-horizontal {
     -webkit-animation: horizontal 2s ease infinite;
     animation: horizontal 2s ease infinite;
   }

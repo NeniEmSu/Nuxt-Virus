@@ -100,7 +100,7 @@ export default {
 
     color: $darkColor;
 
-    &:hover:enabled {
+    &:hover {
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
       color: $redColor;
     }
@@ -123,7 +123,7 @@ export default {
     outline: none;
     margin: auto 0 15px 15px;
 
-    &:hover:enabled {
+    &:hover {
       color: $redColor;
     }
   }

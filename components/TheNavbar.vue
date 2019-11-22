@@ -145,7 +145,7 @@ header {
     -ms-transition: all ease-in-out 500ms;
     -o-transition: all ease-in-out 500ms;
 
-    &:hover:enabled {
+    &:hover {
       transform: scale(1.1);
       -webkit-transform: scale(1.1);
       -moz-transform: scale(1.1);

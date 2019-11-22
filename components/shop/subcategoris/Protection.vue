@@ -56,7 +56,7 @@ export default {
     outline: none;
     margin: auto 0 15px 15px;
 
-    &:hover:enabled {
+    &:hover {
       color: $redColor;
     }
   }

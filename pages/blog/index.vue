@@ -278,7 +278,7 @@ h1:after {
     -o-transition: all ease-in-out 500ms;
   }
 
-  .btn:hover:enabled,
+  .btn:hover,
   .btn.active {
     color: $redColor;
     background-color: $lightColor;
@@ -293,7 +293,7 @@ h1:after {
     text-decoration: none;
     color: $lightColor;
 
-    &:hover:enabled {
+    &:hover {
       color: $headingsFontColor;
     }
   }

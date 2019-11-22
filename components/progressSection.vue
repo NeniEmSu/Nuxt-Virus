@@ -108,7 +108,7 @@ export default {}
     -ms-transition: all ease-in-out 350ms;
     -o-transition: all ease-in-out 350ms;
 
-    &:hover:enabled {
+    &:hover {
       transform: scale(1.2);
       -webkit-transform: scale(1.2);
       -moz-transform: scale(1.2);

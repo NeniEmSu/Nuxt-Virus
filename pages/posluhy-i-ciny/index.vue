@@ -1159,7 +1159,7 @@ export default {
     -o-border-radius: 20px;
   }
 
-  &:hover:enabled,
+  &:hover,
   &:focus {
     transform: scale3d(1.01, 1.01, 1);
     -webkit-transform: scale3d(1.01, 1.01, 1);
@@ -1708,7 +1708,7 @@ export default {
   -o-transition: all ease-in-out 500ms;
 }
 
-.btn:hover:enabled {
+.btn:hover {
   color: $lightColor;
   background-color: $redColor;
   transform: scale(1.1);
@@ -1778,7 +1778,7 @@ export default {
   -o-transform: scale(1.1);
 }
 
-.choose-brand button.btn:hover:enabled:after {
+.choose-brand button.btn:hover:after {
   color: $redColor;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -1794,6 +1794,7 @@ export default {
   line-height: 32px;
   margin-left: 20px;
   margin-right: -20px;
+  margin-top: -2px;
   transition: all ease-in-out 500ms;
   -webkit-transition: all ease-in-out 500ms;
   -moz-transition: all ease-in-out 500ms;
