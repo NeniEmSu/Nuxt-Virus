@@ -98,7 +98,7 @@ export default {
     border-radius: 50px;
   }
 
-  &:hover {
+  &:hover:enabled {
     border: 1px solid #d41f26;
     box-sizing: border-box;
     border-radius: 50px;
@@ -152,7 +152,7 @@ export default {
       color: $redColor;
     }
 
-    &:hover {
+    &:hover:enabled {
       text-decoration: none;
       color: $redColor;
     }

@@ -13,6 +13,18 @@
             <br>ДЛЯ ВАШОГО АВТОМОБІЛЯ
           </h3>
           <div
+            v-if="!$v.name.minLength"
+            class="error text-danger text-left"
+          >
+            Ім'я обов'язково і має містити не менше {{ $v.name.$params.minLength.min }} символів.
+          </div>
+          <div
+            v-if="!$v.models.phoneNumber.minLength"
+            class="text-danger text-left"
+          >
+            Номер телефону обов'язковий і повинен містити 10 символів
+          </div>
+          <div
             v-if="errors.length"
             class="text-left text-danger"
           >
@@ -112,13 +124,15 @@
                 >
                   <input
                     id="name"
-                    v-model.trim="name"
+                    v-model.trim="$v.name.$model"
                     name="name"
                     aria-label="name"
                     type="text"
                     class="form-control mx-auto"
                     aria-describedby="name"
                     placeholder="Ім’я*"
+                    :class="[!$v.name.$error && $v.name.$model ? 'is-valid' : '', $v.name.$error && !$v.name.minLength ? 'is-invalid' : '']"
+                    :state="$v.name.$dirty ? !$v.name.$error : null"
                   ></label>
               </div>
               <div class="form-group">
@@ -128,7 +142,7 @@
                 >
                   <input
                     id="phone"
-                    v-model="models.phoneNumber"
+                    v-model="$v.models.phoneNumber.$model"
                     v-mask="'+38(###) ###-####'"
                     aria-describedby="phone"
                     aria-label="phone"
@@ -136,6 +150,8 @@
                     type="text"
                     class="form-control mx-auto"
                     placeholder="Телефон*"
+                    :class="[!$v.models.phoneNumber.$error && $v.models.phoneNumber.$model ? 'is-valid' : '', $v.models.phoneNumber.$error && !$v.models.phoneNumber.minLength ? 'is-invalid' : '']"
+                    :state="$v.models.phoneNumber.$dirty ? !$v.models.phoneNumber.$error : null"
                   ></label>
               </div>
 
@@ -160,7 +176,7 @@
                 aria-label="submit"
                 name="submit"
                 class="contact-btn"
-                :disabled="loading === true"
+                :disabled="loading === true || !name || !carModel || !service || !models.phoneNumber"
               >
                 ВІДПРАВИТИ
               </button>
@@ -177,6 +193,7 @@
 
 <script>
 import axios from 'axios'
+import { required, minLength } from 'vuelidate/lib/validators'
 import carmodeloptions from '~/plugins/api/carModelOptions'
 
 export default {
@@ -200,7 +217,23 @@ export default {
       carmodeloptions
     }
   },
+  validations: {
+    name: {
+      required,
+      minLength: minLength(4)
+    },
+    models: {
+      phoneNumber: {
+        required,
+        minLength: minLength(17)
+      }
+    }
+  },
   methods: {
+    setName (value) {
+      this.name = value
+      this.$v.name.$touch()
+    },
     checkForm (e) {
       this.errors = []
       this.success = false
@@ -253,8 +286,12 @@ export default {
             data.service &&
             data.phoneNumber
           ) {
-            this.name = this.carModel = this.service = this.models.phoneNumber = null
+            this.name = this.carModel = this.service = this.models.phoneNumber = this.error = null
             this.success = true
+            const self = this
+            setTimeout(function () {
+              self.success = false
+            }, 2000)
           }
         })
         .catch((error) => {
@@ -370,7 +407,11 @@ export default {
     -ms-transition: all ease-in-out 500ms;
     -o-transition: all ease-in-out 500ms;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.65;
+    }
+
+    &:hover:enabled {
       color: $redColor;
       background: $lightColor;
       transform: scale(1.1);

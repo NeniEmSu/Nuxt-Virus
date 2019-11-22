@@ -217,7 +217,7 @@ main {
 
     color: #8b8b8b;
 
-    :hover {
+    :hover:enabled {
       color: #8c8c8c;
     }
   }

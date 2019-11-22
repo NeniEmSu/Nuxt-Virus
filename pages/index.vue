@@ -390,7 +390,7 @@ export default {
     // -ms-transition: all ease-in-out 500ms;
     // -o-transition: all ease-in-out 500ms;
 
-    &:hover {
+    &:hover:enabled {
       filter: grayscale(0%);
     }
     h2 {
@@ -409,7 +409,7 @@ export default {
       // -o-transition: all ease-in-out 500ms;
     }
 
-    &:hover {
+    &:hover:enabled {
       h2 {
         color: $redColor;
         filter: grayscale(0%);
@@ -512,7 +512,7 @@ export default {
     -ms-transition: all ease-in-out 500ms;
     -o-transition: all ease-in-out 500ms;
 
-    &:hover {
+    &:hover:enabled {
       color: $redColor;
       background: $lightColor;
       transform: scale(1.1);
@@ -570,7 +570,7 @@ export default {
       transform-origin: right bottom;
     }
 
-    &:hover,
+    &:hover:enabled,
     &:focus {
       &::before,
       &::after {

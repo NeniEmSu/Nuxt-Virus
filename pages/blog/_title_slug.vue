@@ -153,7 +153,7 @@ export default {
   -ms-transition: all ease-in-out 500ms;
   -o-transition: all ease-in-out 500ms;
 
-  &:hover {
+  &:hover:enabled {
     color: $redColor;
     background: $lightColor;
     transform: scale(1.1);

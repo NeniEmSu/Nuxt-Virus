@@ -201,7 +201,7 @@ export default {
   -o-transition: all ease-in-out 500ms;
 }
 
-#map:hover {
+#map:hover:enabled {
   transform: scale(1.005);
   -webkit-transform: scale(1.005);
   -moz-transform: scale(1.005);

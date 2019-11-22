@@ -105,7 +105,7 @@
                 display: abslolute;
                 }
 
-                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot:hover:enabled span {
                 background-color: transparent;
                 }
 
@@ -113,7 +113,7 @@
                 background-color: transparent;
                 }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover:enabled span {
                 background-color: transparent;
                 }
 
@@ -154,7 +154,7 @@
                 margin-left: 5px;
                 }
 
-                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot:hover:enabled span {
                 background-color: #d41f26;
                 }
 
@@ -166,7 +166,7 @@
                 background-color: #d41f26;
                 }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover:enabled span {
                 background-color: red;
                 }
 
@@ -187,7 +187,7 @@
                 margin-left: 5px;
                 }
 
-                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot:hover:enabled span {
                 background-color: #d41f26;
                 }
 
@@ -199,7 +199,7 @@
                 background-color: #d41f26;
                 }
 
-                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover:enabled span {
                 background-color: red;
                 }
 
@@ -658,7 +658,7 @@ h1.details-page-header {
   margin-top: 5px;
 }
 
-.btn:hover {
+.btn:hover:enabled {
   color: #d41f26;
   background: #ffffff;
   transform: scale(1.1);

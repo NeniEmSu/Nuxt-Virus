@@ -136,7 +136,7 @@ li {
   margin-bottom: 20px;
 }
 
-.btn.category-selector.btn:hover {
+.btn.category-selector.btn:hover:enabled {
   color: $lightColor;
   background-color: $redColor;
   transform: scale(1.1);

@@ -808,7 +808,7 @@ input#search {
   -ms-transition: all ease-in-out 500ms;
   -o-transition: all ease-in-out 500ms;
 
-  &:hover {
+  &:hover:enabled {
     color: $redColor;
     background: $lightColor;
     transform: scale(1.1);
@@ -851,7 +851,7 @@ input#search {
   }
 
   .open,
-  .accordion:hover {
+  .accordion:hover:enabled {
     outline: none;
   }
 
@@ -923,7 +923,7 @@ input#search {
     }
 
     /* On mouse-over, add a grey background color */
-    .holder:hover input ~ .checkmark {
+    .holder:hover:enabled input ~ .checkmark {
       background-color: transparent;
     }
 

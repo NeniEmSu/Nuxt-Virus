@@ -140,7 +140,7 @@ export default {
     transform-origin: right bottom;
   }
 
-  &:hover,
+  &:hover:enabled,
   &:focus {
     &::before,
     &::after {

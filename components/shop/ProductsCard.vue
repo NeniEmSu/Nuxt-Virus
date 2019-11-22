@@ -342,7 +342,7 @@ hr {
     -o-border-radius: 20px;
   }
 
-  &:hover,
+  &:hover:enabled,
   &:focus {
     transform: scale3d(1.01, 1.01, 1);
     -webkit-transform: scale3d(1.01, 1.01, 1);
