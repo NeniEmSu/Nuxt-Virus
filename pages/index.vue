@@ -4,7 +4,7 @@
       <h1
         class="text-left"
         data-aos="fade-left"
-        data-aos-duration="750"
+        data-aos-duration="25"
       >
         Ми <br>
         пропонуємо
@@ -15,8 +15,8 @@
           class="col-4 p-0 one"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="100"
-          data-aos-duration="750"
+          data-aos-delay="50"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>
@@ -46,8 +46,8 @@
           class="col-8 p-0 two"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="200"
-          data-aos-duration="750"
+          data-aos-delay="100"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>
@@ -81,8 +81,8 @@
           class="col-4 p-0 three"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="300"
-          data-aos-duration="750"
+          data-aos-delay="150"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>
@@ -114,8 +114,8 @@
           class="col-5 p-0 four"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="400"
-          data-aos-duration="750"
+          data-aos-delay="200"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>
@@ -146,8 +146,8 @@
           class="col-3 p-0 five"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="500"
-          data-aos-duration="750"
+          data-aos-delay="250"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>
@@ -179,8 +179,8 @@
           class="col-md-8 offset-4 p-0 six"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="600"
-          data-aos-duration="750"
+          data-aos-delay="300"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>
@@ -213,8 +213,8 @@
           class="col-12 p-0 seven"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="500"
-          data-aos-duration="750"
+          data-aos-delay="350"
+          data-aos-duration="0"
         >
           <div class="card bg-inverse">
             <picture>

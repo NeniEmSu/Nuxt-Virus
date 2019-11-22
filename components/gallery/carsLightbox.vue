@@ -2,9 +2,6 @@
   <div
     class="card mb-3 mx-auto card__hover_two work-card img-fluid"
     style="width: 100%; max-width: 540px;"
-    data-aos="fade-left"
-    data-aos-easing="ease"
-    data-aos-duration="300"
   >
     <client-only>
       <LightGallery

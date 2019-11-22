@@ -6,6 +6,7 @@
     :title="name"
   >
     <img
+      loading="lazy"
       :src="image"
       class="card-img-top img-fluid store-img"
       :alt="name"
