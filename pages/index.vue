@@ -606,11 +606,14 @@ export default {
 
 @include mediaLg {
   .top-grid {
-    h2 {
-      font-style: normal;
-      font-weight: 900;
-      font-size: 18px;
-      line-height: 20px;
+    a {
+      filter: grayscale(0%);
+      h2 {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 20px;
+      }
     }
     .four,
     .five {
@@ -631,11 +634,14 @@ export default {
 
 @include mediaMd {
   .top-grid {
-    h2 {
-      font-style: normal;
-      font-weight: 900;
-      font-size: 15px;
-      line-height: 16px;
+    a {
+      filter: grayscale(0%);
+      h2 {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 15px;
+        line-height: 16px;
+      }
     }
     .four,
     .five {
@@ -661,9 +667,12 @@ export default {
       line-height: 70%;
     }
 
-    h2 {
-      font-size: 15px;
-      line-height: 16px;
+    a {
+      filter: grayscale(0%);
+      h2 {
+        font-size: 15px;
+        line-height: 16px;
+      }
     }
 
     .four,
@@ -792,11 +801,14 @@ export default {
 
 @include mediaXSm {
   .top-grid {
-    h2 {
-      font-size: 12px;
-      line-height: 14px;
+    a {
+      filter: grayscale(0%);
+      h2 {
+        font-size: 12px;
+        line-height: 14px;
 
-      margin-bottom: 0;
+        margin-bottom: 0;
+      }
     }
 
     .four,

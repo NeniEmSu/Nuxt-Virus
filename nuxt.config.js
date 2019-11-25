@@ -188,9 +188,6 @@ export default {
       defer: true
     },
     {
-      src: 'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver'
-    },
-    {
       src: `https://polyfill.io/v3/polyfill.min.js?features=${features}`,
       body: true
     }
@@ -280,22 +277,24 @@ export default {
   },
 
   polyfill: {
-    features: [{
-      require: 'url-polyfill'
-    },
+    features: [
 
-    {
-      require: 'intersection-observer',
-      detect: () => 'IntersectionObserver' in window
-    },
+      {
+        require: 'url-polyfill' // NPM package or require path of file
+      },
 
-    {
-      require: 'smoothscroll-polyfill',
+      {
+        require: 'intersection-observer',
+        detect: () => 'IntersectionObserver' in window
+      },
 
-      detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
+      {
+        require: 'smoothscroll-polyfill',
 
-      install: smoothscroll => smoothscroll.polyfill()
-    }
+        detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
+
+        install: smoothscroll => smoothscroll.polyfill()
+      }
     ]
   },
 
@@ -604,55 +603,66 @@ export default {
         }
       })
     },
-
-    build: {
-      extend (config, {
-        isDev,
-        isClient
-      }) {
-        config.module.rules.unshift({
-          test: /\.(png|jpe?g|gif)$/,
-          use: {
-            loader: 'responsive-loader',
-            options: {
-              placeholder: true,
-              quality: 85,
-              placeholderSize: 30,
-              name: 'img/[name].[hash:hex:7].[width].[ext]'
+    postcss: {
+      plugins: [
+        purgecss({
+          content: [
+            './pages/**/*.vue',
+            './layouts/**/*.vue',
+            './components/**/*.vue',
+            './content/**/*.md',
+            './content/**/*.json'
+          ],
+          whitelist: [
+            'html',
+            'body',
+            'has-navbar-fixed-top',
+            'nuxt-link-exact-active',
+            'nuxt-progress',
+            'hidden',
+            'opacity-0',
+            'nuxt__build_indicator'
+          ],
+          whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/, /aos/, /fade-in/, /tooltip/, /modal/, /map/, /gm/]
+        })
+      ]
+    },
+    babel: {
+      presets ({
+        isServer
+      }, [preset, options]) {
+        const r = [
+          [
+            preset, {
+              buildTarget: isServer ? 'server' : 'client',
+              ...options
             }
-          }
-        })
+          ]
+          // [ Other presets ]
+        ]
 
-        config.module.rules.forEach((value) => {
-          if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-            value.test = /\.(svg|webp)$/
-          }
-        })
+        r[0][1].targets = {
+          'browsers': ['> 1%', 'last 2 versions'],
+          ie: 11
+        }
+
+        r[0][1].polyfills = [
+          'es6.array.iterator',
+          'es6.promise',
+          'es6.object.assign',
+          'es6.symbol',
+          'es6.array.find',
+          'es6.array.from',
+          'es7.promise.finally',
+          'es7.object.entries'
+        ]
+
+        return r
       },
 
-      postcss: {
-        plugins: [
-          purgecss({
-            content: [
-              './pages/**/*.vue',
-              './layouts/**/*.vue',
-              './components/**/*.vue',
-              './content/**/*.md',
-              './content/**/*.json'
-            ],
-            whitelist: [
-              'html',
-              'body',
-              'has-navbar-fixed-top',
-              'nuxt-link-exact-active',
-              'nuxt-progress',
-              'hidden',
-              'opacity-0'
-            ],
-            whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/]
-          })
-        ]
-      }
+      plugins: [
+        ['@babel/plugin-transform-runtime']
+      ]
     }
   }
 }
