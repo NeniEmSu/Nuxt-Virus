@@ -626,43 +626,43 @@ export default {
           whitelistPatternsChildren: [/svg-inline--fa/, /__layout/, /__nuxt/, /aos/, /fade-in/, /tooltip/, /modal/, /map/, /gm/]
         })
       ]
-    },
-    babel: {
-      presets ({
-        isServer
-      }, [preset, options]) {
-        const r = [
-          [
-            preset, {
-              buildTarget: isServer ? 'server' : 'client',
-              ...options
-            }
-          ]
-          // [ Other presets ]
-        ]
-
-        r[0][1].targets = {
-          'browsers': ['> 1%', 'last 2 versions'],
-          ie: 11
-        }
-
-        r[0][1].polyfills = [
-          'es6.array.iterator',
-          'es6.promise',
-          'es6.object.assign',
-          'es6.symbol',
-          'es6.array.find',
-          'es6.array.from',
-          'es7.promise.finally',
-          'es7.object.entries'
-        ]
-
-        return r
-      },
-
-      plugins: [
-        ['@babel/plugin-transform-runtime']
-      ]
     }
+    // babel: {
+    //   presets ({
+    //     isServer
+    //   }, [preset, options]) {
+    //     const r = [
+    //       [
+    //         preset, {
+    //           buildTarget: isServer ? 'server' : 'client',
+    //           ...options
+    //         }
+    //       ]
+    //       // [ Other presets ]
+    //     ]
+
+    //     r[0][1].targets = {
+    //       'browsers': ['> 1%', 'last 2 versions'],
+    //       ie: 11
+    //     }
+
+    //     r[0][1].polyfills = [
+    //       'es6.array.iterator',
+    //       'es6.promise',
+    //       'es6.object.assign',
+    //       'es6.symbol',
+    //       'es6.array.find',
+    //       'es6.array.from',
+    //       'es7.promise.finally',
+    //       'es7.object.entries'
+    //     ]
+
+    //     return r
+    //   },
+
+    //   plugins: [
+    //     ['@babel/plugin-transform-runtime']
+    //   ]
+    // }
   }
 }
