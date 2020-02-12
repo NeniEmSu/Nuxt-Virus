@@ -23,58 +23,71 @@
     </div>
     <hr class="top-separator">
 
-    <div v-if="promotions.length < 1">
-      <h4 class="text-center my-5">
-        Вибачте, але на даний момент у нас немає ніяких акцій. Поверніться пізніше.
-      </h4>
-    </div>
+    <vue-page-transition name="fade">
+      <div
+        v-if="$apollo.queries.promotions.loading"
+        class="mx-auto text-center"
+      >
+        <Loading />
+      </div>
 
-    <div
-      v-for="(promotion, index) in pageOfItems"
-      v-else
-      :key="promotion.promotionTitle"
-      class="card-container container"
-    >
-      <div class="card mx-auto">
-        <img
-          loading="lazy"
-          width="1130"
-          height="320"
-          class="card-img img-fliud"
-          :src="
-            `${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
-          "
-          :alt="`${promotion.promotionTitle} background image `"
+      <div v-else>
+        <div v-if="!promotions">
+          <h4 class="text-center my-5">
+            Вибачте, але на даний момент у нас немає ніяких акцій. Поверніться пізніше.
+          </h4>
+        </div>
+
+        <div
+          v-for="(promotion, index) in promotions"
+          v-else
+          :key="promotion.promotionTitle"
+          class="card-container container"
         >
-        <div class="card-img-overlay pl-2 py-0 row">
-          <div class="col-8 m-auto py-0 post-detail">
-            <nuxt-link :to="'/mahazyn/' + promotion.name_slug">
-              <h2 class="card-title text-white">
-                {{ promotion.promotionTitle }}
-              </h2>
-            </nuxt-link>
-            <p class="card-text">
-              {{ `Акція діє з ${promotion.promotionTimeStart} до ${promotion.promotionTimeEnd}` }}
-            </p>
-          </div>
-          <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link
-              class="btn"
-              :to="'/mahazyn/' + promotion.name_slug"
+          <div class="card mx-auto">
+            <img
+              loading="lazy"
+              width="1130"
+              height="320"
+              class="card-img img-fliud"
+              :src="
+                `${imageApiUrl}&src=${promotion.promotionImage.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
+              "
+              :alt="`${promotion.promotionTitle} background image `"
             >
-              ЗАМОВИТИ
-            </nuxt-link>
+            <div class="card-img-overlay pl-2 py-0 row">
+              <div class="col-8 m-auto py-0 post-detail">
+                <nuxt-link :to=" { name: 'mahazyn-name_slug', params: {name_slug: promotion.name_slug, _id: promotion._id } }">
+                  <h2 class="card-title text-white">
+                    {{ promotion.promotionTitle }}
+                  </h2>
+                </nuxt-link>
+                <p class="card-text">
+                  {{ `Акція діє з ${promotion.promotionTimeStart} до ${promotion.promotionTimeEnd}` }}
+                </p>
+              </div>
+              <div class="col-4 m-auto px-0 text-right">
+                <nuxt-link
+                  class="btn"
+                  :to=" { name: 'mahazyn-name_slug', params: {name_slug: promotion.name_slug, _id: promotion._id } }"
+                >
+                  ЗАМОВИТИ
+                </nuxt-link>
+              </div>
+            </div>
           </div>
+
+          <hr
+            v-if="index !== promotions.length - 1"
+            class="separator"
+          >
         </div>
       </div>
-      <hr
-        v-if="index !== pageOfItems.length - 1"
-        class="separator"
-      >
-    </div>
+    </vue-page-transition>
+
     <div class="text-center">
       <jw-pagination
-        v-show="promotions.length > 3"
+        v-if="promotions.length > 3"
         :page-size="3"
         :max-pages="10"
         :initial-page="1"
@@ -91,6 +104,7 @@
 </template>
 
 <script>
+import promotions from '~/gql/products'
 
 const customStyles = {
   ul: {
@@ -118,21 +132,14 @@ export default {
   meta: {
     animation: 'fade-in-down'
   },
-  asyncData ({ app }) {
-    const { data } = app.$axios.post(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
-      JSON.stringify({
-        filter: { Published: true, promotion: true },
-        sort: { _created: -1 },
-        populate: 1
-      }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      }
-    )
 
-    return { promotions: data.entries }
+  apollo: {
+    promotions: {
+      prefetch: true,
+      query: promotions
+    }
   },
+
   data () {
     return {
       customStyles,

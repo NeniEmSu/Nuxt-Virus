@@ -26,6 +26,11 @@ export default {
     TheNavbar
   },
 
+  created () {
+    this.loading = true
+    this.$store.dispatch('fetchProducts').then(() => (this.loading = false))
+  },
+
   head () {
     return {
       link: [

@@ -9,14 +9,16 @@
 
 <script>
 export default {
-  props: { show: {
-    type: Boolean,
-    default: false
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    },
+    text: {
+      type: String,
+      default: ''
+    }
   },
-  text: {
-    type: String,
-    default: ''
-  } },
   data () {
     return {
       isActive: !!this.show,

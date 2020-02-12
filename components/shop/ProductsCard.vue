@@ -136,9 +136,9 @@ export default {
       default: ''
     },
     link: {
-      type: String,
+      type: Object,
       required: false,
-      default: ''
+      default: {} | (() => [])
     },
     stock: {
       type: Boolean,

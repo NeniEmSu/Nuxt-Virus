@@ -5,7 +5,7 @@ import {
 export default function (context) {
   return {
     httpLinkOptions: {
-      uri: 'https://barbaresco-admin.w-start.com.ua/api/graphql/query?token=d5993d83d44040c37de0414695e82e',
+      uri: 'https://admin.virus.te.ua/api/graphql/query?token=f929e164a70313603d610994dcb4d2',
       credentials: 'same-origin'
     },
     cache: new InMemoryCache(),

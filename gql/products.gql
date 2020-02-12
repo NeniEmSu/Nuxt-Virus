@@ -1,0 +1,44 @@
+query ($id: String) {
+  promotions: ProductCollection(filter: {Published: true, promotion: true}) {
+    _id
+    name
+    name_slug
+    discountPrice
+    promotionTitle
+    promotionTimeEnd
+    promotionTimeStart
+    promotionImage {
+      path
+    }
+  }
+  featured: ProductCollection(filter: {Published: true, featured: true}) {
+    ...productsFields
+  }
+  fullProducts: ProductCollection(filter: {Published: true}) {
+    ...productsFields
+  }
+  singleProduct: ProductCollection(_id: $id, filter: {Published: true}) {
+    ...productsFields
+  }
+}
+
+fragment productsFields on ProductCollection {
+  _id
+  name
+  name_slug
+  Stock
+  featured
+  Overview
+  type
+  Description
+  volume
+  category
+  Price
+  brand
+  galleryToggle
+  Sales
+  Image {
+    path
+    meta
+  }
+}

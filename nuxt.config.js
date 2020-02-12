@@ -26,171 +26,171 @@ export default {
       lang: 'uk'
     },
     meta: [{
-      charset: 'utf-8'
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
-    },
-    {
-      hid: 'keywords',
-      name: 'keywords',
-      content: 'детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди'
-    },
-    {
-      hid: 'apple-mobile-web-app-title',
-      name: 'apple-mobile-web-app-title',
-      content: 'Virus detailing'
-    },
-    {
-      hid: 'application-name',
-      name: 'application-name',
-      content: 'Virus detailing'
-    },
-    {
-      hid: 'msapplication-TileColor',
-      name: 'msapplication-TileColor',
-      content: '#da532c'
-    },
-    {
-      hid: 'msapplication-config',
-      name: 'msapplication-config',
-      content: '/browserconfig.xml'
-    },
-    {
-      hid: 'theme-color',
-      name: 'theme-color',
-      content: '#E32124'
-    },
-    {
-      hid: 'og:title',
-      name: 'og:title',
-      property: 'og:title',
-      content: 'Virus детейлінг'
-    },
-    {
-      hid: 'og:site_name',
-      name: 'og:site_name',
-      property: 'og:site_name',
-      content: 'Virus детейлінг'
-    },
-    {
-      hid: 'og:url',
-      name: 'og:url',
-      property: 'og:url',
-      content: 'https://virus.te.ua/'
-    },
-    {
-      hid: 'og:type',
-      name: 'og:type',
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      hid: 'og:locale',
-      name: 'og:locale',
-      property: 'og:locale',
-      content: 'uk_UA'
-    },
-    {
-      hid: 'og:description',
-      name: 'og:description',
-      property: 'og:description',
-      content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри'
-    },
-    {
-      hid: 'og:image',
-      name: 'og:image',
-      property: 'og:image',
-      content: '/virus_og.jpg'
-    }
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'детейлинг центр, автодетейлинг, детейлинг студия, автомобильный детейлинг, химчистка авто, чистка салону авто, хімчистка автомобіля, полировка фар, полірування авто, поліровка машини, полировка торпеды, поліровка торпеди'
+      },
+      {
+        hid: 'apple-mobile-web-app-title',
+        name: 'apple-mobile-web-app-title',
+        content: 'Virus detailing'
+      },
+      {
+        hid: 'application-name',
+        name: 'application-name',
+        content: 'Virus detailing'
+      },
+      {
+        hid: 'msapplication-TileColor',
+        name: 'msapplication-TileColor',
+        content: '#da532c'
+      },
+      {
+        hid: 'msapplication-config',
+        name: 'msapplication-config',
+        content: '/browserconfig.xml'
+      },
+      {
+        hid: 'theme-color',
+        name: 'theme-color',
+        content: '#E32124'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        property: 'og:title',
+        content: 'Virus детейлінг'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Virus детейлінг'
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        property: 'og:url',
+        content: 'https://virus.te.ua/'
+      },
+      {
+        hid: 'og:type',
+        name: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:locale',
+        name: 'og:locale',
+        property: 'og:locale',
+        content: 'uk_UA'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        property: 'og:description',
+        content: 'Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        property: 'og:image',
+        content: '/virus_og.jpg'
+      }
     ],
     link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    },
-    {
-      rel: 'apple-touch-icon',
-      type: 'image/png',
-      href: '/apple-touch-icon.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-128x128.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-96x96.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-144x144.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-512x512.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-384x384.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-192x192.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-152x152.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/icon-72x72.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon-32x32.png'
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon-16x16.png'
-    },
-    {
-      rel: 'mask-icon',
-      href: '/safari-pinned-tab.svg',
-      color: '#e32124'
-    },
-    {
-      rel: 'shortcut icon',
-      href: '/favicon.ico'
-    }
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        href: '/apple-touch-icon.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-128x128.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-96x96.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-144x144.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-512x512.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-384x384.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-192x192.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-152x152.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icon-72x72.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png'
+      },
+      {
+        rel: 'mask-icon',
+        href: '/safari-pinned-tab.svg',
+        color: '#e32124'
+      },
+      {
+        rel: 'shortcut icon',
+        href: '/favicon.ico'
+      }
 
     ],
     script: [{
-      rel: 'prefetch',
-      src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
-      'data-cf-settings': '74bf624512b1c6414329bcb4-|49',
-      defer: true
-    },
-    {
-      src: `https://polyfill.io/v3/polyfill.min.js?features=${features}`,
-      body: true
-    }
+        rel: 'prefetch',
+        src: 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js',
+        'data-cf-settings': '74bf624512b1c6414329bcb4-|49',
+        defer: true
+      },
+      {
+        src: `https://polyfill.io/v3/polyfill.min.js?features=${features}`,
+        body: true
+      }
     ]
   },
 
@@ -205,55 +205,55 @@ export default {
     dir: 'auto',
     lang: 'uk',
     icons: [{
-      type: 'image/png',
-      size: '32x32',
-      src: '/favicon-32x32.png'
-    },
-    {
-      type: 'image/png',
-      size: '16x16',
-      src: '/favicon-16x16.png'
-    },
-    {
-      src: '/icon-72x72.png',
-      sizes: '72x72',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-96x96.png',
-      sizes: '96x96',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-128x128.png',
-      sizes: '128x128',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-144x144.png',
-      sizes: '144x144',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-152x152.png',
-      sizes: '152x152',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-192x192.png',
-      sizes: '192x192',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-384x384.png',
-      sizes: '384x384',
-      type: 'image/png'
-    },
-    {
-      src: '/icon-512x512.png',
-      sizes: '512x512',
-      type: 'image/png'
-    }
+        type: 'image/png',
+        size: '32x32',
+        src: '/favicon-32x32.png'
+      },
+      {
+        type: 'image/png',
+        size: '16x16',
+        src: '/favicon-16x16.png'
+      },
+      {
+        src: '/icon-72x72.png',
+        sizes: '72x72',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-96x96.png',
+        sizes: '96x96',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-128x128.png',
+        sizes: '128x128',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-144x144.png',
+        sizes: '144x144',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-152x152.png',
+        sizes: '152x152',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-192x192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-384x384.png',
+        sizes: '384x384',
+        type: 'image/png'
+      },
+      {
+        src: '/icon-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      }
     ],
     categories: ['business', 'utilities', 'shopping']
   },
@@ -374,6 +374,7 @@ export default {
         symbolSpacing: true
       }
     ],
+    '@nuxtjs/apollo',
     'nuxt-polyfill',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -409,6 +410,14 @@ export default {
     ],
     '@nuxtjs/sitemap'
   ],
+
+  apollo: {
+    includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
+    errorHandler: '~/apollo/customErrorHandler',
+    clientConfigs: {
+      default: '~/apollo/clientConfig.js'
+    }
+  },
 
   robots: {
     Sitemap: '/sitemap.xml'
@@ -527,7 +536,7 @@ export default {
     hostname: process.env.URL,
     cacheTime: 1000 * 60 * 15,
 
-    async routes () {
+    async routes() {
       const {
         data
       } = await axios.post(
@@ -580,7 +589,7 @@ export default {
     transpile: [/^vue2-google-maps($|\/)/],
     extractCSS: true,
 
-    extend (config, {
+    extend(config, {
       isDev,
       isClient
     }) {
@@ -591,11 +600,11 @@ export default {
             options: {
               svgo: {
                 plugins: [{
-                  removeViewBox: false
-                },
-                {
-                  removeDimensions: true
-                }
+                    removeViewBox: false
+                  },
+                  {
+                    removeDimensions: true
+                  }
                 ]
               }
             }

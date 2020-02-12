@@ -213,7 +213,7 @@
           class="col-12 p-0 seven"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="350"
+          data-aos-delay="200"
           data-aos-duration="0"
         >
           <div class="card bg-inverse">
@@ -249,45 +249,55 @@
         <h2 class="text-left">
           Рекомендуємо
         </h2>
-
-        <client-only>
-          <carousel
-            :autoplay="true"
-            :nav="false"
-            :items="4"
-            :lazy-load="true"
-            :loop="true"
-            :mouse-drag="true"
-            :touch-drag="true"
-            :autoplay-hover-pause="true"
-            :responsive="{
-              0: { items: 1, nav: false },
-              350: { items: 2, nav: false },
-              550: { items: 3, nav: false },
-              767: { items: 2, nav: false },
-              992: { items: 3, nav: false },
-              1200: { items: 4, nav: false }
-            }"
+        <vue-page-transition name="fade">
+          <div
+            v-if="$apollo.queries.featured.loading"
+            class="mx-auto text-center"
           >
-            <card
-              v-for="product in products"
-              :key="product._id"
-              class="mb-5 mx-auto"
-              :name="`${product.name}`"
-              :summary="product.Overview"
-              :price="product.Price"
-              :discount-price="product.discountPrice"
-              :image="
-                `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
-              "
-              :link="'/mahazyn/' + product.name_slug"
-              :stock="product.Stock"
-              :sales="product.Sales"
-              :brand="product.brand"
-              :type="product.type"
-            />
-          </carousel>
-        </client-only>
+            <Loading />
+          </div>
+
+          <div v-else>
+            <client-only>
+              <carousel
+                :autoplay="true"
+                :nav="false"
+                :items="4"
+                :lazy-load="true"
+                :loop="true"
+                :mouse-drag="true"
+                :touch-drag="true"
+                :autoplay-hover-pause="true"
+                :responsive="{
+                  0: { items: 1, nav: false },
+                  350: { items: 2, nav: false },
+                  550: { items: 3, nav: false },
+                  767: { items: 2, nav: false },
+                  992: { items: 3, nav: false },
+                  1200: { items: 4, nav: false }
+                }"
+              >
+                <card
+                  v-for="product in featured"
+                  :key="product._id"
+                  class="mb-5 mx-auto"
+                  :name="`${product.name}`"
+                  :summary="product.Overview"
+                  :price="product.Price"
+                  :discount-price="product.discountPrice"
+                  :image="
+                    `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
+                  "
+                  :link="{ name: 'mahazyn-name_slug', params: {name_slug: product.name_slug, _id: product._id } }"
+                  :stock="product.Stock"
+                  :sales="product.Sales"
+                  :brand="product.brand"
+                  :type="product.type"
+                />
+              </carousel>
+            </client-only>
+          </div>
+        </vue-page-transition>
 
         <nuxt-link
           to="/mahazyn"
@@ -314,30 +324,38 @@
 
 <script>
 import worksGallery from '@/components/gallery/worksGallery.vue'
+import featured from '~/gql/products'
 
 export default {
   components: {
     worksGallery
   },
-  async asyncData ({ app, error }) {
-    const { data } = await app.$axios.post(
-      'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
-      JSON.stringify({
-        filter: { Published: true, featured: true },
-        limit: 6,
-        sort: { _created: -1 },
-        populate: 1
-      }),
-      {
-        headers: { 'Content-Type': 'application/json' }
-      }
-    )
+  // async asyncData ({ app, error }) {
+  //   const { data } = await app.$axios.post(
+  //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
+  //     JSON.stringify({
+  //       filter: { Published: true, featured: true },
+  //       limit: 6,
+  //       sort: { _created: -1 },
+  //       populate: 1
+  //     }),
+  //     {
+  //       headers: { 'Content-Type': 'application/json' }
+  //     }
+  //   )
 
-    // if (!data.entries[0]) {
-    //   return error({ message: '404 Page not found', statusCode: 404 })
-    // }
+  //   // if (!data.entries[0]) {
+  //   //   return error({ message: '404 Page not found', statusCode: 404 })
+  //   // }
 
-    return { products: data.entries }
+  //   return { products: data.entries }
+  // },
+
+  apollo: {
+    featured: {
+      prefetch: true,
+      query: featured
+    }
   },
 
   data () {

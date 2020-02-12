@@ -70,9 +70,9 @@
                   class="holder"
                   :for="category.value"
                 >{{ category.text }} <sup
-                  v-if="category.power"
-                  class="text-small"
-                > <small>{{ category.power }}</small> </sup>
+                    v-if="category.power"
+                    class="text-small"
+                  > <small>{{ category.power }}</small> </sup>
                   <input
                     :id="category.value"
                     v-model="category.checked"
@@ -95,9 +95,9 @@
                   class="holder"
                   :for="brand.value"
                 >{{ brand.text }} <sup
-                  v-if="brand.power"
-                  class="text-small"
-                > <small>{{ brand.power }}</small> </sup>
+                    v-if="brand.power"
+                    class="text-small"
+                  > <small>{{ brand.power }}</small> </sup>
                   <input
                     :id="brand.value"
                     v-model="brand.checked"
@@ -198,9 +198,9 @@
                     class="holder"
                     :for="category.value"
                   >{{ category.text }} <sup
-                    v-if="category.power"
-                    class="text-small"
-                  > <small>{{ category.power }}</small> </sup>
+                      v-if="category.power"
+                      class="text-small"
+                    > <small>{{ category.power }}</small> </sup>
                     <input
                       :id="category.value"
                       v-model="category.checked"
@@ -241,9 +241,9 @@
                     class="holder"
                     :for="brand.value"
                   >{{ brand.text }} <sup
-                    v-if="brand.power"
-                    class="text-small"
-                  > <small>{{ brand.power }}</small> </sup>
+                      v-if="brand.power"
+                      class="text-small"
+                    > <small>{{ brand.power }}</small> </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"
@@ -284,9 +284,9 @@
                     class="holder text-capitalize"
                     :for="type.value"
                   >{{ type.text }} <sup
-                    v-if="type.power"
-                    class="text-small"
-                  > <small>{{ type.power }}</small> </sup>
+                      v-if="type.power"
+                      class="text-small"
+                    > <small>{{ type.power }}</small> </sup>
                     <input
                       :id="type.value"
                       v-model="type.checked"
@@ -330,7 +330,7 @@
                   :image="
                     `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
                   "
-                  :link="'/mahazyn/' + product.name_slug"
+                  :link="{ name: 'mahazyn-name_slug', params: {name_slug: product.name_slug, _id: product._id } }"
                   :stock="product.Stock"
                   :sales="product.Sales"
                   :brand="product.brand"
@@ -339,7 +339,7 @@
               </div>
 
               <jw-pagination
-                v-show="filteredData.length > 12"
+                v-if="filteredData.length > 12"
                 :page-size="12"
                 :max-pages="10"
                 :initial-page="1"
@@ -386,6 +386,7 @@
 </template>
 
 <script>
+import fullProducts from '~/gql/products'
 import { mapGetters, mapState } from 'vuex'
 
 const customStyles = {
@@ -572,23 +573,16 @@ export default {
       ]
     }
   },
-  head () {
-    return {
-      title: 'Детейлінг центр Virus Тернопіль.',
-      titleTemplate: 'магазин - %s!',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'магазин - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
-        }
-      ]
+
+  apollo: {
+    fullProducts: {
+      prefetch: true,
+      query: fullProducts
     }
   },
 
   computed: {
-    ...mapState(['cart', 'products']),
+    ...mapState(['cart']),
     ...mapGetters(['cartSize', 'cartTotalAmount']),
     toast () {
       return this.$store.getters.toast
@@ -646,7 +640,7 @@ export default {
       this.currentProductsDisplayed = updatedView
     },
     getfilteredData () {
-      this.filteredData = this.products
+      this.filteredData = this.fullProducts
       // const filteredDataByselectedCategory = []
       let filteredDataByCategoryfilters = []
       let filteredDataByfilters = []
@@ -676,6 +670,20 @@ export default {
         filteredDataBySearch = this.filteredData.filter(obj => obj.name.toUpperCase().match(this.search.toUpperCase()))
         this.filteredData = filteredDataBySearch
       }
+    }
+  },
+  head () {
+    return {
+      title: 'Детейлінг центр Virus Тернопіль.',
+      titleTemplate: 'магазин - %s!',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'магазин - Детейлінг студія Virus - комплексний догляд за Вашим авто. Передпродажна підготовка, хімчистка салону, полірування кузова, керамічне покритя, перетяжка руля, реставрація шкіри.'
+        }
+      ]
     }
   }
 }
