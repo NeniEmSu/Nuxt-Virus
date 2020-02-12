@@ -333,9 +333,9 @@ export default {
       }
     )
 
-    if (!data.entries[0]) {
-      return error({ message: '404 Page not found', statusCode: 404 })
-    }
+    // if (!data.entries[0]) {
+    //   return error({ message: '404 Page not found', statusCode: 404 })
+    // }
 
     return { products: data.entries }
   },

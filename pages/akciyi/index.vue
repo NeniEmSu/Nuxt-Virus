@@ -118,8 +118,8 @@ export default {
   meta: {
     animation: 'fade-in-down'
   },
-  async asyncData ({ app }) {
-    const { data } = await app.$axios.post(
+  asyncData ({ app }) {
+    const { data } = app.$axios.post(
       'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
       JSON.stringify({
         filter: { Published: true, promotion: true },
