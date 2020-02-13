@@ -16,6 +16,8 @@
         >
           <img
             loading="eager"
+            width="160px"
+            height="40"
             src="~/assets/img/virus-logo.svg"
             alt="virus logo"
           >

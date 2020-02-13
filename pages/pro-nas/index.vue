@@ -41,6 +41,8 @@
             <iframe
               class="video"
               loading="lazy"
+              width="600px"
+              height="300px"
               :src="videoUrl"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

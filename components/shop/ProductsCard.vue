@@ -7,6 +7,8 @@
   >
     <img
       loading="lazy"
+      width="200px"
+      height="200px"
       :src="image"
       class="card-img-top img-fluid store-img"
       :alt="name"

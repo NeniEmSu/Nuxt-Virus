@@ -330,7 +330,7 @@
                   :image="
                     `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
                   "
-                  :link="{ name: 'mahazyn-name_slug', params: {name_slug: product.name_slug, _id: product._id } }"
+                  :link="{ name: 'mahazyn-name_slug-id', params: {name_slug: product.name_slug, id: product._id } }"
                   :stock="product.Stock"
                   :sales="product.Sales"
                   :brand="product.brand"

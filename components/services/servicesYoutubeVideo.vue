@@ -2,6 +2,8 @@
   <div class="youtube-video-container">
     <iframe
       loading="lazy"
+      width="800px"
+      height="400px"
       :src="videoUrl"
       :title="title"
       frameborder="0"

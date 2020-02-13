@@ -15,8 +15,7 @@
           class="col-4 p-0 one"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="50"
-          data-aos-duration="0"
+          data-aos-duration="50"
         >
           <div class="card bg-inverse">
             <picture>
@@ -46,8 +45,7 @@
           class="col-8 p-0 two"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="100"
-          data-aos-duration="0"
+          data-aos-duration="100"
         >
           <div class="card bg-inverse">
             <picture>
@@ -81,8 +79,7 @@
           class="col-4 p-0 three"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="150"
-          data-aos-duration="0"
+          data-aos-duration="150"
         >
           <div class="card bg-inverse">
             <picture>
@@ -114,8 +111,7 @@
           class="col-5 p-0 four"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="200"
-          data-aos-duration="0"
+          data-aos-duration="200"
         >
           <div class="card bg-inverse">
             <picture>
@@ -146,8 +142,7 @@
           class="col-3 p-0 five"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="250"
-          data-aos-duration="0"
+          data-aos-duration="250"
         >
           <div class="card bg-inverse">
             <picture>
@@ -179,8 +174,7 @@
           class="col-md-8 offset-4 p-0 six"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="300"
-          data-aos-duration="0"
+          data-aos-duration="300"
         >
           <div class="card bg-inverse">
             <picture>
@@ -213,8 +207,7 @@
           class="col-12 p-0 seven"
           data-aos="fade"
           data-aos-easing="ease"
-          data-aos-delay="200"
-          data-aos-duration="0"
+          data-aos-duration="350"
         >
           <div class="card bg-inverse">
             <picture>
@@ -288,7 +281,7 @@
                   :image="
                     `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
                   "
-                  :link="{ name: 'mahazyn-name_slug', params: {name_slug: product.name_slug, _id: product._id } }"
+                  :link="{ name: 'mahazyn-name_slug-id', params: {name_slug: product.name_slug, id: product._id } }"
                   :stock="product.Stock"
                   :sales="product.Sales"
                   :brand="product.brand"
