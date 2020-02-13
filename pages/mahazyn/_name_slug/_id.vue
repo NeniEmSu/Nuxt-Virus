@@ -204,7 +204,7 @@
         Схожі товари та пропозиції
       </h2>
 
-      <!-- <client-only>
+      <client-only>
         <carousel
           :autoplay="true"
           :nav="false"
@@ -224,7 +224,7 @@
           }"
         >
           <card
-            v-for="product in relatedProducts"
+            v-for="product in featured"
             :key="product._id"
             class="mb-5 mx-auto"
             :name="`${product.name}`"
@@ -234,14 +234,14 @@
             :image="
               `${imageApiUrl}&src=${product.Image.path}&w=190&h=190&f[brighten]=0&o=true`
             "
-            :link="{ name: 'mahazyn-name_slug', params: {name_slug: product.name_slug, _id: product._id } }"
+            :link="{ name: 'mahazyn-name_slug-id', params: {name_slug: product.name_slug, id: product._id } }"
             :stock="product.Stock"
             :sales="product.Sales"
             :brand="product.brand"
             :type="product.type"
           />
         </carousel>
-      </client-only> -->
+      </client-only>
     </div>
   </section>
 </template>
@@ -249,6 +249,7 @@
 <script>
 import gql from 'graphql-tag'
 // import axios from 'axios'
+import featured from '~/gql/products'
 import { mapState, mapGetters } from 'vuex'
 
 export default {
@@ -288,24 +289,15 @@ export default {
           id: this.$route.params.id
         }
       }
+
+    },
+    featured: {
+      prefetch: true,
+      query: featured
     }
   },
 
-  // async asyncData ({ app, params, error, payload }) {
-  //   if (payload) {
-  //     return { product: payload }
-  //   }
-  //   const product = await axios.post(
-  //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
-  //     JSON.stringify({
-  //       filter: { Published: true, name_slug: params.name_slug },
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { 'Content-Type': 'application/json' }
-  //     }
-  //   )
+  // async fetch ($apollo) {
   //   const products = await axios.get(
   //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&limit=12',
   //     JSON.stringify({
@@ -323,9 +315,10 @@ export default {
   //   //   return error({ message: '404 Page not found', statusCode: 404 })
   //   // }
 
-  //   return {
-  //     product: product.data.entries[0],
-  //     relatedProducts: products.data.entries.filter(el => el.category.includes(product.data.entries[0].category[0]))
+  //   if (!$apollo.queries.singleProduct.loading) {
+  //     return {
+  //       relatedProducts: products.data.entries.filter(el => el.category.includes(this.singleProduct[0].category[0]))
+  //     }
   //   }
   // },
 
