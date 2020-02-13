@@ -22,84 +22,80 @@
       <h1>Блог</h1>
     </div>
     <hr class="top-separator">
-    <div
-      v-for="(post, index) in posts"
-      :key="`${post.title} ${post._created}`"
-      class="card-container container"
-    >
-      <div class="card mx-auto">
-        <img
-          class="card-img img-fliud"
-          :src="
-            `${imageApiUrl}&src=${post.image.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
-          "
-          :alt="`${post.title} background image `"
+    <vue-page-transition name="fade">
+      <div v-if="!$apollo.queries.posts.loading">
+        <div v-if="posts.length < 1">
+          <h4 class="text-center my-5">
+            На жаль, на даний момент у нас немає жодних публікацій у блозі. Перевірте пізніше.
+          </h4>
+        </div>
+
+        <div
+          v-for="(post, index) in posts"
+          v-else
+          :key="`${post.title} ${post._created}`"
+          class="card-container container"
         >
-        <div class="card-img-overlay pl-2 py-0 row">
-          <div class="col-8 m-auto py-0 post-detail h-100 d-flex flex-column justify-content-center text-left">
-            <div class="inner">
-              <div>
-                <nuxt-link
-                  v-for="(tag, i) in post.tags"
-                  :key="tag"
-                  :to="'/blog/category/' + tag"
-                  class="desktop-tablet-only"
-                >
-                  {{ tag }}&nbsp;<span v-if="i !== post.tags.length - 1">|</span>&nbsp;
-                </nuxt-link>
-                <!-- <span class="mx-1 text-xs text-light desktop-tablet-only">•</span>
-              <span class="text-light">
-                {{ post.comments ? post.comments.length : 0 }}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="-2 -2 24 24"
-                  width="12"
-                  height="12"
-                  preserveAspectRatio="xMinYMin"
-                  class="text-light fill-current"
-                >
-                  <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z" />
-                </svg>
-              </span> -->
+          <div class="card mx-auto">
+            <img
+              class="card-img img-fliud"
+              :src="
+                `${imageApiUrl}&src=${post.image.path}&fill=scale&w=1170&h=300&f[brighten]=0&o=true`
+              "
+              :alt="`${post.title} background image `"
+            >
+            <div class="card-img-overlay pl-2 py-0 row">
+              <div class="col-8 m-auto py-0 post-detail h-100 d-flex flex-column justify-content-center text-left">
+                <div class="inner">
+                  <div class="tags">
+                    <span
+                      v-for="(tag, i) in post.tags"
+                      :key="tag"
+                      class="desktop-tablet-only tag"
+                    >
+                      {{ tag }}&nbsp;<span v-if="i !== post.tags.length - 1">|</span>&nbsp;
+                    </span>
+                  </div>
+                  <nuxt-link :to="{ name: 'blog-title_slug-id', params: {title_slug: post.title_slug, id: post._id } }">
+                    <h2 class="card-title text-white">
+                      {{ post.title }}
+                    </h2>
+                  </nuxt-link>
+                  <p class="card-text">
+                    Дата створення {{ post._created | toDate }}
+                  </p>
+                </div>
               </div>
-              <nuxt-link :to="'/blog/' + post.title_slug">
-                <h2 class="card-title text-white">
-                  {{ post.title }}
-                </h2>
-              </nuxt-link>
-              <p class="card-text">
-                Дата створення {{ post._created | toDate }}
-              </p>
+              <div class="col-4 m-auto px-0 text-right">
+                <nuxt-link
+                  class="btn"
+                  :to="{ name: 'blog-title_slug-id', params: {title_slug: post.title_slug, id: post._id } }"
+                >
+                  ЧИТАТИ
+                </nuxt-link>
+              </div>
             </div>
           </div>
-          <div class="col-4 m-auto px-0 text-right">
-            <nuxt-link
-              class="btn"
-              :to="'/blog/' + post.title_slug"
-            >
-              ЧИТАТИ
-            </nuxt-link>
-          </div>
+          <hr
+            v-if="index !== posts.length - 1"
+            class="separator"
+          >
         </div>
       </div>
-      <hr
-        v-if="index !== posts.length - 1"
-        class="separator"
-      >
-    </div>
-    <div class="container">
-      <div
-        v-if="hasNext"
-        class="text-center my-3"
-      >
-        <nuxt-link
-          to="/blog/pages/2"
-          class="text-info"
-        >
-          Наступна сторінка
-        </nuxt-link>
-      </div>
-    </div>
+    </vue-page-transition>
+
+    <!-- <div class="text-center">
+      <jw-pagination
+        v-if="posts.length > 3"
+        :page-size="3"
+        :max-pages="10"
+        :initial-page="1"
+        :items="posts"
+        :styles="customStyles"
+        :labels="customLabels"
+        @changePage="onChangePage"
+      />
+    </div> -->
 
     <contactForm />
     <progressSection />
@@ -107,47 +103,80 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
+
+const customStyles = {
+  ul: {
+    border: 'none'
+  },
+  li: {
+    display: 'inline-block',
+    border: 'none'
+  },
+  a: {
+    color: 'white',
+    backgroundColor: '#D41F26',
+    outline: 'none',
+    borderRadius: '20px'
+  }
+}
+
+const customLabels = {
+  first: '<<',
+  last: '>>',
+  previous: '<',
+  next: '>'
+}
 export default {
   meta: {
     animation: 'fade-in-down'
   },
-  async asyncData ({ app, error }) {
-    const { data } = await app.$axios.post(
-      'https://admin.virus.te.ua/api/collections/get/posts?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
-      JSON.stringify({
-        filter: { published: true },
-        limit: process.env.PER_PAGE,
-        sort: { _created: -1 },
-        populate: 1
-      }),
-      {
-        headers: { 'Content-Type': 'application/json' }
+  apollo: {
+    posts: {
+      query: gql`
+      query getPosts {
+       posts: postsCollection(filter: {published: true} ) {
+         _id
+        _created
+        title
+        title_slug
+        excerpt
+        tags
+        image{
+          path
+        }
+       }
       }
-    )
-
-    if (!data.entries[0]) {
-      return error({ message: '404 Page not found', statusCode: 404 })
+      `
     }
-
-    return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total }
   },
+
   data () {
     return {
+      customStyles,
+      customLabels,
+      pageOfItems: [],
       imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1'
     }
   },
-
-  // computed: {
-  //   products() {
-  //     return this.$store.state.Posts.posts;
-  //   }
-  // },
 
   mounted () {
     if (process.client) {
       this.$scrollTo('#top-contact', 100, { force: true })
     }
   },
+
+  // methods: {
+  //   onChangePage (pageOfItems) {
+  //     this.pageOfItems = pageOfItems
+  //     if (process.client) {
+  //       // window.scrollTo({ top: 0, behavior: 'smooth' })
+  //       document.body.scrollTop = document.documentElement.scrollTop = 0
+  //     }
+  //   }
+
+  // },
+
   head () {
     return {
       title: 'Детейлінг центр Virus Тернопіль.',
@@ -289,12 +318,11 @@ h1:after {
     -o-transform: scale(1.1);
   }
 
-  a {
-    text-decoration: none;
-    color: $lightColor;
-
-    &:hover {
-      color: $headingsFontColor;
+  .tags {
+    display: flex;
+    .tag {
+      text-transform: capitalize;
+      color: $lightColor;
     }
   }
 }
