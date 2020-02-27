@@ -51,13 +51,13 @@
         {{ post.excerpt }}
       </div>
       <style>
-        li {
+      li {
         margin-left: 20px;
-        }
+      }
 
-        ol {
+      ol {
         margin-left: 0px;
-        }
+      }
       </style>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="post.content" />
@@ -147,11 +147,7 @@ export default {
   color: $lightColor;
   border: 0;
   text-decoration: none;
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
 
   &:hover {
     color: $redColor;

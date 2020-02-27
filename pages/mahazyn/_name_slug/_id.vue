@@ -203,9 +203,17 @@
       <h2 class="text-center my-2 relatedProducts">
         Схожі товари та пропозиції
       </h2>
+      <div class="mx-auto text-center">
+        <img
+          v-show="products === null && featured === null"
+          src="~/assets/img/spinner.svg"
+          alt="Loading spinner"
+        >
+      </div>
 
       <client-only>
         <carousel
+          v-if="featured"
           :autoplay="true"
           :nav="false"
           :items="4"
@@ -241,6 +249,10 @@
             :type="product.type"
           />
         </carousel>
+
+        <div v-else-if="featured === null && products !== null">
+          <b>Наразі немає відповідних продуктів для показу.</b>
+        </div>
       </client-only>
     </div>
   </section>
@@ -248,8 +260,6 @@
 
 <script>
 import gql from 'graphql-tag'
-// import axios from 'axios'
-import featured from '~/gql/products'
 import { mapState, mapGetters } from 'vuex'
 
 export default {
@@ -290,47 +300,25 @@ export default {
         }
       }
 
-    },
-    featured: {
-      prefetch: true,
-      query: featured
     }
   },
-
-  // async fetch ($apollo) {
-  //   const products = await axios.get(
-  //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&limit=12',
-  //     JSON.stringify({
-  //       filter: { Published: true },
-  //       limit: 4,
-  //       sort: { _created: -1 },
-  //       populate: 1
-  //     }),
-  //     {
-  //       headers: { 'Content-Type': 'application/json' }
-  //     }
-  //   )
-
-  //   // if (!product.data.entries || !products.data.entries) {
-  //   //   return error({ message: '404 Page not found', statusCode: 404 })
-  //   // }
-
-  //   if (!$apollo.queries.singleProduct.loading) {
-  //     return {
-  //       relatedProducts: products.data.entries.filter(el => el.category.includes(this.singleProduct[0].category[0]))
-  //     }
-  //   }
-  // },
 
   data () {
     return {
       mobileModalShow: false,
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+      imageApiUrl: process.env.IMAGE_LINK_DYNAMIC
     }
   },
   computed: {
-    ...mapState(['cart']),
-    ...mapGetters(['cartSize', 'cartTotalAmount'])
+    ...mapState(['cart', 'products']),
+    ...mapGetters(['cartSize', 'cartTotalAmount']),
+    featured () {
+      if (this.products !== null) {
+        return this.products.filter(el => el.category.includes(this.singleProduct[0].category[0])).slice(0, 12)
+      } else {
+        return null
+      }
+    }
   },
 
   methods: {
@@ -500,11 +488,7 @@ h1.details-page-header {
   text-align: center;
   color: #ffffff;
   text-decoration: none;
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
   margin-top: 5px;
@@ -656,11 +640,7 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
@@ -777,11 +757,7 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
@@ -922,11 +898,7 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;

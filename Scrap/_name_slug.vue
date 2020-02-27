@@ -465,7 +465,7 @@ export default {
   data () {
     return {
       mobileModalShow: false,
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+      imageApiUrl: process.env.IMAGE_LINK_DYNAMIC
     }
   },
   computed: {
@@ -667,11 +667,7 @@ h1.details-page-header {
   text-align: center;
   color: #ffffff;
   text-decoration: none;
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
   margin-top: 5px;
@@ -823,11 +819,7 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
@@ -944,11 +936,7 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;
@@ -1089,11 +1077,7 @@ h1.details-page-header {
     text-align: center;
     color: #ffffff;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 
     margin-top: 0px;

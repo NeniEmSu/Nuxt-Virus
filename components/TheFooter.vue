@@ -98,18 +98,10 @@ footer {
   a,
   img {
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
 
     &:hover {
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
+      @include scale;
     }
   }
 
@@ -156,11 +148,7 @@ footer {
       font-size: 14px;
       line-height: normal;
       text-align: center;
-      transition: all ease-in-out 500ms;
-      -webkit-transition: all ease-in-out 500ms;
-      -moz-transition: all ease-in-out 500ms;
-      -ms-transition: all ease-in-out 500ms;
-      -o-transition: all ease-in-out 500ms;
+      @include easeInOut;
 
       &:hover {
         text-decoration: none;
@@ -188,11 +176,7 @@ footer {
 
     a {
       text-decoration: none;
-      transition: all ease-in-out 500ms;
-      -webkit-transition: all ease-in-out 500ms;
-      -moz-transition: all ease-in-out 500ms;
-      -ms-transition: all ease-in-out 500ms;
-      -o-transition: all ease-in-out 500ms;
+      @include easeInOut;
 
       &:hover {
         transform: scale(1.1);
@@ -236,20 +220,12 @@ footer {
         font-size: 14px;
         line-height: normal;
         text-align: center;
-        transition: all ease-in-out 500ms;
-        -webkit-transition: all ease-in-out 500ms;
-        -moz-transition: all ease-in-out 500ms;
-        -ms-transition: all ease-in-out 500ms;
-        -o-transition: all ease-in-out 500ms;
+        @include easeInOut;
 
         &:hover {
           text-decoration: none;
           color: $redColor;
-          transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          -o-transform: scale(1.1);
+          @include scale;
         }
 
         &.instagram,

@@ -255,11 +255,7 @@ h1:after {
     padding: 12px 50px;
     margin-right: 75px;
 
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
   }
 
   .btn:hover,

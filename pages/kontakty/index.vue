@@ -194,11 +194,7 @@ export default {
   height: 685px;
   width: 100%;
   box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.35);
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
 }
 
 #map:hover {

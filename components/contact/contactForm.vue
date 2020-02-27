@@ -401,11 +401,7 @@ export default {
     text-align: center;
     color: $lightColor;
     border: 0;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
 
     &:disabled {
       opacity: 0.65;
@@ -414,11 +410,7 @@ export default {
     &:hover:enabled {
       color: $redColor;
       background: $lightColor;
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
+      @include scale;
     }
   }
   .contact-btn-loading {

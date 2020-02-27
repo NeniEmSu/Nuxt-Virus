@@ -91,11 +91,7 @@ li {
   box-sizing: border-box;
   border-radius: 50px;
   text-decoration: none;
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
 
   margin-top: 20px;
   margin-bottom: 20px;

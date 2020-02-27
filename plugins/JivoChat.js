@@ -1,7 +1,7 @@
 window.onNuxtReady(() => {
   (function () {
     // eslint-disable-next-line camelcase
-    const widget_id = 'j9oYCawnP2'
+    const widget_id = process.env.JIVO_CHAT_WIDGET_ID
     const d = document
     const w = window
 

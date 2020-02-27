@@ -120,7 +120,7 @@ export default {
 
   data () {
     return {
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+      imageApiUrl: process.env.IMAGE_LINK
     }
   },
   head () {
@@ -154,11 +154,7 @@ export default {
   color: $lightColor;
   border: 0;
   text-decoration: none;
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
 
   &:hover {
     color: $redColor;

@@ -7,10 +7,7 @@
     >
       <div class="cart-item row col-12 mx-auto mb-2 px-0 py-2">
         <img
-          id="item-img"
-          :src="
-            `${imageApiUrl}&src=${product.path}&w=200&h=200&f[brighten]=0&o=true`
-          "
+          :src="`${imageApiUrl}${product.path}`"
           alt="Koch Chemie Fresh UP"
           class="col-2 p-0 m-auto"
         >
@@ -90,17 +87,19 @@
           <label
             class="m-0 p-0"
             for="name"
-          ><input
-            id="name"
-            v-model="$v.form.name.$model"
-            type="text"
-            name="name"
-            class="form-control mx-auto"
-            :class="[!$v.form.name.$error && $v.form.name.$model ? 'is-valid' : '', $v.form.name.$error ? 'is-invalid' : '']"
-            aria-describedby="name"
-            placeholder="Ім’я*"
-            :state="$v.form.name.$dirty ? !$v.form.name.$error : null"
-          ></label>
+          >
+            <input
+              id="name"
+              v-model="$v.form.name.$model"
+              type="text"
+              name="name"
+              class="form-control mx-auto"
+              :class="[!$v.form.name.$error && $v.form.name.$model ? 'is-valid' : '', $v.form.name.$error ? 'is-invalid' : '']"
+              aria-describedby="name"
+              placeholder="Ім’я*"
+              :state="$v.form.name.$dirty ? !$v.form.name.$error : null"
+            >
+          </label>
           <div
             v-if="$v.form.name.$error"
             class="text-danger text-right"
@@ -112,18 +111,20 @@
           <label
             class="m-0 p-0"
             for="cartPhone"
-          ><input
-            id="cartPhone"
-            v-model="$v.form.models.cartphoneNumber.$model"
-            v-mask="'+38(###) ###-####'"
-            aria-describedby="cartPhone"
-            aria-label="cartPhone"
-            name="cartPhone"
-            class="form-control mx-auto "
-            :class="[!$v.form.models.cartphoneNumber.$error && $v.form.models.cartphoneNumber.$model ? 'is-valid' : '', $v.form.models.cartphoneNumber.$error ? 'is-invalid' : '']"
-            placeholder="Телефон*"
-            :state="$v.form.models.cartphoneNumber.$dirty ? !$v.form.models.cartphoneNumber.$error : null"
-          ></label>
+          >
+            <input
+              id="cartPhone"
+              v-model="$v.form.models.cartphoneNumber.$model"
+              v-mask="'+38(###) ###-####'"
+              aria-describedby="cartPhone"
+              aria-label="cartPhone"
+              name="cartPhone"
+              class="form-control mx-auto "
+              :class="[!$v.form.models.cartphoneNumber.$error && $v.form.models.cartphoneNumber.$model ? 'is-valid' : '', $v.form.models.cartphoneNumber.$error ? 'is-invalid' : '']"
+              placeholder="Телефон*"
+              :state="$v.form.models.cartphoneNumber.$dirty ? !$v.form.models.cartphoneNumber.$error : null"
+            >
+          </label>
           <div
             v-if="$v.form.models.cartphoneNumber.$error"
             class="text-danger text-right"
@@ -137,34 +138,35 @@
           <label
             class="m-0 p-0"
             for="Місто"
-          ><select
-            id="Місто"
-            v-model="$v.form.city.$model"
-            aria-label="Місто"
-            aria-describedby="Місто"
-            class="form-control mx-auto"
-            name="Місто"
           >
-            <option
-              value="null"
-              disabled
-            >Місто*</option>
-            <optgroup
-              v-for="city in cities"
-              :key="city.id"
-              :value="city.name"
-              :label="city.name"
+            <select
+              id="Місто"
+              v-model="$v.form.city.$model"
+              aria-label="Місто"
+              aria-describedby="Місто"
+              class="form-control mx-auto"
+              name="Місто"
             >
               <option
-                v-for="area in city.areas"
-                :key="area.id"
-                :label="area.name"
-                :value="area.name"
-              >{{ area.name }}</option>
+                value="null"
+                disabled
+              >Місто*</option>
+              <optgroup
+                v-for="city in cities"
+                :key="city.id"
+                :value="city.name"
+                :label="city.name"
+              >
+                <option
+                  v-for="area in city.areas"
+                  :key="area.id"
+                  :label="area.name"
+                  :value="area.name"
+                >{{ area.name }}</option>
 
-            </optgroup>
+              </optgroup>
 
-          </select>
+            </select>
 
           </label>
           <div
@@ -178,19 +180,21 @@
           <label
             class="m-0 p-0"
             for="Відділеня-пошти"
-          ><input
-            id="Відділеня-пошти"
-            v-model="$v.form.postBranch.$model"
-            v-mask="'Відділення №#####'"
-            aria-label="Відділеня-пошти"
-            type="text"
-            aria-describedby="Відділеня-пошти"
-            class="form-control mx-auto"
-            :class="[!$v.form.postBranch.$error && $v.form.postBranch.$model ? 'is-valid' : '', $v.form.postBranch.$error ? 'is-invalid' : '']"
-            :state="$v.form.postBranch.$dirty ? !$v.form.postBranch.$error : null"
-            name="Відділеня-пошти"
-            placeholder="Відділення пошти*"
-          ></label>
+          >
+            <input
+              id="Відділеня-пошти"
+              v-model="$v.form.postBranch.$model"
+              v-mask="'Відділення №#####'"
+              aria-label="Відділеня-пошти"
+              type="text"
+              aria-describedby="Відділеня-пошти"
+              class="form-control mx-auto"
+              :class="[!$v.form.postBranch.$error && $v.form.postBranch.$model ? 'is-valid' : '', $v.form.postBranch.$error ? 'is-invalid' : '']"
+              :state="$v.form.postBranch.$dirty ? !$v.form.postBranch.$error : null"
+              name="Відділеня-пошти"
+              placeholder="Відділення пошти*"
+            >
+          </label>
           <div
             v-if="$v.form.postBranch.$error"
             class="text-danger text-right"
@@ -211,7 +215,7 @@ import cities from '~/plugins/api/ua.json'
 export default {
   data () {
     return {
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1',
+      imageApiUrl: process.env.IMAGE_LINK,
       cities,
       mobileModalShow: false,
       form: {

@@ -69,10 +69,15 @@
                 <label
                   class="holder"
                   :for="category.value"
-                >{{ category.text }} <sup
+                >{{ category.text }}
+                  <sup
                     v-if="category.power"
                     class="text-small"
-                  > <small>{{ category.power }}</small> </sup>
+                  >
+                    <small>
+                      {{ category.power }}
+                    </small>
+                  </sup>
                   <input
                     :id="category.value"
                     v-model="category.checked"
@@ -94,10 +99,15 @@
                 <label
                   class="holder"
                   :for="brand.value"
-                >{{ brand.text }} <sup
+                >{{ brand.text }}
+                  <sup
                     v-if="brand.power"
                     class="text-small"
-                  > <small>{{ brand.power }}</small> </sup>
+                  >
+                    <small>
+                      {{ brand.power }}
+                    </small>
+                  </sup>
                   <input
                     :id="brand.value"
                     v-model="brand.checked"
@@ -197,10 +207,14 @@
                   <label
                     class="holder"
                     :for="category.value"
-                  >{{ category.text }} <sup
+                  >{{ category.text }}
+                    <sup
                       v-if="category.power"
                       class="text-small"
-                    > <small>{{ category.power }}</small> </sup>
+                    >
+                      <small>{{ category.power }}
+                      </small>
+                    </sup>
                     <input
                       :id="category.value"
                       v-model="category.checked"
@@ -240,10 +254,15 @@
                   <label
                     class="holder"
                     :for="brand.value"
-                  >{{ brand.text }} <sup
+                  >{{ brand.text }}
+                    <sup
                       v-if="brand.power"
                       class="text-small"
-                    > <small>{{ brand.power }}</small> </sup>
+                    >
+                      <small>
+                        {{ brand.power }}
+                      </small>
+                    </sup>
                     <input
                       :id="brand.value"
                       v-model="brand.checked"
@@ -283,10 +302,15 @@
                   <label
                     class="holder text-capitalize"
                     :for="type.value"
-                  >{{ type.text }} <sup
+                  >{{ type.text }}
+                    <sup
                       v-if="type.power"
                       class="text-small"
-                    > <small>{{ type.power }}</small> </sup>
+                    >
+                      <small>
+                        {{ type.power }}
+                      </small>
+                    </sup>
                     <input
                       :id="type.value"
                       v-model="type.checked"
@@ -311,7 +335,7 @@
                 alt="Loading spinner"
               >
 
-              <div v-if="filteredData == 0">
+              <div v-if="filteredData.length < 1">
                 <p>Вибачте, продукти не відповідають вашим встановленим параметрам</p>
               </div>
 
@@ -337,6 +361,12 @@
                   :type="product.type"
                 />
               </div>
+
+              <style>
+              li.active a {
+                background-color: #8B8B8B !important;
+              }
+              </style>
 
               <jw-pagination
                 v-if="filteredData.length > 12"
@@ -412,6 +442,7 @@ const customLabels = {
   next: '>'
 }
 export default {
+  name: 'Shop',
   components: {
 
   },
@@ -420,6 +451,7 @@ export default {
   },
   data () {
     return {
+      initialPage: null,
       customStyles,
       customLabels,
       pageOfItems: [],
@@ -429,7 +461,7 @@ export default {
       active3: false,
       active4: false,
       mobileModalShow: false,
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1&rspc=1',
+      imageApiUrl: process.env.IMAGE_LINK_DYNAMIC,
       currentProductsDisplayed: Math.floor((Math.random() * 6) + 1),
       loading: this.$store.state.loading,
       filteredData: [],
@@ -587,6 +619,7 @@ export default {
     toast () {
       return this.$store.getters.toast
     },
+
     selectedFilters () {
       const filters = []
       const checkedFiters = this.brands.filter(obj => obj.checked)
@@ -615,8 +648,18 @@ export default {
     }
   },
 
+  watch: {
+    initialPage (newInitialPage) {
+      localStorage.initialPage = newInitialPage || 1
+    }
+  },
+
   mounted () {
     this.getfilteredData()
+
+    if (localStorage.initialPage) {
+      this.initialPage = localStorage.initialPage
+    }
   },
 
   methods: {
@@ -810,11 +853,7 @@ input#search {
   text-align: center;
   color: $lightColor;
   border: 0;
-  transition: all ease-in-out 500ms;
-  -webkit-transition: all ease-in-out 500ms;
-  -moz-transition: all ease-in-out 500ms;
-  -ms-transition: all ease-in-out 500ms;
-  -o-transition: all ease-in-out 500ms;
+  @include easeInOut;
 
   &:hover {
     color: $redColor;

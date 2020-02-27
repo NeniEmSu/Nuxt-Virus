@@ -4,236 +4,226 @@
       <h1
         class="text-left"
         data-aos="fade-left"
+        data-aos-easing="ease"
         data-aos-duration="25"
       >
         Ми <br>
         пропонуємо
       </h1>
-      <div class="row">
-        <nuxt-link
-          to="/posluhy-i-ciny/poliruvannja-avtomobilja"
-          class="col-4 p-0 one"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="50"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top1.webp"
-                type="image/webp"
-              >
-              <img
-                loading="eager"
-                width="200"
-                height="200"
-                src="~/assets/img/top1.jpg"
-                class="card-img"
-                alt="ПОЛІРУВАННЯ"
-              >
-            </picture>
+      <div
+        data-aos="fade"
+        data-aos-easing="ease"
+        data-aos-delay="350"
+        data-aos-duration="50"
+      >
+        <div class="row">
+          <nuxt-link
+            to="/posluhy-i-ciny/poliruvannja-avtomobilja"
+            class="col-4 p-0 one"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top1.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="eager"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top1.jpg"
+                  class="card-img"
+                  alt="ПОЛІРУВАННЯ"
+                >
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
-              <h2 class="card-title">
-                ПОЛІРУВАННЯ
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
+                <h2 class="card-title">
+                  ПОЛІРУВАННЯ
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
-        <nuxt-link
-          to="/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99"
-          class="col-8 p-0 two"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="100"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top2.webp"
-                type="image/webp"
-              >
-              <img
-                loading="eager"
-                width="200"
-                height="200"
-                src="~/assets/img/top2.jpg"
-                class="card-img"
-                alt="ВОСКОВЕ ПОКРИТТЯ"
-              >
+          </nuxt-link>
+          <nuxt-link
+            to="/posluhy-i-ciny/pokrittja-tvjerdim-univjersalnim-voskom-soft-99"
+            class="col-8 p-0 two"
+            data-aos="fade"
+            data-aos-easing="ease"
+            data-aos-duration="100"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top2.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="eager"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top2.jpg"
+                  class="card-img"
+                  alt="ВОСКОВЕ ПОКРИТТЯ"
+                >
 
-            </picture>
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
-              <h2 class="card-title text-right">
-                ВОСКОВЕ <br>
-                ПОКРИТТЯ
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-right">
+                <h2 class="card-title text-right">
+                  ВОСКОВЕ <br>
+                  ПОКРИТТЯ
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
-      </div>
-      <div class="row">
-        <nuxt-link
-          to="/posluhy-i-ciny/mijka-motoru-paroju"
-          class="col-4 p-0 three"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="150"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top3.webp"
-                type="image/webp"
-              >
-              <img
-                loading="lazy"
-                width="200"
-                height="200"
-                src="~/assets/img/top3.jpg"
-                class="card-img"
-                alt="МИЙКА МОТОРУ"
-              >
+          </nuxt-link>
+        </div>
+        <div class="row">
+          <nuxt-link
+            to="/posluhy-i-ciny/mijka-motoru-paroju"
+            class="col-4 p-0 three"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top3.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top3.jpg"
+                  class="card-img"
+                  alt="МИЙКА МОТОРУ"
+                >
 
-            </picture>
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
-              <h2 class="card-title">
-                МИЙКА
-                <br>МОТОРУ
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
+                <h2 class="card-title">
+                  МИЙКА
+                  <br>МОТОРУ
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
-        <nuxt-link
-          to="/posluhy-i-ciny/himchistka"
-          class="col-5 p-0 four"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="200"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top4.webp"
-                type="image/webp"
-              >
-              <img
-                loading="lazy"
-                width="200"
-                height="200"
-                src="~/assets/img/top4.jpg"
-                class="card-img"
-                alt="ХІМЧИСТКА"
-              >
+          </nuxt-link>
+          <nuxt-link
+            to="/posluhy-i-ciny/himchistka"
+            class="col-5 p-0 four"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top4.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top4.jpg"
+                  class="card-img"
+                  alt="ХІМЧИСТКА"
+                >
 
-            </picture>
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center">
-              <h2 class="card-title">
-                ХІМЧИСТКА
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-start text-center">
+                <h2 class="card-title">
+                  ХІМЧИСТКА
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
-        <nuxt-link
-          to="/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi"
-          class="col-3 p-0 five"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="250"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top5.webp"
-                type="image/webp"
-              >
-              <img
-                loading="lazy"
-                width="200"
-                height="200"
-                src="~/assets/img/top5.jpg"
-                class="card-img"
-                alt="РЕСТАВРАЦІЯ СКОЛІВ"
-              >
+          </nuxt-link>
+          <nuxt-link
+            to="/posluhy-i-ciny/rjestavnacija-podrjapin-na-kuzovi"
+            class="col-3 p-0 five"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top5.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top5.jpg"
+                  class="card-img"
+                  alt="РЕСТАВРАЦІЯ СКОЛІВ"
+                >
 
-            </picture>
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
-              <h2 class="card-title">
-                РЕСТАВРАЦІЯ
-                <br>СКОЛІВ
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-right">
+                <h2 class="card-title">
+                  РЕСТАВРАЦІЯ
+                  <br>СКОЛІВ
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
-        <nuxt-link
-          to="/posluhy-i-ciny/kjeramichnje-pokrittja-sidin"
-          class="col-md-8 offset-4 p-0 six"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="300"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top6.webp"
-                type="image/webp"
-              >
-              <img
-                loading="lazy"
-                width="200"
-                height="200"
-                src="~/assets/img/top6.jpg"
-                class="card-img"
-                alt="КЕРАМІЧНЕ ПОКРИТТЯ"
-              >
+          </nuxt-link>
+          <nuxt-link
+            to="/posluhy-i-ciny/kjeramichnje-pokrittja-sidin"
+            class="col-md-8 offset-4 p-0 six"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top6.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top6.jpg"
+                  class="card-img"
+                  alt="КЕРАМІЧНЕ ПОКРИТТЯ"
+                >
 
-            </picture>
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
-              <h2 class="card-title">
-                КЕРАМІЧНЕ ПОКРИТТЯ
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-end text-center">
+                <h2 class="card-title">
+                  КЕРАМІЧНЕ ПОКРИТТЯ
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
-      </div>
-      <div class="row">
-        <nuxt-link
-          to="/posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
-          class="col-12 p-0 seven"
-          data-aos="fade"
-          data-aos-easing="ease"
-          data-aos-duration="350"
-        >
-          <div class="card bg-inverse">
-            <picture>
-              <source
-                srcset="~/assets/imgWebP/top7.webp"
-                type="image/webp"
-              >
-              <img
-                loading="lazy"
-                width="200"
-                height="200"
-                src="~/assets/img/top7.jpg"
-                class="card-img"
-                alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
-              >
+          </nuxt-link>
+        </div>
+        <div class="row">
+          <nuxt-link
+            to="/posluhy-i-ciny/pjerjedprodazhna-pidgotovka"
+            class="col-12 p-0 seven"
+          >
+            <div class="card bg-inverse">
+              <picture>
+                <source
+                  srcset="~/assets/imgWebP/top7.webp"
+                  type="image/webp"
+                >
+                <img
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                  src="~/assets/img/top7.jpg"
+                  class="card-img"
+                  alt="ПЕРЕДПРОДАЖНА ПІДГОТОВКА"
+                >
 
-            </picture>
+              </picture>
 
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
-              <h2 class="card-title">
-                ПЕРЕДПРОДАЖНА
-                <br>ПІДГОТОВКА
-              </h2>
+              <div class="card-img-overlay h-100 d-flex flex-column justify-content-center text-left">
+                <h2 class="card-title">
+                  ПЕРЕДПРОДАЖНА
+                  <br>ПІДГОТОВКА
+                </h2>
+              </div>
             </div>
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
     </div>
 
@@ -333,7 +323,7 @@ export default {
 
   data () {
     return {
-      imageApiUrl: 'https://admin.virus.te.ua/api/cockpit/image?token=9fc49d5af4dda3c961d71b489540a4&rspc=1'
+      imageApiUrl: process.env.IMAGE_LINK_DYNAMIC
     }
   },
 
@@ -375,11 +365,7 @@ export default {
   a {
     opacity: 1;
     filter: grayscale(100%);
-    // transition: all ease-in-out 500ms;
-    // -webkit-transition: all ease-in-out 500ms;
-    // -moz-transition: all ease-in-out 500ms;
-    // -ms-transition: all ease-in-out 500ms;
-    // -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
 
     &:hover {
       filter: grayscale(0%);
@@ -393,11 +379,7 @@ export default {
       line-height: normal;
       letter-spacing: 0.1em;
       color: $lightColor;
-      // transition: all ease-in-out 500ms;
-      // -webkit-transition: all ease-in-out 500ms;
-      // -moz-transition: all ease-in-out 500ms;
-      // -ms-transition: all ease-in-out 500ms;
-      // -o-transition: all ease-in-out 500ms;
+      @include easeInOut;
     }
 
     &:hover {
@@ -497,20 +479,12 @@ export default {
     color: $lightColor;
     border: 0;
     text-decoration: none;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -ms-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+    @include easeInOut;
 
     &:hover {
       color: $redColor;
       background: $lightColor;
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
+      @include scale;
     }
 
     &.see-more {

@@ -12,57 +12,23 @@ export const state = () => ({
 })
 
 export const getters = {
-  cartSize(state) {
+  cartSize (state) {
     return state.cart.length
   },
 
-  cartTotalAmount(state) {
+  cartTotalAmount (state) {
     return state.cart.reduce((total, product) => {
       return total + product.Price * product.quantity
     }, 0)
   },
 
-  toast(state) {
+  toast (state) {
     return state.toast
   }
 }
 
 export const actions = {
-  // async nuxtServerInit ({
-  //   commit
-  // }, {
-  //   app,
-  //   error
-  // }) {
-  //   const response = await app.$axios.get(
-  //     'https://admin.virus.te.ua/api/collections/get/Product?token=9fc49d5af4dda3c961d71b489540a4&sort[_created]=1&rspc=1',
-  //     JSON.stringify({
-  //       filter: {
-  //         Published: true
-  //       },
-  //       sort: {
-  //         _created: -1
-  //       },
-  //       populate: 1
-  //     }), {
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     }
-  //   )
-
-  //   if (!response.data.entries[0]) {
-  //     return error({
-  //       message: '404 Page not found',
-  //       statusCode: 404
-  //     })
-  //   }
-
-  //   commit('setUpProducts', response.data.entries)
-  //   commit('showToast', 'Продукти завантажені')
-  // },
-
-  async fetchProducts({
+  async fetchProducts ({
     commit
   }) {
     const client = this.app.apolloProvider.defaultClient
@@ -74,21 +40,21 @@ export const actions = {
     })
   },
 
-  addToCart({
+  addToCart ({
     commit
   }, productId) {
     commit('addToCart', productId)
     commit('showToast', 'Додано з кошика')
   },
 
-  removeFromCart({
+  removeFromCart ({
     commit
   }, productId) {
     commit('removeFromCart', productId)
     commit('showToast', 'Видалено з кошика')
   },
 
-  deleteFromCart({
+  deleteFromCart ({
     commit
   }, productId) {
     commit('deleteFromCart', productId)
@@ -97,7 +63,7 @@ export const actions = {
 }
 
 export const mutations = {
-  setUpProducts(state, productsPayload) {
+  setUpProducts (state, productsPayload) {
     state.loading = true
     state.products = productsPayload
     state.loading = false
@@ -107,7 +73,7 @@ export const mutations = {
   //   state.data = dataPayload
   // },
 
-  addToCart(state, productId) {
+  addToCart (state, productId) {
     const product = state.products.find(product => product._id === productId)
 
     const cartProduct = state.cart.find(product => product._id === productId)
@@ -129,7 +95,7 @@ export const mutations = {
     product.quantity--
   },
 
-  removeFromCart(state, productId) {
+  removeFromCart (state, productId) {
     const product = state.products.find(product => product._id === productId)
 
     const cartProduct = state.cart.find(product => product._id === productId)
@@ -139,7 +105,7 @@ export const mutations = {
     product.quantity++
   },
 
-  deleteFromCart(state, productId) {
+  deleteFromCart (state, productId) {
     const product = state.products.find(product => product._id === productId)
 
     const cartProductIndex = state.cart.findIndex(
@@ -151,26 +117,26 @@ export const mutations = {
     state.cart.splice(cartProductIndex, 1)
   },
 
-  showToast(state, toastText) {
+  showToast (state, toastText) {
     state.toast.show = true
     state.toast.text = toastText
   },
 
-  hideToast(state) {
+  hideToast (state) {
     state.toast.show = false
     state.toast.text = ''
   },
 
-  setCheckoutStatus(state, status) {
+  setCheckoutStatus (state, status) {
     state.checkoutStatus = status
   },
 
-  emptyCart(state) {
+  emptyCart (state) {
     state.cart = []
     state.cartCount = 0
   },
 
-  SET_ANIMATION(state, animation) {
+  SET_ANIMATION (state, animation) {
     state.animation = animation
   }
 }
