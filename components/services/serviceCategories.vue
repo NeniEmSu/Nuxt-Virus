@@ -2,10 +2,12 @@
   <div class="col-sm-10 col-xl-7 m-auto">
     <div class="row text-center">
       <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
-        <a
+        <button
+          :class="{ activeBtn: selected === 1 }"
           class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
-          href="#"
-        >Ⅰ категорія</a>
+        >
+          Ⅰ категорія
+        </button>
         <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">
           {{ category1 }}
         </p>
@@ -14,10 +16,12 @@
         </p>
       </div>
       <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
-        <a
-          href="#"
+        <button
+          :class="{ activeBtn: selected === 2 }"
           class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
-        >ⅠⅠ категорія</a>
+        >
+          ⅠⅠ категорія
+        </button>
         <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">
           {{ category2 }}
         </p>
@@ -26,10 +30,12 @@
         </p>
       </div>
       <div class="col-lg-12 col-xl-4 mx-auto work-cost-btn">
-        <a
-          href="#"
+        <button
+          :class="{ activeBtn: selected === 3 }"
           class="btn col-md-4 col-xl-12 m-auto m-lg-2 category-selector"
-        >ⅠⅠⅠ категорія</a>
+        >
+          ⅠⅠⅠ категорія
+        </button>
         <p class="pricing col-md-4 col-xl-12 m-auto m-lg-2 text-center">
           {{ category3 }}
         </p>
@@ -58,6 +64,22 @@ export default {
       type: String,
       default: '0',
       required: true
+    }
+  },
+  data () {
+    return {
+      selected: undefined
+    }
+  },
+  watch: {
+    selected (newSelected) {
+      sessionStorage.selected = newSelected
+    }
+  },
+
+  mounted () {
+    if (sessionStorage.selected) {
+      this.selected = parseInt(sessionStorage.selected) || 0
     }
   }
 }

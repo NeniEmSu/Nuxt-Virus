@@ -54,13 +54,13 @@
         {{ singlePost[0].excerpt }}
       </div>
       <style>
-      li {
+        li {
         margin-left: 20px;
-      }
+        }
 
-      ol {
+        ol {
         margin-left: 0px;
-      }
+        }
       </style>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html=" singlePost[0].content" />
@@ -74,10 +74,10 @@
       </div>
 
       <div class="comments mt-5">
-        <vue-disqus
-          shortname="https-beta-virus-te-ua"
-          :identifier=" singlePost[0]._id"
-        />
+        <!-- <vue-disqus
+          :shortname="shortname"
+          :identifier="singlePost[0]._id"
+        /> -->
       </div>
     </article>
   </section>
@@ -120,6 +120,7 @@ export default {
 
   data () {
     return {
+      shortname: process.env.VUE_DISQUS_SHORTNAME,
       imageApiUrl: process.env.IMAGE_LINK
     }
   },

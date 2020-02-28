@@ -60,9 +60,9 @@
                 {{ singleProduct[0].name }}
               </h1>
               <style>
-              li {
+                li {
                 margin-left: 20px;
-              }
+                }
               </style>
               <section class="my-lg-5 desktop-tablet-only markdown">
                 <div

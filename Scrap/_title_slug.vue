@@ -51,13 +51,13 @@
         {{ post.excerpt }}
       </div>
       <style>
-      li {
+        li {
         margin-left: 20px;
-      }
+        }
 
-      ol {
+        ol {
         margin-left: 0px;
-      }
+        }
       </style>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="post.content" />

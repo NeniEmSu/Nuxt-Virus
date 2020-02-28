@@ -363,9 +363,9 @@
               </div>
 
               <style>
-              li.active a {
+                li.active a {
                 background-color: #8B8B8B !important;
-              }
+                }
               </style>
 
               <jw-pagination

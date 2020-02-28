@@ -90,11 +90,11 @@
                 </client-only>
               </div>
               <style>
-              .small-more-images {
+                .small-more-images {
                 margin-top: -20px;
-              }
+                }
 
-              .main-image .owl-theme .owl-dots .owl-dot span {
+                .main-image .owl-theme .owl-dots .owl-dot span {
                 width: 73px !important;
                 height: 73px !important;
                 margin-bottom: -60px;
@@ -103,111 +103,111 @@
                 margin-right: 12.5px;
                 margin-left: 12.5px;
                 display: abslolute;
-              }
-
-              .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                background-color: transparent;
-              }
-
-              .main-image .owl-theme .owl-dots .owl-dot.active span {
-                background-color: transparent;
-              }
-
-              .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                background-color: transparent;
-              }
-
-              @media only screen and (min-width: 992px) and (max-width: 1199px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 73px !important;
-                  height: 73px !important;
-                  margin-bottom: -55px;
-                  background-color: transparent;
-
-                  margin-right: 12px;
-                  margin-left: 12px;
-                  display: abslolute;
-                }
-              }
-
-              @media only screen and (min-width: 768px) and (max-width: 992px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 60px !important;
-                  height: 60px !important;
-                  margin-bottom: -48px;
-                  background-color: transparent;
-
-                  margin-right: 5.5px;
-                  margin-left: 5.6px;
-                  display: abslolute;
-                }
-              }
-
-              @media only screen and (min-width: 500px) and (max-width: 767.9px) {
-                .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 10px !important;
-                  height: 10px !important;
-                  margin-top: -25px;
-                  background-color: grey;
-
-                  margin-right: 5px;
-                  margin-left: 5px;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                  background-color: #d41f26;
-                }
-
-                .main-image .owl-theme .owl-dots {
-                  margin-bottom: -30px;
+                background-color: transparent;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active span {
-                  background-color: #d41f26;
+                background-color: transparent;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                  background-color: red;
+                background-color: transparent;
                 }
 
-                .small-more-images {
-                  margin-top: 0px;
-                  display: none;
-                }
-              }
-
-              @media only screen and (max-width: 499.9px) {
+                @media only screen and (min-width: 992px) and (max-width: 1199px) {
                 .main-image .owl-theme .owl-dots .owl-dot span {
-                  width: 5px !important;
-                  height: 5px !important;
-                  margin-top: -29px;
-                  background-color: grey;
+                width: 73px !important;
+                height: 73px !important;
+                margin-bottom: -55px;
+                background-color: transparent;
 
-                  margin-right: 5px;
-                  margin-left: 5px;
+                margin-right: 12px;
+                margin-left: 12px;
+                display: abslolute;
+                }
+                }
+
+                @media only screen and (min-width: 768px) and (max-width: 992px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 60px !important;
+                height: 60px !important;
+                margin-bottom: -48px;
+                background-color: transparent;
+
+                margin-right: 5.5px;
+                margin-left: 5.6px;
+                display: abslolute;
+                }
+                }
+
+                @media only screen and (min-width: 500px) and (max-width: 767.9px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 10px !important;
+                height: 10px !important;
+                margin-top: -25px;
+                background-color: grey;
+
+                margin-right: 5px;
+                margin-left: 5px;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot:hover span {
-                  background-color: #d41f26;
+                background-color: #d41f26;
                 }
 
                 .main-image .owl-theme .owl-dots {
-                  margin-bottom: -30px;
+                margin-bottom: -30px;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active span {
-                  background-color: #d41f26;
+                background-color: #d41f26;
                 }
 
                 .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
-                  background-color: red;
+                background-color: red;
                 }
 
                 .small-more-images {
-                  margin-top: 0px;
-                  display: none;
+                margin-top: 0px;
+                display: none;
                 }
-              }
+                }
+
+                @media only screen and (max-width: 499.9px) {
+                .main-image .owl-theme .owl-dots .owl-dot span {
+                width: 5px !important;
+                height: 5px !important;
+                margin-top: -29px;
+                background-color: grey;
+
+                margin-right: 5px;
+                margin-left: 5px;
+                }
+
+                .main-image .owl-theme .owl-dots .owl-dot:hover span {
+                background-color: #d41f26;
+                }
+
+                .main-image .owl-theme .owl-dots {
+                margin-bottom: -30px;
+                }
+
+                .main-image .owl-theme .owl-dots .owl-dot.active span {
+                background-color: #d41f26;
+                }
+
+                .main-image .owl-theme .owl-dots .owl-dot.active:hover span {
+                background-color: red;
+                }
+
+                .small-more-images {
+                margin-top: 0px;
+                display: none;
+                }
+                }
               </style>
               <div
                 v-if="product.galleryToggle === true "
@@ -247,9 +247,9 @@
                 {{ product.name }}
               </h1>
               <style>
-              li {
+                li {
                 margin-left: 20px;
-              }
+                }
               </style>
               <section class="my-lg-5 desktop-tablet-only markdown">
                 <div
@@ -434,7 +434,6 @@
 </template>
 
 <script>
-// import gql from 'graphql-tag'
 import axios from 'axios'
 import { mapState, mapGetters } from 'vuex'
 
@@ -444,33 +443,6 @@ export default {
     capitalize: (item) => {
       return item.toLowerCase()
     }
-  },
-  // apollo: {
-  //   singleProduct: {
-  //     query: gql`
-  //     query getSingleProduct($id: String) {
-  //       ProductCollection(_id: '5dc2e32535363442db000216') {
-  //         _id
-  //         name
-  //       }
-  //     }
-  //     `,
-  //     variables () {
-  //       return {
-  //         id: this.$route.params._id
-  //       }
-  //     }
-  //   }
-  // },
-  data () {
-    return {
-      mobileModalShow: false,
-      imageApiUrl: process.env.IMAGE_LINK_DYNAMIC
-    }
-  },
-  computed: {
-    ...mapState(['cart']),
-    ...mapGetters(['cartSize', 'cartTotalAmount'])
   },
   async asyncData ({ app, params, error, payload }) {
     if (payload) {
@@ -508,6 +480,17 @@ export default {
       product: product.data.entries[0],
       relatedProducts: products.data.entries.filter(el => el.category.includes(product.data.entries[0].category[0]))
     }
+  },
+
+  data () {
+    return {
+      mobileModalShow: false,
+      imageApiUrl: process.env.IMAGE_LINK_DYNAMIC
+    }
+  },
+  computed: {
+    ...mapState(['cart']),
+    ...mapGetters(['cartSize', 'cartTotalAmount'])
   },
 
   methods: {

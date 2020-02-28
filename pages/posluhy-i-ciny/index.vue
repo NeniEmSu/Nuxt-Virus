@@ -988,6 +988,18 @@ export default {
     }
   },
 
+  watch: {
+    selected (newSelected) {
+      sessionStorage.selected = newSelected
+    }
+  },
+
+  mounted () {
+    if (sessionStorage.selected) {
+      this.selected = parseInt(sessionStorage.selected) || 0
+    }
+  },
+
   methods: {
     changeCars (variantImage) {
       this.image = variantImage

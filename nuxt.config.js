@@ -3,9 +3,9 @@ require('dotenv').config()
 
 // const path = require('path')
 // const glob = require('glob-all')
-const collect = require('collect.js')
-const perPage = Number(process.env.PER_PAGE)
-const axios = require('axios')
+// const collect = require('collect.js')
+// const perPage = Number(process.env.PER_PAGE)
+// const axios = require('axios')
 
 const features = [
   'fetch',
@@ -385,12 +385,12 @@ export default {
       }
     ],
     ['@nuxtjs/google-tag-manager', {
-      id: 'GTM-WT77NZ5'
+      id: process.env.GOOGLE_TAGS_API_ID
     }],
     [
       '@nuxtjs/google-analytics',
       {
-        id: 'UA-62479125-9'
+        id: process.env.GOOGLE_ANALYTICS_API_ID
       }
     ],
     [
