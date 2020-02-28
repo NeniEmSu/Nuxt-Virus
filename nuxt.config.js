@@ -525,55 +525,55 @@ export default {
 
   // },
 
-  // sitemap: {
-  //   path: '/sitemap.xml',
-  //   hostname: process.env.URL,
-  //   cacheTime: 1000 * 60 * 15,
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: process.env.URL,
+    cacheTime: 1000 * 60 * 15
 
-  //   async routes () {
-  //     const {
-  //       data
-  //     } = await axios.post(
-  //       process.env.POSTS_URL,
-  //       JSON.stringify({
-  //         filter: {
-  //           published: true
-  //         },
-  //         sort: {
-  //           _created: -1
-  //         },
-  //         populate: 1
-  //       }), {
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     }
-  //     )
+    //   async routes () {
+    //     const {
+    //       data
+    //     } = await axios.post(
+    //       process.env.POSTS_URL,
+    //       JSON.stringify({
+    //         filter: {
+    //           published: true
+    //         },
+    //         sort: {
+    //           _created: -1
+    //         },
+    //         populate: 1
+    //       }), {
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     }
+    //     )
 
-  //     const collection = collect(data.entries)
+    //     const collection = collect(data.entries)
 
-  //     const tags = collection
-  //       .map(post => post.tags)
-  //       .flatten()
-  //       .unique()
-  //       .map(tag => `blog/category/${tag}`)
-  //       .all()
+    //     const tags = collection
+    //       .map(post => post.tags)
+    //       .flatten()
+    //       .unique()
+    //       .map(tag => `blog/category/${tag}`)
+    //       .all()
 
-  //     const posts = collection.map(post => post.title_slug).all()
+    //     const posts = collection.map(post => post.title_slug).all()
 
-  //     if (perPage < data.total) {
-  //       const pages = collection
-  //         .take(perPage - data.total)
-  //         .chunk(perPage)
-  //         .map((items, key) => `blog/pages/${key + 2}`)
-  //         .all()
+    //     if (perPage < data.total) {
+    //       const pages = collection
+    //         .take(perPage - data.total)
+    //         .chunk(perPage)
+    //         .map((items, key) => `blog/pages/${key + 2}`)
+    //         .all()
 
-  //       return posts.concat(tags, pages)
-  //     }
+    //       return posts.concat(tags, pages)
+    //     }
 
-  //     return posts.concat(tags)
-  //   }
-  // },
+    //     return posts.concat(tags)
+    //   }
+  },
 
   styleResources: {
     scss: ['assets/scss/config.scss']
