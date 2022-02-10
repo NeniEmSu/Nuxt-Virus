@@ -94,7 +94,7 @@
     "highlight.js": "^10.4.1",
     "image-webpack-loader": "^6.0.0",
     "marked": "^0.8.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2",
     "nuxt-purgecss": "^0.2.1",
     "prettier": "^1.19.1",
